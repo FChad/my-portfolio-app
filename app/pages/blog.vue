@@ -16,10 +16,10 @@ const mobileMenuOpen = ref(false)
                 <div class="flex justify-between items-center h-16">
                     <!-- Logo/Name -->
                     <div class="flex items-center">
-                        <NuxtLink to="/"
-                            class="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            Chad Feierstein
-                        </NuxtLink>
+                        <NuxtLinkLocale to="/"
+                            class="logo-gradient text-xl font-bold uppercase bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                            Feierstein Chad
+                        </NuxtLinkLocale>
                     </div>
 
                     <!-- Navigation Links -->
@@ -49,8 +49,8 @@ const mobileMenuOpen = ref(false)
 
                         <!-- Desktop Controls -->
                         <div class="hidden md:flex items-center gap-3">
-                            <LanguageToggle />
-                            <ColorModeToggle />
+                            <LanguageSwitcher />
+                            <ThemeSwitcher />
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,8 @@ const mobileMenuOpen = ref(false)
                         </NuxtLink>
                         <div
                             class="flex items-center justify-center gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-                            <LanguageToggle />
-                            <ColorModeToggle />
+                            <LanguageSwitcher />
+                            <ThemeSwitcher />
                         </div>
                     </div>
                 </div>

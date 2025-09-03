@@ -17,6 +17,25 @@ const texts = computed(() => [
     t('home.roles.creator')
 ])
 
+// Services configuration with icons and gradients
+const services = computed(() => [
+    {
+        key: 'webdev',
+        icon: 'heroicons:code-bracket',
+        gradient: 'from-blue-500 to-cyan-500'
+    },
+    {
+        key: 'uiux',
+        icon: 'heroicons:paint-brush',
+        gradient: 'from-purple-500 to-pink-500'
+    },
+    {
+        key: 'consulting',
+        icon: 'heroicons:light-bulb',
+        gradient: 'from-green-500 to-emerald-500'
+    }
+])
+
 let currentTextIndex = 0
 let currentCharIndex = 0
 let isDeleting = false
@@ -90,26 +109,26 @@ onUnmounted(() => {
                 <div class="flex justify-between items-center h-16">
                     <!-- Logo/Name -->
                     <div class="flex items-center">
-                        <NuxtLink to="/"
-                            class="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            Chad Feierstein
-                        </NuxtLink>
+                        <NuxtLinkLocale to="/"
+                            class="logo-gradient text-xl font-bold uppercase bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                            Feierstein Chad
+                        </NuxtLinkLocale>
                     </div>
 
                     <!-- Navigation Links -->
                     <nav class="hidden md:flex items-center space-x-8">
-                        <NuxtLink to="/"
+                        <NuxtLinkLocale to="/"
                             class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative group router-link-active">
                             Home
                             <span
                                 class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
-                        </NuxtLink>
-                        <NuxtLink to="/blog"
+                        </NuxtLinkLocale>
+                        <NuxtLinkLocale to="/blog"
                             class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative group">
                             Blog
                             <span
                                 class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
-                        </NuxtLink>
+                        </NuxtLinkLocale>
                     </nav>
 
                     <!-- Right Side Controls -->
@@ -123,8 +142,8 @@ onUnmounted(() => {
 
                         <!-- Desktop Controls -->
                         <div class="hidden md:flex items-center gap-3">
-                            <LanguageToggle />
-                            <ColorModeToggle />
+                            <LanguageSwitcher />
+                            <ThemeSwitcher />
                         </div>
                     </div>
                 </div>
@@ -142,8 +161,8 @@ onUnmounted(() => {
                         </NuxtLink>
                         <div
                             class="flex items-center justify-center gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-                            <LanguageToggle />
-                            <ColorModeToggle />
+                            <LanguageSwitcher />
+                            <ThemeSwitcher />
                         </div>
                     </div>
                 </div>
@@ -327,53 +346,33 @@ onUnmounted(() => {
                     </div>
 
                     <div class="grid md:grid-cols-3 gap-8">
-                        <!-- Web Development -->
-                        <div
+                        <!-- Dynamic Services Loop -->
+                        <div v-for="service in services" :key="service.key"
                             class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
                             <div
-                                class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="heroicons:code-bracket" class="w-8 h-8 text-white" />
+                                :class="`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`">
+                                <Icon :name="service.icon" class="w-8 h-8 text-white" />
                             </div>
-                            <h3 class="text-xl font-bold mb-4">{{ $t('services.webdev.title') }}</h3>
+                            <h3 class="text-xl font-bold mb-4">{{ $t(`services.${service.key}.title`) }}</h3>
                             <p class="text-gray-600 dark:text-gray-300 mb-6">
-                                {{ $t('services.webdev.description') }}
+                                {{ $t(`services.${service.key}.description`) }}
                             </p>
                             <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                                <li v-for="feature in $t('services.webdev.features')" :key="feature">• {{ feature }}
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- UI/UX Design -->
-                        <div
-                            class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                            <div
-                                class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="heroicons:paint-brush" class="w-8 h-8 text-white" />
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">{{ $t('services.uiux.title') }}</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-6">
-                                {{ $t('services.uiux.description') }}
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                                <li v-for="feature in $t('services.uiux.features')" :key="feature">• {{ feature }}</li>
-                            </ul>
-                        </div>
-
-                        <!-- Consulting -->
-                        <div
-                            class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                            <div
-                                class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="heroicons:light-bulb" class="w-8 h-8 text-white" />
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">{{ $t('services.consulting.title') }}</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-6">
-                                {{ $t('services.consulting.description') }}
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                                <li v-for="feature in $t('services.consulting.features')" :key="feature">• {{ feature }}
-                                </li>
+                                <template v-if="service.key === 'webdev'">
+                                    <li>• {{ $t('services.webdev.features.spa') }}</li>
+                                    <li>• {{ $t('services.webdev.features.ssr') }}</li>
+                                    <li>• {{ $t('services.webdev.features.pwa') }}</li>
+                                </template>
+                                <template v-else-if="service.key === 'uiux'">
+                                    <li>• {{ $t('services.uiux.features.responsive') }}</li>
+                                    <li>• {{ $t('services.uiux.features.designSystems') }}</li>
+                                    <li>• {{ $t('services.uiux.features.accessibility') }}</li>
+                                </template>
+                                <template v-else-if="service.key === 'consulting'">
+                                    <li>• {{ $t('services.consulting.features.codeReviews') }}</li>
+                                    <li>• {{ $t('services.consulting.features.performance') }}</li>
+                                    <li>• {{ $t('services.consulting.features.techStack') }}</li>
+                                </template>
                             </ul>
                         </div>
                     </div>
@@ -408,11 +407,11 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.router-link-active {
+.router-link-active:not(.logo-gradient) {
     color: rgb(37 99 235);
 }
 
-.dark .router-link-active {
+.dark .router-link-active:not(.logo-gradient) {
     color: rgb(96 165 250);
 }
 

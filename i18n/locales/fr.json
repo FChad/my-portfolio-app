@@ -1,11 +1,202 @@
 {
-    "welcome": "Bienvenue",
-    "home": "Accueil",
-    "about": "À propos",
-    "projects": "Projets",
-    "contact": "Contact",
-    "language": "Langue",
-    "hello": "Bonjour",
-    "portfolio": "Portfolio",
-    "description": "Ce portfolio prend en charge plusieurs langues et le mode sombre/clair."
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "projects": "Projets",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "languages": {
+        "luxembourgish": "Luxembourgeois",
+        "german": "Allemand",
+        "english": "Anglais",
+        "french": "Français"
+    },
+    "home": {
+        "welcome": "Bienvenue",
+        "greeting": "Bonjour, je suis",
+        "name": "Chad Feierstein",
+        "roles": {
+            "fullstack": "Développeur Full-Stack",
+            "vue": "Passionné de Vue.js",
+            "uiux": "Designer UI/UX",
+            "solver": "Résolveur de Problèmes",
+            "creator": "Créateur Numérique"
+        },
+        "tagline": "Je crée des expériences numériques qui ne sont pas seulement belles mais qui fonctionnent parfaitement.",
+        "cta": {
+            "primary": "Découvrir les Projets",
+            "secondary": "Prendre Contact"
+        },
+        "stats": {
+            "projects": "Projets",
+            "experience": "Années d'Expérience",
+            "satisfaction": "Satisfaction"
+        }
+    },
+    "about": {
+        "title": "À Propos de Moi",
+        "intro": "Je suis un développeur frontend passionné avec un amour pour le code propre et les designs innovants. Avec plusieurs années d'expérience dans les technologies web modernes, je crée des expériences numériques qui sont à la fois fonctionnelles et esthétiquement plaisantes.",
+        "focus": "Mon focus se porte sur Vue.js, Nuxt.js et TypeScript moderne.",
+        "profile": {
+            "nationality": "Luxembourgeois",
+            "location": "Rümelingen, Luxembourg",
+            "status": "Disponible pour Projets",
+            "age": "25 ans"
+        },
+        "journey": {
+            "title": "Mon Parcours",
+            "description": "Mon parcours professionnel comprend une formation complète en tant que technicien informatique ainsi qu'un diplôme supérieur (BTS) en Cloud Computing. Ce parcours académique, complété par une expérience pratique, m'a donné une compréhension globale des domaines informatiques centraux."
+        },
+        "passion": {
+            "title": "Passion pour la Technologie",
+            "description": "Ma passion réside dans le développement web et l'automatisation des processus. Je développe avec enthousiasme des applications web personnalisées et implémente des solutions serveur efficaces."
+        },
+        "timeline": {
+            "2024": {
+                "title": "Développeur Web chez Rotyre SARL",
+                "description": "Responsable de la maintenance et du développement du site web mullerpneus.lu"
+            },
+            "2023": {
+                "title": "Certification : Test d'Aptitude Générale",
+                "description": "Réussite de l'examen d'État pour le secteur public"
+            },
+            "2021": {
+                "title": "Diplôme en Cloud Computing (BTS)",
+                "description": "Diplôme technique supérieur en Cloud Computing au Lycée Guillaume Kroll"
+            },
+            "2019": {
+                "title": "Diplôme de Technicien Informatique",
+                "description": "Diplômé du Lycée Guillaume Kroll à Esch-sur-Alzette avec mention 'Bien'"
+            }
+        }
+    },
+    "services": {
+        "title": "Ce que j'Offre",
+        "subtitle": "De la conception à la mise en œuvre - je développe des solutions sur mesure pour vos besoins numériques.",
+        "webdev": {
+            "title": "Développement Web",
+            "description": "Sites web modernes et responsives avec Vue.js, Nuxt.js et les derniers standards web.",
+            "features": {
+                "spa": "Applications à Page Unique",
+                "ssr": "Rendu Côté Serveur",
+                "pwa": "Applications Web Progressives"
+            }
+        },
+        "uiux": {
+            "title": "Design UI/UX",
+            "description": "Interfaces conviviales qui sont à la fois belles et fonctionnelles.",
+            "features": {
+                "responsive": "Design Responsif",
+                "designSystems": "Systèmes de Design",
+                "accessibility": "Accessibilité"
+            }
+        },
+        "consulting": {
+            "title": "Conseil",
+            "description": "Conseil stratégique pour vos projets numériques et architecture technique.",
+            "features": {
+                "codeReviews": "Revues de Code",
+                "performance": "Optimisation des Performances",
+                "techStack": "Stack Technologique"
+            }
+        }
+    },
+    "skills": {
+        "frontend": "Développement Frontend",
+        "backend": "Développement Backend",
+        "tools": "Outils & Technologies",
+        "languages": "Langages de Programmation"
+    },
+    "projects": {
+        "title": "Mes Projets",
+        "subtitle": "Une sélection de mes travaux actuels et projets personnels",
+        "viewProject": "Voir le Projet",
+        "sourceCode": "Code Source",
+        "liveDemo": "Démo en Direct",
+        "technologies": "Technologies Utilisées",
+        "portfolio": {
+            "title": "Site Portfolio",
+            "description": "Un site portfolio moderne et responsif construit avec Nuxt 3, TypeScript et Tailwind CSS. Prend en charge plusieurs langues et le mode sombre."
+        },
+        "chatbot": {
+            "title": "Application de Chat IA",
+            "description": "Une application de chat avec intégration Ollama pour les modèles IA locaux. Fournit une interface utilisateur intuitive pour les conversations IA."
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "subtitle": "Réflexions sur la technologie, le développement web et les tendances actuelles",
+        "readMore": "Lire Plus",
+        "publishedOn": "Publié le",
+        "author": "Chad Feierstein",
+        "posts": {
+            "welcome": {
+                "title": "Bienvenue sur Mon Blog Portfolio",
+                "excerpt": "Ici je partage mes réflexions sur le développement web, le design et la technologie. Restez à l'écoute pour des articles et tutoriels passionnants !",
+                "tags": [
+                    "Développement Web",
+                    "Portfolio"
+                ]
+            },
+            "nuxt3": {
+                "title": "Développement Web Moderne avec Nuxt 3",
+                "excerpt": "Découvrez les possibilités de Nuxt 3 et comment il révolutionne le développement d'applications Vue.js. Du SSR aux sites statiques.",
+                "tags": [
+                    "Vue.js",
+                    "Nuxt.js",
+                    "SSR"
+                ]
+            }
+        }
+    },
+    "contact": {
+        "title": "Prendre Contact",
+        "subtitle": "Vous avez des questions ou un projet passionnant ? Parlons-en !",
+        "form": {
+            "name": "Nom",
+            "email": "E-mail",
+            "subject": "Sujet",
+            "message": "Message",
+            "send": "Envoyer le Message",
+            "sending": "Envoi en cours...",
+            "success": "Message envoyé avec succès !",
+            "error": "Erreur lors de l'envoi du message."
+        },
+        "info": {
+            "email": "",
+            "location": "Rümelingen, Luxembourg",
+            "availability": "Disponible pour nouveaux projets"
+        }
+    },
+    "cta": {
+        "title": "Prêt pour Votre Prochain Projet ?",
+        "subtitle": "Créons quelque chose de formidable ensemble. Contactez-moi pour une conversation sans engagement.",
+        "button": "Démarrer le Projet"
+    },
+    "footer": {
+        "copyright": "© 2024 Chad Feierstein. Construit avec Nuxt 3, Tailwind CSS et Color Mode",
+        "social": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "E-mail"
+        }
+    },
+    "common": {
+        "loading": "Chargement...",
+        "error": "Une erreur s'est produite",
+        "tryAgain": "Réessayer",
+        "close": "Fermer",
+        "back": "Retour",
+        "next": "Suivant",
+        "previous": "Précédent",
+        "readMore": "Lire Plus",
+        "learnMore": "En Savoir Plus",
+        "scrollDown": "En Savoir Plus"
+    },
+    "meta": {
+        "title": "Chad Feierstein - Développeur Full-Stack & Designer UI/UX",
+        "description": "Portfolio de Chad Feierstein - Spécialiste en Vue.js, Nuxt.js et développement web moderne. Disponible pour des projets passionnants.",
+        "keywords": "Chad Feierstein, Développeur Web, Vue.js, Nuxt.js, TypeScript, Frontend, Portfolio, Luxembourg"
+    }
 }

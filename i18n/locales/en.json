@@ -77,29 +77,29 @@
         "webdev": {
             "title": "Web Development",
             "description": "Modern, responsive websites with Vue.js, Nuxt.js and the latest web standards.",
-            "features": [
-                "Single Page Applications",
-                "Server-Side Rendering",
-                "Progressive Web Apps"
-            ]
+            "features": {
+                "spa": "Single Page Applications",
+                "ssr": "Server-Side Rendering",
+                "pwa": "Progressive Web Apps"
+            }
         },
         "uiux": {
             "title": "UI/UX Design",
             "description": "User-friendly interfaces that are both beautiful and functional.",
-            "features": [
-                "Responsive Design",
-                "Design Systems",
-                "Accessibility"
-            ]
+            "features": {
+                "responsive": "Responsive Design",
+                "designSystems": "Design Systems",
+                "accessibility": "Accessibility"
+            }
         },
         "consulting": {
             "title": "Consulting",
             "description": "Strategic consulting for your digital projects and technical architecture.",
-            "features": [
-                "Code Reviews",
-                "Performance Optimization",
-                "Technology Stack"
-            ]
+            "features": {
+                "codeReviews": "Code Reviews",
+                "performance": "Performance Optimization",
+                "techStack": "Technology Stack"
+            }
         }
     },
     "skills": {

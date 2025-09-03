@@ -14,21 +14,26 @@
 const colorMode = useColorMode()
 const isReady = ref(false)
 
+// Use process.client to ensure we're on client side
 onMounted(() => {
-    nextTick(() => {
+    // Small delay to ensure color mode is properly initialized
+    setTimeout(() => {
         isReady.value = true
-    })
+    }, 50)
 })
 
 // Get current effective theme (what's actually displayed)
 const currentTheme = computed(() => {
-    if (!isReady.value) return 'light'
+    if (!isReady.value) {
+        // During SSR or before ready, assume light mode
+        return 'light'
+    }
     return colorMode.value as 'light' | 'dark'
 })
 
 // Get current preference, treating system/null as system
 const currentPreference = computed(() => {
-    if (!isReady.value) return 'system'
+    if (!isReady.value) return 'light'
     const pref = colorMode.preference
     return (pref === 'light' || pref === 'dark') ? pref : 'system'
 })
@@ -43,9 +48,13 @@ const toggleColorMode = () => {
     colorMode.preference = (currentPref === 'dark') ? 'light' : 'dark'
 }
 
-// Icon always based on current theme (what's displayed)
+// Icon shows what mode we'll switch TO (opposite of current theme)
 const currentIcon = computed(() => {
-    return currentTheme.value === 'dark' ? 'heroicons:sun' : 'heroicons:moon'
+    if (!isReady.value) {
+        // During SSR, show moon icon (assumes light mode by default)
+        return 'heroicons:moon'
+    }
+    return currentTheme.value === 'light' ? 'heroicons:moon' : 'heroicons:sun'
 })
 
 // Generate descriptive button label
