@@ -1,0 +1,202 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "languages": {
+        "luxembourgish": "Luxembourgish",
+        "german": "German",
+        "english": "English",
+        "french": "French"
+    },
+    "home": {
+        "welcome": "Welcome",
+        "greeting": "Hello, I'm",
+        "name": "Chad Feierstein",
+        "roles": {
+            "fullstack": "Full-Stack Developer",
+            "vue": "Vue.js Enthusiast",
+            "uiux": "UI/UX Designer",
+            "solver": "Problem Solver",
+            "creator": "Digital Creator"
+        },
+        "tagline": "I create digital experiences that not only look beautiful but also work perfectly.",
+        "cta": {
+            "primary": "Discover Projects",
+            "secondary": "Get in Touch"
+        },
+        "stats": {
+            "projects": "Projects",
+            "experience": "Years Experience",
+            "satisfaction": "Satisfaction"
+        }
+    },
+    "about": {
+        "title": "About Me",
+        "intro": "I'm a passionate frontend developer with a love for clean code and innovative designs. With several years of experience in modern web technologies, I create digital experiences that are both functional and aesthetically pleasing.",
+        "focus": "My focus is on Vue.js, Nuxt.js, and modern TypeScript.",
+        "profile": {
+            "nationality": "Luxembourgish",
+            "location": "Rümelingen, Luxembourg",
+            "status": "Available for Projects",
+            "age": "25 years old"
+        },
+        "journey": {
+            "title": "My Journey",
+            "description": "My professional journey includes comprehensive training as an IT technician and a higher degree (BTS) in Cloud Computing. This academic path, complemented by practical experience, has given me a comprehensive understanding of core IT areas."
+        },
+        "passion": {
+            "title": "Passion for Technology",
+            "description": "My passion lies in web development and process automation. I enthusiastically develop custom web applications and implement efficient server solutions."
+        },
+        "timeline": {
+            "2024": {
+                "title": "Web Developer at Rotyre SARL",
+                "description": "Responsible for maintaining and developing the mullerpneus.lu website"
+            },
+            "2023": {
+                "title": "Certification: General Aptitude Test",
+                "description": "Successfully completed the state examination for the public sector"
+            },
+            "2021": {
+                "title": "Diploma in Cloud Computing (BTS)",
+                "description": "Higher technical degree in Cloud Computing at Lycée Guillaume Kroll"
+            },
+            "2019": {
+                "title": "Diploma as IT Technician",
+                "description": "Graduated from Lycée Guillaume Kroll in Esch-sur-Alzette with 'Good' rating"
+            }
+        }
+    },
+    "services": {
+        "title": "What I Offer",
+        "subtitle": "From conception to implementation - I develop tailored solutions for your digital requirements.",
+        "webdev": {
+            "title": "Web Development",
+            "description": "Modern, responsive websites with Vue.js, Nuxt.js and the latest web standards.",
+            "features": [
+                "Single Page Applications",
+                "Server-Side Rendering",
+                "Progressive Web Apps"
+            ]
+        },
+        "uiux": {
+            "title": "UI/UX Design",
+            "description": "User-friendly interfaces that are both beautiful and functional.",
+            "features": [
+                "Responsive Design",
+                "Design Systems",
+                "Accessibility"
+            ]
+        },
+        "consulting": {
+            "title": "Consulting",
+            "description": "Strategic consulting for your digital projects and technical architecture.",
+            "features": [
+                "Code Reviews",
+                "Performance Optimization",
+                "Technology Stack"
+            ]
+        }
+    },
+    "skills": {
+        "frontend": "Frontend Development",
+        "backend": "Backend Development",
+        "tools": "Tools & Technologies",
+        "languages": "Programming Languages"
+    },
+    "projects": {
+        "title": "My Projects",
+        "subtitle": "A selection of my current work and personal projects",
+        "viewProject": "View Project",
+        "sourceCode": "Source Code",
+        "liveDemo": "Live Demo",
+        "technologies": "Technologies Used",
+        "portfolio": {
+            "title": "Portfolio Website",
+            "description": "A modern, responsive portfolio website built with Nuxt 3, TypeScript and Tailwind CSS. Supports multiple languages and dark mode."
+        },
+        "chatbot": {
+            "title": "AI Chat Application",
+            "description": "A chat application with Ollama integration for local AI models. Provides an intuitive user interface for AI conversations."
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "subtitle": "Thoughts on technology, web development and current trends",
+        "readMore": "Read More",
+        "publishedOn": "Published on",
+        "author": "Chad Feierstein",
+        "posts": {
+            "welcome": {
+                "title": "Welcome to My Portfolio Blog",
+                "excerpt": "Here I share my thoughts on web development, design and technology. Stay tuned for exciting articles and tutorials!",
+                "tags": [
+                    "Web Development",
+                    "Portfolio"
+                ]
+            },
+            "nuxt3": {
+                "title": "Modern Web Development with Nuxt 3",
+                "excerpt": "Discover the possibilities of Nuxt 3 and how it revolutionizes Vue.js application development. From SSR to static sites.",
+                "tags": [
+                    "Vue.js",
+                    "Nuxt.js",
+                    "SSR"
+                ]
+            }
+        }
+    },
+    "contact": {
+        "title": "Get in Touch",
+        "subtitle": "Have questions or an exciting project? Let's talk about it!",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "send": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "Error sending message."
+        },
+        "info": {
+            "email": "",
+            "location": "Rümelingen, Luxembourg",
+            "availability": "Available for new projects"
+        }
+    },
+    "cta": {
+        "title": "Ready for Your Next Project?",
+        "subtitle": "Let's create something great together. Contact me for a no-obligation conversation.",
+        "button": "Start Project"
+    },
+    "footer": {
+        "copyright": "© 2024 Chad Feierstein. Built with Nuxt 3, Tailwind CSS and Color Mode",
+        "social": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "Email"
+        }
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "tryAgain": "Try Again",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "readMore": "Read More",
+        "learnMore": "Learn More",
+        "scrollDown": "Learn More"
+    },
+    "meta": {
+        "title": "Chad Feierstein - Full-Stack Developer & UI/UX Designer",
+        "description": "Portfolio of Chad Feierstein - Specialist in Vue.js, Nuxt.js and modern web development. Available for exciting projects.",
+        "keywords": "Chad Feierstein, Web Developer, Vue.js, Nuxt.js, TypeScript, Frontend, Portfolio, Luxembourg"
+    }
+}
