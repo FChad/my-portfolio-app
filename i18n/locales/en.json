@@ -29,35 +29,66 @@
         "stats": {
             "projects": "Projects",
             "experience": "Years Experience",
-            "satisfaction": "Satisfaction"
+            "satisfaction": "Satisfaction",
+            "certifications": "Certifications",
+            "languages": "Languages"
+        },
+        "about": {
+            "cta": "Learn More About Me"
         }
     },
     "about": {
         "title": "About Me",
         "intro": "I'm a passionate frontend developer with a love for clean code and innovative designs. With several years of experience in modern web technologies, I create digital experiences that are both functional and aesthetically pleasing.",
         "focus": "My focus is on Vue.js, Nuxt.js, and modern TypeScript.",
+        "hero": {
+            "title": "Chad Feierstein",
+            "subtitle": "My name is Chad Feierstein, and technology is my great passion. From a young age, I have been fascinated by the art of mastering complex challenges through innovative digital solutions."
+        },
         "profile": {
+            "title": "Personal Information",
             "nationality": "Luxembourgish",
             "location": "Rümelingen, Luxembourg",
-            "status": "Available for Projects",
-            "age": "25 years old"
+            "status": "Single",
+            "age": "25 years old",
+            "driving": "Driving License Category B since 2023",
+            "role": "Full-Stack Developer & IT Technician"
         },
-        "journey": {
-            "title": "My Journey",
-            "description": "My professional journey includes comprehensive training as an IT technician and a higher degree (BTS) in Cloud Computing. This academic path, complemented by practical experience, has given me a comprehensive understanding of core IT areas."
+        "story": {
+            "title": "About Me",
+            "intro": "My name is Chad Feierstein, and technology is my great passion. From a young age, I have been fascinated by the art of mastering complex challenges through innovative digital solutions. This fascination motivates me daily to expand my knowledge and explore new horizons.",
+            "journey": "My professional journey includes comprehensive training as an IT technician and a higher degree (BTS) in Cloud Computing. This academic path, complemented by practical experience, has given me a comprehensive understanding of core IT areas.",
+            "passion": "My passion lies in web development and process automation. I enthusiastically develop customized web applications and implement efficient server solutions."
         },
         "passion": {
             "title": "Passion for Technology",
-            "description": "My passion lies in web development and process automation. I enthusiastically develop custom web applications and implement efficient server solutions."
+            "description": "My passion lies in web development and process automation. I enthusiastically develop customized web applications and implement efficient server solutions."
+        },
+        "hobbies": {
+            "title": "Hobbies and Interests",
+            "description": "Outside the digital world, I enjoy precious moments with my family, which also includes our three furry companions. Regular meetings with friends and occasional gaming sessions provide the perfect balance to my technology-driven everyday life."
+        },
+        "languages": {
+            "title": "Languages",
+            "native": "Native",
+            "levels": {
+                "A1": "Beginner",
+                "A2": "Elementary",
+                "B1": "Intermediate",
+                "B2": "Upper Intermediate",
+                "C1": "Advanced",
+                "C2": "Near Native"
+            }
         },
         "timeline": {
+            "title": "Professional Journey",
             "2024": {
                 "title": "Web Developer at Rotyre SARL",
-                "description": "Responsible for maintaining and developing the mullerpneus.lu website"
+                "description": "Responsible for maintaining and developing the website mullerpneus.lu"
             },
             "2023": {
                 "title": "Certification: General Aptitude Test",
-                "description": "Successfully completed the state examination for the public sector"
+                "description": "Successful completion of the state examination for the public sector"
             },
             "2021": {
                 "title": "Diploma in Cloud Computing (BTS)",
@@ -65,8 +96,26 @@
             },
             "2019": {
                 "title": "Diploma as IT Technician",
-                "description": "Graduated from Lycée Guillaume Kroll in Esch-sur-Alzette with 'Good' rating"
+                "description": "Graduation from Lycée Guillaume Kroll in Esch-sur-Alzette with 'Good' rating"
             }
+        },
+        "skills": {
+            "title": "Technical Skills",
+            "programming": "Programming",
+            "os": "Operating Systems",
+            "virtualization": "Virtualization",
+            "office": "Office Software"
+        },
+        "certifications": {
+            "title": "Certifications"
+        },
+        "experiences": {
+            "title": "Special Experiences"
+        },
+        "cta": {
+            "title": "Let's Work Together",
+            "subtitle": "Have a project in mind? I'd love to hear from you and discuss how I can help.",
+            "button": "Get in Touch"
         }
     },
     "services": {

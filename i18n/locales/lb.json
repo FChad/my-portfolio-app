@@ -67,6 +67,18 @@
                 "title": "Diplom als IT-Techniker",
                 "description": "Diplom vum Lycée Guillaume Kroll zu Esch-sur-Alzette mat der Bewäertung 'Gut'"
             }
+        },
+        "languages": {
+            "title": "Sproochen",
+            "native": "Mammesprooch",
+            "levels": {
+                "A1": "Ufänger",
+                "A2": "Elementar",
+                "B1": "Mëttelstufe",
+                "B2": "Gutt Mëttelstufe",
+                "C1": "Fortgeschratt",
+                "C2": "Bal Mammesprooch"
+            }
         }
     },
     "services": {

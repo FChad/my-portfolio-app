@@ -105,6 +105,9 @@ onUnmounted(() => {
                     class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
                 </div>
 
+                <!-- Grid Pattern -->
+                <div class="absolute inset-0 bg-grid-pattern opacity-15 dark:opacity-15"></div>
+
                 <!-- Floating Geometric Shapes -->
                 <div
                     class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-20 animate-float">
@@ -118,9 +121,6 @@ onUnmounted(() => {
                 <div
                     class="absolute bottom-20 right-32 w-28 h-28 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-20 animate-float-reverse">
                 </div>
-
-                <!-- Grid Pattern -->
-                <div class="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
 
                 <!-- Blur Orbs -->
                 <div
@@ -141,14 +141,14 @@ onUnmounted(() => {
                                 {{ $t('home.greeting') }}</p>
                             <h1 class="text-6xl md:text-8xl font-black leading-tight">
                                 <span
-                                    class="uppercase block bg-gradient-to-t from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                                    class="uppercase block bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
                                     Chad<br />Feierstein
                                 </span>
                             </h1>
                         </div>
 
                         <!-- Enhanced Typing Effect - Linux Shell Style -->
-                        <div class="h-28 flex items-center justify-center">
+                        <div class="h-32 flex items-center justify-center">
                             <div
                                 class="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg p-4 shadow-2xl font-mono text-left max-w-2xl w-full">
                                 <!-- Terminal Header -->
@@ -222,44 +222,56 @@ onUnmounted(() => {
                     <div>
                         <h2 class="text-4xl font-bold mb-6">{{ $t('about.title') }}</h2>
                         <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                            {{ $t('about.intro') }}
+                            {{ $t('about.story.intro') }}
                         </p>
                         <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                            {{ $t('about.focus') }}
+                            {{ $t('about.passion.description') }}
                         </p>
 
-                        <!-- Skills Pills -->
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">Vue.js</span>
-                            <span
-                                class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">Nuxt.js</span>
-                            <span
-                                class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium">TypeScript</span>
-                            <span
-                                class="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 rounded-full text-sm font-medium">Tailwind
-                                CSS</span>
-                            <span
-                                class="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium">Node.js</span>
+                        <!-- Enhanced Skills Pills -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold mb-4">{{ $t('about.skills.title') }}</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">Vue.js</span>
+                                <span
+                                    class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">Nuxt.js</span>
+                                <span
+                                    class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium">TypeScript</span>
+                                <span
+                                    class="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 rounded-full text-sm font-medium">Python</span>
+                                <span
+                                    class="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium">Docker</span>
+                                <span
+                                    class="px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full text-sm font-medium">Cloud
+                                    Computing</span>
+                            </div>
                         </div>
+
+                        <!-- CTA to About Page -->
+                        <NuxtLink to="/about"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                            {{ $t('home.about.cta') }}
+                            <Icon name="heroicons:arrow-right" class="w-4 h-4" />
+                        </NuxtLink>
                     </div>
 
-                    <!-- Interactive Stats -->
+                    <!-- Enhanced Stats -->
                     <div class="grid grid-cols-2 gap-6">
                         <div
                             class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">3+</div>
+                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</div>
                             <div class="text-gray-600 dark:text-gray-300">{{ $t('home.stats.experience') }}</div>
                         </div>
                         <div
                             class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">50+</div>
-                            <div class="text-gray-600 dark:text-gray-300">{{ $t('home.stats.projects') }}</div>
+                            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">10+</div>
+                            <div class="text-gray-600 dark:text-gray-300">{{ $t('home.stats.certifications') }}</div>
                         </div>
                         <div
                             class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">24/7</div>
-                            <div class="text-gray-600 dark:text-gray-300">Verfügbar</div>
+                            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">4</div>
+                            <div class="text-gray-600 dark:text-gray-300">{{ $t('home.stats.languages') }}</div>
                         </div>
                         <div
                             class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">

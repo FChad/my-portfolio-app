@@ -29,28 +29,59 @@
         "stats": {
             "projects": "Projekte",
             "experience": "Jahre Erfahrung",
-            "satisfaction": "Zufriedenheit"
+            "satisfaction": "Zufriedenheit",
+            "certifications": "Zertifizierungen",
+            "languages": "Sprachen"
+        },
+        "about": {
+            "cta": "Mehr über mich erfahren"
         }
     },
     "about": {
         "title": "Über mich",
         "intro": "Ich bin ein leidenschaftlicher Frontend-Entwickler mit einer Vorliebe für sauberen Code und innovative Designs. Mit mehreren Jahren Erfahrung in modernen Web-Technologien erstelle ich digitale Erlebnisse, die sowohl funktional als auch ästhetisch ansprechend sind.",
         "focus": "Mein Fokus liegt auf Vue.js, Nuxt.js und modernem TypeScript.",
+        "hero": {
+            "title": "Chad Feierstein",
+            "subtitle": "Mein Name ist Chad Feierstein, und die Technologie ist meine große Leidenschaft. Von klein auf begeistert mich die Kunst, komplexe Herausforderungen durch innovative digitale Lösungen zu meistern."
+        },
         "profile": {
+            "title": "Persönliche Informationen",
             "nationality": "Luxemburgisch",
             "location": "Rümelingen, Luxemburg",
-            "status": "Verfügbar für Projekte",
-            "age": "25 Jahre"
+            "status": "Single",
+            "age": "25 Jahre",
+            "driving": "Führerschein Kategorie B seit 2023",
+            "role": "Full-Stack Developer & IT-Techniker"
         },
-        "journey": {
-            "title": "Mein Werdegang",
-            "description": "Mein fachlicher Werdegang umfasst eine fundierte Ausbildung als IT-Techniker sowie einen höheren Abschluss (BTS) im Bereich Cloud Computing. Diese akademische Laufbahn, ergänzt durch praktische Erfahrungen, hat mir ein umfassendes Verständnis für zentrale IT-Bereiche vermittelt."
+        "story": {
+            "title": "Über mich",
+            "intro": "Mein Name ist Chad Feierstein, und die Technologie ist meine große Leidenschaft. Von klein auf begeistert mich die Kunst, komplexe Herausforderungen durch innovative digitale Lösungen zu meistern. Diese Faszination motiviert mich täglich, mein Wissen zu erweitern und neue Horizonte zu erkunden.",
+            "journey": "Mein fachlicher Werdegang umfasst eine fundierte Ausbildung als IT-Techniker sowie einen höheren Abschluss (BTS) im Bereich Cloud Computing. Diese akademische Laufbahn, ergänzt durch praktische Erfahrungen, hat mir ein umfassendes Verständnis für zentrale IT-Bereiche vermittelt.",
+            "passion": "Meine Leidenschaft gilt der Webentwicklung und Prozessautomatisierung. Mit Begeisterung entwickle ich maßgeschneiderte Webanwendungen und implementiere effiziente Serverlösungen."
         },
         "passion": {
             "title": "Leidenschaft für Technologie",
             "description": "Meine Leidenschaft gilt der Webentwicklung und Prozessautomatisierung. Mit Begeisterung entwickle ich maßgeschneiderte Webanwendungen und implementiere effiziente Serverlösungen."
         },
+        "hobbies": {
+            "title": "Hobbys und Interessen",
+            "description": "Abseits der digitalen Welt genieße ich wertvolle Momente im Kreise meiner Familie, zu der auch unsere drei pelzigen Begleiter gehören. Regelmäßige Treffen mit Freunden und gelegentliche Gaming-Sessions sorgen für den perfekten Ausgleich zu meinem technologiegeprägten Alltag."
+        },
+        "languages": {
+            "title": "Sprachen",
+            "native": "Muttersprache",
+            "levels": {
+                "A1": "Grundkenntnisse",
+                "A2": "Grundlegende Kenntnisse",
+                "B1": "Mittelstufe",
+                "B2": "Gute Mittelstufe",
+                "C1": "Fortgeschritten",
+                "C2": "Annähernd muttersprachlich"
+            }
+        },
         "timeline": {
+            "title": "Beruflicher Werdegang",
             "2024": {
                 "title": "Web-Entwickler bei Rotyre SARL",
                 "description": "Verantwortlich für die Wartung und Weiterentwicklung der Webseite mullerpneus.lu"
@@ -67,6 +98,24 @@
                 "title": "Diplom als IT-Techniker",
                 "description": "Abschluss am Lycée Guillaume Kroll in Esch-sur-Alzette mit der Bewertung 'Gut'"
             }
+        },
+        "skills": {
+            "title": "Technische Fähigkeiten",
+            "programming": "Programmierung",
+            "os": "Betriebssysteme",
+            "virtualization": "Virtualisierung",
+            "office": "Bürosoftware"
+        },
+        "certifications": {
+            "title": "Zertifizierungen"
+        },
+        "experiences": {
+            "title": "Besondere Erlebnisse"
+        },
+        "cta": {
+            "title": "Lassen Sie uns zusammenarbeiten",
+            "subtitle": "Haben Sie ein Projekt im Sinn? Ich würde gerne von Ihnen hören und besprechen, wie ich Ihnen helfen kann.",
+            "button": "Kontakt aufnehmen"
         }
     },
     "services": {

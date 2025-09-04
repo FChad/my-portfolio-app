@@ -29,28 +29,59 @@
         "stats": {
             "projects": "Projets",
             "experience": "Années d'Expérience",
-            "satisfaction": "Satisfaction"
+            "satisfaction": "Satisfaction",
+            "certifications": "Certifications",
+            "languages": "Langues"
+        },
+        "about": {
+            "cta": "En Savoir Plus"
         }
     },
     "about": {
         "title": "À Propos de Moi",
         "intro": "Je suis un développeur frontend passionné avec un amour pour le code propre et les designs innovants. Avec plusieurs années d'expérience dans les technologies web modernes, je crée des expériences numériques qui sont à la fois fonctionnelles et esthétiquement plaisantes.",
         "focus": "Mon focus se porte sur Vue.js, Nuxt.js et TypeScript moderne.",
+        "hero": {
+            "title": "Chad Feierstein",
+            "subtitle": "Je m'appelle Chad Feierstein, et la technologie est ma grande passion. Depuis mon plus jeune âge, je suis fasciné par l'art de maîtriser des défis complexes grâce à des solutions numériques innovantes."
+        },
         "profile": {
+            "title": "Informations Personnelles",
             "nationality": "Luxembourgeois",
             "location": "Rümelingen, Luxembourg",
-            "status": "Disponible pour Projets",
-            "age": "25 ans"
+            "status": "Célibataire",
+            "age": "25 ans",
+            "driving": "Permis de conduire catégorie B depuis 2023",
+            "role": "Développeur Full-Stack & Technicien Informatique"
         },
-        "journey": {
-            "title": "Mon Parcours",
-            "description": "Mon parcours professionnel comprend une formation complète en tant que technicien informatique ainsi qu'un diplôme supérieur (BTS) en Cloud Computing. Ce parcours académique, complété par une expérience pratique, m'a donné une compréhension globale des domaines informatiques centraux."
+        "story": {
+            "title": "À Propos de Moi",
+            "intro": "Je m'appelle Chad Feierstein, et la technologie est ma grande passion. Depuis mon plus jeune âge, je suis fasciné par l'art de maîtriser des défis complexes grâce à des solutions numériques innovantes. Cette fascination me motive quotidiennement à élargir mes connaissances et à explorer de nouveaux horizons.",
+            "journey": "Mon parcours professionnel comprend une formation complète en tant que technicien informatique ainsi qu'un diplôme supérieur (BTS) en Cloud Computing. Ce parcours académique, complété par une expérience pratique, m'a donné une compréhension globale des domaines informatiques centraux.",
+            "passion": "Ma passion réside dans le développement web et l'automatisation des processus. Je développe avec enthousiasme des applications web personnalisées et implémente des solutions serveur efficaces."
         },
         "passion": {
             "title": "Passion pour la Technologie",
             "description": "Ma passion réside dans le développement web et l'automatisation des processus. Je développe avec enthousiasme des applications web personnalisées et implémente des solutions serveur efficaces."
         },
+        "hobbies": {
+            "title": "Loisirs et Intérêts",
+            "description": "En dehors du monde numérique, je profite de moments précieux en famille, qui comprend aussi nos trois compagnons à fourrure. Des rencontres régulières avec des amis et des sessions de jeu occasionnelles offrent l'équilibre parfait à mon quotidien axé sur la technologie."
+        },
+        "languages": {
+            "title": "Langues",
+            "native": "Langue maternelle",
+            "levels": {
+                "A1": "Débutant",
+                "A2": "Élémentaire",
+                "B1": "Intermédiaire",
+                "B2": "Intermédiaire supérieur",
+                "C1": "Avancé",
+                "C2": "Quasi-natif"
+            }
+        },
         "timeline": {
+            "title": "Parcours Professionnel",
             "2024": {
                 "title": "Développeur Web chez Rotyre SARL",
                 "description": "Responsable de la maintenance et du développement du site web mullerpneus.lu"
@@ -67,6 +98,24 @@
                 "title": "Diplôme de Technicien Informatique",
                 "description": "Diplômé du Lycée Guillaume Kroll à Esch-sur-Alzette avec mention 'Bien'"
             }
+        },
+        "skills": {
+            "title": "Compétences Techniques",
+            "programming": "Programmation",
+            "os": "Systèmes d'Exploitation",
+            "virtualization": "Virtualisation",
+            "office": "Logiciels de Bureau"
+        },
+        "certifications": {
+            "title": "Certifications"
+        },
+        "experiences": {
+            "title": "Expériences Spéciales"
+        },
+        "cta": {
+            "title": "Travaillons Ensemble",
+            "subtitle": "Vous avez un projet en tête ? J'aimerais avoir de vos nouvelles et discuter de la façon dont je peux vous aider.",
+            "button": "Prendre Contact"
         }
     },
     "services": {
