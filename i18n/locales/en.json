@@ -3,7 +3,7 @@
         "home": "Home",
         "about": "About",
         "projects": "Projects",
-        "blog": "Blog",
+        "showcase": "Showcase",
         "contact": "Contact"
     },
     "home": {
@@ -32,7 +32,7 @@
         "title": "About Me",
         "hero": {
             "title": "Chad Feierstein",
-            "subtitle": "My name is Chad Feierstein, and technology is my great passion. From a young age, I have been fascinated by the art of mastering complex challenges through innovative digital solutions."
+            "subtitle": "Technology enthusiast with a focus on full-stack web development, IT administration, and server management."
         },
         "profile": {
             "title": "Personal Information",

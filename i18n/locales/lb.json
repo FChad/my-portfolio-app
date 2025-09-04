@@ -3,7 +3,7 @@
         "home": "Doheem",
         "about": "Iwwer mech",
         "projects": "Projeten",
-        "blog": "Blog",
+        "showcase": "Showcase",
         "contact": "Kontakt"
     },
     "home": {
@@ -32,7 +32,7 @@
         "title": "Iwwer mech",
         "hero": {
             "title": "Chad Feierstein",
-            "subtitle": "Mäin Numm ass Chad Feierstein, an d'Technologie ass meng grouss Passioun. Vun kleng op begeeschtert mech d'Konscht, komplex Erausfuerderungen duerch innovativ digital Léisungen ze meeschteren."
+            "subtitle": "Technologie-Enthusiast mat Fokus op Full-Stack Webentwicklung, IT-Administratioun a Serververwalltung."
         },
         "profile": {
             "title": "Perséinlech Informatiounen",

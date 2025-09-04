@@ -58,23 +58,15 @@ const texts = computed(() => [
                             <p class="text-2xl font-medium text-gray-600 dark:text-gray-400 tracking-wide uppercase">
                                 {{ $t('home.greeting') }}</p>
                             <h1 class="text-6xl md:text-8xl font-black leading-tight">
-                                <span
-                                    class="uppercase block text-gray-700 dark:text-gray-300">
+                                <span class="uppercase block text-gray-700 dark:text-gray-300">
                                     Chad<br />Feierstein
                                 </span>
                             </h1>
                         </div>
 
                         <!-- Enhanced Typing Effect - Linux Shell Style -->
-                        <TypingEffect 
-                            :texts="texts" 
-                            :typing-speed="100"
-                            :deleting-speed="50"
-                            :pause-duration="2000"
-                            terminal-user="chad"
-                            terminal-host="portfolio"
-                            command="echo"
-                        />
+                        <TypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50" :pause-duration="2000"
+                            terminal-user="chad" terminal-host="portfolio" command="echo" />
                     </div>
 
                     <!-- Value Proposition -->
@@ -168,7 +160,8 @@ const texts = computed(() => [
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Web Development Service -->
-                    <div class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon name="heroicons:code-bracket" class="w-8 h-8 text-white" />
@@ -185,7 +178,8 @@ const texts = computed(() => [
                     </div>
 
                     <!-- UI/UX Service -->
-                    <div class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon name="heroicons:paint-brush" class="w-8 h-8 text-white" />
@@ -202,7 +196,8 @@ const texts = computed(() => [
                     </div>
 
                     <!-- Consulting Service -->
-                    <div class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon name="heroicons:light-bulb" class="w-8 h-8 text-white" />

@@ -22,16 +22,28 @@ const certifications = [
         icon: 'heroicons:shield-check'
     },
     {
-        title: 'Cisco Certified Network Associate',
-        year: '2020-2021',
-        description: 'Enterprise-Netzwerke, Sicherheit und Automatisierung',
+        title: 'Cisco Certified Network Associate 3',
+        year: '2021',
+        description: '7.0 Enterprise-Netzwerke, Sicherheit und Automatisierung',
+        icon: 'heroicons:server'
+    },
+    {
+        title: 'Cisco Certified Network Associate 2',
+        year: '2020',
+        description: '7.0 Switching, Routing und Wireless-Grundlagen',
+        icon: 'heroicons:server'
+    },
+    {
+        title: 'Cisco Certified Network Associate 1',
+        year: '2020',
+        description: '7.0 Einführung in Netzwerke',
         icon: 'heroicons:server'
     },
     {
         title: 'Microsoft Office Specialist 2016',
         year: '2020',
         description: 'PowerPoint, Word, Excel, Outlook',
-        icon: 'simple-icons:microsoft'
+        icon: 'heroicons:document-text'
     }
 ]
 
@@ -54,7 +66,7 @@ const timeline = [
         year: '2021',
         title: 'Diplom in Cloud Computing (BTS)',
         description: 'Höherer technischer Abschluss im Bereich Cloud Computing am Lycée Guillaume Kroll',
-        icon: 'heroicons:cloud',
+        icon: 'heroicons:academic-cap',
         type: 'education'
     },
     {
@@ -76,7 +88,7 @@ const timeline = [
 const experiences = [
     {
         title: 'Helikopterrundflug',
-        description: 'Ein unvergessliches Erlebnis über die Landschaften Luxemburgs',
+        description: 'Ein unvergessliches Erlebnis über die Landschaften der dominikanischen Republik',
         icon: 'heroicons:paper-airplane'
     },
     {
@@ -102,8 +114,7 @@ const experiences = [
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h1 class="text-5xl md:text-6xl font-black mb-6">
-                        <span
-                            class="uppercase block bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                        <span class="uppercase block text-gray-700 dark:text-gray-300">
                             {{ $t('about.hero.title') }}
                         </span>
                     </h1>
@@ -120,23 +131,25 @@ const experiences = [
                                 <h2 class="text-3xl font-bold mb-6">{{ $t('about.profile.title') }}</h2>
                                 <div class="space-y-4">
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:map-pin" class="w-5 h-5 text-blue-600" />
+                                        <Icon name="heroicons:map-pin"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.location') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:flag" class="w-5 h-5 text-blue-600" />
+                                        <Icon name="heroicons:flag" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.nationality') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:cake" class="w-5 h-5 text-blue-600" />
+                                        <Icon name="heroicons:cake" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.age') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:heart" class="w-5 h-5 text-blue-600" />
+                                        <Icon name="heroicons:heart" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.status') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:academic-cap" class="w-5 h-5 text-blue-600" />
+                                        <Icon name="heroicons:academic-cap"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.driving') }}</span>
                                     </div>
                                 </div>
@@ -144,7 +157,7 @@ const experiences = [
 
                             <div class="text-center">
                                 <div
-                                    class="w-48 h-48 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-6">
+                                    class="w-48 h-48 mx-auto bg-blue-600 dark:bg-blue-400 rounded-full flex items-center justify-center mb-6">
                                     <Icon name="heroicons:user" class="w-24 h-24 text-white" />
                                 </div>
                                 <h3 class="text-2xl font-bold mb-2">Chad Feierstein</h3>
@@ -204,7 +217,7 @@ const experiences = [
                         </div>
                         <div class="text-center">
                             <span
-                                class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-xl rounded-full">
+                                class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white font-bold text-lg rounded-full">
                                 {{ lang.level }}
                             </span>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
@@ -222,31 +235,35 @@ const experiences = [
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.timeline.title') }}</h2>
 
                 <div class="relative">
-                    <!-- Timeline line -->
+                    <!-- Timeline line - Desktop centered, Mobile left -->
                     <div
-                        class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-500 h-full">
+                        class="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 w-1 bg-blue-600 dark:bg-blue-400 h-full">
                     </div>
 
                     <div class="space-y-12">
                         <div v-for="(item, index) in timeline" :key="item.year" :class="[
                             'relative flex items-center',
-                            index % 2 === 0 ? 'justify-start' : 'justify-end'
+                            'justify-start md:justify-start',
+                            index % 2 === 1 ? 'md:justify-end' : ''
                         ]">
-                            <!-- Timeline dot -->
-                            <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 z-10 flex items-center justify-center">
+                            <!-- Timeline dot - Mobile left positioned, Desktop centered -->
+                            <div :class="[
+                                'absolute w-5 h-5 rounded-full bg-blue-600 dark:bg-blue-400 z-10 flex items-center justify-center',
+                                'md:left-1/2 md:transform md:-translate-x-1/2'
+                            ]">
                                 <div class="w-3 h-3 bg-white dark:bg-gray-900 rounded-full"></div>
                             </div>
 
-                            <!-- Content card -->
+                            <!-- Content card - Mobile full width with left margin, Desktop alternating -->
                             <div :class="[
-                                'w-5/12 p-6 bg-white-100 dark:bg-gray-800 rounded-2xl shadow-lg',
-                                index % 2 === 0 ? 'mr-auto' : 'ml-auto'
+                                'p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg',
+                                'ml-8 w-full md:w-5/12 md:ml-0',
+                                index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                             ]">
                                 <div class="flex items-center gap-3 mb-3">
                                     <Icon :name="item.icon" :class="[
                                         'w-6 h-6',
-                                        item.type === 'work' ? 'text-blue-600' : 'text-purple-600'
+                                        item.type === 'work' ? 'text-blue-500' : 'text-purple-500'
                                     ]" />
                                     <span class="text-sm font-medium text-gray-500">{{ item.year }}</span>
                                 </div>
@@ -269,18 +286,18 @@ const experiences = [
                         class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="flex items-start gap-4">
                             <div
-                                class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                                class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                                 <Icon :name="cert.icon" class="w-6 h-6 text-white" />
                             </div>
-                            <div>
-                                <div class="flex items-center gap-3 mb-2">
-                                    <h3 class="font-bold text-lg">{{ cert.title }}</h3>
-                                    <span
-                                        class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full">
-                                        {{ cert.year }}
-                                    </span>
-                                </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-lg mb-2">{{ cert.title }}</h3>
                                 <p class="text-gray-600 dark:text-gray-300">{{ cert.description }}</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <span
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                                    {{ cert.year }}
+                                </span>
                             </div>
                         </div>
                     </div>

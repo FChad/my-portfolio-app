@@ -18,7 +18,7 @@ const mobileMenuOpen = ref(false)
                 </div>
 
                 <!-- Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-8">
+                <nav class="hidden md:flex items-center space-x-8 text-lg">
                     <NuxtLinkLocale to="/"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative group router-link-active">
                         {{ $t('nav.home') }}
@@ -31,9 +31,9 @@ const mobileMenuOpen = ref(false)
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
                     </NuxtLinkLocale>
-                    <NuxtLinkLocale to="/blog"
+                    <NuxtLinkLocale to="/showcase"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative group">
-                        {{ $t('nav.blog') }}
+                        {{ $t('nav.showcase') }}
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
                     </NuxtLinkLocale>
@@ -58,7 +58,7 @@ const mobileMenuOpen = ref(false)
 
             <!-- Mobile Navigation Menu -->
             <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
-                <div class="flex flex-col space-y-3">
+                <div class="flex flex-col space-y-3 text-lg">
                     <NuxtLinkLocale to="/" @click="mobileMenuOpen = false"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-3 py-2">
                         {{ $t('nav.home') }}
@@ -67,9 +67,9 @@ const mobileMenuOpen = ref(false)
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-3 py-2">
                         {{ $t('nav.about') }}
                     </NuxtLinkLocale>
-                    <NuxtLinkLocale to="/blog" @click="mobileMenuOpen = false"
+                    <NuxtLinkLocale to="/showcase" @click="mobileMenuOpen = false"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-3 py-2">
-                        {{ $t('nav.blog') }}
+                        {{ $t('nav.showcase') }}
                     </NuxtLinkLocale>
                     <div
                         class="flex items-center justify-center gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
