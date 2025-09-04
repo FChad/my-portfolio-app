@@ -59,18 +59,18 @@ const mobileMenuOpen = ref(false)
             <!-- Mobile Navigation Menu -->
             <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col space-y-3">
-                    <NuxtLink to="/" @click="mobileMenuOpen = false"
+                    <NuxtLinkLocale to="/" @click="mobileMenuOpen = false"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-3 py-2">
                         {{ $t('nav.home') }}
-                    </NuxtLink>
-                    <NuxtLink to="/about" @click="mobileMenuOpen = false"
+                    </NuxtLinkLocale>
+                    <NuxtLinkLocale to="/about" @click="mobileMenuOpen = false"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-3 py-2">
                         {{ $t('nav.about') }}
-                    </NuxtLink>
-                    <NuxtLink to="/blog" @click="mobileMenuOpen = false"
+                    </NuxtLinkLocale>
+                    <NuxtLinkLocale to="/blog" @click="mobileMenuOpen = false"
                         class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors px-3 py-2">
                         {{ $t('nav.blog') }}
-                    </NuxtLink>
+                    </NuxtLinkLocale>
                     <div
                         class="flex items-center justify-center gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
                         <LanguageSwitcher />

@@ -12,22 +12,19 @@ const texts = computed(() => [
     t('home.roles.solver')
 ])
 
-// Services configuration with icons and gradients
+// Services configuration with icons
 const services = computed(() => [
     {
         key: 'webdev',
-        icon: 'heroicons:code-bracket',
-        gradient: 'from-blue-500 to-cyan-500'
+        icon: 'heroicons:code-bracket'
     },
     {
         key: 'uiux',
-        icon: 'heroicons:paint-brush',
-        gradient: 'from-purple-500 to-pink-500'
+        icon: 'heroicons:paint-brush'
     },
     {
         key: 'consulting',
-        icon: 'heroicons:light-bulb',
-        gradient: 'from-green-500 to-emerald-500'
+        icon: 'heroicons:light-bulb'
     }
 ])
 
@@ -141,7 +138,7 @@ onUnmounted(() => {
                                 {{ $t('home.greeting') }}</p>
                             <h1 class="text-6xl md:text-8xl font-black leading-tight">
                                 <span
-                                    class="uppercase block bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                                    class="uppercase block text-gray-700 dark:text-gray-300">
                                     Chad<br />Feierstein
                                 </span>
                             </h1>
@@ -186,27 +183,20 @@ onUnmounted(() => {
                         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                             <!-- Primary CTA -->
                             <button
-                                class="group relative px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xlsp transition-all duration-300">
                                 <span class="relative z-10 flex items-center gap-3">
                                     <Icon name="heroicons:eye" class="w-6 h-6" />
                                     {{ $t('home.cta.primary') }}
                                 </span>
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                </div>
-                                <!-- Ripple Effect -->
-                                <div
-                                    class="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-500">
-                                </div>
                             </button>
 
                             <!-- Secondary CTA -->
                             <button
-                                class="group relative px-10 py-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-bold text-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:-translate-y-2 transition-all duration-500 shadow-xl">
+                                class="group relative px-10 py-5 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-bold text-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 shadow-lg">
                                 <span class="flex items-center gap-3">
                                     {{ $t('home.cta.secondary') }}
                                     <Icon name="heroicons:chat-bubble-left-right"
-                                        class="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+                                        class="w-6 h-6 transition-transform duration-300" />
                                 </span>
                             </button>
                         </div>
@@ -226,11 +216,11 @@ onUnmounted(() => {
                         </p>
 
                         <!-- CTA to About Page -->
-                        <NuxtLink to="/about"
-                            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        <NuxtLinkLocale to="/about"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300">
                             {{ $t('home.about.cta') }}
                             <Icon name="heroicons:arrow-right" class="w-4 h-4" />
-                        </NuxtLink>
+                        </NuxtLinkLocale>
                     </div>
 
                     <!-- Enhanced Stats -->
@@ -273,9 +263,9 @@ onUnmounted(() => {
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Dynamic Services Loop -->
                     <div v-for="service in services" :key="service.key"
-                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
-                            :class="`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`">
+                            class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon :name="service.icon" class="w-8 h-8 text-white" />
                         </div>
                         <h3 class="text-xl font-bold mb-4">{{ $t(`services.${service.key}.title`) }}</h3>
@@ -305,17 +295,18 @@ onUnmounted(() => {
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <section class="py-20 bg-blue-600 text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-bold mb-6">{{ $t('cta.title') }}</h2>
                 <p class="text-xl mb-8 opacity-90">
                     {{ $t('cta.subtitle') }}
                 </p>
-                <button
-                    class="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+
+                <NuxtLinkLocale to="/about"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
                     {{ $t('cta.button') }}
-                    <Icon name="heroicons:rocket-launch" class="inline-block ml-2 w-5 h-5" />
-                </button>
+                    <Icon name="heroicons:rocket-launch" class="w-5 h-5" />
+                </NuxtLinkLocale>
             </div>
         </section>
     </main>

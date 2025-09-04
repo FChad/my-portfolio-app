@@ -289,7 +289,7 @@ const experiences = [
         </section>
 
         <!-- Special Experiences Section -->
-        <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <section class="py-20 bg-blue-600 text-white">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.experiences.title') }}</h2>
 
@@ -313,11 +313,11 @@ const experiences = [
                 <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
                     {{ $t('about.cta.subtitle') }}
                 </p>
-                <NuxtLink to="/contact"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                <NuxtLinkLocale to="/contact"
+                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                     {{ $t('about.cta.button') }}
                     <Icon name="heroicons:arrow-right" class="w-5 h-5" />
-                </NuxtLink>
+                </NuxtLinkLocale>
             </div>
         </section>
     </main>
