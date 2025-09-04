@@ -235,12 +235,12 @@ const experiences = [
                             <!-- Timeline dot -->
                             <div
                                 class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 z-10 flex items-center justify-center">
-                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                                <div class="w-3 h-3 bg-white dark:bg-gray-900 rounded-full"></div>
                             </div>
 
                             <!-- Content card -->
                             <div :class="[
-                                'w-5/12 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg',
+                                'w-5/12 p-6 bg-white-100 dark:bg-gray-800 rounded-2xl shadow-lg',
                                 index % 2 === 0 ? 'mr-auto' : 'ml-auto'
                             ]">
                                 <div class="flex items-center gap-3 mb-3">
@@ -314,7 +314,7 @@ const experiences = [
                     {{ $t('about.cta.subtitle') }}
                 </p>
                 <NuxtLinkLocale to="/contact"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                     {{ $t('about.cta.button') }}
                     <Icon name="heroicons:arrow-right" class="w-5 h-5" />
                 </NuxtLinkLocale>

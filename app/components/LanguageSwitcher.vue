@@ -54,9 +54,7 @@ onUnmounted(() => {
             class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
             :aria-expanded="isOpen" aria-haspopup="true">
             <Icon :name="getFlag(locale)" class="w-5 h-5" />
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {{ currentLocale?.name }}
-            </span>
+
             <Icon name="heroicons:chevron-down" class="w-4 h-4 text-gray-500 transition-transform"
                 :class="{ 'rotate-180': isOpen }" />
         </button>

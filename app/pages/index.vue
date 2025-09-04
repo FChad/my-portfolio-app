@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { computed } from 'vue'
 
-// Typing effect
-const typingText = ref('')
 const { t } = useI18n()
 
 // Get translated texts dynamically
@@ -11,83 +9,6 @@ const texts = computed(() => [
     t('home.roles.serveradmin'),
     t('home.roles.solver')
 ])
-
-// Services configuration with icons
-const services = computed(() => [
-    {
-        key: 'webdev',
-        icon: 'heroicons:code-bracket'
-    },
-    {
-        key: 'uiux',
-        icon: 'heroicons:paint-brush'
-    },
-    {
-        key: 'consulting',
-        icon: 'heroicons:light-bulb'
-    }
-])
-
-let currentTextIndex = 0
-let currentCharIndex = 0
-let isDeleting = false
-let typingInterval: ReturnType<typeof setInterval>
-
-const typeText = () => {
-    const currentText = texts.value[currentTextIndex]
-
-    if (!currentText) return
-
-    if (!isDeleting) {
-        // Typing forward
-        if (currentCharIndex <= currentText.length) {
-            typingText.value = currentText.slice(0, currentCharIndex)
-            currentCharIndex++
-
-            // When word is complete, pause before deleting
-            if (currentCharIndex > currentText.length) {
-                clearInterval(typingInterval)
-                setTimeout(() => {
-                    isDeleting = true
-                    // Start deleting with faster interval
-                    typingInterval = setInterval(typeText, 50)
-                }, 2000)
-                return
-            }
-        }
-    } else {
-        // Deleting backward
-        if (currentCharIndex >= 0) {
-            typingText.value = currentText.slice(0, currentCharIndex)
-            currentCharIndex--
-
-            // When word is completely deleted
-            if (currentCharIndex < 0) {
-                isDeleting = false
-                currentTextIndex = (currentTextIndex + 1) % texts.value.length
-                currentCharIndex = 0 // Reset to start typing from beginning
-                clearInterval(typingInterval)
-
-                // Small pause before starting next word
-                setTimeout(() => {
-                    typingInterval = setInterval(typeText, 100)
-                }, 200)
-                return
-            }
-        }
-    }
-}
-
-onMounted(() => {
-    // Start with typing speed
-    typingInterval = setInterval(typeText, 100)
-})
-
-onUnmounted(() => {
-    if (typingInterval) {
-        clearInterval(typingInterval)
-    }
-})
 </script>
 
 <template>
@@ -145,30 +66,15 @@ onUnmounted(() => {
                         </div>
 
                         <!-- Enhanced Typing Effect - Linux Shell Style -->
-                        <div class="h-32 flex items-center justify-center">
-                            <div
-                                class="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg p-4 shadow-2xl font-mono text-left max-w-2xl w-full">
-                                <!-- Terminal Header -->
-                                <div
-                                    class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-300 dark:border-gray-600">
-                                    <div class="flex gap-2">
-                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                                    </div>
-                                    <span class="text-gray-600 dark:text-gray-400 text-sm ml-4">chad@portfolio:~$</span>
-                                </div>
-                                <!-- Terminal Content -->
-                                <div class="text-blue-600 dark:text-green-400 text-lg md:text-xl flex items-center">
-                                    <span class="text-gray-700 dark:text-gray-300 mr-2">echo</span>
-                                    <span class="text-purple-600 dark:text-yellow-300">"</span>
-                                    <span class="text-blue-600 dark:text-green-400">{{ typingText }}</span>
-                                    <span
-                                        class="w-2 h-5 bg-blue-600 dark:bg-green-400 animate-pulse ml-1 inline-block"></span>
-                                    <span class="text-purple-600 dark:text-yellow-300">"</span>
-                                </div>
-                            </div>
-                        </div>
+                        <TypingEffect 
+                            :texts="texts" 
+                            :typing-speed="100"
+                            :deleting-speed="50"
+                            :pause-duration="2000"
+                            terminal-user="chad"
+                            terminal-host="portfolio"
+                            command="echo"
+                        />
                     </div>
 
                     <!-- Value Proposition -->
@@ -261,33 +167,54 @@ onUnmounted(() => {
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Dynamic Services Loop -->
-                    <div v-for="service in services" :key="service.key"
-                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <!-- Web Development Service -->
+                    <div class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon :name="service.icon" class="w-8 h-8 text-white" />
+                            <Icon name="heroicons:code-bracket" class="w-8 h-8 text-white" />
                         </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t(`services.${service.key}.title`) }}</h3>
+                        <h3 class="text-xl font-bold mb-4">{{ $t('services.webdev.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t(`services.${service.key}.description`) }}
+                            {{ $t('services.webdev.description') }}
                         </p>
                         <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <template v-if="service.key === 'webdev'">
-                                <li>• {{ $t('services.webdev.features.spa') }}</li>
-                                <li>• {{ $t('services.webdev.features.ssr') }}</li>
-                                <li>• {{ $t('services.webdev.features.pwa') }}</li>
-                            </template>
-                            <template v-else-if="service.key === 'uiux'">
-                                <li>• {{ $t('services.uiux.features.responsive') }}</li>
-                                <li>• {{ $t('services.uiux.features.designSystems') }}</li>
-                                <li>• {{ $t('services.uiux.features.accessibility') }}</li>
-                            </template>
-                            <template v-else-if="service.key === 'consulting'">
-                                <li>• {{ $t('services.consulting.features.codeReviews') }}</li>
-                                <li>• {{ $t('services.consulting.features.performance') }}</li>
-                                <li>• {{ $t('services.consulting.features.techStack') }}</li>
-                            </template>
+                            <li>• {{ $t('services.webdev.features.spa') }}</li>
+                            <li>• {{ $t('services.webdev.features.ssr') }}</li>
+                            <li>• {{ $t('services.webdev.features.pwa') }}</li>
+                        </ul>
+                    </div>
+
+                    <!-- UI/UX Service -->
+                    <div class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <Icon name="heroicons:paint-brush" class="w-8 h-8 text-white" />
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">{{ $t('services.uiux.title') }}</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            {{ $t('services.uiux.description') }}
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                            <li>• {{ $t('services.uiux.features.responsive') }}</li>
+                            <li>• {{ $t('services.uiux.features.designSystems') }}</li>
+                            <li>• {{ $t('services.uiux.features.accessibility') }}</li>
+                        </ul>
+                    </div>
+
+                    <!-- Consulting Service -->
+                    <div class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <Icon name="heroicons:light-bulb" class="w-8 h-8 text-white" />
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">{{ $t('services.consulting.title') }}</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            {{ $t('services.consulting.description') }}
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                            <li>• {{ $t('services.consulting.features.codeReviews') }}</li>
+                            <li>• {{ $t('services.consulting.features.performance') }}</li>
+                            <li>• {{ $t('services.consulting.features.techStack') }}</li>
                         </ul>
                     </div>
                 </div>
