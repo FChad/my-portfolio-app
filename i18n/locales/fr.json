@@ -18,10 +18,8 @@
         "name": "Chad Feierstein",
         "roles": {
             "fullstack": "Développeur Full-Stack",
-            "vue": "Passionné de Vue.js",
-            "uiux": "Designer UI/UX",
-            "solver": "Résolveur de Problèmes",
-            "creator": "Créateur Numérique"
+            "serveradmin": "Administrateur Serveur",
+            "solver": "Résolveur de Problèmes"
         },
         "tagline": "Je crée des expériences numériques qui ne sont pas seulement belles mais qui fonctionnent parfaitement.",
         "cta": {
