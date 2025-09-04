@@ -6,207 +6,118 @@
         "blog": "Blog",
         "contact": "Kontakt"
     },
-    "languages": {
-        "luxembourgish": "Lëtzebuergesch",
-        "german": "Däitsch",
-        "english": "Englesch",
-        "french": "Franséisch"
-    },
     "home": {
-        "welcome": "Wëllkomm",
         "greeting": "Moien, ech sinn",
-        "name": "Chad Feierstein",
         "roles": {
             "fullstack": "Full-Stack Developer",
             "serveradmin": "Server Administrator",
             "solver": "Problem Solver"
         },
-        "tagline": "Ech kreéieren digital Erfahrungen déi net nëmmen schéin ausgesinn, awer och perfekt funktionéieren.",
+        "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten – a léiert mech dobäi besser kennen.",
         "cta": {
             "primary": "Projeten entdecken",
             "secondary": "Kontakt ophuelen"
         },
         "stats": {
-            "projects": "Projeten",
             "experience": "Joer Erfahrung",
-            "satisfaction": "Zefriddenheet"
+            "satisfaction": "Zefriddenheet",
+            "certifications": "Zertifizéierungen",
+            "languages": "Sproochen"
+        },
+        "about": {
+            "cta": "Méi iwwer mech erfahren"
         }
     },
     "about": {
         "title": "Iwwer mech",
-        "intro": "Ech sinn e passionéierten Frontend-Entwickler mat enger Virléift fir proper Code an innovativ Designen. Mat e puer Joer Erfahrung a modernen Web-Technologien kreéieren ech digital Erfahrungen déi souwuel funktional wéi och ästhetesch ugesprochen sinn.",
-        "focus": "Mäin Fokus läit op Vue.js, Nuxt.js a modernem TypeScript.",
-        "profile": {
-            "nationality": "Lëtzebuergesch",
-            "location": "Réimeléng, Lëtzebuerg",
-            "status": "Verfügbar fir Projeten",
-            "age": "25 Joer"
+        "hero": {
+            "title": "Chad Feierstein",
+            "subtitle": "Mäin Numm ass Chad Feierstein, an d'Technologie ass meng grouss Passioun. Vun kleng op begeeschtert mech d'Konscht, komplex Erausfuerderungen duerch innovativ digital Léisungen ze meeschteren."
         },
-        "journey": {
-            "title": "Mäin Werdegank",
-            "description": "Mäin fachlechen Werdegank ëmfaasst eng fondeiert Ausbildung als IT-Techniker souwéi en héije Diplom (BTS) am Beräich Cloud Computing. Dës akademesch Laufbunn, ergänzt duerch praktesch Erfahrungen, huet mir e komprehensivt Verständnis fir zentral IT-Beräicher vermëttelt."
+        "profile": {
+            "title": "Perséinlech Informatiounen",
+            "nationality": "Lëtzebuergesch",
+            "location": "Rëmeleng, Lëtzebuerg",
+            "status": "Single",
+            "age": "25 Joer",
+            "driving": "Führerschäin Kategorie B zënter 2023",
+            "role": "Full-Stack Developer & IT-Techniker"
+        },
+        "story": {
+            "title": "Iwwer mech",
+            "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
         },
         "passion": {
-            "title": "Passioun fir d'Technologie",
-            "description": "Meng Passioun läit am Web-Entwécklung an der Automatisatioun vu Prozesser. Ech entwéckelen mat Begeeschterung personaliséiert Web-Applikatiounen an implementéieren effizient Server-Léisungen."
+            "title": "Passioun fir Technologie",
+            "description": "Meng Passioun gëllt der Webentwicklung a Serververwaltung. Mat Begeeschterung entwéckelen ech maßgeschneidert Webanwendungen an implementéieren effizient Serverlëisungen."
         },
-        "timeline": {
-            "2024": {
-                "title": "Web Developer bei Rotyre SARL",
-                "description": "Responsabel fir d'Ënnerhalt an d'Entwécklung vum mullerpneus.lu Websäit"
-            },
-            "2023": {
-                "title": "Zertifikat: Allgemenge Eignungstest",
-                "description": "Erfollegräich de Staatsexamen fir den ëffentleche Secteur ofgeschloss"
-            },
-            "2021": {
-                "title": "Diplom am Cloud Computing (BTS)",
-                "description": "Héich technesch Diplom am Cloud Computing um Lycée Guillaume Kroll"
-            },
-            "2019": {
-                "title": "Diplom als IT-Techniker",
-                "description": "Diplom vum Lycée Guillaume Kroll zu Esch-sur-Alzette mat der Bewäertung 'Gut'"
-            }
+        "hobbies": {
+            "title": "Hobbyen an Interessen",
+            "description": "Nieft der digitaler Welt genéissen ech wäertvoll Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelmäßeg Treffen mat Frënn an occasionell Gaming-Sessiounen suergen fir de perfekten Ausgläich zu mengem technologiegeprägte Alldag."
         },
         "languages": {
             "title": "Sproochen",
-            "native": "Mammesprooch",
             "levels": {
-                "A1": "Ufänger",
-                "A2": "Elementar",
+                "A1": "Grondkenntnisser",
+                "A2": "Grondleeënd Kenntnisser",
                 "B1": "Mëttelstufe",
                 "B2": "Gutt Mëttelstufe",
-                "C1": "Fortgeschratt",
-                "C2": "Bal Mammesprooch"
+                "C1": "Fortgeschrëtten",
+                "C2": "Quasi Mammesproch"
             }
+        },
+        "timeline": {
+            "title": "Beruflechen Werdegank"
+        },
+        "certifications": {
+            "title": "Zertifizéierungen"
+        },
+        "experiences": {
+            "title": "Besonner Erliewnisser"
+        },
+        "cta": {
+            "title": "Looss eis zesummenaarbechten",
+            "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gären vun Iech héieren a bespréchen, wéi ech Iech hëllefen kann.",
+            "button": "Kontakt ophuelen"
         }
     },
     "services": {
         "title": "Wat ech ubidden",
-        "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen ugepasst Léisungen fir Är digital Ufuerderungen.",
+        "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen maßgeschneidert Léisungen fir Är digital Ufuerderungen.",
         "webdev": {
-            "title": "Web-Entwécklung",
-            "description": "Modern, responsiv Websäiten mat Vue.js, Nuxt.js an de leschten Web-Standarden.",
+            "title": "Web Development",
+            "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
             "features": {
-                "spa": "Single Page Applicatiounen",
+                "spa": "Single Page Applications",
                 "ssr": "Server-Side Rendering",
                 "pwa": "Progressive Web Apps"
             }
         },
         "uiux": {
             "title": "UI/UX Design",
-            "description": "Benotzerfrëndlech Interfaces déi souwuel schéin wéi och funktional sinn.",
+            "description": "Benotzerfrëndlech Interfaces, déi souwuel schéin wéi och funktionell sinn.",
             "features": {
-                "responsive": "Responsivt Design",
-                "designSystems": "Design Systemer",
-                "accessibility": "Accessibilitéit"
+                "responsive": "Responsive Design",
+                "designSystems": "Design Systems",
+                "accessibility": "Accessibility"
             }
         },
         "consulting": {
-            "title": "Berodung",
+            "title": "Consulting",
             "description": "Strategesch Berodung fir Är digital Projeten an technesch Architektur.",
             "features": {
                 "codeReviews": "Code Reviews",
                 "performance": "Performance Optimisatioun",
-                "techStack": "Technologie Stack"
+                "techStack": "Technology Stack"
             }
-        }
-    },
-    "skills": {
-        "frontend": "Frontend Entwécklung",
-        "backend": "Backend Entwécklung",
-        "tools": "Tools & Technologien",
-        "languages": "Programméierungssproochen"
-    },
-    "projects": {
-        "title": "Meng Projeten",
-        "subtitle": "Eng Auswiel vu mengen aktuellen Aarbechten a perséinleche Projeten",
-        "viewProject": "Projet kucken",
-        "sourceCode": "Quellcode",
-        "liveDemo": "Live Demo",
-        "technologies": "Benotzt Technologien",
-        "portfolio": {
-            "title": "Portfolio Websäit",
-            "description": "Eng modern, responsiv Portfolio Websäit gebaut mat Nuxt 3, TypeScript a Tailwind CSS. Ënnerstëtzt verschidden Sproochen an Dark Mode."
-        },
-        "chatbot": {
-            "title": "AI Chat Applikatioun",
-            "description": "Eng Chat-Applikatioun mat Ollama Integratioun fir lokal AI Modeller. Bitt eng intuitiv Benotzerinterfce fir AI Gespréicher."
-        }
-    },
-    "blog": {
-        "title": "Blog",
-        "subtitle": "Gedanken iwwer Technologie, Web-Entwécklung an aktuell Trenden",
-        "readMore": "Méi liesen",
-        "publishedOn": "Publizéiert den",
-        "author": "Chad Feierstein",
-        "posts": {
-            "welcome": {
-                "title": "Wëllkomm op mäin Portfolio Blog",
-                "excerpt": "Hei deelen ech meng Gedanken iwwer Web-Entwécklung, Design an Technologie. Bleiwen op dem Courant fir spannend Artikelen an Tutorialer!",
-                "tags": [
-                    "Web Entwécklung",
-                    "Portfolio"
-                ]
-            },
-            "nuxt3": {
-                "title": "Modern Web Entwécklung mat Nuxt 3",
-                "excerpt": "Entdeckt d'Méiglechkeeten vum Nuxt 3 a wéi et d'Vue.js Applikatiounsentwécklung revolutionéiert. Vum SSR bis zu statësche Säiten.",
-                "tags": [
-                    "Vue.js",
-                    "Nuxt.js",
-                    "SSR"
-                ]
-            }
-        }
-    },
-    "contact": {
-        "title": "Kontakt ophuelen",
-        "subtitle": "Hutt Dir Froen oder e spannende Projet? Looss eis doriwwer schwätzen!",
-        "form": {
-            "name": "Numm",
-            "email": "E-Mail",
-            "subject": "Sujet",
-            "message": "Message",
-            "send": "Message schécken",
-            "sending": "Schécken...",
-            "success": "Message erfollegräich geschéckt!",
-            "error": "Feeler beim Schécken vum Message."
-        },
-        "info": {
-            "email": "",
-            "location": "Réimeléng, Lëtzebuerg",
-            "availability": "Verfügbar fir nei Projeten"
         }
     },
     "cta": {
-        "title": "Prett fir Äre nächsten Projet?",
-        "subtitle": "Looss eis eppes Grousses zesummen kreéieren. Kontaktéiert mech fir eng onverbindlech Gespréich.",
+        "title": "Prett fir Äert nächst Projet?",
+        "subtitle": "Looss eis zesummen eppes Grousst schafen. Kontaktéiert mech fir en onverbindlechen Gespréich.",
         "button": "Projet starten"
     },
     "footer": {
-        "copyright": "© 2024 Chad Feierstein. Gebaut mat Nuxt 3, Tailwind CSS a Color Mode",
-        "social": {
-            "github": "GitHub",
-            "linkedin": "LinkedIn",
-            "email": "E-Mail"
-        }
-    },
-    "common": {
-        "loading": "Lueden...",
-        "error": "E Feeler ass opgetrueden",
-        "tryAgain": "Nach eng Kéier probéieren",
-        "close": "Zoumaachen",
-        "back": "Zréck",
-        "next": "Nächst",
-        "previous": "Viregt",
-        "readMore": "Méi liesen",
-        "learnMore": "Méi léieren",
-        "scrollDown": "Méi léieren"
-    },
-    "meta": {
-        "title": "Chad Feierstein - Full-Stack Developer & UI/UX Designer",
-        "description": "Portfolio vum Chad Feierstein - Spezialist a Vue.js, Nuxt.js a modern Web-Entwécklung. Verfügbar fir spannend Projeten.",
-        "keywords": "Chad Feierstein, Web Developer, Vue.js, Nuxt.js, TypeScript, Frontend, Portfolio, Lëtzebuerg"
+        "copyright": "© 2024 Chad Feierstein. Gebaut mat Nuxt 3, Tailwind CSS a Color Mode"
     }
 }

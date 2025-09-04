@@ -1,35 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-// Skills data organized by categories
-const programmingSkills = [
-    { name: 'Python', icon: 'devicon:python' },
-    { name: 'JavaScript', icon: 'devicon:javascript' },
-    { name: 'TypeScript', icon: 'devicon:typescript' },
-    { name: 'HTML5', icon: 'devicon:html5' },
-    { name: 'CSS3', icon: 'devicon:css3' },
-    { name: 'PHP', icon: 'devicon:php' },
-    { name: 'SQL', icon: 'devicon:mysql' },
-    { name: 'PowerShell', icon: 'devicon:powershell' },
-    { name: 'Bash', icon: 'devicon:bash' }
-]
-
-const operatingSystems = [
-    { name: 'Windows 10/11', icon: 'devicon:windows11' },
-    { name: 'Windows Server', icon: 'devicon:windows8' },
-    { name: 'Ubuntu', icon: 'devicon:ubuntu' },
-    { name: 'Debian', icon: 'devicon:debian' },
-    { name: 'Kali Linux', icon: 'simple-icons:kalilinux' }
-]
-
-const virtualization = [
-    { name: 'VMware ESXi', icon: 'simple-icons:vmware' },
-    { name: 'Proxmox', icon: 'simple-icons:proxmox' },
-    { name: 'Docker', icon: 'devicon:docker' },
-    { name: 'Kubernetes', icon: 'devicon:kubernetes' },
-    { name: 'VirtualBox', icon: 'simple-icons:virtualbox' }
-]
-
 const languages = [
     { name: 'Luxemburgisch', level: 'C2', native: true, flag: 'circle-flags:lu' },
     { name: 'Deutsch', level: 'C1', flag: 'circle-flags:de' },
@@ -131,7 +102,8 @@ const experiences = [
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h1 class="text-5xl md:text-6xl font-black mb-6">
-                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        <span
+                            class="uppercase block bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
                             {{ $t('about.hero.title') }}
                         </span>
                     </h1>
@@ -192,8 +164,6 @@ const experiences = [
                         <h2 class="text-4xl font-bold mb-6">{{ $t('about.story.title') }}</h2>
                         <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                             <p>{{ $t('about.story.intro') }}</p>
-                            <p>{{ $t('about.story.journey') }}</p>
-                            <p>{{ $t('about.story.passion') }}</p>
                         </div>
                     </div>
 
@@ -289,59 +259,8 @@ const experiences = [
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.skills.title') }}</h2>
-
-                <div class="space-y-12">
-                    <!-- Programming Skills -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-center">{{ $t('about.skills.programming') }}</h3>
-                        <div class="grid md:grid-cols-4 lg:grid-cols-6 gap-3">
-                            <div v-for="skill in programmingSkills" :key="skill.name"
-                                class="p-3 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                                <div class="text-center">
-                                    <Icon :name="skill.icon" class="w-8 h-8 mx-auto mb-2" />
-                                    <h4 class="font-medium text-sm">{{ skill.name }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Operating Systems -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-center">{{ $t('about.skills.os') }}</h3>
-                        <div class="grid md:grid-cols-4 lg:grid-cols-6 gap-3">
-                            <div v-for="os in operatingSystems" :key="os.name"
-                                class="p-3 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                                <div class="text-center">
-                                    <Icon :name="os.icon" class="w-8 h-8 mx-auto mb-2" />
-                                    <h4 class="font-medium text-sm">{{ os.name }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Virtualization -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-center">{{ $t('about.skills.virtualization') }}</h3>
-                        <div class="grid md:grid-cols-4 lg:grid-cols-6 gap-3">
-                            <div v-for="virt in virtualization" :key="virt.name"
-                                class="p-3 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                                <div class="text-center">
-                                    <Icon :name="virt.icon" class="w-8 h-8 mx-auto mb-2" />
-                                    <h4 class="font-medium text-sm">{{ virt.name }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Certifications Section -->
-        <section class="py-20">
+        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.certifications.title') }}</h2>
 

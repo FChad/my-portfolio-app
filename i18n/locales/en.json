@@ -6,28 +6,19 @@
         "blog": "Blog",
         "contact": "Contact"
     },
-    "languages": {
-        "luxembourgish": "Luxembourgish",
-        "german": "German",
-        "english": "English",
-        "french": "French"
-    },
     "home": {
-        "welcome": "Welcome",
         "greeting": "Hello, I'm",
-        "name": "Chad Feierstein",
         "roles": {
             "fullstack": "Full-Stack Developer",
             "serveradmin": "Server Administrator",
             "solver": "Problem Solver"
         },
-        "tagline": "I create digital experiences that not only look beautiful but also work perfectly.",
+        "tagline": "Discover my projects, skills and previous work – and get to know me better.",
         "cta": {
             "primary": "Discover Projects",
             "secondary": "Get in Touch"
         },
         "stats": {
-            "projects": "Projects",
             "experience": "Years Experience",
             "satisfaction": "Satisfaction",
             "certifications": "Certifications",
@@ -39,8 +30,6 @@
     },
     "about": {
         "title": "About Me",
-        "intro": "I'm a passionate frontend developer with a love for clean code and innovative designs. With several years of experience in modern web technologies, I create digital experiences that are both functional and aesthetically pleasing.",
-        "focus": "My focus is on Vue.js, Nuxt.js, and modern TypeScript.",
         "hero": {
             "title": "Chad Feierstein",
             "subtitle": "My name is Chad Feierstein, and technology is my great passion. From a young age, I have been fascinated by the art of mastering complex challenges through innovative digital solutions."
@@ -51,28 +40,25 @@
             "location": "Rümelingen, Luxembourg",
             "status": "Single",
             "age": "25 years old",
-            "driving": "Driving License Category B since 2023",
+            "driving": "Driver's license Category B since 2023",
             "role": "Full-Stack Developer & IT Technician"
         },
         "story": {
             "title": "About Me",
-            "intro": "My name is Chad Feierstein, and technology is my great passion. From a young age, I have been fascinated by the art of mastering complex challenges through innovative digital solutions. This fascination motivates me daily to expand my knowledge and explore new horizons.",
-            "journey": "My professional journey includes comprehensive training as an IT technician and a higher degree (BTS) in Cloud Computing. This academic path, complemented by practical experience, has given me a comprehensive understanding of core IT areas.",
-            "passion": "My passion lies in web development and process automation. I enthusiastically develop customized web applications and implement efficient server solutions."
+            "intro": "I am Chad Feierstein, a Full-Stack Web Developer and IT Administrator specializing in Cloud Computing. My passion lies in developing modern web applications and server management. With my education as an IT technician and a degree in Cloud Computing, I combine solid knowledge with practical experience to implement efficient and customized solutions."
         },
         "passion": {
             "title": "Passion for Technology",
-            "description": "My passion lies in web development and process automation. I enthusiastically develop customized web applications and implement efficient server solutions."
+            "description": "My passion is for web development and server administration. I enthusiastically develop customized web applications and implement efficient server solutions."
         },
         "hobbies": {
             "title": "Hobbies and Interests",
-            "description": "Outside the digital world, I enjoy precious moments with my family, which also includes our three furry companions. Regular meetings with friends and occasional gaming sessions provide the perfect balance to my technology-driven everyday life."
+            "description": "Away from the digital world, I enjoy precious moments with my family, which includes our three furry companions. Regular meetings with friends and occasional gaming sessions provide the perfect balance to my technology-driven everyday life."
         },
         "languages": {
             "title": "Languages",
-            "native": "Native",
             "levels": {
-                "A1": "Beginner",
+                "A1": "Basic",
                 "A2": "Elementary",
                 "B1": "Intermediate",
                 "B2": "Upper Intermediate",
@@ -81,30 +67,7 @@
             }
         },
         "timeline": {
-            "title": "Professional Journey",
-            "2024": {
-                "title": "Web Developer at Rotyre SARL",
-                "description": "Responsible for maintaining and developing the website mullerpneus.lu"
-            },
-            "2023": {
-                "title": "Certification: General Aptitude Test",
-                "description": "Successful completion of the state examination for the public sector"
-            },
-            "2021": {
-                "title": "Diploma in Cloud Computing (BTS)",
-                "description": "Higher technical degree in Cloud Computing at Lycée Guillaume Kroll"
-            },
-            "2019": {
-                "title": "Diploma as IT Technician",
-                "description": "Graduation from Lycée Guillaume Kroll in Esch-sur-Alzette with 'Good' rating"
-            }
-        },
-        "skills": {
-            "title": "Technical Skills",
-            "programming": "Programming",
-            "os": "Operating Systems",
-            "virtualization": "Virtualization",
-            "office": "Office Software"
+            "title": "Professional Journey"
         },
         "certifications": {
             "title": "Certifications"
@@ -114,13 +77,13 @@
         },
         "cta": {
             "title": "Let's Work Together",
-            "subtitle": "Have a project in mind? I'd love to hear from you and discuss how I can help.",
+            "subtitle": "Do you have a project in mind? I'd love to hear from you and discuss how I can help.",
             "button": "Get in Touch"
         }
     },
     "services": {
         "title": "What I Offer",
-        "subtitle": "From conception to implementation - I develop tailored solutions for your digital requirements.",
+        "subtitle": "From concept to implementation - I develop customized solutions for your digital requirements.",
         "webdev": {
             "title": "Web Development",
             "description": "Modern, responsive websites with Vue.js, Nuxt.js and the latest web standards.",
@@ -149,101 +112,12 @@
             }
         }
     },
-    "skills": {
-        "frontend": "Frontend Development",
-        "backend": "Backend Development",
-        "tools": "Tools & Technologies",
-        "languages": "Programming Languages"
-    },
-    "projects": {
-        "title": "My Projects",
-        "subtitle": "A selection of my current work and personal projects",
-        "viewProject": "View Project",
-        "sourceCode": "Source Code",
-        "liveDemo": "Live Demo",
-        "technologies": "Technologies Used",
-        "portfolio": {
-            "title": "Portfolio Website",
-            "description": "A modern, responsive portfolio website built with Nuxt 3, TypeScript and Tailwind CSS. Supports multiple languages and dark mode."
-        },
-        "chatbot": {
-            "title": "AI Chat Application",
-            "description": "A chat application with Ollama integration for local AI models. Provides an intuitive user interface for AI conversations."
-        }
-    },
-    "blog": {
-        "title": "Blog",
-        "subtitle": "Thoughts on technology, web development and current trends",
-        "readMore": "Read More",
-        "publishedOn": "Published on",
-        "author": "Chad Feierstein",
-        "posts": {
-            "welcome": {
-                "title": "Welcome to My Portfolio Blog",
-                "excerpt": "Here I share my thoughts on web development, design and technology. Stay tuned for exciting articles and tutorials!",
-                "tags": [
-                    "Web Development",
-                    "Portfolio"
-                ]
-            },
-            "nuxt3": {
-                "title": "Modern Web Development with Nuxt 3",
-                "excerpt": "Discover the possibilities of Nuxt 3 and how it revolutionizes Vue.js application development. From SSR to static sites.",
-                "tags": [
-                    "Vue.js",
-                    "Nuxt.js",
-                    "SSR"
-                ]
-            }
-        }
-    },
-    "contact": {
-        "title": "Get in Touch",
-        "subtitle": "Have questions or an exciting project? Let's talk about it!",
-        "form": {
-            "name": "Name",
-            "email": "Email",
-            "subject": "Subject",
-            "message": "Message",
-            "send": "Send Message",
-            "sending": "Sending...",
-            "success": "Message sent successfully!",
-            "error": "Error sending message."
-        },
-        "info": {
-            "email": "",
-            "location": "Rümelingen, Luxembourg",
-            "availability": "Available for new projects"
-        }
-    },
     "cta": {
         "title": "Ready for Your Next Project?",
         "subtitle": "Let's create something great together. Contact me for a no-obligation conversation.",
         "button": "Start Project"
     },
     "footer": {
-        "copyright": "© 2024 Chad Feierstein. Built with Nuxt 3, Tailwind CSS and Color Mode",
-        "social": {
-            "github": "GitHub",
-            "linkedin": "LinkedIn",
-            "email": "Email"
-        }
-    },
-    "common": {
-        "loading": "Loading...",
-        "error": "An error occurred",
-        "tryAgain": "Try Again",
-        "close": "Close",
-        "back": "Back",
-        "next": "Next",
-        "previous": "Previous",
-        "readMore": "Read More",
-        "learnMore": "Learn More",
-        "scrollDown": "Learn More"
-    },
-    "meta": {
-        "title": "Chad Feierstein - Full-Stack Developer & UI/UX Designer",
-        "description": "Portfolio of Chad Feierstein - Specialist in Vue.js, Nuxt.js and modern web development. Available for exciting projects.",
-        "keywords": "Chad Feierstein, Web Developer, Vue.js, Nuxt.js, TypeScript, Frontend, Portfolio, Luxembourg"
+        "copyright": "© 2024 Chad Feierstein. Built with Nuxt 3, Tailwind CSS and Color Mode"
     }
 }

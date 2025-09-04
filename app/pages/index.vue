@@ -137,7 +137,7 @@ onUnmounted(() => {
                     <!-- Main Headline with Enhanced Typography -->
                     <div class="space-y-4 mt-16">
                         <div class="space-y-2">
-                            <p class="text-lg font-medium text-gray-600 dark:text-gray-400 tracking-wide uppercase">
+                            <p class="text-2xl font-medium text-gray-600 dark:text-gray-400 tracking-wide uppercase">
                                 {{ $t('home.greeting') }}</p>
                             <h1 class="text-6xl md:text-8xl font-black leading-tight">
                                 <span
@@ -224,29 +224,6 @@ onUnmounted(() => {
                         <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                             {{ $t('about.story.intro') }}
                         </p>
-                        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                            {{ $t('about.passion.description') }}
-                        </p>
-
-                        <!-- Enhanced Skills Pills -->
-                        <div class="mb-8">
-                            <h3 class="text-lg font-semibold mb-4">{{ $t('about.skills.title') }}</h3>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">Vue.js</span>
-                                <span
-                                    class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">Nuxt.js</span>
-                                <span
-                                    class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium">TypeScript</span>
-                                <span
-                                    class="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 rounded-full text-sm font-medium">Python</span>
-                                <span
-                                    class="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium">Docker</span>
-                                <span
-                                    class="px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full text-sm font-medium">Cloud
-                                    Computing</span>
-                            </div>
-                        </div>
 
                         <!-- CTA to About Page -->
                         <NuxtLink to="/about"
