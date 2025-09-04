@@ -79,6 +79,74 @@
             "title": "Lassen Sie uns zusammenarbeiten",
             "subtitle": "Haben Sie ein Projekt im Sinn? Ich würde gerne von Ihnen hören und besprechen, wie ich Ihnen helfen kann.",
             "button": "Kontakt aufnehmen"
+        },
+        "languageNames": {
+            "luxemburgish": "Luxemburgisch",
+            "german": "Deutsch",
+            "english": "Englisch",
+            "french": "Französisch"
+        },
+        "certificationsList": {
+            "cert1": {
+                "title": "Die allgemeine Eignungsprüfung",
+                "description": "Staatlicher Sektor (Verwaltung)"
+            },
+            "cert2": {
+                "title": "Cisco Certified CyberOps Associate",
+                "description": "Cybersecurity Operations"
+            },
+            "cert3": {
+                "title": "Cisco Certified Network Associate 3",
+                "description": "7.0 Enterprise-Netzwerke, Sicherheit und Automatisierung"
+            },
+            "cert4": {
+                "title": "Cisco Certified Network Associate 2",
+                "description": "7.0 Switching, Routing und Wireless-Grundlagen"
+            },
+            "cert5": {
+                "title": "Cisco Certified Network Associate 1",
+                "description": "7.0 Einführung in Netzwerke"
+            },
+            "cert6": {
+                "title": "Microsoft Office Specialist 2016",
+                "description": "PowerPoint, Word, Excel, Outlook"
+            }
+        },
+        "timelineItems": {
+            "item1": {
+                "title": "Web-Entwickler bei Rotyre SARL",
+                "description": "Verantwortlich für die Wartung und Weiterentwicklung der Webseite mullerpneus.lu"
+            },
+            "item2": {
+                "title": "Zertifizierung: Allgemeine Eignungsprüfung",
+                "description": "Erfolgreicher Abschluss der staatlichen Prüfung für den öffentlichen Sektor"
+            },
+            "item3": {
+                "title": "Diplom in Cloud Computing (BTS)",
+                "description": "Höherer technischer Abschluss im Bereich Cloud Computing am Lycée Guillaume Kroll"
+            },
+            "item4": {
+                "title": "Ferienjob als IT-Techniker",
+                "description": "Tätigkeit am Lycée Guillaume Kroll: Installation von MIXvoip-Telefonen, Netzwerkmanagement"
+            },
+            "item5": {
+                "title": "Diplom als IT-Techniker",
+                "description": "Abschluss am Lycée Guillaume Kroll in Esch-sur-Alzette mit der Bewertung \"Gut\""
+            }
+        },
+        "experiencesList": {
+            "exp1": {
+                "title": "Helikopterrundflug",
+                "description": "Ein unvergessliches Erlebnis über die Landschaften der dominikanischen Republik"
+            },
+            "exp2": {
+                "title": "Fallschirmsprung über Luxemburg",
+                "description": "Adrenalinstoß aus 4000 Metern Höhe"
+            },
+            "exp3": {
+                "title": "Tomorrowland Belgien 2025",
+                "description": "Das ultimative elektronische Musikfestival-Erlebnis"
+            }
         }
     },
     "services": {

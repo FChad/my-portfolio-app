@@ -79,6 +79,74 @@
             "title": "Looss eis zesummenaarbechten",
             "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gären vun Iech héieren a bespréchen, wéi ech Iech hëllefen kann.",
             "button": "Kontakt ophuelen"
+        },
+        "languageNames": {
+            "luxemburgish": "Lëtzebuergesch",
+            "german": "Däitsch",
+            "english": "Englesch",
+            "french": "Franséisch"
+        },
+        "certificationsList": {
+            "cert1": {
+                "title": "Déi allgemeng Eignungsprüfung",
+                "description": "Staatlechen Secteur (Verwaltung)"
+            },
+            "cert2": {
+                "title": "Cisco Certified CyberOps Associate",
+                "description": "Cybersecurity Operatiounen"
+            },
+            "cert3": {
+                "title": "Cisco Certified Network Associate 3",
+                "description": "7.0 Enterprise-Netzwierker, Sécherheet an Automatisatioun"
+            },
+            "cert4": {
+                "title": "Cisco Certified Network Associate 2",
+                "description": "7.0 Switching, Routing a Wireless-Grondlagen"
+            },
+            "cert5": {
+                "title": "Cisco Certified Network Associate 1",
+                "description": "7.0 Aféierung an Netzwierker"
+            },
+            "cert6": {
+                "title": "Microsoft Office Specialist 2016",
+                "description": "PowerPoint, Word, Excel, Outlook"
+            }
+        },
+        "timelineItems": {
+            "item1": {
+                "title": "Web-Entwéckler bei Rotyre SARL",
+                "description": "Verantwortlech fir d'Ënnerhalt an d'Weiderentwécklung vun der Websäit mullerpneus.lu"
+            },
+            "item2": {
+                "title": "Zertifizéierung: Allgemeng Eignungsprüfung",
+                "description": "Erfollegräichen Ofschloss vun der staatlecher Prüfung fir den ëffentlechen Secteur"
+            },
+            "item3": {
+                "title": "Diplom am Cloud Computing (BTS)",
+                "description": "Héijen techneschen Ofschloss am Beräich Cloud Computing um Lycée Guillaume Kroll"
+            },
+            "item4": {
+                "title": "Ferienjob als IT-Techniker",
+                "description": "Täteegkeet um Lycée Guillaume Kroll: Installatioun vu MIXvoip-Telefonen, Netzwierksmanagement"
+            },
+            "item5": {
+                "title": "Diplom als IT-Techniker",
+                "description": "Ofschloss um Lycée Guillaume Kroll zu Esch-sur-Alzette mat der Bewäertung \"Gutt\""
+            }
+        },
+        "experiencesList": {
+            "exp1": {
+                "title": "Helikopterrondfluch",
+                "description": "En onvergiessleche Erliefnes iwwer d'Landschaften vun der dominikaner Republik"
+            },
+            "exp2": {
+                "title": "Fallschiermsprong iwwer Lëtzebuerg",
+                "description": "Adrenalinstouss aus 4000 Meter Héicht"
+            },
+            "exp3": {
+                "title": "Tomorrowland Belgien 2025",
+                "description": "Dat ultimativt elektronescht Museksfestival-Erliefnes"
+            }
         }
     },
     "services": {

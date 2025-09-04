@@ -79,6 +79,74 @@
             "title": "Travaillons Ensemble",
             "subtitle": "Avez-vous un projet en tête ? J'aimerais vous entendre et discuter de comment je peux vous aider.",
             "button": "Me Contacter"
+        },
+        "languageNames": {
+            "luxemburgish": "Luxembourgeois",
+            "german": "Allemand",
+            "english": "Anglais",
+            "french": "Français"
+        },
+        "certificationsList": {
+            "cert1": {
+                "title": "Test d'aptitude générale",
+                "description": "Secteur public (Administration)"
+            },
+            "cert2": {
+                "title": "Cisco Certified CyberOps Associate",
+                "description": "Opérations de cybersécurité"
+            },
+            "cert3": {
+                "title": "Cisco Certified Network Associate 3",
+                "description": "7.0 Réseaux d'entreprise, sécurité et automatisation"
+            },
+            "cert4": {
+                "title": "Cisco Certified Network Associate 2",
+                "description": "7.0 Commutation, routage et bases sans fil"
+            },
+            "cert5": {
+                "title": "Cisco Certified Network Associate 1",
+                "description": "7.0 Introduction aux réseaux"
+            },
+            "cert6": {
+                "title": "Microsoft Office Specialist 2016",
+                "description": "PowerPoint, Word, Excel, Outlook"
+            }
+        },
+        "timelineItems": {
+            "item1": {
+                "title": "Développeur Web chez Rotyre SARL",
+                "description": "Responsable de la maintenance et du développement du site web mullerpneus.lu"
+            },
+            "item2": {
+                "title": "Certification : Test d'aptitude générale",
+                "description": "Réussite de l'examen d'État pour le secteur public"
+            },
+            "item3": {
+                "title": "Diplôme en Cloud Computing (BTS)",
+                "description": "Diplôme technique supérieur en Cloud Computing au Lycée Guillaume Kroll"
+            },
+            "item4": {
+                "title": "Job d'été comme technicien IT",
+                "description": "Activité au Lycée Guillaume Kroll : Installation de téléphones MIXvoip, gestion de réseau"
+            },
+            "item5": {
+                "title": "Diplôme de technicien IT",
+                "description": "Diplômé du Lycée Guillaume Kroll à Esch-sur-Alzette avec mention \"Bien\""
+            }
+        },
+        "experiencesList": {
+            "exp1": {
+                "title": "Vol en hélicoptère",
+                "description": "Une expérience inoubliable au-dessus des paysages de la République dominicaine"
+            },
+            "exp2": {
+                "title": "Saut en parachute au-dessus du Luxembourg",
+                "description": "Montée d'adrénaline depuis 4000 mètres d'altitude"
+            },
+            "exp3": {
+                "title": "Tomorrowland Belgique 2025",
+                "description": "L'expérience ultime du festival de musique électronique"
+            }
         }
     },
     "services": {

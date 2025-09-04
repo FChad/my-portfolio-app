@@ -2,47 +2,47 @@
 const { t } = useI18n()
 
 const languages = [
-    { name: 'Luxemburgisch', level: 'C2', native: true, flag: 'circle-flags:lu' },
-    { name: 'Deutsch', level: 'C1', flag: 'circle-flags:de' },
-    { name: 'Englisch', level: 'B2', flag: 'circle-flags:gb' },
-    { name: 'Französisch', level: 'B1', flag: 'circle-flags:fr' }
+    { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
+    { name: t('about.languageNames.german'), level: 'C1', flag: 'circle-flags:de' },
+    { name: t('about.languageNames.english'), level: 'B2', flag: 'circle-flags:gb' },
+    { name: t('about.languageNames.french'), level: 'B1', flag: 'circle-flags:fr' }
 ]
 
 const certifications = [
     {
-        title: 'Die allgemeine Eignungsprüfung',
+        title: t('about.certificationsList.cert1.title'),
         year: '2023',
-        description: 'Staatlicher Sektor (Verwaltung)',
+        description: t('about.certificationsList.cert1.description'),
         icon: 'heroicons:academic-cap'
     },
     {
-        title: 'Cisco Certified CyberOps Associate',
+        title: t('about.certificationsList.cert2.title'),
         year: '2021',
-        description: 'Cybersecurity Operations',
+        description: t('about.certificationsList.cert2.description'),
         icon: 'heroicons:shield-check'
     },
     {
-        title: 'Cisco Certified Network Associate 3',
+        title: t('about.certificationsList.cert3.title'),
         year: '2021',
-        description: '7.0 Enterprise-Netzwerke, Sicherheit und Automatisierung',
+        description: t('about.certificationsList.cert3.description'),
         icon: 'heroicons:server'
     },
     {
-        title: 'Cisco Certified Network Associate 2',
+        title: t('about.certificationsList.cert4.title'),
         year: '2020',
-        description: '7.0 Switching, Routing und Wireless-Grundlagen',
+        description: t('about.certificationsList.cert4.description'),
         icon: 'heroicons:server'
     },
     {
-        title: 'Cisco Certified Network Associate 1',
+        title: t('about.certificationsList.cert5.title'),
         year: '2020',
-        description: '7.0 Einführung in Netzwerke',
+        description: t('about.certificationsList.cert5.description'),
         icon: 'heroicons:server'
     },
     {
-        title: 'Microsoft Office Specialist 2016',
+        title: t('about.certificationsList.cert6.title'),
         year: '2020',
-        description: 'PowerPoint, Word, Excel, Outlook',
+        description: t('about.certificationsList.cert6.description'),
         icon: 'heroicons:document-text'
     }
 ]
@@ -50,36 +50,36 @@ const certifications = [
 const timeline = [
     {
         year: '2024',
-        title: 'Web-Entwickler bei Rotyre SARL',
-        description: 'Verantwortlich für die Wartung und Weiterentwicklung der Webseite mullerpneus.lu',
+        title: t('about.timelineItems.item1.title'),
+        description: t('about.timelineItems.item1.description'),
         icon: 'heroicons:code-bracket',
         type: 'work'
     },
     {
         year: '2023',
-        title: 'Zertifizierung: Allgemeine Eignungsprüfung',
-        description: 'Erfolgreicher Abschluss der staatlichen Prüfung für den öffentlichen Sektor',
+        title: t('about.timelineItems.item2.title'),
+        description: t('about.timelineItems.item2.description'),
         icon: 'heroicons:academic-cap',
         type: 'education'
     },
     {
         year: '2021',
-        title: 'Diplom in Cloud Computing (BTS)',
-        description: 'Höherer technischer Abschluss im Bereich Cloud Computing am Lycée Guillaume Kroll',
+        title: t('about.timelineItems.item3.title'),
+        description: t('about.timelineItems.item3.description'),
         icon: 'heroicons:academic-cap',
         type: 'education'
     },
     {
         year: '2020',
-        title: 'Ferienjob als IT-Techniker',
-        description: 'Tätigkeit am Lycée Guillaume Kroll: Installation von MIXvoip-Telefonen, Netzwerkmanagement',
+        title: t('about.timelineItems.item4.title'),
+        description: t('about.timelineItems.item4.description'),
         icon: 'heroicons:wrench-screwdriver',
         type: 'work'
     },
     {
         year: '2019',
-        title: 'Diplom als IT-Techniker',
-        description: 'Abschluss am Lycée Guillaume Kroll in Esch-sur-Alzette mit der Bewertung "Gut"',
+        title: t('about.timelineItems.item5.title'),
+        description: t('about.timelineItems.item5.description'),
         icon: 'heroicons:academic-cap',
         type: 'education'
     }
@@ -87,18 +87,18 @@ const timeline = [
 
 const experiences = [
     {
-        title: 'Helikopterrundflug',
-        description: 'Ein unvergessliches Erlebnis über die Landschaften der dominikanischen Republik',
+        title: t('about.experiencesList.exp1.title'),
+        description: t('about.experiencesList.exp1.description'),
         icon: 'heroicons:paper-airplane'
     },
     {
-        title: 'Fallschirmsprung über Luxemburg',
-        description: 'Adrenalinstoß aus 4000 Metern Höhe',
+        title: t('about.experiencesList.exp2.title'),
+        description: t('about.experiencesList.exp2.description'),
         icon: 'heroicons:arrow-down-circle'
     },
     {
-        title: 'Tomorrowland Belgien 2025',
-        description: 'Das ultimative elektronische Musikfestival-Erlebnis',
+        title: t('about.experiencesList.exp3.title'),
+        description: t('about.experiencesList.exp3.description'),
         icon: 'heroicons:musical-note'
     }
 ]
