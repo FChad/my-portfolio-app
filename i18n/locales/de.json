@@ -26,6 +26,42 @@
         },
         "about": {
             "cta": "Mehr über mich erfahren"
+        },
+        "services": {
+            "title": "Was ich anbiete",
+            "subtitle": "Von der Konzeption bis zur Umsetzung - ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
+            "webdev": {
+                "title": "Web Development",
+                "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
+                "features": {
+                    "spa": "Single Page Applications",
+                    "ssr": "Server-Side Rendering",
+                    "pwa": "Progressive Web Apps"
+                }
+            },
+            "uiux": {
+                "title": "UI/UX Design",
+                "description": "Benutzerfreundliche Interfaces, die sowohl schön als auch funktional sind.",
+                "features": {
+                    "responsive": "Responsive Design",
+                    "designSystems": "Design Systems",
+                    "accessibility": "Accessibility"
+                }
+            },
+            "consulting": {
+                "title": "Consulting",
+                "description": "Strategische Beratung für Ihre digitalen Projekte und technische Architektur.",
+                "features": {
+                    "codeReviews": "Code Reviews",
+                    "performance": "Performance Optimization",
+                    "techStack": "Technology Stack"
+                }
+            }
+        },
+        "bottomCta": {
+            "title": "Bereit für Ihr nächstes Projekt?",
+            "subtitle": "Lassen Sie uns gemeinsam etwas Großartiges schaffen. Kontaktieren Sie mich für ein unverbindliches Gespräch.",
+            "button": "Projekt starten"
         }
     },
     "about": {
@@ -149,41 +185,39 @@
             }
         }
     },
-    "services": {
-        "title": "Was ich anbiete",
-        "subtitle": "Von der Konzeption bis zur Umsetzung - ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
-        "webdev": {
-            "title": "Web Development",
-            "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
-            "features": {
-                "spa": "Single Page Applications",
-                "ssr": "Server-Side Rendering",
-                "pwa": "Progressive Web Apps"
+    "showcase": {
+        "title": "Showcase",
+        "subtitle": "Entdecken Sie meine Projekte und Dokumentationen",
+        "projects": {
+            "myChatBot": {
+                "title": "My Chat Bot",
+                "description": "Ein moderner Chat-Bot mit AI-Integration"
+            },
+            "portfolio": {
+                "title": "Portfolio Website",
+                "description": "Meine persönliche Portfolio-Website"
             }
         },
-        "uiux": {
-            "title": "UI/UX Design",
-            "description": "Benutzerfreundliche Interfaces, die sowohl schön als auch funktional sind.",
-            "features": {
-                "responsive": "Responsive Design",
-                "designSystems": "Design Systems",
-                "accessibility": "Accessibility"
-            }
-        },
-        "consulting": {
-            "title": "Consulting",
-            "description": "Strategische Beratung für Ihre digitalen Projekte und technische Architektur.",
-            "features": {
-                "codeReviews": "Code Reviews",
-                "performance": "Performance Optimization",
-                "techStack": "Technology Stack"
+        "documentation": {
+            "debianInitialSetup": {
+                "title": "Debian 12 Initial Setup",
+                "description": "Vollständige Anleitung für die Debian 12 Einrichtung"
+            },
+            "ollamaSetup": {
+                "title": "Ollama Debian Setup",
+                "description": "Ollama Installation und Konfiguration unter Debian"
             }
         }
     },
-    "cta": {
-        "title": "Bereit für Ihr nächstes Projekt?",
-        "subtitle": "Lassen Sie uns gemeinsam etwas Großartiges schaffen. Kontaktieren Sie mich für ein unverbindliches Gespräch.",
-        "button": "Projekt starten"
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Lassen Sie uns über Ihr nächstes Projekt sprechen",
+        "form": {
+            "name": "Name",
+            "email": "E-Mail",
+            "message": "Nachricht",
+            "submit": "Nachricht senden"
+        }
     },
     "footer": {
         "copyright": "© 2024 Chad Feierstein. Erstellt mit Nuxt 3, Tailwind CSS und Color Mode"

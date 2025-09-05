@@ -26,6 +26,42 @@
         },
         "about": {
             "cta": "Méi iwwer mech erfahren"
+        },
+        "services": {
+            "title": "Wat ech ubidden",
+            "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
+            "webdev": {
+                "title": "Web Development",
+                "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
+                "features": {
+                    "spa": "Single Page Applications",
+                    "ssr": "Server-Side Rendering",
+                    "pwa": "Progressive Web Apps"
+                }
+            },
+            "uiux": {
+                "title": "UI/UX Design",
+                "description": "Benotzerfrëndlech Interfaces, déi souwuel schéin wéi och funktional sinn.",
+                "features": {
+                    "responsive": "Responsive Design",
+                    "designSystems": "Design Systems",
+                    "accessibility": "Accessibility"
+                }
+            },
+            "consulting": {
+                "title": "Consulting",
+                "description": "Strategesch Berodung fir Är digital Projeten an technesch Architektur.",
+                "features": {
+                    "codeReviews": "Code Reviews",
+                    "performance": "Performance Optimization",
+                    "techStack": "Technology Stack"
+                }
+            }
+        },
+        "bottomCta": {
+            "title": "Prett fir Äert nächst Projet?",
+            "subtitle": "Loosst eis zesummen eppes Grousses schafen. Kontaktéiert mech fir eng onverbindlech Gespréich.",
+            "button": "Projet starten"
         }
     },
     "about": {
@@ -49,35 +85,35 @@
         },
         "passion": {
             "title": "Passioun fir Technologie",
-            "description": "Meng Passioun gëllt der Webentwicklung a Serververwaltung. Mat Begeeschterung entwéckelen ech maßgeschneidert Webanwendungen an implementéieren effizient Serverlëisungen."
+            "description": "Meng Passioun gëllt der Webentwicklung a Serververwaltung. Mat Begeeschterung entwéckelen ech maßgeschneiderte Webanwendungen an implementéieren effizient Serverlëisungen."
         },
         "hobbies": {
             "title": "Hobbyen an Interessen",
-            "description": "Nieft der digitaler Welt genéissen ech wäertvoll Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelmäßeg Treffen mat Frënn an occasionell Gaming-Sessiounen suergen fir de perfekten Ausgläich zu mengem technologiegeprägte Alldag."
+            "description": "Niewent der digitaler Welt genéissen ech wäertvollt Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelméisseg Treffen mat Frënn an gelegentlech Gaming-Sessiounen suergen fir de perfekten Ausgleich zu mengem technologie-geprägte Alldag."
         },
         "languages": {
             "title": "Sproochen",
             "levels": {
                 "A1": "Grondkenntnisser",
                 "A2": "Grondleeënd Kenntnisser",
-                "B1": "Mëttelstufe",
-                "B2": "Gutt Mëttelstufe",
-                "C1": "Fortgeschrëtten",
-                "C2": "Quasi Mammesproch"
+                "B1": "Mëttelstuuf",
+                "B2": "Gutt Mëttelstuuf",
+                "C1": "Fortgeschratt",
+                "C2": "Bal muttersprochlech"
             }
         },
         "timeline": {
-            "title": "Beruflechen Werdegank"
+            "title": "Berufleche Werdegank"
         },
         "certifications": {
             "title": "Zertifizéierungen"
         },
         "experiences": {
-            "title": "Besonner Erliewnisser"
+            "title": "Besonner Erliefnesser"
         },
         "cta": {
-            "title": "Looss eis zesummenaarbechten",
-            "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gären vun Iech héieren a bespréchen, wéi ech Iech hëllefen kann.",
+            "title": "Loosst eis zesummenarbechten",
+            "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gär vun Iech héieren a bespriech, wéi ech Iech hëllefen kann.",
             "button": "Kontakt ophuelen"
         },
         "languageNames": {
@@ -89,11 +125,11 @@
         "certificationsList": {
             "cert1": {
                 "title": "Déi allgemeng Eignungsprüfung",
-                "description": "Staatlechen Secteur (Verwaltung)"
+                "description": "Staatleche Sektor (Verwaltung)"
             },
             "cert2": {
                 "title": "Cisco Certified CyberOps Associate",
-                "description": "Cybersecurity Operatiounen"
+                "description": "Cybersecurity Operations"
             },
             "cert3": {
                 "title": "Cisco Certified Network Associate 3",
@@ -115,77 +151,75 @@
         "timelineItems": {
             "item1": {
                 "title": "Web-Entwéckler bei Rotyre SARL",
-                "description": "Verantwortlech fir d'Ënnerhalt an d'Weiderentwécklung vun der Websäit mullerpneus.lu"
+                "description": "Verantwortlech fir d'Wuertung an d'Weiderentwécklung vun der Websäit mullerpneus.lu"
             },
             "item2": {
                 "title": "Zertifizéierung: Allgemeng Eignungsprüfung",
-                "description": "Erfollegräichen Ofschloss vun der staatlecher Prüfung fir den ëffentlechen Secteur"
+                "description": "Erfollegräichen Ofschloss vun der staatlecher Prüfung fir den ëffentleche Sektor"
             },
             "item3": {
-                "title": "Diplom am Cloud Computing (BTS)",
-                "description": "Héijen techneschen Ofschloss am Beräich Cloud Computing um Lycée Guillaume Kroll"
+                "title": "Diplom a Cloud Computing (BTS)",
+                "description": "Méi héijen techneschen Ofschloss am Beräich Cloud Computing um Lycée Guillaume Kroll"
             },
             "item4": {
-                "title": "Ferienjob als IT-Techniker",
-                "description": "Täteegkeet um Lycée Guillaume Kroll: Installatioun vu MIXvoip-Telefonen, Netzwierksmanagement"
+                "title": "Vakanzjob als IT-Techniker",
+                "description": "Tätegkeet um Lycée Guillaume Kroll: Installatioun vu MIXvoip-Telefonnen, Netzwierksmanagement"
             },
             "item5": {
                 "title": "Diplom als IT-Techniker",
-                "description": "Ofschloss um Lycée Guillaume Kroll zu Esch-sur-Alzette mat der Bewäertung \"Gutt\""
+                "description": "Ofschloss um Lycée Guillaume Kroll zu Esch-sur-Alzette mat der Bewäertung 'Gutt'"
             }
         },
         "experiencesList": {
             "exp1": {
-                "title": "Helikopterrondfluch",
-                "description": "En onvergiessleche Erliefnes iwwer d'Landschaften vun der dominikaner Republik"
+                "title": "Helicopter-Ronndfluch",
+                "description": "En onvergiesslechen Erliefnis iwwer d'Landschaften vun der dominikanescher Republik"
             },
             "exp2": {
                 "title": "Fallschiermsprong iwwer Lëtzebuerg",
                 "description": "Adrenalinstouss aus 4000 Meter Héicht"
             },
             "exp3": {
-                "title": "Tomorrowland Belgien 2025",
-                "description": "Dat ultimativt elektronescht Museksfestival-Erliefnes"
+                "title": "Tomorrowland Belsch 2025",
+                "description": "Dat ultimativt elektronescht Musikfestival-Erliefnis"
             }
         }
     },
-    "services": {
-        "title": "Wat ech ubidden",
-        "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen maßgeschneidert Léisungen fir Är digital Ufuerderungen.",
-        "webdev": {
-            "title": "Web Development",
-            "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
-            "features": {
-                "spa": "Single Page Applications",
-                "ssr": "Server-Side Rendering",
-                "pwa": "Progressive Web Apps"
+    "showcase": {
+        "title": "Showcase",
+        "subtitle": "Entdeckt meng Projeten an Dokumentatiounen",
+        "projects": {
+            "myChatBot": {
+                "title": "My Chat Bot",
+                "description": "E modernen Chat-Bot mat AI-Integratioun"
+            },
+            "portfolio": {
+                "title": "Portfolio Websäit",
+                "description": "Meng perséinlech Portfolio-Websäit"
             }
         },
-        "uiux": {
-            "title": "UI/UX Design",
-            "description": "Benotzerfrëndlech Interfaces, déi souwuel schéin wéi och funktionell sinn.",
-            "features": {
-                "responsive": "Responsive Design",
-                "designSystems": "Design Systems",
-                "accessibility": "Accessibility"
-            }
-        },
-        "consulting": {
-            "title": "Consulting",
-            "description": "Strategesch Berodung fir Är digital Projeten an technesch Architektur.",
-            "features": {
-                "codeReviews": "Code Reviews",
-                "performance": "Performance Optimisatioun",
-                "techStack": "Technology Stack"
+        "documentation": {
+            "debianInitialSetup": {
+                "title": "Debian 12 Initial Setup",
+                "description": "Vollständeg Uleedung fir d'Debian 12 Ariichtung"
+            },
+            "ollamaSetup": {
+                "title": "Ollama Debian Setup",
+                "description": "Ollama Installatioun a Konfiguratioun ënner Debian"
             }
         }
     },
-    "cta": {
-        "title": "Prett fir Äert nächst Projet?",
-        "subtitle": "Looss eis zesummen eppes Grousst schafen. Kontaktéiert mech fir en onverbindlechen Gespréich.",
-        "button": "Projet starten"
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Loosst eis iwwer Äert nächst Projet schwätzen",
+        "form": {
+            "name": "Numm",
+            "email": "E-Mail",
+            "message": "Message",
+            "submit": "Message schécken"
+        }
     },
     "footer": {
-        "copyright": "© 2024 Chad Feierstein. Gebaut mat Nuxt 3, Tailwind CSS a Color Mode"
+        "copyright": "© 2024 Chad Feierstein. Erstallt mat Nuxt 3, Tailwind CSS a Color Mode"
     }
 }

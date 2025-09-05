@@ -26,6 +26,42 @@
         },
         "about": {
             "cta": "En Savoir Plus Sur Moi"
+        },
+        "services": {
+            "title": "Ce Que J'Offre",
+            "subtitle": "De la conception à la mise en œuvre - je développe des solutions sur mesure pour vos besoins numériques.",
+            "webdev": {
+                "title": "Développement Web",
+                "description": "Sites web modernes et responsives avec Vue.js, Nuxt.js et les derniers standards web.",
+                "features": {
+                    "spa": "Applications Page Unique",
+                    "ssr": "Rendu Côté Serveur",
+                    "pwa": "Applications Web Progressives"
+                }
+            },
+            "uiux": {
+                "title": "Design UI/UX",
+                "description": "Interfaces conviviales qui sont à la fois belles et fonctionnelles.",
+                "features": {
+                    "responsive": "Design Responsive",
+                    "designSystems": "Systèmes de Design",
+                    "accessibility": "Accessibilité"
+                }
+            },
+            "consulting": {
+                "title": "Conseil",
+                "description": "Conseil stratégique pour vos projets numériques et architecture technique.",
+                "features": {
+                    "codeReviews": "Révisions de Code",
+                    "performance": "Optimisation des Performances",
+                    "techStack": "Stack Technologique"
+                }
+            }
+        },
+        "bottomCta": {
+            "title": "Prêt pour Votre Prochain Projet ?",
+            "subtitle": "Créons quelque chose de formidable ensemble. Contactez-moi pour une conversation sans engagement.",
+            "button": "Démarrer le Projet"
         }
     },
     "about": {
@@ -49,11 +85,11 @@
         },
         "passion": {
             "title": "Passion pour la Technologie",
-            "description": "Ma passion va au développement web et à l'administration de serveurs. Je développe avec enthousiasme des applications web sur mesure et implémente des solutions serveur efficaces."
+            "description": "Ma passion va au développement web et à l'administration de serveurs. J'développe avec enthousiasme des applications web sur mesure et implémente des solutions serveur efficaces."
         },
         "hobbies": {
             "title": "Loisirs et Intérêts",
-            "description": "Loin du monde numérique, je profite de moments précieux en famille, qui compte aussi nos trois compagnons à fourrure. Les rencontres régulières avec des amis et les sessions de jeux occasionnelles apportent l'équilibre parfait à mon quotidien axé sur la technologie."
+            "description": "Loin du monde numérique, j'apprécie les moments précieux en famille, qui comprend nos trois compagnons à fourrure. Des rencontres régulières avec des amis et des sessions de jeu occasionnelles apportent l'équilibre parfait à ma vie quotidienne axée sur la technologie."
         },
         "languages": {
             "title": "Langues",
@@ -61,9 +97,9 @@
                 "A1": "Débutant",
                 "A2": "Élémentaire",
                 "B1": "Intermédiaire",
-                "B2": "Intermédiaire Supérieur",
+                "B2": "Intermédiaire supérieur",
                 "C1": "Avancé",
-                "C2": "Proche Natif"
+                "C2": "Quasi natif"
             }
         },
         "timeline": {
@@ -77,7 +113,7 @@
         },
         "cta": {
             "title": "Travaillons Ensemble",
-            "subtitle": "Avez-vous un projet en tête ? J'aimerais vous entendre et discuter de comment je peux vous aider.",
+            "subtitle": "Avez-vous un projet en tête ? J'aimerais vous entendre et discuter de la façon dont je peux vous aider.",
             "button": "Me Contacter"
         },
         "languageNames": {
@@ -88,24 +124,24 @@
         },
         "certificationsList": {
             "cert1": {
-                "title": "Test d'aptitude générale",
-                "description": "Secteur public (Administration)"
+                "title": "Test d'Aptitude Générale",
+                "description": "Secteur Public (Administration)"
             },
             "cert2": {
                 "title": "Cisco Certified CyberOps Associate",
-                "description": "Opérations de cybersécurité"
+                "description": "Opérations de Cybersécurité"
             },
             "cert3": {
                 "title": "Cisco Certified Network Associate 3",
-                "description": "7.0 Réseaux d'entreprise, sécurité et automatisation"
+                "description": "7.0 Réseaux d'Entreprise, Sécurité et Automatisation"
             },
             "cert4": {
                 "title": "Cisco Certified Network Associate 2",
-                "description": "7.0 Commutation, routage et bases sans fil"
+                "description": "7.0 Commutation, Routage et Fondamentaux sans fil"
             },
             "cert5": {
                 "title": "Cisco Certified Network Associate 1",
-                "description": "7.0 Introduction aux réseaux"
+                "description": "7.0 Introduction aux Réseaux"
             },
             "cert6": {
                 "title": "Microsoft Office Specialist 2016",
@@ -118,7 +154,7 @@
                 "description": "Responsable de la maintenance et du développement du site web mullerpneus.lu"
             },
             "item2": {
-                "title": "Certification : Test d'aptitude générale",
+                "title": "Certification : Test d'Aptitude Générale",
                 "description": "Réussite de l'examen d'État pour le secteur public"
             },
             "item3": {
@@ -126,22 +162,22 @@
                 "description": "Diplôme technique supérieur en Cloud Computing au Lycée Guillaume Kroll"
             },
             "item4": {
-                "title": "Job d'été comme technicien IT",
+                "title": "Job de vacances comme Technicien IT",
                 "description": "Activité au Lycée Guillaume Kroll : Installation de téléphones MIXvoip, gestion de réseau"
             },
             "item5": {
-                "title": "Diplôme de technicien IT",
-                "description": "Diplômé du Lycée Guillaume Kroll à Esch-sur-Alzette avec mention \"Bien\""
+                "title": "Diplôme de Technicien IT",
+                "description": "Diplôme au Lycée Guillaume Kroll à Esch-sur-Alzette avec la mention 'Bien'"
             }
         },
         "experiencesList": {
             "exp1": {
-                "title": "Vol en hélicoptère",
+                "title": "Tour en Hélicoptère",
                 "description": "Une expérience inoubliable au-dessus des paysages de la République dominicaine"
             },
             "exp2": {
-                "title": "Saut en parachute au-dessus du Luxembourg",
-                "description": "Montée d'adrénaline depuis 4000 mètres d'altitude"
+                "title": "Saut en Parachute au Luxembourg",
+                "description": "Poussée d'adrénaline depuis 4000 mètres d'altitude"
             },
             "exp3": {
                 "title": "Tomorrowland Belgique 2025",
@@ -149,41 +185,39 @@
             }
         }
     },
-    "services": {
-        "title": "Ce Que J'Offre",
-        "subtitle": "De la conception à la mise en œuvre - je développe des solutions sur mesure pour vos besoins numériques.",
-        "webdev": {
-            "title": "Développement Web",
-            "description": "Sites web modernes et responsives avec Vue.js, Nuxt.js et les derniers standards web.",
-            "features": {
-                "spa": "Applications Page Unique",
-                "ssr": "Rendu Côté Serveur",
-                "pwa": "Applications Web Progressives"
+    "showcase": {
+        "title": "Showcase",
+        "subtitle": "Découvrez mes projets et documentation",
+        "projects": {
+            "myChatBot": {
+                "title": "My Chat Bot",
+                "description": "Un chatbot moderne avec intégration IA"
+            },
+            "portfolio": {
+                "title": "Site Web Portfolio",
+                "description": "Mon site web portfolio personnel"
             }
         },
-        "uiux": {
-            "title": "Design UI/UX",
-            "description": "Interfaces conviviales qui sont à la fois belles et fonctionnelles.",
-            "features": {
-                "responsive": "Design Responsive",
-                "designSystems": "Systèmes de Design",
-                "accessibility": "Accessibilité"
-            }
-        },
-        "consulting": {
-            "title": "Conseil",
-            "description": "Conseil stratégique pour vos projets numériques et architecture technique.",
-            "features": {
-                "codeReviews": "Révisions de Code",
-                "performance": "Optimisation des Performances",
-                "techStack": "Stack Technologique"
+        "documentation": {
+            "debianInitialSetup": {
+                "title": "Configuration Initiale Debian 12",
+                "description": "Guide complet pour la configuration Debian 12"
+            },
+            "ollamaSetup": {
+                "title": "Configuration Ollama Debian",
+                "description": "Installation et configuration d'Ollama sur Debian"
             }
         }
     },
-    "cta": {
-        "title": "Prêt pour Votre Prochain Projet ?",
-        "subtitle": "Créons quelque chose de formidable ensemble. Contactez-moi pour une conversation sans engagement.",
-        "button": "Démarrer le Projet"
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Parlons de votre prochain projet",
+        "form": {
+            "name": "Nom",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Envoyer le Message"
+        }
     },
     "footer": {
         "copyright": "© 2024 Chad Feierstein. Construit avec Nuxt 3, Tailwind CSS et Color Mode"

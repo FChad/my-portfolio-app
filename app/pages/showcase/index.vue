@@ -1,8 +1,76 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+const localePath = useLocalePath()
+const { t } = useI18n()
 
-// Mobile menu state
-const mobileMenuOpen = ref(false)
+interface ShowcaseItem {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    tags: string[];
+    link: string;
+    type: 'project' | 'documentation';
+    icon?: string;
+}
+
+const showcaseItems: ShowcaseItem[] = [
+    {
+        id: 1,
+        title: "showcase.projects.myChatBot.title",
+        description: "showcase.projects.myChatBot.description",
+        image: "/img/showcase/projects/my-chat-bot-cover.svg",
+        tags: ["Nuxt3", "Vue3", "TypeScript", "Pinia", "Tailwind", "Ollama", "AI", "Chat", "SSE"],
+        link: localePath('/showcase/project/my-chat-bot'),
+        type: 'project'
+    },
+    {
+        id: 2,
+        title: "showcase.projects.portfolio.title",
+        description: "showcase.projects.portfolio.description",
+        image: "/img/showcase/projects/portfolio-website-cover.svg",
+        tags: ["Nuxt3", "TypeScript", "Tailwind", "i18n", "VeeValidate", "Resend", "Iconify"],
+        link: localePath('/showcase/project/my-portfolio-website'),
+        type: 'project'
+    },
+
+    {
+        id: 3,
+        title: "showcase.documentation.debianInitialSetup.title",
+        description: "showcase.documentation.debianInitialSetup.description",
+        image: "/img/showcase/projects/debian-12-initial-setup-cover.svg",
+        tags: ["Debian 12", "Server Setup", "Linux", "System Administration"],
+        link: localePath('/showcase/documentation/debian-12-initial-setup'),
+        type: 'documentation'
+    },
+    {
+        id: 4,
+        title: "showcase.documentation.ollamaSetup.title",
+        description: "showcase.documentation.ollamaSetup.description",
+        image: "/img/showcase/projects/ollama-debian-setup-cover.svg",
+        tags: ["Debian 12", "Ollama", "Apache2", "SSL/TLS", "API", "AI"],
+        link: localePath('/showcase/documentation/ollama-debian-setup'),
+        type: 'documentation'
+    },
+    {
+        id: 5,
+        title: "showcase.documentation.cardanoNodeSetup.title",
+        description: "showcase.documentation.cardanoNodeSetup.description",
+        image: "/img/showcase/projects/cardano-node-debian-setup-cover.svg",
+        tags: ["Debian 12", "Cardano", "NIX", "Blockchain", "Cryptocurrency", "Node"],
+        link: localePath('/showcase/documentation/cardano-node-debian-setup'),
+        type: 'documentation'
+    },
+    {
+        id: 6,
+        title: "showcase.documentation.cardanoDbSyncSetup.title",
+        description: "showcase.documentation.cardanoDbSyncSetup.description",
+        image: "/img/showcase/projects/cardano-db-sync-debian-setup-cover.svg",
+        tags: ["Debian 12", "Cardano DB Sync", "PostgreSQL", "NIX", "Blockchain", "Database"],
+        link: localePath('/showcase/documentation/cardano-db-sync-debian-setup'),
+        type: 'documentation'
+    }
+];
+
 </script>
 
 <template>

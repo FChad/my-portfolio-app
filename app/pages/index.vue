@@ -152,9 +152,9 @@ const texts = computed(() => [
         <section class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">{{ $t('services.title') }}</h2>
+                    <h2 class="text-4xl font-bold mb-4">{{ $t('home.services.title') }}</h2>
                     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        {{ $t('services.subtitle') }}
+                        {{ $t('home.services.subtitle') }}
                     </p>
                 </div>
 
@@ -166,14 +166,14 @@ const texts = computed(() => [
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon name="heroicons:code-bracket" class="w-8 h-8 text-white" />
                         </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t('services.webdev.title') }}</h3>
+                        <h3 class="text-xl font-bold mb-4">{{ $t('home.services.webdev.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t('services.webdev.description') }}
+                            {{ $t('home.services.webdev.description') }}
                         </p>
                         <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <li>• {{ $t('services.webdev.features.spa') }}</li>
-                            <li>• {{ $t('services.webdev.features.ssr') }}</li>
-                            <li>• {{ $t('services.webdev.features.pwa') }}</li>
+                            <li>• {{ $t('home.services.webdev.features.spa') }}</li>
+                            <li>• {{ $t('home.services.webdev.features.ssr') }}</li>
+                            <li>• {{ $t('home.services.webdev.features.pwa') }}</li>
                         </ul>
                     </div>
 
@@ -184,14 +184,14 @@ const texts = computed(() => [
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon name="heroicons:paint-brush" class="w-8 h-8 text-white" />
                         </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t('services.uiux.title') }}</h3>
+                        <h3 class="text-xl font-bold mb-4">{{ $t('home.services.uiux.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t('services.uiux.description') }}
+                            {{ $t('home.services.uiux.description') }}
                         </p>
                         <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <li>• {{ $t('services.uiux.features.responsive') }}</li>
-                            <li>• {{ $t('services.uiux.features.designSystems') }}</li>
-                            <li>• {{ $t('services.uiux.features.accessibility') }}</li>
+                            <li>• {{ $t('home.services.uiux.features.responsive') }}</li>
+                            <li>• {{ $t('home.services.uiux.features.designSystems') }}</li>
+                            <li>• {{ $t('home.services.uiux.features.accessibility') }}</li>
                         </ul>
                     </div>
 
@@ -202,14 +202,14 @@ const texts = computed(() => [
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <Icon name="heroicons:light-bulb" class="w-8 h-8 text-white" />
                         </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t('services.consulting.title') }}</h3>
+                        <h3 class="text-xl font-bold mb-4">{{ $t('home.services.consulting.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t('services.consulting.description') }}
+                            {{ $t('home.services.consulting.description') }}
                         </p>
                         <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <li>• {{ $t('services.consulting.features.codeReviews') }}</li>
-                            <li>• {{ $t('services.consulting.features.performance') }}</li>
-                            <li>• {{ $t('services.consulting.features.techStack') }}</li>
+                            <li>• {{ $t('home.services.consulting.features.codeReviews') }}</li>
+                            <li>• {{ $t('home.services.consulting.features.performance') }}</li>
+                            <li>• {{ $t('home.services.consulting.features.techStack') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -219,14 +219,14 @@ const texts = computed(() => [
         <!-- CTA Section -->
         <section class="py-20 bg-blue-600 text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold mb-6">{{ $t('cta.title') }}</h2>
+                <h2 class="text-4xl font-bold mb-6">{{ $t('home.bottomCta.title') }}</h2>
                 <p class="text-xl mb-8 opacity-90">
-                    {{ $t('cta.subtitle') }}
+                    {{ $t('home.bottomCta.subtitle') }}
                 </p>
 
                 <NuxtLinkLocale to="/about"
                     class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
-                    {{ $t('cta.button') }}
+                    {{ $t('home.bottomCta.button') }}
                     <Icon name="heroicons:rocket-launch" class="w-5 h-5" />
                 </NuxtLinkLocale>
             </div>
