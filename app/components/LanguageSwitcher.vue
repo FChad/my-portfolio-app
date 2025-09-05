@@ -55,7 +55,7 @@ onUnmounted(() => {
             :aria-expanded="isOpen" aria-haspopup="true">
             <Icon :name="getFlag(locale)" class="w-5 h-5" />
 
-            <Icon name="heroicons:chevron-down" class="w-4 h-4 text-gray-500 transition-transform"
+            <Icon name="heroicons:chevron-down" class="w-4 h-4 text-gray-700 dark:text-gray-300 transition-transform"
                 :class="{ 'rotate-180': isOpen }" />
         </button>
 

@@ -230,11 +230,33 @@
     "contact": {
         "title": "Kontakt",
         "subtitle": "Lassen Sie uns über Ihr nächstes Projekt sprechen",
+        "info": {
+            "title": "Kontaktinformationen",
+            "description": "Ich freue mich darauf, von Ihnen zu hören! Ob Sie Fragen haben, ein Projekt besprechen oder einfach nur Hallo sagen möchten - zögern Sie nicht, mich zu kontaktieren."
+        },
+        "availability": {
+            "title": "Verfügbarkeit",
+            "description": "Normalerweise antworte ich innerhalb von 24 Stunden. Für dringende Anfragen kontaktieren Sie mich bitte direkt per E-Mail."
+        },
         "form": {
+            "title": "Nachricht senden",
+            "description": "Füllen Sie das untenstehende Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.",
             "name": "Name",
+            "namePlaceholder": "Ihr vollständiger Name",
             "email": "E-Mail",
+            "subject": "Betreff",
+            "subjectPlaceholder": "Worum geht es?",
             "message": "Nachricht",
-            "submit": "Nachricht senden"
+            "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
+            "submit": "Nachricht senden",
+            "sending": "Wird gesendet...",
+            "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden."
+        },
+        "cta": {
+            "title": "Bereit für Ihr nächstes Projekt?",
+            "subtitle": "Schauen Sie sich meine Arbeiten an oder erfahren Sie mehr über meine Erfahrungen.",
+            "showcase": "Meine Arbeiten ansehen",
+            "about": "Über mich erfahren"
         }
     },
     "footer": {

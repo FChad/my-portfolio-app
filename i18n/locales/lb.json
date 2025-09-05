@@ -230,11 +230,33 @@
     "contact": {
         "title": "Kontakt",
         "subtitle": "Loosst eis iwwer Äert nächst Projet schwätzen",
+        "info": {
+            "title": "Kontakt Informatiounen",
+            "description": "Ech freeën mech drop, vun Iech ze héieren! Ob Dir Froen hutt, iwwer e Projet schwätzen wëllt oder einfach nëmmen Hallo soen - zéckt net ze kontaktéieren."
+        },
+        "availability": {
+            "title": "Disponibilitéit",
+            "description": "Normalerweis äntweren ech bannent 24 Stonnen. Fir dréngend Ufroen, kontaktéiert mech wannech gelift direkt per E-Mail."
+        },
         "form": {
+            "title": "Message schécken",
+            "description": "Fëllt de Formulaire hei ënnendrënner aus an ech mellen mech sou séier wéi méiglech bei Iech.",
             "name": "Numm",
+            "namePlaceholder": "Äre kompletten Numm",
             "email": "E-Mail",
+            "subject": "Sujet",
+            "subjectPlaceholder": "Wou geet et drëm?",
             "message": "Message",
-            "submit": "Message schécken"
+            "messagePlaceholder": "Erzielt mer vun Ärem Projet oder Ärer Ufro...",
+            "submit": "Message schécken",
+            "sending": "Gëtt geschéckt...",
+            "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech."
+        },
+        "cta": {
+            "title": "Prett fir Äert nächst Projet?",
+            "subtitle": "Kuckt Iech meng Aarbecht un oder léiert méi iwwer meng Erfarung.",
+            "showcase": "Meng Aarbecht ukucken",
+            "about": "Iwwer mech léieren"
         }
     },
     "footer": {

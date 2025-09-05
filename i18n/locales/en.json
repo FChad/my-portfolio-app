@@ -230,11 +230,33 @@
     "contact": {
         "title": "Contact",
         "subtitle": "Let's talk about your next project",
+        "info": {
+            "title": "Contact Information",
+            "description": "I'd love to hear from you! Whether you have questions, want to discuss a project, or just want to say hello - don't hesitate to reach out."
+        },
+        "availability": {
+            "title": "Availability",
+            "description": "I usually respond within 24 hours. For urgent inquiries, please contact me directly via email."
+        },
         "form": {
+            "title": "Send a Message",
+            "description": "Fill out the form below and I'll get back to you as soon as possible.",
             "name": "Name",
+            "namePlaceholder": "Your full name",
             "email": "Email",
+            "subject": "Subject",
+            "subjectPlaceholder": "What is this about?",
             "message": "Message",
-            "submit": "Send Message"
+            "messagePlaceholder": "Tell me about your project or inquiry...",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Thank you! Your message has been sent successfully. I'll get back to you soon."
+        },
+        "cta": {
+            "title": "Ready for Your Next Project?",
+            "subtitle": "Check out my work or learn more about my experience.",
+            "showcase": "View My Work",
+            "about": "Learn About Me"
         }
     },
     "footer": {
