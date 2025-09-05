@@ -188,24 +188,42 @@
     "showcase": {
         "title": "Showcase",
         "subtitle": "Entdeckt meng Projeten an Dokumentatiounen",
+        "filters": {
+            "all": "All",
+            "projects": "Projeten",
+            "documentation": "Dokumentatiounen"
+        },
+        "labels": {
+            "project": "Projet",
+            "documentation": "Dokumentatioun",
+            "viewDetails": "Detailer weisen"
+        },
         "projects": {
             "myChatBot": {
-                "title": "My Chat Bot",
-                "description": "E modernen Chat-Bot mat AI-Integratioun"
+                "title": "Mäin Chat Bot",
+                "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
             },
-            "portfolio": {
-                "title": "Portfolio Websäit",
-                "description": "Meng perséinlech Portfolio-Websäit"
+            "myPortfolio": {
+                "title": "Meng Portfolio Websäit",
+                "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung."
             }
         },
         "documentation": {
             "debianInitialSetup": {
-                "title": "Debian 12 Initial Setup",
-                "description": "Vollständeg Uleedung fir d'Debian 12 Ariichtung"
+                "title": "Debian 12 - Server Éischtariichtung",
+                "description": "Schrëtt-fir-Schrëtt Uleedung fir déi éischt wichteg Schrëtt beim Ariichten vun engem frësche Debian 12 Server"
             },
             "ollamaSetup": {
-                "title": "Ollama Debian Setup",
-                "description": "Ollama Installatioun a Konfiguratioun ënner Debian"
+                "title": "Linux - Ollama Installatioun",
+                "description": "Vollständeg Uleedung fir d'Installatioun vum Ollama op Debian 12 mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir eng sécher ëffentlech API"
+            },
+            "cardanoNodeSetup": {
+                "title": "Linux - Cardano Node Installatioun",
+                "description": "Vollständeg Uleedung fir d'Installatioun vun enger Cardano-Node op Debian 12 mam NIX-Paketmanager, inklusiv Service-Konfiguratioun an Iwwerwaachung"
+            },
+            "cardanoDbSyncSetup": {
+                "title": "Linux - Cardano DB Sync Installatioun",
+                "description": "Vollständeg Uleedung fir d'Installatioun vum Cardano DB Sync op Debian 12 mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun"
             }
         }
     },

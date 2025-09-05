@@ -188,24 +188,42 @@
     "showcase": {
         "title": "Showcase",
         "subtitle": "Découvrez mes projets et documentation",
+        "filters": {
+            "all": "Tous",
+            "projects": "Projets",
+            "documentation": "Documentation"
+        },
+        "labels": {
+            "project": "Projet",
+            "documentation": "Documentation",
+            "viewDetails": "Voir Détails"
+        },
         "projects": {
             "myChatBot": {
-                "title": "My Chat Bot",
-                "description": "Un chatbot moderne avec intégration IA"
+                "title": "Mon Chat Bot",
+                "description": "Une application de chat moderne et optimisée avec intégration Ollama pour discuter directement avec des modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées."
             },
-            "portfolio": {
-                "title": "Site Web Portfolio",
-                "description": "Mon site web portfolio personnel"
+            "myPortfolio": {
+                "title": "Mon Site Web Portfolio",
+                "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur."
             }
         },
         "documentation": {
             "debianInitialSetup": {
-                "title": "Configuration Initiale Debian 12",
-                "description": "Guide complet pour la configuration Debian 12"
+                "title": "Debian 12 - Configuration Initiale du Serveur",
+                "description": "Guide étape par étape pour les premières étapes importantes lors de la configuration d'un serveur Debian 12 frais"
             },
             "ollamaSetup": {
-                "title": "Configuration Ollama Debian",
-                "description": "Installation et configuration d'Ollama sur Debian"
+                "title": "Linux - Installation d'Ollama",
+                "description": "Guide complet pour l'installation d'Ollama sur Debian 12 avec proxy inverse Apache2, chiffrement SSL et authentification HTTP Basic pour une API publique sécurisée"
+            },
+            "cardanoNodeSetup": {
+                "title": "Linux - Installation de Nœud Cardano",
+                "description": "Guide complet pour l'installation d'un nœud Cardano sur Debian 12 avec le gestionnaire de paquets NIX, y compris la configuration du service et la surveillance"
+            },
+            "cardanoDbSyncSetup": {
+                "title": "Linux - Installation de Cardano DB Sync",
+                "description": "Guide complet pour l'installation de Cardano DB Sync sur Debian 12 avec base de données PostgreSQL et gestionnaire de paquets NIX, y compris la configuration du service"
             }
         }
     },
