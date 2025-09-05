@@ -7,8 +7,9 @@ const mobileMenuOpen = ref(false)
 
 <template>
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="max-w-4xl mx-auto min-h-[calc(100vh-65px)]">
+    <main class="overflow-hidden">
+        <!-- Hero Section -->
+        <section class="relative min-h-[calc(100vh-65px)] flex flex-col items-center justify-center overflow-hidden">
             <h1 class="text-4xl font-bold mb-8">Showcase</h1>
 
             <!-- Blog Posts -->
@@ -71,6 +72,6 @@ const mobileMenuOpen = ref(false)
                     </div>
                 </article>
             </div>
-        </div>
+        </section>
     </main>
 </template>
