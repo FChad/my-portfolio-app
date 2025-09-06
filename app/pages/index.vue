@@ -83,7 +83,7 @@ const texts = computed(() => [
                             <button
                                 class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xlsp transition-all duration-300">
                                 <span class="relative z-10 flex items-center gap-3">
-                                    <Icon name="heroicons:eye" class="w-6 h-6" />
+                                    <Icon name="mdi:eye" class="w-6 h-6" />
                                     {{ $t('home.cta.primary') }}
                                 </span>
                             </button>
@@ -93,8 +93,7 @@ const texts = computed(() => [
                                 class="group relative px-10 py-5 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-bold text-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 shadow-lg">
                                 <span class="flex items-center gap-3">
                                     {{ $t('home.cta.secondary') }}
-                                    <Icon name="heroicons:chat-bubble-left-right"
-                                        class="w-6 h-6 transition-transform duration-300" />
+                                    <Icon name="mdi:chat" class="w-6 h-6 transition-transform duration-300" />
                                 </span>
                             </button>
                         </div>
@@ -117,7 +116,7 @@ const texts = computed(() => [
                         <NuxtLinkLocale to="/about"
                             class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300">
                             {{ $t('home.about.cta') }}
-                            <Icon name="heroicons:arrow-right" class="w-4 h-4" />
+                            <Icon name="mdi:arrow-right" class="w-4 h-4" />
                         </NuxtLinkLocale>
                     </div>
 
@@ -164,7 +163,7 @@ const texts = computed(() => [
                         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon name="heroicons:code-bracket" class="w-8 h-8 text-white" />
+                            <Icon name="mdi:code-braces" class="w-8 h-8 text-white" />
                         </div>
                         <h3 class="text-xl font-bold mb-4">{{ $t('home.services.webdev.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
@@ -182,7 +181,7 @@ const texts = computed(() => [
                         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon name="heroicons:paint-brush" class="w-8 h-8 text-white" />
+                            <Icon name="mdi:brush" class="w-8 h-8 text-white" />
                         </div>
                         <h3 class="text-xl font-bold mb-4">{{ $t('home.services.uiux.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
@@ -200,7 +199,7 @@ const texts = computed(() => [
                         class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div
                             class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon name="heroicons:light-bulb" class="w-8 h-8 text-white" />
+                            <Icon name="mdi:lightbulb" class="w-8 h-8 text-white" />
                         </div>
                         <h3 class="text-xl font-bold mb-4">{{ $t('home.services.consulting.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
@@ -227,7 +226,7 @@ const texts = computed(() => [
                 <NuxtLinkLocale to="/about"
                     class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
                     {{ $t('home.bottomCta.button') }}
-                    <Icon name="heroicons:rocket-launch" class="w-5 h-5" />
+                    <Icon name="mdi:rocket" class="w-5 h-5" />
                 </NuxtLinkLocale>
             </div>
         </section>

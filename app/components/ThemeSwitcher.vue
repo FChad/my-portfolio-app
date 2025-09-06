@@ -1,9 +1,9 @@
 <template>
     <button @click="toggleColorMode"
-        class="flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+        class="flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors"
         :aria-label="buttonLabel" :disabled="!isReady">
         <!-- Skeleton Loading State -->
-        <div v-if="!isReady" class="w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded animate-pulse" />
+        <div v-if="!isReady" class="w-5 h-5 bg-gray-300 dark:bg-gray-700 rounded animate-pulse" />
 
         <!-- Theme Icon -->
         <Icon v-else :name="currentIcon" class="w-5 h-5" />
@@ -52,9 +52,9 @@ const toggleColorMode = () => {
 const currentIcon = computed(() => {
     if (!isReady.value) {
         // During SSR, show moon icon (assumes light mode by default)
-        return 'heroicons:moon'
+        return 'mdi:weather-night'
     }
-    return currentTheme.value === 'light' ? 'heroicons:moon' : 'heroicons:sun'
+    return currentTheme.value === 'light' ? 'mdi:weather-night' : 'mdi:white-balance-sunny'
 })
 
 // Generate descriptive button label

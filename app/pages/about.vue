@@ -13,37 +13,37 @@ const certifications = [
         title: t('about.certificationsList.cert1.title'),
         year: '2023',
         description: t('about.certificationsList.cert1.description'),
-        icon: 'heroicons:academic-cap'
+        icon: 'mdi:school'
     },
     {
         title: t('about.certificationsList.cert2.title'),
         year: '2021',
         description: t('about.certificationsList.cert2.description'),
-        icon: 'heroicons:shield-check'
+        icon: 'mdi:shield-check'
     },
     {
         title: t('about.certificationsList.cert3.title'),
         year: '2021',
         description: t('about.certificationsList.cert3.description'),
-        icon: 'heroicons:server'
+        icon: 'mdi:server'
     },
     {
         title: t('about.certificationsList.cert4.title'),
         year: '2020',
         description: t('about.certificationsList.cert4.description'),
-        icon: 'heroicons:server'
+        icon: 'mdi:server'
     },
     {
         title: t('about.certificationsList.cert5.title'),
         year: '2020',
         description: t('about.certificationsList.cert5.description'),
-        icon: 'heroicons:server'
+        icon: 'mdi:server'
     },
     {
         title: t('about.certificationsList.cert6.title'),
         year: '2020',
         description: t('about.certificationsList.cert6.description'),
-        icon: 'heroicons:document-text'
+        icon: 'mdi:file-document'
     }
 ]
 
@@ -52,35 +52,35 @@ const timeline = [
         year: '2024',
         title: t('about.timelineItems.item1.title'),
         description: t('about.timelineItems.item1.description'),
-        icon: 'heroicons:code-bracket',
+        icon: 'mdi:code-braces',
         type: 'work'
     },
     {
         year: '2023',
         title: t('about.timelineItems.item2.title'),
         description: t('about.timelineItems.item2.description'),
-        icon: 'heroicons:academic-cap',
+        icon: 'mdi:school',
         type: 'education'
     },
     {
         year: '2021',
         title: t('about.timelineItems.item3.title'),
         description: t('about.timelineItems.item3.description'),
-        icon: 'heroicons:academic-cap',
+        icon: 'mdi:school',
         type: 'education'
     },
     {
         year: '2020',
         title: t('about.timelineItems.item4.title'),
         description: t('about.timelineItems.item4.description'),
-        icon: 'heroicons:wrench-screwdriver',
+        icon: 'mdi:wrench',
         type: 'work'
     },
     {
         year: '2019',
         title: t('about.timelineItems.item5.title'),
         description: t('about.timelineItems.item5.description'),
-        icon: 'heroicons:academic-cap',
+        icon: 'mdi:school',
         type: 'education'
     }
 ]
@@ -89,17 +89,17 @@ const experiences = [
     {
         title: t('about.experiencesList.exp1.title'),
         description: t('about.experiencesList.exp1.description'),
-        icon: 'heroicons:paper-airplane'
+        icon: 'mdi:send'
     },
     {
         title: t('about.experiencesList.exp2.title'),
         description: t('about.experiencesList.exp2.description'),
-        icon: 'heroicons:arrow-down-circle'
+        icon: 'mdi:arrow-down-circle'
     },
     {
         title: t('about.experiencesList.exp3.title'),
         description: t('about.experiencesList.exp3.description'),
-        icon: 'heroicons:musical-note'
+        icon: 'mdi:music-note'
     }
 ]
 </script>
@@ -130,25 +130,24 @@ const experiences = [
                                 <h2 class="text-3xl font-bold mb-6">{{ $t('about.profile.title') }}</h2>
                                 <div class="space-y-4">
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:map-pin"
-                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.location') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:flag" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        <Icon name="mdi:flag" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.nationality') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:cake" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        <Icon name="mdi:cake-variant"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.age') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:heart" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        <Icon name="mdi:heart" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.status') }}</span>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <Icon name="heroicons:academic-cap"
-                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        <Icon name="mdi:school" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.driving') }}</span>
                                     </div>
                                 </div>
@@ -157,7 +156,7 @@ const experiences = [
                             <div class="text-center">
                                 <div
                                     class="w-48 h-48 mx-auto bg-blue-600 dark:bg-blue-400 rounded-full flex items-center justify-center mb-6">
-                                    <Icon name="heroicons:user" class="w-24 h-24 text-white" />
+                                    <Icon name="mdi:account" class="w-24 h-24 text-white" />
                                 </div>
                                 <h3 class="text-2xl font-bold mb-2">Chad Feierstein</h3>
                                 <p class="text-gray-600 dark:text-gray-400">{{ $t('about.profile.role') }}</p>
@@ -183,7 +182,7 @@ const experiences = [
                         <div
                             class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl">
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
-                                <Icon name="heroicons:heart" class="w-6 h-6 text-red-500" />
+                                <Icon name="mdi:heart" class="w-6 h-6 text-red-500" />
                                 {{ $t('about.passion.title') }}
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300">{{ $t('about.passion.description') }}</p>
@@ -192,7 +191,7 @@ const experiences = [
                         <div
                             class="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl">
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
-                                <Icon name="heroicons:puzzle-piece" class="w-6 h-6 text-green-500" />
+                                <Icon name="mdi:puzzle" class="w-6 h-6 text-green-500" />
                                 {{ $t('about.hobbies.title') }}
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300">{{ $t('about.hobbies.description') }}</p>
@@ -332,7 +331,7 @@ const experiences = [
                 <NuxtLinkLocale to="/contact"
                     class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                     {{ $t('about.cta.button') }}
-                    <Icon name="heroicons:arrow-right" class="w-5 h-5" />
+                    <Icon name="mdi:arrow-right" class="w-5 h-5" />
                 </NuxtLinkLocale>
             </div>
         </section>

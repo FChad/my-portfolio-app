@@ -50,8 +50,8 @@ const mobileMenuOpen = ref(false)
                     <!-- Mobile Menu Button -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen"
                         class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                        <Icon v-if="!mobileMenuOpen" name="heroicons:bars-3" class="w-5 h-5" />
-                        <Icon v-else name="heroicons:x-mark" class="w-5 h-5" />
+                        <Icon v-if="!mobileMenuOpen" name="mdi:menu" class="w-5 h-5" />
+                        <Icon v-else name="mdi:close" class="w-5 h-5" />
                     </button>
 
                     <!-- Desktop Controls -->

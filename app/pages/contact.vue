@@ -172,7 +172,7 @@ watch(isSubmitted, (newVal) => {
                     <div v-if="isSubmitted"
                         class="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
                         <div class="flex items-center gap-3">
-                            <Icon name="heroicons:check-circle" class="w-6 h-6 text-green-500" />
+                            <Icon name="mdi:check-circle" class="w-6 h-6 text-green-500" />
                             <p class="text-green-800 dark:text-green-200 font-medium">
                                 {{ $t('contact.form.success') }}
                             </p>
@@ -264,8 +264,8 @@ watch(isSubmitted, (newVal) => {
                                     ? 'bg-gray-400 cursor-not-allowed'
                                     : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
                             ]" class="text-white">
-                                <Icon v-if="isSubmitting" name="heroicons:arrow-path" class="w-5 h-5 animate-spin" />
-                                <Icon v-else name="heroicons:paper-airplane" class="w-5 h-5" />
+                                <Icon v-if="isSubmitting" name="mdi:refresh" class="w-5 h-5 animate-spin" />
+                                <Icon v-else name="mdi:send" class="w-5 h-5" />
                                 {{ isSubmitting ? $t('contact.form.sending') : $t('contact.form.submit') }}
                             </button>
                         </div>
@@ -285,12 +285,12 @@ watch(isSubmitted, (newVal) => {
                     <NuxtLinkLocale to="/showcase"
                         class="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
                         {{ $t('contact.cta.showcase') }}
-                        <Icon name="heroicons:eye" class="w-5 h-5" />
+                        <Icon name="mdi:eye" class="w-5 h-5" />
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/about"
                         class="inline-flex items-center gap-3 px-8 py-4 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
                         {{ $t('contact.cta.about') }}
-                        <Icon name="heroicons:user" class="w-5 h-5" />
+                        <Icon name="mdi:account" class="w-5 h-5" />
                     </NuxtLinkLocale>
                 </div>
             </div>
