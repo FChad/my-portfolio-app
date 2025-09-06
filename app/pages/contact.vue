@@ -18,17 +18,24 @@ const errors = ref<Record<string, string>>({})
 const contactMethods = [
     {
         title: 'LinkedIn',
-        value: 'LinkedIn Profil',
-        icon: 'heroicons:briefcase',
+        icon: 'mdi:linkedin',
         href: 'https://www.linkedin.com/in/chad-feierstein/',
-        color: 'blue'
+        color: 'bg-[#0077B5] hover:bg-[#005885]',
+        description: 'Berufliches Netzwerk'
     },
     {
         title: 'GitHub',
-        value: 'GitHub Profil',
-        icon: 'heroicons:code-bracket',
+        icon: 'mdi:github',
         href: 'https://github.com/FChad',
-        color: 'gray'
+        color: 'bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600',
+        description: 'Code Repository'
+    },
+    {
+        title: 'Email',
+        icon: 'mdi:email',
+        href: 'mailto:contact@example.com',
+        color: 'bg-red-500 hover:bg-red-600',
+        description: 'Direkte Kontaktaufnahme'
     }
 ]
 
@@ -118,42 +125,47 @@ watch(isSubmitted, (newVal) => {
 
         <!-- Contact Information Section -->
         <section class="py-20 flex flex-col gap-12">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
-                <div class="text-center flex flex-col gap-6">
-                    <h2 class="text-4xl font-bold">{{ $t('contact.info.title') }}</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {{ $t('contact.info.description') }}
-                    </p>
-                </div>
-
-                <!-- Contact Methods Flex -->
-                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <!-- Contact Methods Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div v-for="method in contactMethods" :key="method.title"
-                        class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center flex-1 max-w-sm">
-                        <a :href="method.href" target="_blank" rel="noopener noreferrer" class="block group">
-                            <div class="flex flex-col gap-4 justify-center items-center">
+                        class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <NuxtLink :to="method.href" external target="_blank" class="block p-6">
+                            <!-- Background Gradient -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 dark:to-gray-700/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+
+                            <div class="relative flex flex-col items-center gap-4 text-center">
+                                <!-- Icon Container -->
                                 <div :class="[
-                                    'w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300',
-                                    method.color === 'blue' ? 'bg-blue-500 group-hover:bg-blue-600' : 'bg-gray-500 group-hover:bg-gray-600'
+                                    'w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3',
+                                    method.color
                                 ]">
-                                    <Icon :name="method.icon" class="w-8 h-8 text-white" />
+                                    <Icon :name="method.icon"
+                                        class="w-8 h-8 text-white transition-all duration-300 group-hover:scale-110" />
                                 </div>
+
+                                <!-- Content -->
                                 <div class="flex flex-col gap-2">
-                                    <h3 class="font-semibold text-lg">{{ method.title }}</h3>
+                                    <h3
+                                        class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex items-center justify-center gap-2">
+                                        {{ method.title }}
+                                        <Icon name="mdi:external-link"
+                                            class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors duration-300" />
+                                    </h3>
                                     <p
-                                        class="flex justify-center items-center gap-2 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors break-all">
-                                        {{ method.value }}
-                                        <Icon name="heroicons:arrow-top-right-on-square"
-                                            class="w-5 h-5 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                                        class="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-700 dark:group-hover:text-gray-300">
+                                        {{ method.description }}
                                     </p>
                                 </div>
                             </div>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
 
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div
                     class="bg-gray-50 dark:bg-gray-800 backdrop-blur-sm rounded-3xl shadow-2xl p-8 flex flex-col gap-8">
                     <!-- Success Message -->

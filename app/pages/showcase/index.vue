@@ -143,11 +143,11 @@ const totalCount = computed(() => showcaseItems.length)
                     <!-- Showcase Items Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
                         <div v-for="item in filteredItems" :key="item.id"
-                            class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform flex flex-col w-full">
+                            class="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform flex flex-col w-full hover:shadow-2xl">
                             <!-- Image -->
-                            <div class="h-56 bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+                            <div class="h-56 bg-gray-200 dark:bg-gray-900 relative overflow-hidden">
                                 <img v-if="item.image" :src="item.image" :alt="t(item.title)"
-                                    class="w-full h-full object-cover" />
+                                    class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
                             </div>
 
                             <!-- Content -->
@@ -174,7 +174,18 @@ const totalCount = computed(() => showcaseItems.length)
                                 </div>
                             </div>
                             <!-- Action Button -->
-                            <div class="flex-1 flex justify-end items-end p-6 pt-0">
+                            <div class="flex-1 flex justify-between items-end p-6 pt-0">
+                                <!-- Type Badge -->
+                                <span
+                                    :class="item.type === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'"
+                                    class="px-3 py-1 rounded-full text-sm font-medium capitalize">
+                                    <Icon
+                                        :name="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'"
+                                        class="w-4 h-4 inline mr-1" />
+                                    {{ t(`showcase.filters.${item.type === 'project' ? 'projects' : 'documentation'}`) }}
+                                </span>
+
+                                <!-- Details Button -->
                                 <NuxtLink :to="item.link"
                                     class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform">
                                     <Icon name="mdi:arrow-right" class="w-4 h-4" />
