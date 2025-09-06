@@ -80,22 +80,22 @@ const texts = computed(() => [
                     <div class="pt-8">
                         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                             <!-- Primary CTA -->
-                            <button
-                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xlsp transition-all duration-300">
+                            <NuxtLinkLocale to="/showcase"
+                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xlsp transition-all duration-300 inline-flex items-center">
                                 <span class="relative z-10 flex items-center gap-3">
                                     <Icon name="mdi:eye" class="w-6 h-6" />
                                     {{ $t('home.cta.primary') }}
                                 </span>
-                            </button>
+                            </NuxtLinkLocale>
 
                             <!-- Secondary CTA -->
-                            <button
-                                class="group relative px-10 py-5 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-bold text-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 shadow-lg">
+                            <NuxtLinkLocale to="/contact"
+                                class="group relative px-10 py-5 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-bold text-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 shadow-lg inline-flex items-center">
                                 <span class="flex items-center gap-3">
                                     {{ $t('home.cta.secondary') }}
                                     <Icon name="mdi:chat" class="w-6 h-6 transition-transform duration-300" />
                                 </span>
-                            </button>
+                            </NuxtLinkLocale>
                         </div>
                     </div>
                 </div>
