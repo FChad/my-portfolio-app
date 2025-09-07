@@ -95,7 +95,7 @@ const texts = computed(() => [
         </section>
 
         <!-- About Section -->
-        <section class="py-20 bg-gray-50/50 dark:bg-gray-800/50">
+        <section class="py-20 bg-gray-100/50 dark:bg-gray-800/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>

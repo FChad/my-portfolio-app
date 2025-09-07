@@ -105,7 +105,7 @@ const settings = {
     linkFade: 90,
     linkSpeed: 1,
     glareAngle: -60,
-    glareOpacityMultiplier: 0.05,
+    glareOpacityMultiplier: 0.01,
     flickerSmoothing: 15,
     noiseLength: 1000,
     noiseStrength: 1,
