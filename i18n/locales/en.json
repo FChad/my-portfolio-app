@@ -201,11 +201,173 @@
         "projects": {
             "myChatBot": {
                 "title": "My Chat Bot",
-                "description": "A modern, optimized chat application with Ollama integration for direct chat with AI models. Offers ChatGPT-like functionality with local storage and advanced features."
+                "description": "A modern, optimized chat application with Ollama integration for direct chat with AI models. Offers ChatGPT-like functionality with local storage and advanced features.",
+                "features": {
+                    "aiChat": {
+                        "title": "AI Chat",
+                        "description": "Chat directly with various AI models through an intuitive user interface"
+                    },
+                    "conversationManagement": {
+                        "title": "Conversation Management",
+                        "description": "Manage multiple conversations like ChatGPT with automatic saving"
+                    },
+                    "modelSelection": {
+                        "title": "Model Selection",
+                        "description": "Choose between available Ollama models for different use cases"
+                    },
+                    "localStorage": {
+                        "title": "Local Storage",
+                        "description": "Conversations are safely stored in the browser without external dependencies"
+                    },
+                    "modernUI": {
+                        "title": "Modern UI",
+                        "description": "Beautiful, responsive user interface with Tailwind CSS and Dark Mode"
+                    },
+                    "streaming": {
+                        "title": "Real-time Streaming",
+                        "description": "Real-time responses with Server-Sent Events for smooth communication"
+                    }
+                },
+                "keyFeatures": {
+                    "title": "Key Features",
+                    "subtitle": "Discover the powerful features that make My Chat Bot a comprehensive AI chat solution"
+                },
+                "builtWith": {
+                    "title": "Built With",
+                    "subtitle": "Modern technologies and frameworks powering the application"
+                },
+                "callToAction": {
+                    "title": "Ready to Experience AI Chat?",
+                    "subtitle": "Try My Chat Bot today and discover the power of local AI models with an intuitive chat interface.",
+                    "button": "Launch Demo"
+                },
+                "technologies": {
+                    "nuxt3": {
+                        "name": "Frontend Framework",
+                        "tech": "Nuxt 3",
+                        "description": "Modern Vue.js framework with SSR capabilities, automatic routing, and enhanced performance optimization"
+                    },
+                    "vue3": {
+                        "name": "Frontend Library",
+                        "tech": "Vue 3",
+                        "description": "Progressive JavaScript framework with Composition API and reactive data binding"
+                    },
+                    "typescript": {
+                        "name": "Type Safety",
+                        "tech": "TypeScript",
+                        "description": "Strict type checking, improved code reliability, and better developer experience"
+                    },
+                    "pinia": {
+                        "name": "State Management",
+                        "tech": "Pinia",
+                        "description": "Modern state management store for Vue with intuitive API and TypeScript support"
+                    },
+                    "tailwind": {
+                        "name": "Styling",
+                        "tech": "Tailwind CSS",
+                        "description": "Utility-first CSS framework with custom configuration and responsive design patterns"
+                    },
+                    "ollama": {
+                        "name": "AI Integration",
+                        "tech": "Ollama",
+                        "description": "Local AI model management platform for seamless AI integration"
+                    },
+                    "highlight": {
+                        "name": "Code Highlighting",
+                        "tech": "Highlight.js",
+                        "description": "Syntax highlighting for code blocks in chat messages with multi-language support"
+                    },
+                    "marked": {
+                        "name": "Markdown Parsing",
+                        "tech": "Marked",
+                        "description": "Fast markdown parser and compiler for rendering formatted text and code in chat responses"
+                    }
+                }
             },
             "myPortfolio": {
                 "title": "My Portfolio Website",
-                "description": "A modern, responsive portfolio website showcasing my projects and skills. Built with the latest web technologies focusing on performance, accessibility, and user experience."
+                "description": "A modern, responsive portfolio website showcasing my projects and skills. Built with the latest web technologies focusing on performance, accessibility, and user experience.",
+                "features": {
+                    "multilingual": {
+                        "title": "Multilingual",
+                        "description": "Support for Luxembourgish, German, French, and English with i18n"
+                    },
+                    "responsive": {
+                        "title": "Responsive Design",
+                        "description": "Perfect display on all devices - desktop, tablet, and mobile"
+                    },
+                    "darkMode": {
+                        "title": "Dark Mode",
+                        "description": "Elegant dark/light theme with automatic browser detection"
+                    },
+                    "performance": {
+                        "title": "High Performance",
+                        "description": "Optimized loading times and SEO with Nuxt 3 Server-Side Rendering"
+                    },
+                    "seo": {
+                        "title": "SEO Optimized",
+                        "description": "Complete search engine optimization with sitemap and meta tags"
+                    },
+                    "contact": {
+                        "title": "Contact Form",
+                        "description": "Functional contact form with VeeValidate and Resend integration"
+                    }
+                },
+                "keyFeatures": {
+                    "title": "Key Features",
+                    "subtitle": "Discover the features that make this portfolio website a modern, professional solution"
+                },
+                "builtWith": {
+                    "title": "Built With",
+                    "subtitle": "Modern technologies and best practices for a top-class user experience"
+                },
+                "callToAction": {
+                    "title": "Interested in a Similar Website?",
+                    "subtitle": "Explore my portfolio website and see how modern web technologies can create an impressive online presence.",
+                    "button": "Visit Website"
+                },
+                "technologies": {
+                    "nuxt3": {
+                        "name": "Frontend Framework",
+                        "tech": "Nuxt 3",
+                        "description": "Advanced Vue.js framework with Server-Side Rendering, automatic code splitting, and performance optimization"
+                    },
+                    "vue3": {
+                        "name": "UI Library",
+                        "tech": "Vue 3",
+                        "description": "Modern, reactive JavaScript framework with Composition API and optimal developer experience"
+                    },
+                    "typescript": {
+                        "name": "Type Safety",
+                        "tech": "TypeScript",
+                        "description": "Static typing for better code quality, error prevention, and enhanced IDE support"
+                    },
+                    "tailwind": {
+                        "name": "CSS Framework",
+                        "tech": "Tailwind CSS",
+                        "description": "Utility-first CSS framework for fast, consistent styling and responsive designs"
+                    },
+                    "i18n": {
+                        "name": "Internationalization",
+                        "tech": "Nuxt i18n",
+                        "description": "Complete multilingual support with automatic routing and locale management"
+                    },
+                    "veevalidate": {
+                        "name": "Form Validation",
+                        "tech": "VeeValidate",
+                        "description": "Powerful form validation with user-friendly error handling and TypeScript support"
+                    },
+                    "resend": {
+                        "name": "Email Service",
+                        "tech": "Resend",
+                        "description": "Modern email API for reliable contact form submission with developer-friendly integration"
+                    },
+                    "iconify": {
+                        "name": "Icon System",
+                        "tech": "Iconify",
+                        "description": "Comprehensive icon library with over 100,000 icons and optimal performance through icon-on-demand"
+                    }
+                }
             }
         },
         "documentation": {

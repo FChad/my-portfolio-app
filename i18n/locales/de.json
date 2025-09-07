@@ -201,11 +201,198 @@
         "projects": {
             "myChatBot": {
                 "title": "Mein Chat Bot",
-                "description": "Eine moderne, optimierte Chat-Anwendung mit Ollama-Integration für direkten Chat mit KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features."
+                "description": "Eine moderne, optimierte Chat-Anwendung mit Ollama-Integration für direkten Chat mit KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features.",
+                "features": {
+                    "title": "Features",
+                    "aiChat": {
+                        "title": "KI-Chat",
+                        "description": "Chatte direkt mit verschiedenen KI-Modellen über eine intuitive Benutzeroberfläche"
+                    },
+                    "conversationManagement": {
+                        "title": "Unterhaltungs-Management",
+                        "description": "Mehrere Unterhaltungen verwalten wie bei ChatGPT mit automatischer Speicherung"
+                    },
+                    "modelSelection": {
+                        "title": "Modell-Auswahl",
+                        "description": "Wähle zwischen verfügbaren Ollama-Modellen für verschiedene Anwendungsfälle"
+                    },
+                    "contextRetention": {
+                        "title": "Kontext-Erhaltung",
+                        "description": "Unterhaltungen behalten ihren Kontext bei für natürliche Gespräche"
+                    },
+                    "localStorage": {
+                        "title": "Lokale Speicherung",
+                        "description": "Unterhaltungen werden sicher im Browser gespeichert ohne externe Abhängigkeiten"
+                    },
+                    "modernUI": {
+                        "title": "Modernes UI",
+                        "description": "Schöne, responsive Benutzeroberfläche mit Tailwind CSS und Dark-Mode"
+                    },
+                    "secureAPI": {
+                        "title": "Sichere API",
+                        "description": "Environment-basierte Konfiguration für API-Credentials mit sicherer Authentifizierung"
+                    },
+                    "responsive": {
+                        "title": "Responsive Design",
+                        "description": "Funktioniert perfekt auf Desktop und Mobile mit optimierter Touch-Bedienung"
+                    },
+                    "streaming": {
+                        "title": "Echtzeit-Streaming",
+                        "description": "Echtzeitantworten mit Server-Sent Events für flüssige Kommunikation"
+                    },
+                    "architecture": {
+                        "title": "Optimierte Architektur",
+                        "description": "Saubere Code-Struktur mit Composables, Pinia und modularem Aufbau"
+                    },
+                    "exportFunction": {
+                        "title": "Export-Funktion",
+                        "description": "Exportiere deine Unterhaltungen als JSON für Backup und Analyse"
+                    },
+                    "settings": {
+                        "title": "Umfassende Einstellungen",
+                        "description": "Detaillierte Einstellungen und App-Informationen mit Statistiken"
+                    }
+                },
+                "keyFeatures": {
+                    "title": "Hauptfunktionen",
+                    "subtitle": "Entdecke die leistungsstarken Features, die Mein Chat Bot zu einer umfassenden KI-Chat-Lösung machen"
+                },
+                "builtWith": {
+                    "title": "Entwickelt mit",
+                    "subtitle": "Moderne Technologien und Frameworks, die die Anwendung antreiben"
+                },
+                "callToAction": {
+                    "title": "Bereit, KI-Chat zu erleben?",
+                    "subtitle": "Probiere Mein Chat Bot heute aus und entdecke die Kraft lokaler KI-Modelle mit einer intuitiven Chat-Oberfläche.",
+                    "button": "Demo starten"
+                },
+                "technologies": {
+                    "nuxt3": {
+                        "name": "Frontend Framework",
+                        "tech": "Nuxt 3",
+                        "description": "Modernes Vue.js-Framework mit SSR-Funktionen, automatischem Routing und verbesserter Leistungsoptimierung"
+                    },
+                    "vue3": {
+                        "name": "Frontend Library",
+                        "tech": "Vue 3",
+                        "description": "Progressives JavaScript-Framework mit Composition API und reaktiver Datenbindung"
+                    },
+                    "typescript": {
+                        "name": "Typsicherheit",
+                        "tech": "TypeScript",
+                        "description": "Strenge Typprüfung, verbesserte Codezuverlässigkeit und bessere Entwicklererfahrung"
+                    },
+                    "pinia": {
+                        "name": "State Management",
+                        "tech": "Pinia",
+                        "description": "Moderner State-Management-Store für Vue mit intuitiver API und TypeScript-Unterstützung"
+                    },
+                    "tailwind": {
+                        "name": "Styling",
+                        "tech": "Tailwind CSS",
+                        "description": "Utility-First-CSS-Framework mit individueller Konfiguration und responsiven Design-Mustern"
+                    },
+                    "ollama": {
+                        "name": "KI-Integration",
+                        "tech": "Ollama",
+                        "description": "Lokale KI-Modell-Verwaltungsplattform für nahtlose KI-Integration"
+                    },
+                    "highlight": {
+                        "name": "Code-Highlighting",
+                        "tech": "Highlight.js",
+                        "description": "Syntax-Highlighting für Code-Blöcke in Chat-Nachrichten mit Unterstützung für mehrere Programmiersprachen"
+                    },
+                    "marked": {
+                        "name": "Markdown-Parsing",
+                        "tech": "Marked",
+                        "description": "Schneller Markdown-Parser und -Compiler für die Darstellung von formatiertem Text und Code in Chat-Antworten"
+                    }
+                }
             },
             "myPortfolio": {
                 "title": "Meine Portfolio Webseite",
-                "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung."
+                "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung.",
+                "features": {
+                    "multilingual": {
+                        "title": "Mehrsprachig",
+                        "description": "Unterstützung für Luxemburgisch, Deutsch, Französisch und Englisch mit i18n"
+                    },
+                    "responsive": {
+                        "title": "Responsive Design",
+                        "description": "Perfekte Darstellung auf allen Geräten - Desktop, Tablet und Mobile"
+                    },
+                    "darkMode": {
+                        "title": "Dark Mode",
+                        "description": "Elegantes Dark/Light Theme mit automatischer Browser-Erkennung"
+                    },
+                    "performance": {
+                        "title": "Hochleistung",
+                        "description": "Optimierte Ladezeiten und SEO mit Nuxt 3 Server-Side Rendering"
+                    },
+                    "seo": {
+                        "title": "SEO Optimiert",
+                        "description": "Vollständige Suchmaschinenoptimierung mit Sitemap und Meta-Tags"
+                    },
+                    "contact": {
+                        "title": "Kontaktformular",
+                        "description": "Funktionales Kontaktformular mit VeeValidate und Resend Integration"
+                    }
+                },
+                "keyFeatures": {
+                    "title": "Hauptfunktionen",
+                    "subtitle": "Entdecke die Features, die diese Portfolio-Webseite zu einer modernen, professionellen Lösung machen"
+                },
+                "builtWith": {
+                    "title": "Entwickelt mit",
+                    "subtitle": "Moderne Technologien und Best Practices für eine erstklassige Benutzererfahrung"
+                },
+                "callToAction": {
+                    "title": "Interessiert an einer ähnlichen Webseite?",
+                    "subtitle": "Entdecke meine Portfolio-Webseite und sehe, wie moderne Webtechnologien eine beeindruckende Online-Präsenz schaffen können.",
+                    "button": "Webseite besuchen"
+                },
+                "technologies": {
+                    "nuxt3": {
+                        "name": "Frontend Framework",
+                        "tech": "Nuxt 3",
+                        "description": "Fortschrittliches Vue.js-Framework mit Server-Side Rendering, automatischem Code-Splitting und Leistungsoptimierung"
+                    },
+                    "vue3": {
+                        "name": "UI Library",
+                        "tech": "Vue 3",
+                        "description": "Modernes, reaktives JavaScript-Framework mit Composition API und optimaler Developer Experience"
+                    },
+                    "typescript": {
+                        "name": "Typsicherheit",
+                        "tech": "TypeScript",
+                        "description": "Statische Typisierung für bessere Code-Qualität, Fehlerprävention und erweiterte IDE-Unterstützung"
+                    },
+                    "tailwind": {
+                        "name": "CSS Framework",
+                        "tech": "Tailwind CSS",
+                        "description": "Utility-First-CSS-Framework für schnelles, konsistentes Styling und responsive Designs"
+                    },
+                    "i18n": {
+                        "name": "Internationalisierung",
+                        "tech": "Nuxt i18n",
+                        "description": "Vollständige Mehrsprachigkeitsunterstützung mit automatischem Routing und Locale-Management"
+                    },
+                    "veevalidate": {
+                        "name": "Formularvalidierung",
+                        "tech": "VeeValidate",
+                        "description": "Leistungsstarke Formularvalidierung mit benutzerfreundlicher Fehlerbehandlung und TypeScript-Support"
+                    },
+                    "resend": {
+                        "name": "E-Mail Service",
+                        "tech": "Resend",
+                        "description": "Moderne E-Mail-API für zuverlässige Kontaktformular-Übermittlung mit Entwickler-freundlicher Integration"
+                    },
+                    "iconify": {
+                        "name": "Icon System",
+                        "tech": "Iconify",
+                        "description": "Umfangreiche Icon-Bibliothek mit über 100.000 Icons und optimaler Leistung durch Icon-on-Demand"
+                    }
+                }
             }
         },
         "documentation": {
@@ -224,6 +411,178 @@
             "cardanoDbSyncSetup": {
                 "title": "Linux - Cardano DB Sync Installation",
                 "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration"
+            }
+        }
+    },
+    "projects": {
+        "myChatBot": {
+            "title": "Mein Chat Bot",
+            "description": "Eine moderne, optimierte Chat-Anwendung mit Ollama-Integration für direkten Chat mit KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features.",
+            "features": {
+                "aiChat": {
+                    "title": "KI-Chat",
+                    "description": "Chatte direkt mit verschiedenen KI-Modellen über eine intuitive Benutzeroberfläche"
+                },
+                "conversationManagement": {
+                    "title": "Unterhaltungs-Management",
+                    "description": "Mehrere Unterhaltungen verwalten wie bei ChatGPT mit automatischer Speicherung"
+                },
+                "modelSelection": {
+                    "title": "Modell-Auswahl",
+                    "description": "Wähle zwischen verfügbaren Ollama-Modellen für verschiedene Anwendungsfälle"
+                },
+                "localStorage": {
+                    "title": "Lokale Speicherung",
+                    "description": "Unterhaltungen werden sicher im Browser gespeichert ohne externe Abhängigkeiten"
+                },
+                "modernUI": {
+                    "title": "Modernes UI",
+                    "description": "Schöne, responsive Benutzeroberfläche mit Tailwind CSS und Dark-Mode"
+                },
+                "streaming": {
+                    "title": "Echtzeit-Streaming",
+                    "description": "Echtzeitantworten mit Server-Sent Events für flüssige Kommunikation"
+                }
+            },
+            "keyFeatures": {
+                "title": "Hauptfunktionen",
+                "subtitle": "Entdecke die leistungsstarken Features, die Mein Chat Bot zu einer umfassenden KI-Chat-Lösung machen"
+            },
+            "builtWith": {
+                "title": "Entwickelt mit",
+                "subtitle": "Moderne Technologien und Frameworks, die die Anwendung antreiben"
+            },
+            "callToAction": {
+                "title": "Bereit, KI-Chat zu erleben?",
+                "subtitle": "Probiere Mein Chat Bot heute aus und entdecke die Kraft lokaler KI-Modelle mit einer intuitiven Chat-Oberfläche.",
+                "button": "Demo starten"
+            },
+            "technologies": {
+                "nuxt3": {
+                    "name": "Frontend Framework",
+                    "tech": "Nuxt 3",
+                    "description": "Modernes Vue.js-Framework mit SSR-Funktionen, automatischem Routing und verbesserter Leistungsoptimierung"
+                },
+                "vue3": {
+                    "name": "Frontend Library",
+                    "tech": "Vue 3",
+                    "description": "Progressives JavaScript-Framework mit Composition API und reaktiver Datenbindung"
+                },
+                "typescript": {
+                    "name": "Typsicherheit",
+                    "tech": "TypeScript",
+                    "description": "Strenge Typprüfung, verbesserte Codezuverlässigkeit und bessere Entwicklererfahrung"
+                },
+                "pinia": {
+                    "name": "State Management",
+                    "tech": "Pinia",
+                    "description": "Moderner State-Management-Store für Vue mit intuitiver API und TypeScript-Unterstützung"
+                },
+                "tailwind": {
+                    "name": "Styling",
+                    "tech": "Tailwind CSS",
+                    "description": "Utility-First-CSS-Framework mit individueller Konfiguration und responsiven Design-Mustern"
+                },
+                "ollama": {
+                    "name": "KI-Integration",
+                    "tech": "Ollama",
+                    "description": "Lokale KI-Modell-Verwaltungsplattform für nahtlose KI-Integration"
+                },
+                "highlight": {
+                    "name": "Code-Highlighting",
+                    "tech": "Highlight.js",
+                    "description": "Syntax-Highlighting für Code-Blöcke in Chat-Nachrichten mit Unterstützung für mehrere Programmiersprachen"
+                },
+                "marked": {
+                    "name": "Markdown-Parsing",
+                    "tech": "Marked",
+                    "description": "Schneller Markdown-Parser und -Compiler für die Darstellung von formatiertem Text und Code in Chat-Antworten"
+                }
+            }
+        },
+        "myPortfolio": {
+            "title": "Meine Portfolio Webseite",
+            "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung.",
+            "features": {
+                "multilingual": {
+                    "title": "Mehrsprachig",
+                    "description": "Unterstützung für Luxemburgisch, Deutsch, Französisch und Englisch mit i18n"
+                },
+                "responsive": {
+                    "title": "Responsive Design",
+                    "description": "Perfekte Darstellung auf allen Geräten - Desktop, Tablet und Mobile"
+                },
+                "darkMode": {
+                    "title": "Dark Mode",
+                    "description": "Elegantes Dark/Light Theme mit automatischer Browser-Erkennung"
+                },
+                "performance": {
+                    "title": "Hochleistung",
+                    "description": "Optimierte Ladezeiten und SEO mit Nuxt 3 Server-Side Rendering"
+                },
+                "seo": {
+                    "title": "SEO Optimiert",
+                    "description": "Vollständige Suchmaschinenoptimierung mit Sitemap und Meta-Tags"
+                },
+                "contact": {
+                    "title": "Kontaktformular",
+                    "description": "Funktionales Kontaktformular mit VeeValidate und Resend Integration"
+                }
+            },
+            "keyFeatures": {
+                "title": "Hauptfunktionen",
+                "subtitle": "Entdecke die Features, die diese Portfolio-Webseite zu einer modernen, professionellen Lösung machen"
+            },
+            "builtWith": {
+                "title": "Entwickelt mit",
+                "subtitle": "Moderne Technologien und Best Practices für eine erstklassige Benutzererfahrung"
+            },
+            "callToAction": {
+                "title": "Interessiert an einer ähnlichen Webseite?",
+                "subtitle": "Entdecke meine Portfolio-Webseite und sehe, wie moderne Webtechnologien eine beeindruckende Online-Präsenz schaffen können.",
+                "button": "Webseite besuchen"
+            },
+            "technologies": {
+                "nuxt3": {
+                    "name": "Frontend Framework",
+                    "tech": "Nuxt 3",
+                    "description": "Fortschrittliches Vue.js-Framework mit Server-Side Rendering, automatischem Code-Splitting und Leistungsoptimierung"
+                },
+                "vue3": {
+                    "name": "UI Library",
+                    "tech": "Vue 3",
+                    "description": "Modernes, reaktives JavaScript-Framework mit Composition API und optimaler Developer Experience"
+                },
+                "typescript": {
+                    "name": "Typsicherheit",
+                    "tech": "TypeScript",
+                    "description": "Statische Typisierung für bessere Code-Qualität, Fehlerprävention und erweiterte IDE-Unterstützung"
+                },
+                "tailwind": {
+                    "name": "CSS Framework",
+                    "tech": "Tailwind CSS",
+                    "description": "Utility-First-CSS-Framework für schnelles, konsistentes Styling und responsive Designs"
+                },
+                "i18n": {
+                    "name": "Internationalisierung",
+                    "tech": "Nuxt i18n",
+                    "description": "Vollständige Mehrsprachigkeitsunterstützung mit automatischem Routing und Locale-Management"
+                },
+                "veevalidate": {
+                    "name": "Formularvalidierung",
+                    "tech": "VeeValidate",
+                    "description": "Leistungsstarke Formularvalidierung mit benutzerfreundlicher Fehlerbehandlung und TypeScript-Support"
+                },
+                "resend": {
+                    "name": "E-Mail Service",
+                    "tech": "Resend",
+                    "description": "Moderne E-Mail-API für zuverlässige Kontaktformular-Übermittlung mit Entwickler-freundlicher Integration"
+                },
+                "iconify": {
+                    "name": "Icon System",
+                    "tech": "Iconify",
+                    "description": "Umfangreiche Icon-Bibliothek mit über 100.000 Icons und optimaler Leistung durch Icon-on-Demand"
+                }
             }
         }
     },

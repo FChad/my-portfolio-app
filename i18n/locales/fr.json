@@ -201,11 +201,173 @@
         "projects": {
             "myChatBot": {
                 "title": "Mon Chat Bot",
-                "description": "Une application de chat moderne et optimisée avec intégration Ollama pour discuter directement avec des modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées."
+                "description": "Une application de chat moderne et optimisée avec intégration Ollama pour discuter directement avec des modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées.",
+                "features": {
+                    "aiChat": {
+                        "title": "Chat IA",
+                        "description": "Chattez directement avec différents modèles IA via une interface utilisateur intuitive"
+                    },
+                    "conversationManagement": {
+                        "title": "Gestion des Conversations",
+                        "description": "Gérez plusieurs conversations comme ChatGPT avec sauvegarde automatique"
+                    },
+                    "modelSelection": {
+                        "title": "Sélection de Modèle",
+                        "description": "Choisissez parmi les modèles Ollama disponibles pour différents cas d'usage"
+                    },
+                    "localStorage": {
+                        "title": "Stockage Local",
+                        "description": "Les conversations sont stockées en sécurité dans le navigateur sans dépendances externes"
+                    },
+                    "modernUI": {
+                        "title": "Interface Moderne",
+                        "description": "Belle interface utilisateur responsive avec Tailwind CSS et Mode Sombre"
+                    },
+                    "streaming": {
+                        "title": "Streaming en Temps Réel",
+                        "description": "Réponses en temps réel avec Server-Sent Events pour une communication fluide"
+                    }
+                },
+                "keyFeatures": {
+                    "title": "Fonctionnalités Principales",
+                    "subtitle": "Découvrez les fonctionnalités puissantes qui font de Mon Chat Bot une solution de chat IA complète"
+                },
+                "builtWith": {
+                    "title": "Développé Avec",
+                    "subtitle": "Technologies modernes et frameworks alimentant l'application"
+                },
+                "callToAction": {
+                    "title": "Prêt à Découvrir le Chat IA ?",
+                    "subtitle": "Essayez Mon Chat Bot aujourd'hui et découvrez la puissance des modèles IA locaux avec une interface de chat intuitive.",
+                    "button": "Lancer la Démo"
+                },
+                "technologies": {
+                    "nuxt3": {
+                        "name": "Framework Frontend",
+                        "tech": "Nuxt 3",
+                        "description": "Framework Vue.js moderne avec capacités SSR, routage automatique et optimisation de performance améliorée"
+                    },
+                    "vue3": {
+                        "name": "Bibliothèque Frontend",
+                        "tech": "Vue 3",
+                        "description": "Framework JavaScript progressif avec Composition API et liaison de données réactive"
+                    },
+                    "typescript": {
+                        "name": "Sécurité des Types",
+                        "tech": "TypeScript",
+                        "description": "Vérification de types stricte, fiabilité de code améliorée et meilleure expérience développeur"
+                    },
+                    "pinia": {
+                        "name": "Gestion d'État",
+                        "tech": "Pinia",
+                        "description": "Store de gestion d'état moderne pour Vue avec API intuitive et support TypeScript"
+                    },
+                    "tailwind": {
+                        "name": "Stylisation",
+                        "tech": "Tailwind CSS",
+                        "description": "Framework CSS utility-first avec configuration personnalisée et motifs de design responsive"
+                    },
+                    "ollama": {
+                        "name": "Intégration IA",
+                        "tech": "Ollama",
+                        "description": "Plateforme de gestion de modèles IA locaux pour une intégration IA transparente"
+                    },
+                    "highlight": {
+                        "name": "Coloration Syntaxique",
+                        "tech": "Highlight.js",
+                        "description": "Coloration syntaxique pour les blocs de code dans les messages de chat avec support multi-langage"
+                    },
+                    "marked": {
+                        "name": "Analyse Markdown",
+                        "tech": "Marked",
+                        "description": "Analyseur et compilateur markdown rapide pour le rendu de texte formaté et de code dans les réponses de chat"
+                    }
+                }
             },
             "myPortfolio": {
                 "title": "Mon Site Web Portfolio",
-                "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur."
+                "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur.",
+                "features": {
+                    "multilingual": {
+                        "title": "Multilingue",
+                        "description": "Support pour le luxembourgeois, l'allemand, le français et l'anglais avec i18n"
+                    },
+                    "responsive": {
+                        "title": "Design Responsive",
+                        "description": "Affichage parfait sur tous les appareils - desktop, tablette et mobile"
+                    },
+                    "darkMode": {
+                        "title": "Mode Sombre",
+                        "description": "Thème élégant sombre/clair avec détection automatique du navigateur"
+                    },
+                    "performance": {
+                        "title": "Haute Performance",
+                        "description": "Temps de chargement optimisés et SEO avec Nuxt 3 Server-Side Rendering"
+                    },
+                    "seo": {
+                        "title": "Optimisé SEO",
+                        "description": "Optimisation complète pour les moteurs de recherche avec sitemap et balises meta"
+                    },
+                    "contact": {
+                        "title": "Formulaire de Contact",
+                        "description": "Formulaire de contact fonctionnel avec intégration VeeValidate et Resend"
+                    }
+                },
+                "keyFeatures": {
+                    "title": "Fonctionnalités Principales",
+                    "subtitle": "Découvrez les fonctionnalités qui font de ce site portfolio une solution moderne et professionnelle"
+                },
+                "builtWith": {
+                    "title": "Développé Avec",
+                    "subtitle": "Technologies modernes et meilleures pratiques pour une expérience utilisateur de première classe"
+                },
+                "callToAction": {
+                    "title": "Intéressé par un Site Web Similaire ?",
+                    "subtitle": "Explorez mon site web portfolio et voyez comment les technologies web modernes peuvent créer une présence en ligne impressionnante.",
+                    "button": "Visiter le Site Web"
+                },
+                "technologies": {
+                    "nuxt3": {
+                        "name": "Framework Frontend",
+                        "tech": "Nuxt 3",
+                        "description": "Framework Vue.js avancé avec Server-Side Rendering, code splitting automatique et optimisation de performance"
+                    },
+                    "vue3": {
+                        "name": "Bibliothèque UI",
+                        "tech": "Vue 3",
+                        "description": "Framework JavaScript moderne et réactif avec Composition API et expérience développeur optimale"
+                    },
+                    "typescript": {
+                        "name": "Sécurité des Types",
+                        "tech": "TypeScript",
+                        "description": "Typage statique pour une meilleure qualité de code, prévention d'erreurs et support IDE amélioré"
+                    },
+                    "tailwind": {
+                        "name": "Framework CSS",
+                        "tech": "Tailwind CSS",
+                        "description": "Framework CSS utility-first pour un style rapide et cohérent et des designs responsive"
+                    },
+                    "i18n": {
+                        "name": "Internationalisation",
+                        "tech": "Nuxt i18n",
+                        "description": "Support multilingue complet avec routage automatique et gestion des locales"
+                    },
+                    "veevalidate": {
+                        "name": "Validation de Formulaire",
+                        "tech": "VeeValidate",
+                        "description": "Validation de formulaire puissante avec gestion d'erreurs conviviale et support TypeScript"
+                    },
+                    "resend": {
+                        "name": "Service Email",
+                        "tech": "Resend",
+                        "description": "API email moderne pour une soumission fiable de formulaire de contact avec intégration conviviale pour les développeurs"
+                    },
+                    "iconify": {
+                        "name": "Système d'Icônes",
+                        "tech": "Iconify",
+                        "description": "Bibliothèque d'icônes complète avec plus de 100 000 icônes et performance optimale grâce aux icônes à la demande"
+                    }
+                }
             }
         },
         "documentation": {
