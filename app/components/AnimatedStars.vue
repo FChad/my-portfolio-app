@@ -52,7 +52,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
     particleCount: 40,
     flareCount: 10,
-    motion: 0.05,
+    motion: 0.08,
     tilt: 0.05,
     linkChance: 75,
     canvasClass: 'z-0'
@@ -63,6 +63,9 @@ let context: CanvasRenderingContext2D | null = null
 let animationFrame: number
 let resizeTimeout: number | null = null
 let resizeObserver: ResizeObserver | null = null
+
+// Track last canvas size to prevent unnecessary resizes
+let lastCanvasSize = { width: 0, height: 0 }
 
 // Performance optimization variables
 let isVisible = true
@@ -166,7 +169,7 @@ function random(min: number, max: number, float: boolean = false): number {
         : Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-function resize(): void {
+function resize(force: boolean = false): void {
     if (!starsCanvas.value || !context) return
 
     const canvas = starsCanvas.value
@@ -178,26 +181,47 @@ function resize(): void {
     const parentRect = parent.getBoundingClientRect()
     const dpr = window.devicePixelRatio || 1
 
+    const newWidth = Math.round(parentRect.width)
+    const newHeight = Math.round(parentRect.height)
+
+    // Check if size has actually changed to avoid unnecessary resizes (with small tolerance for floating point precision)
+    if (!force) {
+        const tolerance = 1
+        const widthChanged = Math.abs(lastCanvasSize.width - newWidth) > tolerance
+        const heightChanged = Math.abs(lastCanvasSize.height - newHeight) > tolerance
+
+        if (!widthChanged && !heightChanged) {
+            return // No significant size change, skip resize
+        }
+    }
+
+    // Update last known size
+    lastCanvasSize.width = newWidth
+    lastCanvasSize.height = newHeight
+
     // Set canvas internal resolution (for drawing)
-    canvas.width = parentRect.width * dpr
-    canvas.height = parentRect.height * dpr
+    canvas.width = newWidth * dpr
+    canvas.height = newHeight * dpr
 
     // Set canvas display size (CSS pixels)
-    canvas.style.width = parentRect.width + 'px'
-    canvas.style.height = parentRect.height + 'px'
+    canvas.style.width = newWidth + 'px'
+    canvas.style.height = newHeight + 'px'
 
     // Reset and scale context for high DPI
     context.setTransform(1, 0, 0, 1, 0, 0)
     context.scale(dpr, dpr)
 
     // Reset mouse position to center of new canvas size
-    mouse.x = parentRect.width / 2
-    mouse.y = parentRect.height / 2
+    mouse.x = newWidth / 2
+    mouse.y = newHeight / 2
 
     // Clear canvas
     context.clearRect(0, 0, canvas.width, canvas.height)
 
-    console.log('Canvas resized to:', parentRect.width + 'x' + parentRect.height)
+    // Only log resize in development mode to avoid console noise
+    if (import.meta.dev) {
+        console.log('Canvas resized to:', newWidth + 'x' + newHeight, force ? '(forced)' : '')
+    }
 }
 
 function position(x: number, y: number, z: number): { x: number; y: number } {
@@ -238,7 +262,7 @@ class Particle implements StarParticle {
     constructor() {
         this.x = random(-0.1, 1.1, true)
         this.y = random(-0.1, 1.1, true)
-        this.z = random(0, 4)
+        this.z = random(0.5, 4, true) // Minimum z value of 0.5 so all particles respond to mouse
         this.color = getStarColor()
         this.opacity = random(0.1, 1, true)
         this.flicker = 0
@@ -293,7 +317,7 @@ class Flare implements StarFlare {
     constructor() {
         this.x = random(-0.25, 1.25, true)
         this.y = random(-0.25, 1.25, true)
-        this.z = random(0, 2)
+        this.z = random(0.3, 2, true) // Minimum z value so flares also respond to mouse
         this.color = getFlareColor()
         this.opacity = random(0.001, 0.01, true)
     }
@@ -628,10 +652,7 @@ function onMouseLeave(): void {
 }
 
 function handleResize(): void {
-    // Immediate resize for responsive feel
-    resize()
-
-    // Debounced resize for performance (in case of rapid resizing)
+    // Debounced resize for performance (avoid multiple rapid calls)
     if (resizeTimeout) {
         clearTimeout(resizeTimeout)
     }
@@ -640,7 +661,7 @@ function handleResize(): void {
         resize()
         forceRender() // Force a render after resize
         resizeTimeout = null
-    }, 150) // 150ms debounce
+    }, 100) // Reduced debounce time for better responsiveness
 }
 
 function handleVisibilityChange(): void {
@@ -664,28 +685,10 @@ function init(): void {
     context = starsCanvas.value.getContext('2d')
     if (!context) return
 
-    // Progressive resize attempts to ensure proper sizing
-    const attemptResize = (attempts = 0) => {
-        resize()
-
-        // If canvas still has wrong size and we haven't tried too many times
-        if (attempts < 5 && starsCanvas.value) {
-            const canvas = starsCanvas.value
-            const parent = canvas.parentElement
-            if (parent) {
-                const parentRect = parent.getBoundingClientRect()
-                // If parent has size but canvas doesn't match, try again
-                if (parentRect.width > 0 && parentRect.height > 0) {
-                    if (canvas.width !== parentRect.width * (window.devicePixelRatio || 1)) {
-                        setTimeout(() => attemptResize(attempts + 1), 100)
-                    }
-                }
-            }
-        }
-    }
-
-    // Start attempting to resize
-    setTimeout(() => attemptResize(), 10)
+    // Initial resize with a small delay to ensure DOM is ready
+    setTimeout(() => {
+        resize(true) // Force resize on initialization
+    }, 50)
 
     mouse.x = starsCanvas.value.clientWidth / 2
     mouse.y = starsCanvas.value.clientHeight / 2
@@ -774,17 +777,25 @@ onMounted(() => {
         document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
 
         // ResizeObserver for more responsive canvas resizing
-        if ('ResizeObserver' in window) {
+        if ('ResizeObserver' in window && starsCanvas.value.parentElement) {
+            let resizeObserverTimeout: number | null = null
+
             resizeObserver = new ResizeObserver((entries) => {
-                for (const entry of entries) {
-                    if (entry.target === starsCanvas.value) {
-                        handleResize()
-                        break
-                    }
+                // Throttle ResizeObserver calls to prevent excessive resizes
+                if (resizeObserverTimeout) {
+                    clearTimeout(resizeObserverTimeout)
                 }
+
+                resizeObserverTimeout = window.setTimeout(() => {
+                    resize()
+                    forceRender()
+                    resizeObserverTimeout = null
+                }, 50)
             })
 
+            // Observe both the canvas and its parent container
             resizeObserver.observe(starsCanvas.value)
+            resizeObserver.observe(starsCanvas.value.parentElement)
         }
 
         // Set initial performance mode based on device capabilities
