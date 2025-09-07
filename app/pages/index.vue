@@ -162,69 +162,137 @@ const scrollToAbout = () => {
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Latest Project Section - AI Chat Bot -->
         <section class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">{{ $t('home.services.title') }}</h2>
+                    <h2 class="text-4xl font-bold mb-4">Mein neuestes Projekt</h2>
                     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        {{ $t('home.services.subtitle') }}
+                        Ein intelligenter KI Chat Bot - Modernste Technologie trifft auf benutzerfreundliches Design
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Web Development Service -->
+                <div class="max-w-4xl mx-auto">
+                    <!-- Main Project Card -->
                     <div
-                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div
-                            class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon name="mdi:code-braces" class="w-8 h-8 text-white" />
+                        class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <!-- Header with Icon and Title -->
+                        <div class="relative p-8 bg-blue-500 dark:bg-blue-600 text-white">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div
+                                        class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                                        <Icon name="mdi:robot-excited" class="w-8 h-8 text-white" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold">KI Chat Bot</h3>
+                                        <p class="text-blue-100 text-lg">Mein letztes Projekt</p>
+                                    </div>
+                                </div>
+                                <div class="hidden sm:block">
+                                    <div
+                                        class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+                                        <span class="text-sm font-medium">✨ Neu</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t('home.services.webdev.title') }}</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t('home.services.webdev.description') }}
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <li>• {{ $t('home.services.webdev.features.spa') }}</li>
-                            <li>• {{ $t('home.services.webdev.features.ssr') }}</li>
-                            <li>• {{ $t('home.services.webdev.features.pwa') }}</li>
-                        </ul>
-                    </div>
 
-                    <!-- UI/UX Service -->
-                    <div
-                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div
-                            class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon name="mdi:brush" class="w-8 h-8 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t('home.services.uiux.title') }}</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t('home.services.uiux.description') }}
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <li>• {{ $t('home.services.uiux.features.responsive') }}</li>
-                            <li>• {{ $t('home.services.uiux.features.designSystems') }}</li>
-                            <li>• {{ $t('home.services.uiux.features.accessibility') }}</li>
-                        </ul>
-                    </div>
+                        <!-- Content -->
+                        <div class="p-8">
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe
+                                Anfragen bearbeitet.
+                                Mit modernster AI-Technologie und einem eleganten Interface bietet er eine nahtlose
+                                Benutzererfahrung.
+                            </p>
 
-                    <!-- Consulting Service -->
-                    <div
-                        class="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div
-                            class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <Icon name="mdi:lightbulb" class="w-8 h-8 text-white" />
+                            <!-- Features Grid -->
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:brain" class="w-5 h-5 text-green-600 dark:text-green-400" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Intelligente KI
+                                        </h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Erweiterte
+                                            Sprachverarbeitung und Kontextverständnis</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:chat-processing"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Echtzeit Chat</h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Sofortige Antworten und
+                                            flüssige Konversationen</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:palette" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Modernes UI</h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Intuitive Benutzeroberfläche
+                                            mit Dark/Light Mode</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:shield-check"
+                                            class="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Sicher & Privat
+                                        </h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Datenschutz und sichere
+                                            Kommunikation</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tech Stack -->
+                            <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+                                <h4
+                                    class="text-sm font-semibold text-gray-800 dark:text-white mb-3 uppercase tracking-wide">
+                                    Technologien</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">Vue.js</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">Node.js</span>
+                                    <span
+                                        class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium">OpenAI
+                                        API</span>
+                                    <span
+                                        class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium">WebSockets</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium">TypeScript</span>
+                                </div>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <div class="pt-6">
+                                <NuxtLinkLocale to="/showcase"
+                                    class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:shadow-lg transition-all duration-300 group">
+                                    <Icon name="mdi:eye" class="w-5 h-5" />
+                                    Projekt ansehen
+                                    <Icon name="mdi:arrow-right"
+                                        class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                </NuxtLinkLocale>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">{{ $t('home.services.consulting.title') }}</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $t('home.services.consulting.description') }}
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                            <li>• {{ $t('home.services.consulting.features.codeReviews') }}</li>
-                            <li>• {{ $t('home.services.consulting.features.performance') }}</li>
-                            <li>• {{ $t('home.services.consulting.features.techStack') }}</li>
-                        </ul>
                     </div>
                 </div>
             </div>
