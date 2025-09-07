@@ -90,7 +90,7 @@ const texts = computed(() => [
 
                             <!-- Secondary CTA -->
                             <NuxtLinkLocale to="/contact"
-                                class="group relative px-10 py-5 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-bold text-lg hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 shadow-lg inline-flex items-center">
+                                class="group relative px-10 py-5 border-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 shadow-lg inline-flex items-center">
                                 <span class="flex items-center gap-3">
                                     {{ $t('home.cta.secondary') }}
                                     <Icon name="mdi:chat" class="w-6 h-6 transition-transform duration-300" />
@@ -224,7 +224,7 @@ const texts = computed(() => [
                 </p>
 
                 <NuxtLinkLocale to="/about"
-                    class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
                     {{ $t('home.bottomCta.button') }}
                     <Icon name="mdi:rocket" class="w-5 h-5" />
                 </NuxtLinkLocale>

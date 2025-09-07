@@ -12,7 +12,7 @@ const mobileMenuOpen = ref(false)
                 <!-- Logo/Name -->
                 <div class="flex items-center">
                     <NuxtLinkLocale to="/"
-                        class="logo-gradient text-xl font-bold uppercase bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                        class="title text-xl font-bold uppercase text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">
                         Chad Feierstein
                     </NuxtLinkLocale>
                 </div>
@@ -93,11 +93,11 @@ const mobileMenuOpen = ref(false)
 </template>
 
 <style scoped>
-.router-link-exact-active:not(.logo-gradient) {
+.router-link-exact-active:not(.title) {
     color: rgb(37 99 235);
 }
 
-.dark .router-link-exact-active:not(.logo-gradient) {
+.dark .router-link-exact-active:not(.title) {
     color: rgb(96 165 250);
 }
 
