@@ -3,7 +3,11 @@ export default {
     darkMode: 'class',
     content: [],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+            },
+        },
     },
     plugins: [],
 }

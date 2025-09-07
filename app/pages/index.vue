@@ -16,49 +16,39 @@ const texts = computed(() => [
     <main class="overflow-hidden">
         <!-- Hero Section -->
         <section class="relative min-h-[calc(100vh-65px)] flex items-center justify-center overflow-hidden">
-            <!-- Advanced Animated Background -->
+            <!-- Animated Stars Background -->
             <div class="absolute inset-0">
-                <!-- Gradient Mesh Background -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-                </div>
+                <!-- Dynamic Gradient Background - Light/Dark Mode -->
+                <div class="absolute inset-0 
+                    bg-gradient-radial from-slate-50 via-slate-100 to-slate-300
+                    dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950
+                    transition-colors duration-500"></div>
 
-                <!-- Grid Pattern -->
-                <div class="absolute inset-0 bg-grid-pattern opacity-15 dark:opacity-15"></div>
+                <!-- Animated Stars Canvas -->
+                <AnimatedStars :particle-count="50" :flare-count="15" :motion="0.03" :link-chance="85"
+                    canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity duration-500" />
 
-                <!-- Floating Geometric Shapes -->
-                <div
-                    class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-20 animate-float">
-                </div>
-                <div
-                    class="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-float-delayed">
-                </div>
-                <div
-                    class="absolute bottom-32 left-20 w-40 h-40 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full opacity-15 animate-float-slow">
-                </div>
-                <div
-                    class="absolute bottom-20 right-32 w-28 h-28 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-20 animate-float-reverse">
-                </div>
-
-                <!-- Blur Orbs -->
-                <div
-                    class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse-slow">
-                </div>
-                <div
-                    class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse-slow delay-1000">
-                </div>
+                <!-- Adaptive overlay for text readability -->
+                <div class="absolute inset-0 z-10
+                    bg-gradient-to-b from-transparent via-transparent to-white/30
+                    dark:from-transparent dark:via-transparent dark:to-gray-900/20
+                    transition-colors duration-500"></div>
             </div>
 
             <!-- Main Content -->
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-8">
                     <!-- Main Headline with Enhanced Typography -->
                     <div class="space-y-4 mt-16">
                         <div class="space-y-2">
-                            <p class="text-2xl font-medium text-gray-600 dark:text-gray-400 tracking-wide uppercase">
+                            <p class="text-2xl font-medium tracking-wide uppercase
+                                text-blue-600 dark:text-blue-300
+                                transition-colors duration-500">
                                 {{ $t('home.greeting') }}</p>
                             <h1 class="text-6xl md:text-8xl font-black leading-tight">
-                                <span class="uppercase block text-gray-700 dark:text-gray-300">
+                                <span class="uppercase block transition-colors duration-500
+                                    text-gray-800 dark:text-white 
+                                    drop-shadow-sm dark:drop-shadow-lg">
                                     Chad<br />Feierstein
                                 </span>
                             </h1>
@@ -71,7 +61,9 @@ const texts = computed(() => [
 
                     <!-- Value Proposition -->
                     <div class="max-w-3xl mx-auto">
-                        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-xl md:text-2xl leading-relaxed transition-colors duration-500
+                            text-gray-600 dark:text-gray-200 
+                            drop-shadow-sm dark:drop-shadow-md">
                             {{ $t('home.tagline') }}
                         </p>
                     </div>
