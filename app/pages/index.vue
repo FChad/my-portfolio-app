@@ -9,6 +9,17 @@ const texts = computed(() => [
     t('home.roles.serveradmin'),
     t('home.roles.solver')
 ])
+
+// Smooth scroll to next section when clicking scroll indicator
+const scrollToAbout = () => {
+    const aboutSection = document.querySelector('#about-section')
+    if (aboutSection) {
+        aboutSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }
+}
 </script>
 
 <template>
@@ -36,7 +47,7 @@ const texts = computed(() => [
             </div>
 
             <!-- Main Content -->
-            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-16 lg:pb-10">
                 <div class="text-center space-y-8">
                     <!-- Main Headline with Enhanced Typography -->
                     <div class="space-y-4 mt-16">
@@ -92,10 +103,22 @@ const texts = computed(() => [
                     </div>
                 </div>
             </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+                <div class="flex flex-col items-center animate-bounce">
+                    <span class="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2 opacity-75">
+                        Scroll down
+                    </span>
+                    <div class="scroll-indicator" @click="scrollToAbout">
+                        <Icon name="mdi:chevron-down" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- About Section -->
-        <section class="py-20 bg-gray-100/50 dark:bg-gray-800/50">
+        <section id="about-section" class="py-20 bg-gray-100/50 dark:bg-gray-800/50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
@@ -341,6 +364,64 @@ const texts = computed(() => [
 .bg-clip-text {
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+/* Scroll Indicator Styles */
+.scroll-indicator {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dark .scroll-indicator {
+    border-color: rgba(96, 165, 250, 0.4);
+    background: rgba(17, 24, 39, 0.2);
+}
+
+.scroll-indicator:hover {
+    transform: translateY(-2px);
+    border-color: rgba(59, 130, 246, 0.6);
+    background: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.dark .scroll-indicator:hover {
+    border-color: rgba(96, 165, 250, 0.7);
+    background: rgba(96, 165, 250, 0.1);
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+/* Enhanced bounce animation for scroll indicator */
+@keyframes scroll-bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+.animate-bounce {
+    animation: scroll-bounce 2s infinite;
 }
 
 /* Smooth transitions for all interactive elements */
