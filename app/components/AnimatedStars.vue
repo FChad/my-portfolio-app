@@ -1,10 +1,11 @@
 <template>
     <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full block" :class="canvasClass"
-        style="width: 100% !important; height: 100% !important;"></canvas>
+        style="width: 100% !important; height: 100% !important;" @mouseenter="onMouseEnter"
+        @mouseleave="onMouseLeave"></canvas>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed, shallowRef, nextTick } from 'vue'
 
 interface StarParticle {
     x: number
@@ -62,6 +63,15 @@ let context: CanvasRenderingContext2D | null = null
 let animationFrame: number
 let resizeTimeout: number | null = null
 let resizeObserver: ResizeObserver | null = null
+
+// Performance optimization variables
+let isVisible = true
+let isMouseOver = false
+let performanceMode = false
+let lastFrameTime = 0
+const targetFPS = 60
+const frameInterval = 1000 / targetFPS
+let frameSkipCounter = 0
 
 // Color mode integration
 const colorMode = useColorMode()
@@ -242,28 +252,32 @@ class Particle implements StarParticle {
         const r = ((this.z * settings.particleSizeMultiplier) + settings.particleSizeBase) * (sizeRatio() / 1000)
         let o = this.opacity
 
-        // Flicker effect
+        // Optimized flicker effect - reduce frequency in performance mode
+        const flickerRate = (performanceMode && !isMouseOver) ? settings.flickerSmoothing * 3 : settings.flickerSmoothing
         const newVal = random(-0.5, 0.5, true)
-        this.flicker += (newVal - this.flicker) / settings.flickerSmoothing
+        this.flicker += (newVal - this.flicker) / flickerRate
         this.flicker = Math.max(-0.5, Math.min(0.5, this.flicker))
         o = Math.max(0, Math.min(1, o + this.flicker))
 
-        // Update color for theme changes
-        this.color = getStarColor()
+        // Cache color to avoid repeated function calls
+        if (!this.color || Math.random() < 0.01) { // Update color occasionally
+            this.color = getStarColor()
+        }
 
         context.fillStyle = this.color
         context.globalAlpha = o
         context.beginPath()
         context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
         context.fill()
-        context.closePath()
 
-        // Particle glare
-        context.globalAlpha = o * settings.glareOpacityMultiplier
-        context.beginPath()
-        context.ellipse(pos.x, pos.y, r * 100, r, (settings.glareAngle - ((nPos.x - 0.5) * settings.noiseStrength * props.motion)) * (Math.PI / 180), 0, 2 * Math.PI, false)
-        context.fill()
-        context.closePath()
+        // Skip glare effect in performance mode for better performance
+        if (!performanceMode || isMouseOver) {
+            // Particle glare
+            context.globalAlpha = o * settings.glareOpacityMultiplier
+            context.beginPath()
+            context.ellipse(pos.x, pos.y, r * 100, r, (settings.glareAngle - ((nPos.x - 0.5) * settings.noiseStrength * props.motion)) * (Math.PI / 180), 0, 2 * Math.PI, false)
+            context.fill()
+        }
 
         context.globalAlpha = 1
     }
@@ -290,15 +304,16 @@ class Flare implements StarFlare {
         const pos = position(this.x, this.y, this.z)
         const r = ((this.z * settings.flareSizeMultiplier) + settings.flareSizeBase) * (sizeRatio() / 1000)
 
-        // Update color for theme changes
-        this.color = getFlareColor()
+        // Cache color to avoid repeated function calls
+        if (!this.color || Math.random() < 0.05) { // Update color occasionally
+            this.color = getFlareColor()
+        }
 
-        context.beginPath()
-        context.globalAlpha = this.opacity
-        context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
         context.fillStyle = this.color
+        context.globalAlpha = this.opacity
+        context.beginPath()
+        context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
         context.fill()
-        context.closePath()
         context.globalAlpha = 1
     }
 }
@@ -490,10 +505,23 @@ function startLink(vertex: number, length: number): void {
 }
 
 function render(): void {
-    if (!context || !starsCanvas.value) return
+    if (!context || !starsCanvas.value || !isVisible) return
 
-    // Update noise position
-    n++
+    // Performance mode: reduce animation quality when not actively interacting
+    const isLowPower = performanceMode && !isMouseOver
+
+    // Frame skipping for performance mode
+    if (isLowPower) {
+        frameSkipCounter++
+        if (frameSkipCounter < 3) { // Skip 2 out of 3 frames
+            return
+        }
+        frameSkipCounter = 0
+    }
+
+    // Update noise position (less frequent in performance mode)
+    const noiseStep = isLowPower ? 3 : 1
+    n += noiseStep
     if (n >= settings.noiseLength) {
         n = 0
     }
@@ -503,33 +531,50 @@ function render(): void {
     const canvas = starsCanvas.value
     context.clearRect(0, 0, canvas.width, canvas.height)
 
+    // Reduce particle count in performance mode
+    const renderParticleCount = isLowPower
+        ? Math.max(10, Math.floor(props.particleCount * 0.5))
+        : props.particleCount
+
     // Render particles
-    for (let i = 0; i < props.particleCount; i++) {
+    for (let i = 0; i < renderParticleCount; i++) {
         const particle = particles[i]
         if (particle) {
             particle.render()
         }
     }
 
+    // Reduce link creation frequency in performance mode
+    const linkChanceAdjusted = isLowPower
+        ? props.linkChance * 2 // Half the link creation rate
+        : props.linkChance
+
     // Start new links randomly
-    if (random(0, props.linkChance) === props.linkChance) {
+    if (random(0, linkChanceAdjusted) === linkChanceAdjusted) {
         const length = random(settings.linkLengthMin, settings.linkLengthMax)
         const start = random(0, particles.length - 1)
         startLink(start, length)
     }
 
-    // Render existing links
-    for (let l = links.length - 1; l >= 0; l--) {
+    // Render existing links (batch remove finished links)
+    const activeLinks: typeof links = []
+    for (let l = 0; l < links.length; l++) {
         const link = links[l]
         if (link && !link.finished) {
             link.render()
-        } else {
-            links.splice(l, 1)
+            activeLinks.push(link)
         }
     }
+    links.length = 0
+    links.push(...activeLinks)
+
+    // Reduce flare count in performance mode
+    const renderFlareCount = isLowPower
+        ? Math.max(2, Math.floor(props.flareCount * 0.3))
+        : props.flareCount
 
     // Render flares
-    for (let j = 0; j < props.flareCount; j++) {
+    for (let j = 0; j < renderFlareCount; j++) {
         const flare = flares[j]
         if (flare) {
             flare.render()
@@ -537,9 +582,21 @@ function render(): void {
     }
 }
 
-function animate(): void {
-    render()
-    animationFrame = requestAnimationFrame(animate)
+function animate(currentTime = 0): void {
+    // Throttle animation based on performance and visibility
+    const elapsed = currentTime - lastFrameTime
+
+    // Adaptive frame rate based on performance mode
+    const currentFrameInterval = performanceMode && !isMouseOver ? frameInterval * 2 : frameInterval
+
+    if (elapsed >= currentFrameInterval) {
+        render()
+        lastFrameTime = currentTime - (elapsed % currentFrameInterval)
+    }
+
+    if (isVisible) {
+        animationFrame = requestAnimationFrame(animate)
+    }
 }
 
 function forceRender(): void {
@@ -553,6 +610,21 @@ function handleMouseMove(e: MouseEvent): void {
     const rect = starsCanvas.value.getBoundingClientRect()
     mouse.x = e.clientX - rect.left
     mouse.y = e.clientY - rect.top
+}
+
+function onMouseEnter(): void {
+    isMouseOver = true
+    performanceMode = false
+}
+
+function onMouseLeave(): void {
+    isMouseOver = false
+    // Switch to performance mode after a short delay when mouse leaves
+    setTimeout(() => {
+        if (!isMouseOver) {
+            performanceMode = true
+        }
+    }, 2000)
 }
 
 function handleResize(): void {
@@ -569,6 +641,21 @@ function handleResize(): void {
         forceRender() // Force a render after resize
         resizeTimeout = null
     }, 150) // 150ms debounce
+}
+
+function handleVisibilityChange(): void {
+    isVisible = !document.hidden
+
+    if (isVisible) {
+        // Resume animation when tab becomes visible
+        lastFrameTime = performance.now()
+        animate()
+    } else {
+        // Pause animation when tab is hidden
+        if (animationFrame) {
+            cancelAnimationFrame(animationFrame)
+        }
+    }
 }
 
 function init(): void {
@@ -661,21 +748,30 @@ function init(): void {
 
 // Watch for theme changes and update colors
 watch(currentTheme, (newTheme) => {
-    // Update all particle colors when theme changes
+    // Mark colors as outdated so they get updated in next render cycle
+    // This avoids expensive synchronous updates
     particles.forEach(particle => {
-        particle.color = getStarColor()
+        particle.color = ''
     })
 
     flares.forEach(flare => {
-        flare.color = getFlareColor()
+        flare.color = ''
+    })
+
+    // Force a render to update colors immediately
+    nextTick(() => {
+        forceRender()
     })
 }, { immediate: false })
 
 onMounted(() => {
     if (starsCanvas.value) {
         init()
-        window.addEventListener('mousemove', handleMouseMove)
-        window.addEventListener('resize', handleResize)
+
+        // Add event listeners
+        window.addEventListener('mousemove', handleMouseMove, { passive: true })
+        window.addEventListener('resize', handleResize, { passive: true })
+        document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
 
         // ResizeObserver for more responsive canvas resizing
         if ('ResizeObserver' in window) {
@@ -690,10 +786,48 @@ onMounted(() => {
 
             resizeObserver.observe(starsCanvas.value)
         }
+
+        // Set initial performance mode based on device capabilities
+        nextTick(() => {
+            const canvas = starsCanvas.value
+            if (canvas && canvas.parentElement) {
+                const rect = canvas.parentElement.getBoundingClientRect()
+                // Enable performance mode for smaller screens or lower-end devices
+                if (rect.width < 768 || navigator.hardwareConcurrency < 4) {
+                    performanceMode = true
+                }
+            }
+        })
+
+        // Use Intersection Observer to pause animation when component is not visible
+        if ('IntersectionObserver' in window && starsCanvas.value) {
+            const intersectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === starsCanvas.value) {
+                        const wasVisible = isVisible
+                        isVisible = entry.isIntersecting
+
+                        // Resume animation if it became visible
+                        if (isVisible && !wasVisible) {
+                            lastFrameTime = performance.now()
+                            animate()
+                        }
+                    }
+                })
+            }, { threshold: 0.1 })
+
+            intersectionObserver.observe(starsCanvas.value)
+
+                // Store reference for cleanup
+                ; (starsCanvas.value as any).__intersectionObserver = intersectionObserver
+        }
     }
 })
 
 onUnmounted(() => {
+    // Set visibility to false to stop animation
+    isVisible = false
+
     if (animationFrame) {
         cancelAnimationFrame(animationFrame)
     }
@@ -706,7 +840,19 @@ onUnmounted(() => {
         resizeObserver.disconnect()
     }
 
+    // Clean up event listeners
     window.removeEventListener('mousemove', handleMouseMove)
     window.removeEventListener('resize', handleResize)
+    document.removeEventListener('visibilitychange', handleVisibilityChange)
+
+    // Clean up intersection observer
+    if (starsCanvas.value && (starsCanvas.value as any).__intersectionObserver) {
+        ; (starsCanvas.value as any).__intersectionObserver.disconnect()
+    }
+
+    // Clear arrays to free memory
+    particles.length = 0
+    flares.length = 0
+    links.length = 0
 })
 </script>
