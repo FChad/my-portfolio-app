@@ -155,7 +155,7 @@ const experiences = [
 
                             <div class="text-center">
                                 <div
-                                    class="w-48 h-48 mx-auto bg-blue-600 dark:bg-blue-400 rounded-full flex items-center justify-center mb-6">
+                                    class="w-48 h-48 mx-auto bg-blue-600 rounded-full flex items-center justify-center mb-6">
                                     <Icon name="mdi:account" class="w-24 h-24 text-white" />
                                 </div>
                                 <h3 class="text-2xl font-bold mb-2">Chad Feierstein</h3>
