@@ -53,7 +53,7 @@ const props = withDefaults(defineProps<Props>(), {
     flareCount: 10,
     motion: 0.08,
     tilt: 0.05,
-    linkChance: 75,
+    linkChance: 25,
     canvasClass: 'z-0'
 })
 

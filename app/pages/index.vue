@@ -36,7 +36,7 @@ const scrollToAbout = () => {
                     transition-colors duration-500"></div>
 
                 <!-- Animated Stars Canvas -->
-                <AnimatedStars :particle-count="50" :flare-count="15" :motion="0.03" :link-chance="85"
+                <AnimatedStars :particle-count="50" :flare-count="15" :motion="0.03" :link-chance="25"
                     canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity duration-500" />
 
                 <!-- Adaptive overlay for text readability -->
