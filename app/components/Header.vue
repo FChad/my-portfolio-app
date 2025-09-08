@@ -49,7 +49,7 @@ const mobileMenuOpen = ref(false)
                 <div class="flex items-center gap-4">
                     <!-- Mobile Menu Button -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors">
                         <Icon v-if="!mobileMenuOpen" name="mdi:menu" class="w-5 h-5" />
                         <Icon v-else name="mdi:close" class="w-5 h-5" />
                     </button>
