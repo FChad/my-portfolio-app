@@ -107,9 +107,6 @@ const scrollToAbout = () => {
             <!-- Scroll Down Indicator -->
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
                 <div class="flex flex-col items-center animate-bounce">
-                    <span class="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2 opacity-75">
-                        Scroll down
-                    </span>
                     <div class="scroll-indicator" @click="scrollToAbout">
                         <Icon name="mdi:chevron-down" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
                     </div>
