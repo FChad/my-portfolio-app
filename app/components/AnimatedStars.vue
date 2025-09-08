@@ -207,14 +207,16 @@ function resize(force: boolean = false): void {
     const newWidth = Math.round(parentRect.width)
     const newHeight = Math.round(parentRect.height)
 
-    // Check if size has actually changed to avoid unnecessary resizes (with small tolerance for floating point precision)
+    // Check if size or DPR has changed (important for zoom handling)
+    const currentDPR = context.getTransform().a || 1
     if (!force) {
         const tolerance = 1
         const widthChanged = Math.abs(lastCanvasSize.width - newWidth) > tolerance
         const heightChanged = Math.abs(lastCanvasSize.height - newHeight) > tolerance
+        const dprChanged = Math.abs(currentDPR - dpr) > 0.1
 
-        if (!widthChanged && !heightChanged) {
-            return // No significant size change, skip resize
+        if (!widthChanged && !heightChanged && !dprChanged) {
+            return // No significant change, skip resize
         }
     }
 
@@ -222,15 +224,18 @@ function resize(force: boolean = false): void {
     lastCanvasSize.width = newWidth
     lastCanvasSize.height = newHeight
 
-    // Set canvas internal resolution (for drawing)
-    canvas.width = newWidth * dpr
-    canvas.height = newHeight * dpr
+    // Set canvas internal resolution (for drawing) - handle zoom properly
+    const pixelWidth = Math.round(newWidth * dpr)
+    const pixelHeight = Math.round(newHeight * dpr)
 
-    // Set canvas display size (CSS pixels)
+    canvas.width = pixelWidth
+    canvas.height = pixelHeight
+
+    // Set canvas display size (CSS pixels) - critical for proper zoom handling
     canvas.style.width = newWidth + 'px'
     canvas.style.height = newHeight + 'px'
 
-    // Reset and scale context for high DPI
+    // Reset and scale context for high DPI - ensure clean slate
     context.setTransform(1, 0, 0, 1, 0, 0)
     context.scale(dpr, dpr)
 
@@ -238,12 +243,12 @@ function resize(force: boolean = false): void {
     mouse.x = newWidth / 2
     mouse.y = newHeight / 2
 
-    // Clear canvas
-    context.clearRect(0, 0, canvas.width, canvas.height)
+    // Clear canvas with proper dimensions
+    context.clearRect(0, 0, pixelWidth, pixelHeight)
 
     // Only log resize in development mode to avoid console noise
     if (import.meta.dev) {
-        console.log('Canvas resized to:', newWidth + 'x' + newHeight, force ? '(forced)' : '')
+        console.log('Canvas resized to:', newWidth + 'x' + newHeight, 'DPR:', dpr, force ? '(forced)' : '')
     }
 }
 
@@ -259,7 +264,11 @@ function position(x: number, y: number, z: number): { x: number; y: number } {
 
 function sizeRatio(): number {
     if (!starsCanvas.value) return 1000
-    return starsCanvas.value.width >= starsCanvas.value.height ? starsCanvas.value.width : starsCanvas.value.height
+    // Use CSS dimensions, not internal canvas resolution for consistent sizing
+    const canvas = starsCanvas.value
+    const width = canvas.clientWidth || canvas.offsetWidth
+    const height = canvas.clientHeight || canvas.offsetHeight
+    return Math.max(width, height)
 }
 
 function noisePoint(i: number): { x: number; y: number } {
@@ -568,9 +577,9 @@ function render(): void {
     if (n >= settings.noise.length) n = 0
     nPos = noisePoint(n)
 
-    // Clear canvas
+    // Clear canvas efficiently
     const canvas = starsCanvas.value
-    context.clearRect(0, 0, canvas.width, canvas.height)
+    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
 
     // Render particles (reduce count in performance mode)
     const particleCount = isLowPower ? Math.max(10, props.particleCount >> 1) : props.particleCount
@@ -625,8 +634,11 @@ function forceRender(): void {
 function handleMouseMove(e: MouseEvent): void {
     if (!starsCanvas.value) return
     const rect = starsCanvas.value.getBoundingClientRect()
-    mouse.x = e.clientX - rect.left
-    mouse.y = e.clientY - rect.top
+    // Use proper coordinate transformation that accounts for zoom
+    const scaleX = starsCanvas.value.clientWidth / rect.width
+    const scaleY = starsCanvas.value.clientHeight / rect.height
+    mouse.x = (e.clientX - rect.left) * scaleX
+    mouse.y = (e.clientY - rect.top) * scaleY
 }
 
 function onMouseEnter(): void {
@@ -651,10 +663,15 @@ function handleResize(): void {
     }
 
     resizeTimeout = window.setTimeout(() => {
-        resize()
+        resize(true) // Force resize to handle zoom changes
         forceRender() // Force a render after resize
         resizeTimeout = null
-    }, 100) // Reduced debounce time for better responsiveness
+    }, 50) // Faster response for better zoom handling
+}
+
+// Handle zoom changes specifically
+function handleZoom(): void {
+    handleResize()
 }
 
 function handleVisibilityChange(): void {
@@ -732,21 +749,28 @@ onMounted(() => {
 
     init()
 
-    // Simplified event listeners
+    // Event listeners with zoom handling
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('resize', handleResize, { passive: true })
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
 
-    // Simple resize observer
+    // Listen for zoom events (browser zoom changes devicePixelRatio)
+    const mediaQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+    const handleDPRChange = () => {
+        handleZoom()
+    }
+
+    if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', handleDPRChange)
+            // Store reference for cleanup
+            ; (starsCanvas.value as any).__mediaQuery = mediaQuery
+            ; (starsCanvas.value as any).__dprHandler = handleDPRChange
+    }
+
+    // Enhanced resize observer that handles zoom better
     if (window.ResizeObserver && starsCanvas.value.parentElement) {
         resizeObserver = new ResizeObserver(() => {
-            if (resizeTimeout) return
-
-            resizeTimeout = window.setTimeout(() => {
-                resize()
-                forceRender()
-                resizeTimeout = null
-            }, 100)
+            handleResize() // Use the debounced resize function
         })
 
         resizeObserver.observe(starsCanvas.value.parentElement)
@@ -795,6 +819,13 @@ onUnmounted(() => {
     if (canvas) {
         const observer = (canvas as any).__observer
         observer?.disconnect()
+
+        // Cleanup zoom detection
+        const mediaQuery = (canvas as any).__mediaQuery
+        const dprHandler = (canvas as any).__dprHandler
+        if (mediaQuery && dprHandler && mediaQuery.removeEventListener) {
+            mediaQuery.removeEventListener('change', dprHandler)
+        }
     }
 
     // Remove event listeners
