@@ -245,11 +245,6 @@ function resize(force: boolean = false): void {
 
     // Clear canvas with proper dimensions
     context.clearRect(0, 0, pixelWidth, pixelHeight)
-
-    // Only log resize in development mode to avoid console noise
-    if (import.meta.dev) {
-        console.log('Canvas resized to:', newWidth + 'x' + newHeight, 'DPR:', dpr, force ? '(forced)' : '')
-    }
 }
 
 function position(x: number, y: number, z: number): { x: number; y: number } {
