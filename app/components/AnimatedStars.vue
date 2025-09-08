@@ -1,11 +1,10 @@
 <template>
     <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full block" :class="canvasClass"
-        style="width: 100% !important; height: 100% !important;" @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"></canvas>
+        @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" />
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, computed, shallowRef, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed, nextTick } from 'vue'
 
 interface StarParticle {
     x: number
@@ -64,78 +63,101 @@ let animationFrame: number
 let resizeTimeout: number | null = null
 let resizeObserver: ResizeObserver | null = null
 
-// Track last canvas size to prevent unnecessary resizes
+// Canvas and performance state
 let lastCanvasSize = { width: 0, height: 0 }
-
-// Performance optimization variables
 let isVisible = true
 let isMouseOver = false
 let performanceMode = false
 let lastFrameTime = 0
-const targetFPS = 60
-const frameInterval = 1000 / targetFPS
+const frameInterval = 1000 / 60 // 60 FPS
 let frameSkipCounter = 0
 
 // Color mode integration
 const colorMode = useColorMode()
 const currentTheme = computed(() => colorMode.value)
 
-// Animation variables
-let mouse = { x: 0, y: 0 }
+// Animation state
+const mouse = { x: 0, y: 0 }
 let particles: StarParticle[] = []
 let flares: StarFlare[] = []
 let links: StarLink[] = []
-let vertices: number[] = []
-let triangles: number[][] = []
-let points: [number, number][] = []
 let n = 0
 let nPos = { x: 0, y: 0 }
 
-// Settings - adapted to your color scheme with theme support
-const settings = {
-    light: {
-        starColor: '#1E40AF',      // blue-800 - viel dunkler für bessere Sichtbarkeit
-        linkColor: '#2563EB',      // blue-600 - dunkler für Kontrast
-        flareColor: '#3B82F6',     // blue-500 - dunkler als vorher
-        backgroundColor: 'rgba(30, 64, 175, 0.08)', // stärkere blaue Tönung
-        linkOpacity: 0.4           // höhere Opacity für bessere Sichtbarkeit
-    },
-    dark: {
-        starColor: '#60A5FA',      // blue-400
-        linkColor: '#3B82F6',      // blue-500
-        flareColor: '#DBEAFE',     // blue-100
-        backgroundColor: 'rgba(59, 130, 246, 0.05)', // slightly more visible blue tint
-        linkOpacity: 0.25          // ursprüngliche Opacity für dark mode
-    },
-    particleSizeBase: 1,
-    particleSizeMultiplier: 0.5,
-    flareSizeBase: 100,
-    flareSizeMultiplier: 100,
-    lineWidth: 1,
-    linkLengthMin: 5,
-    linkLengthMax: 7,
-    linkOpacity: 0.25,
-    linkFade: 90,
-    linkSpeed: 1,
-    glareAngle: -60,
-    glareOpacityMultiplier: 0.01,
-    flickerSmoothing: 15,
-    noiseLength: 1000,
-    noiseStrength: 1,
-    nAngle: (Math.PI * 2) / 1000,
-    nRad: 100,
-    nScale: 0.5
+// Cached theme colors for better performance
+let cachedColors = {
+    starColor: '#60A5FA',
+    linkColor: '#3B82F6',
+    flareColor: '#DBEAFE',
+    linkOpacity: 0.25
 }
 
-// Delaunay triangulation implementation (simplified)
-const Delaunay = {
-    triangulate(points: [number, number][]): number[] {
-        // Simplified triangulation - in a real implementation, you'd use a proper Delaunay algorithm
-        const vertices: number[] = []
-        for (let i = 0; i < points.length - 2; i++) {
-            vertices.push(i, i + 1, i + 2)
+// Settings configuration
+const settings = {
+    themes: {
+        light: {
+            starColor: '#1E40AF',
+            linkColor: '#2563EB',
+            flareColor: '#3B82F6',
+            linkOpacity: 0.4
+        },
+        dark: {
+            starColor: '#60A5FA',
+            linkColor: '#3B82F6',
+            flareColor: '#DBEAFE',
+            linkOpacity: 0.25
         }
-        return vertices
+    },
+    particle: {
+        sizeBase: 1,
+        sizeMultiplier: 0.5,
+        flickerSmoothing: 15,
+        glareAngle: -60,
+        glareOpacityMultiplier: 0.01
+    },
+    flare: {
+        sizeBase: 100,
+        sizeMultiplier: 100
+    },
+    link: {
+        lineWidth: 1,
+        lengthMin: 5,
+        lengthMax: 7,
+        fade: 90,
+        speed: 1
+    },
+    noise: {
+        length: 1000,
+        strength: 1,
+        angle: Math.PI * 2 / 1000,
+        radius: 100
+    }
+}
+
+// Simplified neighbor assignment for particle connections
+function createNeighbors(): void {
+    const maxDistance = 0.3 // Maximum distance for neighbors
+
+    for (let i = 0; i < particles.length; i++) {
+        const particle = particles[i]
+        if (!particle) continue
+
+        particle.neighbors = []
+
+        for (let j = 0; j < particles.length; j++) {
+            if (i === j) continue
+
+            const other = particles[j]
+            if (!other) continue
+
+            const dx = particle.x - other.x
+            const dy = particle.y - other.y
+            const distance = Math.sqrt(dx * dx + dy * dy)
+
+            if (distance < maxDistance) {
+                particle.neighbors.push(j)
+            }
+        }
     }
 }
 
@@ -143,24 +165,25 @@ function isDarkMode(): boolean {
     return currentTheme.value === 'dark'
 }
 
-function getCurrentColors() {
-    return isDarkMode() ? settings.dark : settings.light
+function updateCachedColors(): void {
+    const theme = isDarkMode() ? 'dark' : 'light'
+    cachedColors = { ...settings.themes[theme] }
 }
 
 function getStarColor(): string {
-    return getCurrentColors().starColor
+    return cachedColors.starColor
 }
 
 function getLinkColor(): string {
-    return getCurrentColors().linkColor
+    return cachedColors.linkColor
 }
 
 function getFlareColor(): string {
-    return getCurrentColors().flareColor
+    return cachedColors.flareColor
 }
 
 function getCurrentLinkOpacity(): number {
-    return getCurrentColors().linkOpacity
+    return cachedColors.linkOpacity
 }
 
 function random(min: number, max: number, float: boolean = false): number {
@@ -184,14 +207,16 @@ function resize(force: boolean = false): void {
     const newWidth = Math.round(parentRect.width)
     const newHeight = Math.round(parentRect.height)
 
-    // Check if size has actually changed to avoid unnecessary resizes (with small tolerance for floating point precision)
+    // Check if size or DPR has changed (important for zoom handling)
+    const currentDPR = context.getTransform().a || 1
     if (!force) {
         const tolerance = 1
         const widthChanged = Math.abs(lastCanvasSize.width - newWidth) > tolerance
         const heightChanged = Math.abs(lastCanvasSize.height - newHeight) > tolerance
+        const dprChanged = Math.abs(currentDPR - dpr) > 0.1
 
-        if (!widthChanged && !heightChanged) {
-            return // No significant size change, skip resize
+        if (!widthChanged && !heightChanged && !dprChanged) {
+            return // No significant change, skip resize
         }
     }
 
@@ -199,15 +224,18 @@ function resize(force: boolean = false): void {
     lastCanvasSize.width = newWidth
     lastCanvasSize.height = newHeight
 
-    // Set canvas internal resolution (for drawing)
-    canvas.width = newWidth * dpr
-    canvas.height = newHeight * dpr
+    // Set canvas internal resolution (for drawing) - handle zoom properly
+    const pixelWidth = Math.round(newWidth * dpr)
+    const pixelHeight = Math.round(newHeight * dpr)
 
-    // Set canvas display size (CSS pixels)
+    canvas.width = pixelWidth
+    canvas.height = pixelHeight
+
+    // Set canvas display size (CSS pixels) - critical for proper zoom handling
     canvas.style.width = newWidth + 'px'
     canvas.style.height = newHeight + 'px'
 
-    // Reset and scale context for high DPI
+    // Reset and scale context for high DPI - ensure clean slate
     context.setTransform(1, 0, 0, 1, 0, 0)
     context.scale(dpr, dpr)
 
@@ -215,12 +243,12 @@ function resize(force: boolean = false): void {
     mouse.x = newWidth / 2
     mouse.y = newHeight / 2
 
-    // Clear canvas
-    context.clearRect(0, 0, canvas.width, canvas.height)
+    // Clear canvas with proper dimensions
+    context.clearRect(0, 0, pixelWidth, pixelHeight)
 
     // Only log resize in development mode to avoid console noise
     if (import.meta.dev) {
-        console.log('Canvas resized to:', newWidth + 'x' + newHeight, force ? '(forced)' : '')
+        console.log('Canvas resized to:', newWidth + 'x' + newHeight, 'DPR:', dpr, force ? '(forced)' : '')
     }
 }
 
@@ -229,21 +257,25 @@ function position(x: number, y: number, z: number): { x: number; y: number } {
 
     const canvas = starsCanvas.value
     return {
-        x: (x * canvas.clientWidth) + ((((canvas.clientWidth / 2) - mouse.x + ((nPos.x - 0.5) * settings.noiseStrength)) * z) * props.motion),
-        y: (y * canvas.clientHeight) + ((((canvas.clientHeight / 2) - mouse.y + ((nPos.y - 0.5) * settings.noiseStrength)) * z) * props.motion)
+        x: (x * canvas.clientWidth) + ((((canvas.clientWidth / 2) - mouse.x + ((nPos.x - 0.5) * settings.noise.strength)) * z) * props.motion),
+        y: (y * canvas.clientHeight) + ((((canvas.clientHeight / 2) - mouse.y + ((nPos.y - 0.5) * settings.noise.strength)) * z) * props.motion)
     }
 }
 
 function sizeRatio(): number {
     if (!starsCanvas.value) return 1000
-    return starsCanvas.value.width >= starsCanvas.value.height ? starsCanvas.value.width : starsCanvas.value.height
+    // Use CSS dimensions, not internal canvas resolution for consistent sizing
+    const canvas = starsCanvas.value
+    const width = canvas.clientWidth || canvas.offsetWidth
+    const height = canvas.clientHeight || canvas.offsetHeight
+    return Math.max(width, height)
 }
 
 function noisePoint(i: number): { x: number; y: number } {
-    const a = settings.nAngle * i
+    const a = settings.noise.angle * i
     const cosA = Math.cos(a)
     const sinA = Math.sin(a)
-    const rad = settings.nRad
+    const rad = settings.noise.radius
     return {
         x: rad * cosA,
         y: rad * sinA
@@ -273,11 +305,11 @@ class Particle implements StarParticle {
         if (!context || !starsCanvas.value) return
 
         const pos = position(this.x, this.y, this.z)
-        const r = ((this.z * settings.particleSizeMultiplier) + settings.particleSizeBase) * (sizeRatio() / 1000)
+        const r = ((this.z * settings.particle.sizeMultiplier) + settings.particle.sizeBase) * (sizeRatio() / 1000)
         let o = this.opacity
 
         // Optimized flicker effect - reduce frequency in performance mode
-        const flickerRate = (performanceMode && !isMouseOver) ? settings.flickerSmoothing * 3 : settings.flickerSmoothing
+        const flickerRate = (performanceMode && !isMouseOver) ? settings.particle.flickerSmoothing * 3 : settings.particle.flickerSmoothing
         const newVal = random(-0.5, 0.5, true)
         this.flicker += (newVal - this.flicker) / flickerRate
         this.flicker = Math.max(-0.5, Math.min(0.5, this.flicker))
@@ -297,9 +329,9 @@ class Particle implements StarParticle {
         // Skip glare effect in performance mode for better performance
         if (!performanceMode || isMouseOver) {
             // Particle glare
-            context.globalAlpha = o * settings.glareOpacityMultiplier
+            context.globalAlpha = o * settings.particle.glareOpacityMultiplier
             context.beginPath()
-            context.ellipse(pos.x, pos.y, r * 100, r, (settings.glareAngle - ((nPos.x - 0.5) * settings.noiseStrength * props.motion)) * (Math.PI / 180), 0, 2 * Math.PI, false)
+            context.ellipse(pos.x, pos.y, r * 100, r, (settings.particle.glareAngle - ((nPos.x - 0.5) * settings.noise.strength * props.motion)) * (Math.PI / 180), 0, 2 * Math.PI, false)
             context.fill()
         }
 
@@ -326,7 +358,7 @@ class Flare implements StarFlare {
         if (!context) return
 
         const pos = position(this.x, this.y, this.z)
-        const r = ((this.z * settings.flareSizeMultiplier) + settings.flareSizeBase) * (sizeRatio() / 1000)
+        const r = ((this.z * settings.flare.sizeMultiplier) + settings.flare.sizeBase) * (sizeRatio() / 1000)
 
         // Cache color to avoid repeated function calls
         if (!this.color || Math.random() < 0.05) { // Update color occasionally
@@ -353,7 +385,7 @@ class Link implements StarLink {
     finished: boolean
 
     constructor(startVertex: number, numPoints: number) {
-        this.length = numPoints
+        this.length = Math.min(numPoints, 4) // Limit complexity
         this.verts = [startVertex]
         this.stage = 0
         this.linked = [startVertex]
@@ -421,7 +453,7 @@ class Link implements StarLink {
                         }
                     }
 
-                    const linkSpeedRel = settings.linkSpeed * 0.00001 * starsCanvas.value.width
+                    const linkSpeedRel = settings.link.speed * 0.00001 * starsCanvas.value.width
                     this.traveled += linkSpeedRel
                     const d = this.distances[this.linked.length - 1]
 
@@ -471,10 +503,10 @@ class Link implements StarLink {
 
             case 2: // Fade out
                 if (this.verts.length > 1) {
-                    if (this.fade < settings.linkFade) {
+                    if (this.fade < settings.link.fade) {
                         this.fade++
                         const linkPoints: [number, number][] = []
-                        const alpha = (1 - (this.fade / settings.linkFade)) * getCurrentLinkOpacity()
+                        const alpha = (1 - (this.fade / settings.link.fade)) * getCurrentLinkOpacity()
 
                         for (let i = 0; i < this.verts.length; i++) {
                             const pIndex = this.verts[i]
@@ -517,7 +549,7 @@ class Link implements StarLink {
             }
         }
         context.strokeStyle = getLinkColor()
-        context.lineWidth = settings.lineWidth
+        context.lineWidth = settings.link.lineWidth
         context.stroke()
         context.closePath()
         context.globalAlpha = 1
@@ -535,92 +567,62 @@ function render(): void {
     const isLowPower = performanceMode && !isMouseOver
 
     // Frame skipping for performance mode
-    if (isLowPower) {
-        frameSkipCounter++
-        if (frameSkipCounter < 3) { // Skip 2 out of 3 frames
-            return
-        }
-        frameSkipCounter = 0
+    if (isLowPower && ++frameSkipCounter < 3) {
+        return // Skip 2 out of 3 frames
     }
+    frameSkipCounter = 0
 
-    // Update noise position (less frequent in performance mode)
-    const noiseStep = isLowPower ? 3 : 1
-    n += noiseStep
-    if (n >= settings.noiseLength) {
-        n = 0
-    }
+    // Update noise position
+    n += isLowPower ? 3 : 1
+    if (n >= settings.noise.length) n = 0
     nPos = noisePoint(n)
 
-    // Clear canvas with proper dimensions
+    // Clear canvas efficiently
     const canvas = starsCanvas.value
-    context.clearRect(0, 0, canvas.width, canvas.height)
+    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
 
-    // Reduce particle count in performance mode
-    const renderParticleCount = isLowPower
-        ? Math.max(10, Math.floor(props.particleCount * 0.5))
-        : props.particleCount
-
-    // Render particles
-    for (let i = 0; i < renderParticleCount; i++) {
-        const particle = particles[i]
-        if (particle) {
-            particle.render()
-        }
+    // Render particles (reduce count in performance mode)
+    const particleCount = isLowPower ? Math.max(10, props.particleCount >> 1) : props.particleCount
+    for (let i = 0; i < particleCount && i < particles.length; i++) {
+        particles[i]?.render()
     }
 
-    // Reduce link creation frequency in performance mode
-    const linkChanceAdjusted = isLowPower
-        ? props.linkChance * 2 // Half the link creation rate
-        : props.linkChance
-
-    // Start new links randomly
-    if (random(0, linkChanceAdjusted) === linkChanceAdjusted) {
-        const length = random(settings.linkLengthMin, settings.linkLengthMax)
-        const start = random(0, particles.length - 1)
-        startLink(start, length)
+    // Create new links less frequently in performance mode
+    const linkChance = isLowPower ? props.linkChance << 1 : props.linkChance
+    if (random(0, linkChance) === linkChance && links.length < 5) { // Limit concurrent links
+        const length = random(settings.link.lengthMin, settings.link.lengthMax)
+        startLink(random(0, particles.length - 1), length)
     }
 
-    // Render existing links (batch remove finished links)
-    const activeLinks: typeof links = []
-    for (let l = 0; l < links.length; l++) {
-        const link = links[l]
-        if (link && !link.finished) {
+    // Render and clean up links efficiently
+    links = links.filter(link => {
+        if (!link.finished) {
             link.render()
-            activeLinks.push(link)
+            return true
         }
-    }
-    links.length = 0
-    links.push(...activeLinks)
+        return false
+    })
 
-    // Reduce flare count in performance mode
-    const renderFlareCount = isLowPower
-        ? Math.max(2, Math.floor(props.flareCount * 0.3))
-        : props.flareCount
-
-    // Render flares
-    for (let j = 0; j < renderFlareCount; j++) {
-        const flare = flares[j]
-        if (flare) {
-            flare.render()
-        }
+    // Render flares (reduce count in performance mode)
+    const flareCount = isLowPower ? Math.max(2, props.flareCount >> 2) : props.flareCount
+    for (let j = 0; j < flareCount && j < flares.length; j++) {
+        flares[j]?.render()
     }
 }
 
 function animate(currentTime = 0): void {
+    if (!isVisible) return
+
     // Throttle animation based on performance and visibility
     const elapsed = currentTime - lastFrameTime
+    const targetInterval = (performanceMode && !isMouseOver) ? frameInterval << 1 : frameInterval
 
-    // Adaptive frame rate based on performance mode
-    const currentFrameInterval = performanceMode && !isMouseOver ? frameInterval * 2 : frameInterval
-
-    if (elapsed >= currentFrameInterval) {
+    if (elapsed >= targetInterval) {
         render()
-        lastFrameTime = currentTime - (elapsed % currentFrameInterval)
+        lastFrameTime = currentTime
     }
 
-    if (isVisible) {
-        animationFrame = requestAnimationFrame(animate)
-    }
+    animationFrame = requestAnimationFrame(animate)
 }
 
 function forceRender(): void {
@@ -632,8 +634,11 @@ function forceRender(): void {
 function handleMouseMove(e: MouseEvent): void {
     if (!starsCanvas.value) return
     const rect = starsCanvas.value.getBoundingClientRect()
-    mouse.x = e.clientX - rect.left
-    mouse.y = e.clientY - rect.top
+    // Use proper coordinate transformation that accounts for zoom
+    const scaleX = starsCanvas.value.clientWidth / rect.width
+    const scaleY = starsCanvas.value.clientHeight / rect.height
+    mouse.x = (e.clientX - rect.left) * scaleX
+    mouse.y = (e.clientY - rect.top) * scaleY
 }
 
 function onMouseEnter(): void {
@@ -658,10 +663,15 @@ function handleResize(): void {
     }
 
     resizeTimeout = window.setTimeout(() => {
-        resize()
+        resize(true) // Force resize to handle zoom changes
         forceRender() // Force a render after resize
         resizeTimeout = null
-    }, 100) // Reduced debounce time for better responsiveness
+    }, 50) // Faster response for better zoom handling
+}
+
+// Handle zoom changes specifically
+function handleZoom(): void {
+    handleResize()
 }
 
 function handleVisibilityChange(): void {
@@ -685,6 +695,9 @@ function init(): void {
     context = starsCanvas.value.getContext('2d')
     if (!context) return
 
+    // Initialize cached colors
+    updateCachedColors()
+
     // Initial resize with a small delay to ensure DOM is ready
     setTimeout(() => {
         resize(true) // Force resize on initialization
@@ -695,49 +708,12 @@ function init(): void {
 
     // Create particles
     particles = []
-    points = []
     for (let i = 0; i < props.particleCount; i++) {
-        const p = new Particle()
-        particles.push(p)
-        points.push([p.x * 1000, p.y * 1000])
+        particles.push(new Particle())
     }
 
-    // Delaunay triangulation
-    vertices = Delaunay.triangulate(points)
-
-    // Create triangles
-    triangles = []
-    const tri: number[] = []
-    for (let i = 0; i < vertices.length; i++) {
-        if (tri.length === 3) {
-            triangles.push([...tri])
-            tri.length = 0
-        }
-        const vertex = vertices[i]
-        if (vertex !== undefined) {
-            tri.push(vertex)
-        }
-    }
-
-    // Set up particle neighbors
-    for (let i = 0; i < particles.length; i++) {
-        const particle = particles[i]
-        if (!particle) continue
-
-        for (let j = 0; j < triangles.length; j++) {
-            const triangle = triangles[j]
-            if (!triangle) continue
-
-            const k = triangle.indexOf(i)
-            if (k !== -1) {
-                triangle.forEach((value) => {
-                    if (value !== i && particle.neighbors.indexOf(value) === -1) {
-                        particle.neighbors.push(value)
-                    }
-                })
-            }
-        }
-    }
+    // Set up particle neighbors with simplified algorithm
+    createNeighbors()
 
     // Create flares
     flares = []
@@ -750,9 +726,10 @@ function init(): void {
 }
 
 // Watch for theme changes and update colors
-watch(currentTheme, (newTheme) => {
+watch(currentTheme, () => {
+    updateCachedColors()
+
     // Mark colors as outdated so they get updated in next render cycle
-    // This avoids expensive synchronous updates
     particles.forEach(particle => {
         particle.color = ''
     })
@@ -768,100 +745,95 @@ watch(currentTheme, (newTheme) => {
 }, { immediate: false })
 
 onMounted(() => {
-    if (starsCanvas.value) {
-        init()
+    if (!starsCanvas.value) return
 
-        // Add event listeners
-        window.addEventListener('mousemove', handleMouseMove, { passive: true })
-        window.addEventListener('resize', handleResize, { passive: true })
-        document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
+    init()
 
-        // ResizeObserver for more responsive canvas resizing
-        if ('ResizeObserver' in window && starsCanvas.value.parentElement) {
-            let resizeObserverTimeout: number | null = null
+    // Event listeners with zoom handling
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    window.addEventListener('resize', handleResize, { passive: true })
+    document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
 
-            resizeObserver = new ResizeObserver((entries) => {
-                // Throttle ResizeObserver calls to prevent excessive resizes
-                if (resizeObserverTimeout) {
-                    clearTimeout(resizeObserverTimeout)
-                }
+    // Listen for zoom events (browser zoom changes devicePixelRatio)
+    const mediaQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+    const handleDPRChange = () => {
+        handleZoom()
+    }
 
-                resizeObserverTimeout = window.setTimeout(() => {
-                    resize()
-                    forceRender()
-                    resizeObserverTimeout = null
-                }, 50)
-            })
+    if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', handleDPRChange)
+            // Store reference for cleanup
+            ; (starsCanvas.value as any).__mediaQuery = mediaQuery
+            ; (starsCanvas.value as any).__dprHandler = handleDPRChange
+    }
 
-            // Observe both the canvas and its parent container
-            resizeObserver.observe(starsCanvas.value)
-            resizeObserver.observe(starsCanvas.value.parentElement)
-        }
-
-        // Set initial performance mode based on device capabilities
-        nextTick(() => {
-            const canvas = starsCanvas.value
-            if (canvas && canvas.parentElement) {
-                const rect = canvas.parentElement.getBoundingClientRect()
-                // Enable performance mode for smaller screens or lower-end devices
-                if (rect.width < 768 || navigator.hardwareConcurrency < 4) {
-                    performanceMode = true
-                }
-            }
+    // Enhanced resize observer that handles zoom better
+    if (window.ResizeObserver && starsCanvas.value.parentElement) {
+        resizeObserver = new ResizeObserver(() => {
+            handleResize() // Use the debounced resize function
         })
 
-        // Use Intersection Observer to pause animation when component is not visible
-        if ('IntersectionObserver' in window && starsCanvas.value) {
-            const intersectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.target === starsCanvas.value) {
-                        const wasVisible = isVisible
-                        isVisible = entry.isIntersecting
+        resizeObserver.observe(starsCanvas.value.parentElement)
+    }
 
-                        // Resume animation if it became visible
-                        if (isVisible && !wasVisible) {
-                            lastFrameTime = performance.now()
-                            animate()
-                        }
-                    }
-                })
-            }, { threshold: 0.1 })
-
-            intersectionObserver.observe(starsCanvas.value)
-
-                // Store reference for cleanup
-                ; (starsCanvas.value as any).__intersectionObserver = intersectionObserver
+    // Auto-detect performance mode
+    nextTick(() => {
+        const canvas = starsCanvas.value
+        if (canvas?.parentElement) {
+            const rect = canvas.parentElement.getBoundingClientRect()
+            performanceMode = rect.width < 768 || (navigator.hardwareConcurrency || 4) < 4
         }
+    })
+
+    // Visibility observer
+    if (window.IntersectionObserver) {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0]
+            if (!entry) return
+
+            const wasVisible = isVisible
+            isVisible = entry.isIntersecting
+
+            if (isVisible && !wasVisible) {
+                lastFrameTime = performance.now()
+                animate()
+            }
+        }, { threshold: 0.1 })
+
+        observer.observe(starsCanvas.value)
+            ; (starsCanvas.value as any).__observer = observer
     }
 })
 
 onUnmounted(() => {
-    // Set visibility to false to stop animation
     isVisible = false
 
-    if (animationFrame) {
-        cancelAnimationFrame(animationFrame)
+    // Cleanup animation and timers
+    if (animationFrame) cancelAnimationFrame(animationFrame)
+    if (resizeTimeout) clearTimeout(resizeTimeout)
+
+    // Cleanup observers
+    resizeObserver?.disconnect()
+
+    const canvas = starsCanvas.value
+    if (canvas) {
+        const observer = (canvas as any).__observer
+        observer?.disconnect()
+
+        // Cleanup zoom detection
+        const mediaQuery = (canvas as any).__mediaQuery
+        const dprHandler = (canvas as any).__dprHandler
+        if (mediaQuery && dprHandler && mediaQuery.removeEventListener) {
+            mediaQuery.removeEventListener('change', dprHandler)
+        }
     }
 
-    if (resizeTimeout) {
-        clearTimeout(resizeTimeout)
-    }
-
-    if (resizeObserver) {
-        resizeObserver.disconnect()
-    }
-
-    // Clean up event listeners
+    // Remove event listeners
     window.removeEventListener('mousemove', handleMouseMove)
     window.removeEventListener('resize', handleResize)
     document.removeEventListener('visibilitychange', handleVisibilityChange)
 
-    // Clean up intersection observer
-    if (starsCanvas.value && (starsCanvas.value as any).__intersectionObserver) {
-        ; (starsCanvas.value as any).__intersectionObserver.disconnect()
-    }
-
-    // Clear arrays to free memory
+    // Clear memory
     particles.length = 0
     flares.length = 0
     links.length = 0
