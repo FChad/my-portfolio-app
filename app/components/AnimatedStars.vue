@@ -10,7 +10,6 @@ interface StarParticle {
     x: number
     y: number
     z: number
-    color: string
     opacity: number
     flicker: number
     neighbors: number[]
@@ -21,7 +20,6 @@ interface StarFlare {
     x: number
     y: number
     z: number
-    color: string
     opacity: number
     render(): void
 }
@@ -62,7 +60,6 @@ let resizeTimeout: number | null = null
 let resizeObserver: ResizeObserver | null = null
 
 // Canvas and performance state
-let lastCanvasSize = { width: 0, height: 0 }
 let isVisible = true
 let isMouseOver = false
 let performanceMode = false
@@ -81,13 +78,7 @@ let links: StarLink[] = []
 let n = 0
 let nPos = { x: 0, y: 0 }
 
-// Cached theme colors for better performance
-let cachedColors = {
-    starColor: '#60A5FA',
-    linkColor: '#3B82F6',
-    flareColor: '#DBEAFE',
-    linkOpacity: 0.25
-}
+// Direct theme color access
 
 // Settings configuration
 const settings = {
@@ -160,25 +151,24 @@ function isDarkMode(): boolean {
     return currentTheme.value === 'dark'
 }
 
-function updateCachedColors(): void {
-    const theme = isDarkMode() ? 'dark' : 'light'
-    cachedColors = { ...settings.themes[theme] }
-}
-
 function getStarColor(): string {
-    return cachedColors.starColor
+    const theme = isDarkMode() ? 'dark' : 'light'
+    return settings.themes[theme].starColor
 }
 
 function getLinkColor(): string {
-    return cachedColors.linkColor
+    const theme = isDarkMode() ? 'dark' : 'light'
+    return settings.themes[theme].linkColor
 }
 
 function getFlareColor(): string {
-    return cachedColors.flareColor
+    const theme = isDarkMode() ? 'dark' : 'light'
+    return settings.themes[theme].flareColor
 }
 
 function getCurrentLinkOpacity(): number {
-    return cachedColors.linkOpacity
+    const theme = isDarkMode() ? 'dark' : 'light'
+    return settings.themes[theme].linkOpacity
 }
 
 function random(min: number, max: number, float: boolean = false): number {
@@ -187,12 +177,10 @@ function random(min: number, max: number, float: boolean = false): number {
         : Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-function resize(force: boolean = false): void {
+function resize(): void {
     if (!starsCanvas.value || !context) return
 
     const canvas = starsCanvas.value
-
-    // Force the canvas to take the full container size
     const parent = canvas.parentElement
     if (!parent) return
 
@@ -202,41 +190,25 @@ function resize(force: boolean = false): void {
     const newWidth = Math.round(parentRect.width)
     const newHeight = Math.round(parentRect.height)
 
-    // Check if size has changed significantly
-    if (!force) {
-        const tolerance = 1
-        const widthChanged = Math.abs(lastCanvasSize.width - newWidth) > tolerance
-        const heightChanged = Math.abs(lastCanvasSize.height - newHeight) > tolerance
-
-        if (!widthChanged && !heightChanged) {
-            return // No significant change, skip resize
-        }
-    }
-
-    // Update last known size
-    lastCanvasSize.width = newWidth
-    lastCanvasSize.height = newHeight
-
-    // Set canvas internal resolution (for drawing) - handle zoom properly
+    // Set canvas internal resolution (for drawing)
     const pixelWidth = Math.round(newWidth * dpr)
     const pixelHeight = Math.round(newHeight * dpr)
 
     canvas.width = pixelWidth
     canvas.height = pixelHeight
 
-    // Set canvas display size (CSS pixels) - critical for proper zoom handling
+    // Set canvas display size (CSS pixels)
     canvas.style.width = newWidth + 'px'
     canvas.style.height = newHeight + 'px'
 
-    // Reset and scale context for high DPI - ensure clean slate
+    // Reset and scale context for high DPI
     context.setTransform(1, 0, 0, 1, 0, 0)
     context.scale(dpr, dpr)
 
-    // Reset mouse position to center of new canvas size
+    // Reset mouse position to center
     mouse.x = newWidth / 2
     mouse.y = newHeight / 2
 
-    // Clear canvas with proper dimensions
     context.clearRect(0, 0, pixelWidth, pixelHeight)
 }
 
@@ -274,7 +246,6 @@ class Particle implements StarParticle {
     x: number
     y: number
     z: number
-    color: string
     opacity: number
     flicker: number
     neighbors: number[]
@@ -283,7 +254,6 @@ class Particle implements StarParticle {
         this.x = random(-0.1, 1.1, true)
         this.y = random(-0.1, 1.1, true)
         this.z = random(0.5, 4, true) // Minimum z value of 0.5 so all particles respond to mouse
-        this.color = getStarColor()
         this.opacity = random(0.1, 1, true)
         this.flicker = 0
         this.neighbors = []
@@ -303,12 +273,7 @@ class Particle implements StarParticle {
         this.flicker = Math.max(-0.5, Math.min(0.5, this.flicker))
         o = Math.max(0, Math.min(1, o + this.flicker))
 
-        // Update color if not set
-        if (!this.color) {
-            this.color = getStarColor()
-        }
-
-        context.fillStyle = this.color
+        context.fillStyle = getStarColor()
         context.globalAlpha = o
         context.beginPath()
         context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
@@ -322,14 +287,12 @@ class Flare implements StarFlare {
     x: number
     y: number
     z: number
-    color: string
     opacity: number
 
     constructor() {
         this.x = random(-0.25, 1.25, true)
         this.y = random(-0.25, 1.25, true)
         this.z = random(0.3, 2, true) // Minimum z value so flares also respond to mouse
-        this.color = getFlareColor()
         this.opacity = random(0.001, 0.01, true)
     }
 
@@ -339,12 +302,7 @@ class Flare implements StarFlare {
         const pos = position(this.x, this.y, this.z)
         const r = ((this.z * settings.flare.sizeMultiplier) + settings.flare.sizeBase) * (sizeRatio() / 1000)
 
-        // Update color if not set
-        if (!this.color) {
-            this.color = getFlareColor()
-        }
-
-        context.fillStyle = this.color
+        context.fillStyle = getFlareColor()
         context.globalAlpha = this.opacity
         context.beginPath()
         context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
@@ -542,7 +500,6 @@ function startLink(vertex: number, length: number): void {
 function render(): void {
     if (!context || !starsCanvas.value || !isVisible) return
 
-    // Performance mode: reduce animation quality when not actively interacting
     const isLowPower = performanceMode && !isMouseOver
 
     // Update noise position
@@ -550,24 +507,23 @@ function render(): void {
     if (n >= settings.noise.length) n = 0
     nPos = noisePoint(n)
 
-    // Clear canvas efficiently
     const canvas = starsCanvas.value
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
 
-    // Render particles (reduce count in performance mode)
+    // Render particles
     const particleCount = isLowPower ? Math.max(10, props.particleCount >> 1) : props.particleCount
     for (let i = 0; i < particleCount && i < particles.length; i++) {
         particles[i]?.render()
     }
 
-    // Create new links less frequently in performance mode
+    // Create new links
     const linkChance = isLowPower ? props.linkChance << 1 : props.linkChance
-    if (random(0, linkChance) === linkChance && links.length < 5) { // Limit concurrent links
+    if (random(0, linkChance) === linkChance && links.length < 5) {
         const length = random(settings.link.lengthMin, settings.link.lengthMax)
         startLink(random(0, particles.length - 1), length)
     }
 
-    // Render and clean up links efficiently
+    // Render and clean up links
     links = links.filter(link => {
         if (!link.finished) {
             link.render()
@@ -576,7 +532,7 @@ function render(): void {
         return false
     })
 
-    // Render flares (reduce count in performance mode)
+    // Render flares
     const flareCount = isLowPower ? Math.max(2, props.flareCount >> 2) : props.flareCount
     for (let j = 0; j < flareCount && j < flares.length; j++) {
         flares[j]?.render()
@@ -607,7 +563,6 @@ function forceRender(): void {
 function handleMouseMove(e: MouseEvent): void {
     if (!starsCanvas.value) return
     const rect = starsCanvas.value.getBoundingClientRect()
-    // Use proper coordinate transformation that accounts for zoom
     const scaleX = starsCanvas.value.clientWidth / rect.width
     const scaleY = starsCanvas.value.clientHeight / rect.height
     mouse.x = (e.clientX - rect.left) * scaleX
@@ -621,7 +576,6 @@ function onMouseEnter(): void {
 
 function onMouseLeave(): void {
     isMouseOver = false
-    // Switch to performance mode after a short delay when mouse leaves
     setTimeout(() => {
         if (!isMouseOver) {
             performanceMode = true
@@ -630,16 +584,15 @@ function onMouseLeave(): void {
 }
 
 function handleResize(): void {
-    // Debounced resize for performance (avoid multiple rapid calls)
     if (resizeTimeout) {
         clearTimeout(resizeTimeout)
     }
 
     resizeTimeout = window.setTimeout(() => {
-        resize(true) // Force resize to handle zoom changes
-        forceRender() // Force a render after resize
+        resize()
+        forceRender()
         resizeTimeout = null
-    }, 50) // Faster response for better zoom handling
+    }, 50)
 }
 
 
@@ -665,12 +618,9 @@ function init(): void {
     context = starsCanvas.value.getContext('2d')
     if (!context) return
 
-    // Initialize cached colors
-    updateCachedColors()
-
     // Initial resize with a small delay to ensure DOM is ready
     setTimeout(() => {
-        resize(true) // Force resize on initialization
+        resize()
     }, 50)
 
     mouse.x = starsCanvas.value.clientWidth / 2
@@ -695,20 +645,8 @@ function init(): void {
     animate()
 }
 
-// Watch for theme changes and update colors
+// Watch for theme changes and force re-render
 watch(currentTheme, () => {
-    updateCachedColors()
-
-    // Mark colors as outdated so they get updated in next render cycle
-    particles.forEach(particle => {
-        particle.color = ''
-    })
-
-    flares.forEach(flare => {
-        flare.color = ''
-    })
-
-    // Force a render to update colors immediately
     nextTick(() => {
         forceRender()
     })
