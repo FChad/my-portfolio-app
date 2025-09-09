@@ -42,10 +42,11 @@ const currentPreference = computed(() => {
 const toggleColorMode = () => {
     if (!isReady.value) return
 
-    // If currently system or light, go to dark
-    // If currently dark, go to light
-    const currentPref = currentPreference.value
-    colorMode.preference = (currentPref === 'dark') ? 'light' : 'dark'
+    // Get current actual theme (what's displayed) rather than preference
+    const currentActualTheme = currentTheme.value
+
+    // Always toggle based on what's actually displayed
+    colorMode.preference = (currentActualTheme === 'dark') ? 'light' : 'dark'
 }
 
 // Icon shows what mode we'll switch TO (opposite of current theme)
