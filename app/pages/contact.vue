@@ -105,7 +105,6 @@ watch(isSubmitted, (newVal) => {
 
 <template>
     <main class="overflow-hidden">
-        <!-- Hero Section -->
         <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50">
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center flex flex-col gap-6">

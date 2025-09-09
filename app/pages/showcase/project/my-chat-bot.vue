@@ -15,43 +15,37 @@ const keyFeatures = [
         id: 'aiChat',
         title: 'projects.myChatBot.features.aiChat.title',
         description: 'projects.myChatBot.features.aiChat.description',
-        icon: 'mdi:robot',
-        color: 'from-purple-500 to-violet-600'
+        icon: 'mdi:robot'
     },
     {
         id: 'conversationManagement',
         title: 'projects.myChatBot.features.conversationManagement.title',
         description: 'projects.myChatBot.features.conversationManagement.description',
-        icon: 'mdi:chat-processing',
-        color: 'from-blue-500 to-indigo-600'
+        icon: 'mdi:chat-processing'
     },
     {
         id: 'modelSelection',
         title: 'projects.myChatBot.features.modelSelection.title',
         description: 'projects.myChatBot.features.modelSelection.description',
-        icon: 'mdi:brain',
-        color: 'from-green-500 to-emerald-600'
+        icon: 'mdi:brain'
     },
     {
         id: 'streaming',
         title: 'projects.myChatBot.features.streaming.title',
         description: 'projects.myChatBot.features.streaming.description',
-        icon: 'mdi:lightning-bolt',
-        color: 'from-orange-500 to-red-600'
+        icon: 'mdi:lightning-bolt'
     },
     {
         id: 'localStorage',
         title: 'projects.myChatBot.features.localStorage.title',
         description: 'projects.myChatBot.features.localStorage.description',
-        icon: 'mdi:content-save',
-        color: 'from-teal-500 to-cyan-600'
+        icon: 'mdi:content-save'
     },
     {
         id: 'modernUI',
         title: 'projects.myChatBot.features.modernUI.title',
         description: 'projects.myChatBot.features.modernUI.description',
-        icon: 'mdi:palette',
-        color: 'from-pink-500 to-rose-600'
+        icon: 'mdi:palette'
     }
 ];
 
@@ -61,7 +55,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.nuxt3.name',
         tech: 'projects.myChatBot.technologies.nuxt3.tech',
         icon: 'mdi:nuxt',
-        color: 'from-green-500 to-emerald-600',
         description: 'projects.myChatBot.technologies.nuxt3.description'
     },
     {
@@ -69,7 +62,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.vue3.name',
         tech: 'projects.myChatBot.technologies.vue3.tech',
         icon: 'mdi:vuejs',
-        color: 'from-green-500 to-emerald-600',
         description: 'projects.myChatBot.technologies.vue3.description'
     },
     {
@@ -77,7 +69,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.typescript.name',
         tech: 'projects.myChatBot.technologies.typescript.tech',
         icon: 'mdi:language-typescript',
-        color: 'from-blue-500 to-blue-600',
         description: 'projects.myChatBot.technologies.typescript.description'
     },
     {
@@ -85,7 +76,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.pinia.name',
         tech: 'projects.myChatBot.technologies.pinia.tech',
         icon: 'mdi:database',
-        color: 'from-yellow-500 to-amber-600',
         description: 'projects.myChatBot.technologies.pinia.description'
     },
     {
@@ -93,7 +83,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.tailwind.name',
         tech: 'projects.myChatBot.technologies.tailwind.tech',
         icon: 'mdi:tailwind',
-        color: 'from-cyan-500 to-blue-600',
         description: 'projects.myChatBot.technologies.tailwind.description'
     },
     {
@@ -101,7 +90,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.ollama.name',
         tech: 'projects.myChatBot.technologies.ollama.tech',
         icon: 'mdi:robot',
-        color: 'from-purple-500 to-violet-600',
         description: 'projects.myChatBot.technologies.ollama.description'
     },
     {
@@ -109,7 +97,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.highlight.name',
         tech: 'projects.myChatBot.technologies.highlight.tech',
         icon: 'mdi:code-tags',
-        color: 'from-emerald-500 to-teal-600',
         description: 'projects.myChatBot.technologies.highlight.description'
     },
     {
@@ -117,7 +104,6 @@ const technologies = [
         name: 'projects.myChatBot.technologies.marked.name',
         tech: 'projects.myChatBot.technologies.marked.tech',
         icon: 'mdi:language-markdown',
-        color: 'from-slate-500 to-slate-600',
         description: 'projects.myChatBot.technologies.marked.description'
     }
 ];
@@ -150,7 +136,7 @@ const technologies = [
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4">
                         <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                             Live Demo
                             <Icon name="mdi:open-in-new" class="w-4 h-4" />
@@ -195,7 +181,7 @@ const technologies = [
                             class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-200/60 dark:border-slate-600/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                             <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                                 <div
-                                    :class="`p-2.5 sm:p-3 bg-gradient-to-br ${feature.color} rounded-xl shadow-lg w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center`">
+                                    :class="`p-2.5 sm:p-3 bg-blue-500 rounded-xl shadow-lg w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center`">
                                     <Icon :name="feature.icon" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                                 </div>
                                 <h3
@@ -225,35 +211,35 @@ const technologies = [
                         <div v-for="tech in technologies" :key="tech.id"
                             class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-slate-200/60 dark:border-slate-600/60 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="flex items-center gap-3 mb-2">
-                                <Icon :name="tech.icon"
-                                    :class="`w-4 h-4 ${tech.color.includes('blue') ? 'text-blue-500' : tech.color.includes('emerald') ? 'text-emerald-500' : tech.color.includes('yellow') ? 'text-yellow-500' : tech.color.includes('cyan') ? 'text-cyan-500' : tech.color.includes('purple') ? 'text-purple-500' : 'text-slate-500'}`" />
+                                <Icon :name="tech.icon" class="w-4 h-4 text-slate-800 dark:text-slate-200" />
                                 <span class="text-base font-medium text-slate-600 dark:text-slate-400">{{ t(tech.name)
-                                    }}</span>
+                                }}</span>
                             </div>
                             <p class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">{{ t(tech.tech) }}
                             </p>
                             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{{ t(tech.description)
-                                }}</p>
+                            }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- CTA Section -->
+        <div class="py-20 bg-blue-600 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6">{{
+                    t('projects.myChatBot.callToAction.title') }}
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    {{ t('projects.myChatBot.callToAction.subtitle') }}
+                </p>
 
-                <!-- Call to Action -->
-                <div
-                    class="text-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-3xl p-8 sm:p-12 border border-blue-200/50 dark:border-blue-800/50">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">{{
-                        t('projects.myChatBot.callToAction.title') }}</h2>
-                    <p
-                        class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                        {{ t('projects.myChatBot.callToAction.subtitle') }}
-                    </p>
-                    <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <Icon name="mdi:rocket-launch" class="w-5 h-5" />
-                        {{ t('projects.myChatBot.callToAction.button') }}
-                        <Icon name="mdi:open-in-new" class="w-4 h-4" />
-                    </a>
-                </div>
+                <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
+                    <Icon name="mdi:rocket-launch" class="w-5 h-5" />
+                    {{ t('projects.myChatBot.callToAction.button') }}
+                    <Icon name="mdi:open-in-new" class="w-4 h-4" />
+                </a>
             </div>
         </div>
     </div>
