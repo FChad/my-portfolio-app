@@ -108,7 +108,7 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
 <template>
   <div class="h-32 flex items-center justify-center">
     <div
-      class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/50 dark:border-gray-700/50 rounded-lg p-4 shadow-2xl font-mono text-left max-w-2xl w-full backdrop-blur-sm">
+      class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-xl font-mono text-left max-w-2xl w-full backdrop-blur-sm">
       <!-- Terminal Header -->
       <div class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200/70 dark:border-gray-700/70">
         <div class="flex gap-2">
