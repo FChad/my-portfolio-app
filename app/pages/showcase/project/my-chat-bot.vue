@@ -1,15 +1,4 @@
 <script lang="ts" setup>
-const localePath = useLocalePath()
-const { t } = useI18n()
-
-// SEO
-useSeoMeta({
-    title: t('projects.myChatBot.title'),
-    description: t('projects.myChatBot.description'),
-    ogTitle: t('projects.myChatBot.title'),
-    ogDescription: t('projects.myChatBot.description')
-})
-
 const keyFeatures = [
     {
         id: 'aiChat',

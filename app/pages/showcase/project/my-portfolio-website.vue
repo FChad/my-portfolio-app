@@ -1,15 +1,4 @@
 <script lang="ts" setup>
-const localePath = useLocalePath()
-const { t } = useI18n()
-
-// SEO
-useSeoMeta({
-    title: t('projects.myPortfolio.title'),
-    description: t('projects.myPortfolio.description'),
-    ogTitle: t('projects.myPortfolio.title'),
-    ogDescription: t('projects.myPortfolio.description')
-})
-
 const keyFeatures = [
     {
         id: 'multilingual',
@@ -213,12 +202,12 @@ const technologies = [
                             <div class="flex items-center gap-3 mb-2">
                                 <Icon :name="tech.icon" class="w-4 h-4 text-slate-800 dark:text-slate-200" />
                                 <span class="text-base font-medium text-slate-600 dark:text-slate-400">{{ t(tech.name)
-                                }}</span>
+                                    }}</span>
                             </div>
                             <p class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">{{ t(tech.tech) }}
                             </p>
                             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{{ t(tech.description)
-                            }}</p>
+                                }}</p>
                         </div>
                     </div>
                 </div>
