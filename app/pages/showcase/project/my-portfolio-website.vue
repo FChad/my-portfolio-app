@@ -15,43 +15,37 @@ const keyFeatures = [
         id: 'multilingual',
         title: 'projects.myPortfolio.features.multilingual.title',
         description: 'projects.myPortfolio.features.multilingual.description',
-        icon: 'mdi:web',
-        color: 'from-blue-500 to-indigo-600'
+        icon: 'mdi:web'
     },
     {
         id: 'responsive',
         title: 'projects.myPortfolio.features.responsive.title',
         description: 'projects.myPortfolio.features.responsive.description',
-        icon: 'mdi:responsive',
-        color: 'from-green-500 to-emerald-600'
+        icon: 'mdi:responsive'
     },
     {
         id: 'darkMode',
         title: 'projects.myPortfolio.features.darkMode.title',
         description: 'projects.myPortfolio.features.darkMode.description',
-        icon: 'mdi:theme-light-dark',
-        color: 'from-purple-500 to-violet-600'
+        icon: 'mdi:theme-light-dark'
     },
     {
         id: 'performance',
         title: 'projects.myPortfolio.features.performance.title',
         description: 'projects.myPortfolio.features.performance.description',
-        icon: 'mdi:lightning-bolt',
-        color: 'from-orange-500 to-red-600'
+        icon: 'mdi:lightning-bolt'
     },
     {
         id: 'seo',
         title: 'projects.myPortfolio.features.seo.title',
         description: 'projects.myPortfolio.features.seo.description',
-        icon: 'mdi:magnify',
-        color: 'from-teal-500 to-cyan-600'
+        icon: 'mdi:magnify'
     },
     {
         id: 'contact',
         title: 'projects.myPortfolio.features.contact.title',
         description: 'projects.myPortfolio.features.contact.description',
-        icon: 'mdi:email-outline',
-        color: 'from-pink-500 to-rose-600'
+        icon: 'mdi:email-outline'
     }
 ];
 
@@ -61,7 +55,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.nuxt3.name',
         tech: 'projects.myPortfolio.technologies.nuxt3.tech',
         icon: 'mdi:nuxt',
-        color: 'from-green-500 to-emerald-600',
         description: 'projects.myPortfolio.technologies.nuxt3.description'
     },
     {
@@ -69,7 +62,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.vue3.name',
         tech: 'projects.myPortfolio.technologies.vue3.tech',
         icon: 'mdi:vuejs',
-        color: 'from-green-500 to-emerald-600',
         description: 'projects.myPortfolio.technologies.vue3.description'
     },
     {
@@ -77,7 +69,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.typescript.name',
         tech: 'projects.myPortfolio.technologies.typescript.tech',
         icon: 'mdi:language-typescript',
-        color: 'from-blue-500 to-blue-600',
         description: 'projects.myPortfolio.technologies.typescript.description'
     },
     {
@@ -85,7 +76,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.tailwind.name',
         tech: 'projects.myPortfolio.technologies.tailwind.tech',
         icon: 'mdi:tailwind',
-        color: 'from-cyan-500 to-blue-600',
         description: 'projects.myPortfolio.technologies.tailwind.description'
     },
     {
@@ -93,7 +83,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.i18n.name',
         tech: 'projects.myPortfolio.technologies.i18n.tech',
         icon: 'mdi:translate',
-        color: 'from-yellow-500 to-amber-600',
         description: 'projects.myPortfolio.technologies.i18n.description'
     },
     {
@@ -101,7 +90,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.veevalidate.name',
         tech: 'projects.myPortfolio.technologies.veevalidate.tech',
         icon: 'mdi:check-circle',
-        color: 'from-emerald-500 to-teal-600',
         description: 'projects.myPortfolio.technologies.veevalidate.description'
     },
     {
@@ -109,7 +97,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.resend.name',
         tech: 'projects.myPortfolio.technologies.resend.tech',
         icon: 'mdi:email-send',
-        color: 'from-indigo-500 to-purple-600',
         description: 'projects.myPortfolio.technologies.resend.description'
     },
     {
@@ -117,7 +104,6 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.iconify.name',
         tech: 'projects.myPortfolio.technologies.iconify.tech',
         icon: 'mdi:emoticon-outline',
-        color: 'from-slate-500 to-slate-600',
         description: 'projects.myPortfolio.technologies.iconify.description'
     }
 ];
@@ -135,24 +121,11 @@ const technologies = [
             <!-- Hero Section -->
             <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12">
                 <div class="text-center max-w-4xl mx-auto">
-                    <!-- Project Icon -->
-                    <div class="flex justify-center mb-4 sm:mb-6 md:mb-8">
-                        <div class="relative">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-pulse">
-                            </div>
-                            <div
-                                class="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl">
-                                <Icon name="mdi:account-box-outline"
-                                    class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 text-white" />
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Title and Description -->
-                    <h1
-                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-slate-800 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent px-2">
-                        {{ t('projects.myPortfolio.title') }}
+                    <h1 class="text-5xl md:text-6xl font-black mb-6">
+                        <span class="uppercase block text-gray-700 dark:text-gray-300">
+                            {{ t('showcase.projects.myPortfolio.title') }}
+                        </span>
                     </h1>
 
                     <p
@@ -163,7 +136,7 @@ const technologies = [
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4">
                         <a href="https://www.chad.lu" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                             Live Demo
                             <Icon name="mdi:open-in-new" class="w-4 h-4" />
@@ -208,7 +181,7 @@ const technologies = [
                             class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-200/60 dark:border-slate-600/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                             <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                                 <div
-                                    :class="`p-2.5 sm:p-3 bg-gradient-to-br ${feature.color} rounded-xl shadow-lg w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center`">
+                                    class="p-2.5 sm:p-3 bg-blue-500 rounded-xl shadow-lg w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
                                     <Icon :name="feature.icon" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                                 </div>
                                 <h3
@@ -238,35 +211,37 @@ const technologies = [
                         <div v-for="tech in technologies" :key="tech.id"
                             class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-slate-200/60 dark:border-slate-600/60 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="flex items-center gap-3 mb-2">
-                                <Icon :name="tech.icon"
-                                    :class="`w-4 h-4 ${tech.color.includes('blue') ? 'text-blue-500' : tech.color.includes('emerald') ? 'text-emerald-500' : tech.color.includes('yellow') ? 'text-yellow-500' : tech.color.includes('cyan') ? 'text-cyan-500' : tech.color.includes('purple') ? 'text-purple-500' : tech.color.includes('indigo') ? 'text-indigo-500' : 'text-slate-500'}`" />
+                                <Icon :name="tech.icon" class="w-4 h-4 text-slate-800 dark:text-slate-200" />
                                 <span class="text-base font-medium text-slate-600 dark:text-slate-400">{{ t(tech.name)
-                                    }}</span>
+                                }}</span>
                             </div>
                             <p class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">{{ t(tech.tech) }}
                             </p>
                             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{{ t(tech.description)
-                                }}</p>
+                            }}</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Call to Action -->
-                <div
-                    class="text-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-3xl p-8 sm:p-12 border border-blue-200/50 dark:border-blue-800/50">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">{{
-                        t('projects.myPortfolio.callToAction.title') }}</h2>
-                    <p
-                        class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                        {{ t('projects.myPortfolio.callToAction.subtitle') }}
-                    </p>
-                    <a href="https://www.chad.lu" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <Icon name="mdi:rocket-launch" class="w-5 h-5" />
-                        {{ t('projects.myPortfolio.callToAction.button') }}
-                        <Icon name="mdi:open-in-new" class="w-4 h-4" />
-                    </a>
-                </div>
+
+            </div>
+        </div>
+        <!-- CTA Section -->
+        <div class="py-20 bg-blue-600 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6">{{
+                    t('projects.myPortfolio.callToAction.title') }}
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    {{ t('projects.myPortfolio.callToAction.subtitle') }}
+                </p>
+
+                <a href="https://www.chad.lu" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-xl font-semibold hover:bg-gray-200 hover:shadow-lg transition-all duration-300">
+                    <Icon name="mdi:rocket-launch" class="w-5 h-5" />
+                    {{ t('projects.myPortfolio.callToAction.button') }}
+                    <Icon name="mdi:open-in-new" class="w-4 h-4" />
+                </a>
             </div>
         </div>
     </div>
