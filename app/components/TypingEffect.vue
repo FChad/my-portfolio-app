@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch, nextTick } from 'vue'
 
 interface Props {
     texts: string[]
@@ -20,18 +20,37 @@ const props = withDefaults(defineProps<Props>(), {
     command: 'echo'
 })
 
+// Reactive state
 const typingText = ref('')
+const isActive = ref(false)
 
+// Animation state - using more performant approach
+let animationId: number | null = null
+let lastTime = 0
 let currentTextIndex = 0
 let currentCharIndex = 0
 let isDeleting = false
-let typingInterval: ReturnType<typeof setInterval>
+let pauseUntil = 0
 
-const typeText = () => {
-    if (!props.texts || props.texts.length === 0) return
+// Optimized animation using requestAnimationFrame
+const animate = (currentTime: number): void => {
+    if (!isActive.value || !props.texts || props.texts.length === 0) return
 
-    const currentText = props.texts[currentTextIndex]
-    if (!currentText) return
+    // Handle pause periods
+    if (currentTime < pauseUntil) {
+        animationId = requestAnimationFrame(animate)
+        return
+    }
+
+    // Throttle animation based on typing/deleting speed
+    const speed = isDeleting ? props.deletingSpeed : props.typingSpeed
+    if (currentTime - lastTime < speed) {
+        animationId = requestAnimationFrame(animate)
+        return
+    }
+
+    lastTime = currentTime
+    const currentText = props.texts[currentTextIndex] || ''
 
     if (!isDeleting) {
         // Typing forward
@@ -41,13 +60,8 @@ const typeText = () => {
 
             // When word is complete, pause before deleting
             if (currentCharIndex > currentText.length) {
-                clearInterval(typingInterval)
-                setTimeout(() => {
-                    isDeleting = true
-                    // Start deleting with faster interval
-                    typingInterval = setInterval(typeText, props.deletingSpeed)
-                }, props.pauseDuration)
-                return
+                pauseUntil = currentTime + props.pauseDuration
+                isDeleting = true
             }
         }
     } else {
@@ -60,72 +74,144 @@ const typeText = () => {
             if (currentCharIndex < 0) {
                 isDeleting = false
                 currentTextIndex = (currentTextIndex + 1) % props.texts.length
-                currentCharIndex = 0 // Reset to start typing from beginning
-                clearInterval(typingInterval)
-
-                // Small pause before starting next word
-                setTimeout(() => {
-                    typingInterval = setInterval(typeText, props.typingSpeed)
-                }, 200)
-                return
+                currentCharIndex = 0
+                pauseUntil = currentTime + 200 // Small pause before next word
             }
         }
     }
+
+    // Continue animation
+    if (isActive.value) {
+        animationId = requestAnimationFrame(animate)
+    }
 }
 
-const startTyping = () => {
-    if (typingInterval) {
-        clearInterval(typingInterval)
-    }
+const startTyping = (): void => {
+    // Stop any existing animation
+    stopTyping()
+
     // Reset state
     currentTextIndex = 0
     currentCharIndex = 0
     isDeleting = false
     typingText.value = ''
+    pauseUntil = 0
+    lastTime = 0
+    isActive.value = true
 
-    // Start with typing speed
-    typingInterval = setInterval(typeText, props.typingSpeed)
+    // Start animation
+    nextTick(() => {
+        if (isActive.value) {
+            animationId = requestAnimationFrame(animate)
+        }
+    })
+}
+
+const stopTyping = (): void => {
+    isActive.value = false
+    if (animationId !== null) {
+        cancelAnimationFrame(animationId)
+        animationId = null
+    }
 }
 
 // Watch for changes in texts prop to restart animation
-watch(() => props.texts, () => {
-    startTyping()
-}, { immediate: false })
+watch(() => props.texts, (newTexts) => {
+    if (newTexts && newTexts.length > 0) {
+        startTyping()
+    }
+}, { immediate: false, deep: true })
 
 onMounted(() => {
-    startTyping()
+    if (props.texts && props.texts.length > 0) {
+        startTyping()
+    }
 })
 
 onUnmounted(() => {
-    if (typingInterval) {
-        clearInterval(typingInterval)
-    }
+    stopTyping()
 })
 
 const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHost}:~$`)
 </script>
 
 <template>
-    <div class="h-32 flex items-center justify-center">
+    <div class="h-32 flex items-center justify-center" role="region" aria-label="Dynamic text display">
         <div
-            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-xl font-mono text-left max-w-2xl w-full backdrop-blur-sm">
+            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-xl font-mono text-left max-w-2xl w-full backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
             <!-- Terminal Header -->
             <div class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200/70 dark:border-gray-700/70">
-                <div class="flex gap-2">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div class="flex gap-2" role="presentation" aria-label="Terminal window controls">
+                    <div class="w-3 h-3 bg-red-500 rounded-full transition-colors duration-200 hover:bg-red-600"
+                        title="Close"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full transition-colors duration-200 hover:bg-yellow-600"
+                        title="Minimize"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full transition-colors duration-200 hover:bg-green-600"
+                        title="Maximize"></div>
                 </div>
-                <span class="text-gray-600 dark:text-gray-400 text-sm ml-4">{{ terminalPrompt }}</span>
+                <span class="text-gray-600 dark:text-gray-400 text-sm ml-4 select-none">{{ terminalPrompt }}</span>
             </div>
+
             <!-- Terminal Content -->
-            <div class="text-blue-600 dark:text-green-400 text-lg md:text-xl flex items-center">
-                <span class="text-gray-700 dark:text-gray-300 mr-2">{{ command }}</span>
-                <span class="text-orange-600 dark:text-orange-400">"</span>
-                <span class="text-blue-600 dark:text-blue-300">{{ typingText }}</span>
-                <span class="w-2 h-5 bg-blue-600 dark:bg-blue-300 animate-pulse ml-1 inline-block"></span>
-                <span class="text-orange-600 dark:text-orange-400">"</span>
+            <div class="text-blue-600 dark:text-green-400 text-lg md:text-xl flex items-center min-h-[1.5rem]">
+                <span class="text-gray-700 dark:text-gray-300 mr-2 select-none">{{ command }}</span>
+                <span class="text-orange-600 dark:text-orange-400 select-none">"</span>
+                <span class="text-blue-600 dark:text-blue-300 font-medium"
+                    :aria-label="`Currently displaying: ${typingText}`" role="status" aria-live="polite">{{ typingText
+                    }}</span>
+                <span class="w-2 h-5 ml-1 inline-block rounded-sm transition-all duration-75"
+                    :class="isActive ? 'bg-blue-600 dark:bg-blue-300 animate-typing-cursor' : 'bg-transparent'"
+                    aria-hidden="true"></span>
+                <span class="text-orange-600 dark:text-orange-400 select-none">"</span>
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+/* Custom cursor animation - smooth fade between 100% and 20% */
+@keyframes typing-cursor {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-typing-cursor {
+    animation: typing-cursor 2s infinite;
+}
+
+/* Subtle hover effects for terminal controls */
+.bg-red-500:hover,
+.bg-yellow-500:hover,
+.bg-green-500:hover {
+    transform: scale(1.1);
+    transition: transform 0.15s ease-in-out;
+}
+
+/* Smooth text selection */
+::selection {
+    background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Better focus styles for accessibility */
+.focus\:outline-blue:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+</style>
