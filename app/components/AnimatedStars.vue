@@ -43,7 +43,6 @@ interface Props {
     particleCount?: number
     flareCount?: number
     motion?: number
-    tilt?: number
     linkChance?: number
     canvasClass?: string
 }
@@ -52,7 +51,6 @@ const props = withDefaults(defineProps<Props>(), {
     particleCount: 40,
     flareCount: 10,
     motion: 0.08,
-    tilt: 0.05,
     linkChance: 25,
     canvasClass: 'z-0'
 })
@@ -70,7 +68,6 @@ let isMouseOver = false
 let performanceMode = false
 let lastFrameTime = 0
 const frameInterval = 1000 / 60 // 60 FPS
-let frameSkipCounter = 0
 
 // Color mode integration
 const colorMode = useColorMode()
@@ -111,9 +108,7 @@ const settings = {
     particle: {
         sizeBase: 1,
         sizeMultiplier: 0.5,
-        flickerSmoothing: 15,
-        glareAngle: -60,
-        glareOpacityMultiplier: 0.01
+        flickerSmoothing: 15
     },
     flare: {
         sizeBase: 100,
@@ -207,15 +202,13 @@ function resize(force: boolean = false): void {
     const newWidth = Math.round(parentRect.width)
     const newHeight = Math.round(parentRect.height)
 
-    // Check if size or DPR has changed (important for zoom handling)
-    const currentDPR = context.getTransform().a || 1
+    // Check if size has changed significantly
     if (!force) {
         const tolerance = 1
         const widthChanged = Math.abs(lastCanvasSize.width - newWidth) > tolerance
         const heightChanged = Math.abs(lastCanvasSize.height - newHeight) > tolerance
-        const dprChanged = Math.abs(currentDPR - dpr) > 0.1
 
-        if (!widthChanged && !heightChanged && !dprChanged) {
+        if (!widthChanged && !heightChanged) {
             return // No significant change, skip resize
         }
     }
@@ -303,15 +296,15 @@ class Particle implements StarParticle {
         const r = ((this.z * settings.particle.sizeMultiplier) + settings.particle.sizeBase) * (sizeRatio() / 1000)
         let o = this.opacity
 
-        // Optimized flicker effect - reduce frequency in performance mode
-        const flickerRate = (performanceMode && !isMouseOver) ? settings.particle.flickerSmoothing * 3 : settings.particle.flickerSmoothing
+        // Flicker effect
+        const flickerRate = performanceMode ? settings.particle.flickerSmoothing * 2 : settings.particle.flickerSmoothing
         const newVal = random(-0.5, 0.5, true)
         this.flicker += (newVal - this.flicker) / flickerRate
         this.flicker = Math.max(-0.5, Math.min(0.5, this.flicker))
         o = Math.max(0, Math.min(1, o + this.flicker))
 
-        // Cache color to avoid repeated function calls
-        if (!this.color || Math.random() < 0.01) { // Update color occasionally
+        // Update color if not set
+        if (!this.color) {
             this.color = getStarColor()
         }
 
@@ -320,15 +313,6 @@ class Particle implements StarParticle {
         context.beginPath()
         context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
         context.fill()
-
-        // Skip glare effect in performance mode for better performance
-        if (!performanceMode || isMouseOver) {
-            // Particle glare
-            context.globalAlpha = o * settings.particle.glareOpacityMultiplier
-            context.beginPath()
-            context.ellipse(pos.x, pos.y, r * 100, r, (settings.particle.glareAngle - ((nPos.x - 0.5) * settings.noise.strength * props.motion)) * (Math.PI / 180), 0, 2 * Math.PI, false)
-            context.fill()
-        }
 
         context.globalAlpha = 1
     }
@@ -355,8 +339,8 @@ class Flare implements StarFlare {
         const pos = position(this.x, this.y, this.z)
         const r = ((this.z * settings.flare.sizeMultiplier) + settings.flare.sizeBase) * (sizeRatio() / 1000)
 
-        // Cache color to avoid repeated function calls
-        if (!this.color || Math.random() < 0.05) { // Update color occasionally
+        // Update color if not set
+        if (!this.color) {
             this.color = getFlareColor()
         }
 
@@ -561,12 +545,6 @@ function render(): void {
     // Performance mode: reduce animation quality when not actively interacting
     const isLowPower = performanceMode && !isMouseOver
 
-    // Frame skipping for performance mode
-    if (isLowPower && ++frameSkipCounter < 3) {
-        return // Skip 2 out of 3 frames
-    }
-    frameSkipCounter = 0
-
     // Update noise position
     n += isLowPower ? 3 : 1
     if (n >= settings.noise.length) n = 0
@@ -664,10 +642,7 @@ function handleResize(): void {
     }, 50) // Faster response for better zoom handling
 }
 
-// Handle zoom changes specifically
-function handleZoom(): void {
-    handleResize()
-}
+
 
 function handleVisibilityChange(): void {
     isVisible = !document.hidden
@@ -744,23 +719,10 @@ onMounted(() => {
 
     init()
 
-    // Event listeners with zoom handling
+    // Event listeners
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('resize', handleResize, { passive: true })
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
-
-    // Listen for zoom events (browser zoom changes devicePixelRatio)
-    const mediaQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
-    const handleDPRChange = () => {
-        handleZoom()
-    }
-
-    if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener('change', handleDPRChange)
-            // Store reference for cleanup
-            ; (starsCanvas.value as any).__mediaQuery = mediaQuery
-            ; (starsCanvas.value as any).__dprHandler = handleDPRChange
-    }
 
     // Enhanced resize observer that handles zoom better
     if (window.ResizeObserver && starsCanvas.value.parentElement) {
@@ -771,14 +733,8 @@ onMounted(() => {
         resizeObserver.observe(starsCanvas.value.parentElement)
     }
 
-    // Auto-detect performance mode
-    nextTick(() => {
-        const canvas = starsCanvas.value
-        if (canvas?.parentElement) {
-            const rect = canvas.parentElement.getBoundingClientRect()
-            performanceMode = rect.width < 768 || (navigator.hardwareConcurrency || 4) < 4
-        }
-    })
+    // Auto-detect performance mode based on device capabilities
+    performanceMode = (navigator.hardwareConcurrency || 4) < 4
 
     // Visibility observer
     if (window.IntersectionObserver) {
@@ -814,13 +770,6 @@ onUnmounted(() => {
     if (canvas) {
         const observer = (canvas as any).__observer
         observer?.disconnect()
-
-        // Cleanup zoom detection
-        const mediaQuery = (canvas as any).__mediaQuery
-        const dprHandler = (canvas as any).__dprHandler
-        if (mediaQuery && dprHandler && mediaQuery.removeEventListener) {
-            mediaQuery.removeEventListener('change', dprHandler)
-        }
     }
 
     // Remove event listeners
