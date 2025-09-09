@@ -107,8 +107,6 @@ watch(isSubmitted, (newVal) => {
     <main class="overflow-hidden">
         <!-- Hero Section -->
         <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center flex flex-col gap-6">
                     <h1 class="text-5xl md:text-6xl font-black">
@@ -124,18 +122,13 @@ watch(isSubmitted, (newVal) => {
         </section>
 
         <!-- Contact Information Section -->
-        <section class="py-20 flex flex-col gap-12">
+        <section class="py-20 flex flex-col gap-12 bg-gray-50 dark:bg-gray-800/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <!-- Contact Methods Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div v-for="method in contactMethods" :key="method.title"
                         class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                         <NuxtLink :to="method.href" external target="_blank" class="block p-6">
-                            <!-- Background Gradient -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 dark:to-gray-700/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            </div>
-
                             <div class="relative flex flex-col items-center gap-4 text-center">
                                 <!-- Icon Container -->
                                 <div :class="[
@@ -297,10 +290,3 @@ watch(isSubmitted, (newVal) => {
         </section>
     </main>
 </template>
-
-<style scoped>
-.bg-grid-pattern {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 24px 24px;
-}
-</style>

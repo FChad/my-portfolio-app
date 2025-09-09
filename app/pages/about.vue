@@ -108,8 +108,6 @@ const experiences = [
     <main class="overflow-hidden">
         <!-- Hero Section -->
         <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h1 class="text-5xl md:text-6xl font-black mb-6">
@@ -179,8 +177,7 @@ const experiences = [
                     </div>
 
                     <div class="space-y-6">
-                        <div
-                            class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl">
+                        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl">
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
                                 <Icon name="mdi:heart" class="w-6 h-6 text-red-500" />
                                 {{ $t('about.passion.title') }}
@@ -188,8 +185,7 @@ const experiences = [
                             <p class="text-gray-600 dark:text-gray-300">{{ $t('about.passion.description') }}</p>
                         </div>
 
-                        <div
-                            class="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl">
+                        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl">
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
                                 <Icon name="mdi:puzzle" class="w-6 h-6 text-green-500" />
                                 {{ $t('about.hobbies.title') }}
@@ -337,10 +333,3 @@ const experiences = [
         </section>
     </main>
 </template>
-
-<style scoped>
-.bg-grid-pattern {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 24px 24px;
-}
-</style>
