@@ -141,7 +141,7 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
             class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-xl font-mono text-left max-w-2xl w-full backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
             <!-- Terminal Header -->
             <div class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200/70 dark:border-gray-700/70">
-                <div class="flex gap-2" role="presentation" aria-label="Terminal window controls">
+                <div class="flex gap-2" role="presentation">
                     <div class="w-3 h-3 bg-red-500 rounded-full transition-colors duration-200 hover:bg-red-600"
                         title="Close"></div>
                     <div class="w-3 h-3 bg-yellow-500 rounded-full transition-colors duration-200 hover:bg-yellow-600"
@@ -156,9 +156,8 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
             <div class="text-blue-600 dark:text-green-400 text-lg md:text-xl flex items-center min-h-[1.5rem]">
                 <span class="text-gray-700 dark:text-gray-300 mr-2 select-none">{{ command }}</span>
                 <span class="text-orange-600 dark:text-orange-400 select-none">"</span>
-                <span class="text-blue-600 dark:text-blue-300 font-medium"
-                    :aria-label="`Currently displaying: ${typingText}`" role="status" aria-live="polite">{{ typingText
-                    }}</span>
+                <span class="text-blue-600 dark:text-blue-300 font-medium" role="status" aria-live="polite">{{
+                    typingText }}</span>
                 <span class="w-2 h-5 ml-1 inline-block rounded-sm transition-all duration-75"
                     :class="isActive ? 'bg-blue-600 dark:bg-blue-300 animate-typing-cursor' : 'bg-transparent'"
                     aria-hidden="true"></span>
@@ -194,24 +193,5 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
 
 .animate-typing-cursor {
     animation: typing-cursor 2s infinite;
-}
-
-/* Subtle hover effects for terminal controls */
-.bg-red-500:hover,
-.bg-yellow-500:hover,
-.bg-green-500:hover {
-    transform: scale(1.1);
-    transition: transform 0.15s ease-in-out;
-}
-
-/* Smooth text selection */
-::selection {
-    background-color: rgba(59, 130, 246, 0.2);
-}
-
-/* Better focus styles for accessibility */
-.focus\:outline-blue:focus-visible {
-    outline: 2px solid #3B82F6;
-    outline-offset: 2px;
 }
 </style>
