@@ -314,6 +314,11 @@ const scrollToAbout = () => {
 </template>
 
 <style scoped>
+/* Custom Gradient for Hero Background */
+.bg-gradient-radial {
+    background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
 /* Scroll Indicator Styles */
 .scroll-indicator {
     position: relative;

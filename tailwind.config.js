@@ -4,9 +4,7 @@ export default {
     content: [],
     theme: {
         extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
-            },
+            // Extended theme configuration can be added here
         },
     },
     plugins: [],
