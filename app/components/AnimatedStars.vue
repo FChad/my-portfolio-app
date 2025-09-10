@@ -72,6 +72,8 @@ const currentTheme = computed(() => colorMode.value)
 
 // Animation state
 const mouse = { x: 0, y: 0 }
+const targetMouse = { x: 0, y: 0 }
+const mouseLerp = 0.08 // Smoothing factor (0.01 = very smooth, 0.1 = responsive)
 let particles: StarParticle[] = []
 let flares: StarFlare[] = []
 let links: StarLink[] = []
@@ -208,6 +210,8 @@ function resize(): void {
     // Reset mouse position to center
     mouse.x = newWidth / 2
     mouse.y = newHeight / 2
+    targetMouse.x = mouse.x
+    targetMouse.y = mouse.y
 
     context.clearRect(0, 0, pixelWidth, pixelHeight)
 }
@@ -497,10 +501,19 @@ function startLink(vertex: number, length: number): void {
     links.push(new Link(vertex, length))
 }
 
+function updateMousePosition(): void {
+    // Smooth interpolation between current and target mouse position
+    mouse.x += (targetMouse.x - mouse.x) * mouseLerp
+    mouse.y += (targetMouse.y - mouse.y) * mouseLerp
+}
+
 function render(): void {
     if (!context || !starsCanvas.value || !isVisible) return
 
     const isLowPower = performanceMode && !isMouseOver
+
+    // Update smooth mouse position
+    updateMousePosition()
 
     // Update noise position
     n += isLowPower ? 3 : 1
@@ -565,8 +578,9 @@ function handleMouseMove(e: MouseEvent): void {
     const rect = starsCanvas.value.getBoundingClientRect()
     const scaleX = starsCanvas.value.clientWidth / rect.width
     const scaleY = starsCanvas.value.clientHeight / rect.height
-    mouse.x = (e.clientX - rect.left) * scaleX
-    mouse.y = (e.clientY - rect.top) * scaleY
+    // Set target position instead of directly updating mouse position
+    targetMouse.x = (e.clientX - rect.left) * scaleX
+    targetMouse.y = (e.clientY - rect.top) * scaleY
 }
 
 function onMouseEnter(): void {
@@ -625,6 +639,8 @@ function init(): void {
 
     mouse.x = starsCanvas.value.clientWidth / 2
     mouse.y = starsCanvas.value.clientHeight / 2
+    targetMouse.x = mouse.x
+    targetMouse.y = mouse.y
 
     // Create particles
     particles = []
