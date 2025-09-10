@@ -92,17 +92,13 @@ const settings = {
             starColor: '#1E40AF',
             linkColor: '#2563EB',
             flareColor: '#3B82F6',
-            linkOpacity: 0.4,
-            flareOpacityMin: 0.01,
-            flareOpacityMax: 0.05
+            linkOpacity: 0.4
         },
         dark: {
             starColor: '#60A5FA',
             linkColor: '#3B82F6',
             flareColor: '#DBEAFE',
-            linkOpacity: 0.25,
-            flareOpacityMin: 0.002,
-            flareOpacityMax: 0.015
+            linkOpacity: 0.25
         }
     },
     particle: {
@@ -112,8 +108,7 @@ const settings = {
     },
     flare: {
         sizeBase: 100,
-        sizeMultiplier: 100,
-        blurRadius: 15
+        sizeMultiplier: 100
     },
     link: {
         lineWidth: 1,
@@ -176,24 +171,9 @@ function getFlareColor(): string {
     return settings.themes[theme].flareColor
 }
 
-function getFlareOpacityRange(): { min: number, max: number } {
-    const theme = isDarkMode() ? 'dark' : 'light'
-    return {
-        min: settings.themes[theme].flareOpacityMin,
-        max: settings.themes[theme].flareOpacityMax
-    }
-}
-
 function getCurrentLinkOpacity(): number {
     const theme = isDarkMode() ? 'dark' : 'light'
     return settings.themes[theme].linkOpacity
-}
-
-function updateFlareOpacities(): void {
-    const opacityRange = getFlareOpacityRange()
-    flares.forEach(flare => {
-        flare.opacity = random(opacityRange.min, opacityRange.max, true)
-    })
 }
 
 function random(min: number, max: number, float: boolean = false): number {
@@ -332,8 +312,7 @@ class Flare implements StarFlare {
         this.x = random(-0.25, 1.25, true)
         this.y = random(-0.25, 1.25, true)
         this.z = random(0.3, 2, true) // Minimum z value so flares also respond to mouse
-        const opacityRange = getFlareOpacityRange()
-        this.opacity = random(opacityRange.min, opacityRange.max, true)
+        this.opacity = random(0.001, 0.01, true)
     }
 
     render(): void {
@@ -342,19 +321,12 @@ class Flare implements StarFlare {
         const pos = position(this.x, this.y, this.z)
         const r = ((this.z * settings.flare.sizeMultiplier) + settings.flare.sizeBase) * (sizeRatio() / 1000)
 
-        // Save the current context state
-        context.save()
-
-        // Apply blur filter
-        context.filter = `blur(${settings.flare.blurRadius}px)`
         context.fillStyle = getFlareColor()
         context.globalAlpha = this.opacity
         context.beginPath()
         context.arc(pos.x, pos.y, r, 0, 2 * Math.PI, false)
         context.fill()
-
-        // Restore the context state (removes filter and resets globalAlpha)
-        context.restore()
+        context.globalAlpha = 1
     }
 }
 
@@ -718,7 +690,6 @@ function init(): void {
 // Watch for theme changes and force re-render
 watch(currentTheme, () => {
     nextTick(() => {
-        updateFlareOpacities()
         forceRender()
     })
 }, { immediate: false })
