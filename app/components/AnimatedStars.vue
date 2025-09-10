@@ -64,6 +64,7 @@ let isVisible = true
 let isMouseOver = false
 let performanceMode = false
 let lastFrameTime = 0
+let isCanvasReady = false
 const frameInterval = 1000 / 60 // 60 FPS
 
 // Color mode integration
@@ -214,6 +215,11 @@ function resize(): void {
     targetMouse.y = mouse.y
 
     context.clearRect(0, 0, pixelWidth, pixelHeight)
+    
+    // Mark canvas as ready after first proper resize
+    if (newWidth > 0 && newHeight > 0) {
+        isCanvasReady = true
+    }
 }
 
 function position(x: number, y: number, z: number): { x: number; y: number } {
@@ -227,12 +233,15 @@ function position(x: number, y: number, z: number): { x: number; y: number } {
 }
 
 function sizeRatio(): number {
-    if (!starsCanvas.value) return 1000
+    if (!starsCanvas.value) return 800 // Reduced fallback size
     // Use CSS dimensions, not internal canvas resolution for consistent sizing
     const canvas = starsCanvas.value
     const width = canvas.clientWidth || canvas.offsetWidth
     const height = canvas.clientHeight || canvas.offsetHeight
-    return Math.max(width, height)
+    
+    // Return reasonable fallback if dimensions are not yet available
+    const calculatedSize = Math.max(width, height)
+    return calculatedSize > 0 ? calculatedSize : 800
 }
 
 function noisePoint(i: number): { x: number; y: number } {
@@ -508,7 +517,7 @@ function updateMousePosition(): void {
 }
 
 function render(): void {
-    if (!context || !starsCanvas.value || !isVisible) return
+    if (!context || !starsCanvas.value || !isVisible || !isCanvasReady) return
 
     const isLowPower = performanceMode && !isMouseOver
 
@@ -635,7 +644,19 @@ function init(): void {
     // Initial resize with a small delay to ensure DOM is ready
     setTimeout(() => {
         resize()
+        // Start animation only after canvas is properly sized
+        if (isCanvasReady) {
+            animate()
+        }
     }, 50)
+
+    // Fallback: ensure animation starts after a longer delay
+    setTimeout(() => {
+        if (!animationFrame && starsCanvas.value && starsCanvas.value.clientWidth > 0) {
+            isCanvasReady = true
+            animate()
+        }
+    }, 200)
 
     mouse.x = starsCanvas.value.clientWidth / 2
     mouse.y = starsCanvas.value.clientHeight / 2
@@ -657,8 +678,7 @@ function init(): void {
         flares.push(new Flare())
     }
 
-    // Start animation
-    animate()
+    // Animation will be started after resize in setTimeout above
 }
 
 // Watch for theme changes and force re-render
