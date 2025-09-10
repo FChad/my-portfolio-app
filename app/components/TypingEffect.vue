@@ -138,7 +138,7 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
 <template>
     <div class="h-32 flex items-center justify-center" role="region" aria-label="Dynamic text display">
         <div
-            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-xl font-mono text-left max-w-2xl w-full backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-lg font-mono text-left max-w-2xl w-full backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
             <!-- Terminal Header -->
             <div class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200/70 dark:border-gray-700/70">
                 <div class="flex gap-2" role="presentation">
