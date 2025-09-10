@@ -103,14 +103,14 @@ const technologies = [
 </script>
 
 <template>
-    <div class="w-full">
-        <!-- Navigation -->
-        <UiSubNavigation :title="t('showcase.projects.myPortfolio.title')" />
+    <!-- Navigation -->
+    <UiSubNavigation :title="t('showcase.projects.myPortfolio.title')" />
 
-        <!-- Content Area -->
-        <div class="w-full">
-            <!-- Hero Section -->
-            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12">
+    <main class="overflow-hidden">
+
+        <!-- Hero Section -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto">
                     <!-- Title and Description -->
                     <h1 class="text-5xl md:text-6xl font-black mb-6">
@@ -152,11 +152,11 @@ const technologies = [
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Main Content -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-16">
-
-                <!-- Key Features -->
+        <!-- Key Features Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 sm:mb-16">
                     <div class="text-center mb-8 sm:mb-12">
                         <h2
@@ -186,8 +186,12 @@ const technologies = [
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Technologies -->
+        <!-- Technologies Section -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 sm:mb-16">
                     <div class="text-center mb-8 sm:mb-12">
                         <h2
@@ -213,12 +217,11 @@ const technologies = [
                         </div>
                     </div>
                 </div>
-
-
             </div>
-        </div>
+        </section>
+
         <!-- CTA Section -->
-        <div class="py-20 bg-blue-600 text-white">
+        <section class="py-20 bg-blue-600 text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-bold mb-6">{{
                     t('projects.myPortfolio.callToAction.title') }}
@@ -234,8 +237,8 @@ const technologies = [
                     <Icon name="mdi:open-in-new" class="w-4 h-4" />
                 </a>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </template>
 
 <style lang="postcss" scoped>
