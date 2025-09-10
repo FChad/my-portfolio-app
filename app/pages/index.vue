@@ -31,7 +31,7 @@ const scrollToAbout = () => {
             <div class="absolute inset-0">
                 <!-- Dynamic Gradient Background - Light/Dark Mode -->
                 <div class="absolute inset-0 
-                    bg-gradient-radial from-slate-50 via-slate-100 to-slate-300
+                    bg-gradient-radial from-gray-50 via-gray-100 to-gray-300
                     dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950
                     transition-colors duration-500"></div>
 
