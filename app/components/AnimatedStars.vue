@@ -1,6 +1,7 @@
 <template>
-    <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full block" :class="canvasClass"
-        @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" />
+    <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full block transition-opacity duration-1000 ease-out"
+        :class="canvasClass" :style="{ opacity: isCanvasVisible ? '' : '0' }" @mouseenter="onMouseEnter"
+        @mouseleave="onMouseLeave" />
 </template>
 
 <script setup lang="ts">
@@ -54,6 +55,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const starsCanvas = ref<HTMLCanvasElement>()
+const isCanvasVisible = ref(false)
 let context: CanvasRenderingContext2D | null = null
 let animationFrame: number
 let resizeTimeout: number | null = null
@@ -215,10 +217,14 @@ function resize(): void {
     targetMouse.y = mouse.y
 
     context.clearRect(0, 0, pixelWidth, pixelHeight)
-    
+
     // Mark canvas as ready after first proper resize
     if (newWidth > 0 && newHeight > 0) {
         isCanvasReady = true
+        // Start fade-in animation with a small delay to ensure smooth transition
+        setTimeout(() => {
+            isCanvasVisible.value = true
+        }, 100)
     }
 }
 
@@ -238,7 +244,7 @@ function sizeRatio(): number {
     const canvas = starsCanvas.value
     const width = canvas.clientWidth || canvas.offsetWidth
     const height = canvas.clientHeight || canvas.offsetHeight
-    
+
     // Return reasonable fallback if dimensions are not yet available
     const calculatedSize = Math.max(width, height)
     return calculatedSize > 0 ? calculatedSize : 800
@@ -732,6 +738,7 @@ onMounted(() => {
 
 onUnmounted(() => {
     isVisible = false
+    isCanvasVisible.value = false
 
     // Cleanup animation and timers
     if (animationFrame) cancelAnimationFrame(animationFrame)
