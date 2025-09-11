@@ -210,8 +210,14 @@ const experiences = [
                     <div v-for="lang in languages" :key="lang.name"
                         class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
                         <div class="flex flex-col gap-4">
-                            <div class="flex items-center gap-3">
-                                <Icon :name="lang.flag" class="w-8 h-8" />
+                            <div class="flex items-center gap-3 relative">
+                                <div class="relative">
+                                    <Icon :name="lang.flag" class="w-8 h-8" />
+                                    <div v-if="lang.native"
+                                        class="absolute -top-1 -right-1 w-4 h-4 bg-green-600 rounded-full flex items-center justify-center shadow-lg">
+                                        <Icon name="mdi:check" class="w-3 h-3 text-white" />
+                                    </div>
+                                </div>
                                 <h3 class="font-bold">{{ lang.name }}</h3>
                             </div>
                             <div class="text-center flex flex-col gap-2">
@@ -286,14 +292,16 @@ const experiences = [
                 <div class="grid md:grid-cols-2 gap-8">
                     <div v-for="cert in certifications" :key="cert.title"
                         class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="flex items-start gap-4">
+                        <div class="flex items-center gap-4">
                             <div
                                 class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                                 <Icon :name="cert.icon" class="w-6 h-6 text-white" />
                             </div>
-                            <div class="flex-1 flex flex-col gap-2">
+                            <div class="flex-1 flex flex-col gap-2 min-w-0">
                                 <h3 class="font-bold text-lg">{{ cert.title }}</h3>
-                                <p class="text-gray-600 dark:text-gray-300">{{ cert.description }}</p>
+                                <p
+                                    class="text-gray-600 dark:text-gray-300 overflow-hidden whitespace-nowrap text-ellipsis">
+                                    {{ cert.description }}</p>
                             </div>
                             <div class="flex-shrink-0">
                                 <span
