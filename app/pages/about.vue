@@ -25,19 +25,19 @@ const certifications = [
         title: t('about.certificationsList.cert3.title'),
         year: '2021',
         description: t('about.certificationsList.cert3.description'),
-        icon: 'mdi:server'
+        icon: 'mdi:lan'
     },
     {
         title: t('about.certificationsList.cert4.title'),
         year: '2020',
         description: t('about.certificationsList.cert4.description'),
-        icon: 'mdi:server'
+        icon: 'mdi:lan'
     },
     {
         title: t('about.certificationsList.cert5.title'),
         year: '2020',
         description: t('about.certificationsList.cert5.description'),
-        icon: 'mdi:server'
+        icon: 'mdi:lan'
     },
     {
         title: t('about.certificationsList.cert6.title'),
@@ -544,28 +544,45 @@ const experiences = [
         <!-- Certifications Section -->
         <section class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.certifications.title') }}</h2>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">{{ $t('about.certifications.title') }}</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen
+                        Technologiebereichen belegen
+                    </p>
+                </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div v-for="cert in certifications" :key="cert.title"
-                        class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                                <Icon :name="cert.icon" class="w-6 h-6 text-white" />
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div v-for="(cert, index) in certifications" :key="cert.title"
+                        class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                        <!-- Gradient accent border -->
+                        <div class="relative p-6 h-full flex flex-col">
+                            <!-- Header with icon and year -->
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 bg-gradient-to-br from-blue-500 to-blue-600">
+                                        <Icon :name="cert.icon" class="w-5 h-5 text-white drop-shadow-sm" />
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span
+                                        class="px-3 py-1.5 text-xs font-bold rounded-full shadow-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
+                                        {{ cert.year }}
+                                    </span>
+                                </div>
                             </div>
-                            <div class="flex-1 flex flex-col gap-2 min-w-0">
-                                <h3 class="font-bold text-lg">{{ cert.title }}</h3>
-                                <p
-                                    class="text-gray-600 dark:text-gray-300 overflow-hidden whitespace-nowrap text-ellipsis">
-                                    {{ cert.description }}</p>
-                            </div>
-                            <div class="flex-shrink-0">
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
-                                    {{ cert.year }}
-                                </span>
-                            </div>
+
+                            <!-- Title -->
+                            <h3
+                                class="font-bold text-xl mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+                                {{ cert.title }}
+                            </h3>
+
+                            <!-- Description -->
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">
+                                {{ cert.description }}
+                            </p>
                         </div>
                     </div>
                 </div>
