@@ -20,12 +20,25 @@
         },
         "stats": {
             "experience": "Joer Erfahrung",
+            "experienceDesc": "Professionell IT-Erfahrung",
             "satisfaction": "Zefriddenheet",
             "certifications": "Zertifizéierungen",
-            "languages": "Sproochen"
+            "certificationsDesc": "Professionell Zertifikater",
+            "languages": "Sproochen",
+            "languagesDesc": "Geschwate Sproochen",
+            "projects": "Projeten",
+            "projectsDesc": "Ofgeschlossen Projeten"
         },
         "about": {
-            "cta": "Méi iwwer mech erfahren"
+            "title": "Léiert mech kennen",
+            "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
+            "cta": "Méi iwwer mech erfahren",
+            "role": "Full-Stack Developer & IT-Techniker",
+            "story": "Ech sinn de Chad Feierstein, e leidenschaftlechen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Mat Focus op Cloud Computing a modern Webtechnologien kreéieren ech innovativ digital Léisungen, déi e Ënnerscheed maachen.",
+            "location": "Rëmeleng, Lëtzebuerg",
+            "experience": "5+ Joer an der IT",
+            "education": "BTS Cloud Computing",
+            "passion": "Technologie & Innovation"
         },
         "services": {
             "title": "Wat ech ubidden",
@@ -39,29 +52,61 @@
                     "pwa": "Progressive Web Apps"
                 }
             },
-            "uiux": {
-                "title": "UI/UX Design",
-                "description": "Benotzerfrëndlech Interfaces, déi souwuel schéin wéi och funktional sinn.",
+            "cloud": {
+                "title": "Cloud Computing",
+                "description": "Skaléierbar Cloud-Léisungen mat AWS, Google Cloud an Azure fir modern Applikatiounen.",
                 "features": {
-                    "responsive": "Responsive Design",
-                    "designSystems": "Design Systems",
-                    "accessibility": "Accessibility"
+                    "aws": "Amazon Web Services",
+                    "azure": "Microsoft Azure",
+                    "gcp": "Google Cloud Platform"
                 }
             },
-            "consulting": {
-                "title": "Consulting",
-                "description": "Strategesch Berodung fir Är digital Projeten an technesch Architektur.",
+            "itadmin": {
+                "title": "IT-Administratioun",
+                "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur.",
                 "features": {
-                    "codeReviews": "Code Reviews",
-                    "performance": "Performance Optimization",
-                    "techStack": "Technology Stack"
+                    "linux": "Linux System-Administratioun",
+                    "networks": "Netzwierks-Konfiguratioun",
+                    "security": "Sécherheeds-Implementéierung"
                 }
             }
         },
+        "featured": {
+            "title": "Featured Projet",
+            "subtitle": "Entdeckt meng lescht Innovatioun - wou spëtzt KI op intuitiv Design treffen.",
+            "projectTitle": "KI Chat Bot",
+            "projectSubtitle": "Meng Lescht Innovatioun",
+            "badge": "Featured",
+            "description": "En erweiderten KI Chat Bot, deen intelligent Gespréicher féiert an komplex Ufrogen behandelt. Mat spëtzester KI-Technologie an engem elegant Interface bitt et eng nahtlos Benotzer-Erfahrung.",
+            "features": {
+                "ai": {
+                    "title": "Intelligent KI",
+                    "description": "Erweidert Sprooch-Veraarbechtung a Kontext-Verständnis"
+                },
+                "realtime": {
+                    "title": "Echtzäit Chat",
+                    "description": "Soforteg Äntwerten a flësseg Konversatiounen"
+                },
+                "ui": {
+                    "title": "Modern UI",
+                    "description": "Intuitiv Benotzer-Interface mat Donkel/Hell Modus"
+                },
+                "security": {
+                    "title": "Sécher & Privat",
+                    "description": "Dateschutz a sécher Kommunikatioun"
+                }
+            },
+            "techStack": "Benotzt Technologien",
+            "cta": {
+                "view": "Detailer kucken",
+                "demo": "Live Demo testen"
+            }
+        },
         "bottomCta": {
-            "title": "Prett fir Äert nächst Projet?",
-            "subtitle": "Loosst eis zesummen eppes Grousses schafen. Kontaktéiert mech fir eng onverbindlech Gespréich.",
-            "button": "Projet starten"
+            "title": "Loosst eis zesummen eppes Grousses schafen",
+            "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gäre diskutéieren, wéi ech Iech hëllefen kann, Är Iddien mat modernster Technologie zum Liewen ze bréngen.",
+            "contact": "Kontakt ophuelen",
+            "portfolio": "Portfolio kucken"
         }
     },
     "about": {
@@ -203,6 +248,7 @@
                 "title": "Mäin Chat Bot",
                 "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features.",
                 "features": {
+                    "title": "Features",
                     "aiChat": {
                         "title": "AI Chat",
                         "description": "Chat direkt mat verschiddenen AI-Modeller iwwer eng intuitiv Benotzeroberfläch"
@@ -215,6 +261,10 @@
                         "title": "Modell-Auswiel",
                         "description": "Wielt tëschent verfügbaren Ollama-Modeller fir verschidden Uwendungsfäll"
                     },
+                    "contextRetention": {
+                        "title": "Kontext-Erhaltung",
+                        "description": "Gespréicher behalen hire Kontext fir natierlech Gespréicher"
+                    },
                     "localStorage": {
                         "title": "Lokal Späicherung",
                         "description": "Gespréicher ginn sécher am Browser gespäichert ouni extern Ofhängegkeeten"
@@ -223,9 +273,29 @@
                         "title": "Modern UI",
                         "description": "Schéin, responsive Benotzeroberfläch mat Tailwind CSS a Däischter Modus"
                     },
+                    "secureAPI": {
+                        "title": "Sécher API",
+                        "description": "Environment-baséiert Konfiguratioun fir API-Credentials mat séchere Authentifikatioun"
+                    },
+                    "responsive": {
+                        "title": "Responsive Design",
+                        "description": "Funktionéiert perfekt op Desktop a Mobil mat optimiséiert Touch-Bedénung"
+                    },
                     "streaming": {
                         "title": "Echtzäit-Streaming",
                         "description": "Echtzäit-Äntwerten mat Server-Sent Events fir flësseg Kommunikatioun"
+                    },
+                    "architecture": {
+                        "title": "Optimiséiert Architektur",
+                        "description": "Propper Code-Struktur mat Composables, Pinia a modularem Opbau"
+                    },
+                    "exportFunction": {
+                        "title": "Export-Funktioun",
+                        "description": "Exportéiert Är Gespréicher als JSON fir Backup an Analyse"
+                    },
+                    "settings": {
+                        "title": "Ëmfaassend Astellungen",
+                        "description": "Detailléiert Astellungen an App-Informatiounen mat Statistiken"
                     }
                 },
                 "keyFeatures": {

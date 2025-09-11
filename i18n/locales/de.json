@@ -9,29 +9,42 @@
     "home": {
         "greeting": "Hallo, ich bin",
         "roles": {
-            "fullstack": "Full-Stack Developer",
+            "fullstack": "Full-Stack Entwickler",
             "serveradmin": "Server Administrator",
-            "solver": "Problem Solver"
+            "solver": "Problemlöser"
         },
-        "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherigen Arbeiten – und lernen Sie mich dabei besser kennen.",
+        "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit – und lernen Sie mich besser kennen.",
         "cta": {
             "primary": "Projekte entdecken",
             "secondary": "Kontakt aufnehmen"
         },
         "stats": {
             "experience": "Jahre Erfahrung",
+            "experienceDesc": "Professionelle IT-Erfahrung",
             "satisfaction": "Zufriedenheit",
             "certifications": "Zertifizierungen",
-            "languages": "Sprachen"
+            "certificationsDesc": "Professionelle Zertifikate",
+            "languages": "Sprachen",
+            "languagesDesc": "Gesprochene Sprachen",
+            "projects": "Projekte",
+            "projectsDesc": "Abgeschlossene Projekte"
         },
         "about": {
-            "cta": "Mehr über mich erfahren"
+            "title": "Lernen Sie Mich Kennen",
+            "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
+            "cta": "Mehr über mich erfahren",
+            "role": "Full-Stack Entwickler & IT-Techniker",
+            "story": "Ich bin Chad Feierstein, ein leidenschaftlicher Full-Stack Entwickler und IT-Administrator aus Luxemburg. Mit Fokus auf Cloud Computing und moderne Webtechnologien erstelle ich innovative digitale Lösungen, die einen Unterschied machen.",
+            "location": "Rumelange, Luxemburg",
+            "experience": "5+ Jahre in der IT",
+            "education": "BTS Cloud Computing",
+            "passion": "Technologie & Innovation"
         },
         "services": {
-            "title": "Was ich anbiete",
+            "title": "Was Ich Biete",
             "subtitle": "Von der Konzeption bis zur Umsetzung - ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
             "webdev": {
-                "title": "Web Development",
+                "title": "Web-Entwicklung",
                 "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
                 "features": {
                     "spa": "Single Page Applications",
@@ -39,29 +52,61 @@
                     "pwa": "Progressive Web Apps"
                 }
             },
-            "uiux": {
-                "title": "UI/UX Design",
-                "description": "Benutzerfreundliche Interfaces, die sowohl schön als auch funktional sind.",
+            "cloud": {
+                "title": "Cloud Computing",
+                "description": "Skalierbare Cloud-Lösungen mit AWS, Google Cloud und Azure für moderne Anwendungen.",
                 "features": {
-                    "responsive": "Responsive Design",
-                    "designSystems": "Design Systems",
-                    "accessibility": "Accessibility"
+                    "aws": "Amazon Web Services",
+                    "azure": "Microsoft Azure",
+                    "gcp": "Google Cloud Platform"
                 }
             },
-            "consulting": {
-                "title": "Consulting",
-                "description": "Strategische Beratung für Ihre digitalen Projekte und technische Architektur.",
+            "itadmin": {
+                "title": "IT-Administration",
+                "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur.",
                 "features": {
-                    "codeReviews": "Code Reviews",
-                    "performance": "Performance Optimization",
-                    "techStack": "Technology Stack"
+                    "linux": "Linux Systemadministration",
+                    "networks": "Netzwerkkonfiguration",
+                    "security": "Sicherheitsimplementierung"
                 }
             }
         },
+        "featured": {
+            "title": "Ausgewähltes Projekt",
+            "subtitle": "Entdecken Sie meine neueste Innovation - wo modernste KI auf intuitives Design trifft.",
+            "projectTitle": "KI Chat Bot",
+            "projectSubtitle": "Meine Neueste Innovation",
+            "badge": "Ausgewählt",
+            "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Mit modernster AI-Technologie und einem eleganten Interface bietet er eine nahtlose Benutzererfahrung.",
+            "features": {
+                "ai": {
+                    "title": "Intelligente KI",
+                    "description": "Erweiterte Sprachverarbeitung und Kontextverständnis"
+                },
+                "realtime": {
+                    "title": "Echtzeit Chat",
+                    "description": "Sofortige Antworten und flüssige Konversationen"
+                },
+                "ui": {
+                    "title": "Modernes UI",
+                    "description": "Intuitive Benutzeroberfläche mit Dark/Light Mode"
+                },
+                "security": {
+                    "title": "Sicher & Privat",
+                    "description": "Datenschutz und sichere Kommunikation"
+                }
+            },
+            "techStack": "Verwendete Technologien",
+            "cta": {
+                "view": "Details ansehen",
+                "demo": "Live Demo testen"
+            }
+        },
         "bottomCta": {
-            "title": "Bereit für Ihr nächstes Projekt?",
-            "subtitle": "Lassen Sie uns gemeinsam etwas Großartiges schaffen. Kontaktieren Sie mich für ein unverbindliches Gespräch.",
-            "button": "Projekt starten"
+            "title": "Lassen Sie Uns Gemeinsam Etwas Großartiges Schaffen",
+            "subtitle": "Haben Sie ein Projekt im Kopf? Ich würde gerne besprechen, wie ich Ihnen helfen kann, Ihre Ideen mit modernster Technologie zum Leben zu erwecken.",
+            "contact": "Kontakt aufnehmen",
+            "portfolio": "Portfolio ansehen"
         }
     },
     "about": {

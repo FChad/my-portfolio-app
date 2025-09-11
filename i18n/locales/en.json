@@ -20,12 +20,25 @@
         },
         "stats": {
             "experience": "Years Experience",
+            "experienceDesc": "Professional IT Experience",
             "satisfaction": "Satisfaction",
             "certifications": "Certifications",
-            "languages": "Languages"
+            "certificationsDesc": "Professional Certificates",
+            "languages": "Languages",
+            "languagesDesc": "Spoken Languages",
+            "projects": "Projects",
+            "projectsDesc": "Completed Projects"
         },
         "about": {
-            "cta": "Learn More About Me"
+            "title": "Get to Know Me",
+            "subtitle": "Learn more about my background, experience and what drives my passion for technology.",
+            "cta": "Learn More About Me",
+            "role": "Full-Stack Developer & IT Technician",
+            "story": "I am Chad Feierstein, a passionate Full-Stack Developer and IT Administrator from Luxembourg. With a focus on Cloud Computing and modern web technologies, I create innovative digital solutions that make a difference.",
+            "location": "Rumelange, Luxembourg",
+            "experience": "5+ years in IT",
+            "education": "BTS Cloud Computing",
+            "passion": "Technology & Innovation"
         },
         "services": {
             "title": "What I Offer",
@@ -39,29 +52,61 @@
                     "pwa": "Progressive Web Apps"
                 }
             },
-            "uiux": {
-                "title": "UI/UX Design",
-                "description": "User-friendly interfaces that are both beautiful and functional.",
+            "cloud": {
+                "title": "Cloud Computing",
+                "description": "Scalable cloud solutions with AWS, Google Cloud and Azure for modern applications.",
                 "features": {
-                    "responsive": "Responsive Design",
-                    "designSystems": "Design Systems",
-                    "accessibility": "Accessibility"
+                    "aws": "Amazon Web Services",
+                    "azure": "Microsoft Azure",
+                    "gcp": "Google Cloud Platform"
                 }
             },
-            "consulting": {
-                "title": "Consulting",
-                "description": "Strategic consulting for your digital projects and technical architecture.",
+            "itadmin": {
+                "title": "IT Administration",
+                "description": "Comprehensive system administration and network management for reliable infrastructure.",
                 "features": {
-                    "codeReviews": "Code Reviews",
-                    "performance": "Performance Optimization",
-                    "techStack": "Technology Stack"
+                    "linux": "Linux System Administration",
+                    "networks": "Network Configuration",
+                    "security": "Security Implementation"
                 }
             }
         },
+        "featured": {
+            "title": "Featured Project",
+            "subtitle": "Discover my latest innovation - where cutting-edge AI meets intuitive design.",
+            "projectTitle": "AI Chat Bot",
+            "projectSubtitle": "My Latest Innovation",
+            "badge": "Featured",
+            "description": "An advanced AI Chat Bot that conducts intelligent conversations and handles complex queries. With state-of-the-art AI technology and an elegant interface, it offers a seamless user experience.",
+            "features": {
+                "ai": {
+                    "title": "Intelligent AI",
+                    "description": "Advanced language processing and context understanding"
+                },
+                "realtime": {
+                    "title": "Real-time Chat",
+                    "description": "Instant responses and fluid conversations"
+                },
+                "ui": {
+                    "title": "Modern UI",
+                    "description": "Intuitive user interface with Dark/Light Mode"
+                },
+                "security": {
+                    "title": "Safe & Private",
+                    "description": "Privacy protection and secure communication"
+                }
+            },
+            "techStack": "Technologies Used",
+            "cta": {
+                "view": "View Details",
+                "demo": "Try Live Demo"
+            }
+        },
         "bottomCta": {
-            "title": "Ready for Your Next Project?",
-            "subtitle": "Let's create something great together. Contact me for a no-obligation conversation.",
-            "button": "Start Project"
+            "title": "Let's Create Something Great Together",
+            "subtitle": "Do you have a project in mind? I would love to discuss how I can help bring your ideas to life with cutting-edge technology.",
+            "contact": "Get in Touch",
+            "portfolio": "View Portfolio"
         }
     },
     "about": {
