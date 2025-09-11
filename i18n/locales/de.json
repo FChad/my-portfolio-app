@@ -121,8 +121,16 @@
             "location": "Rümelingen, Luxemburg",
             "status": "Single",
             "age": "25 Jahre",
-            "driving": "Führerschein Kategorie B seit 2023",
-            "role": "Full-Stack Developer & IT-Techniker"
+            "driving": "Führerschein Kategorie B",
+            "role": "Full-Stack Developer & IT-Techniker",
+            "currentWork": "Derzeit beschäftigt bei Rotyre SARL",
+            "labels": {
+                "location": "Standort",
+                "nationality": "Nationalität",
+                "age": "Alter",
+                "status": "Status",
+                "license": "Führerschein"
+            }
         },
         "story": {
             "title": "Über mich",

@@ -121,8 +121,16 @@
             "location": "Rëmeleng, Lëtzebuerg",
             "status": "Single",
             "age": "25 Joer",
-            "driving": "Führerschäin Kategorie B zënter 2023",
-            "role": "Full-Stack Developer & IT-Techniker"
+            "driving": "Führerschäin Kategorie B",
+            "role": "Full-Stack Developer & IT-Techniker",
+            "currentWork": "Aktuell beschäftegt bei Rotyre SARL",
+            "labels": {
+                "location": "Standort",
+                "nationality": "Nationalitéit",
+                "age": "Alter",
+                "status": "Status",
+                "license": "Führerschäin"
+            }
         },
         "story": {
             "title": "Iwwer mech",

@@ -121,8 +121,16 @@
             "location": "Rümelingen, Luxembourg",
             "status": "Célibataire",
             "age": "25 ans",
-            "driving": "Permis de conduire Catégorie B depuis 2023",
-            "role": "Développeur Full-Stack & Technicien IT"
+            "driving": "Permis de conduire Catégorie B",
+            "role": "Développeur Full-Stack & Technicien IT",
+            "currentWork": "Actuellement employé chez Rotyre SARL",
+            "labels": {
+                "location": "Localisation",
+                "nationality": "Nationalité",
+                "age": "Âge",
+                "status": "Statut",
+                "license": "Permis"
+            }
         },
         "story": {
             "title": "À Propos de Moi",
