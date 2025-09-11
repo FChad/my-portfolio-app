@@ -147,6 +147,25 @@
                 "C2": "Bal muttersprochlech"
             }
         },
+        "education": {
+            "title": "Bildung",
+            "viewMore": "Méi erfahren",
+            "bts": {
+                "degree": "Héijen techneschen Ofschloss (BTS)",
+                "field": "Fachrichtung: Cloud Computing",
+                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+                "grade": "Diplom (mat Bewäertung: Gutt)"
+            },
+            "dap": {
+                "degree": "Techniker an der Informatik",
+                "field": "IT-Techniker (DAP)",
+                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+                "grade": "Diplom (mat Bewäertung: Gutt)"
+            }
+        },
+        "work": {
+            "title": "Beruffserfahrung"
+        },
         "timeline": {
             "title": "Berufleche Werdegank"
         },

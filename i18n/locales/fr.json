@@ -147,6 +147,25 @@
                 "C2": "Quasi natif"
             }
         },
+        "education": {
+            "title": "Formation",
+            "viewMore": "En savoir plus",
+            "bts": {
+                "degree": "Diplôme Technique Supérieur (BTS)",
+                "field": "Spécialisation : Cloud Computing",
+                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+                "grade": "Diplôme (Mention : Bien)"
+            },
+            "dap": {
+                "degree": "Technicien en Informatique",
+                "field": "Technicien IT (DAP)",
+                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+                "grade": "Diplôme (Mention : Bien)"
+            }
+        },
+        "work": {
+            "title": "Expérience Professionnelle"
+        },
         "timeline": {
             "title": "Parcours Professionnel"
         },

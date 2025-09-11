@@ -47,41 +47,43 @@ const certifications = [
     }
 ]
 
-const timeline = [
+const education = [
+    {
+        year: '2019-2021',
+        degree: t('about.education.bts.degree'),
+        field: t('about.education.bts.field'),
+        school: t('about.education.bts.school'),
+        grade: t('about.education.bts.grade'),
+        link: 'https://www.lgk.lu/bts/clc/',
+        icon: 'mdi:school-outline',
+        type: 'higher',
+        color: 'purple'
+    },
+    {
+        year: '2015-2019',
+        degree: t('about.education.dap.degree'),
+        field: t('about.education.dap.field'),
+        school: t('about.education.dap.school'),
+        grade: t('about.education.dap.grade'),
+        link: 'https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap',
+        icon: 'mdi:laptop',
+        type: 'technical',
+        color: 'indigo'
+    }
+]
+
+const workTimeline = [
     {
         year: '2024',
         title: t('about.timelineItems.item1.title'),
         description: t('about.timelineItems.item1.description'),
-        icon: 'mdi:code-braces',
-        type: 'work'
-    },
-    {
-        year: '2023',
-        title: t('about.timelineItems.item2.title'),
-        description: t('about.timelineItems.item2.description'),
-        icon: 'mdi:school',
-        type: 'education'
-    },
-    {
-        year: '2021',
-        title: t('about.timelineItems.item3.title'),
-        description: t('about.timelineItems.item3.description'),
-        icon: 'mdi:school',
-        type: 'education'
+        icon: 'mdi:code-braces'
     },
     {
         year: '2020',
         title: t('about.timelineItems.item4.title'),
         description: t('about.timelineItems.item4.description'),
-        icon: 'mdi:wrench',
-        type: 'work'
-    },
-    {
-        year: '2019',
-        title: t('about.timelineItems.item5.title'),
-        description: t('about.timelineItems.item5.description'),
-        icon: 'mdi:school',
-        type: 'education'
+        icon: 'mdi:wrench'
     }
 ]
 
@@ -235,10 +237,67 @@ const experiences = [
             </div>
         </section>
 
-        <!-- Timeline Section -->
+        <!-- Education Section -->
         <section class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.timeline.title') }}</h2>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold">{{ $t('about.education.title') }}</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div v-for="(edu, index) in education" :key="edu.year"
+                        class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+
+                        <!-- Content -->
+                        <div class="flex flex-col h-full">
+                            <!-- Header with icon and year -->
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <Icon :name="edu.icon" class="w-6 h-6 text-white" />
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-lg">{{ edu.degree }}</h3>
+                                    <p class="text-blue-600 dark:text-blue-400 font-medium">{{ edu.field }}</p>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                                        {{ edu.year }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- School and grade details -->
+                            <div class="flex-1 space-y-3 mb-6">
+                                <div class="flex items-center gap-3">
+                                    <Icon name="mdi:school" class="w-5 h-5 text-gray-500" />
+                                    <span class="text-gray-700 dark:text-gray-300">{{ edu.school }}</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <Icon name="mdi:trophy" class="w-5 h-5 text-gray-500" />
+                                    <span class="text-gray-700 dark:text-gray-300">{{ edu.grade }}</span>
+                                </div>
+                            </div>
+
+                            <!-- Link button -->
+                            <div class="mt-auto">
+                                <a v-if="edu.link" :href="edu.link" target="_blank"
+                                    class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <Icon name="mdi:open-in-new" class="w-4 h-4" />
+                                    {{ $t('about.education.viewMore') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline Section -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.work.title') }}</h2>
 
                 <div class="relative">
                     <!-- Timeline line - Desktop centered, Mobile left -->
@@ -247,7 +306,7 @@ const experiences = [
                     </div>
 
                     <div class="flex flex-col gap-12">
-                        <div v-for="(item, index) in timeline" :key="item.year" :class="[
+                        <div v-for="(item, index) in workTimeline" :key="item.year" :class="[
                             'relative flex items-center',
                             'justify-start md:justify-start',
                             index % 2 === 1 ? 'md:justify-end' : ''
@@ -262,16 +321,13 @@ const experiences = [
 
                             <!-- Content card - Mobile full width with left margin, Desktop alternating -->
                             <div :class="[
-                                'p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg',
+                                'p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl shadow-lg',
                                 'ml-8 w-full md:w-5/12 md:ml-0',
                                 index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                             ]">
                                 <div class="flex flex-col gap-3">
                                     <div class="flex items-center gap-3">
-                                        <Icon :name="item.icon" :class="[
-                                            'w-6 h-6',
-                                            item.type === 'work' ? 'text-blue-500' : 'text-purple-500'
-                                        ]" />
+                                        <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                         <span class="text-sm font-medium text-gray-500">{{ item.year }}</span>
                                     </div>
                                     <h3 class="text-xl font-bold">{{ item.title }}</h3>
