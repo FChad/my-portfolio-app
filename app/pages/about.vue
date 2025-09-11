@@ -77,13 +77,90 @@ const workTimeline = [
         year: '2024',
         title: t('about.timelineItems.item1.title'),
         description: t('about.timelineItems.item1.description'),
+        company: t('about.timelineItems.item1.company'),
+        type: t('about.timelineItems.item1.type'),
+        tasks: [
+            t('about.timelineItems.item1.task1'),
+            t('about.timelineItems.item1.task2'),
+            t('about.timelineItems.item1.task3'),
+            t('about.timelineItems.item1.task4')
+        ],
         icon: 'mdi:code-braces'
     },
     {
+        year: '2021',
+        title: t('about.timelineItems.item2.title'),
+        description: t('about.timelineItems.item2.description'),
+        company: t('about.timelineItems.item2.company'),
+        type: t('about.timelineItems.item2.type'),
+        tasks: [
+            t('about.timelineItems.item2.task1'),
+            t('about.timelineItems.item2.task2'),
+            t('about.timelineItems.item2.task3'),
+            t('about.timelineItems.item2.task4'),
+            t('about.timelineItems.item2.task5'),
+            t('about.timelineItems.item2.task6')
+        ],
+        icon: 'mdi:cloud'
+    },
+    {
         year: '2020',
+        title: t('about.timelineItems.item3.title'),
+        description: t('about.timelineItems.item3.description'),
+        company: t('about.timelineItems.item3.company'),
+        type: t('about.timelineItems.item3.type'),
+        tasks: [
+            t('about.timelineItems.item3.task1'),
+            t('about.timelineItems.item3.task2'),
+            t('about.timelineItems.item3.task3'),
+            t('about.timelineItems.item3.task4')
+        ],
+        icon: 'mdi:wrench'
+    },
+    {
+        year: '2019',
         title: t('about.timelineItems.item4.title'),
         description: t('about.timelineItems.item4.description'),
-        icon: 'mdi:wrench'
+        company: t('about.timelineItems.item4.company'),
+        type: t('about.timelineItems.item4.type'),
+        tasks: [
+            t('about.timelineItems.item4.task1'),
+            t('about.timelineItems.item4.task2'),
+            t('about.timelineItems.item4.task3'),
+            t('about.timelineItems.item4.task4'),
+            t('about.timelineItems.item4.task5')
+        ],
+        icon: 'mdi:web'
+    },
+    {
+        year: '2019',
+        title: t('about.timelineItems.item5.title'),
+        description: t('about.timelineItems.item5.description'),
+        company: t('about.timelineItems.item5.company'),
+        type: t('about.timelineItems.item5.type'),
+        tasks: [
+            t('about.timelineItems.item5.task1'),
+            t('about.timelineItems.item5.task2'),
+            t('about.timelineItems.item5.task3'),
+            t('about.timelineItems.item5.task4'),
+            t('about.timelineItems.item5.task5')
+        ],
+        icon: 'mdi:database'
+    },
+    {
+        year: '2016',
+        title: t('about.timelineItems.item6.title'),
+        description: t('about.timelineItems.item6.description'),
+        company: t('about.timelineItems.item6.company'),
+        type: t('about.timelineItems.item6.type'),
+        tasks: [
+            t('about.timelineItems.item6.task1'),
+            t('about.timelineItems.item6.task2'),
+            t('about.timelineItems.item6.task3'),
+            t('about.timelineItems.item6.task4'),
+            t('about.timelineItems.item6.task5')
+        ],
+        icon: 'mdi:network'
     }
 ]
 
@@ -296,7 +373,7 @@ const experiences = [
 
         <!-- Work Experience Timeline Section -->
         <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.work.title') }}</h2>
 
                 <div class="relative">
@@ -313,25 +390,72 @@ const experiences = [
                         ]">
                             <!-- Timeline dot - Mobile left positioned, Desktop centered -->
                             <div :class="[
-                                'absolute w-5 h-5 rounded-full bg-blue-600 dark:bg-blue-400 z-10 flex items-center justify-center',
+                                'absolute w-5 h-5 rounded-full bg-blue-600 dark:bg-blue-400 z-20 flex items-center justify-center',
                                 'md:left-1/2 md:transform md:-translate-x-1/2'
                             ]">
                                 <div class="w-3 h-3 bg-white dark:bg-gray-900 rounded-full"></div>
                             </div>
 
+                            <!-- Connection line from timeline to card - Desktop only -->
+                            <div :class="[
+                                'absolute hidden md:block h-0.5 bg-blue-600 dark:bg-blue-400 z-10',
+                                index % 2 === 0 ? 'right-1/2' : 'left-1/2',
+                                'w-12'
+                            ]"></div>
+
                             <!-- Content card - Mobile full width with left margin, Desktop alternating -->
                             <div :class="[
-                                'p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl shadow-lg',
+                                'p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300',
                                 'ml-8 w-full md:w-5/12 md:ml-0',
                                 index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                             ]">
-                                <div class="flex flex-col gap-3">
-                                    <div class="flex items-center gap-3">
-                                        <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
-                                        <span class="text-sm font-medium text-gray-500">{{ item.year }}</span>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Header with icon, year and type -->
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
+                                            <span class="font-medium text-gray-500">{{ item.year }}</span>
+                                        </div>
+                                        <span v-if="item.type"
+                                            class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                                            {{ item.type }}
+                                        </span>
                                     </div>
-                                    <h3 class="text-xl font-bold">{{ item.title }}</h3>
-                                    <p class="text-gray-600 dark:text-gray-300">{{ item.description }}</p>
+
+                                    <!-- Title and Company -->
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-1">{{ item.title }}</h3>
+                                        <p v-if="item.company"
+                                            class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
+                                            <Icon name="mdi:office-building" class="w-4 h-4" />
+                                            {{ item.company }}
+                                        </p>
+                                    </div>
+
+                                    <!-- Description -->
+                                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                                        item.description }}</p>
+
+                                    <!-- Tasks list -->
+                                    <div v-if="item.tasks && item.tasks.length > 0" class="mt-3">
+                                        <h4
+                                            class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                            <Icon name="mdi:clipboard-check" class="w-4 h-4" />
+                                            Hauptaufgaben:
+                                        </h4>
+                                        <ul class="space-y-1">
+                                            <li v-for="(task, taskIndex) in item.tasks.slice(0, 3)" :key="taskIndex"
+                                                class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                                <span
+                                                    class="w-1 h-1 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
+                                                {{ task }}
+                                            </li>
+                                            <li v-if="item.tasks.length > 3"
+                                                class="text-sm text-blue-600 dark:text-blue-400 italic">
+                                                + {{ item.tasks.length - 3 }} weitere Aufgaben
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -341,7 +465,7 @@ const experiences = [
         </section>
 
         <!-- Certifications Section -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.certifications.title') }}</h2>
 

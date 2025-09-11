@@ -215,23 +215,68 @@
         "timelineItems": {
             "item1": {
                 "title": "Développeur Web chez Rotyre SARL",
-                "description": "Responsable de la maintenance et du développement du site web mullerpneus.lu"
+                "description": "Responsabilité principale de la maintenance et du développement du site web 'mullerpneus.lu'. Poste permanent axé sur le développement frontend et l'optimisation du site web.",
+                "company": "Rotyre SARL",
+                "type": "Temps plein",
+                "task1": "Maintenance et développement du site web",
+                "task2": "Développement frontend et optimisation UI/UX",
+                "task3": "Optimisation des performances et améliorations SEO",
+                "task4": "Gestion de contenu et mises à jour techniques"
             },
             "item2": {
-                "title": "Certification : Test d'Aptitude Générale",
-                "description": "Réussite de l'examen d'État pour le secteur public"
+                "title": "Stage Ingénieur IT Cloud",
+                "description": "Stage de 12 semaines chez QPark Consulting axé sur les technologies cloud et les méthodes de projet agiles. Travail sur deux grands projets cloud avec AWS et GCP.",
+                "company": "QPark Consulting",
+                "type": "Stage",
+                "task1": "Planification de projet avec méthodologies agiles",
+                "task2": "Configuration de machines virtuelles sur Google Cloud Platform",
+                "task3": "Implémentation de site web dans les VMs GCP",
+                "task4": "Déploiement de site web statique sur AWS S3",
+                "task5": "Intégration d'API REST et traitement de données",
+                "task6": "Optimisation des coûts cloud et meilleures pratiques"
             },
             "item3": {
-                "title": "Diplôme en Cloud Computing (BTS)",
-                "description": "Diplôme technique supérieur en Cloud Computing au Lycée Guillaume Kroll"
+                "title": "Job d'été Technicien IT",
+                "description": "Poste d'été de 8 semaines au Lycée Guillaume Kroll dans le département IT. Focus sur l'infrastructure réseau et la gestion du système téléphonique.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Job d'été",
+                "task1": "Installation et gestion des téléphones MIXvoip",
+                "task2": "Installation de nouvelles connexions téléphoniques en salle serveur",
+                "task3": "Mise à jour de la documentation des panneaux de brassage dans Excel",
+                "task4": "Gestion et organisation des câbles réseau"
             },
             "item4": {
-                "title": "Job de vacances comme Technicien IT",
-                "description": "Activité au Lycée Guillaume Kroll : Installation de téléphones MIXvoip, gestion de réseau"
+                "title": "Finalisation de Projet Technicien IT",
+                "description": "Job d'été de 4 semaines pour finaliser un projet de site web commencé pendant le stage. Focus sur le développement backend et l'intégration SAML.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Job d'été",
+                "task1": "Réunions clients et coordination de projet",
+                "task2": "Programmation et modifications backend",
+                "task3": "Intégration de service d'authentification SAML",
+                "task4": "Développement frontend et ajustements UI",
+                "task5": "Élimination professionnelle du matériel"
             },
             "item5": {
-                "title": "Diplôme de Technicien IT",
-                "description": "Diplôme au Lycée Guillaume Kroll à Esch-sur-Alzette avec la mention 'Bien'"
+                "title": "Stage Principal Technicien IT",
+                "description": "Stage de 6 semaines au Lycée Guillaume Kroll axé sur le développement web et la conception de base de données. Développement d'une solution web complète.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Stage",
+                "task1": "Réunions clients et analyse des exigences",
+                "task2": "Développement backend et frontend",
+                "task3": "Modélisation conceptuelle de base de données",
+                "task4": "Modélisation logique de base de données",
+                "task5": "Implémentation de base de données avec relations appropriées"
+            },
+            "item6": {
+                "title": "Stage Technicien Réseau IT",
+                "description": "Stage de 6 semaines chez STEP Syndicat intercommunal à Peppange. Introduction à la technologie réseau et à la gestion d'infrastructure dans une station d'épuration.",
+                "company": "STEP Syndicat intercommunal",
+                "type": "Stage",
+                "task1": "Introduction à la structure organisationnelle",
+                "task2": "Apprentissage des processus de station d'épuration",
+                "task3": "Création de nouveaux plans de panneaux de brassage",
+                "task4": "Gestion et étiquetage des câbles de brassage",
+                "task5": "Analyse pratique de structure réseau"
             }
         },
         "experiencesList": {

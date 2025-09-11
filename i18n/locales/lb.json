@@ -215,23 +215,68 @@
         "timelineItems": {
             "item1": {
                 "title": "Web-Entwéckler bei Rotyre SARL",
-                "description": "Verantwortlech fir d'Wuertung an d'Weiderentwécklung vun der Websäit mullerpneus.lu"
+                "description": "Haaptverantwortlech fir d'Wuertung an d'Weiderentwécklung vun der Websäit 'mullerpneus.lu'. Onbegrenzte Plaatz mat Fokus op Frontend-Entwécklung an Websäit-Optimiséierung.",
+                "company": "Rotyre SARL",
+                "type": "Vollzäit",
+                "task1": "Websäit-Wuertung an -Entwécklung",
+                "task2": "Frontend-Entwécklung an UI/UX-Optimiséierung",
+                "task3": "Leeschtungsoptimiséierung an SEO-Verbesserungen",
+                "task4": "Content-Management an technesch Updates"
             },
             "item2": {
-                "title": "Zertifizéierung: Allgemeng Eignungsprüfung",
-                "description": "Erfollegräichen Ofschloss vun der staatlecher Prüfung fir den ëffentleche Sektor"
+                "title": "IT-Cloud-Ingenieur Praktikum",
+                "description": "12-wöchegt Praktikum bei QPark Consulting mat Fokus op Cloud-Technologien an agil Projet-Methoden. Schaffen op zwou grouss Cloud-Projeten mat AWS an GCP.",
+                "company": "QPark Consulting",
+                "type": "Praktikum",
+                "task1": "Projet-Planung mat agile Methodologien",
+                "task2": "Virtual Maschinn-Konfiguratioun op Google Cloud Platform",
+                "task3": "Websäit-Implementéierung a GCP-VMs",
+                "task4": "Statesch Websäit-Bereetstellung op AWS S3",
+                "task5": "REST API-Integratioun an Daten-Veraarbechtung",
+                "task6": "Cloud-Käschten-Optimiséierung a Best Practices"
             },
             "item3": {
-                "title": "Diplom a Cloud Computing (BTS)",
-                "description": "Méi héijen techneschen Ofschloss am Beräich Cloud Computing um Lycée Guillaume Kroll"
+                "title": "IT-Techniker Summerjoob",
+                "description": "8-wöchege Summerposten um Lycée Guillaume Kroll an der IT-Abteilung. Fokus op Netzwierks-Infrastruktur an Telefonsystem-Management.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Summerjoob",
+                "task1": "Ariichtung a Gestioun vu MIXvoip-Telefonnen",
+                "task2": "Installatioun vun neien Telefonsverbindungen am Server-Raum",
+                "task3": "Patch Panel-Dokumentatioun Updates an Excel",
+                "task4": "Netzwierk-Kabel-Management an -Organisatioun"
             },
             "item4": {
-                "title": "Vakanzjob als IT-Techniker",
-                "description": "Tätegkeet um Lycée Guillaume Kroll: Installatioun vu MIXvoip-Telefonnen, Netzwierksmanagement"
+                "title": "IT-Techniker Projet-Ofschloss",
+                "description": "4-wöchege Summerjoob fir e Websäit-Projet ze vollenden, deen am Praktikum ugefaangen huet. Fokus op Backend-Entwécklung an SAML-Integratioun.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Summerjoob",
+                "task1": "Client-Reuniounen a Projet-Koordinatioun",
+                "task2": "Backend-Programméierung a Modifikatiounen",
+                "task3": "SAML-Authentifizéierungs-Service-Integratioun",
+                "task4": "Frontend-Entwécklung an UI-Upassungen",
+                "task5": "Professionnell Hardware-Entsorgung"
             },
             "item5": {
-                "title": "Diplom als IT-Techniker",
-                "description": "Ofschloss um Lycée Guillaume Kroll zu Esch-sur-Alzette mat der Bewäertung 'Gutt'"
+                "title": "IT-Techniker Haaptpraktikum",
+                "description": "6-wöchegt Praktikum um Lycée Guillaume Kroll mat Fokus op Web-Entwécklung an Datebank-Design. Entwécklung vun enger kompletter Websäit-Léisung.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Praktikum",
+                "task1": "Client-Reuniounen an Ufuerderungs-Analyse",
+                "task2": "Backend- an Frontend-Entwécklung",
+                "task3": "Konzeptuel Datebank-Modelléierung",
+                "task4": "Logesch Datebank-Modelléierung",
+                "task5": "Datebank-Implementéierung mat richtegen Bezéiungen"
+            },
+            "item6": {
+                "title": "IT-Netzwierkstechniker Praktikum",
+                "description": "6-wöchegt Praktikum bei STEP Syndicat intercommunal zu Péiteng. Aféierung an Netzwierkstechnik an Infrastruktur-Management an enger Kläranlag.",
+                "company": "STEP Syndicat intercommunal",
+                "type": "Praktikum",
+                "task1": "Aféierung an d'Organisatiounsstruktur",
+                "task2": "Léieren vun de Kläranlag-Prozesser",
+                "task3": "Kreatioun vun neien Patch Panel-Pläng",
+                "task4": "Patch-Kabel-Management a -Beschrëftung",
+                "task5": "Praktesch Netzwierkstruktur-Analyse"
             }
         },
         "experiencesList": {

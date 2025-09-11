@@ -215,23 +215,68 @@
         "timelineItems": {
             "item1": {
                 "title": "Web Developer at Rotyre SARL",
-                "description": "Responsible for maintaining and developing the website mullerpneus.lu"
+                "description": "Primary responsibility for maintaining and developing the website 'mullerpneus.lu'. Permanent position focusing on frontend development and website optimization.",
+                "company": "Rotyre SARL",
+                "type": "Full-time",
+                "task1": "Website maintenance and development",
+                "task2": "Frontend development and UI/UX optimization",
+                "task3": "Performance optimization and SEO improvements",
+                "task4": "Content management and technical updates"
             },
             "item2": {
-                "title": "Certification: General Aptitude Test",
-                "description": "Successful completion of the state examination for the public sector"
+                "title": "IT Cloud Engineer Internship",
+                "description": "12-week internship at QPark Consulting focusing on cloud technologies and agile project methods. Work on two major cloud projects with AWS and GCP.",
+                "company": "QPark Consulting",
+                "type": "Internship",
+                "task1": "Project planning with agile methodologies",
+                "task2": "Virtual machine configuration on Google Cloud Platform",
+                "task3": "Website implementation in GCP VMs",
+                "task4": "Static website deployment on AWS S3",
+                "task5": "REST API integration and data processing",
+                "task6": "Cloud cost optimization and best practices"
             },
             "item3": {
-                "title": "Diploma in Cloud Computing (BTS)",
-                "description": "Higher technical degree in Cloud Computing at Lycée Guillaume Kroll"
+                "title": "IT Technician Summer Job",
+                "description": "8-week summer position at Lycée Guillaume Kroll in the IT department. Focus on network infrastructure and telephone system management.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Summer Job",
+                "task1": "Setup and management of MIXvoip phones",
+                "task2": "Installation of new telephone connections in server room",
+                "task3": "Patch panel documentation updates in Excel",
+                "task4": "Network cable management and organization"
             },
             "item4": {
-                "title": "Holiday job as IT Technician",
-                "description": "Activity at Lycée Guillaume Kroll: Installation of MIXvoip phones, network management"
+                "title": "IT Technician Project Completion",
+                "description": "4-week summer job to complete a website project started during the internship. Focus on backend development and SAML integration.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Summer Job",
+                "task1": "Customer meetings and project coordination",
+                "task2": "Backend programming and modifications",
+                "task3": "SAML authentication service integration",
+                "task4": "Frontend development and UI adjustments",
+                "task5": "Professional hardware disposal"
             },
             "item5": {
-                "title": "Diploma as IT Technician",
-                "description": "Graduation at Lycée Guillaume Kroll in Esch-sur-Alzette with grade 'Good'"
+                "title": "IT Technician Main Internship",
+                "description": "6-week internship at Lycée Guillaume Kroll focusing on web development and database design. Development of a complete website solution.",
+                "company": "Lycée Guillaume Kroll",
+                "type": "Internship",
+                "task1": "Customer meetings and requirements analysis",
+                "task2": "Backend and frontend development",
+                "task3": "Conceptual database modeling",
+                "task4": "Logical database modeling",
+                "task5": "Database implementation with proper relationships"
+            },
+            "item6": {
+                "title": "IT Network Technician Internship",
+                "description": "6-week internship at STEP Syndicat intercommunal in Peppange. Introduction to network technology and infrastructure management in a sewage treatment plant.",
+                "company": "STEP Syndicat intercommunal",
+                "type": "Internship",
+                "task1": "Introduction to organizational structure",
+                "task2": "Learning sewage treatment plant processes",
+                "task3": "Creation of new patch panel plans",
+                "task4": "Patch cable management and labeling",
+                "task5": "Practical network structure analysis"
             }
         },
         "experiencesList": {
