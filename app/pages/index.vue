@@ -180,8 +180,8 @@ const scrollToAbout = () => {
                         <div
                             class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                             <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                                <Icon name="mdi:briefcase" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                                class="absolute top-4 right-4 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                                <Icon name="mdi:briefcase" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                             </div>
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
@@ -197,8 +197,8 @@ const scrollToAbout = () => {
                         <div
                             class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                             <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                                <Icon name="mdi:certificate" class="w-6 h-6 text-green-600 dark:text-green-400" />
+                                class="absolute top-4 right-4 w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                                <Icon name="mdi:certificate" class="w-5 h-5 text-green-600 dark:text-green-400" />
                             </div>
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-green-600 dark:text-green-400">10+</div>
@@ -213,8 +213,8 @@ const scrollToAbout = () => {
                         <div
                             class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                             <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
-                                <Icon name="mdi:translate" class="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                                class="absolute top-4 right-4 w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                                <Icon name="mdi:translate" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
                             </div>
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
@@ -229,8 +229,8 @@ const scrollToAbout = () => {
                         <div
                             class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                             <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
-                                <Icon name="mdi:code-braces" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
+                                class="absolute top-4 right-4 w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
+                                <Icon name="mdi:code-braces" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
                             </div>
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>

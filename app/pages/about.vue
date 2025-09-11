@@ -405,10 +405,10 @@ const experiences = [
                         <!-- Content -->
                         <div class="flex flex-col h-full">
                             <!-- Header with icon and year -->
-                            <div class="flex items-center gap-4 mb-6">
+                            <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
                                 <div
-                                    class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                                    <Icon :name="edu.icon" class="w-6 h-6 text-white" />
+                                    class="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <Icon :name="edu.icon" class="w-5 h-5 text-white" />
                                 </div>
                                 <div class="flex-1">
                                     <h3 class="font-bold text-lg">{{ edu.degree }}</h3>
