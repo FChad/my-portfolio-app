@@ -268,7 +268,7 @@ const scrollToAbout = () => {
                 <div class="flex flex-col lg:flex-row gap-8 mt-16">
                     <!-- Web Development -->
                     <div
-                        class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
+                        class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform flex flex-col">
                         <div class="flex flex-col gap-4 flex-1">
                             <div class="flex items-center gap-3">
                                 <div
@@ -299,7 +299,7 @@ const scrollToAbout = () => {
 
                     <!-- Cloud Computing -->
                     <div
-                        class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
+                        class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform flex flex-col">
                         <div class="flex flex-col gap-4 flex-1">
                             <div class="flex items-center gap-3">
                                 <div
@@ -330,7 +330,7 @@ const scrollToAbout = () => {
 
                     <!-- IT Administration -->
                     <div
-                        class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
+                        class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform flex flex-col">
                         <div class="flex flex-col gap-4 flex-1">
                             <div class="flex items-center gap-3">
                                 <div

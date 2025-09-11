@@ -108,9 +108,9 @@ const experiences = [
     <main class="overflow-hidden">
         <!-- Hero Section -->
         <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50">
-            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h1 class="text-5xl md:text-6xl font-black mb-6">
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
+                <div class="text-center flex flex-col gap-6">
+                    <h1 class="text-5xl md:text-6xl font-black">
                         <span class="uppercase block text-gray-700 dark:text-gray-300">
                             {{ $t('about.hero.title') }}
                         </span>
@@ -126,7 +126,7 @@ const experiences = [
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 class="text-3xl font-bold mb-6">{{ $t('about.profile.title') }}</h2>
-                                <div class="space-y-4">
+                                <div class="flex flex-col gap-4">
                                     <div class="flex items-center gap-4">
                                         <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         <span>{{ $t('about.profile.location') }}</span>
@@ -151,13 +151,15 @@ const experiences = [
                                 </div>
                             </div>
 
-                            <div class="text-center">
+                            <div class="text-center flex flex-col gap-6">
                                 <div
-                                    class="w-48 h-48 mx-auto bg-blue-600 rounded-full flex items-center justify-center mb-6">
+                                    class="w-48 h-48 mx-auto bg-blue-600 rounded-full flex items-center justify-center">
                                     <Icon name="mdi:account" class="w-24 h-24 text-white" />
                                 </div>
-                                <h3 class="text-2xl font-bold mb-2">Chad Feierstein</h3>
-                                <p class="text-gray-600 dark:text-gray-400">{{ $t('about.profile.role') }}</p>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-2xl font-bold">Chad Feierstein</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">{{ $t('about.profile.role') }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -171,13 +173,14 @@ const experiences = [
                 <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
                     <div>
                         <h2 class="text-4xl font-bold mb-6">{{ $t('about.story.title') }}</h2>
-                        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <div class="flex flex-col gap-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                             <p>{{ $t('about.story.intro') }}</p>
                         </div>
                     </div>
 
-                    <div class="space-y-6">
-                        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl">
+                    <div class="flex flex-col gap-6">
+                        <div
+                            class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
                                 <Icon name="mdi:heart" class="w-6 h-6 text-red-500" />
                                 {{ $t('about.passion.title') }}
@@ -185,7 +188,8 @@ const experiences = [
                             <p class="text-gray-600 dark:text-gray-300">{{ $t('about.passion.description') }}</p>
                         </div>
 
-                        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl">
+                        <div
+                            class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
                                 <Icon name="mdi:puzzle" class="w-6 h-6 text-green-500" />
                                 {{ $t('about.hobbies.title') }}
@@ -205,18 +209,20 @@ const experiences = [
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div v-for="lang in languages" :key="lang.name"
                         class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-                        <div class="flex items-center gap-3 mb-4">
-                            <Icon :name="lang.flag" class="w-8 h-8" />
-                            <h3 class="font-bold">{{ lang.name }}</h3>
-                        </div>
-                        <div class="text-center">
-                            <span
-                                class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white font-bold text-lg rounded-full">
-                                {{ lang.level }}
-                            </span>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                                {{ $t(`about.languages.levels.${lang.level}`) }}
-                            </p>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-3">
+                                <Icon :name="lang.flag" class="w-8 h-8" />
+                                <h3 class="font-bold">{{ lang.name }}</h3>
+                            </div>
+                            <div class="text-center flex flex-col gap-2">
+                                <span
+                                    class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white font-bold text-lg rounded-full mx-auto">
+                                    {{ lang.level }}
+                                </span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    {{ $t(`about.languages.levels.${lang.level}`) }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -234,7 +240,7 @@ const experiences = [
                         class="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 w-1 bg-blue-600 dark:bg-blue-400 h-full">
                     </div>
 
-                    <div class="space-y-12">
+                    <div class="flex flex-col gap-12">
                         <div v-for="(item, index) in timeline" :key="item.year" :class="[
                             'relative flex items-center',
                             'justify-start md:justify-start',
@@ -254,15 +260,17 @@ const experiences = [
                                 'ml-8 w-full md:w-5/12 md:ml-0',
                                 index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                             ]">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <Icon :name="item.icon" :class="[
-                                        'w-6 h-6',
-                                        item.type === 'work' ? 'text-blue-500' : 'text-purple-500'
-                                    ]" />
-                                    <span class="text-sm font-medium text-gray-500">{{ item.year }}</span>
+                                <div class="flex flex-col gap-3">
+                                    <div class="flex items-center gap-3">
+                                        <Icon :name="item.icon" :class="[
+                                            'w-6 h-6',
+                                            item.type === 'work' ? 'text-blue-500' : 'text-purple-500'
+                                        ]" />
+                                        <span class="text-sm font-medium text-gray-500">{{ item.year }}</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold">{{ item.title }}</h3>
+                                    <p class="text-gray-600 dark:text-gray-300">{{ item.description }}</p>
                                 </div>
-                                <h3 class="text-xl font-bold mb-2">{{ item.title }}</h3>
-                                <p class="text-gray-600 dark:text-gray-300">{{ item.description }}</p>
                             </div>
                         </div>
                     </div>
@@ -283,8 +291,8 @@ const experiences = [
                                 class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                                 <Icon :name="cert.icon" class="w-6 h-6 text-white" />
                             </div>
-                            <div class="flex-1">
-                                <h3 class="font-bold text-lg mb-2">{{ cert.title }}</h3>
+                            <div class="flex-1 flex flex-col gap-2">
+                                <h3 class="font-bold text-lg">{{ cert.title }}</h3>
                                 <p class="text-gray-600 dark:text-gray-300">{{ cert.description }}</p>
                             </div>
                             <div class="flex-shrink-0">
@@ -306,11 +314,11 @@ const experiences = [
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <div v-for="experience in experiences" :key="experience.title"
-                        class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+                        class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300 flex flex-col gap-4">
+                        <div class="w-16 h-16 mx-auto bg-white/20 rounded-full flex items-center justify-center">
                             <Icon :name="experience.icon" class="w-8 h-8" />
                         </div>
-                        <h3 class="text-xl font-bold mb-3">{{ experience.title }}</h3>
+                        <h3 class="text-xl font-bold">{{ experience.title }}</h3>
                         <p class="text-white/80">{{ experience.description }}</p>
                     </div>
                 </div>
@@ -319,16 +327,18 @@ const experiences = [
 
         <!-- CTA Section -->
         <section class="py-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold mb-6">{{ $t('about.cta.title') }}</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-8">
+                <h2 class="text-4xl font-bold">{{ $t('about.cta.title') }}</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
                     {{ $t('about.cta.subtitle') }}
                 </p>
-                <NuxtLinkLocale to="/contact"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    {{ $t('about.cta.button') }}
-                    <Icon name="mdi:arrow-right" class="w-5 h-5" />
-                </NuxtLinkLocale>
+                <div class="flex justify-center">
+                    <NuxtLinkLocale to="/contact"
+                        class="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl w-fit">
+                        {{ $t('about.cta.button') }}
+                        <Icon name="mdi:arrow-right" class="w-5 h-5" />
+                    </NuxtLinkLocale>
+                </div>
             </div>
         </section>
     </main>
