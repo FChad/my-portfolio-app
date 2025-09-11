@@ -105,7 +105,7 @@ watch(isSubmitted, (newVal) => {
 
 <template>
     <main class="overflow-hidden">
-        <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50 flex flex-col gap-12">
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center flex flex-col gap-6">
                     <h1 class="text-5xl md:text-6xl font-black">
@@ -118,10 +118,7 @@ watch(isSubmitted, (newVal) => {
                     </p>
                 </div>
             </div>
-        </section>
 
-        <!-- Contact Information Section -->
-        <section class="py-20 flex flex-col gap-12 bg-gray-50 dark:bg-gray-800/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <!-- Contact Methods Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

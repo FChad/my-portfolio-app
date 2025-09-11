@@ -106,37 +106,43 @@ const totalCount = computed(() => showcaseItems.length)
 
                 <div class="flex flex-col gap-8">
 
-                    <!-- Filter Tabs -->
-                    <div class="flex justify-center">
+                    <!-- Mobile-Optimized Filter Tabs -->
+                    <div class="flex justify-center px-4">
                         <div
-                            class="flex gap-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-1 shadow-md">
-                            <button @click="activeFilter = 'all'"
-                                :class="activeFilter === 'all' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                                class="px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2">
-                                {{ t('showcase.filters.all') }}
-                                <span class="px-2 py-1 text-xs rounded-full"
-                                    :class="activeFilter === 'all' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
-                                    {{ totalCount }}
-                                </span>
-                            </button>
-                            <button @click="activeFilter = 'project'"
-                                :class="activeFilter === 'project' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                                class="px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2">
-                                {{ t('showcase.filters.projects') }}
-                                <span class="px-2 py-1 text-xs rounded-full"
-                                    :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
-                                    {{ projectCount }}
-                                </span>
-                            </button>
-                            <button @click="activeFilter = 'documentation'"
-                                :class="activeFilter === 'documentation' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                                class="px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2">
-                                {{ t('showcase.filters.documentation') }}
-                                <span class="px-2 py-1 text-xs rounded-full"
-                                    :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
-                                    {{ documentationCount }}
-                                </span>
-                            </button>
+                            class="w-full max-w-md sm:max-w-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-1 shadow-md">
+                            <!-- Mobile: Vertical Stack, Desktop: Horizontal -->
+                            <div class="flex flex-col sm:flex-row gap-1">
+                                <button @click="activeFilter = 'all'"
+                                    :class="activeFilter === 'all' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                                    class="w-full sm:flex-1 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                                    <Icon name="mdi:view-grid" class="w-4 h-4 sm:hidden" />
+                                    <span class="text-sm sm:text-base">{{ t('showcase.filters.all') }}</span>
+                                    <span class="px-2 py-1 text-xs rounded-full ml-auto sm:ml-2"
+                                        :class="activeFilter === 'all' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                                        {{ totalCount }}
+                                    </span>
+                                </button>
+                                <button @click="activeFilter = 'project'"
+                                    :class="activeFilter === 'project' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                                    class="w-full sm:flex-1 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                                    <Icon name="mdi:code-braces" class="w-4 h-4 sm:hidden" />
+                                    <span class="text-sm sm:text-base">{{ t('showcase.filters.projects') }}</span>
+                                    <span class="px-2 py-1 text-xs rounded-full ml-auto sm:ml-2"
+                                        :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                                        {{ projectCount }}
+                                    </span>
+                                </button>
+                                <button @click="activeFilter = 'documentation'"
+                                    :class="activeFilter === 'documentation' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                                    class="w-full sm:flex-1 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                                    <Icon name="mdi:file-document-outline" class="w-4 h-4 sm:hidden" />
+                                    <span class="text-sm sm:text-base">{{ t('showcase.filters.documentation') }}</span>
+                                    <span class="px-2 py-1 text-xs rounded-full ml-auto sm:ml-2"
+                                        :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                                        {{ documentationCount }}
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -182,7 +188,8 @@ const totalCount = computed(() => showcaseItems.length)
                                     <Icon
                                         :name="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'"
                                         class="w-4 h-4 inline mr-1" />
-                                    {{ t(`showcase.filters.${item.type === 'project' ? 'projects' : 'documentation'}`) }}
+                                    {{ t(`showcase.filters.${item.type === 'project' ? 'projects' : 'documentation'}`)
+                                    }}
                                 </span>
 
                                 <!-- Details Button -->
