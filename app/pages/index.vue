@@ -154,17 +154,17 @@ const scrollToAbout = () => {
                                 <div class="flex items-center gap-3 text-sm">
                                     <Icon name="mdi:map-marker" class="w-4 h-4 text-blue-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 text-sm">
                                     <Icon name="mdi:calendar" class="w-4 h-4 text-green-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 text-sm">
                                     <Icon name="mdi:school" class="w-4 h-4 text-purple-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <div class="flex items-center gap-3 text-sm">
                                     <Icon name="mdi:heart" class="w-4 h-4 text-red-500" />
@@ -187,7 +187,7 @@ const scrollToAbout = () => {
                                 <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                                 </div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                                    }}</div>
+                                }}</div>
                                 <div class="text-xs text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.experienceDesc') }}</div>
                             </div>
@@ -219,7 +219,7 @@ const scrollToAbout = () => {
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                                    }}</div>
+                                }}</div>
                                 <div class="text-xs text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.languagesDesc') }}</div>
                             </div>
@@ -235,7 +235,7 @@ const scrollToAbout = () => {
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                                    }}</div>
+                                }}</div>
                                 <div class="text-xs text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.projectsDesc') }}</div>
                             </div>
@@ -375,140 +375,150 @@ const scrollToAbout = () => {
                 </div>
 
                 <!-- Featured Project Card -->
-                <div class="max-w-5xl mx-auto">
+                <div class="max-w-4xl mx-auto">
                     <div
-                        class="relative group overflow-hidden bg-white dark:bg-gray-800 rounded-4xl shadow-2xl hover:shadow-3xl transition-all duration-700 transform">
-                        <!-- Project Header -->
-                        <div
-                            class="relative bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 dark:from-blue-900 dark:via-blue-800 dark:to-blue-950 p-8 text-white overflow-hidden">
-                            <!-- Background Pattern -->
-                            <div class="absolute inset-0 opacity-10">
-                                <div class="absolute inset-0 bg-white/10 rounded-full animate-pulse"></div>
-                            </div>
+                        class="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/60 dark:border-gray-600/60 overflow-hidden">
 
-                            <div class="relative flex items-center justify-between">
-                                <div class="flex items-center space-x-6">
-                                    <div
-                                        class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-lg">
-                                        <Icon name="mdi:robot-excited" class="w-10 h-10 text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 class="text-3xl font-black mb-2">{{ $t('home.featured.projectTitle') }}</h3>
-                                        <p class="text-blue-100 text-lg font-medium">{{
-                                            $t('home.featured.projectSubtitle') }}</p>
-                                    </div>
+                        <!-- Project Header - Simplified -->
+                        <div class="p-8 border-b border-gray-200/60 dark:border-gray-600/60">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center">
+                                    <Icon name="mdi:robot-excited" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
                                 </div>
-                                <div class="hidden lg:block">
+                                <div class="flex-1">
+                                    <h3 class="text-2xl font-black text-gray-800 dark:text-white">
+                                        {{ $t('home.featured.projectTitle') }}
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-400 font-medium">
+                                        {{ $t('home.featured.projectSubtitle') }}
+                                    </p>
+                                </div>
+                                <div class="hidden sm:block">
                                     <div
-                                        class="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg">
-                                        <span class="text-sm font-bold flex items-center gap-2">
-                                            <Icon name="mdi:star" class="w-4 h-4" />
-                                            {{ $t('home.featured.badge') }}
-                                        </span>
+                                        class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-xl font-medium text-sm flex items-center gap-2">
+                                        <Icon name="mdi:star" class="w-4 h-4" />
+                                        {{ $t('home.featured.badge') }}
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Project Content -->
-                        <div class="p-8 flex flex-col gap-10">
-                            <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <div class="p-8 flex flex-col gap-8">
+                            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                                 {{ $t('home.featured.description') }}
                             </p>
 
-                            <!-- Key Features -->
-                            <div class="flex flex-col md:flex-row gap-8">
-                                <div class="flex flex-col gap-6 flex-1">
-                                    <div class="flex items-start gap-4">
-                                        <div
-                                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <Icon name="mdi:brain" class="w-6 h-6 text-white" />
-                                        </div>
-                                        <div class="flex flex-col gap-2">
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">{{
-                                                $t('home.featured.features.ai.title') }}</h4>
-                                            <p class="text-gray-600 dark:text-gray-400">{{
-                                                $t('home.featured.features.ai.description') }}</p>
-                                        </div>
+                            <!-- Key Features Grid -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:brain" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                     </div>
-
-                                    <div class="flex items-start gap-4">
-                                        <div
-                                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <Icon name="mdi:chat-processing" class="w-6 h-6 text-white" />
-                                        </div>
-                                        <div class="flex flex-col gap-2">
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">{{
-                                                $t('home.featured.features.realtime.title') }}</h4>
-                                            <p class="text-gray-600 dark:text-gray-400">{{
-                                                $t('home.featured.features.realtime.description') }}</p>
-                                        </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h4 class="font-semibold text-gray-800 dark:text-white">
+                                            {{ $t('home.featured.features.ai.title') }}
+                                        </h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                                            {{ $t('home.featured.features.ai.description') }}
+                                        </p>
                                     </div>
                                 </div>
 
-                                <div class="flex flex-col gap-6 flex-1">
-                                    <div class="flex items-start gap-4">
-                                        <div
-                                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <Icon name="mdi:palette" class="w-6 h-6 text-white" />
-                                        </div>
-                                        <div class="flex flex-col gap-2">
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">{{
-                                                $t('home.featured.features.ui.title') }}</h4>
-                                            <p class="text-gray-600 dark:text-gray-400">{{
-                                                $t('home.featured.features.ui.description') }}</p>
-                                        </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:chat-processing"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                     </div>
-
-                                    <div class="flex items-start gap-4">
-                                        <div
-                                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <Icon name="mdi:shield-check" class="w-6 h-6 text-white" />
-                                        </div>
-                                        <div class="flex flex-col gap-2">
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">{{
-                                                $t('home.featured.features.security.title') }}</h4>
-                                            <p class="text-gray-600 dark:text-gray-400">{{
-                                                $t('home.featured.features.security.description') }}</p>
-                                        </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h4 class="font-semibold text-gray-800 dark:text-white">
+                                            {{ $t('home.featured.features.realtime.title') }}
+                                        </h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                                            {{ $t('home.featured.features.realtime.description') }}
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Tech Stack -->
-                            <div class="border-t border-gray-200 dark:border-gray-700 pt-8 flex flex-col gap-4">
-                                <h4 class="text-lg font-bold text-gray-800 dark:text-white">{{
-                                    $t('home.featured.techStack') }}</h4>
-                                <div class="flex flex-wrap gap-3">
-                                    <span
-                                        class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full text-sm font-medium shadow-md">Vue.js
-                                        3</span>
-                                    <span
-                                        class="px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full text-sm font-medium shadow-md">Nuxt.js</span>
-                                    <span
-                                        class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full text-sm font-medium shadow-md">TypeScript</span>
-                                    <span
-                                        class="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full text-sm font-medium shadow-md">Ollama
-                                        API</span>
-                                    <span
-                                        class="px-4 py-2 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-full text-sm font-medium shadow-md">Tailwind
-                                        CSS</span>
-                                    <span
-                                        class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-full text-sm font-medium shadow-md">Server-Sent
-                                        Events</span>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:palette" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h4 class="font-semibold text-gray-800 dark:text-white">
+                                            {{ $t('home.featured.features.ui.title') }}
+                                        </h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                                            {{ $t('home.featured.features.ui.description') }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <Icon name="mdi:shield-check"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <h4 class="font-semibold text-gray-800 dark:text-white">
+                                            {{ $t('home.featured.features.security.title') }}
+                                        </h4>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                                            {{ $t('home.featured.features.security.description') }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Action Buttons -->
+                            <!-- Tech Stack - Einheitliches Design -->
+                            <div class="border-t border-gray-200/60 dark:border-gray-600/60 pt-8 flex flex-col gap-4">
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center gap-2">
+                                    <Icon name="mdi:cog" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    {{ $t('home.featured.techStack') }}
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                        Vue.js 3
+                                    </span>
+                                    <span
+                                        class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                        Nuxt.js
+                                    </span>
+                                    <span
+                                        class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                        TypeScript
+                                    </span>
+                                    <span
+                                        class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                        Ollama API
+                                    </span>
+                                    <span
+                                        class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                        Tailwind CSS
+                                    </span>
+                                    <span
+                                        class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                        Server-Sent Events
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons - Konsistenter mit anderen Buttons -->
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                    class="group flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-300 transform">
+                                    class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                                     <Icon name="mdi:eye" class="w-5 h-5" />
                                     {{ $t('home.featured.cta.view') }}
                                 </NuxtLinkLocale>
 
                                 <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                    class="group flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 transform">
+                                    class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold border border-gray-200 dark:border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                                     <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                                     {{ $t('home.featured.cta.demo') }}
                                 </a>
