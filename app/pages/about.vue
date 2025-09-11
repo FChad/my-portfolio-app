@@ -518,7 +518,7 @@ const experiences = [
                                         <h4
                                             class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
                                             <Icon name="mdi:clipboard-check" class="w-4 h-4" />
-                                            Hauptaufgaben:
+                                            {{ $t('about.work.mainTasks') }}
                                         </h4>
                                         <ul class="space-y-1">
                                             <li v-for="(task, taskIndex) in item.tasks.slice(0, 3)" :key="taskIndex"
@@ -529,7 +529,7 @@ const experiences = [
                                             </li>
                                             <li v-if="item.tasks.length > 3"
                                                 class="text-sm text-blue-600 dark:text-blue-400 italic">
-                                                + {{ item.tasks.length - 3 }} weitere Aufgaben
+                                                + {{ item.tasks.length - 3 }} {{ $t('about.work.moreTasks') }}
                                             </li>
                                         </ul>
                                     </div>
@@ -547,8 +547,7 @@ const experiences = [
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold mb-4">{{ $t('about.certifications.title') }}</h2>
                     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen
-                        Technologiebereichen belegen
+                        {{ $t('about.certifications.subtitle') }}
                     </p>
                 </div>
 

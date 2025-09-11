@@ -172,13 +172,17 @@
             }
         },
         "work": {
-            "title": "Work Experience"
+            "title": "Work Experience",
+            "mainTasks": "Main Tasks:",
+            "moreTasks": "more tasks"
         },
         "timeline": {
             "title": "Professional Timeline"
         },
         "certifications": {
-            "title": "Certifications"
+            "title": "Certifications",
+            "subtitle": "Professional certifications and qualifications that demonstrate my expertise in various technology areas",
+            "certified": "Certified"
         },
         "experiences": {
             "title": "Special Experiences"

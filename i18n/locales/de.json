@@ -172,13 +172,17 @@
             }
         },
         "work": {
-            "title": "Berufserfahrung"
+            "title": "Berufserfahrung",
+            "mainTasks": "Hauptaufgaben:",
+            "moreTasks": "weitere Aufgaben"
         },
         "timeline": {
             "title": "Beruflicher Werdegang"
         },
         "certifications": {
-            "title": "Zertifizierungen"
+            "title": "Zertifizierungen",
+            "subtitle": "Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen Technologiebereichen belegen",
+            "certified": "Zertifiziert"
         },
         "experiences": {
             "title": "Besondere Erlebnisse"

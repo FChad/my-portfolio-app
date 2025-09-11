@@ -172,13 +172,17 @@
             }
         },
         "work": {
-            "title": "Beruffserfahrung"
+            "title": "Beruffserfahrung",
+            "mainTasks": "Haaptaufgaben:",
+            "moreTasks": "weider Aufgaben"
         },
         "timeline": {
             "title": "Berufleche Werdegank"
         },
         "certifications": {
-            "title": "Zertifizéierungen"
+            "title": "Zertifizéierungen",
+            "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen",
+            "certified": "Zertifizéiert"
         },
         "experiences": {
             "title": "Besonner Erliefnesser"

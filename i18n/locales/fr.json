@@ -172,13 +172,17 @@
             }
         },
         "work": {
-            "title": "Expérience Professionnelle"
+            "title": "Expérience Professionnelle",
+            "mainTasks": "Tâches Principales :",
+            "moreTasks": "tâches supplémentaires"
         },
         "timeline": {
             "title": "Parcours Professionnel"
         },
         "certifications": {
-            "title": "Certifications"
+            "title": "Certifications",
+            "subtitle": "Certifications professionnelles et qualifications qui démontrent mon expertise dans divers domaines technologiques",
+            "certified": "Certifié"
         },
         "experiences": {
             "title": "Expériences Spéciales"
