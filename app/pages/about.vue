@@ -219,7 +219,7 @@ const experiences = [
                                     </h2>
                                 </div>
 
-                                <div class="grid gap-5">
+                                <div class="grid gap-4">
                                     <div class="group flex items-center gap-4">
                                         <div
                                             class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
