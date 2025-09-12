@@ -233,10 +233,10 @@ const experiences = [
                                     <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                        $t('about.profile.location') }}</span>
                                     <span class="text-sm text-gray-500 dark:text-gray-400">{{
                                         $t('about.profile.labels.location') }}</span>
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.location') }}</span>
                                 </div>
                             </div>
 
@@ -246,10 +246,10 @@ const experiences = [
                                     <Icon name="mdi:flag" class="w-5 h-5 text-white" />
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                        $t('about.profile.nationality') }}</span>
                                     <span class="text-sm text-gray-500 dark:text-gray-400">{{
                                         $t('about.profile.labels.nationality') }}</span>
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.nationality') }}</span>
                                 </div>
                             </div>
 
@@ -259,10 +259,10 @@ const experiences = [
                                     <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                        $t('about.profile.age') }}</span>
                                     <span class="text-sm text-gray-500 dark:text-gray-400">{{
                                         $t('about.profile.labels.age') }}</span>
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.age') }}</span>
                                 </div>
                             </div>
 
@@ -272,10 +272,10 @@ const experiences = [
                                     <Icon name="mdi:heart" class="w-5 h-5 text-white" />
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                        $t('about.profile.status') }}</span>
                                     <span class="text-sm text-gray-500 dark:text-gray-400">{{
                                         $t('about.profile.labels.status') }}</span>
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.status') }}</span>
                                 </div>
                             </div>
 
@@ -285,10 +285,10 @@ const experiences = [
                                     <Icon name="mdi:car" class="w-5 h-5 text-white" />
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                        $t('about.profile.driving') }}</span>
                                     <span class="text-sm text-gray-500 dark:text-gray-400">{{
                                         $t('about.profile.labels.license') }}</span>
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.driving') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +453,7 @@ const experiences = [
                                         <div class="flex items-center gap-3">
                                             <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                             <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                            }}</span>
+                                                }}</span>
                                         </div>
                                         <span
                                             class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
