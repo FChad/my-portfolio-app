@@ -107,7 +107,13 @@ const scrollToAbout = () => {
             <!-- Scroll Down Indicator -->
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
                 <div class="flex flex-col items-center animate-bounce">
-                    <div class="scroll-indicator" @click="scrollToAbout">
+                    <div class="relative flex justify-center items-center w-[50px] h-[50px] 
+                               border-2 border-blue-500/30 dark:border-blue-400/40 
+                               rounded-full bg-white/10 dark:bg-gray-900/20 
+                               backdrop-blur-[10px] transition-all duration-300 cursor-pointer
+                               hover:-translate-y-0.5 hover:border-blue-500/60 hover:bg-blue-500/10 hover:shadow-[0_4px_15px_rgba(59,130,246,0.2)]
+                               dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10 dark:hover:shadow-[0_4px_15px_rgba(96,165,250,0.3)]"
+                        @click="scrollToAbout">
                         <Icon name="mdi:chevron-down" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
                     </div>
                 </div>
@@ -569,40 +575,6 @@ const scrollToAbout = () => {
 /* Custom Gradient for Hero Background */
 .bg-gradient-radial {
     background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
-}
-
-/* Scroll Indicator Styles */
-.scroll-indicator {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid rgba(59, 130, 246, 0.3);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.dark .scroll-indicator {
-    border-color: rgba(96, 165, 250, 0.4);
-    background: rgba(17, 24, 39, 0.2);
-}
-
-.scroll-indicator:hover {
-    transform: translateY(-2px);
-    border-color: rgba(59, 130, 246, 0.6);
-    background: rgba(59, 130, 246, 0.1);
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
-}
-
-.dark .scroll-indicator:hover {
-    border-color: rgba(96, 165, 250, 0.7);
-    background: rgba(96, 165, 250, 0.1);
-    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
 }
 
 /* Enhanced bounce animation for scroll indicator */
