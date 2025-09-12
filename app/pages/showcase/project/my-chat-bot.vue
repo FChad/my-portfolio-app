@@ -5,15 +5,16 @@ definePageMeta({
 })
 
 // Subnavigation konfigurieren
-const setSubNav = inject('setSubNav') as (props: { title: string } | null) => void
 const { t } = useI18n()
+const { configure } = useSubNavigation()
 
 onMounted(() => {
-    setSubNav({ title: t('showcase.projects.myChatBot.title') })
-})
-
-onUnmounted(() => {
-    setSubNav(null)
+    configure({
+        title: t('showcase.projects.myChatBot.title'),
+        showBackButton: true,
+        backTo: '/showcase',
+        backLabel: 'Back to Showcase'
+    })
 })
 
 const keyFeatures = [
@@ -230,7 +231,7 @@ const technologies = [
     </section>
 
     <!-- CTA Section -->
-    <section class="text-white">
+    <section>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-bold mb-6">{{
                 t('projects.myChatBot.callToAction.title') }}
