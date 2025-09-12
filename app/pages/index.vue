@@ -84,7 +84,7 @@ const scrollToAbout = () => {
                         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                             <!-- Primary CTA -->
                             <NuxtLinkLocale to="/showcase"
-                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 inline-flex items-center">
+                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300 inline-flex items-center">
                                 <span class="relative z-10 flex items-center gap-3">
                                     <Icon name="mdi:eye" class="w-6 h-6" />
                                     {{ $t('home.cta.primary') }}
@@ -93,7 +93,7 @@ const scrollToAbout = () => {
 
                             <!-- Secondary CTA -->
                             <NuxtLinkLocale to="/contact"
-                                class="group relative px-10 py-5 border-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 shadow-lg inline-flex items-center">
+                                class="group relative px-10 py-5 border-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center">
                                 <span class="flex items-center gap-3">
                                     {{ $t('home.cta.secondary') }}
                                     <Icon name="mdi:chat" class="w-6 h-6 transition-transform duration-300" />
@@ -111,9 +111,8 @@ const scrollToAbout = () => {
                                border-2 border-blue-500/30 dark:border-blue-400/40 
                                rounded-full bg-white/10 dark:bg-gray-900/20 
                                backdrop-blur-[10px] transition-all duration-300 cursor-pointer
-                               hover:-translate-y-0.5 hover:border-blue-500/60 hover:bg-blue-500/10 hover:shadow-[0_4px_15px_rgba(59,130,246,0.2)]
-                               dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10 dark:hover:shadow-[0_4px_15px_rgba(96,165,250,0.3)]"
-                        @click="scrollToAbout">
+                               hover:-translate-y-0.5 hover:border-blue-500/60 hover:bg-blue-500/10
+                               dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10" @click="scrollToAbout">
                         <Icon name="mdi:chevron-down" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
                     </div>
                 </div>
@@ -140,7 +139,7 @@ const scrollToAbout = () => {
                     <div class="flex flex-col gap-8">
                         <!-- Personal Story Card -->
                         <div
-                            class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl flex flex-col gap-6">
+                            class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
                             <div class="flex items-center gap-4">
                                 <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
                                     <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
@@ -184,7 +183,7 @@ const scrollToAbout = () => {
                     <div class="grid sm:grid-cols-2 gap-6">
                         <!-- Experience Card -->
                         <div
-                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
                             <div
                                 class="absolute top-4 right-4 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                                 <Icon name="mdi:briefcase" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -201,7 +200,7 @@ const scrollToAbout = () => {
 
                         <!-- Certifications Card -->
                         <div
-                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
                             <div
                                 class="absolute top-4 right-4 w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                                 <Icon name="mdi:certificate" class="w-5 h-5 text-green-600 dark:text-green-400" />
@@ -217,7 +216,7 @@ const scrollToAbout = () => {
 
                         <!-- Languages Card -->
                         <div
-                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
                             <div
                                 class="absolute top-4 right-4 w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
                                 <Icon name="mdi:translate" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -233,7 +232,7 @@ const scrollToAbout = () => {
 
                         <!-- Projects Card -->
                         <div
-                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
                             <div
                                 class="absolute top-4 right-4 w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
                                 <Icon name="mdi:code-braces" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
@@ -251,7 +250,7 @@ const scrollToAbout = () => {
 
                 <!-- CTA Button -->
                 <NuxtLinkLocale to="/about"
-                    class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform self-center">
+                    class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform self-center">
                     <Icon name="mdi:open-in-new" class="w-4 h-4" />
                     {{ $t('home.about.cta') }}
                 </NuxtLinkLocale>
@@ -274,7 +273,7 @@ const scrollToAbout = () => {
                 <div class="flex flex-col lg:flex-row gap-8 mt-16">
                     <!-- Web Development -->
                     <div
-                        class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform flex flex-col">
+                        class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 transform flex flex-col">
                         <div class="flex flex-col gap-4 flex-1">
                             <div class="flex items-center gap-3">
                                 <div
@@ -305,7 +304,7 @@ const scrollToAbout = () => {
 
                     <!-- Cloud Computing -->
                     <div
-                        class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform flex flex-col">
+                        class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 transform flex flex-col">
                         <div class="flex flex-col gap-4 flex-1">
                             <div class="flex items-center gap-3">
                                 <div
@@ -336,7 +335,7 @@ const scrollToAbout = () => {
 
                     <!-- IT Administration -->
                     <div
-                        class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform flex flex-col">
+                        class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 transform flex flex-col">
                         <div class="flex flex-col gap-4 flex-1">
                             <div class="flex items-center gap-3">
                                 <div
@@ -369,7 +368,7 @@ const scrollToAbout = () => {
         </section>
 
         <!-- Featured Project Showcase -->
-        <section class="py-24 bg-gray-50 dark:bg-gray-900/50">
+        <section class="py-24 bg-gray-50 dark:bg-gray-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
                 <div class="text-center flex flex-col gap-4">
                     <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
@@ -382,8 +381,7 @@ const scrollToAbout = () => {
 
                 <!-- Featured Project Card -->
                 <div class="max-w-4xl mx-auto">
-                    <div
-                        class="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/60 dark:border-gray-600/60 overflow-hidden">
+                    <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
 
                         <!-- Project Header - Simplified -->
                         <div class="p-8 border-b border-gray-200/60 dark:border-gray-600/60">
@@ -518,52 +516,18 @@ const scrollToAbout = () => {
                             <!-- Action Buttons - Konsistenter mit anderen Buttons -->
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                    class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                    class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300">
                                     <Icon name="mdi:eye" class="w-5 h-5" />
                                     {{ $t('home.featured.cta.view') }}
                                 </NuxtLinkLocale>
 
                                 <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                    class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold border border-gray-200 dark:border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                    class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transition-all duration-300">
                                     <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                                     {{ $t('home.featured.cta.demo') }}
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call-to-Action Section -->
-        <section
-            class="py-24 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 dark:from-blue-900 dark:via-blue-800 dark:to-blue-950 text-white relative overflow-hidden">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute inset-0 bg-white/5"></div>
-            </div>
-
-            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="flex flex-col items-center gap-8">
-                    <div class="flex flex-col items-center gap-6">
-                        <h2 class="text-4xl md:text-5xl font-black">{{ $t('home.bottomCta.title') }}</h2>
-                        <p class="text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
-                            {{ $t('home.bottomCta.subtitle') }}
-                        </p>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <NuxtLinkLocale to="/contact"
-                            class="group inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-2xl font-bold text-lg shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1">
-                            <Icon name="mdi:email" class="w-5 h-5" />
-                            {{ $t('home.bottomCta.contact') }}
-                        </NuxtLinkLocale>
-
-                        <NuxtLinkLocale to="/showcase"
-                            class="group inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
-                            <Icon name="mdi:folder-open" class="w-5 h-5" />
-                            {{ $t('home.bottomCta.portfolio') }}
-                        </NuxtLinkLocale>
                     </div>
                 </div>
             </div>
