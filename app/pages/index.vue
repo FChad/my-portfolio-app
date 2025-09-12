@@ -120,8 +120,7 @@ const scrollToAbout = () => {
         </section>
 
         <!-- About Preview Section -->
-        <section id="about-section"
-            class="py-24 bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-900 dark:to-blue-950/30">
+        <section class="py-24" id="about-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
                 <!-- Section Header -->
                 <div class="text-center flex flex-col gap-4">
@@ -139,7 +138,7 @@ const scrollToAbout = () => {
                     <div class="flex flex-col gap-8">
                         <!-- Personal Story Card -->
                         <div
-                            class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+                            class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6 transition-all duration-500">
                             <div class="flex items-center gap-4">
                                 <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
                                     <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
@@ -159,17 +158,17 @@ const scrollToAbout = () => {
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:map-marker" class="w-4 h-4 text-blue-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:school" class="w-4 h-4 text-purple-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:school" class="w-4 h-4 text-purple-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:heart" class="w-4 h-4 text-red-500" />
@@ -192,7 +191,7 @@ const scrollToAbout = () => {
                                 <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                                 </div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                                    }}</div>
+                                }}</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.experienceDesc') }}</div>
                             </div>
@@ -224,7 +223,7 @@ const scrollToAbout = () => {
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                                    }}</div>
+                                }}</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.languagesDesc') }}</div>
                             </div>
@@ -240,7 +239,7 @@ const scrollToAbout = () => {
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                                    }}</div>
+                                }}</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.projectsDesc') }}</div>
                             </div>
@@ -258,7 +257,7 @@ const scrollToAbout = () => {
         </section>
 
         <!-- Skills & Services Section -->
-        <section class="py-24 bg-white dark:bg-gray-900">
+        <section class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center flex flex-col gap-4">
                     <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
@@ -368,7 +367,7 @@ const scrollToAbout = () => {
         </section>
 
         <!-- Featured Project Showcase -->
-        <section class="py-24 bg-gray-50 dark:bg-gray-800/50">
+        <section class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
                 <div class="text-center flex flex-col gap-4">
                     <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">

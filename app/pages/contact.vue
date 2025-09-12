@@ -105,7 +105,7 @@ watch(isSubmitted, (newVal) => {
 
 <template>
     <main class="overflow-hidden">
-        <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50 flex flex-col gap-12">
+        <section class="relative py-20  flex flex-col gap-12">
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center flex flex-col gap-6">
                     <h1 class="text-5xl md:text-6xl font-black">

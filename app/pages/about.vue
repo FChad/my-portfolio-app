@@ -186,7 +186,7 @@ const experiences = [
 <template>
     <main class="overflow-hidden">
         <!-- Hero Section -->
-        <section class="relative py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="relative py-20 ">
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
                 <div class="text-center flex flex-col gap-6">
                     <h1 class="text-5xl md:text-6xl font-black">
@@ -207,7 +207,7 @@ const experiences = [
                 <!-- Main About Card -->
                 <div class="max-w-5xl mx-auto">
                     <div
-                        class="bg-gray-50/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+                        class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
                         <div class="flex items-center gap-4">
                             <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
                                 <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
@@ -319,7 +319,7 @@ const experiences = [
         </section>
 
         <!-- Languages Section -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="py-20 ">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.languages.title') }}</h2>
 
@@ -361,7 +361,7 @@ const experiences = [
 
                 <div class="grid md:grid-cols-2 gap-8">
                     <div v-for="(edu, index) in education" :key="edu.year"
-                        class="group relative bg-gray-50/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+                        class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
 
                         <!-- Content -->
                         <div class="flex flex-col h-full">
@@ -410,7 +410,7 @@ const experiences = [
         </section>
 
         <!-- Work Experience Timeline Section -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="py-20 ">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.work.title') }}</h2>
 

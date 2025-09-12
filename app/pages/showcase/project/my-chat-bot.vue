@@ -109,7 +109,7 @@ const technologies = [
     <main class="overflow-hidden">
 
         <!-- Hero Section -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="py-20 ">
             <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto">
                     <!-- Title and Description -->
@@ -190,7 +190,7 @@ const technologies = [
         </section>
 
         <!-- Technologies Section -->
-        <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <section class="py-20 ">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 sm:mb-16">
                     <div class="text-center mb-8 sm:mb-12">
@@ -208,12 +208,12 @@ const technologies = [
                             <div class="flex items-center gap-3 mb-2">
                                 <Icon :name="tech.icon" class="w-4 h-4 text-gray-800 dark:text-gray-200" />
                                 <span class="text-base font-medium text-gray-600 dark:text-gray-400">{{ t(tech.name)
-                                    }}</span>
+                                }}</span>
                             </div>
                             <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">{{ t(tech.tech) }}
                             </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ t(tech.description)
-                                }}</p>
+                            }}</p>
                         </div>
                     </div>
                 </div>
