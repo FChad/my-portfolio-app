@@ -1,5 +1,20 @@
 <script lang="ts" setup>
+// Layout definieren
+definePageMeta({
+    layout: 'with-subnav'
+})
+
+// Subnavigation konfigurieren
+const setSubNav = inject('setSubNav') as (props: { title: string } | null) => void
 const { t } = useI18n()
+
+onMounted(() => {
+    setSubNav({ title: t('showcase.projects.myPortfolio.title') })
+})
+
+onUnmounted(() => {
+    setSubNav(null)
+})
 
 const keyFeatures = [
     {
@@ -103,9 +118,6 @@ const technologies = [
 </script>
 
 <template>
-    <!-- Navigation -->
-    <UiSubNavigation :title="t('showcase.projects.myPortfolio.title')" />
-
     <!-- Hero Section -->
     <section>
         <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
@@ -205,12 +217,12 @@ const technologies = [
                         <div class="flex items-center gap-3 mb-2">
                             <Icon :name="tech.icon" class="w-4 h-4 text-gray-800 dark:text-gray-200" />
                             <span class="text-base font-medium text-gray-600 dark:text-gray-400">{{ t(tech.name)
-                                }}</span>
+                            }}</span>
                         </div>
                         <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">{{ t(tech.tech) }}
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ t(tech.description)
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
             </div>

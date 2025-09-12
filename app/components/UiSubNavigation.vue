@@ -9,8 +9,7 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-    <nav
-        class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-[65px] z-40">
+    <nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Breadcrumb -->
@@ -26,7 +25,7 @@ const localePath = useLocalePath()
                     </NuxtLink>
                     <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400" />
                     <span class="flex justify-center items-center text-gray-700 dark:text-gray-300 font-medium">{{ title
-                        }}</span>
+                    }}</span>
                 </div>
 
                 <!-- Back Button -->
