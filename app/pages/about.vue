@@ -361,7 +361,7 @@ const experiences = [
 
                 <div class="grid md:grid-cols-2 gap-8">
                     <div v-for="(edu, index) in education" :key="edu.year"
-                        class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+                        class="group relative bg-gray-50/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
 
                         <!-- Content -->
                         <div class="flex flex-col h-full">
