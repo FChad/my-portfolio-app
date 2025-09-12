@@ -202,7 +202,7 @@ const experiences = [
                 <!-- Profile Card -->
                 <div class="max-w-5xl mx-auto">
                     <div
-                        class="relative bg-gradient-to-br from-white/95 to-white/80 dark:from-gray-800/95 dark:to-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-white/20 dark:border-gray-700/30 overflow-hidden">
+                        class="relative bg-gradient-to-br from-white/95 to-white/80 dark:from-gray-800/95 dark:to-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 dark:border-gray-700/30 overflow-hidden">
                         <!-- Background decorative elements -->
                         <div
                             class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl">
@@ -492,7 +492,7 @@ const experiences = [
                                         <div class="flex items-center gap-3">
                                             <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                             <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                                }}</span>
+                                            }}</span>
                                         </div>
                                         <span
                                             class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
