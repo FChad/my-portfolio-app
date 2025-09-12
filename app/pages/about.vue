@@ -198,159 +198,120 @@ const experiences = [
                         {{ $t('about.hero.subtitle') }}
                     </p>
                 </div>
-
-                <!-- Profile Card -->
-                <div class="max-w-5xl mx-auto">
-                    <div
-                        class="relative bg-gradient-to-br from-white/95 to-white/80 dark:from-gray-800/95 dark:to-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 dark:border-gray-700/30 overflow-hidden">
-                        <!-- Background decorative elements -->
-                        <div
-                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-500/10 to-blue-500/10 rounded-full blur-2xl">
-                        </div>
-
-                        <div class="relative grid md:grid-cols-2 gap-12 items-center">
-                            <div class="order-2 md:order-1">
-                                <div class="flex items-center gap-3 mb-8">
-                                    <h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                                        {{ $t('about.profile.title') }}
-                                    </h2>
-                                </div>
-
-                                <div class="grid gap-4">
-                                    <div class="group flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                                $t('about.profile.location') }}</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                                $t('about.profile.labels.location') }}</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="group flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <Icon name="mdi:flag" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                                $t('about.profile.nationality') }}</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                                $t('about.profile.labels.nationality') }}</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="group flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                                $t('about.profile.age') }}</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                                $t('about.profile.labels.age') }}</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="group flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <Icon name="mdi:heart" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                                $t('about.profile.status') }}</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                                $t('about.profile.labels.status') }}</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="group flex items-center gap-4">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <Icon name="mdi:car" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                                $t('about.profile.driving') }}</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                                $t('about.profile.labels.license') }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="order-1 md:order-2 text-center flex flex-col gap-8">
-                                <div class="relative group">
-                                    <div
-                                        class="relative w-52 h-52 mx-auto bg-blue-500 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-105 transition-all duration-500 border-4 border-white/20 dark:border-gray-700/30">
-                                        <div
-                                            class="absolute inset-2 bg-blue-600 rounded-full flex items-center justify-center">
-                                            <Icon name="mdi:account" class="w-20 h-20 text-white drop-shadow-lg" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="flex flex-col gap-4">
-                                    <div>
-                                        <h3
-                                            class="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent">
-                                            Chad Feierstein
-                                        </h3>
-                                        <div class="flex items-center justify-center gap-2 mt-2">
-                                            <p class="text-lg font-medium text-blue-600 dark:text-blue-400">
-                                                {{ $t('about.profile.role') }}
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-center gap-2 mt-2">
-                                            <p class="text-gray-500 dark:text-gray-400">
-                                                {{ $t('about.profile.currentWork') }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
         <!-- About Me Section -->
         <section class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
-                    <div>
-                        <h2 class="text-4xl font-bold mb-6">{{ $t('about.story.title') }}</h2>
-                        <div class="flex flex-col gap-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                            <p>{{ $t('about.story.intro') }}</p>
+                <!-- Main About Card -->
+                <div class="max-w-5xl mx-auto">
+                    <div
+                        class="bg-gray-50/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
+                                <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
+                            </div>
+                            <div class="flex flex-col">
+                                <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
+                                <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}
+                                </p>
+                                <p class="text-gray-500 dark:text-gray-400">
+                                    {{ $t('about.profile.currentWork') }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                            {{ $t('about.story.intro') }}
+                        </p>
 
-                    <div class="flex flex-col gap-6">
-                        <div
-                            class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
-                            <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
-                                <Icon name="mdi:heart" class="w-6 h-6 text-red-500" />
-                                {{ $t('about.passion.title') }}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.passion.description') }}</p>
+                        <!-- Personal Details -->
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="group flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.location') }}</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                                        $t('about.profile.labels.location') }}</span>
+                                </div>
+                            </div>
+
+                            <div class="group flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <Icon name="mdi:flag" class="w-5 h-5 text-white" />
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.nationality') }}</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                                        $t('about.profile.labels.nationality') }}</span>
+                                </div>
+                            </div>
+
+                            <div class="group flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.age') }}</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                                        $t('about.profile.labels.age') }}</span>
+                                </div>
+                            </div>
+
+                            <div class="group flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <Icon name="mdi:heart" class="w-5 h-5 text-white" />
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.status') }}</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                                        $t('about.profile.labels.status') }}</span>
+                                </div>
+                            </div>
+
+                            <div class="group flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <Icon name="mdi:car" class="w-5 h-5 text-white" />
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                                        $t('about.profile.driving') }}</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                                        $t('about.profile.labels.license') }}</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div
-                            class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
-                            <h3 class="text-xl font-bold mb-3 flex items-center gap-3">
-                                <Icon name="mdi:puzzle" class="w-6 h-6 text-green-500" />
-                                {{ $t('about.hobbies.title') }}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.hobbies.description') }}</p>
+                        <!-- Passion and Hobbies Cards -->
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div
+                                class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
+                                <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
+                                    <Icon name="mdi:heart" class="w-6 h-6 text-red-500" />
+                                    {{ $t('about.passion.title') }}
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">{{ $t('about.passion.description') }}</p>
+                            </div>
+
+                            <div
+                                class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
+                                <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
+                                    <Icon name="mdi:puzzle" class="w-6 h-6 text-green-500" />
+                                    {{ $t('about.hobbies.title') }}
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-300">{{ $t('about.hobbies.description') }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
