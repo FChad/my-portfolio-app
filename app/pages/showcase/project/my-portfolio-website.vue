@@ -208,12 +208,12 @@ const technologies = [
                             <div class="flex items-center gap-3 mb-2">
                                 <Icon :name="tech.icon" class="w-4 h-4 text-gray-800 dark:text-gray-200" />
                                 <span class="text-base font-medium text-gray-600 dark:text-gray-400">{{ t(tech.name)
-                                }}</span>
+                                    }}</span>
                             </div>
                             <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">{{ t(tech.tech) }}
                             </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ t(tech.description)
-                            }}</p>
+                                }}</p>
                         </div>
                     </div>
                 </div>
@@ -240,53 +240,3 @@ const technologies = [
         </section>
     </main>
 </template>
-
-<style lang="postcss" scoped>
-@keyframes float-slow {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(12deg);
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(12deg);
-    }
-}
-
-@keyframes float-medium {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(-12deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(-12deg);
-    }
-}
-
-@keyframes float-fast {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(6deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(6deg);
-    }
-}
-
-.animate-float-slow {
-    animation: float-slow 6s ease-in-out infinite;
-}
-
-.animate-float-medium {
-    animation: float-medium 4s ease-in-out infinite;
-}
-
-.animate-float-fast {
-    animation: float-fast 3s ease-in-out infinite;
-}
-</style>

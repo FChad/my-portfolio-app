@@ -3,9 +3,7 @@ export default {
     darkMode: 'class',
     content: [],
     theme: {
-        extend: {
-            // Extended theme configuration can be added here
-        },
+        extend: {},
     },
     plugins: [],
 }

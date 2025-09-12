@@ -84,7 +84,7 @@ const scrollToAbout = () => {
                         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                             <!-- Primary CTA -->
                             <NuxtLinkLocale to="/showcase"
-                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xlsp transition-all duration-300 inline-flex items-center">
+                                class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 inline-flex items-center">
                                 <span class="relative z-10 flex items-center gap-3">
                                     <Icon name="mdi:eye" class="w-6 h-6" />
                                     {{ $t('home.cta.primary') }}
@@ -160,17 +160,17 @@ const scrollToAbout = () => {
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:map-marker" class="w-4 h-4 text-blue-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:school" class="w-4 h-4 text-purple-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:school" class="w-4 h-4 text-purple-500" />
                                     <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <Icon name="mdi:heart" class="w-4 h-4 text-red-500" />
@@ -193,7 +193,7 @@ const scrollToAbout = () => {
                                 <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                                 </div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                                }}</div>
+                                    }}</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.experienceDesc') }}</div>
                             </div>
@@ -225,7 +225,7 @@ const scrollToAbout = () => {
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                                }}</div>
+                                    }}</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.languagesDesc') }}</div>
                             </div>
@@ -241,7 +241,7 @@ const scrollToAbout = () => {
                             <div class="text-center flex flex-col gap-2">
                                 <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                                 <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                                }}</div>
+                                    }}</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                     $t('home.stats.projectsDesc') }}</div>
                             </div>
@@ -599,18 +599,5 @@ const scrollToAbout = () => {
 
 .animate-bounce {
     animation: scroll-bounce 2s infinite;
-}
-
-/* Custom utility classes for enhanced design */
-.rounded-4xl {
-    border-radius: 2rem;
-}
-
-.shadow-3xl {
-    box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.25);
-}
-
-.bg-gradient-radial {
-    background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
 }
 </style>
