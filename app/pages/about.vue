@@ -278,7 +278,7 @@ const experiences = [
 
                     <!-- Story Text -->
                     <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-600">
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                             {{ $t('about.story.intro') }}
                         </p>
                     </div>
