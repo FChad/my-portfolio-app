@@ -1,15 +1,16 @@
 <template>
     <div class="w-full h-full flex flex-col">
         <!-- Header - Fixed at top -->
-        <Header class="fixed top-0 left-0 right-0 z-50" />
+        <Header />
 
         <!-- SubNavigation - Fixed below header -->
-        <div class="fixed left-0 right-0 z-40" style="top: var(--header-height);">
+        <div class="sticky z-50" style="top: var(--header-height);">
             <UiSubNavigation v-if="subNavProps" v-bind="subNavProps" />
         </div>
 
         <!-- Main Content with padding to account for fixed headers -->
-        <main class="overflow-hidden flex flex-col gap-20 pb-20" style="padding-top: var(--total-header-offset);">
+        <main class="overflow-hidden flex flex-col gap-24 md:gap-32 lg:gap-40 pb-20"
+            style="padding-top: var(--total-header-offset);">
             <slot />
         </main>
 
@@ -37,8 +38,8 @@ provide('setSubNav', (props: SubNavProps | null) => {
 <style lang="postcss">
 /* Layout spacing variables */
 :root {
-    --header-height: 64px;
-    --subnav-height: 64px;
+    --header-height: 65px;
+    --subnav-height: 65px;
     --content-spacing: 40px;
     --total-header-offset: calc(var(--header-height) + var(--subnav-height) + var(--content-spacing));
 }
