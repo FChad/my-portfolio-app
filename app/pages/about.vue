@@ -514,7 +514,7 @@ const experiences = [
                 ]">
                     <!-- Timeline dot - Mobile left positioned, Desktop centered -->
                     <div :class="[
-                        'absolute w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 z-20 flex items-center justify-center',
+                        'absolute w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 z-20 flex items-center justify-center left-[2px]',
                         'md:left-1/2 md:transform md:-translate-x-1/2'
                     ]">
                         <div class="w-2 h-2 bg-gray-50 dark:bg-gray-900 rounded-full"></div>
