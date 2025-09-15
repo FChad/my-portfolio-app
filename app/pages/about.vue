@@ -265,11 +265,11 @@ const experiences = [
             <div
                 class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-500">
                 <div class="text-center">
-                    <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="flex items-center justify-center flex-col sm:flex-row gap-4 mb-6">
                         <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center shadow-md">
                             <Icon name="mdi:account-heart" class="w-10 h-10 text-white" />
                         </div>
-                        <div class="flex flex-col items-start">
+                        <div class="flex flex-col items-center sm:items-start">
                             <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
                             <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}</p>
                             <p class="text-gray-500 dark:text-gray-400">{{ $t('about.profile.currentWork') }}</p>

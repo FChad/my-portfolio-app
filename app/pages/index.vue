@@ -143,7 +143,7 @@ const scrollToAbout = () => {
                     <!-- Personal Story Card -->
                     <div
                         class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6 transition-all duration-500">
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center flex-col sm:flex-row gap-4">
                             <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
                                 <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
                             </div>
@@ -162,17 +162,17 @@ const scrollToAbout = () => {
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:heart" class="w-5 h-5 text-red-500" />
@@ -195,7 +195,7 @@ const scrollToAbout = () => {
                             <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                             </div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                            }}</div>
+                                }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.experienceDesc') }}</div>
                         </div>
@@ -227,7 +227,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                            }}</div>
+                                }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.languagesDesc') }}</div>
                         </div>
@@ -243,7 +243,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                            }}</div>
+                                }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.projectsDesc') }}</div>
                         </div>

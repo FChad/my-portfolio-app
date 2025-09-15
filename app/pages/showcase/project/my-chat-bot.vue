@@ -192,14 +192,14 @@ const technologies = [
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                     <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                     Live Demo
                     <Icon name="mdi:open-in-new" class="w-4 h-4" />
                 </a>
 
                 <a href="https://github.com/FChad/nuxt-ollama-chat" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl border border-blue-600 dark:border-blue-400">
+                    class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl border border-blue-600 dark:border-blue-400">
                     <Icon name="mdi:github" class="w-5 h-5" />
                     View Source
                     <Icon name="mdi:open-in-new" class="w-4 h-4" />
