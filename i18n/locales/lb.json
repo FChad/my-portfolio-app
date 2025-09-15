@@ -129,12 +129,19 @@
                 "nationality": "Nationalitéit",
                 "age": "Alter",
                 "status": "Status",
-                "license": "Führerschäin"
+                "license": "Führerschäin",
+                "years": "Joer al"
             }
         },
         "story": {
             "title": "Iwwer mech",
             "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
+        },
+        "details": {
+            "title": "Perséinlech Detailer"
+        },
+        "interests": {
+            "title": "Interessen & Hobbyen"
         },
         "passion": {
             "title": "Passioun fir Technologie",

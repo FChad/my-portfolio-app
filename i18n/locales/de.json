@@ -129,12 +129,19 @@
                 "nationality": "Nationalität",
                 "age": "Alter",
                 "status": "Status",
-                "license": "Führerschein"
+                "license": "Führerschein",
+                "years": "Jahre alt"
             }
         },
         "story": {
             "title": "Über mich",
             "intro": "Ich bin Chad Feierstein, Full-Stack Webentwickler und IT-Administrator mit Schwerpunkt auf Cloud Computing. Meine Leidenschaft liegt in der Entwicklung moderner Webanwendungen und der Serververwaltung. Mit meiner Ausbildung als IT-Techniker und einem Abschluss im Bereich Cloud Computing verbinde ich fundiertes Wissen mit praktischer Erfahrung, um effiziente und individuelle Lösungen umzusetzen."
+        },
+        "details": {
+            "title": "Persönliche Details"
+        },
+        "interests": {
+            "title": "Interessen & Hobbys"
         },
         "passion": {
             "title": "Leidenschaft für Technologie",

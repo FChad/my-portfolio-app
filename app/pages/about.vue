@@ -1,6 +1,22 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
+// Calculate age dynamically
+const calculateAge = (birthDate: string): number => {
+    const birth = new Date(birthDate)
+    const today = new Date()
+    let age = today.getFullYear() - birth.getFullYear()
+    const monthDiff = today.getMonth() - birth.getMonth()
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        age--
+    }
+
+    return age
+}
+
+const currentAge = calculateAge('1999-08-03')
+
 const languages = [
     { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
     { name: t('about.languageNames.german'), level: 'C1', flag: 'circle-flags:de' },
@@ -49,7 +65,7 @@ const certifications = [
 
 const education = [
     {
-        year: '2019-2021',
+        year: '2019 - 2021',
         degree: t('about.education.bts.degree'),
         field: t('about.education.bts.field'),
         school: t('about.education.bts.school'),
@@ -60,13 +76,13 @@ const education = [
         color: 'purple'
     },
     {
-        year: '2015-2019',
+        year: '2015 - 2019',
         degree: t('about.education.dap.degree'),
         field: t('about.education.dap.field'),
         school: t('about.education.dap.school'),
         grade: t('about.education.dap.grade'),
         link: 'https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap',
-        icon: 'mdi:laptop',
+        icon: 'mdi:school-outline',
         type: 'technical',
         color: 'indigo'
     }
@@ -191,123 +207,145 @@ const experiences = [
                 <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
                     {{ $t('about.hero.title') }}
                 </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    {{ $t('about.hero.subtitle') }}
+            </div>
+
+            <!-- Profile Introduction -->
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
+                        <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
+                        <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}</p>
+                        <p class="text-gray-500 dark:text-gray-400">{{ $t('about.profile.currentWork') }}</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                    {{ $t('about.story.intro') }}
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- Personal Details Section -->
     <section>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main About Card -->
-            <div class="max-w-5xl mx-auto">
-                <div class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
-                            <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
-                        </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}
-                            </p>
-                            <p class="text-gray-500 dark:text-gray-400">
-                                {{ $t('about.profile.currentWork') }}
-                            </p>
-                        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+                {{ $t('about.details.title') }}
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
                     </div>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                        {{ $t('about.story.intro') }}
-                    </p>
-
-                    <!-- Personal Details -->
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div class="group flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                    $t('about.profile.labels.location') }}</span>
-                                <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                    $t('about.profile.location') }}</span>
-                            </div>
-                        </div>
-
-                        <div class="group flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="mdi:flag" class="w-5 h-5 text-white" />
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                    $t('about.profile.labels.nationality') }}</span>
-                                <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                    $t('about.profile.nationality') }}</span>
-                            </div>
-                        </div>
-
-                        <div class="group flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                    $t('about.profile.labels.age') }}</span>
-                                <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                    $t('about.profile.age') }}</span>
-                            </div>
-                        </div>
-
-                        <div class="group flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="mdi:heart" class="w-5 h-5 text-white" />
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                    $t('about.profile.labels.status') }}</span>
-                                <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                    $t('about.profile.status') }}</span>
-                            </div>
-                        </div>
-
-                        <div class="group flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <Icon name="mdi:car" class="w-5 h-5 text-white" />
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-500 dark:text-gray-400">{{
-                                    $t('about.profile.labels.license') }}</span>
-                                <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                                    $t('about.profile.driving') }}</span>
-                            </div>
-                        </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                            $t('about.profile.labels.location') }}</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                            $t('about.profile.location') }}</span>
                     </div>
+                </div>
 
-                    <!-- Passion and Hobbies Cards -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div
-                            class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
-                            <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
-                                <Icon name="mdi:heart" class="w-6 h-6 text-red-500" />
-                                {{ $t('about.passion.title') }}
-                            </h4>
-                            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.passion.description') }}</p>
-                        </div>
+                <div
+                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon name="mdi:flag" class="w-5 h-5 text-white" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                            $t('about.profile.labels.nationality') }}</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                            $t('about.profile.nationality') }}</span>
+                    </div>
+                </div>
 
-                        <div
-                            class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
-                            <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
-                                <Icon name="mdi:puzzle" class="w-6 h-6 text-green-500" />
-                                {{ $t('about.hobbies.title') }}
-                            </h4>
-                            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.hobbies.description') }}</p>
+                <div
+                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                            $t('about.profile.labels.age') }}</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                            currentAge }} {{ $t('about.profile.labels.years') }}</span>
+                    </div>
+                </div>
+
+                <div
+                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon name="mdi:heart" class="w-5 h-5 text-white" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                            $t('about.profile.labels.status') }}</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                            $t('about.profile.status') }}</span>
+                    </div>
+                </div>
+
+                <div
+                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon name="mdi:car" class="w-5 h-5 text-white" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{{
+                            $t('about.profile.labels.license') }}</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
+                            $t('about.profile.driving') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests & Hobbies Section -->
+    <section>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+                {{ $t('about.interests.title') }}
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    <div class="flex flex-col gap-4 flex-1">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <Icon name="mdi:heart" class="w-6 h-6 text-white" />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{
+                                $t('about.passion.title') }}</h3>
                         </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                            $t('about.passion.description') }}</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    <div class="flex flex-col gap-4 flex-1">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <Icon name="mdi:puzzle" class="w-6 h-6 text-white" />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{
+                                $t('about.hobbies.title') }}</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                            $t('about.hobbies.description') }}</p>
                     </div>
                 </div>
             </div>
@@ -322,7 +360,7 @@ const experiences = [
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div v-for="lang in languages" :key="lang.name"
-                    class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+                    class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
                     <div class="flex flex-col gap-4">
                         <div class="flex items-center gap-3 relative">
                             <div class="relative">
@@ -332,7 +370,7 @@ const experiences = [
                                     <Icon name="mdi:check" class="w-3 h-3 text-white" />
                                 </div>
                             </div>
-                            <h3 class="font-bold">{{ lang.name }}</h3>
+                            <h3 class="text-lg font-bold">{{ lang.name }}</h3>
                         </div>
                         <div class="text-center flex flex-col gap-2">
                             <span
@@ -359,44 +397,42 @@ const experiences = [
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div v-for="(edu, index) in education" :key="edu.year"
-                    class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-
-                    <!-- Content -->
-                    <div class="flex flex-col h-full">
-                        <!-- Header with icon and year -->
-                        <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
+                    class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    <div class="flex flex-col gap-4 flex-1">
+                        <!-- Header with icon and title -->
+                        <div class="flex items-center gap-3">
                             <div
-                                class="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                                <Icon :name="edu.icon" class="w-5 h-5 text-white" />
+                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <Icon :name="edu.icon" class="w-6 h-6 text-white" />
                             </div>
-                            <div class="flex-1">
-                                <h3 class="font-bold text-lg">{{ edu.degree }}</h3>
-                                <p class="text-blue-600 dark:text-blue-400 font-medium">{{ edu.field }}</p>
-                            </div>
-                            <div class="flex-shrink-0">
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
-                                    {{ edu.year }}
-                                </span>
-                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ edu.degree }}</h3>
+                        </div>
+
+                        <!-- Field and year -->
+                        <div class="flex flex-col gap-2">
+                            <p class="text-blue-600 dark:text-blue-400 font-medium">{{ edu.field }}</p>
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium w-fit">
+                                {{ edu.year }}
+                            </span>
                         </div>
 
                         <!-- School and grade details -->
-                        <div class="flex-1 space-y-3 mb-6">
+                        <div class="flex flex-col gap-3">
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-gray-500" />
-                                <span class="text-gray-700 dark:text-gray-300">{{ edu.school }}</span>
+                                <span class="text-gray-600 dark:text-gray-300">{{ edu.school }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:trophy" class="w-5 h-5 text-gray-500" />
-                                <span class="text-gray-700 dark:text-gray-300">{{ edu.grade }}</span>
+                                <span class="text-gray-600 dark:text-gray-300">{{ edu.grade }}</span>
                             </div>
                         </div>
 
                         <!-- Link button -->
                         <div class="mt-auto ml-auto">
                             <a v-if="edu.link" :href="edu.link" target="_blank"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                                 <Icon name="mdi:open-in-new" class="w-4 h-4" />
                                 {{ $t('about.education.viewMore') }}
                             </a>
@@ -409,7 +445,7 @@ const experiences = [
 
     <!-- Work Experience Timeline Section -->
     <section>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
             <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
                 $t('about.work.title') }}</h2>
 
@@ -427,10 +463,10 @@ const experiences = [
                     ]">
                         <!-- Timeline dot - Mobile left positioned, Desktop centered -->
                         <div :class="[
-                            'absolute w-5 h-5 rounded-full bg-blue-600 dark:bg-blue-400 z-20 flex items-center justify-center',
+                            'absolute w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 z-20 flex items-center justify-center',
                             'md:left-1/2 md:transform md:-translate-x-1/2'
                         ]">
-                            <div class="w-3 h-3 bg-white dark:bg-gray-900 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-50 dark:bg-gray-900 rounded-full"></div>
                         </div>
 
                         <!-- Connection line from timeline to card - Desktop only -->
@@ -442,7 +478,7 @@ const experiences = [
 
                         <!-- Content card - Mobile full width with left margin, Desktop alternating -->
                         <div :class="[
-                            'p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300',
+                            'p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300',
                             'ml-8 w-full md:w-5/12 md:ml-0',
                             index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                         ]">
@@ -452,7 +488,7 @@ const experiences = [
                                     <div class="flex items-center gap-3">
                                         <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                         <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                        }}</span>
+                                            }}</span>
                                     </div>
                                     <span
                                         class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
@@ -462,7 +498,7 @@ const experiences = [
 
                                 <!-- Title and Company -->
                                 <div>
-                                    <h3 class="text-xl font-bold mb-1">{{ item.title }}</h3>
+                                    <h3 class="text-lg font-bold mb-1">{{ item.title }}</h3>
                                     <p v-if="item.company"
                                         class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
                                         <Icon name="mdi:office-building" class="w-4 h-4" />
@@ -512,9 +548,9 @@ const experiences = [
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
                 <div v-for="(cert, index) in certifications" :key="cert.title"
-                    class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
+                    class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2">
                     <!-- Gradient accent border -->
                     <div class="relative p-6 h-full flex flex-col">
                         <!-- Header with icon and year -->
@@ -535,7 +571,7 @@ const experiences = [
 
                         <!-- Title -->
                         <h3
-                            class="font-bold text-xl mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+                            class="font-bold text-lg mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
                             {{ cert.title }}
                         </h3>
 
@@ -557,11 +593,11 @@ const experiences = [
 
             <div class="grid md:grid-cols-3 gap-8">
                 <div v-for="experience in experiences" :key="experience.title"
-                    class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col gap-4">
+                    class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col gap-4">
                     <div class="w-16 h-16 mx-auto bg-blue-500 rounded-full flex items-center justify-center">
                         <Icon :name="experience.icon" class="w-8 h-8 text-white" />
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ experience.title }}</h3>
+                    <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ experience.title }}</h3>
                     <p class="text-gray-600 dark:text-gray-300">{{ experience.description }}</p>
                 </div>
             </div>

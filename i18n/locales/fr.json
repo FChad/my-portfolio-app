@@ -129,12 +129,19 @@
                 "nationality": "Nationalité",
                 "age": "Âge",
                 "status": "Statut",
-                "license": "Permis"
+                "license": "Permis",
+                "years": "ans"
             }
         },
         "story": {
             "title": "À Propos de Moi",
             "intro": "Je suis Chad Feierstein, développeur web Full-Stack et administrateur IT spécialisé dans le Cloud Computing. Ma passion réside dans le développement d'applications web modernes et la gestion de serveurs. Avec ma formation de technicien IT et un diplôme en Cloud Computing, je combine des connaissances solides avec une expérience pratique pour mettre en œuvre des solutions efficaces et personnalisées."
+        },
+        "details": {
+            "title": "Détails Personnels"
+        },
+        "interests": {
+            "title": "Intérêts & Loisirs"
         },
         "passion": {
             "title": "Passion pour la Technologie",
