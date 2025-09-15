@@ -196,12 +196,10 @@ watch(isSubmitted, (newVal) => {
 
     <!-- Contact Form Section -->
     <section id="contact-form" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
-            {{ $t('contact.form.title') }}
-        </h2>
-
-
-        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-md hover:shadow-lg transition-all duration-300">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
+                {{ $t('contact.form.title') }}
+            </h2>
             <!-- Success Message -->
             <div v-if="isSubmitted"
                 class="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
@@ -230,8 +228,7 @@ watch(isSubmitted, (newVal) => {
                             errors.name
                                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                 : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                        ]"
-                            class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                        ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                             :placeholder="$t('contact.form.namePlaceholder')" />
                         <p v-if="errors.name" class="text-sm text-red-600 dark:text-red-400">
                             {{ errors.name }}
@@ -248,8 +245,7 @@ watch(isSubmitted, (newVal) => {
                             errors.email
                                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                 : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                        ]"
-                            class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                        ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                             placeholder="your@email.com" />
                         <p v-if="errors.email" class="text-sm text-red-600 dark:text-red-400">
                             {{ errors.email }}
@@ -267,8 +263,7 @@ watch(isSubmitted, (newVal) => {
                         errors.subject
                             ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                             : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                    ]"
-                        class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                         :placeholder="$t('contact.form.subjectPlaceholder')" />
                     <p v-if="errors.subject" class="text-sm text-red-600 dark:text-red-400">
                         {{ errors.subject }}
@@ -285,8 +280,7 @@ watch(isSubmitted, (newVal) => {
                         errors.message
                             ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                             : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                    ]"
-                        class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                         :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
                     <p v-if="errors.message" class="text-sm text-red-600 dark:text-red-400">
                         {{ errors.message }}
