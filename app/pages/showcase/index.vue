@@ -106,7 +106,7 @@ const totalCount = computed(() => showcaseItems.length)
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-2 shadow-md w-full">
                 <div class="flex flex-col sm:flex-row gap-2">
                     <button @click="activeFilter = 'all'"
-                        :class="activeFilter === 'all' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                        :class="activeFilter === 'all' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
                         class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
                         <Icon name="mdi:view-grid" class="w-4 h-4" />
                         <span>{{ t('showcase.filters.all') }}</span>
@@ -116,7 +116,7 @@ const totalCount = computed(() => showcaseItems.length)
                         </span>
                     </button>
                     <button @click="activeFilter = 'project'"
-                        :class="activeFilter === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20'"
+                        :class="activeFilter === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'text-gray-600 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20'"
                         class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
                         <Icon name="mdi:code-braces" class="w-4 h-4" />
                         <span>{{ t('showcase.filters.projects') }}</span>
@@ -126,7 +126,7 @@ const totalCount = computed(() => showcaseItems.length)
                         </span>
                     </button>
                     <button @click="activeFilter = 'documentation'"
-                        :class="activeFilter === 'documentation' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20'"
+                        :class="activeFilter === 'documentation' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' : 'text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20'"
                         class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
                         <Icon name="mdi:file-document-outline" class="w-4 h-4" />
                         <span>{{ t('showcase.filters.documentation') }}</span>
