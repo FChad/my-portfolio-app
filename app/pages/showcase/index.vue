@@ -103,7 +103,7 @@ const totalCount = computed(() => showcaseItems.length)
 
         <!-- Filter Tabs -->
         <div class="flex justify-center">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl p-2 shadow-md">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-2 shadow-md w-full">
                 <div class="flex flex-col sm:flex-row gap-2">
                     <button @click="activeFilter = 'all'"
                         :class="activeFilter === 'all' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
