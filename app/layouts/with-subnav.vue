@@ -42,21 +42,4 @@ provide('setSubNav', (props: SubNavProps | null) => {
     --content-spacing: 40px;
     --total-header-offset: calc(var(--header-height) + var(--subnav-height) + var(--content-spacing));
 }
-
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-    @apply w-2;
-}
-
-::-webkit-scrollbar-track {
-    @apply bg-gray-100 dark:bg-gray-900;
-}
-
-::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 dark:bg-gray-700;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-500 dark:bg-gray-600;
-}
 </style>
