@@ -413,8 +413,8 @@ const experiences = [
                     <!-- Link button -->
                     <div class="mt-auto ml-auto">
                         <a v-if="edu.link" :href="edu.link" target="_blank"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                            <Icon name="mdi:open-in-new" class="w-4 h-4" />
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">
+                            <Icon name="mdi:open-in-new" class="w-5 h-5" />
                             {{ $t('about.education.viewMore') }}
                         </a>
                     </div>

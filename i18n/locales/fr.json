@@ -520,6 +520,9 @@
     "contact": {
         "title": "Contact",
         "subtitle": "Parlons de votre prochain projet",
+        "methods": {
+            "title": "Méthodes de Contact"
+        },
         "info": {
             "title": "Informations de Contact",
             "description": "J'aimerais avoir de vos nouvelles ! Que vous ayez des questions, que vous souhaitiez discuter d'un projet ou simplement dire bonjour - n'hésitez pas à me contacter."

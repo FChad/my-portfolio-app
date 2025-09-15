@@ -88,115 +88,108 @@ const totalCount = computed(() => showcaseItems.length)
 </script>
 
 <template>
-    <section class="relative min-h-[calc(100vh-65px)]">
-        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+        <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ t('showcase.title') }}
+        </h1>
 
-        <div class="relative flex flex-col gap-8 z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col gap-6 justify-center items-center">
-                <h1 class="text-5xl md:text-6xl font-black">
-                    <span class="uppercase block text-gray-700 dark:text-gray-300">
-                        {{ t('showcase.title') }}
-                    </span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    {{ t('showcase.subtitle') }}
-                </p>
+        <!-- Introduction -->
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                {{ t('showcase.subtitle') }}
+            </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex justify-center">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-2 shadow-md">
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <button @click="activeFilter = 'all'"
+                        :class="activeFilter === 'all' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                        class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                        <Icon name="mdi:view-grid" class="w-4 h-4" />
+                        <span>{{ t('showcase.filters.all') }}</span>
+                        <span class="px-2 py-1 text-xs rounded-full"
+                            :class="activeFilter === 'all' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                            {{ totalCount }}
+                        </span>
+                    </button>
+                    <button @click="activeFilter = 'project'"
+                        :class="activeFilter === 'project' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                        class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                        <Icon name="mdi:code-braces" class="w-4 h-4" />
+                        <span>{{ t('showcase.filters.projects') }}</span>
+                        <span class="px-2 py-1 text-xs rounded-full"
+                            :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                            {{ projectCount }}
+                        </span>
+                    </button>
+                    <button @click="activeFilter = 'documentation'"
+                        :class="activeFilter === 'documentation' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                        class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                        <Icon name="mdi:file-document-outline" class="w-4 h-4" />
+                        <span>{{ t('showcase.filters.documentation') }}</span>
+                        <span class="px-2 py-1 text-xs rounded-full"
+                            :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                            {{ documentationCount }}
+                        </span>
+                    </button>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="flex flex-col gap-8">
-
-                <!-- Mobile-Optimized Filter Tabs -->
-                <div class="flex justify-center px-4">
-                    <div
-                        class="w-full max-w-md sm:max-w-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-1 shadow-md">
-                        <!-- Mobile: Vertical Stack, Desktop: Horizontal -->
-                        <div class="flex flex-col sm:flex-row gap-1">
-                            <button @click="activeFilter = 'all'"
-                                :class="activeFilter === 'all' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                                class="w-full sm:flex-1 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
-                                <Icon name="mdi:view-grid" class="w-4 h-4 sm:hidden" />
-                                <span class="text-sm sm:text-base">{{ t('showcase.filters.all') }}</span>
-                                <span class="px-2 py-1 text-xs rounded-full ml-auto sm:ml-2"
-                                    :class="activeFilter === 'all' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
-                                    {{ totalCount }}
-                                </span>
-                            </button>
-                            <button @click="activeFilter = 'project'"
-                                :class="activeFilter === 'project' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                                class="w-full sm:flex-1 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
-                                <Icon name="mdi:code-braces" class="w-4 h-4 sm:hidden" />
-                                <span class="text-sm sm:text-base">{{ t('showcase.filters.projects') }}</span>
-                                <span class="px-2 py-1 text-xs rounded-full ml-auto sm:ml-2"
-                                    :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
-                                    {{ projectCount }}
-                                </span>
-                            </button>
-                            <button @click="activeFilter = 'documentation'"
-                                :class="activeFilter === 'documentation' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                                class="w-full sm:flex-1 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2">
-                                <Icon name="mdi:file-document-outline" class="w-4 h-4 sm:hidden" />
-                                <span class="text-sm sm:text-base">{{ t('showcase.filters.documentation') }}</span>
-                                <span class="px-2 py-1 text-xs rounded-full ml-auto sm:ml-2"
-                                    :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
-                                    {{ documentationCount }}
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+    <!-- Showcase Section -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+        <!-- Showcase Items Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <div v-for="item in filteredItems" :key="item.id"
+                class="group bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden flex flex-col">
+                <!-- Image -->
+                <div class="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+                    <img v-if="item.image" :src="item.image" :alt="t(item.title)"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
 
-                <!-- Showcase Items Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-                    <div v-for="item in filteredItems" :key="item.id"
-                        class="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform flex flex-col w-full hover:shadow-2xl">
-                        <!-- Image -->
-                        <div class="h-56 bg-gray-200 dark:bg-gray-900 relative overflow-hidden">
-                            <img v-if="item.image" :src="item.image" :alt="t(item.title)"
-                                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
-                        </div>
+                <!-- Content -->
+                <div class="p-6 flex flex-col gap-4 flex-1">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t(item.title) }}
+                        </h3>
+                        <span
+                            :class="item.type === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'"
+                            class="px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                            <Icon :name="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'"
+                                class="w-4 h-4" />
+                            {{ t(`showcase.filters.${item.type === 'project' ? 'projects' : 'documentation'}`) }}
+                        </span>
+                    </div>
 
-                        <!-- Content -->
-                        <div class="p-6 flex flex-col gap-4">
-                            <div class="flex-1 flex flex-col gap-4">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t(item.title) }}
-                                </h3>
-                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3">
-                                    {{ t(item.description) }}
-                                </p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed flex-1">
+                        {{ t(item.description) }}
+                    </p>
 
-                                <!-- Tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span v-for="tag in item.tags.slice(0, 3)" :key="tag"
-                                        class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">
-                                        {{ tag }}
-                                    </span>
-                                    <span v-if="item.tags.length > 3"
-                                        class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-xs">
-                                        +{{ item.tags.length - 3 }}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Action Button -->
-                        <div class="flex-1 flex justify-between items-end p-6 pt-0">
-                            <!-- Type Badge -->
-                            <span
-                                :class="item.type === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'"
-                                class="px-3 py-1 rounded-full text-sm font-medium capitalize">
-                                <Icon :name="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'"
-                                    class="w-4 h-4 inline mr-1" />
-                                {{ t(`showcase.filters.${item.type === 'project' ? 'projects' : 'documentation'}`)
-                                }}
-                            </span>
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        <span v-for="tag in item.tags.slice(0, 4)" :key="tag"
+                            class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                            {{ tag }}
+                        </span>
+                        <span v-if="item.tags.length > 4"
+                            class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-sm">
+                            +{{ item.tags.length - 4 }}
+                        </span>
+                    </div>
 
-                            <!-- Details Button -->
-                            <NuxtLink :to="item.link"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform">
-                                <Icon name="mdi:arrow-right" class="w-4 h-4" />
-                                {{ t('showcase.labels.viewDetails') }}
-                            </NuxtLink>
-                        </div>
+                    <!-- Action Button -->
+                    <div class="mt-auto ml-auto">
+                        <NuxtLink :to="item.link"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">
+                            <Icon name="mdi:open-in-new" class="w-5 h-5" />
+                            {{ t('showcase.labels.viewDetails') }}
+                        </NuxtLink>
                     </div>
                 </div>
             </div>

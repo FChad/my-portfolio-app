@@ -520,6 +520,9 @@
     "contact": {
         "title": "Contact",
         "subtitle": "Let's talk about your next project",
+        "methods": {
+            "title": "Contact Methods"
+        },
         "info": {
             "title": "Contact Information",
             "description": "I'd love to hear from you! Whether you have questions, want to discuss a project, or just want to say hello - don't hesitate to reach out."

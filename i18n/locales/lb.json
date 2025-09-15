@@ -545,6 +545,9 @@
     "contact": {
         "title": "Kontakt",
         "subtitle": "Loosst eis iwwer Äert nächst Projet schwätzen",
+        "methods": {
+            "title": "Kontaktméiglechkeeten"
+        },
         "info": {
             "title": "Kontakt Informatiounen",
             "description": "Ech freeën mech drop, vun Iech ze héieren! Ob Dir Froen hutt, iwwer e Projet schwätzen wëllt oder einfach nëmmen Hallo soen - zéckt net ze kontaktéieren."

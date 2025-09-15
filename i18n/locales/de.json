@@ -717,6 +717,9 @@
     "contact": {
         "title": "Kontakt",
         "subtitle": "Haben Sie Fragen oder Feedback? Ich bin hier, um zu helfen. Senden Sie mir eine Nachricht.",
+        "methods": {
+            "title": "Kontaktmöglichkeiten"
+        },
         "info": {
             "title": "Kontaktinformationen",
             "description": "Ich freue mich darauf, von Ihnen zu hören! Ob Sie Fragen haben, ein Projekt besprechen oder einfach nur Hallo sagen möchten - zögern Sie nicht, mich zu kontaktieren."

@@ -21,23 +21,38 @@ const contactMethods = [
         icon: 'mdi:linkedin',
         href: 'https://www.linkedin.com/in/chad-feierstein/',
         color: 'bg-[#0077B5] hover:bg-[#005885]',
-        description: 'Berufliches Netzwerk'
+        description: 'Berufliches Netzwerk',
+        isExternal: true
     },
     {
         title: 'GitHub',
         icon: 'mdi:github',
         href: 'https://github.com/FChad',
         color: 'bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600',
-        description: 'Code Repository'
+        description: 'Code Repository',
+        isExternal: true
     },
     {
         title: 'Email',
         icon: 'mdi:email',
-        href: 'mailto:contact@example.com',
+        href: '#contact-form',
         color: 'bg-red-500 hover:bg-red-600',
-        description: 'Direkte Kontaktaufnahme'
+        description: 'Direkte Kontaktaufnahme',
+        isExternal: false
     }
 ]
+
+// Scroll to contact form function
+const scrollToContactForm = () => {
+    const element = document.querySelector('#contact-form') as HTMLElement
+    if (element) {
+        const elementPosition = element.offsetTop - 65 - 10 // Account for navbar height and extra padding
+        window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+        })
+    }
+}
 
 // Form validation
 const validateForm = () => {
@@ -104,60 +119,97 @@ watch(isSubmitted, (newVal) => {
 </script>
 
 <template>
-    <section class="relative flex flex-col gap-12">
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center flex flex-col gap-6">
-                <h1 class="text-5xl md:text-6xl font-black">
-                    <span class="uppercase block text-gray-700 dark:text-gray-300">
-                        {{ $t('contact.title') }}
-                    </span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    {{ $t('contact.subtitle') }}
-                </p>
-            </div>
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+        <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ $t('contact.title') }}
+        </h1>
+
+        <!-- Introduction -->
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                {{ $t('contact.subtitle') }}
+            </p>
         </div>
+    </section>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <!-- Contact Methods Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div v-for="method in contactMethods" :key="method.title"
-                    class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                    <NuxtLink :to="method.href" external target="_blank" class="block p-6">
-                        <div class="relative flex flex-col items-center gap-4 text-center">
-                            <!-- Icon Container -->
-                            <div :class="[
-                                'w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3',
-                                method.color
-                            ]">
-                                <Icon :name="method.icon"
-                                    class="w-8 h-8 text-white transition-all duration-300 group-hover:scale-110" />
-                            </div>
+    <!-- Contact Methods Section -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ $t('contact.methods.title') || 'Kontaktmöglichkeiten' }}
+        </h2>
 
-                            <!-- Content -->
-                            <div class="flex flex-col gap-2">
-                                <h3
-                                    class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex items-center justify-center gap-2">
-                                    {{ method.title }}
-                                    <Icon name="mdi:external-link"
-                                        class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors duration-300" />
-                                </h3>
-                                <p
-                                    class="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-700 dark:group-hover:text-gray-300">
-                                    {{ method.description }}
-                                </p>
-                            </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div v-for="method in contactMethods" :key="method.title"
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
+
+                <!-- External links -->
+                <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
+                    <div class="flex flex-col items-center gap-4 text-center">
+                        <!-- Icon Container -->
+                        <div :class="[
+                            'w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg',
+                            method.color
+                        ]">
+                            <Icon :name="method.icon" class="w-8 h-8 text-white" />
                         </div>
-                    </NuxtLink>
-                </div>
+
+                        <!-- Content -->
+                        <div class="flex flex-col gap-2">
+                            <h3
+                                class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                                {{ method.title }}
+                                <Icon name="mdi:external-link"
+                                    class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors duration-300" />
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {{ method.description }}
+                            </p>
+                        </div>
+                    </div>
+                </NuxtLink>
+
+                <!-- Internal scroll action (Email) -->
+                <button v-else @click="scrollToContactForm" class="block w-full">
+                    <div class="flex flex-col items-center gap-4 text-center">
+                        <!-- Icon Container -->
+                        <div :class="[
+                            'w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg',
+                            method.color
+                        ]">
+                            <Icon :name="method.icon" class="w-8 h-8 text-white" />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex flex-col gap-2">
+                            <h3
+                                class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                                {{ method.title }}
+                                <Icon name="mdi:arrow-down"
+                                    class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors duration-300" />
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {{ method.description }}
+                            </p>
+                        </div>
+                    </div>
+                </button>
             </div>
         </div>
+    </section>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="bg-gray-50 dark:bg-gray-800 backdrop-blur-sm rounded-3xl shadow-2xl p-8 flex flex-col gap-8">
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ $t('contact.form.title') }}
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
                 <!-- Success Message -->
                 <div v-if="isSubmitted"
-                    class="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
+                    class="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
                     <div class="flex items-center gap-3">
                         <Icon name="mdi:check-circle" class="w-6 h-6 text-green-500" />
                         <p class="text-green-800 dark:text-green-200 font-medium">
@@ -166,9 +218,8 @@ watch(isSubmitted, (newVal) => {
                     </div>
                 </div>
 
-                <div class="text-center flex flex-col gap-4">
-                    <h2 class="text-3xl font-bold">{{ $t('contact.form.title') }}</h2>
-                    <p class="text-gray-600 dark:text-gray-300">{{ $t('contact.form.description') }}</p>
+                <div class="text-center mb-6">
+                    <p class="text-gray-600 dark:text-gray-300 text-lg">{{ $t('contact.form.description') }}</p>
                 </div>
 
                 <form @submit.prevent="submitForm" class="flex flex-col gap-6">
@@ -202,7 +253,7 @@ watch(isSubmitted, (newVal) => {
                                     ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                     : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
                             ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                                :placeholder="$t('contact.form.emailPlaceholder')" />
+                                placeholder="your@email.com" />
                             <p v-if="errors.email" class="text-sm text-red-600 dark:text-red-400">
                                 {{ errors.email }}
                             </p>
@@ -244,12 +295,12 @@ watch(isSubmitted, (newVal) => {
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="flex justify-end">
+                    <div class="flex justify-center">
                         <button type="submit" :disabled="isSubmitting" :class="[
                             'px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-3',
                             isSubmitting
                                 ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+                                : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl'
                         ]" class="text-white">
                             <Icon v-if="isSubmitting" name="mdi:refresh" class="w-5 h-5 animate-spin" />
                             <Icon v-else name="mdi:send" class="w-5 h-5" />
@@ -257,28 +308,6 @@ watch(isSubmitted, (newVal) => {
                         </button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-8">
-            <h2 class="text-4xl font-bold">{{ $t('contact.cta.title') }}</h2>
-            <p class="text-xl text-blue-100">
-                {{ $t('contact.cta.subtitle') }}
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <NuxtLinkLocale to="/showcase"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    {{ $t('contact.cta.showcase') }}
-                    <Icon name="mdi:eye" class="w-5 h-5" />
-                </NuxtLinkLocale>
-                <NuxtLinkLocale to="/about"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    {{ $t('contact.cta.about') }}
-                    <Icon name="mdi:account" class="w-5 h-5" />
-                </NuxtLinkLocale>
             </div>
         </div>
     </section>
