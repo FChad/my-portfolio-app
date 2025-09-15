@@ -17,6 +17,50 @@ const calculateAge = (birthDate: string): number => {
 
 const currentAge = calculateAge('1999-08-03')
 
+// Color mapping for consistent theming
+const colorMap = {
+    blue: {
+        bg: 'bg-blue-500',
+        bgLight: 'bg-blue-100 dark:bg-blue-900/30',
+        text: 'text-blue-800 dark:text-blue-300',
+        textAccent: 'text-blue-600 dark:text-blue-400',
+        hover: 'bg-blue-600 hover:bg-blue-700'
+    },
+    green: {
+        bg: 'bg-green-500',
+        bgLight: 'bg-green-100 dark:bg-green-900/30',
+        text: 'text-green-800 dark:text-green-300',
+        textAccent: 'text-green-600 dark:text-green-400',
+        hover: 'bg-green-600 hover:bg-green-700'
+    },
+    purple: {
+        bg: 'bg-purple-500',
+        bgLight: 'bg-purple-100 dark:bg-purple-900/30',
+        text: 'text-purple-800 dark:text-purple-300',
+        textAccent: 'text-purple-600 dark:text-purple-400',
+        hover: 'bg-purple-600 hover:bg-purple-700'
+    },
+    orange: {
+        bg: 'bg-orange-500',
+        bgLight: 'bg-orange-100 dark:bg-orange-900/30',
+        text: 'text-orange-800 dark:text-orange-300',
+        textAccent: 'text-orange-600 dark:text-orange-400',
+        hover: 'bg-orange-600 hover:bg-orange-700'
+    },
+    red: {
+        bg: 'bg-red-500',
+        bgLight: 'bg-red-100 dark:bg-red-900/30',
+        text: 'text-red-800 dark:text-red-300',
+        textAccent: 'text-red-600 dark:text-red-400',
+        hover: 'bg-red-600 hover:bg-red-700'
+    }
+} as const
+
+// Helper function to get color classes
+const getColorClasses = (color: string) => {
+    return (colorMap as any)[color] || colorMap.blue
+}
+
 const languages = [
     { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
     { name: t('about.languageNames.german'), level: 'C1', flag: 'circle-flags:de' },
@@ -29,43 +73,49 @@ const certifications = [
         title: t('about.certificationsList.cert1.title'),
         year: '2023',
         description: t('about.certificationsList.cert1.description'),
-        icon: 'mdi:school'
+        icon: 'mdi:school',
+        color: 'blue'
     },
     {
         title: t('about.certificationsList.cert2.title'),
         year: '2021',
         description: t('about.certificationsList.cert2.description'),
-        icon: 'mdi:shield-check'
+        icon: 'mdi:shield-check',
+        color: 'green'
     },
     {
         title: t('about.certificationsList.cert3.title'),
         year: '2021',
         description: t('about.certificationsList.cert3.description'),
-        icon: 'mdi:lan'
+        icon: 'mdi:lan',
+        color: 'purple'
     },
     {
         title: t('about.certificationsList.cert4.title'),
         year: '2020',
         description: t('about.certificationsList.cert4.description'),
-        icon: 'mdi:lan'
+        icon: 'mdi:lan',
+        color: 'orange'
     },
     {
         title: t('about.certificationsList.cert5.title'),
         year: '2020',
         description: t('about.certificationsList.cert5.description'),
-        icon: 'mdi:lan'
+        icon: 'mdi:lan',
+        color: 'red'
     },
     {
         title: t('about.certificationsList.cert6.title'),
         year: '2020',
         description: t('about.certificationsList.cert6.description'),
-        icon: 'mdi:file-document'
+        icon: 'mdi:file-document',
+        color: 'blue'
     }
 ]
 
 const education = [
     {
-        year: '2019 - 2021',
+        year: '2021',
         degree: t('about.education.bts.degree'),
         field: t('about.education.bts.field'),
         school: t('about.education.bts.school'),
@@ -76,7 +126,7 @@ const education = [
         color: 'purple'
     },
     {
-        year: '2015 - 2019',
+        year: '2019',
         degree: t('about.education.dap.degree'),
         field: t('about.education.dap.field'),
         school: t('about.education.dap.school'),
@@ -84,7 +134,7 @@ const education = [
         link: 'https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap',
         icon: 'mdi:school-outline',
         type: 'technical',
-        color: 'indigo'
+        color: 'orange'
     }
 ]
 
@@ -184,24 +234,27 @@ const experiences = [
     {
         title: t('about.experiencesList.exp1.title'),
         description: t('about.experiencesList.exp1.description'),
-        icon: 'mdi:send'
+        icon: 'mdi:send',
+        color: 'blue'
     },
     {
         title: t('about.experiencesList.exp2.title'),
         description: t('about.experiencesList.exp2.description'),
-        icon: 'mdi:arrow-down-circle'
+        icon: 'mdi:arrow-down-circle',
+        color: 'green'
     },
     {
         title: t('about.experiencesList.exp3.title'),
         description: t('about.experiencesList.exp3.description'),
-        icon: 'mdi:music-note'
+        icon: 'mdi:music-note',
+        color: 'purple'
     }
 ]
 </script>
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.hero.title') }}
         </h1>
@@ -225,7 +278,7 @@ const experiences = [
     </section>
 
     <!-- Personal Details Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.details.title') }}
         </h2>
@@ -304,7 +357,7 @@ const experiences = [
     </section>
 
     <!-- Interests & Hobbies Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.interests.title') }}
         </h2>
@@ -339,7 +392,7 @@ const experiences = [
     </section>
 
     <!-- Languages Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.languages.title') }}</h2>
 
@@ -370,7 +423,7 @@ const experiences = [
     </section>
 
     <!-- Education Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.education.title') }}</h2>
 
@@ -381,21 +434,29 @@ const experiences = [
                     <!-- Header with icon and title, year on right -->
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="flex items-center flex-col md:flex-row gap-3">
-                            <div
-                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <div :class="[
+                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                                getColorClasses(edu.color).bg
+                            ]">
                                 <Icon :name="edu.icon" class="w-6 h-6 text-white" />
                             </div>
                             <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ edu.degree }}</h3>
                         </div>
-                        <span
-                            class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                        <span :class="[
+                            'px-3 py-1 text-sm rounded-full font-medium',
+                            getColorClasses(edu.color).bgLight,
+                            getColorClasses(edu.color).text
+                        ]">
                             {{ edu.year }}
                         </span>
                     </div>
 
                     <!-- Field -->
                     <div class="flex flex-col gap-2">
-                        <p class="text-blue-600 dark:text-blue-400 font-medium">{{ edu.field }}</p>
+                        <p :class="[
+                            'font-medium',
+                            getColorClasses(edu.color).textAccent
+                        ]">{{ edu.field }}</p>
                     </div>
 
                     <!-- School and grade details -->
@@ -410,10 +471,11 @@ const experiences = [
                         </div>
                     </div>
 
-                    <!-- Link button -->
                     <div class="mt-auto ml-auto">
-                        <a v-if="edu.link" :href="edu.link" target="_blank"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">
+                        <a v-if="edu.link" :href="edu.link" target="_blank" :class="[
+                            'inline-flex items-center gap-2 px-4 py-2 text-white rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg',
+                            getColorClasses(edu.color).hover
+                        ]">
                             <Icon name="mdi:open-in-new" class="w-5 h-5" />
                             {{ $t('about.education.viewMore') }}
                         </a>
@@ -424,7 +486,7 @@ const experiences = [
     </section>
 
     <!-- Work Experience Timeline Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.work.title') }}</h2>
 
@@ -467,7 +529,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
@@ -515,7 +577,7 @@ const experiences = [
     </section>
 
     <!-- Certifications Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <div class="text-center">
             <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{
                 $t('about.certifications.title') }}</h2>
@@ -528,17 +590,21 @@ const experiences = [
             <div v-for="(cert, index) in certifications" :key="cert.title"
                 class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
                 <div class="flex flex-col gap-4 flex-1">
-                    <!-- Header with icon and title, year on right -->
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="flex items-center flex-col md:flex-row gap-3">
-                            <div
-                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <div :class="[
+                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                                getColorClasses(cert.color).bg
+                            ]">
                                 <Icon :name="cert.icon" class="w-6 h-6 text-white" />
                             </div>
                             <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ cert.title }}</h3>
                         </div>
-                        <span
-                            class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                        <span :class="[
+                            'px-3 py-1 text-sm rounded-full font-medium',
+                            getColorClasses(cert.color).bgLight,
+                            getColorClasses(cert.color).text
+                        ]">
                             {{ cert.year }}
                         </span>
                     </div>
@@ -553,14 +619,17 @@ const experiences = [
     </section>
 
     <!-- Special Experiences Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.experiences.title') }}</h2>
 
         <div class="grid md:grid-cols-3 gap-8">
             <div v-for="experience in experiences" :key="experience.title"
                 class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col gap-4">
-                <div class="w-16 h-16 mx-auto bg-blue-500 rounded-full flex items-center justify-center">
+                <div :class="[
+                    'w-16 h-16 mx-auto rounded-full flex items-center justify-center',
+                    getColorClasses(experience.color).bg
+                ]">
                     <Icon :name="experience.icon" class="w-8 h-8 text-white" />
                 </div>
                 <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ experience.title }}</h3>
