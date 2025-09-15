@@ -366,7 +366,7 @@ const experiences = [
             <div
                 class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <div class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md">
                         <Icon name="mdi:heart" class="w-6 h-6 text-white" />
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{
@@ -379,7 +379,7 @@ const experiences = [
             <div
                 class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md">
                         <Icon name="mdi:puzzle" class="w-6 h-6 text-white" />
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{
@@ -403,7 +403,7 @@ const experiences = [
                     <div class="relative">
                         <Icon :name="lang.flag" class="w-8 h-8" />
                         <div v-if="lang.native"
-                            class="absolute -top-1 -right-1 w-4 h-4 bg-green-600 rounded-full flex items-center justify-center shadow-lg">
+                            class="absolute -top-1 -right-1 w-4 h-4 bg-green-600 rounded-full flex items-center justify-center shadow-md">
                             <Icon name="mdi:check" class="w-3 h-3 text-white" />
                         </div>
                     </div>
@@ -435,7 +435,7 @@ const experiences = [
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="flex items-center flex-col md:flex-row gap-3">
                             <div :class="[
-                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300',
                                 getColorClasses(edu.color).bg
                             ]">
                                 <Icon :name="edu.icon" class="w-6 h-6 text-white" />
@@ -529,7 +529,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
@@ -593,7 +593,7 @@ const experiences = [
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="flex items-center flex-col md:flex-row gap-3">
                             <div :class="[
-                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300',
                                 getColorClasses(cert.color).bg
                             ]">
                                 <Icon :name="cert.icon" class="w-6 h-6 text-white" />
@@ -648,7 +648,7 @@ const experiences = [
             </p>
             <div class="flex justify-center">
                 <NuxtLinkLocale to="/contact"
-                    class="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl w-fit">
+                    class="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg w-fit">
                     {{ $t('about.cta.button') }}
                     <Icon name="mdi:arrow-right" class="w-5 h-5" />
                 </NuxtLinkLocale>
