@@ -399,22 +399,24 @@ const experiences = [
                 <div v-for="(edu, index) in education" :key="edu.year"
                     class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
                     <div class="flex flex-col gap-4 flex-1">
-                        <!-- Header with icon and title -->
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                <Icon :name="edu.icon" class="w-6 h-6 text-white" />
+                        <!-- Header with icon and title, year on right -->
+                        <div class="flex items-center justify-between flex-col lg:flex-row">
+                            <div class="flex items-center flex-col md:flex-row gap-3">
+                                <div
+                                    class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <Icon :name="edu.icon" class="w-6 h-6 text-white" />
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ edu.degree }}</h3>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ edu.degree }}</h3>
-                        </div>
-
-                        <!-- Field and year -->
-                        <div class="flex flex-col gap-2">
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">{{ edu.field }}</p>
                             <span
-                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium w-fit">
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
                                 {{ edu.year }}
                             </span>
+                        </div>
+
+                        <!-- Field -->
+                        <div class="flex flex-col gap-2">
+                            <p class="text-blue-600 dark:text-blue-400 font-medium">{{ edu.field }}</p>
                         </div>
 
                         <!-- School and grade details -->
@@ -548,37 +550,29 @@ const experiences = [
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 gap-8">
                 <div v-for="(cert, index) in certifications" :key="cert.title"
-                    class="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2">
-                    <!-- Gradient accent border -->
-                    <div class="relative p-6 h-full flex flex-col">
-                        <!-- Header with icon and year -->
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center gap-3">
+                    class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    <div class="flex flex-col gap-4 flex-1">
+                        <!-- Header with icon and title, year on right -->
+                        <div class="flex items-center justify-between flex-col lg:flex-row">
+                            <div class="flex items-center flex-col md:flex-row gap-3">
                                 <div
-                                    class="w-10 h-10 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 bg-gradient-to-br from-blue-500 to-blue-600">
-                                    <Icon :name="cert.icon" class="w-5 h-5 text-white drop-shadow-sm" />
+                                    class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <Icon :name="cert.icon" class="w-6 h-6 text-white" />
                                 </div>
+                                <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ cert.title }}</h3>
                             </div>
-                            <div class="text-right">
-                                <span
-                                    class="px-3 py-1.5 text-xs font-bold rounded-full shadow-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
-                                    {{ cert.year }}
-                                </span>
-                            </div>
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                                {{ cert.year }}
+                            </span>
                         </div>
 
-                        <!-- Title -->
-                        <h3
-                            class="font-bold text-lg mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
-                            {{ cert.title }}
-                        </h3>
-
                         <!-- Description -->
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">
-                            {{ cert.description }}
-                        </p>
+                        <div class="flex flex-col gap-3">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ cert.description }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
