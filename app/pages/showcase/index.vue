@@ -116,22 +116,22 @@ const totalCount = computed(() => showcaseItems.length)
                         </span>
                     </button>
                     <button @click="activeFilter = 'project'"
-                        :class="activeFilter === 'project' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                        :class="activeFilter === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20'"
                         class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
                         <Icon name="mdi:code-braces" class="w-4 h-4" />
                         <span>{{ t('showcase.filters.projects') }}</span>
                         <span class="px-2 py-1 text-xs rounded-full"
-                            :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                            :class="activeFilter === 'project' ? 'bg-green-200/50 dark:bg-green-800/50' : 'bg-gray-200 dark:bg-gray-700'">
                             {{ projectCount }}
                         </span>
                     </button>
                     <button @click="activeFilter = 'documentation'"
-                        :class="activeFilter === 'documentation' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                        :class="activeFilter === 'documentation' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 shadow-md' : 'text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20'"
                         class="flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
                         <Icon name="mdi:file-document-outline" class="w-4 h-4" />
                         <span>{{ t('showcase.filters.documentation') }}</span>
                         <span class="px-2 py-1 text-xs rounded-full"
-                            :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                            :class="activeFilter === 'documentation' ? 'bg-amber-200/50 dark:bg-amber-800/50' : 'bg-gray-200 dark:bg-gray-700'">
                             {{ documentationCount }}
                         </span>
                     </button>
@@ -147,9 +147,9 @@ const totalCount = computed(() => showcaseItems.length)
             <div v-for="item in filteredItems" :key="item.id"
                 class="group bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden flex flex-col">
                 <!-- Image -->
-                <div class="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+                <div class="h-48 bg-gray-100 dark:bg-gray-900/50 relative overflow-hidden">
                     <img v-if="item.image" :src="item.image" :alt="t(item.title)"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        class="w-full h-full object-cover transition-transform duration-500" />
                 </div>
 
                 <!-- Content -->

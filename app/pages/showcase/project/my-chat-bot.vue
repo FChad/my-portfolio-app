@@ -120,7 +120,7 @@ const technologies = [
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('showcase.projects.myChatBot.title') }}
         </h1>
@@ -160,12 +160,12 @@ const technologies = [
     </section>
 
     <!-- Key Features Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('projects.myChatBot.keyFeatures.title') }}
         </h2>
 
-        <div class="max-w-4xl mx-auto text-center mb-8">
+        <div class="max-w-4xl mx-auto text-center">
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                 {{ t('projects.myChatBot.keyFeatures.subtitle') }}
             </p>
@@ -191,12 +191,12 @@ const technologies = [
     </section>
 
     <!-- Technologies Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('projects.myChatBot.builtWith.title') }}
         </h2>
 
-        <div class="max-w-4xl mx-auto text-center mb-8">
+        <div class="max-w-4xl mx-auto text-center">
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                 {{ t('projects.myChatBot.builtWith.subtitle') }}
             </p>
@@ -219,7 +219,7 @@ const technologies = [
     </section>
 
     <!-- CTA Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('projects.myChatBot.callToAction.title') }}
         </h2>
