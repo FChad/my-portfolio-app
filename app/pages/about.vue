@@ -201,7 +201,7 @@ const experiences = [
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.hero.title') }}
         </h1>
@@ -467,7 +467,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
