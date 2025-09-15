@@ -260,20 +260,30 @@ const experiences = [
         </h1>
 
         <!-- Profile Introduction -->
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="flex items-center justify-center gap-4 mb-6">
-                <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
-                    <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
-                </div>
-                <div class="flex flex-col items-start">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
-                    <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}</p>
-                    <p class="text-gray-500 dark:text-gray-400">{{ $t('about.profile.currentWork') }}</p>
+        <div class="max-w-4xl mx-auto">
+            <!-- About Me Card - Header + Story -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-500">
+                <div class="text-center">
+                    <div class="flex items-center justify-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center shadow-md">
+                            <Icon name="mdi:account-heart" class="w-10 h-10 text-white" />
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
+                            <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}</p>
+                            <p class="text-gray-500 dark:text-gray-400">{{ $t('about.profile.currentWork') }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Story Text -->
+                    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-600">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                            {{ $t('about.story.intro') }}
+                        </p>
+                    </div>
                 </div>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                {{ $t('about.story.intro') }}
-            </p>
         </div>
     </section>
 
@@ -529,7 +539,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
