@@ -17,42 +17,92 @@ onMounted(() => {
     })
 })
 
+// Color mapping for consistent theming
+const colorMap = {
+    blue: {
+        bg: 'bg-blue-500',
+        bgLight: 'bg-blue-100 dark:bg-blue-900/30',
+        text: 'text-blue-800 dark:text-blue-300',
+        textAccent: 'text-blue-600 dark:text-blue-400',
+        hover: 'bg-blue-600 hover:bg-blue-700'
+    },
+    green: {
+        bg: 'bg-green-500',
+        bgLight: 'bg-green-100 dark:bg-green-900/30',
+        text: 'text-green-800 dark:text-green-300',
+        textAccent: 'text-green-600 dark:text-green-400',
+        hover: 'bg-green-600 hover:bg-green-700'
+    },
+    purple: {
+        bg: 'bg-purple-500',
+        bgLight: 'bg-purple-100 dark:bg-purple-900/30',
+        text: 'text-purple-800 dark:text-purple-300',
+        textAccent: 'text-purple-600 dark:text-purple-400',
+        hover: 'bg-purple-600 hover:bg-purple-700'
+    },
+    orange: {
+        bg: 'bg-orange-500',
+        bgLight: 'bg-orange-100 dark:bg-orange-900/30',
+        text: 'text-orange-800 dark:text-orange-300',
+        textAccent: 'text-orange-600 dark:text-orange-400',
+        hover: 'bg-orange-600 hover:bg-orange-700'
+    },
+    red: {
+        bg: 'bg-red-500',
+        bgLight: 'bg-red-100 dark:bg-red-900/30',
+        text: 'text-red-800 dark:text-red-300',
+        textAccent: 'text-red-600 dark:text-red-400',
+        hover: 'bg-red-600 hover:bg-red-700'
+    }
+} as const
+
+// Helper function to get color classes
+const getColorClasses = (color: string) => {
+    return (colorMap as any)[color] || colorMap.blue
+}
+
 const keyFeatures = [
     {
         id: 'multilingual',
         title: 'projects.myPortfolio.features.multilingual.title',
         description: 'projects.myPortfolio.features.multilingual.description',
-        icon: 'mdi:web'
+        icon: 'mdi:web',
+        color: 'blue'
     },
     {
         id: 'responsive',
         title: 'projects.myPortfolio.features.responsive.title',
         description: 'projects.myPortfolio.features.responsive.description',
-        icon: 'mdi:responsive'
+        icon: 'mdi:responsive',
+        color: 'green'
     },
     {
         id: 'darkMode',
         title: 'projects.myPortfolio.features.darkMode.title',
         description: 'projects.myPortfolio.features.darkMode.description',
-        icon: 'mdi:theme-light-dark'
+        icon: 'mdi:theme-light-dark',
+        color: 'purple'
     },
     {
         id: 'performance',
         title: 'projects.myPortfolio.features.performance.title',
         description: 'projects.myPortfolio.features.performance.description',
-        icon: 'mdi:lightning-bolt'
+        icon: 'mdi:lightning-bolt',
+        color: 'orange'
     },
     {
         id: 'seo',
         title: 'projects.myPortfolio.features.seo.title',
         description: 'projects.myPortfolio.features.seo.description',
-        icon: 'mdi:magnify'
+        icon: 'mdi:magnify',
+        color: 'red'
     },
     {
         id: 'contact',
         title: 'projects.myPortfolio.features.contact.title',
         description: 'projects.myPortfolio.features.contact.description',
-        icon: 'mdi:email-outline'
+        icon: 'mdi:email-outline',
+        color: 'blue'
     }
 ];
 
@@ -62,56 +112,64 @@ const technologies = [
         name: 'projects.myPortfolio.technologies.nuxt3.name',
         tech: 'projects.myPortfolio.technologies.nuxt3.tech',
         icon: 'mdi:nuxt',
-        description: 'projects.myPortfolio.technologies.nuxt3.description'
+        description: 'projects.myPortfolio.technologies.nuxt3.description',
+        color: 'green'
     },
     {
         id: 'vue3',
         name: 'projects.myPortfolio.technologies.vue3.name',
         tech: 'projects.myPortfolio.technologies.vue3.tech',
         icon: 'mdi:vuejs',
-        description: 'projects.myPortfolio.technologies.vue3.description'
+        description: 'projects.myPortfolio.technologies.vue3.description',
+        color: 'green'
     },
     {
         id: 'typescript',
         name: 'projects.myPortfolio.technologies.typescript.name',
         tech: 'projects.myPortfolio.technologies.typescript.tech',
         icon: 'mdi:language-typescript',
-        description: 'projects.myPortfolio.technologies.typescript.description'
+        description: 'projects.myPortfolio.technologies.typescript.description',
+        color: 'blue'
     },
     {
         id: 'tailwind',
         name: 'projects.myPortfolio.technologies.tailwind.name',
         tech: 'projects.myPortfolio.technologies.tailwind.tech',
         icon: 'mdi:tailwind',
-        description: 'projects.myPortfolio.technologies.tailwind.description'
+        description: 'projects.myPortfolio.technologies.tailwind.description',
+        color: 'blue'
     },
     {
         id: 'i18n',
         name: 'projects.myPortfolio.technologies.i18n.name',
         tech: 'projects.myPortfolio.technologies.i18n.tech',
         icon: 'mdi:translate',
-        description: 'projects.myPortfolio.technologies.i18n.description'
+        description: 'projects.myPortfolio.technologies.i18n.description',
+        color: 'purple'
     },
     {
         id: 'veevalidate',
         name: 'projects.myPortfolio.technologies.veevalidate.name',
         tech: 'projects.myPortfolio.technologies.veevalidate.tech',
         icon: 'mdi:check-circle',
-        description: 'projects.myPortfolio.technologies.veevalidate.description'
+        description: 'projects.myPortfolio.technologies.veevalidate.description',
+        color: 'green'
     },
     {
         id: 'resend',
         name: 'projects.myPortfolio.technologies.resend.name',
         tech: 'projects.myPortfolio.technologies.resend.tech',
         icon: 'mdi:email-send',
-        description: 'projects.myPortfolio.technologies.resend.description'
+        description: 'projects.myPortfolio.technologies.resend.description',
+        color: 'orange'
     },
     {
         id: 'iconify',
         name: 'projects.myPortfolio.technologies.iconify.name',
         tech: 'projects.myPortfolio.technologies.iconify.tech',
         icon: 'mdi:emoticon-outline',
-        description: 'projects.myPortfolio.technologies.iconify.description'
+        description: 'projects.myPortfolio.technologies.iconify.description',
+        color: 'red'
     }
 ];
 
@@ -175,8 +233,10 @@ const technologies = [
             <div v-for="feature in keyFeatures" :key="feature.id"
                 class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
                 <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div :class="[
+                        'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                        getColorClasses(feature.color).bg
+                    ]">
                         <Icon :name="feature.icon" class="w-6 h-6 text-white" />
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 dark:text-white">
@@ -206,8 +266,10 @@ const technologies = [
             <div v-for="tech in technologies" :key="tech.id"
                 class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                 <div class="flex items-center gap-3 mb-3">
-                    <div
-                        class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                    <div :class="[
+                        'w-8 h-8 rounded-lg flex items-center justify-center',
+                        getColorClasses(tech.color).bg
+                    ]">
                         <Icon :name="tech.icon" class="w-4 h-4 text-white" />
                     </div>
                     <span class="text-sm text-gray-500 dark:text-gray-400">{{ t(tech.name) }}</span>

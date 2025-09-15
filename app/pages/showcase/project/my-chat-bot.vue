@@ -17,42 +17,92 @@ onMounted(() => {
     })
 })
 
+// Color mapping for consistent theming
+const colorMap = {
+    blue: {
+        bg: 'bg-blue-500',
+        bgLight: 'bg-blue-100 dark:bg-blue-900/30',
+        text: 'text-blue-800 dark:text-blue-300',
+        textAccent: 'text-blue-600 dark:text-blue-400',
+        hover: 'bg-blue-600 hover:bg-blue-700'
+    },
+    green: {
+        bg: 'bg-green-500',
+        bgLight: 'bg-green-100 dark:bg-green-900/30',
+        text: 'text-green-800 dark:text-green-300',
+        textAccent: 'text-green-600 dark:text-green-400',
+        hover: 'bg-green-600 hover:bg-green-700'
+    },
+    purple: {
+        bg: 'bg-purple-500',
+        bgLight: 'bg-purple-100 dark:bg-purple-900/30',
+        text: 'text-purple-800 dark:text-purple-300',
+        textAccent: 'text-purple-600 dark:text-purple-400',
+        hover: 'bg-purple-600 hover:bg-purple-700'
+    },
+    orange: {
+        bg: 'bg-orange-500',
+        bgLight: 'bg-orange-100 dark:bg-orange-900/30',
+        text: 'text-orange-800 dark:text-orange-300',
+        textAccent: 'text-orange-600 dark:text-orange-400',
+        hover: 'bg-orange-600 hover:bg-orange-700'
+    },
+    red: {
+        bg: 'bg-red-500',
+        bgLight: 'bg-red-100 dark:bg-red-900/30',
+        text: 'text-red-800 dark:text-red-300',
+        textAccent: 'text-red-600 dark:text-red-400',
+        hover: 'bg-red-600 hover:bg-red-700'
+    }
+} as const
+
+// Helper function to get color classes
+const getColorClasses = (color: string) => {
+    return (colorMap as any)[color] || colorMap.blue
+}
+
 const keyFeatures = [
     {
         id: 'aiChat',
         title: 'projects.myChatBot.features.aiChat.title',
         description: 'projects.myChatBot.features.aiChat.description',
-        icon: 'mdi:robot'
+        icon: 'mdi:robot',
+        color: 'blue'
     },
     {
         id: 'conversationManagement',
         title: 'projects.myChatBot.features.conversationManagement.title',
         description: 'projects.myChatBot.features.conversationManagement.description',
-        icon: 'mdi:chat-processing'
+        icon: 'mdi:chat-processing',
+        color: 'green'
     },
     {
         id: 'modelSelection',
         title: 'projects.myChatBot.features.modelSelection.title',
         description: 'projects.myChatBot.features.modelSelection.description',
-        icon: 'mdi:brain'
+        icon: 'mdi:brain',
+        color: 'purple'
     },
     {
         id: 'streaming',
         title: 'projects.myChatBot.features.streaming.title',
         description: 'projects.myChatBot.features.streaming.description',
-        icon: 'mdi:lightning-bolt'
+        icon: 'mdi:lightning-bolt',
+        color: 'orange'
     },
     {
         id: 'localStorage',
         title: 'projects.myChatBot.features.localStorage.title',
         description: 'projects.myChatBot.features.localStorage.description',
-        icon: 'mdi:content-save'
+        icon: 'mdi:content-save',
+        color: 'red'
     },
     {
         id: 'modernUI',
         title: 'projects.myChatBot.features.modernUI.title',
         description: 'projects.myChatBot.features.modernUI.description',
-        icon: 'mdi:palette'
+        icon: 'mdi:palette',
+        color: 'blue'
     }
 ];
 
@@ -62,56 +112,64 @@ const technologies = [
         name: 'projects.myChatBot.technologies.nuxt3.name',
         tech: 'projects.myChatBot.technologies.nuxt3.tech',
         icon: 'mdi:nuxt',
-        description: 'projects.myChatBot.technologies.nuxt3.description'
+        description: 'projects.myChatBot.technologies.nuxt3.description',
+        color: 'green'
     },
     {
         id: 'vue3',
         name: 'projects.myChatBot.technologies.vue3.name',
         tech: 'projects.myChatBot.technologies.vue3.tech',
         icon: 'mdi:vuejs',
-        description: 'projects.myChatBot.technologies.vue3.description'
+        description: 'projects.myChatBot.technologies.vue3.description',
+        color: 'green'
     },
     {
         id: 'typescript',
         name: 'projects.myChatBot.technologies.typescript.name',
         tech: 'projects.myChatBot.technologies.typescript.tech',
         icon: 'mdi:language-typescript',
-        description: 'projects.myChatBot.technologies.typescript.description'
+        description: 'projects.myChatBot.technologies.typescript.description',
+        color: 'blue'
     },
     {
         id: 'pinia',
         name: 'projects.myChatBot.technologies.pinia.name',
         tech: 'projects.myChatBot.technologies.pinia.tech',
         icon: 'mdi:database',
-        description: 'projects.myChatBot.technologies.pinia.description'
+        description: 'projects.myChatBot.technologies.pinia.description',
+        color: 'purple'
     },
     {
         id: 'tailwind',
         name: 'projects.myChatBot.technologies.tailwind.name',
         tech: 'projects.myChatBot.technologies.tailwind.tech',
         icon: 'mdi:tailwind',
-        description: 'projects.myChatBot.technologies.tailwind.description'
+        description: 'projects.myChatBot.technologies.tailwind.description',
+        color: 'blue'
     },
     {
         id: 'ollama',
         name: 'projects.myChatBot.technologies.ollama.name',
         tech: 'projects.myChatBot.technologies.ollama.tech',
         icon: 'mdi:robot',
-        description: 'projects.myChatBot.technologies.ollama.description'
+        description: 'projects.myChatBot.technologies.ollama.description',
+        color: 'orange'
     },
     {
         id: 'highlight',
         name: 'projects.myChatBot.technologies.highlight.name',
         tech: 'projects.myChatBot.technologies.highlight.tech',
         icon: 'mdi:code-tags',
-        description: 'projects.myChatBot.technologies.highlight.description'
+        description: 'projects.myChatBot.technologies.highlight.description',
+        color: 'red'
     },
     {
         id: 'marked',
         name: 'projects.myChatBot.technologies.marked.name',
         tech: 'projects.myChatBot.technologies.marked.tech',
         icon: 'mdi:language-markdown',
-        description: 'projects.myChatBot.technologies.marked.description'
+        description: 'projects.myChatBot.technologies.marked.description',
+        color: 'green'
     }
 ];
 
@@ -175,8 +233,10 @@ const technologies = [
             <div v-for="feature in keyFeatures" :key="feature.id"
                 class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
                 <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div :class="[
+                        'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                        getColorClasses(feature.color).bg
+                    ]">
                         <Icon :name="feature.icon" class="w-6 h-6 text-white" />
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 dark:text-white">
@@ -206,8 +266,10 @@ const technologies = [
             <div v-for="tech in technologies" :key="tech.id"
                 class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                 <div class="flex items-center gap-3 mb-3">
-                    <div
-                        class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                    <div :class="[
+                        'w-8 h-8 rounded-lg flex items-center justify-center',
+                        getColorClasses(tech.color).bg
+                    ]">
                         <Icon :name="tech.icon" class="w-4 h-4 text-white" />
                     </div>
                     <span class="text-sm text-gray-500 dark:text-gray-400">{{ t(tech.name) }}</span>
