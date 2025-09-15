@@ -185,15 +185,13 @@ const experiences = [
 
 <template>
     <!-- Hero Section -->
-    <section class="relative">
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
-            <div class="text-center flex flex-col gap-6">
-                <h1 class="text-5xl md:text-6xl font-black">
-                    <span class="uppercase block text-gray-700 dark:text-gray-300">
-                        {{ $t('about.hero.title') }}
-                    </span>
+    <section>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <div class="text-center flex flex-col gap-4">
+                <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
+                    {{ $t('about.hero.title') }}
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                     {{ $t('about.hero.subtitle') }}
                 </p>
             </div>
@@ -292,7 +290,7 @@ const experiences = [
                     </div>
 
                     <!-- Passion and Hobbies Cards -->
-                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div
                             class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-6 transition-all duration-500 transform flex flex-col">
                             <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
@@ -318,8 +316,9 @@ const experiences = [
 
     <!-- Languages Section -->
     <section>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.languages.title') }}</h2>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
+                $t('about.languages.title') }}</h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div v-for="lang in languages" :key="lang.name"
@@ -352,9 +351,10 @@ const experiences = [
 
     <!-- Education Section -->
     <section>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold">{{ $t('about.education.title') }}</h2>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{
+                    $t('about.education.title') }}</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
@@ -409,8 +409,9 @@ const experiences = [
 
     <!-- Work Experience Timeline Section -->
     <section>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.work.title') }}</h2>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
+                $t('about.work.title') }}</h2>
 
             <div class="relative">
                 <!-- Timeline line - Desktop centered, Mobile left -->
@@ -502,10 +503,11 @@ const experiences = [
 
     <!-- Certifications Section -->
     <section>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">{{ $t('about.certifications.title') }}</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{
+                    $t('about.certifications.title') }}</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">
                     {{ $t('about.certifications.subtitle') }}
                 </p>
             </div>
@@ -549,8 +551,9 @@ const experiences = [
 
     <!-- Special Experiences Section -->
     <section>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16">{{ $t('about.experiences.title') }}</h2>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
+                $t('about.experiences.title') }}</h2>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <div v-for="experience in experiences" :key="experience.title"
@@ -568,7 +571,8 @@ const experiences = [
     <!-- CTA Section -->
     <section>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-8">
-            <h2 class="text-4xl font-bold">{{ $t('about.cta.title') }}</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{ $t('about.cta.title') }}
+            </h2>
             <p class="text-xl text-gray-600 dark:text-gray-300">
                 {{ $t('about.cta.subtitle') }}
             </p>

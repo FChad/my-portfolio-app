@@ -17,11 +17,12 @@ const texts = computed(() => [
 
 // Smooth scroll to next section when clicking scroll indicator
 const scrollToAbout = () => {
-    const aboutSection = document.querySelector('#about-section')
+    const aboutSection = document.querySelector('#about-section') as HTMLElement
     if (aboutSection) {
-        aboutSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        const elementPosition = aboutSection.offsetTop - 65 - 10 // Account for navbar height and extra padding
+        window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
         })
     }
 }

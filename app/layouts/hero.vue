@@ -3,7 +3,7 @@
         <Header />
 
         <!-- Main Content for Hero Pages (no padding top) -->
-        <main class="overflow-hidden flex flex-col gap-24 md:gap-32 lg:gap-40 pb-20">
+        <main class="overflow-hidden flex flex-col gap-24 md:gap-32 pb-20">
             <slot />
         </main>
 

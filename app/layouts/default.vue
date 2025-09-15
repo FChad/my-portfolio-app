@@ -3,7 +3,7 @@
         <Header />
 
         <!-- Main Content -->
-        <main class="overflow-hidden flex flex-col gap-24 md:gap-32 lg:gap-40 pt-10 pb-20">
+        <main class="overflow-hidden flex flex-col gap-16 md:gap-24 pt-10 pb-20">
             <slot />
         </main>
 
