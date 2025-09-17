@@ -23,17 +23,16 @@ const { t } = useI18n()
                 <!-- Breadcrumb -->
                 <div class="hidden sm:flex items-center space-x-2 text-sm">
                     <NuxtLink :to="localePath('/')"
-                        class="flex justify-center items-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                        class="text-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
                         <Icon name="mdi:home" class="w-5 h-5" />
                     </NuxtLink>
                     <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400" />
                     <NuxtLink :to="localePath('/showcase')"
-                        class="flex justify-center items-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                        class="text-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
                         Showcase
                     </NuxtLink>
                     <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400" />
-                    <span class="flex justify-center items-center text-gray-700 dark:text-gray-300 font-medium">{{ title
-                    }}</span>
+                    <span class="text-center text-gray-700 dark:text-gray-300 font-medium">{{ title }}</span>
                 </div>
 
                 <!-- Back Button -->

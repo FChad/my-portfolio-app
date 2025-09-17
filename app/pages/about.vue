@@ -262,8 +262,7 @@ const experiences = [
         <!-- Profile Introduction -->
         <div class="max-w-4xl mx-auto">
             <!-- About Me Card - Header + Story -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all duration-500">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all">
                 <div class="text-center">
                     <div class="flex items-center justify-center flex-col sm:flex-row gap-4 mb-6">
                         <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center shadow-md">
@@ -295,9 +294,9 @@ const experiences = [
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
-                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all">
                 <div
-                    class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -309,9 +308,9 @@ const experiences = [
             </div>
 
             <div
-                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all">
                 <div
-                    class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name="mdi:flag" class="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -323,9 +322,9 @@ const experiences = [
             </div>
 
             <div
-                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all">
                 <div
-                    class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -337,9 +336,9 @@ const experiences = [
             </div>
 
             <div
-                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all">
                 <div
-                    class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name="mdi:heart" class="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -351,9 +350,9 @@ const experiences = [
             </div>
 
             <div
-                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg transition-all">
                 <div
-                    class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name="mdi:car" class="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -373,8 +372,7 @@ const experiences = [
         </h2>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <div
-                class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md">
                         <Icon name="mdi:heart" class="w-6 h-6 text-white" />
@@ -386,8 +384,7 @@ const experiences = [
                     $t('about.passion.description') }}</p>
             </div>
 
-            <div
-                class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md">
                         <Icon name="mdi:puzzle" class="w-6 h-6 text-white" />
@@ -408,7 +405,7 @@ const experiences = [
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div v-for="lang in languages" :key="lang.name"
-                class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="relative">
                         <Icon :name="lang.flag" class="w-8 h-8" />
@@ -439,13 +436,13 @@ const experiences = [
 
         <div class="grid md:grid-cols-2 gap-8">
             <div v-for="(edu, index) in education" :key="edu.year"
-                class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all transform flex flex-col">
                 <div class="flex flex-col gap-4 flex-1">
                     <!-- Header with icon and title, year on right -->
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="flex items-center flex-col md:flex-row gap-3">
                             <div :class="[
-                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300',
+                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform',
                                 getColorClasses(edu.color).bg
                             ]">
                                 <Icon :name="edu.icon" class="w-6 h-6 text-white" />
@@ -483,7 +480,7 @@ const experiences = [
 
                     <div class="mt-auto ml-auto">
                         <a v-if="edu.link" :href="edu.link" target="_blank" :class="[
-                            'inline-flex items-center gap-2 px-4 py-2 text-white rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg',
+                            'inline-flex items-center gap-2 px-4 py-2 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg',
                             getColorClasses(edu.color).hover
                         ]">
                             <Icon name="mdi:open-in-new" class="w-5 h-5" />
@@ -529,7 +526,7 @@ const experiences = [
 
                     <!-- Content card - Mobile full width with left margin, Desktop alternating -->
                     <div :class="[
-                        'p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300',
+                        'p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all',
                         'ml-8 w-full md:w-5/12 md:ml-0',
                         index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                     ]">
@@ -598,12 +595,12 @@ const experiences = [
 
         <div class="grid md:grid-cols-2 gap-8">
             <div v-for="(cert, index) in certifications" :key="cert.title"
-                class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all transform flex flex-col">
                 <div class="flex flex-col gap-4 flex-1">
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="flex items-center flex-col md:flex-row gap-3">
                             <div :class="[
-                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300',
+                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform',
                                 getColorClasses(cert.color).bg
                             ]">
                                 <Icon :name="cert.icon" class="w-6 h-6 text-white" />
@@ -635,7 +632,7 @@ const experiences = [
 
         <div class="grid md:grid-cols-3 gap-8">
             <div v-for="experience in experiences" :key="experience.title"
-                class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col gap-4">
+                class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col gap-4">
                 <div :class="[
                     'w-16 h-16 mx-auto rounded-full flex items-center justify-center',
                     getColorClasses(experience.color).bg
@@ -658,7 +655,7 @@ const experiences = [
             </p>
             <div class="flex justify-center">
                 <NuxtLinkLocale to="/contact"
-                    class="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg w-fit">
+                    class="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg w-fit">
                     {{ $t('about.cta.button') }}
                     <Icon name="mdi:arrow-right" class="w-5 h-5" />
                 </NuxtLinkLocale>

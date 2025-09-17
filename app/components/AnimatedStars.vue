@@ -1,7 +1,6 @@
 <template>
-    <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full block transition-opacity duration-1000 ease-out"
-        :class="canvasClass" :style="{ opacity: isCanvasVisible ? '' : '0' }" @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave" />
+    <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full transition-opacity " :class="canvasClass"
+        :style="{ opacity: isCanvasVisible ? '' : '0' }" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" />
 </template>
 
 <script setup lang="ts">

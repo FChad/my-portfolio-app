@@ -34,20 +34,18 @@ const scrollToAbout = () => {
         <!-- Animated Stars Background -->
         <div class="absolute inset-0">
             <!-- Dynamic Gradient Background - Light/Dark Mode -->
-            <div class="absolute inset-0 
-                    bg-gradient-radial from-gray-50 via-gray-100 to-gray-300
-                    dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950
-                    transition-colors duration-500"></div>
+            <div
+                class="absolute inset-0 bg-gradient-radial from-gray-50 via-gray-100 to-gray-300 dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950 transition-colors ">
+            </div>
 
             <!-- Animated Stars Canvas -->
             <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
-                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity duration-500" />
+                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity " />
 
             <!-- Adaptive overlay for text readability -->
-            <div class="absolute inset-0 z-10
-                    bg-gradient-to-b from-transparent via-transparent to-white/30
-                    dark:from-transparent dark:via-transparent dark:to-gray-900/20
-                    transition-colors duration-500"></div>
+            <div
+                class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-white/30 dark:from-transparent dark:via-transparent dark:to-gray-900/20 transition-colors ">
+            </div>
         </div>
 
         <!-- Main Content -->
@@ -56,14 +54,12 @@ const scrollToAbout = () => {
                 <!-- Main Headline with Enhanced Typography -->
                 <div class="space-y-4 mt-16">
                     <div class="space-y-2">
-                        <p class="text-2xl font-medium tracking-wide uppercase
-                                text-blue-600 dark:text-blue-300
-                                transition-colors duration-500">
+                        <p
+                            class="text-2xl font-medium tracking-wide uppercase text-blue-600 dark:text-blue-300 transition-colors">
                             {{ $t('home.greeting') }}</p>
                         <h1 class="text-6xl md:text-8xl font-black leading-tight">
-                            <span class="uppercase block transition-colors duration-500
-                                    text-gray-800 dark:text-white 
-                                    drop-shadow-sm dark:drop-shadow-lg">
+                            <span
+                                class="uppercase block transition-colors text-gray-800 dark:text-white drop-shadow-sm dark:drop-shadow-lg">
                                 Chad<br />Feierstein
                             </span>
                         </h1>
@@ -76,9 +72,8 @@ const scrollToAbout = () => {
 
                 <!-- Value Proposition -->
                 <div class="max-w-3xl mx-auto">
-                    <p class="text-xl md:text-2xl leading-relaxed transition-colors duration-500
-                            text-gray-600 dark:text-gray-200 
-                            drop-shadow-sm dark:drop-shadow-md">
+                    <p
+                        class="text-xl md:text-2xl leading-relaxed transition-colors text-gray-600 dark:text-gray-200 drop-shadow-sm dark:drop-shadow-md">
                         {{ $t('home.tagline') }}
                     </p>
                 </div>
@@ -88,7 +83,7 @@ const scrollToAbout = () => {
                     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                         <!-- Primary CTA -->
                         <NuxtLinkLocale to="/showcase"
-                            class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300 inline-flex items-center">
+                            class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all inline-flex items-center">
                             <span class="relative z-10 flex items-center gap-3">
                                 <Icon name="mdi:eye" class="w-6 h-6" />
                                 {{ $t('home.cta.primary') }}
@@ -97,10 +92,10 @@ const scrollToAbout = () => {
 
                         <!-- Secondary CTA -->
                         <NuxtLinkLocale to="/contact"
-                            class="group relative px-10 py-5 border-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center">
+                            class="group relative px-10 py-5 border-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all shadow-md hover:shadow-lg inline-flex items-center">
                             <span class="flex items-center gap-3">
                                 {{ $t('home.cta.secondary') }}
-                                <Icon name="mdi:chat" class="w-6 h-6 transition-transform duration-300" />
+                                <Icon name="mdi:chat" class="w-6 h-6 transition-transform" />
                             </span>
                         </NuxtLinkLocale>
                     </div>
@@ -112,11 +107,11 @@ const scrollToAbout = () => {
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
             <div class="flex flex-col items-center animate-bounce">
                 <div class="relative flex justify-center items-center w-[50px] h-[50px] 
-                               border-2 border-blue-500/30 dark:border-blue-400/40 
-                               rounded-full bg-white/10 dark:bg-gray-900/20 
-                               backdrop-blur-[10px] transition-all duration-300 cursor-pointer
-                               hover:-translate-y-0.5 hover:border-blue-500/60 hover:bg-blue-500/10
-                               dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10" @click="scrollToAbout">
+                            border-2 border-blue-500/30 dark:border-blue-400/40 
+                            rounded-full bg-white/10 dark:bg-gray-900/20 
+                            backdrop-blur-[10px] transition-all cursor-pointer
+                            hover:-translate-y-0.5 hover:border-blue-500/60 hover:bg-blue-500/10
+                            dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10" @click="scrollToAbout">
                     <Icon name="mdi:chevron-down" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 </div>
             </div>
@@ -142,7 +137,7 @@ const scrollToAbout = () => {
                 <div class="flex flex-col gap-8">
                     <!-- Personal Story Card -->
                     <div
-                        class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6 transition-all duration-500">
+                        class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6 transition-all">
                         <div class="flex items-center flex-col sm:flex-row gap-4">
                             <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
                                 <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
@@ -186,7 +181,7 @@ const scrollToAbout = () => {
                 <div class="grid sm:grid-cols-2 gap-6">
                     <!-- Experience Card -->
                     <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
+                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all hover:-translate-y-2">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:briefcase" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -203,7 +198,7 @@ const scrollToAbout = () => {
 
                     <!-- Certifications Card -->
                     <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
+                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all hover:-translate-y-2">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:certificate" class="w-5 h-5 text-green-600 dark:text-green-400" />
@@ -219,7 +214,7 @@ const scrollToAbout = () => {
 
                     <!-- Languages Card -->
                     <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
+                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all hover:-translate-y-2">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:translate" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -235,7 +230,7 @@ const scrollToAbout = () => {
 
                     <!-- Projects Card -->
                     <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all duration-500 transform hover:-translate-y-2">
+                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg transition-all hover:-translate-y-2">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:code-braces" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
@@ -253,7 +248,7 @@ const scrollToAbout = () => {
 
             <!-- CTA Button -->
             <NuxtLinkLocale to="/about"
-                class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform self-center">
+                class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all transform self-center">
                 <Icon name="mdi:open-in-new" class="w-4 h-4" />
                 {{ $t('home.about.cta') }}
             </NuxtLinkLocale>
@@ -276,11 +271,11 @@ const scrollToAbout = () => {
             <div class="flex flex-col lg:flex-row gap-8 mt-16">
                 <!-- Web Development -->
                 <div
-                    class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-lg transition-all transform flex flex-col">
                     <div class="flex flex-col gap-4 flex-1">
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                                 <Icon name="mdi:web" class="w-6 h-6 text-white" />
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{
@@ -307,11 +302,11 @@ const scrollToAbout = () => {
 
                 <!-- Cloud Computing -->
                 <div
-                    class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-lg transition-all transform flex flex-col">
                     <div class="flex flex-col gap-4 flex-1">
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                                class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                                 <Icon name="mdi:cloud" class="w-6 h-6 text-white" />
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{
@@ -338,11 +333,11 @@ const scrollToAbout = () => {
 
                 <!-- IT Administration -->
                 <div
-                    class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-lg transition-all duration-500 transform flex flex-col">
+                    class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-lg transition-all transform flex flex-col">
                     <div class="flex flex-col gap-4 flex-1">
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                                class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                                 <Icon name="mdi:server" class="w-6 h-6 text-white" />
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{
@@ -517,13 +512,13 @@ const scrollToAbout = () => {
                         <!-- Action Buttons - Konsistenter mit anderen Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4">
                             <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all ">
                                 <Icon name="mdi:eye" class="w-5 h-5" />
                                 {{ $t('home.featured.cta.view') }}
                             </NuxtLinkLocale>
 
                             <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transition-all duration-300">
+                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg transition-all ">
                                 <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                                 {{ $t('home.featured.cta.demo') }}
                             </a>

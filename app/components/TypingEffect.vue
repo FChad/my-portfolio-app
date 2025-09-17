@@ -138,30 +138,29 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
 <template>
     <div class="h-32 flex items-center justify-center" role="region" aria-label="Dynamic text display">
         <div
-            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-md font-mono text-left max-w-2xl w-full backdrop-blur-sm transition-all duration-300 hover:shadow-lg">
+            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-md font-mono text-left max-w-2xl w-full backdrop-blur-sm transition-all hover:shadow-lg">
             <!-- Terminal Header -->
             <div class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200/70 dark:border-gray-700/70">
                 <div class="flex gap-2" role="presentation">
-                    <div class="w-3 h-3 bg-red-500 rounded-full transition-colors duration-200 hover:bg-red-600"
-                        title="Close"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full transition-colors duration-200 hover:bg-yellow-600"
+                    <div class="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition-colors" title="Close"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-600 transition-colors"
                         title="Minimize"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full transition-colors duration-200 hover:bg-green-600"
+                    <div class="w-3 h-3 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
                         title="Maximize"></div>
                 </div>
-                <span class="text-gray-600 dark:text-gray-400 text-sm ml-4 select-none">{{ terminalPrompt }}</span>
+                <span class="text-gray-600 dark:text-gray-400 text-sm ml-4">{{ terminalPrompt }}</span>
             </div>
 
             <!-- Terminal Content -->
             <div class="text-blue-600 dark:text-green-400 text-lg md:text-xl flex items-center min-h-[1.5rem]">
-                <span class="text-gray-700 dark:text-gray-300 mr-2 select-none">{{ command }}</span>
-                <span class="text-orange-600 dark:text-orange-400 select-none">"</span>
+                <span class="text-gray-700 dark:text-gray-300 mr-2">{{ command }}</span>
+                <span class="text-orange-600 dark:text-orange-400">"</span>
                 <span class="text-blue-600 dark:text-blue-300 font-medium" role="status" aria-live="polite">{{
                     typingText }}</span>
-                <span class="w-2 h-5 ml-1 inline-block rounded-sm transition-all duration-75"
+                <span class="w-2 h-5 ml-1 inline-block rounded-sm transition-all "
                     :class="isActive ? 'bg-blue-600 dark:bg-blue-300 animate-typing-cursor' : 'bg-transparent'"
                     aria-hidden="true"></span>
-                <span class="text-orange-600 dark:text-orange-400 select-none">"</span>
+                <span class="text-orange-600 dark:text-orange-400">"</span>
             </div>
         </div>
     </div>

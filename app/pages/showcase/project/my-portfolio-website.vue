@@ -192,14 +192,14 @@ const technologies = [
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href="https://www.chad.lu" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
                     <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                     Live Demo
                     <Icon name="mdi:open-in-new" class="w-4 h-4" />
                 </a>
 
                 <a href="https://github.com/FChad/my-portfolio-app" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl border border-blue-600 dark:border-blue-400">
+                    class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-xl border border-blue-600 dark:border-blue-400">
                     <Icon name="mdi:github" class="w-5 h-5" />
                     View Source
                     <Icon name="mdi:open-in-new" class="w-4 h-4" />
@@ -231,10 +231,10 @@ const technologies = [
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="feature in keyFeatures" :key="feature.id"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-500">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
                 <div class="flex items-center gap-3 mb-4">
                     <div :class="[
-                        'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300',
+                        'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform',
                         getColorClasses(feature.color).bg
                     ]">
                         <Icon :name="feature.icon" class="w-6 h-6 text-white" />
@@ -264,7 +264,7 @@ const technologies = [
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div v-for="tech in technologies" :key="tech.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all ">
                 <div class="flex items-center gap-3 mb-3">
                     <div :class="[
                         'w-8 h-8 rounded-lg flex items-center justify-center',
@@ -293,7 +293,7 @@ const technologies = [
 
             <div class="flex justify-center">
                 <a href="https://www.chad.lu" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
                     {{ t('projects.myPortfolio.callToAction.button') }}
                     <Icon name="mdi:arrow-right" class="w-5 h-5" />
                 </a>
