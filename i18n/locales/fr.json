@@ -336,6 +336,175 @@
             }
         }
     },
+    "projects": {
+        "myChatBot": {
+            "features": {
+                "aiChat": {
+                    "title": "Chat IA",
+                    "description": "Chattez directement avec divers modèles IA grâce à une interface utilisateur intuitive"
+                },
+                "conversationManagement": {
+                    "title": "Gestion des Conversations",
+                    "description": "Gérez plusieurs conversations comme ChatGPT avec sauvegarde automatique"
+                },
+                "modelSelection": {
+                    "title": "Sélection de Modèles",
+                    "description": "Choisissez entre les modèles Ollama disponibles pour différents cas d'usage"
+                },
+                "localStorage": {
+                    "title": "Stockage Local",
+                    "description": "Les conversations sont stockées en toute sécurité dans le navigateur sans dépendances externes"
+                },
+                "modernUI": {
+                    "title": "Interface Moderne",
+                    "description": "Interface utilisateur belle et responsive avec Tailwind CSS et Mode Sombre"
+                },
+                "streaming": {
+                    "title": "Streaming en Temps Réel",
+                    "description": "Réponses en temps réel avec Server-Sent Events pour une communication fluide"
+                }
+            },
+            "keyFeatures": {
+                "title": "Fonctionnalités Clés",
+                "subtitle": "Découvrez les fonctionnalités puissantes qui font de Mon Chat Bot une solution de chat IA complète"
+            },
+            "builtWith": {
+                "title": "Développé Avec",
+                "subtitle": "Technologies modernes et frameworks qui alimentent l'application"
+            },
+            "callToAction": {
+                "title": "Prêt à Découvrir le Chat IA ?",
+                "subtitle": "Essayez Mon Chat Bot aujourd'hui et découvrez la puissance des modèles IA locaux avec une interface de chat intuitive.",
+                "button": "Commencer la Démo"
+            },
+            "technologies": {
+                "nuxt3": {
+                    "name": "Framework Frontend",
+                    "tech": "Nuxt 3",
+                    "description": "Framework Vue.js moderne avec capacités SSR, routage automatique et optimisation des performances améliorée"
+                },
+                "vue3": {
+                    "name": "Bibliothèque Frontend",
+                    "tech": "Vue 3",
+                    "description": "Framework JavaScript progressif avec Composition API et liaison de données réactive"
+                },
+                "typescript": {
+                    "name": "Sécurité des Types",
+                    "tech": "TypeScript",
+                    "description": "Vérification stricte des types, fiabilité du code améliorée et meilleure expérience développeur"
+                },
+                "pinia": {
+                    "name": "Gestion d'État",
+                    "tech": "Pinia",
+                    "description": "Store de gestion d'état moderne pour Vue avec API intuitive et support TypeScript"
+                },
+                "tailwind": {
+                    "name": "Stylisation",
+                    "tech": "Tailwind CSS",
+                    "description": "Framework CSS utility-first avec configuration personnalisée et motifs de design responsive"
+                },
+                "ollama": {
+                    "name": "Intégration IA",
+                    "tech": "Ollama",
+                    "description": "Plateforme de gestion de modèles IA locaux pour une intégration IA transparente"
+                },
+                "highlight": {
+                    "name": "Coloration Syntaxique",
+                    "tech": "Highlight.js",
+                    "description": "Coloration syntaxique pour les blocs de code dans les messages de chat avec support de multiples langages de programmation"
+                },
+                "marked": {
+                    "name": "Parsing Markdown",
+                    "tech": "Marked",
+                    "description": "Parser et compilateur Markdown rapide pour le rendu de texte formaté et de code dans les réponses de chat"
+                }
+            }
+        },
+        "myPortfolio": {
+            "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur.",
+            "features": {
+                "multilingual": {
+                    "title": "Multilingue",
+                    "description": "Support pour le luxembourgeois, l'allemand, le français et l'anglais avec i18n"
+                },
+                "responsive": {
+                    "title": "Design Responsive",
+                    "description": "Affichage parfait sur tous les appareils - Desktop, Tablette et Mobile"
+                },
+                "darkMode": {
+                    "title": "Mode Sombre",
+                    "description": "Thème élégant Sombre/Clair avec détection automatique du navigateur"
+                },
+                "performance": {
+                    "title": "Hautes Performances",
+                    "description": "Temps de chargement optimisés et SEO avec Nuxt 3 Server-Side Rendering"
+                },
+                "seo": {
+                    "title": "Optimisé SEO",
+                    "description": "Optimisation complète pour les moteurs de recherche avec sitemap et méta tags"
+                },
+                "contact": {
+                    "title": "Formulaire de Contact",
+                    "description": "Formulaire de contact fonctionnel avec intégration VeeValidate et Resend"
+                }
+            },
+            "keyFeatures": {
+                "title": "Fonctionnalités Clés",
+                "subtitle": "Découvrez les fonctionnalités qui font de ce site web portfolio une solution moderne et professionnelle"
+            },
+            "builtWith": {
+                "title": "Développé Avec",
+                "subtitle": "Technologies modernes et meilleures pratiques pour une expérience utilisateur de premier plan"
+            },
+            "callToAction": {
+                "title": "Intéressé par un Site Web Similaire ?",
+                "subtitle": "Explorez mon site web portfolio et découvrez comment les technologies web modernes peuvent créer une présence en ligne impressionnante.",
+                "button": "Visiter le Site Web"
+            },
+            "technologies": {
+                "nuxt3": {
+                    "name": "Framework Frontend",
+                    "tech": "Nuxt 3",
+                    "description": "Framework Vue.js avancé avec Server-Side Rendering, division automatique du code et optimisation des performances"
+                },
+                "vue3": {
+                    "name": "Bibliothèque UI",
+                    "tech": "Vue 3",
+                    "description": "Framework JavaScript moderne et réactif avec Composition API et expérience développeur optimale"
+                },
+                "typescript": {
+                    "name": "Sécurité des Types",
+                    "tech": "TypeScript",
+                    "description": "Typage statique pour une meilleure qualité de code, prévention d'erreurs et support IDE amélioré"
+                },
+                "tailwind": {
+                    "name": "Framework CSS",
+                    "tech": "Tailwind CSS",
+                    "description": "Framework CSS utility-first pour un stylisation rapide et cohérente et des designs responsive"
+                },
+                "i18n": {
+                    "name": "Internationalisation",
+                    "tech": "Nuxt i18n",
+                    "description": "Support multilingue complet avec routage automatique et gestion des locales"
+                },
+                "veevalidate": {
+                    "name": "Validation de Formulaires",
+                    "tech": "VeeValidate",
+                    "description": "Validation de formulaires puissante avec gestion d'erreurs conviviale et support TypeScript"
+                },
+                "resend": {
+                    "name": "Service Email",
+                    "tech": "Resend",
+                    "description": "API email moderne pour une livraison fiable de formulaires de contact avec intégration conviviale pour les développeurs"
+                },
+                "iconify": {
+                    "name": "Système d'Icônes",
+                    "tech": "Iconify",
+                    "description": "Bibliothèque d'icônes étendue avec plus de 100 000 icônes et performances optimales grâce aux icônes à la demande"
+                }
+            }
+        }
+    },
     "contact": {
         "title": "Contact",
         "subtitle": "Parlons de votre prochain projet",
