@@ -2,7 +2,6 @@
     "nav": {
         "home": "Doheem",
         "about": "Iwwer mech",
-        "projects": "Projeten",
         "showcase": "Showcase",
         "contact": "Kontakt"
     },
@@ -21,7 +20,6 @@
         "stats": {
             "experience": "Joer Erfahrung",
             "experienceDesc": "Professionell IT-Erfahrung",
-            "satisfaction": "Zefriddenheet",
             "certifications": "Zertifizéierungen",
             "certificationsDesc": "Professionell Zertifikater",
             "languages": "Sproochen",
@@ -101,26 +99,16 @@
                 "view": "Detailer kucken",
                 "demo": "Live Demo testen"
             }
-        },
-        "bottomCta": {
-            "title": "Loosst eis zesummen eppes Grousses schafen",
-            "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gäre diskutéieren, wéi ech Iech hëllefen kann, Är Iddien mat modernster Technologie zum Liewen ze bréngen.",
-            "contact": "Kontakt ophuelen",
-            "portfolio": "Portfolio kucken"
         }
     },
     "about": {
-        "title": "Iwwer mech",
         "hero": {
-            "title": "Iwwer mech",
-            "subtitle": "Technologie-Enthusiast mat Fokus op Full-Stack Webentwicklung, IT-Administratioun a Serververwalltung."
+            "title": "Iwwer mech"
         },
         "profile": {
-            "title": "Perséinlech Informatiounen",
             "nationality": "Lëtzebuergesch",
             "location": "Rëmeleng, Lëtzebuerg",
             "status": "Single",
-            "age": "25 Joer",
             "driving": "Führerschäin Kategorie B",
             "role": "Full-Stack Developer & IT-Techniker",
             "currentWork": "Aktuell beschäftegt bei Rotyre SARL",
@@ -134,7 +122,6 @@
             }
         },
         "story": {
-            "title": "Iwwer mech",
             "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
         },
         "details": {
@@ -183,13 +170,9 @@
             "mainTasks": "Haaptaufgaben:",
             "moreTasks": "weider Aufgaben"
         },
-        "timeline": {
-            "title": "Berufleche Werdegank"
-        },
         "certifications": {
             "title": "Zertifizéierungen",
-            "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen",
-            "certified": "Zertifizéiert"
+            "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen"
         },
         "experiences": {
             "title": "Besonner Erliefnesser"
@@ -322,205 +305,16 @@
             "documentation": "Dokumentatiounen"
         },
         "labels": {
-            "project": "Projet",
-            "documentation": "Dokumentatioun",
             "viewDetails": "Detailer weisen"
         },
         "projects": {
             "myChatBot": {
                 "title": "Mäin Chat Bot",
-                "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features.",
-                "features": {
-                    "title": "Features",
-                    "aiChat": {
-                        "title": "AI Chat",
-                        "description": "Chat direkt mat verschiddenen AI-Modeller iwwer eng intuitiv Benotzeroberfläch"
-                    },
-                    "conversationManagement": {
-                        "title": "Gespréichsverwaltung",
-                        "description": "Méi Gespréicher verwalten wéi bei ChatGPT mat automatescher Späicherung"
-                    },
-                    "modelSelection": {
-                        "title": "Modell-Auswiel",
-                        "description": "Wielt tëschent verfügbaren Ollama-Modeller fir verschidden Uwendungsfäll"
-                    },
-                    "contextRetention": {
-                        "title": "Kontext-Erhaltung",
-                        "description": "Gespréicher behalen hire Kontext fir natierlech Gespréicher"
-                    },
-                    "localStorage": {
-                        "title": "Lokal Späicherung",
-                        "description": "Gespréicher ginn sécher am Browser gespäichert ouni extern Ofhängegkeeten"
-                    },
-                    "modernUI": {
-                        "title": "Modern UI",
-                        "description": "Schéin, responsive Benotzeroberfläch mat Tailwind CSS a Däischter Modus"
-                    },
-                    "secureAPI": {
-                        "title": "Sécher API",
-                        "description": "Environment-baséiert Konfiguratioun fir API-Credentials mat séchere Authentifikatioun"
-                    },
-                    "responsive": {
-                        "title": "Responsive Design",
-                        "description": "Funktionéiert perfekt op Desktop a Mobil mat optimiséiert Touch-Bedénung"
-                    },
-                    "streaming": {
-                        "title": "Echtzäit-Streaming",
-                        "description": "Echtzäit-Äntwerten mat Server-Sent Events fir flësseg Kommunikatioun"
-                    },
-                    "architecture": {
-                        "title": "Optimiséiert Architektur",
-                        "description": "Propper Code-Struktur mat Composables, Pinia a modularem Opbau"
-                    },
-                    "exportFunction": {
-                        "title": "Export-Funktioun",
-                        "description": "Exportéiert Är Gespréicher als JSON fir Backup an Analyse"
-                    },
-                    "settings": {
-                        "title": "Ëmfaassend Astellungen",
-                        "description": "Detailléiert Astellungen an App-Informatiounen mat Statistiken"
-                    }
-                },
-                "keyFeatures": {
-                    "title": "Haaptfunktiounen",
-                    "subtitle": "Entdeckt déi mächteg Features déi Mäin Chat Bot zu enger ëmfaassender AI-Chat-Léisung maachen"
-                },
-                "builtWith": {
-                    "title": "Entwéckelt Mat",
-                    "subtitle": "Modern Technologien a Frameworks déi d'Applikatioun undreiwung"
-                },
-                "callToAction": {
-                    "title": "Prett fir AI Chat z'erliewen?",
-                    "subtitle": "Probéiert Mäin Chat Bot haut a entdeckt d'Kraaft vun lokalen AI-Modeller mat enger intuitiver Chat-Oberfläch.",
-                    "button": "Demo starten"
-                },
-                "technologies": {
-                    "nuxt3": {
-                        "name": "Frontend Framework",
-                        "tech": "Nuxt 3",
-                        "description": "Modernt Vue.js-Framework mat SSR-Fäegkeeten, automateschen Routing an verbesserte Leeschtungsoptimisatioun"
-                    },
-                    "vue3": {
-                        "name": "Frontend Library",
-                        "tech": "Vue 3",
-                        "description": "Progressive JavaScript-Framework mat Composition API a reaktiver Datenbindung"
-                    },
-                    "typescript": {
-                        "name": "Typsécherheet",
-                        "tech": "TypeScript",
-                        "description": "Streng Typkontroll, verbesserte Code-Zouverlässegkeet a besser Entwicklererfuerung"
-                    },
-                    "pinia": {
-                        "name": "State Management",
-                        "tech": "Pinia",
-                        "description": "Modernen State-Management-Store fir Vue mat intuitiver API an TypeScript-Ënnerstëtzung"
-                    },
-                    "tailwind": {
-                        "name": "Styling",
-                        "tech": "Tailwind CSS",
-                        "description": "Utility-First-CSS-Framework mat personaliséierter Konfiguratioun a responsive Design-Musteren"
-                    },
-                    "ollama": {
-                        "name": "AI-Integratioun",
-                        "tech": "Ollama",
-                        "description": "Lokal AI-Modell-Verwaltungsplattform fir nahtlos AI-Integratioun"
-                    },
-                    "highlight": {
-                        "name": "Code-Highlighting",
-                        "tech": "Highlight.js",
-                        "description": "Syntax-Highlighting fir Code-Blöck an Chat-Noriichten mat Multi-Sprooch-Ënnerstëtzung"
-                    },
-                    "marked": {
-                        "name": "Markdown-Parsing",
-                        "tech": "Marked",
-                        "description": "Séieren Markdown-Parser a -Compiler fir d'Rendern vu formatéiertem Text a Code an Chat-Äntwerten"
-                    }
-                }
+                "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
             },
             "myPortfolio": {
                 "title": "Meng Portfolio Websäit",
-                "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung.",
-                "features": {
-                    "multilingual": {
-                        "title": "Méisproocheg",
-                        "description": "Ënnerstëtzung fir Lëtzebuergesch, Däitsch, Franséisch an Englesch mat i18n"
-                    },
-                    "responsive": {
-                        "title": "Responsive Design",
-                        "description": "Perfekt Affichage op all Apparater - Desktop, Tablet a Mobil"
-                    },
-                    "darkMode": {
-                        "title": "Däischter Modus",
-                        "description": "Elegant däischter/helle Thema mat automatescher Browser-Erkennung"
-                    },
-                    "performance": {
-                        "title": "Héich Leeschtung",
-                        "description": "Optimiséiert Luedzäiten a SEO mat Nuxt 3 Server-Side Rendering"
-                    },
-                    "seo": {
-                        "title": "SEO Optimiséiert",
-                        "description": "Komplett Suchmaschinn-Optimisatioun mat Sitemap a Meta-Tags"
-                    },
-                    "contact": {
-                        "title": "Kontaktformular",
-                        "description": "Funktionellt Kontaktformular mat VeeValidate a Resend Integratioun"
-                    }
-                },
-                "keyFeatures": {
-                    "title": "Haaptfunktiounen",
-                    "subtitle": "Entdeckt d'Features déi dës Portfolio-Websäit zu enger moderner, professionneller Léisung maachen"
-                },
-                "builtWith": {
-                    "title": "Entwéckelt Mat",
-                    "subtitle": "Modern Technologien a Best Practices fir eng éischtklasseg Benotzererfuerung"
-                },
-                "callToAction": {
-                    "title": "Interesséiert un enger ähnlecher Websäit?",
-                    "subtitle": "Entdeckt meng Portfolio-Websäit a kuckt wéi modern Webtechnologien eng ëmdrocksvoll Online-Präsenz schafen kënnen.",
-                    "button": "Websäit besichen"
-                },
-                "technologies": {
-                    "nuxt3": {
-                        "name": "Frontend Framework",
-                        "tech": "Nuxt 3",
-                        "description": "Erweidert Vue.js-Framework mat Server-Side Rendering, automateschen Code-Splitting a Leeschtungsoptimisatioun"
-                    },
-                    "vue3": {
-                        "name": "UI Library",
-                        "tech": "Vue 3",
-                        "description": "Modernt, reaktivt JavaScript-Framework mat Composition API an optimaler Entwicklererfuerung"
-                    },
-                    "typescript": {
-                        "name": "Typsécherheet",
-                        "tech": "TypeScript",
-                        "description": "Statesch Typisatioun fir besser Code-Qualitéit, Feeler-Preventioun an erweidert IDE-Ënnerstëtzung"
-                    },
-                    "tailwind": {
-                        "name": "CSS Framework",
-                        "tech": "Tailwind CSS",
-                        "description": "Utility-First-CSS-Framework fir séier, konsistent Styling a responsive Designs"
-                    },
-                    "i18n": {
-                        "name": "Internationaliséierung",
-                        "tech": "Nuxt i18n",
-                        "description": "Komplett méisproocheg Ënnerstëtzung mat automateschen Routing a Locale-Management"
-                    },
-                    "veevalidate": {
-                        "name": "Formular-Validatioun",
-                        "tech": "VeeValidate",
-                        "description": "Mächteg Formular-Validatioun mat benotzerfrëndlecher Fehlerbehandlung an TypeScript-Ënnerstëtzung"
-                    },
-                    "resend": {
-                        "name": "Email Service",
-                        "tech": "Resend",
-                        "description": "Modern Email-API fir zouverlässeg Kontaktformular-Iwwermëttlung mat entwicklerfrëndlecher Integratioun"
-                    },
-                    "iconify": {
-                        "name": "Icon System",
-                        "tech": "Iconify",
-                        "description": "Ëmfaassend Icon-Bibliothéik mat iwwer 100.000 Iconen an optimal Leeschtung duerch Icon-op-Ufro"
-                    }
-                }
+                "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung."
             }
         },
         "documentation": {
@@ -548,14 +342,6 @@
         "methods": {
             "title": "Kontaktméiglechkeeten"
         },
-        "info": {
-            "title": "Kontakt Informatiounen",
-            "description": "Ech freeën mech drop, vun Iech ze héieren! Ob Dir Froen hutt, iwwer e Projet schwätzen wëllt oder einfach nëmmen Hallo soen - zéckt net ze kontaktéieren."
-        },
-        "availability": {
-            "title": "Disponibilitéit",
-            "description": "Normalerweis äntweren ech bannent 24 Stonnen. Fir dréngend Ufroen, kontaktéiert mech wannech gelift direkt per E-Mail."
-        },
         "form": {
             "title": "Message schécken",
             "description": "Fëllt de Formulaire hei ënnendrënner aus an ech mellen mech sou séier wéi méiglech bei Iech.",
@@ -569,12 +355,6 @@
             "submit": "Message schécken",
             "sending": "Gëtt geschéckt...",
             "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech."
-        },
-        "cta": {
-            "title": "Prett fir Äert nächst Projet?",
-            "subtitle": "Kuckt Iech meng Aarbecht un oder léiert méi iwwer meng Erfarung.",
-            "showcase": "Meng Aarbecht ukucken",
-            "about": "Iwwer mech léieren"
         }
     },
     "footer": {

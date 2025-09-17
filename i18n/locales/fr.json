@@ -2,7 +2,6 @@
     "nav": {
         "home": "Accueil",
         "about": "À propos",
-        "projects": "Projets",
         "showcase": "Showcase",
         "contact": "Contact"
     },
@@ -21,7 +20,6 @@
         "stats": {
             "experience": "Années d'Expérience",
             "experienceDesc": "Expérience IT Professionnelle",
-            "satisfaction": "Satisfaction",
             "certifications": "Certifications",
             "certificationsDesc": "Certificats Professionnels",
             "languages": "Langues",
@@ -101,26 +99,16 @@
                 "view": "Voir les Détails",
                 "demo": "Tester la Démo Live"
             }
-        },
-        "bottomCta": {
-            "title": "Créons Quelque Chose de Formidable Ensemble",
-            "subtitle": "Avez-vous un projet en tête ? J'aimerais discuter de la façon dont je peux vous aider à donner vie à vos idées avec une technologie de pointe.",
-            "contact": "Me Contacter",
-            "portfolio": "Voir le Portfolio"
         }
     },
     "about": {
-        "title": "À Propos de Moi",
         "hero": {
-            "title": "À Propos de Moi",
-            "subtitle": "Passionné de technologie spécialisé dans le développement web full-stack, l'administration informatique et la gestion de serveurs."
+            "title": "À Propos de Moi"
         },
         "profile": {
-            "title": "Informations Personnelles",
             "nationality": "Luxembourgeoise",
             "location": "Rümelingen, Luxembourg",
             "status": "Célibataire",
-            "age": "25 ans",
             "driving": "Permis de conduire Catégorie B",
             "role": "Développeur Full-Stack & Technicien IT",
             "currentWork": "Actuellement employé chez Rotyre SARL",
@@ -134,7 +122,6 @@
             }
         },
         "story": {
-            "title": "À Propos de Moi",
             "intro": "Je suis Chad Feierstein, développeur web Full-Stack et administrateur IT spécialisé dans le Cloud Computing. Ma passion réside dans le développement d'applications web modernes et la gestion de serveurs. Avec ma formation de technicien IT et un diplôme en Cloud Computing, je combine des connaissances solides avec une expérience pratique pour mettre en œuvre des solutions efficaces et personnalisées."
         },
         "details": {
@@ -183,13 +170,9 @@
             "mainTasks": "Tâches Principales :",
             "moreTasks": "tâches supplémentaires"
         },
-        "timeline": {
-            "title": "Parcours Professionnel"
-        },
         "certifications": {
             "title": "Certifications",
-            "subtitle": "Certifications professionnelles et qualifications qui démontrent mon expertise dans divers domaines technologiques",
-            "certified": "Certifié"
+            "subtitle": "Certifications professionnelles et qualifications qui démontrent mon expertise dans divers domaines technologiques"
         },
         "experiences": {
             "title": "Expériences Spéciales"
@@ -322,180 +305,16 @@
             "documentation": "Documentation"
         },
         "labels": {
-            "project": "Projet",
-            "documentation": "Documentation",
             "viewDetails": "Voir Détails"
         },
         "projects": {
             "myChatBot": {
                 "title": "Mon Chat Bot",
-                "description": "Une application de chat moderne et optimisée avec intégration Ollama pour discuter directement avec des modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées.",
-                "features": {
-                    "aiChat": {
-                        "title": "Chat IA",
-                        "description": "Chattez directement avec différents modèles IA via une interface utilisateur intuitive"
-                    },
-                    "conversationManagement": {
-                        "title": "Gestion des Conversations",
-                        "description": "Gérez plusieurs conversations comme ChatGPT avec sauvegarde automatique"
-                    },
-                    "modelSelection": {
-                        "title": "Sélection de Modèle",
-                        "description": "Choisissez parmi les modèles Ollama disponibles pour différents cas d'usage"
-                    },
-                    "localStorage": {
-                        "title": "Stockage Local",
-                        "description": "Les conversations sont stockées en sécurité dans le navigateur sans dépendances externes"
-                    },
-                    "modernUI": {
-                        "title": "Interface Moderne",
-                        "description": "Belle interface utilisateur responsive avec Tailwind CSS et Mode Sombre"
-                    },
-                    "streaming": {
-                        "title": "Streaming en Temps Réel",
-                        "description": "Réponses en temps réel avec Server-Sent Events pour une communication fluide"
-                    }
-                },
-                "keyFeatures": {
-                    "title": "Fonctionnalités Principales",
-                    "subtitle": "Découvrez les fonctionnalités puissantes qui font de Mon Chat Bot une solution de chat IA complète"
-                },
-                "builtWith": {
-                    "title": "Développé Avec",
-                    "subtitle": "Technologies modernes et frameworks alimentant l'application"
-                },
-                "callToAction": {
-                    "title": "Prêt à Découvrir le Chat IA ?",
-                    "subtitle": "Essayez Mon Chat Bot aujourd'hui et découvrez la puissance des modèles IA locaux avec une interface de chat intuitive.",
-                    "button": "Lancer la Démo"
-                },
-                "technologies": {
-                    "nuxt3": {
-                        "name": "Framework Frontend",
-                        "tech": "Nuxt 3",
-                        "description": "Framework Vue.js moderne avec capacités SSR, routage automatique et optimisation de performance améliorée"
-                    },
-                    "vue3": {
-                        "name": "Bibliothèque Frontend",
-                        "tech": "Vue 3",
-                        "description": "Framework JavaScript progressif avec Composition API et liaison de données réactive"
-                    },
-                    "typescript": {
-                        "name": "Sécurité des Types",
-                        "tech": "TypeScript",
-                        "description": "Vérification de types stricte, fiabilité de code améliorée et meilleure expérience développeur"
-                    },
-                    "pinia": {
-                        "name": "Gestion d'État",
-                        "tech": "Pinia",
-                        "description": "Store de gestion d'état moderne pour Vue avec API intuitive et support TypeScript"
-                    },
-                    "tailwind": {
-                        "name": "Stylisation",
-                        "tech": "Tailwind CSS",
-                        "description": "Framework CSS utility-first avec configuration personnalisée et motifs de design responsive"
-                    },
-                    "ollama": {
-                        "name": "Intégration IA",
-                        "tech": "Ollama",
-                        "description": "Plateforme de gestion de modèles IA locaux pour une intégration IA transparente"
-                    },
-                    "highlight": {
-                        "name": "Coloration Syntaxique",
-                        "tech": "Highlight.js",
-                        "description": "Coloration syntaxique pour les blocs de code dans les messages de chat avec support multi-langage"
-                    },
-                    "marked": {
-                        "name": "Analyse Markdown",
-                        "tech": "Marked",
-                        "description": "Analyseur et compilateur markdown rapide pour le rendu de texte formaté et de code dans les réponses de chat"
-                    }
-                }
+                "description": "Une application de chat moderne et optimisée avec intégration Ollama pour discuter directement avec des modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées."
             },
             "myPortfolio": {
                 "title": "Mon Site Web Portfolio",
-                "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur.",
-                "features": {
-                    "multilingual": {
-                        "title": "Multilingue",
-                        "description": "Support pour le luxembourgeois, l'allemand, le français et l'anglais avec i18n"
-                    },
-                    "responsive": {
-                        "title": "Design Responsive",
-                        "description": "Affichage parfait sur tous les appareils - desktop, tablette et mobile"
-                    },
-                    "darkMode": {
-                        "title": "Mode Sombre",
-                        "description": "Thème élégant sombre/clair avec détection automatique du navigateur"
-                    },
-                    "performance": {
-                        "title": "Haute Performance",
-                        "description": "Temps de chargement optimisés et SEO avec Nuxt 3 Server-Side Rendering"
-                    },
-                    "seo": {
-                        "title": "Optimisé SEO",
-                        "description": "Optimisation complète pour les moteurs de recherche avec sitemap et balises meta"
-                    },
-                    "contact": {
-                        "title": "Formulaire de Contact",
-                        "description": "Formulaire de contact fonctionnel avec intégration VeeValidate et Resend"
-                    }
-                },
-                "keyFeatures": {
-                    "title": "Fonctionnalités Principales",
-                    "subtitle": "Découvrez les fonctionnalités qui font de ce site portfolio une solution moderne et professionnelle"
-                },
-                "builtWith": {
-                    "title": "Développé Avec",
-                    "subtitle": "Technologies modernes et meilleures pratiques pour une expérience utilisateur de première classe"
-                },
-                "callToAction": {
-                    "title": "Intéressé par un Site Web Similaire ?",
-                    "subtitle": "Explorez mon site web portfolio et voyez comment les technologies web modernes peuvent créer une présence en ligne impressionnante.",
-                    "button": "Visiter le Site Web"
-                },
-                "technologies": {
-                    "nuxt3": {
-                        "name": "Framework Frontend",
-                        "tech": "Nuxt 3",
-                        "description": "Framework Vue.js avancé avec Server-Side Rendering, code splitting automatique et optimisation de performance"
-                    },
-                    "vue3": {
-                        "name": "Bibliothèque UI",
-                        "tech": "Vue 3",
-                        "description": "Framework JavaScript moderne et réactif avec Composition API et expérience développeur optimale"
-                    },
-                    "typescript": {
-                        "name": "Sécurité des Types",
-                        "tech": "TypeScript",
-                        "description": "Typage statique pour une meilleure qualité de code, prévention d'erreurs et support IDE amélioré"
-                    },
-                    "tailwind": {
-                        "name": "Framework CSS",
-                        "tech": "Tailwind CSS",
-                        "description": "Framework CSS utility-first pour un style rapide et cohérent et des designs responsive"
-                    },
-                    "i18n": {
-                        "name": "Internationalisation",
-                        "tech": "Nuxt i18n",
-                        "description": "Support multilingue complet avec routage automatique et gestion des locales"
-                    },
-                    "veevalidate": {
-                        "name": "Validation de Formulaire",
-                        "tech": "VeeValidate",
-                        "description": "Validation de formulaire puissante avec gestion d'erreurs conviviale et support TypeScript"
-                    },
-                    "resend": {
-                        "name": "Service Email",
-                        "tech": "Resend",
-                        "description": "API email moderne pour une soumission fiable de formulaire de contact avec intégration conviviale pour les développeurs"
-                    },
-                    "iconify": {
-                        "name": "Système d'Icônes",
-                        "tech": "Iconify",
-                        "description": "Bibliothèque d'icônes complète avec plus de 100 000 icônes et performance optimale grâce aux icônes à la demande"
-                    }
-                }
+                "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur."
             }
         },
         "documentation": {
@@ -523,14 +342,6 @@
         "methods": {
             "title": "Méthodes de Contact"
         },
-        "info": {
-            "title": "Informations de Contact",
-            "description": "J'aimerais avoir de vos nouvelles ! Que vous ayez des questions, que vous souhaitiez discuter d'un projet ou simplement dire bonjour - n'hésitez pas à me contacter."
-        },
-        "availability": {
-            "title": "Disponibilité",
-            "description": "Je réponds généralement dans les 24 heures. Pour les demandes urgentes, veuillez me contacter directement par email."
-        },
         "form": {
             "title": "Envoyer un Message",
             "description": "Remplissez le formulaire ci-dessous et je vous répondrai dès que possible.",
@@ -544,12 +355,6 @@
             "submit": "Envoyer le Message",
             "sending": "Envoi en cours...",
             "success": "Merci ! Votre message a été envoyé avec succès. Je vous recontacterai bientôt."
-        },
-        "cta": {
-            "title": "Prêt pour Votre Prochain Projet ?",
-            "subtitle": "Consultez mon travail ou apprenez-en plus sur mon expérience.",
-            "showcase": "Voir Mon Travail",
-            "about": "En Savoir Plus"
         }
     },
     "footer": {
