@@ -4,23 +4,19 @@ import { useLocalePath, useI18n, useColorMode } from '#imports'
 
 // Layout definieren
 definePageMeta({
-    layout: 'with-subnav'
-})
-
-// Subnavigation konfigurieren
-const localePath = useLocalePath()
-const { t } = useI18n()
-const colorMode = useColorMode()
-const { configure } = useSubNavigation()
-
-onMounted(() => {
-    configure({
-        title: t('documentations.debianInitialSetup.title'),
+    layout: 'with-subnav',
+    subNav: {
+        titleKey: 'documentations.debianInitialSetup.title',
         showBackButton: true,
         backTo: '/showcase',
         backLabel: 'Back to Showcase'
-    })
+    }
 })
+
+// Setup composables
+const localePath = useLocalePath()
+const { t } = useI18n()
+const colorMode = useColorMode()
 
 interface Command {
     command: string

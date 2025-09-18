@@ -1,27 +1,23 @@
 <script lang="ts" setup>
-import { onMounted, ref, watch, nextTick } from 'vue'
+import { ref, watch, nextTick } from 'vue'
 import { useLocalePath, useI18n, useColorMode } from '#imports'
 
 // Layout definieren
 definePageMeta({
-    layout: 'with-subnav'
-})
-
-// Subnavigation konfigurieren
-const localePath = useLocalePath()
-const { t } = useI18n()
-const colorMode = useColorMode()
-const { configure } = useSubNavigation()
-const isExpanded = ref<Record<string, boolean>>({})
-
-onMounted(() => {
-    configure({
-        title: t('documentations.debianOllamaSetup.title'),
+    layout: 'with-subnav',
+    subNav: {
+        titleKey: 'documentations.debianOllamaSetup.title',
         showBackButton: true,
         backTo: '/showcase',
         backLabel: 'Back to Showcase'
-    })
+    }
 })
+
+// Setup composables
+const localePath = useLocalePath()
+const { t } = useI18n()
+const colorMode = useColorMode()
+const isExpanded = ref<Record<string, boolean>>({})
 
 interface Command {
     command: string
@@ -470,7 +466,7 @@ onMounted(() => {
                                             <div
                                                 :class="`relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${step.color} rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center`">
                                                 <span class="text-white font-bold text-base sm:text-lg">{{ index + 1
-                                                    }}</span>
+                                                }}</span>
                                             </div>
                                         </div>
                                     </div>

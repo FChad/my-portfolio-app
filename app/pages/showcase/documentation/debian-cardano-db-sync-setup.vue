@@ -1,26 +1,22 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { useLocalePath, useI18n } from '#imports'
 
 // Layout definieren
 definePageMeta({
-    layout: 'with-subnav'
-})
-
-// Subnavigation konfigurieren
-const localePath = useLocalePath()
-const { t } = useI18n()
-const { configure } = useSubNavigation()
-const isExpanded = ref<Record<string, boolean>>({})
-
-onMounted(() => {
-    configure({
-        title: t('documentations.debianCardanoDbSyncSetup.title'),
+    layout: 'with-subnav',
+    subNav: {
+        titleKey: 'documentations.debianCardanoDbSyncSetup.title',
         showBackButton: true,
         backTo: '/showcase',
         backLabel: 'Back to Showcase'
-    })
+    }
 })
+
+// Setup composables
+const localePath = useLocalePath()
+const { t } = useI18n()
+const isExpanded = ref<Record<string, boolean>>({})
 
 interface Command {
     command: string

@@ -1,21 +1,17 @@
 <script lang="ts" setup>
 // Layout definieren
 definePageMeta({
-    layout: 'with-subnav'
-})
-
-// Subnavigation konfigurieren
-const { t } = useI18n()
-const { configure } = useSubNavigation()
-
-onMounted(() => {
-    configure({
-        title: t('showcase.projects.myChatBot.title'),
+    layout: 'with-subnav',
+    subNav: {
+        titleKey: 'showcase.projects.myChatBot.title',
         showBackButton: true,
         backTo: '/showcase',
         backLabel: 'Back to Showcase'
-    })
+    }
 })
+
+// I18n für Übersetzungen
+const { t } = useI18n()
 
 // Color mapping for consistent theming
 const colorMap = {

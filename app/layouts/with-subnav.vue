@@ -5,7 +5,7 @@
 
         <!-- SubNavigation - Fixed below header -->
         <div class="sticky z-50" style="top: var(--header-height);">
-            <UiSubNavigation v-if="subNavProps" v-bind="subNavProps" />
+            <UiSubNavigation v-if="subNavConfig" v-bind="subNavConfig" />
         </div>
 
         <!-- Main Content with padding to account for fixed headers -->
@@ -25,12 +25,21 @@ interface SubNavProps {
     backLabel?: string
 }
 
-// Props for the subnav
-const subNavProps = ref<SubNavProps | null>(null)
+// Get subnav configuration from page meta
+const route = useRoute()
+const { t } = useI18n()
 
-// Provide a function to set subnav props from child components
-provide('setSubNav', (props: SubNavProps | null) => {
-    subNavProps.value = props
+// Extract subnav configuration from page meta
+const subNavConfig = computed((): SubNavProps | null => {
+    const meta = route.meta.subNav as any
+    if (!meta) return null
+
+    return {
+        title: typeof meta.titleKey === 'string' ? t(meta.titleKey) : meta.title,
+        showBackButton: meta.showBackButton ?? false,
+        backTo: meta.backTo,
+        backLabel: meta.backLabel
+    }
 })
 </script>
 
