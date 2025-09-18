@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, watch, nextTick } from 'vue'
-import { useLocalePath, useI18n, useColorMode } from '#imports'
+import { useI18n, useColorMode } from '#imports'
 
 // Layout definieren
 definePageMeta({
@@ -14,7 +14,6 @@ definePageMeta({
 })
 
 // Setup composables
-const localePath = useLocalePath()
 const { t } = useI18n()
 const colorMode = useColorMode()
 

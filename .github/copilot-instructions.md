@@ -63,6 +63,11 @@ const flagMap = {
 - **Animation**: Prefer `requestAnimationFrame` over intervals for smooth performance
 - **Loading states**: Show skeleton loaders during hydration (see `ThemeSwitcher.vue`)
 
+### Link Patterns
+- **Internal links**: Always use `<NuxtLinkLocale>` for internal navigation
+- **External links**: Use `<NuxtLink external target="_blank">` for external URLs
+- **No localePath()**: Avoid `useLocalePath()` - use direct paths with `<NuxtLinkLocale>`
+
 ### TypeScript Props Pattern
 ```typescript
 interface Props {
@@ -120,7 +125,7 @@ interface ShowcaseItem {
     description: string  // i18n key  
     image: string       // SVG path
     tags: string[]      // Tech stack tags
-    link: string        // localePath() result
+    link: string        // Direct path (used with <NuxtLinkLocale>)
     type: 'project' | 'documentation'
 }
 ```

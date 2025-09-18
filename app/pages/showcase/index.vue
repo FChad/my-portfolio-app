@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const localePath = useLocalePath()
 const { t } = useI18n()
 
 interface ShowcaseItem {
@@ -20,7 +19,7 @@ const showcaseItems: ShowcaseItem[] = [
         description: "showcase.projects.myChatBot.description",
         image: "/img/showcase/project/my-chat-bot-cover.svg",
         tags: ["Nuxt3", "Vue3", "TypeScript", "Pinia", "Tailwind", "Ollama", "AI", "Chat", "SSE"],
-        link: localePath('/showcase/project/my-chat-bot'),
+        link: '/showcase/project/my-chat-bot',
         type: 'project'
     },
     {
@@ -29,7 +28,7 @@ const showcaseItems: ShowcaseItem[] = [
         description: "showcase.projects.myPortfolio.description",
         image: "/img/showcase/project/my-portfolio-website-cover.svg",
         tags: ["Nuxt3", "TypeScript", "Tailwind", "i18n", "VeeValidate", "Resend", "Iconify"],
-        link: localePath('/showcase/project/my-portfolio-website'),
+        link: '/showcase/project/my-portfolio-website',
         type: 'project'
     },
     {
@@ -38,7 +37,7 @@ const showcaseItems: ShowcaseItem[] = [
         description: "showcase.documentation.debianInitialSetup.description",
         image: "/img/showcase/documentation/debian-12-initial-setup-cover.svg",
         tags: ["Debian 12", "Server Setup", "Linux", "System Administration"],
-        link: localePath('/showcase/documentation/debian-12-initial-setup'),
+        link: '/showcase/documentation/debian-12-initial-setup',
         type: 'documentation'
     },
     {
@@ -47,7 +46,7 @@ const showcaseItems: ShowcaseItem[] = [
         description: "showcase.documentation.ollamaSetup.description",
         image: "/img/showcase/documentation/debian-ollama-setup-cover.svg",
         tags: ["Debian 12", "Ollama", "Apache2", "SSL/TLS", "API", "AI"],
-        link: localePath('/showcase/documentation/debian-ollama-setup'),
+        link: '/showcase/documentation/debian-ollama-setup',
         type: 'documentation'
     },
     {
@@ -56,7 +55,7 @@ const showcaseItems: ShowcaseItem[] = [
         description: "showcase.documentation.cardanoNodeSetup.description",
         image: "/img/showcase/documentation/debian-cardano-node-setup-cover.svg",
         tags: ["Debian 12", "Cardano", "NIX", "Blockchain", "Cryptocurrency", "Node"],
-        link: localePath('/showcase/documentation/debian-cardano-node-setup'),
+        link: '/showcase/documentation/debian-cardano-node-setup',
         type: 'documentation'
     },
     {
@@ -65,7 +64,7 @@ const showcaseItems: ShowcaseItem[] = [
         description: "showcase.documentation.cardanoDbSyncSetup.description",
         image: "/img/showcase/documentation/debian-cardano-db-sync-setup-cover.svg",
         tags: ["Debian 12", "Cardano DB Sync", "PostgreSQL", "NIX", "Blockchain", "Database"],
-        link: localePath('/showcase/documentation/debian-cardano-db-sync-setup'),
+        link: '/showcase/documentation/debian-cardano-db-sync-setup',
         type: 'documentation'
     }
 ];
@@ -185,11 +184,11 @@ const totalCount = computed(() => showcaseItems.length)
 
                     <!-- Action Button -->
                     <div class="mt-auto ml-auto">
-                        <NuxtLink :to="item.link"
+                        <NuxtLinkLocale :to="item.link"
                             class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
                             <Icon name="mdi:open-in-new" class="w-5 h-5" />
                             {{ t('showcase.labels.viewDetails') }}
-                        </NuxtLink>
+                        </NuxtLinkLocale>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { useLocalePath, useI18n } from '#imports'
+import { useI18n } from '#imports'
 
 // Layout definieren
 definePageMeta({
@@ -14,7 +14,6 @@ definePageMeta({
 })
 
 // Setup composables
-const localePath = useLocalePath()
 const { t } = useI18n()
 const isExpanded = ref<Record<string, boolean>>({})
 
