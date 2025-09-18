@@ -45,27 +45,27 @@ const showcaseItems: ShowcaseItem[] = [
         id: 4,
         title: "showcase.documentation.ollamaSetup.title",
         description: "showcase.documentation.ollamaSetup.description",
-        image: "/img/showcase/documentation/ollama-debian-setup-cover.svg",
+        image: "/img/showcase/documentation/debian-ollama-setup-cover.svg",
         tags: ["Debian 12", "Ollama", "Apache2", "SSL/TLS", "API", "AI"],
-        link: localePath('/showcase/documentation/ollama-debian-setup'),
+        link: localePath('/showcase/documentation/debian-ollama-setup'),
         type: 'documentation'
     },
     {
         id: 5,
         title: "showcase.documentation.cardanoNodeSetup.title",
         description: "showcase.documentation.cardanoNodeSetup.description",
-        image: "/img/showcase/documentation/cardano-node-debian-setup-cover.svg",
+        image: "/img/showcase/documentation/debian-cardano-node-setup-cover.svg",
         tags: ["Debian 12", "Cardano", "NIX", "Blockchain", "Cryptocurrency", "Node"],
-        link: localePath('/showcase/documentation/cardano-node-debian-setup'),
+        link: localePath('/showcase/documentation/debian-cardano-node-setup'),
         type: 'documentation'
     },
     {
         id: 6,
         title: "showcase.documentation.cardanoDbSyncSetup.title",
         description: "showcase.documentation.cardanoDbSyncSetup.description",
-        image: "/img/showcase/documentation/cardano-db-sync-debian-setup-cover.svg",
+        image: "/img/showcase/documentation/debian-cardano-db-sync-setup-cover.svg",
         tags: ["Debian 12", "Cardano DB Sync", "PostgreSQL", "NIX", "Blockchain", "Database"],
-        link: localePath('/showcase/documentation/cardano-db-sync-debian-setup'),
+        link: localePath('/showcase/documentation/debian-cardano-db-sync-setup'),
         type: 'documentation'
     }
 ];

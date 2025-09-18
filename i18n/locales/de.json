@@ -503,6 +503,125 @@
                     "description": "Umfangreiche Icon-Bibliothek mit über 100.000 Icons und optimaler Leistung durch Icon-on-Demand"
                 }
             }
+        },
+        "debianInitialSetup": {
+            "title": "Debian 12 - Server Ersteinrichtung",
+            "description": "Eine umfassende Schritt-für-Schritt Anleitung für die Ersteinrichtung eines frischen Debian 12 Servers mit den wichtigsten Konfigurationsschritten.",
+            "notes": {
+                "title": "Wichtige Hinweise",
+                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich",
+                "networkConnection": "Aktive Internetverbindung wird benötigt",
+                "backupImportant": "Erstellen Sie vor Änderungen Backups wichtiger Daten",
+                "timeRequired": "Gesamtzeit: ca. 30-45 Minuten",
+                "securityConsiderations": "Beachten Sie Sicherheitsaspekte bei der Konfiguration",
+                "documentChanges": "Dokumentieren Sie alle vorgenommenen Änderungen"
+            },
+            "steps": {
+                "title": "Einrichtungsschritte",
+                "subtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine optimale Server-Konfiguration",
+                "language": {
+                    "title": "Sprache und Locale konfigurieren",
+                    "description": "Konfiguration der Systemsprache und Locale-Einstellungen für eine korrekte Zeichendarstellung."
+                },
+                "timezone": {
+                    "title": "Zeitzone einstellen",
+                    "description": "Einstellung der korrekten Zeitzone für genaue Zeit- und Datumsangaben."
+                },
+                "sources": {
+                    "title": "Paketquellen aktualisieren",
+                    "description": "Aktualisierung der APT-Paketquellen und des Systems auf den neuesten Stand."
+                },
+                "hostname": {
+                    "title": "Hostname konfigurieren",
+                    "description": "Festlegung eines eindeutigen Hostnamens für die Serveridentifikation im Netzwerk."
+                },
+                "motd": {
+                    "title": "MOTD bereinigen",
+                    "description": "Entfernung der Standard-Willkommensnachricht für eine saubere Anmeldung."
+                },
+                "hardware": {
+                    "title": "Hardware-Informationen anzeigen",
+                    "description": "Überprüfung und Anzeige der verfügbaren Hardware-Ressourcen des Servers."
+                },
+                "verification": {
+                    "title": "System-Verifikation",
+                    "description": "Abschließende Überprüfung aller Konfigurationen und des Systemstatus."
+                }
+            },
+            "commands": {
+                "language": {
+                    "listLocales": "Verfügbare Locales auflisten",
+                    "generateLocale": "UTF-8 Locale generieren",
+                    "updateLocale": "System-Locale aktualisieren",
+                    "checkLocale": "Aktuelle Locale-Konfiguration überprüfen",
+                    "restartNote": "Ein Neustart kann erforderlich sein, um die Änderungen vollständig zu übernehmen"
+                },
+                "timezone": {
+                    "checkDate": "Aktuelles Datum und Uhrzeit anzeigen",
+                    "checkTimezone": "Zeitzone-Konfiguration überprüfen",
+                    "listTimezones": "Alle verfügbaren Zeitzonen auflisten",
+                    "setTimezone": "Zeitzone auf Europa/Luxemburg setzen",
+                    "verifyTimezone": "Neue Zeitzone-Konfiguration bestätigen"
+                },
+                "sources": {
+                    "updatePackages": "Paketlisten aktualisieren",
+                    "upgradeSystem": "System auf neuesten Stand bringen",
+                    "autoremove": "Nicht mehr benötigte Pakete entfernen",
+                    "autoclean": "Paket-Cache bereinigen",
+                    "verifySources": "Haupt-Paketquellen anzeigen",
+                    "checkAdditionalSources": "Zusätzliche Paketquellen überprüfen",
+                    "wikiReference": "Weitere Informationen finden Sie im Debian Wiki zu APT-Konfiguration"
+                },
+                "hostname": {
+                    "editCloudConfig": "Cloud-Init Konfiguration bearbeiten (falls vorhanden)",
+                    "setHostname": "Neuen Hostnamen setzen",
+                    "verifyHostname": "Hostnamen-Konfiguration überprüfen",
+                    "reboot": "System für vollständige Anwendung neu starten",
+                    "virtualizationNote": "Nur bei virtualisierten Umgebungen mit cloud-init erforderlich"
+                },
+                "motd": {
+                    "clearMotd": "Standard MOTD-Datei leeren"
+                },
+                "hardware": {
+                    "installInxi": "Hardware-Informationstool installieren",
+                    "showHardwareInfo": "Vollständige Hardware-Informationen anzeigen",
+                    "showCpuInfo": "CPU-Informationen anzeigen",
+                    "showMemoryInfo": "Speicher-Informationen anzeigen",
+                    "showDiskInfo": "Festplatten-Informationen anzeigen"
+                },
+                "verification": {
+                    "systemInfo": "System-Versionsinformationen anzeigen",
+                    "kernelInfo": "Kernel-Informationen anzeigen",
+                    "systemStatus": "Systemd-Status überprüfen",
+                    "checkUpdates": "Verfügbare Updates überprüfen"
+                },
+                "tips": {
+                    "installFirewall": "UFW Firewall installieren",
+                    "enableFirewall": "Firewall aktivieren",
+                    "installFail2ban": "Fail2Ban für erweiterte Sicherheit installieren",
+                    "installEssentials": "Wichtige System-Tools installieren",
+                    "installBuildTools": "Build-Tools für Kompilierung installieren",
+                    "installAutoUpdates": "Automatische Updates installieren",
+                    "configureAutoUpdates": "Automatische Updates konfigurieren"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Zusätzliche Empfehlungen",
+                "sectionSubtitle": "Optional: Weitere nützliche Konfigurationen für erweiterte Sicherheit und Funktionalität",
+                "security": {
+                    "title": "Sicherheitsmaßnahmen"
+                },
+                "essentials": {
+                    "title": "Essential Tools"
+                },
+                "updates": {
+                    "title": "Automatische Updates"
+                }
+            },
+            "completion": {
+                "title": "Einrichtung abgeschlossen!",
+                "message": "Ihr Debian 12 Server ist jetzt grundlegend konfiguriert und einsatzbereit. Vergessen Sie nicht, weitere sicherheitsrelevante Konfigurationen entsprechend Ihren Anforderungen vorzunehmen."
+            }
         }
     },
     "contact": {
