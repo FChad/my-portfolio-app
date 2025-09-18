@@ -6,7 +6,7 @@ import { useLocalePath, useI18n } from '#imports'
 definePageMeta({
     layout: 'with-subnav',
     subNav: {
-        titleKey: 'documentations.debianCardanoNodeSetup.title',
+        titleKey: 'documentations.cardanoNodeSetup.title',
         showBackButton: true,
         backTo: '/showcase',
         backLabel: 'Back to Showcase'

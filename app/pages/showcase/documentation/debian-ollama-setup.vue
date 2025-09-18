@@ -6,7 +6,7 @@ import { useLocalePath, useI18n, useColorMode } from '#imports'
 definePageMeta({
     layout: 'with-subnav',
     subNav: {
-        titleKey: 'documentations.debianOllamaSetup.title',
+        titleKey: 'documentations.ollamaSetup.title',
         showBackButton: true,
         backTo: '/showcase',
         backLabel: 'Back to Showcase'
@@ -466,7 +466,7 @@ onMounted(() => {
                                             <div
                                                 :class="`relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${step.color} rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center`">
                                                 <span class="text-white font-bold text-base sm:text-lg">{{ index + 1
-                                                }}</span>
+                                                    }}</span>
                                             </div>
                                         </div>
                                     </div>
