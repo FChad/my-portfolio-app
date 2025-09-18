@@ -4,7 +4,7 @@
         <Header />
 
         <!-- SubNavigation - Fixed below header -->
-        <div class="sticky z-50" style="top: var(--header-height);">
+        <div class="sticky z-40" style="top: var(--header-height);">
             <UiSubNavigation v-if="subNavConfig" v-bind="subNavConfig" />
         </div>
 
