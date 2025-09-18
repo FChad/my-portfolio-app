@@ -29,12 +29,12 @@ interface SetupStep {
 const setupSteps: SetupStep[] = [
     {
         id: 'dependencies',
-        title: 'projects.cardanoNodeSetup.steps.dependencies.title',
-        description: 'projects.cardanoNodeSetup.steps.dependencies.description',
+        title: 'documentations.cardanoNodeSetup.steps.dependencies.title',
+        description: 'documentations.cardanoNodeSetup.steps.dependencies.description',
         commands: [
             {
                 command: 'sudo apt update && sudo apt install -y git tmux curl',
-                description: 'projects.cardanoNodeSetup.commands.dependencies.installDeps',
+                description: 'documentations.cardanoNodeSetup.commands.dependencies.installDeps',
                 language: 'bash'
             }
         ],
@@ -43,37 +43,37 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'nix',
-        title: 'projects.cardanoNodeSetup.steps.nix.title',
-        description: 'projects.cardanoNodeSetup.steps.nix.description',
+        title: 'documentations.cardanoNodeSetup.steps.nix.title',
+        description: 'documentations.cardanoNodeSetup.steps.nix.description',
         commands: [
             {
                 command: 'sh <(curl --proto \'=https\' --tlsv1.2 -L https://nixos.org/nix/install) --daemon',
-                description: 'projects.cardanoNodeSetup.commands.nix.install',
+                description: 'documentations.cardanoNodeSetup.commands.nix.install',
                 language: 'bash'
             },
             {
                 command: 'reboot',
-                description: 'projects.cardanoNodeSetup.commands.nix.reboot',
+                description: 'documentations.cardanoNodeSetup.commands.nix.reboot',
                 language: 'bash'
             },
             {
                 command: 'nix --version',
-                description: 'projects.cardanoNodeSetup.commands.nix.verify',
+                description: 'documentations.cardanoNodeSetup.commands.nix.verify',
                 language: 'bash'
             }
         ],
-        note: 'projects.cardanoNodeSetup.commands.nix.rebootNote',
+        note: 'documentations.cardanoNodeSetup.commands.nix.rebootNote',
         icon: 'mdi:package-down',
         color: 'from-blue-500 to-indigo-600'
     },
     {
         id: 'nixconfig',
-        title: 'projects.cardanoNodeSetup.steps.nixconfig.title',
-        description: 'projects.cardanoNodeSetup.steps.nixconfig.description',
+        title: 'documentations.cardanoNodeSetup.steps.nixconfig.title',
+        description: 'documentations.cardanoNodeSetup.steps.nixconfig.description',
         commands: [
             {
                 command: 'nano /etc/nix/nix.conf',
-                description: 'projects.cardanoNodeSetup.commands.nixconfig.editConfig',
+                description: 'documentations.cardanoNodeSetup.commands.nixconfig.editConfig',
                 isFile: true,
                 fileName: '/etc/nix/nix.conf',
                 fileContent: 'build-users-group = nixbld\nexperimental-features = nix-command flakes\ntrusted-users = root cardano',
@@ -81,7 +81,7 @@ const setupSteps: SetupStep[] = [
             },
             {
                 command: 'systemctl restart nix-daemon.service',
-                description: 'projects.cardanoNodeSetup.commands.nixconfig.restart',
+                description: 'documentations.cardanoNodeSetup.commands.nixconfig.restart',
                 language: 'bash'
             }
         ],
@@ -90,12 +90,12 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'user',
-        title: 'projects.cardanoNodeSetup.steps.user.title',
-        description: 'projects.cardanoNodeSetup.steps.user.description',
+        title: 'documentations.cardanoNodeSetup.steps.user.title',
+        description: 'documentations.cardanoNodeSetup.steps.user.description',
         commands: [
             {
                 command: 'sudo useradd -m -s /bin/bash cardano',
-                description: 'projects.cardanoNodeSetup.commands.user.createUser',
+                description: 'documentations.cardanoNodeSetup.commands.user.createUser',
                 language: 'bash'
             }
         ],
@@ -104,58 +104,58 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'install',
-        title: 'projects.cardanoNodeSetup.steps.install.title',
-        description: 'projects.cardanoNodeSetup.steps.install.description',
+        title: 'documentations.cardanoNodeSetup.steps.install.title',
+        description: 'documentations.cardanoNodeSetup.steps.install.description',
         commands: [
             {
                 command: 'sudo -i -u cardano',
-                description: 'projects.cardanoNodeSetup.commands.install.switchUser',
+                description: 'documentations.cardanoNodeSetup.commands.install.switchUser',
                 language: 'bash'
             },
             {
                 command: 'git clone https://github.com/IntersectMBO/cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.install.clone',
+                description: 'documentations.cardanoNodeSetup.commands.install.clone',
                 language: 'bash'
             },
             {
                 command: 'cd cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.install.changeDir',
+                description: 'documentations.cardanoNodeSetup.commands.install.changeDir',
                 language: 'bash'
             },
             {
                 command: 'git tag | sort -V',
-                description: 'projects.cardanoNodeSetup.commands.install.listTags',
+                description: 'documentations.cardanoNodeSetup.commands.install.listTags',
                 language: 'bash'
             },
             {
                 command: 'git switch -d tags/10.4.1',
-                description: 'projects.cardanoNodeSetup.commands.install.checkout',
+                description: 'documentations.cardanoNodeSetup.commands.install.checkout',
                 language: 'bash'
             },
             {
                 command: 'nix profile install .#cardano-node .#cardano-cli',
-                description: 'projects.cardanoNodeSetup.commands.install.profileInstall',
-                note: 'projects.cardanoNodeSetup.commands.install.profileNote',
+                description: 'documentations.cardanoNodeSetup.commands.install.profileInstall',
+                note: 'documentations.cardanoNodeSetup.commands.install.profileNote',
                 language: 'bash'
             },
             {
                 command: 'nix profile list',
-                description: 'projects.cardanoNodeSetup.commands.install.profileList',
+                description: 'documentations.cardanoNodeSetup.commands.install.profileList',
                 language: 'bash'
             },
             {
                 command: '~/.nix-profile/bin/cardano-node --version',
-                description: 'projects.cardanoNodeSetup.commands.install.checkNode',
+                description: 'documentations.cardanoNodeSetup.commands.install.checkNode',
                 language: 'bash'
             },
             {
                 command: '~/.nix-profile/bin/cardano-cli --version',
-                description: 'projects.cardanoNodeSetup.commands.install.checkCli',
+                description: 'documentations.cardanoNodeSetup.commands.install.checkCli',
                 language: 'bash'
             },
             {
                 command: 'exit',
-                description: 'projects.cardanoNodeSetup.commands.install.exitUser',
+                description: 'documentations.cardanoNodeSetup.commands.install.exitUser',
                 language: 'bash'
             }
         ],
@@ -164,77 +164,77 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'symlinks',
-        title: 'projects.cardanoNodeSetup.steps.symlinks.title',
-        description: 'projects.cardanoNodeSetup.steps.symlinks.description',
+        title: 'documentations.cardanoNodeSetup.steps.symlinks.title',
+        description: 'documentations.cardanoNodeSetup.steps.symlinks.description',
         commands: [
             {
                 command: 'sudo ln -sf /home/cardano/.nix-profile/bin/cardano-node /usr/local/bin/cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.symlinks.linkNode',
+                description: 'documentations.cardanoNodeSetup.commands.symlinks.linkNode',
                 language: 'bash'
             },
             {
                 command: 'sudo ln -sf /home/cardano/.nix-profile/bin/cardano-cli /usr/local/bin/cardano-cli',
-                description: 'projects.cardanoNodeSetup.commands.symlinks.linkCli',
+                description: 'documentations.cardanoNodeSetup.commands.symlinks.linkCli',
                 language: 'bash'
             },
             {
                 command: 'ls -la /usr/local/bin/cardano-*',
-                description: 'projects.cardanoNodeSetup.commands.symlinks.verifyLinks',
+                description: 'documentations.cardanoNodeSetup.commands.symlinks.verifyLinks',
                 language: 'bash'
             },
             {
                 command: 'cardano-node --version',
-                description: 'projects.cardanoNodeSetup.commands.symlinks.testNode',
+                description: 'documentations.cardanoNodeSetup.commands.symlinks.testNode',
                 language: 'bash'
             },
             {
                 command: 'cardano-cli --version',
-                description: 'projects.cardanoNodeSetup.commands.symlinks.testCli',
+                description: 'documentations.cardanoNodeSetup.commands.symlinks.testCli',
                 language: 'bash'
             }
         ],
-        note: 'projects.cardanoNodeSetup.commands.symlinks.profileNote',
+        note: 'documentations.cardanoNodeSetup.commands.symlinks.profileNote',
         icon: 'mdi:link',
         color: 'from-pink-500 to-rose-600'
     },
     {
         id: 'config',
-        title: 'projects.cardanoNodeSetup.steps.config.title',
-        description: 'projects.cardanoNodeSetup.steps.config.description',
+        title: 'documentations.cardanoNodeSetup.steps.config.title',
+        description: 'documentations.cardanoNodeSetup.steps.config.description',
         commands: [
             {
                 command: 'sudo -i -u cardano',
-                description: 'projects.cardanoNodeSetup.commands.config.switchUser',
+                description: 'documentations.cardanoNodeSetup.commands.config.switchUser',
                 language: 'bash'
             },
             {
                 command: 'mkdir -p ~/cardano-config ~/cardano-db',
-                description: 'projects.cardanoNodeSetup.commands.config.createDirs',
+                description: 'documentations.cardanoNodeSetup.commands.config.createDirs',
                 language: 'bash'
             },
             {
                 command: 'cd ~/cardano-config',
-                description: 'projects.cardanoNodeSetup.commands.config.changeDir',
+                description: 'documentations.cardanoNodeSetup.commands.config.changeDir',
                 language: 'bash'
             },
             {
                 command: 'curl -O -J "https://book.play.dev.cardano.org/environments/mainnet/{config,db-sync-config,submit-api-config,topology,byron-genesis,shelley-genesis,alonzo-genesis,conway-genesis,checkpoints}.json"',
-                description: 'projects.cardanoNodeSetup.commands.config.downloadConfigs',
+                description: 'documentations.cardanoNodeSetup.commands.config.downloadConfigs',
                 language: 'bash'
             },
             {
                 command: 'ls -lh *.json',
-                description: 'projects.cardanoNodeSetup.commands.config.listConfigs',
+                description: 'documentations.cardanoNodeSetup.commands.config.listConfigs',
                 language: 'bash'
             },
             {
                 command: 'head -20 config.json',
-                description: 'projects.cardanoNodeSetup.commands.config.checkConfig',
+                description: 'documentations.cardanoNodeSetup.commands.config.checkConfig',
                 language: 'bash'
             },
             {
                 command: 'exit',
-                description: 'projects.cardanoNodeSetup.commands.config.exitUser',
+                description: 'documentations.cardanoNodeSetup.commands.config.exitUser',
                 language: 'bash'
             }
         ],
@@ -243,12 +243,12 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'service',
-        title: 'projects.cardanoNodeSetup.steps.service.title',
-        description: 'projects.cardanoNodeSetup.steps.service.description',
+        title: 'documentations.cardanoNodeSetup.steps.service.title',
+        description: 'documentations.cardanoNodeSetup.steps.service.description',
         commands: [
             {
                 command: 'nano /etc/systemd/system/cardano-node.service',
-                description: 'projects.cardanoNodeSetup.commands.service.createService',
+                description: 'documentations.cardanoNodeSetup.commands.service.createService',
                 isFile: true,
                 fileName: '/etc/systemd/system/cardano-node.service',
                 fileContent: `[Unit]
@@ -276,17 +276,17 @@ WantedBy=multi-user.target`,
             },
             {
                 command: 'systemctl daemon-reload',
-                description: 'projects.cardanoNodeSetup.commands.service.reload',
+                description: 'documentations.cardanoNodeSetup.commands.service.reload',
                 language: 'bash'
             },
             {
                 command: 'systemctl enable cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.service.enable',
+                description: 'documentations.cardanoNodeSetup.commands.service.enable',
                 language: 'bash'
             },
             {
                 command: 'systemctl start cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.service.start',
+                description: 'documentations.cardanoNodeSetup.commands.service.start',
                 language: 'bash'
             }
         ],
@@ -295,21 +295,21 @@ WantedBy=multi-user.target`,
     },
     {
         id: 'monitor',
-        title: 'projects.cardanoNodeSetup.steps.monitor.title',
-        description: 'projects.cardanoNodeSetup.steps.monitor.description',
+        title: 'documentations.cardanoNodeSetup.steps.monitor.title',
+        description: 'documentations.cardanoNodeSetup.steps.monitor.description',
         commands: [
             {
                 command: 'journalctl -u cardano-node -f',
-                description: 'projects.cardanoNodeSetup.commands.monitor.logs',
+                description: 'documentations.cardanoNodeSetup.commands.monitor.logs',
                 language: 'bash'
             },
             {
                 command: 'cardano-cli query tip --socket-path /home/cardano/cardano-db/node.socket --mainnet',
-                description: 'projects.cardanoNodeSetup.commands.monitor.syncProgress',
+                description: 'documentations.cardanoNodeSetup.commands.monitor.syncProgress',
                 language: 'bash'
             }
         ],
-        note: 'projects.cardanoNodeSetup.commands.monitor.syncNote',
+        note: 'documentations.cardanoNodeSetup.commands.monitor.syncNote',
         icon: 'mdi:monitor-dashboard',
         color: 'from-indigo-500 to-purple-600'
     }
@@ -318,54 +318,54 @@ WantedBy=multi-user.target`,
 const additionalTips = [
     {
         id: 'sync',
-        title: 'projects.cardanoNodeSetup.tips.sync.title',
+        title: 'documentations.cardanoNodeSetup.tips.sync.title',
         icon: 'mdi:sync',
         color: 'from-blue-500 to-indigo-600',
         commands: [
             {
                 command: 'systemctl status cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.tips.syncStatus',
+                description: 'documentations.cardanoNodeSetup.commands.tips.syncStatus',
                 language: 'bash'
             },
             {
                 command: 'du -sh /home/cardano/cardano-db',
-                description: 'projects.cardanoNodeSetup.commands.tips.syncSize',
+                description: 'documentations.cardanoNodeSetup.commands.tips.syncSize',
                 language: 'bash'
             }
         ]
     },
     {
         id: 'maintenance',
-        title: 'projects.cardanoNodeSetup.tips.maintenance.title',
+        title: 'documentations.cardanoNodeSetup.tips.maintenance.title',
         icon: 'mdi:wrench',
         color: 'from-green-500 to-emerald-600',
         commands: [
             {
                 command: 'systemctl restart cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.tips.restart',
+                description: 'documentations.cardanoNodeSetup.commands.tips.restart',
                 language: 'bash'
             },
             {
                 command: 'systemctl stop cardano-node',
-                description: 'projects.cardanoNodeSetup.commands.tips.stop',
+                description: 'documentations.cardanoNodeSetup.commands.tips.stop',
                 language: 'bash'
             }
         ]
     },
     {
         id: 'troubleshooting',
-        title: 'projects.cardanoNodeSetup.tips.troubleshooting.title',
+        title: 'documentations.cardanoNodeSetup.tips.troubleshooting.title',
         icon: 'mdi:bug',
         color: 'from-red-500 to-pink-600',
         commands: [
             {
                 command: 'journalctl -u cardano-node --no-pager -l',
-                description: 'projects.cardanoNodeSetup.commands.tips.fullLogs',
+                description: 'documentations.cardanoNodeSetup.commands.tips.fullLogs',
                 language: 'bash'
             },
             {
                 command: 'ps aux | grep cardano',
-                description: 'projects.cardanoNodeSetup.commands.tips.checkProcess',
+                description: 'documentations.cardanoNodeSetup.commands.tips.checkProcess',
                 language: 'bash'
             }
         ]
@@ -386,7 +386,7 @@ onMounted(() => {
 <template>
     <div class="w-full">
         <!-- Navigation -->
-        <UiSubNavigation :title="t('projects.cardanoNodeSetup.title')" />
+        <UiSubNavigation :title="t('documentations.cardanoNodeSetup.title')" />
 
         <!-- Content Area -->
         <div class="w-full">
@@ -409,13 +409,13 @@ onMounted(() => {
                     <!-- Title -->
                     <h1
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
-                        {{ t('projects.cardanoNodeSetup.title') }}
+                        {{ t('documentations.cardanoNodeSetup.title') }}
                     </h1>
 
                     <!-- Description -->
                     <p
                         class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
-                        {{ t('projects.cardanoNodeSetup.description') }}
+                        {{ t('documentations.cardanoNodeSetup.description') }}
                     </p>
 
                     <!-- Tags -->
@@ -453,7 +453,7 @@ onMounted(() => {
                                 <Icon name="mdi:alert-circle" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                             </div>
                             <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                                {{ t('projects.cardanoNodeSetup.notes.title') }}
+                                {{ t('documentations.cardanoNodeSetup.notes.title') }}
                             </h2>
                         </div>
 
@@ -463,7 +463,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoNodeSetup.notes.rootAccess') }}
+                                    {{ t('documentations.cardanoNodeSetup.notes.rootAccess') }}
                                 </span>
                             </div>
                             <div
@@ -471,7 +471,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoNodeSetup.notes.networkConnection') }}
+                                    {{ t('documentations.cardanoNodeSetup.notes.networkConnection') }}
                                 </span>
                             </div>
                             <div
@@ -479,7 +479,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoNodeSetup.notes.diskSpace') }}
+                                    {{ t('documentations.cardanoNodeSetup.notes.diskSpace') }}
                                 </span>
                             </div>
                             <div
@@ -487,7 +487,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoNodeSetup.notes.timeRequired') }}
+                                    {{ t('documentations.cardanoNodeSetup.notes.timeRequired') }}
                                 </span>
                             </div>
                         </div>
@@ -498,10 +498,10 @@ onMounted(() => {
                 <div class="max-w-7xl mx-auto mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoNodeSetup.steps.title') }}
+                            {{ t('documentations.cardanoNodeSetup.steps.title') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.cardanoNodeSetup.stepsSubtitle') }}
+                            {{ t('documentations.cardanoNodeSetup.stepsSubtitle') }}
                         </p>
                     </div>
 
@@ -595,10 +595,10 @@ onMounted(() => {
                 <div class="mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoNodeSetup.tips.sectionTitle') }}
+                            {{ t('documentations.cardanoNodeSetup.tips.sectionTitle') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.cardanoNodeSetup.tips.sectionSubtitle') }}
+                            {{ t('documentations.cardanoNodeSetup.tips.sectionSubtitle') }}
                         </p>
                     </div>
 
@@ -632,10 +632,10 @@ onMounted(() => {
                 <div class="mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoNodeSetup.resources.sectionTitle') }}
+                            {{ t('documentations.cardanoNodeSetup.resources.sectionTitle') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.cardanoNodeSetup.resources.sectionSubtitle') }}
+                            {{ t('documentations.cardanoNodeSetup.resources.sectionSubtitle') }}
                         </p>
                     </div>
 
@@ -650,13 +650,13 @@ onMounted(() => {
                                     <Icon name="mdi:download" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t('projects.cardanoNodeSetup.resources.nixDownload.title') }}
+                                    {{ t('documentations.cardanoNodeSetup.resources.nixDownload.title') }}
                                 </h3>
                                 <Icon name="mdi:external-link"
                                     class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
                             </div>
                             <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ t('projects.cardanoNodeSetup.resources.nixDownload.description') }}
+                                {{ t('documentations.cardanoNodeSetup.resources.nixDownload.description') }}
                             </p>
                         </a>
 
@@ -671,13 +671,13 @@ onMounted(() => {
                                         class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t('projects.cardanoNodeSetup.resources.cardanoInstall.title') }}
+                                    {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.title') }}
                                 </h3>
                                 <Icon name="mdi:external-link"
                                     class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
                             </div>
                             <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ t('projects.cardanoNodeSetup.resources.cardanoInstall.description') }}
+                                {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.description') }}
                             </p>
                         </a>
 
@@ -692,13 +692,13 @@ onMounted(() => {
                                         class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t('projects.cardanoNodeSetup.resources.cardanoRunning.title') }}
+                                    {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.title') }}
                                 </h3>
                                 <Icon name="mdi:external-link"
                                     class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
                             </div>
                             <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ t('projects.cardanoNodeSetup.resources.cardanoRunning.description') }}
+                                {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.description') }}
                             </p>
                         </a>
                     </div>
@@ -713,10 +713,10 @@ onMounted(() => {
                             <Icon name="mdi:check-circle" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                         </div>
                         <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoNodeSetup.completion.title') }}
+                            {{ t('documentations.cardanoNodeSetup.completion.title') }}
                         </h3>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-                            {{ t('projects.cardanoNodeSetup.completion.message') }}
+                            {{ t('documentations.cardanoNodeSetup.completion.message') }}
                         </p>
                     </div>
                 </div>

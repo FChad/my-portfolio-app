@@ -505,6 +505,514 @@
             }
         }
     },
+    "documentations": {
+        "ollamaSetup": {
+            "title": "Linux - Ollama Installation",
+            "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir Ollama op Debian 12 ze installéieren mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir sécher ëffentlech API-Notzung.",
+            "notes": {
+                "title": "Wichteg Notizen",
+                "rootAccess": "Root-Zougang oder sudo-Privilegie erfuerderlech",
+                "domainRequired": "Eng valabel Domain an DNS-Konfiguratioun sinn néideg",
+                "firewallConfig": "Firewall-Konfiguratioun fir Porten 80/443 erfuerderlech",
+                "securePassword": "Benotzt e staarke Passwuert fir HTTP Basic Auth",
+                "backupConfig": "Erstellt Backuppen virun wichtegen Konfiguratiounsännerungen",
+                "resourceRequirements": "Op d'mannst 4GB RAM recommandéiert fir méi grouss Modeller"
+            },
+            "steps": {
+                "title": "Installatiounsschrëtt",
+                "subtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
+                "dependencies": {
+                    "title": "Dependenzen installéieren",
+                    "description": "Installation vun erfuerderlechen Systempakete an Dependenzen fir Ollama an Apache2."
+                },
+                "ollama": {
+                    "title": "Ollama installéieren",
+                    "description": "Installation vun Ollama an initial Konfiguratioun mat engem Testmodell."
+                },
+                "apache": {
+                    "title": "Apache2 konfiguréieren",
+                    "description": "Installation an Konfiguratioun vun Apache2 als Reverse Proxy fir Ollama."
+                },
+                "ssl": {
+                    "title": "SSL-Zertifikat ariichten",
+                    "description": "Arichtung vun Let's Encrypt SSL-Zertifikate fir sécher HTTPS-Verbindungen."
+                },
+                "authentication": {
+                    "title": "HTTP Basic Authentication",
+                    "description": "Konfiguratioun vun HTTP Basic Authentication fir sécheren API-Zougang."
+                },
+                "virtualhost": {
+                    "title": "Virtual Host aktivéieren",
+                    "description": "Aktivéierung vum Virtual Host an Restart vun Apache-Servicer."
+                },
+                "testing": {
+                    "title": "Installation testen",
+                    "description": "Iwwerpréiwung vun der Installation an Test vun der API-Funktionalitéit."
+                }
+            },
+            "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
+            "commands": {
+                "dependencies": {
+                    "updateAgain": "Paketlëschten erëm aktualiséieren",
+                    "installBasic": "Basis-Pakete installéieren"
+                },
+                "ollama": {
+                    "install": "Ollama eroflueden an installéieren",
+                    "testModel": "Klengt Testmodell eroflueden an testen",
+                    "reexec": "Systemd-Manager nei lueden",
+                    "reload": "Ollama-Service nei lueden",
+                    "restart": "Ollama-Service nei starten",
+                    "checkPort": "Iwwerpréiwen ob Ollama op Port 11434 lauschtert"
+                },
+                "apache": {
+                    "install": "Apache2 an SSL-Modulen installéieren",
+                    "enableModules": "Erfuerderlech Apache-Modulen aktivéieren",
+                    "restart": "Apache2 nei starten"
+                },
+                "ssl": {
+                    "installCertbot": "Certbot fir Let's Encrypt installéieren",
+                    "getCertificate": "SSL-Zertifikat fir Domain ufroe"
+                },
+                "authentication": {
+                    "createDirectory": "Verzeechnes fir Auth-Fichieren erstellen",
+                    "createUser": "Benotzer mat Passwuert fir HTTP Basic Auth erstellen",
+                    "passwordNote": "Gitt e séchere Passwuert an wann gefrot"
+                },
+                "virtualhost": {
+                    "enableSite": "Nei Site-Konfiguratioun aktivéieren",
+                    "disableDefault": "Standard Apache-Site deaktivéieren",
+                    "disableDefaultSSL": "Standard SSL-Site deaktivéieren",
+                    "reloadApache": "Apache-Konfiguratioun nei lueden"
+                },
+                "testing": {
+                    "testApi": "API-Endpunkt mat curl testen",
+                    "testNote": "Benotzt Äre konfiguréierten Benotzernumm a Passwuert"
+                },
+                "troubleshooting": {
+                    "checkPort": "Iwwerpréiwen wéi een Service op Port 11434 leeft",
+                    "checkStatus": "Ollama-Service-Status iwwerpréiwen",
+                    "checkLogs": "Ollama-Service-Logs uweisen",
+                    "testConfig": "Apache-Konfiguratioun testen",
+                    "checkApache": "Apache-Service-Status iwwerpréiwen",
+                    "checkApacheLogs": "Apache-Error-Logs uweisen",
+                    "listCertificates": "All Certbot-Zertifikater oplëschten",
+                    "testRenewal": "Zertifikat-Erneierung testen",
+                    "testSSL": "SSL-Verbindung mat OpenSSL testen"
+                }
+            },
+            "troubleshooting": {
+                "title": "Problemléisung",
+                "subtitle": "Heefeg Problemer an hir Léisungen bei der Ollama-Installation",
+                "ollamaIssues": {
+                    "title": "Ollama-Problemer"
+                },
+                "apacheIssues": {
+                    "title": "Apache-Problemer"
+                },
+                "sslIssues": {
+                    "title": "SSL-Problemer"
+                }
+            },
+            "completion": {
+                "title": "Installation ofgeschloss!",
+                "description": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen."
+            }
+        },
+        "debianInitialSetup": {
+            "title": "Debian 12 - Server Éischt-Arichtung",
+            "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir d'éischt Arichtung vun engem frësche Debian 12 Server mat de wichtegsten Konfiguratiounsschrëtt.",
+            "notes": {
+                "title": "Wichteg Notizen",
+                "rootAccess": "Root-Zougang oder sudo-Berechtigungen erfuerderlech",
+                "networkConnection": "Aktiv Internet-Verbindung néideg",
+                "backupImportant": "Erstellt Backuppen virun Ännerungen u wichtegen Daten",
+                "timeRequired": "Gesamt-Zäit: ongeféier 30-45 Minutten",
+                "securityConsiderations": "Berücksichtegt Sécherheetsaspekter bei der Konfiguratioun",
+                "documentChanges": "Dokumentéiert all gemaachten Ännerungen"
+            },
+            "steps": {
+                "title": "Arichtungsschrëtt",
+                "subtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir optimal Server-Konfiguratioun",
+                "language": {
+                    "title": "Sprooch a Locale konfiguréieren",
+                    "description": "Konfiguratioun vun der Systemsprooch a Locale-Astellungen fir korrekt Zeechen-Duerstellen."
+                },
+                "timezone": {
+                    "title": "Zäitzon astellen",
+                    "description": "Astellen vun der korrekter Zäitzon fir genau Zäit- an Datumsangaben."
+                },
+                "sources": {
+                    "title": "Paketquellen aktualiséieren",
+                    "description": "Aktualiséierung vun APT-Paketquellen a System op de leschten Stand."
+                },
+                "hostname": {
+                    "title": "Hostname konfiguréieren",
+                    "description": "Festleeung vun engem eendeitegen Hostname fir d'Server-Identifikatioun am Netzwierk."
+                },
+                "motd": {
+                    "title": "MOTD botzelen",
+                    "description": "Entfernung vun der Standard-Welkomsnoriicht fir eng proper Umeldung."
+                },
+                "hardware": {
+                    "title": "Hardware-Informatiounen uweisen",
+                    "description": "Iwwerpréiwung an Uweise vun verfügbare Hardware-Ressourcen vum Server."
+                },
+                "verification": {
+                    "title": "System-Verifikatioun",
+                    "description": "Ofschléissend Iwwerpréiwung vun allen Konfiguratiounen a Systemstatus."
+                }
+            },
+            "commands": {
+                "language": {
+                    "listLocales": "Verfügbar Locales oplëschten",
+                    "generateLocale": "UTF-8 Locale generéieren",
+                    "updateLocale": "System-Locale aktualiséieren",
+                    "checkLocale": "Aktuell Locale-Konfiguratioun iwwerpréiwen",
+                    "restartNote": "E Restart kann néideg sinn fir d'Ännerungen komplett ze iwwerhuelen"
+                },
+                "timezone": {
+                    "checkDate": "Aktuell Datum an Auer uweisen",
+                    "checkTimezone": "Zäitzon-Konfiguratioun iwwerpréiwen",
+                    "listTimezones": "All verfügbar Zäitzonen oplëschten",
+                    "setTimezone": "Zäitzon op Europa/Lëtzebuerg setzen",
+                    "verifyTimezone": "Nei Zäitzon-Konfiguratioun bestätegen"
+                },
+                "sources": {
+                    "updatePackages": "Paketlëschten aktualiséieren",
+                    "upgradeSystem": "System op leschten Stand bréngen",
+                    "autoremove": "Net méi néideg Pakete ewechhuelen",
+                    "autoclean": "Paket-Cache botzelen",
+                    "verifySources": "Haaptpaketquellen uweisen",
+                    "checkAdditionalSources": "Zousätzlech Paketquellen iwwerpréiwen",
+                    "wikiReference": "Méi Informatiounen fënnt Dir am Debian Wiki zur APT-Konfiguratioun"
+                },
+                "hostname": {
+                    "editCloudConfig": "Cloud-Init Konfiguratioun editéieren (falls do)",
+                    "setHostname": "Neien Hostname setzen",
+                    "verifyHostname": "Hostname-Konfiguratioun iwwerpréiwen",
+                    "reboot": "System fir komplett Applicatioun nei starten",
+                    "virtualizationNote": "Nëmmen bei virtualiséierte Ëmfeld mat cloud-init néideg"
+                },
+                "motd": {
+                    "clearMotd": "Standard MOTD-Fichier eidel maachen"
+                },
+                "hardware": {
+                    "installInxi": "Hardware-Informatiouns-Tool installéieren",
+                    "showHardwareInfo": "Komplett Hardware-Informatiounen uweisen",
+                    "showCpuInfo": "CPU-Informatiounen uweisen",
+                    "showMemoryInfo": "Späicher-Informatiounen uweisen",
+                    "showDiskInfo": "Festplaten-Informatiounen uweisen"
+                },
+                "verification": {
+                    "systemInfo": "System-Versiounsinformatiounen uweisen",
+                    "kernelInfo": "Kernel-Informatiounen uweisen",
+                    "systemStatus": "Systemd-Status iwwerpréiwen",
+                    "checkUpdates": "Verfügbar Updates iwwerpréiwen"
+                },
+                "tips": {
+                    "installFirewall": "UFW Firewall installéieren",
+                    "enableFirewall": "Firewall aktivéieren",
+                    "installFail2ban": "Fail2Ban fir erweidert Sécherheet installéieren",
+                    "installEssentials": "Wichteg System-Tools installéieren",
+                    "installBuildTools": "Build-Tools fir Kompiléierung installéieren",
+                    "installAutoUpdates": "Automatesch Updates installéieren",
+                    "configureAutoUpdates": "Automatesch Updates konfiguréieren"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Zousätzlech Recommandatiounen",
+                "sectionSubtitle": "Optional: Weider nëtzlech Konfiguratiounen fir erweidert Sécherheet a Funktionalitéit",
+                "security": {
+                    "title": "Sécherheetsmoossnamen"
+                },
+                "essentials": {
+                    "title": "Essential Tools"
+                },
+                "updates": {
+                    "title": "Automatesch Updates"
+                }
+            },
+            "completion": {
+                "title": "Arichtung ofgeschloss!",
+                "message": "Äre Debian 12 Server ass elo grondsätzlech konfiguréiert a betribsbereet. Vergiess net weider sécherheetsrelevant Konfiguratiounen entspriechend Ären Ufuerderungen ze maachen."
+            }
+        },
+        "cardanoNodeSetup": {
+            "title": "Linux - Cardano Node Installation",
+            "description": "Komplett Guide fir eng Cardano-Node op Debian 12 ze installéieren mam NIX-Paketmanager, inklusiv Service-Konfiguratioun a Iwwerwaachung.",
+            "notes": {
+                "title": "Wichteg Notizen",
+                "rootAccess": "Root-Zougang oder sudo-Berechtigungen erfuerderlech",
+                "networkConnection": "Stabil Internet-Verbindung néideg",
+                "diskSpace": "Op d'mannst 50GB fräie Späicherplaz erfuerderlech",
+                "timeRequired": "Gesamt-Zäit: ongeféier 2-3 Stonnen (inklusiv Synchronisatioun)"
+            },
+            "steps": {
+                "title": "Installatiounsschrëtt",
+                "dependencies": {
+                    "title": "System-Dependenzen installéieren",
+                    "description": "Installation vun erfuerderlechen Systempakete fir d'NIX-Paketmanager Installation."
+                },
+                "nix": {
+                    "title": "NIX Paketmanager installéieren",
+                    "description": "Installation vum NIX-Paketmanager fir d'Verwaltung vun Cardano-Node Dependenzen."
+                },
+                "nixconfig": {
+                    "title": "NIX fir Cardano konfiguréieren",
+                    "description": "Konfiguratioun vum NIX-Paketmanager mat den offiziellen IOHK-Binär-Caches fir optimiséiert Downloads."
+                },
+                "user": {
+                    "title": "Cardano-Benotzer erstellen",
+                    "description": "Erstellung vun engem dediziéierte Benotzer fir den Cardano-Node-Betrib."
+                },
+                "install": {
+                    "title": "Cardano-Node installéieren",
+                    "description": "Installation vun der Cardano-Node a CLI-Tools iwwert d'NIX-System."
+                },
+                "symlinks": {
+                    "title": "System-Symlinks erstellen",
+                    "description": "Erstellung vu Symlinks fir systemwäite Zougang zu Cardano-Tools."
+                },
+                "config": {
+                    "title": "Node-Konfiguratioun eroflueden",
+                    "description": "Download vun den offiziellen Cardano-Netzwierk-Konfiguratiounsfichieren."
+                },
+                "service": {
+                    "title": "Systemd-Service ariichten",
+                    "description": "Konfiguratioun vun der Cardano-Node als Systemd-Service fir automateschen Start."
+                },
+                "monitor": {
+                    "title": "Node-Iwwerwaachung ariichten",
+                    "description": "Iwwerwaachung vun Node-Logs a Synchronisatiounsprozess."
+                }
+            },
+            "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano-Node Installation",
+            "commands": {
+                "dependencies": {
+                    "installDeps": "System-Dependenzen installéieren"
+                },
+                "nix": {
+                    "rebootNote": "E Restart ass no der NIX-Installation erfuerderlech",
+                    "install": "NIX-Paketmanager installéieren",
+                    "reboot": "System nei starten",
+                    "verify": "NIX-Installation verifizéieren"
+                },
+                "nixconfig": {
+                    "restart": "NIX-Daemon nei starten"
+                },
+                "user": {
+                    "createUser": "Cardano-Benotzer erstellen"
+                },
+                "install": {
+                    "switchUser": "Zu Cardano-Benotzer wiesselen",
+                    "clone": "Cardano-Node Repository klonen",
+                    "changeDir": "An Cardano-Node Verzeechnes wiesselen",
+                    "listTags": "Verfügbar Versiounen uweisen",
+                    "checkout": "Aktuell stabil Versioun auschecken",
+                    "profileInstall": "Cardano-Node a CLI an NIX-Profil installéieren",
+                    "profileNote": "Dëst kann 30-60 Minutten daueren, well all Dependenzen kompiléiert ginn",
+                    "profileList": "Installéiert Profiler oplëschten",
+                    "checkNode": "Cardano-Node Versioun iwwerpréiwen",
+                    "checkCli": "Cardano-CLI Versioun iwwerpréiwen",
+                    "exitUser": "Zeréck zu Root-Benotzer wiesselen"
+                },
+                "symlinks": {
+                    "profileNote": "Passt de Wee entspriechend Ärem NIX-Profil un",
+                    "linkNode": "Symlink fir Cardano-Node erstellen",
+                    "linkCli": "Symlink fir Cardano-CLI erstellen",
+                    "verifyLinks": "Symlinks verifizéieren",
+                    "testNode": "Cardano-Node systemwäit testen",
+                    "testCli": "Cardano-CLI systemwäit testen"
+                },
+                "config": {
+                    "switchUser": "Zu Cardano-Benotzer wiesselen",
+                    "createDirs": "Konfiguratiounsverzeechnisser erstellen",
+                    "changeDir": "An Konfiguratiounsverzeechnes wiesselen",
+                    "downloadConfigs": "Offiziell Konfiguratiounsfichiere eroflueden",
+                    "listConfigs": "Erofgeluedene Konfiguratiounsfichiere oplëschten",
+                    "checkConfig": "Genesis-Konfiguratioun iwwerpréiwen",
+                    "exitUser": "Zeréck zu Root-Benotzer wiesselen"
+                },
+                "service": {
+                    "reload": "Systemd-Manager nei lueden",
+                    "enable": "Cardano-Node Service aktivéieren",
+                    "start": "Cardano-Node Service starten"
+                },
+                "monitor": {
+                    "syncNote": "D'initial Blockchain-Synchronisatioun kann 24-48 Stonnen daueren",
+                    "logs": "Service-Logs verfollegen",
+                    "syncProgress": "Synchronisatiounsfortschrëtt iwwerpréiwen"
+                },
+                "tips": {
+                    "syncStatus": "Synchronisatiounsstatus iwwerpréiwen",
+                    "syncSize": "Aktuell Blockchain-Gréisst uweisen",
+                    "restart": "Cardano-Node Service nei starten",
+                    "stop": "Cardano-Node Service stoppen",
+                    "fullLogs": "Komplett Logs uweisen",
+                    "checkProcess": "Cardano-Node Prozess iwwerpréiwen"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Zousätzlech Tipps",
+                "sectionSubtitle": "Nëtzlech Kommandoen a Ënnerhaltungstipps fir d'Cardano-Node",
+                "sync": {
+                    "title": "Synchronisatiounsiwwerwaachung"
+                },
+                "maintenance": {
+                    "title": "Service-Verwaltung"
+                },
+                "troubleshooting": {
+                    "title": "Problemléisung"
+                }
+            },
+            "resources": {
+                "sectionTitle": "Nëtzlech Ressourcen",
+                "sectionSubtitle": "Weiderfierend Linken a Dokumentatioun fir d'Cardano-Node",
+                "nixDownload": {
+                    "title": "NIX Download",
+                    "description": "Offiziell NIX-Paketmanager Websäit mat Installatiounsuleedungen"
+                },
+                "cardanoInstall": {
+                    "title": "Cardano Installation Guide",
+                    "description": "Offiziell Cardano-Node Installatiounsdokumentatioun"
+                },
+                "cardanoRunning": {
+                    "title": "Running a Node",
+                    "description": "Offiziell Uleedung fir de Betrib vun enger Cardano-Node"
+                }
+            },
+            "completion": {
+                "title": "Installation ofgeschloss!",
+                "message": "Är Cardano-Node ass erfollegräich installéiert a leeft als Systemd-Service. D'Blockchain-Synchronisatioun leeft am Hannergrond a kann 24-48 Stonnen daueren."
+            }
+        },
+        "cardanoDbSyncSetup": {
+            "title": "Linux - Cardano DB Sync Installation",
+            "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun.",
+            "notes": {
+                "title": "Wichteg Notizen",
+                "cardanoNode": "Eng fonktionéierend Cardano-Node ass erfuerderlech",
+                "diskSpace": "Op d'mannst 200GB fräie Späicherplaz fir d'Datebank",
+                "ramRequirement": "Op d'mannst 16GB RAM fir optimal Performance",
+                "syncTime": "Éischt Synchronisatioun kann e puer Deeg daueren",
+                "rootAccess": "Root-Zougang oder sudo-Berechtigungen erfuerderlech"
+            },
+            "steps": {
+                "title": "Installatiounsschrëtt",
+                "postgresql": {
+                    "title": "PostgreSQL installéieren",
+                    "description": "Installation a Konfiguratioun vun der PostgreSQL-Datebank fir Cardano DB Sync."
+                },
+                "database": {
+                    "title": "Datebank ariichten",
+                    "description": "Erstellung vun der Datebank a Benotzer fir Cardano DB Sync."
+                },
+                "cloneInstall": {
+                    "title": "DB Sync klonen an installéieren",
+                    "description": "Klonen vum Cardano DB Sync Repository an Installation mat NIX."
+                },
+                "pgpass": {
+                    "title": "Passwuert-Fichier erstellen",
+                    "description": "Erstellung vun der .pgpass-Fichier fir automatesch Datebank-Authentifizéierung."
+                },
+                "symlink": {
+                    "title": "Symbolësch Linken erstellen",
+                    "description": "Erstellen vu symbolësche Linken fir d'Cardano DB Sync Binärdateien."
+                },
+                "service": {
+                    "title": "Systemd Service konfiguréieren",
+                    "description": "Erstellung an Aktivéierung vum Systemd-Service fir Cardano DB Sync."
+                },
+                "monitoring": {
+                    "title": "Service iwwerwaachen",
+                    "description": "Iwwerwaachung vum Service an der Datebank-Synchronisatioun."
+                }
+            },
+            "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano DB Sync Installation",
+            "commands": {
+                "postgresql": {
+                    "install": "PostgreSQL installéieren",
+                    "enable": "PostgreSQL aktivéieren",
+                    "start": "PostgreSQL starten"
+                },
+                "database": {
+                    "connect": "Als postgres-Benotzer verbannen",
+                    "createUser": "Datebankbenotzer erstellen",
+                    "passwordNote": "Sécher Passwuert wielen a merken",
+                    "createDatabase": "Datebank erstellen",
+                    "grantPrivileges": "Berechtigungen accordéieren",
+                    "quit": "PostgreSQL-Konsole verloossen"
+                },
+                "clone": {
+                    "switchUser": "Zu cardano-Benotzer wiesselen",
+                    "clone": "Cardano DB Sync Repository klonen",
+                    "listFiles": "Repository-Inhalter uweisen",
+                    "changeDir": "An Repository-Verzeechnes wiesselen"
+                },
+                "install": {
+                    "listTags": "Verfügbar Tags uweisen",
+                    "checkout": "Neist stabil Versioun auschecken",
+                    "nixInstall": "DB Sync mat NIX installéieren",
+                    "nixNote": "Installation kann 30-60 Minutten daueren",
+                    "checkVersion": "Installation iwwerpréiwen",
+                    "listProfiles": "NIX Profile uweisen"
+                },
+                "pgpass": {
+                    "chmod": "Dateiberechtegungen setzen",
+                    "exit": "Benotzer-Sessioun verloossen"
+                },
+                "symlink": {
+                    "create": "Symbolësche Link erstellen",
+                    "verify": "Link iwwerpréiwen"
+                },
+                "service": {
+                    "reload": "Systemd-Daemon nei lueden",
+                    "enable": "Service aktivéieren",
+                    "start": "Service starten"
+                },
+                "monitoring": {
+                    "status": "Service-Status kucken",
+                    "logs": "Service-Logs uweisen"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Hëllefräich Tipps",
+                "sectionSubtitle": "Nëtzlech Kommandoen a Weisungen fir d'Verwaltung vum Cardano DB Sync",
+                "syncStatus": {
+                    "title": "Synchronisatiounsstatus",
+                    "checkMeta": "Datebank-Metadaten fir Sync-Status kucken"
+                },
+                "troubleshooting": {
+                    "title": "Problemléisung",
+                    "restart": "Service bei Problemer nei starten"
+                },
+                "diskSpace": {
+                    "title": "Späicherplaz",
+                    "check": "Verfügbare Späicherplaz reegelméisseg iwwerwaachen"
+                }
+            },
+            "resources": {
+                "sectionTitle": "Nëtzlech Ressourcen",
+                "sectionSubtitle": "Zousätzlech Dokumentatioun an Tools fir Cardano DB Sync",
+                "github": {
+                    "title": "Cardano DB Sync GitHub",
+                    "description": "Offiziellt Repository mat Dokumentatioun an Updates"
+                },
+                "postgresql": {
+                    "title": "PostgreSQL Dokumentatioun",
+                    "description": "Ëmfassend Dokumentatioun fir PostgreSQL-Administratioun"
+                },
+                "cardanoDocs": {
+                    "title": "Cardano Developer Portal",
+                    "description": "Entwéckler-Ressourcen an API-Dokumentatioun"
+                }
+            },
+            "completion": {
+                "title": "Installation Ofgeschloss",
+                "message": "Cardano DB Sync ass elo erfollegräich installéiert a leeft. D'Synchronisatioun mat der Blockchain wäert automatesch weiderfueren an d'Datebank gëtt gefëllt."
+            }
+        }
+    },
     "contact": {
         "title": "Kontakt",
         "subtitle": "Loosst eis iwwer Äert nächst Projet schwätzen",

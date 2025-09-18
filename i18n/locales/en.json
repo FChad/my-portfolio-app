@@ -505,6 +505,514 @@
             }
         }
     },
+    "documentations": {
+        "ollamaSetup": {
+            "title": "Linux - Ollama Installation",
+            "description": "A comprehensive step-by-step guide for installing Ollama on Debian 12 with Apache2 reverse proxy, SSL encryption and HTTP Basic Authentication for secure public API usage.",
+            "notes": {
+                "title": "Important Notes",
+                "rootAccess": "Root access or sudo privileges required",
+                "domainRequired": "A valid domain and DNS configuration are necessary",
+                "firewallConfig": "Firewall configuration for ports 80/443 required",
+                "securePassword": "Use a strong password for HTTP Basic Auth",
+                "backupConfig": "Create backups before important configuration changes",
+                "resourceRequirements": "At least 4GB RAM recommended for larger models"
+            },
+            "steps": {
+                "title": "Installation Steps",
+                "subtitle": "Follow these steps in the given order for a complete Ollama installation with secure API",
+                "dependencies": {
+                    "title": "Install Dependencies",
+                    "description": "Installation of required system packages and dependencies for Ollama and Apache2."
+                },
+                "ollama": {
+                    "title": "Install Ollama",
+                    "description": "Installation of Ollama and initial configuration with a test model."
+                },
+                "apache": {
+                    "title": "Configure Apache2",
+                    "description": "Installation and configuration of Apache2 as reverse proxy for Ollama."
+                },
+                "ssl": {
+                    "title": "Setup SSL Certificate",
+                    "description": "Setting up Let's Encrypt SSL certificates for secure HTTPS connections."
+                },
+                "authentication": {
+                    "title": "HTTP Basic Authentication",
+                    "description": "Configuration of HTTP Basic Authentication for secure API access."
+                },
+                "virtualhost": {
+                    "title": "Enable Virtual Host",
+                    "description": "Enabling the Virtual Host and restarting Apache services."
+                },
+                "testing": {
+                    "title": "Test Installation",
+                    "description": "Verification of the installation and testing API functionality."
+                }
+            },
+            "stepsSubtitle": "Follow these steps in the given order for a complete Ollama installation with secure API",
+            "commands": {
+                "dependencies": {
+                    "updateAgain": "Update package lists again",
+                    "installBasic": "Install basic packages"
+                },
+                "ollama": {
+                    "install": "Download and install Ollama",
+                    "testModel": "Download and test small test model",
+                    "reexec": "Reload systemd manager",
+                    "reload": "Reload Ollama service",
+                    "restart": "Restart Ollama service",
+                    "checkPort": "Check if Ollama is listening on port 11434"
+                },
+                "apache": {
+                    "install": "Install Apache2 and SSL modules",
+                    "enableModules": "Enable required Apache modules",
+                    "restart": "Restart Apache2"
+                },
+                "ssl": {
+                    "installCertbot": "Install Certbot for Let's Encrypt",
+                    "getCertificate": "Request SSL certificate for domain"
+                },
+                "authentication": {
+                    "createDirectory": "Create directory for auth files",
+                    "createUser": "Create user with password for HTTP Basic Auth",
+                    "passwordNote": "Enter a secure password when prompted"
+                },
+                "virtualhost": {
+                    "enableSite": "Enable new site configuration",
+                    "disableDefault": "Disable default Apache site",
+                    "disableDefaultSSL": "Disable default SSL site",
+                    "reloadApache": "Reload Apache configuration"
+                },
+                "testing": {
+                    "testApi": "Test API endpoint with curl",
+                    "testNote": "Use your configured username and password"
+                },
+                "troubleshooting": {
+                    "checkPort": "Check which service is running on port 11434",
+                    "checkStatus": "Check Ollama service status",
+                    "checkLogs": "Show Ollama service logs",
+                    "testConfig": "Test Apache configuration",
+                    "checkApache": "Check Apache service status",
+                    "checkApacheLogs": "Show Apache error logs",
+                    "listCertificates": "List all Certbot certificates",
+                    "testRenewal": "Test certificate renewal",
+                    "testSSL": "Test SSL connection with OpenSSL"
+                }
+            },
+            "troubleshooting": {
+                "title": "Troubleshooting",
+                "subtitle": "Common issues and their solutions during Ollama installation",
+                "ollamaIssues": {
+                    "title": "Ollama Issues"
+                },
+                "apacheIssues": {
+                    "title": "Apache Issues"
+                },
+                "sslIssues": {
+                    "title": "SSL Issues"
+                }
+            },
+            "completion": {
+                "title": "Installation Complete!",
+                "description": "Your Ollama server is now fully configured and secured with HTTPS and Basic Authentication. You can now safely access the API."
+            }
+        },
+        "debianInitialSetup": {
+            "title": "Debian 12 - Initial Server Setup",
+            "description": "A comprehensive step-by-step guide for the initial setup of a fresh Debian 12 server with the most important configuration steps.",
+            "notes": {
+                "title": "Important Notes",
+                "rootAccess": "Root access or sudo privileges required",
+                "networkConnection": "Active internet connection needed",
+                "backupImportant": "Create backups before making changes to important data",
+                "timeRequired": "Total time: approximately 30-45 minutes",
+                "securityConsiderations": "Consider security aspects during configuration",
+                "documentChanges": "Document all changes made"
+            },
+            "steps": {
+                "title": "Setup Steps",
+                "subtitle": "Follow these steps in the given order for optimal server configuration",
+                "language": {
+                    "title": "Configure Language and Locale",
+                    "description": "Configuration of system language and locale settings for correct character display."
+                },
+                "timezone": {
+                    "title": "Set Timezone",
+                    "description": "Setting the correct timezone for accurate time and date information."
+                },
+                "sources": {
+                    "title": "Update Package Sources",
+                    "description": "Updating APT package sources and the system to the latest state."
+                },
+                "hostname": {
+                    "title": "Configure Hostname",
+                    "description": "Setting a unique hostname for server identification in the network."
+                },
+                "motd": {
+                    "title": "Clean MOTD",
+                    "description": "Removing the default welcome message for clean login."
+                },
+                "hardware": {
+                    "title": "Show Hardware Information",
+                    "description": "Checking and displaying available hardware resources of the server."
+                },
+                "verification": {
+                    "title": "System Verification",
+                    "description": "Final verification of all configurations and system status."
+                }
+            },
+            "commands": {
+                "language": {
+                    "listLocales": "List available locales",
+                    "generateLocale": "Generate UTF-8 locale",
+                    "updateLocale": "Update system locale",
+                    "checkLocale": "Check current locale configuration",
+                    "restartNote": "A restart may be required to fully apply the changes"
+                },
+                "timezone": {
+                    "checkDate": "Display current date and time",
+                    "checkTimezone": "Check timezone configuration",
+                    "listTimezones": "List all available timezones",
+                    "setTimezone": "Set timezone to Europe/Luxembourg",
+                    "verifyTimezone": "Confirm new timezone configuration"
+                },
+                "sources": {
+                    "updatePackages": "Update package lists",
+                    "upgradeSystem": "Bring system to latest state",
+                    "autoremove": "Remove packages no longer needed",
+                    "autoclean": "Clean package cache",
+                    "verifySources": "Display main package sources",
+                    "checkAdditionalSources": "Check additional package sources",
+                    "wikiReference": "More information can be found in the Debian Wiki on APT configuration"
+                },
+                "hostname": {
+                    "editCloudConfig": "Edit cloud-init configuration (if present)",
+                    "setHostname": "Set new hostname",
+                    "verifyHostname": "Check hostname configuration",
+                    "reboot": "Restart system for full application",
+                    "virtualizationNote": "Only required in virtualized environments with cloud-init"
+                },
+                "motd": {
+                    "clearMotd": "Clear default MOTD file"
+                },
+                "hardware": {
+                    "installInxi": "Install hardware information tool",
+                    "showHardwareInfo": "Display complete hardware information",
+                    "showCpuInfo": "Display CPU information",
+                    "showMemoryInfo": "Display memory information",
+                    "showDiskInfo": "Display disk information"
+                },
+                "verification": {
+                    "systemInfo": "Display system version information",
+                    "kernelInfo": "Display kernel information",
+                    "systemStatus": "Check systemd status",
+                    "checkUpdates": "Check available updates"
+                },
+                "tips": {
+                    "installFirewall": "Install UFW firewall",
+                    "enableFirewall": "Enable firewall",
+                    "installFail2ban": "Install Fail2Ban for enhanced security",
+                    "installEssentials": "Install important system tools",
+                    "installBuildTools": "Install build tools for compilation",
+                    "installAutoUpdates": "Install automatic updates",
+                    "configureAutoUpdates": "Configure automatic updates"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Additional Recommendations",
+                "sectionSubtitle": "Optional: Additional useful configurations for enhanced security and functionality",
+                "security": {
+                    "title": "Security Measures"
+                },
+                "essentials": {
+                    "title": "Essential Tools"
+                },
+                "updates": {
+                    "title": "Automatic Updates"
+                }
+            },
+            "completion": {
+                "title": "Setup Complete!",
+                "message": "Your Debian 12 server is now basically configured and ready to use. Don't forget to make further security-relevant configurations according to your requirements."
+            }
+        },
+        "cardanoNodeSetup": {
+            "title": "Linux - Cardano Node Installation",
+            "description": "Complete guide for installing a Cardano Node on Debian 12 with the NIX package manager, including service configuration and monitoring.",
+            "notes": {
+                "title": "Important Notes",
+                "rootAccess": "Root access or sudo privileges required",
+                "networkConnection": "Stable internet connection needed",
+                "diskSpace": "At least 50GB free disk space required",
+                "timeRequired": "Total time: approximately 2-3 hours (including synchronization)"
+            },
+            "steps": {
+                "title": "Installation Steps",
+                "dependencies": {
+                    "title": "Install System Dependencies",
+                    "description": "Installation of required system packages for the NIX package manager installation."
+                },
+                "nix": {
+                    "title": "Install NIX Package Manager",
+                    "description": "Installation of the NIX package manager for managing Cardano Node dependencies."
+                },
+                "nixconfig": {
+                    "title": "Configure NIX for Cardano",
+                    "description": "Configuration of the NIX package manager with official IOHK binary caches for optimized downloads."
+                },
+                "user": {
+                    "title": "Create Cardano User",
+                    "description": "Creating a dedicated user for Cardano Node operation."
+                },
+                "install": {
+                    "title": "Install Cardano Node",
+                    "description": "Installation of Cardano Node and CLI tools via the NIX system."
+                },
+                "symlinks": {
+                    "title": "Create System Symlinks",
+                    "description": "Creating symlinks for system-wide access to Cardano tools."
+                },
+                "config": {
+                    "title": "Download Node Configuration",
+                    "description": "Download of official Cardano network configuration files."
+                },
+                "service": {
+                    "title": "Setup Systemd Service",
+                    "description": "Configuration of Cardano Node as systemd service for automatic startup."
+                },
+                "monitor": {
+                    "title": "Setup Node Monitoring",
+                    "description": "Monitoring node logs and synchronization process."
+                }
+            },
+            "stepsSubtitle": "Follow these steps in the given order for a complete Cardano Node installation",
+            "commands": {
+                "dependencies": {
+                    "installDeps": "Install system dependencies"
+                },
+                "nix": {
+                    "rebootNote": "A restart is required after NIX installation",
+                    "install": "Install NIX package manager",
+                    "reboot": "Restart system",
+                    "verify": "Verify NIX installation"
+                },
+                "nixconfig": {
+                    "restart": "Restart NIX daemon"
+                },
+                "user": {
+                    "createUser": "Create Cardano user"
+                },
+                "install": {
+                    "switchUser": "Switch to Cardano user",
+                    "clone": "Clone Cardano Node repository",
+                    "changeDir": "Change to Cardano Node directory",
+                    "listTags": "Display available versions",
+                    "checkout": "Checkout current stable version",
+                    "profileInstall": "Install Cardano Node and CLI in NIX profile",
+                    "profileNote": "This can take 30-60 minutes as all dependencies are compiled",
+                    "profileList": "List installed profiles",
+                    "checkNode": "Check Cardano Node version",
+                    "checkCli": "Check Cardano CLI version",
+                    "exitUser": "Switch back to root user"
+                },
+                "symlinks": {
+                    "profileNote": "Adjust the path according to your NIX profile",
+                    "linkNode": "Create symlink for Cardano Node",
+                    "linkCli": "Create symlink for Cardano CLI",
+                    "verifyLinks": "Verify symlinks",
+                    "testNode": "Test Cardano Node system-wide",
+                    "testCli": "Test Cardano CLI system-wide"
+                },
+                "config": {
+                    "switchUser": "Switch to Cardano user",
+                    "createDirs": "Create configuration directories",
+                    "changeDir": "Change to configuration directory",
+                    "downloadConfigs": "Download official configuration files",
+                    "listConfigs": "List downloaded configuration files",
+                    "checkConfig": "Check genesis configuration",
+                    "exitUser": "Switch back to root user"
+                },
+                "service": {
+                    "reload": "Reload systemd manager",
+                    "enable": "Enable Cardano Node service",
+                    "start": "Start Cardano Node service"
+                },
+                "monitor": {
+                    "syncNote": "Initial blockchain synchronization can take 24-48 hours",
+                    "logs": "Follow service logs",
+                    "syncProgress": "Check synchronization progress"
+                },
+                "tips": {
+                    "syncStatus": "Check synchronization status",
+                    "syncSize": "Display current blockchain size",
+                    "restart": "Restart Cardano Node service",
+                    "stop": "Stop Cardano Node service",
+                    "fullLogs": "Display full logs",
+                    "checkProcess": "Check Cardano Node process"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Additional Tips",
+                "sectionSubtitle": "Useful commands and maintenance tips for the Cardano Node",
+                "sync": {
+                    "title": "Synchronization Monitoring"
+                },
+                "maintenance": {
+                    "title": "Service Management"
+                },
+                "troubleshooting": {
+                    "title": "Troubleshooting"
+                }
+            },
+            "resources": {
+                "sectionTitle": "Useful Resources",
+                "sectionSubtitle": "Additional links and documentation for the Cardano Node",
+                "nixDownload": {
+                    "title": "NIX Download",
+                    "description": "Official NIX package manager website with installation guides"
+                },
+                "cardanoInstall": {
+                    "title": "Cardano Installation Guide",
+                    "description": "Official Cardano Node installation documentation"
+                },
+                "cardanoRunning": {
+                    "title": "Running a Node",
+                    "description": "Official guide for operating a Cardano Node"
+                }
+            },
+            "completion": {
+                "title": "Installation Complete!",
+                "message": "Your Cardano Node is successfully installed and running as systemd service. Blockchain synchronization is running in the background and can take 24-48 hours."
+            }
+        },
+        "cardanoDbSyncSetup": {
+            "title": "Linux - Cardano DB Sync Installation",
+            "description": "Complete guide for installing Cardano DB Sync on Debian 12 with PostgreSQL database and NIX package manager, including service configuration.",
+            "notes": {
+                "title": "Important Notes",
+                "cardanoNode": "A working Cardano Node is required",
+                "diskSpace": "At least 200GB free disk space for the database",
+                "ramRequirement": "At least 16GB RAM for optimal performance",
+                "syncTime": "Initial synchronization can take several days",
+                "rootAccess": "Root access or sudo privileges required"
+            },
+            "steps": {
+                "title": "Installation Steps",
+                "postgresql": {
+                    "title": "Install PostgreSQL",
+                    "description": "Installation and configuration of PostgreSQL database for Cardano DB Sync."
+                },
+                "database": {
+                    "title": "Setup Database",
+                    "description": "Creating the database and user for Cardano DB Sync."
+                },
+                "cloneInstall": {
+                    "title": "Clone and Install DB Sync",
+                    "description": "Cloning the Cardano DB Sync repository and installation with NIX."
+                },
+                "pgpass": {
+                    "title": "Create Password File",
+                    "description": "Creating the .pgpass file for automatic database authentication."
+                },
+                "symlink": {
+                    "title": "Create Symbolic Links",
+                    "description": "Creating symbolic links for the Cardano DB Sync binaries."
+                },
+                "service": {
+                    "title": "Configure Systemd Service",
+                    "description": "Creating and enabling the systemd service for Cardano DB Sync."
+                },
+                "monitoring": {
+                    "title": "Monitor Service",
+                    "description": "Monitoring the service and database synchronization."
+                }
+            },
+            "stepsSubtitle": "Follow these steps in the given order for a complete Cardano DB Sync installation",
+            "commands": {
+                "postgresql": {
+                    "install": "Install PostgreSQL",
+                    "enable": "Enable PostgreSQL",
+                    "start": "Start PostgreSQL"
+                },
+                "database": {
+                    "connect": "Connect as postgres user",
+                    "createUser": "Create database user",
+                    "passwordNote": "Choose and remember a secure password",
+                    "createDatabase": "Create database",
+                    "grantPrivileges": "Grant privileges",
+                    "quit": "Exit PostgreSQL console"
+                },
+                "clone": {
+                    "switchUser": "Switch to cardano user",
+                    "clone": "Clone Cardano DB Sync repository",
+                    "listFiles": "Display repository contents",
+                    "changeDir": "Change to repository directory"
+                },
+                "install": {
+                    "listTags": "Display available tags",
+                    "checkout": "Checkout latest stable version",
+                    "nixInstall": "Install DB Sync with NIX",
+                    "nixNote": "Installation can take 30-60 minutes",
+                    "checkVersion": "Check installation",
+                    "listProfiles": "Display NIX profiles"
+                },
+                "pgpass": {
+                    "chmod": "Set file permissions",
+                    "exit": "Exit user session"
+                },
+                "symlink": {
+                    "create": "Create symbolic link",
+                    "verify": "Verify link"
+                },
+                "service": {
+                    "reload": "Reload systemd daemon",
+                    "enable": "Enable service",
+                    "start": "Start service"
+                },
+                "monitoring": {
+                    "status": "Check service status",
+                    "logs": "Display service logs"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Helpful Tips",
+                "sectionSubtitle": "Useful commands and notes for managing Cardano DB Sync",
+                "syncStatus": {
+                    "title": "Synchronization Status",
+                    "checkMeta": "Check database metadata for sync status"
+                },
+                "troubleshooting": {
+                    "title": "Troubleshooting",
+                    "restart": "Restart service if problems occur"
+                },
+                "diskSpace": {
+                    "title": "Disk Space",
+                    "check": "Monitor available disk space regularly"
+                }
+            },
+            "resources": {
+                "sectionTitle": "Useful Resources",
+                "sectionSubtitle": "Additional documentation and tools for Cardano DB Sync",
+                "github": {
+                    "title": "Cardano DB Sync GitHub",
+                    "description": "Official repository with documentation and updates"
+                },
+                "postgresql": {
+                    "title": "PostgreSQL Documentation",
+                    "description": "Comprehensive documentation for PostgreSQL administration"
+                },
+                "cardanoDocs": {
+                    "title": "Cardano Developer Portal",
+                    "description": "Developer resources and API documentation"
+                }
+            },
+            "completion": {
+                "title": "Installation Complete",
+                "message": "Cardano DB Sync is now successfully installed and running. Synchronization with the blockchain will continue automatically and the database will be populated."
+            }
+        }
+    },
     "contact": {
         "title": "Contact",
         "subtitle": "Let's talk about your next project",

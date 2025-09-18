@@ -29,62 +29,62 @@ interface SetupStep {
 const setupSteps: SetupStep[] = [
     {
         id: 'language',
-        title: 'projects.debianInitialSetup.steps.language.title',
-        description: 'projects.debianInitialSetup.steps.language.description',
+        title: 'documentations.debianInitialSetup.steps.language.title',
+        description: 'documentations.debianInitialSetup.steps.language.description',
         commands: [
             {
                 command: 'locale -a',
-                description: 'projects.debianInitialSetup.commands.language.listLocales',
+                description: 'documentations.debianInitialSetup.commands.language.listLocales',
                 language: 'bash'
             },
             {
                 command: 'locale-gen C.UTF-8',
-                description: 'projects.debianInitialSetup.commands.language.generateLocale',
+                description: 'documentations.debianInitialSetup.commands.language.generateLocale',
                 language: 'bash'
             },
             {
                 command: 'update-locale LANG=C.utf8 LC_ALL=C.utf8',
-                description: 'projects.debianInitialSetup.commands.language.updateLocale',
+                description: 'documentations.debianInitialSetup.commands.language.updateLocale',
                 language: 'bash'
             },
             {
                 command: 'locale',
-                description: 'projects.debianInitialSetup.commands.language.checkLocale',
+                description: 'documentations.debianInitialSetup.commands.language.checkLocale',
                 language: 'bash'
             }
         ],
-        note: 'projects.debianInitialSetup.commands.language.restartNote',
+        note: 'documentations.debianInitialSetup.commands.language.restartNote',
         icon: 'mdi:translate',
         color: 'from-blue-500 to-indigo-600'
     },
     {
         id: 'timezone',
-        title: 'projects.debianInitialSetup.steps.timezone.title',
-        description: 'projects.debianInitialSetup.steps.timezone.description',
+        title: 'documentations.debianInitialSetup.steps.timezone.title',
+        description: 'documentations.debianInitialSetup.steps.timezone.description',
         commands: [
             {
                 command: 'date',
-                description: 'projects.debianInitialSetup.commands.timezone.checkDate',
+                description: 'documentations.debianInitialSetup.commands.timezone.checkDate',
                 language: 'bash'
             },
             {
                 command: 'timedatectl',
-                description: 'projects.debianInitialSetup.commands.timezone.checkTimezone',
+                description: 'documentations.debianInitialSetup.commands.timezone.checkTimezone',
                 language: 'bash'
             },
             {
                 command: 'timedatectl list-timezones',
-                description: 'projects.debianInitialSetup.commands.timezone.listTimezones',
+                description: 'documentations.debianInitialSetup.commands.timezone.listTimezones',
                 language: 'bash'
             },
             {
                 command: 'timedatectl set-timezone Europe/Luxembourg',
-                description: 'projects.debianInitialSetup.commands.timezone.setTimezone',
+                description: 'documentations.debianInitialSetup.commands.timezone.setTimezone',
                 language: 'bash'
             },
             {
                 command: 'timedatectl status',
-                description: 'projects.debianInitialSetup.commands.timezone.verifyTimezone',
+                description: 'documentations.debianInitialSetup.commands.timezone.verifyTimezone',
                 language: 'bash'
             }
         ],
@@ -93,53 +93,53 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'sources',
-        title: 'projects.debianInitialSetup.steps.sources.title',
-        description: 'projects.debianInitialSetup.steps.sources.description',
+        title: 'documentations.debianInitialSetup.steps.sources.title',
+        description: 'documentations.debianInitialSetup.steps.sources.description',
         commands: [
             {
                 command: 'apt update',
-                description: 'projects.debianInitialSetup.commands.sources.updatePackages',
+                description: 'documentations.debianInitialSetup.commands.sources.updatePackages',
                 language: 'bash'
             },
             {
                 command: 'apt upgrade -y',
-                description: 'projects.debianInitialSetup.commands.sources.upgradeSystem',
+                description: 'documentations.debianInitialSetup.commands.sources.upgradeSystem',
                 language: 'bash'
             },
             {
                 command: 'apt autoremove -y',
-                description: 'projects.debianInitialSetup.commands.sources.autoremove',
+                description: 'documentations.debianInitialSetup.commands.sources.autoremove',
                 language: 'bash'
             },
             {
                 command: 'apt autoclean -y',
-                description: 'projects.debianInitialSetup.commands.sources.autoclean',
+                description: 'documentations.debianInitialSetup.commands.sources.autoclean',
                 language: 'bash'
             },
             {
                 command: 'cat /etc/apt/sources.list',
-                description: 'projects.debianInitialSetup.commands.sources.verifySources',
+                description: 'documentations.debianInitialSetup.commands.sources.verifySources',
                 language: 'bash'
             },
             {
                 command: 'ls -la /etc/apt/sources.list.d/',
-                description: 'projects.debianInitialSetup.commands.sources.checkAdditionalSources',
+                description: 'documentations.debianInitialSetup.commands.sources.checkAdditionalSources',
                 language: 'bash'
             }
         ],
-        note: 'projects.debianInitialSetup.commands.sources.wikiReference',
+        note: 'documentations.debianInitialSetup.commands.sources.wikiReference',
         icon: 'mdi:package-variant',
         color: 'from-orange-500 to-red-600'
     },
     {
         id: 'hostname',
-        title: 'projects.debianInitialSetup.steps.hostname.title',
-        description: 'projects.debianInitialSetup.steps.hostname.description',
+        title: 'documentations.debianInitialSetup.steps.hostname.title',
+        description: 'documentations.debianInitialSetup.steps.hostname.description',
         commands: [
             {
                 command: 'nano /etc/cloud/cloud.cfg',
-                description: 'projects.debianInitialSetup.commands.hostname.editCloudConfig',
-                note: 'projects.debianInitialSetup.commands.hostname.virtualizationNote',
+                description: 'documentations.debianInitialSetup.commands.hostname.editCloudConfig',
+                note: 'documentations.debianInitialSetup.commands.hostname.virtualizationNote',
                 isFile: true,
                 fileName: '/etc/cloud/cloud.cfg',
                 fileContent: '# This will cause the set+update hostname module to not operate (if true)\npreserve_hostname: true',
@@ -147,17 +147,17 @@ const setupSteps: SetupStep[] = [
             },
             {
                 command: 'sudo hostnamectl set-hostname server.chad.lu',
-                description: 'projects.debianInitialSetup.commands.hostname.setHostname',
+                description: 'documentations.debianInitialSetup.commands.hostname.setHostname',
                 language: 'bash'
             },
             {
                 command: 'hostname',
-                description: 'projects.debianInitialSetup.commands.hostname.verifyHostname',
+                description: 'documentations.debianInitialSetup.commands.hostname.verifyHostname',
                 language: 'bash'
             },
             {
                 command: 'reboot',
-                description: 'projects.debianInitialSetup.commands.hostname.reboot',
+                description: 'documentations.debianInitialSetup.commands.hostname.reboot',
                 language: 'bash'
             }
         ],
@@ -166,12 +166,12 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'motd',
-        title: 'projects.debianInitialSetup.steps.motd.title',
-        description: 'projects.debianInitialSetup.steps.motd.description',
+        title: 'documentations.debianInitialSetup.steps.motd.title',
+        description: 'documentations.debianInitialSetup.steps.motd.description',
         commands: [
             {
                 command: 'sudo truncate -s 0 /etc/motd',
-                description: 'projects.debianInitialSetup.commands.motd.clearMotd',
+                description: 'documentations.debianInitialSetup.commands.motd.clearMotd',
                 language: 'bash'
             }
         ],
@@ -180,32 +180,32 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'hardware',
-        title: 'projects.debianInitialSetup.steps.hardware.title',
-        description: 'projects.debianInitialSetup.steps.hardware.description',
+        title: 'documentations.debianInitialSetup.steps.hardware.title',
+        description: 'documentations.debianInitialSetup.steps.hardware.description',
         commands: [
             {
                 command: 'apt install inxi -y',
-                description: 'projects.debianInitialSetup.commands.hardware.installInxi',
+                description: 'documentations.debianInitialSetup.commands.hardware.installInxi',
                 language: 'bash'
             },
             {
                 command: 'inxi -Faz',
-                description: 'projects.debianInitialSetup.commands.hardware.showHardwareInfo',
+                description: 'documentations.debianInitialSetup.commands.hardware.showHardwareInfo',
                 language: 'bash'
             },
             {
                 command: 'lscpu',
-                description: 'projects.debianInitialSetup.commands.hardware.showCpuInfo',
+                description: 'documentations.debianInitialSetup.commands.hardware.showCpuInfo',
                 language: 'bash'
             },
             {
                 command: 'free -h',
-                description: 'projects.debianInitialSetup.commands.hardware.showMemoryInfo',
+                description: 'documentations.debianInitialSetup.commands.hardware.showMemoryInfo',
                 language: 'bash'
             },
             {
                 command: 'df -h',
-                description: 'projects.debianInitialSetup.commands.hardware.showDiskInfo',
+                description: 'documentations.debianInitialSetup.commands.hardware.showDiskInfo',
                 language: 'bash'
             }
         ],
@@ -214,27 +214,27 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'verification',
-        title: 'projects.debianInitialSetup.steps.verification.title',
-        description: 'projects.debianInitialSetup.steps.verification.description',
+        title: 'documentations.debianInitialSetup.steps.verification.title',
+        description: 'documentations.debianInitialSetup.steps.verification.description',
         commands: [
             {
                 command: 'lsb_release -a',
-                description: 'projects.debianInitialSetup.commands.verification.systemInfo',
+                description: 'documentations.debianInitialSetup.commands.verification.systemInfo',
                 language: 'bash'
             },
             {
                 command: 'uname -a',
-                description: 'projects.debianInitialSetup.commands.verification.kernelInfo',
+                description: 'documentations.debianInitialSetup.commands.verification.kernelInfo',
                 language: 'bash'
             },
             {
                 command: 'systemctl status',
-                description: 'projects.debianInitialSetup.commands.verification.systemStatus',
+                description: 'documentations.debianInitialSetup.commands.verification.systemStatus',
                 language: 'bash'
             },
             {
                 command: 'apt list --upgradable',
-                description: 'projects.debianInitialSetup.commands.verification.checkUpdates',
+                description: 'documentations.debianInitialSetup.commands.verification.checkUpdates',
                 language: 'bash'
             }
         ],
@@ -256,59 +256,59 @@ const isExpanded = ref<Record<string, boolean>>(getInitialExpandedState())
 const additionalTips = [
     {
         id: 'security',
-        title: 'projects.debianInitialSetup.tips.security.title',
+        title: 'documentations.debianInitialSetup.tips.security.title',
         icon: 'mdi:shield-check',
         color: 'from-red-500 to-pink-600',
         commands: [
             {
                 command: 'apt install ufw -y',
-                description: 'projects.debianInitialSetup.commands.tips.installFirewall',
+                description: 'documentations.debianInitialSetup.commands.tips.installFirewall',
                 language: 'bash'
             },
             {
                 command: 'ufw enable',
-                description: 'projects.debianInitialSetup.commands.tips.enableFirewall',
+                description: 'documentations.debianInitialSetup.commands.tips.enableFirewall',
                 language: 'bash'
             },
             {
                 command: 'apt install fail2ban -y',
-                description: 'projects.debianInitialSetup.commands.tips.installFail2ban',
+                description: 'documentations.debianInitialSetup.commands.tips.installFail2ban',
                 language: 'bash'
             }
         ]
     },
     {
         id: 'essentials',
-        title: 'projects.debianInitialSetup.tips.essentials.title',
+        title: 'documentations.debianInitialSetup.tips.essentials.title',
         icon: 'mdi:tools',
         color: 'from-amber-500 to-orange-600',
         commands: [
             {
                 command: 'apt install sudo curl wget git nano htop tree -y',
-                description: 'projects.debianInitialSetup.commands.tips.installEssentials',
+                description: 'documentations.debianInitialSetup.commands.tips.installEssentials',
                 language: 'bash'
             },
             {
                 command: 'apt install build-essential -y',
-                description: 'projects.debianInitialSetup.commands.tips.installBuildTools',
+                description: 'documentations.debianInitialSetup.commands.tips.installBuildTools',
                 language: 'bash'
             }
         ]
     },
     {
         id: 'updates',
-        title: 'projects.debianInitialSetup.tips.updates.title',
+        title: 'documentations.debianInitialSetup.tips.updates.title',
         icon: 'mdi:update',
         color: 'from-emerald-500 to-teal-600',
         commands: [
             {
                 command: 'apt install unattended-upgrades -y',
-                description: 'projects.debianInitialSetup.commands.tips.installAutoUpdates',
+                description: 'documentations.debianInitialSetup.commands.tips.installAutoUpdates',
                 language: 'bash'
             },
             {
                 command: 'dpkg-reconfigure unattended-upgrades',
-                description: 'projects.debianInitialSetup.commands.tips.configureAutoUpdates',
+                description: 'documentations.debianInitialSetup.commands.tips.configureAutoUpdates',
                 language: 'bash'
             }
         ]
@@ -333,7 +333,7 @@ const toggleExpanded = (stepId: string) => {
 <template>
     <div class="w-full">
         <!-- Navigation -->
-        <UiSubNavigation :title="t('projects.debianInitialSetup.title')" />
+        <UiSubNavigation :title="t('documentations.debianInitialSetup.title')" />
 
         <!-- Content Area -->
         <div class="w-full">
@@ -356,13 +356,13 @@ const toggleExpanded = (stepId: string) => {
                     <!-- Title -->
                     <h1
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
-                        {{ t('projects.debianInitialSetup.title') }}
+                        {{ t('documentations.debianInitialSetup.title') }}
                     </h1>
 
                     <!-- Description -->
                     <p
                         class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
-                        {{ t('projects.debianInitialSetup.description') }}
+                        {{ t('documentations.debianInitialSetup.description') }}
                     </p>
 
                     <!-- Tags -->
@@ -396,7 +396,7 @@ const toggleExpanded = (stepId: string) => {
                                 <Icon name="mdi:alert-circle" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                             </div>
                             <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                                {{ t('projects.debianInitialSetup.notes.title') }}
+                                {{ t('documentations.debianInitialSetup.notes.title') }}
                             </h2>
                         </div>
 
@@ -406,7 +406,7 @@ const toggleExpanded = (stepId: string) => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t(`projects.debianInitialSetup.notes.${note}`) }}
+                                    {{ t(`documentations.debianInitialSetup.notes.${note}`) }}
                                 </span>
                             </div>
                         </div>
@@ -417,10 +417,10 @@ const toggleExpanded = (stepId: string) => {
                 <div class="space-y-4 sm:space-y-6 md:space-y-8 mb-8 sm:mb-10 md:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 px-4">
-                            {{ t('projects.debianInitialSetup.steps.title') }}
+                            {{ t('documentations.debianInitialSetup.steps.title') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.debianInitialSetup.steps.subtitle') }}
+                            {{ t('documentations.debianInitialSetup.steps.subtitle') }}
                         </p>
                     </div>
 
@@ -509,10 +509,10 @@ const toggleExpanded = (stepId: string) => {
                 <div class="mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.debianInitialSetup.tips.sectionTitle') }}
+                            {{ t('documentations.debianInitialSetup.tips.sectionTitle') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.debianInitialSetup.tips.sectionSubtitle') }}
+                            {{ t('documentations.debianInitialSetup.tips.sectionSubtitle') }}
                         </p>
                     </div>
 
@@ -551,10 +551,10 @@ const toggleExpanded = (stepId: string) => {
                             <Icon name="mdi:check-circle" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                         </div>
                         <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.debianInitialSetup.completion.title') }}
+                            {{ t('documentations.debianInitialSetup.completion.title') }}
                         </h3>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-                            {{ t('projects.debianInitialSetup.completion.message') }}
+                            {{ t('documentations.debianInitialSetup.completion.message') }}
                         </p>
                     </div>
                 </div>

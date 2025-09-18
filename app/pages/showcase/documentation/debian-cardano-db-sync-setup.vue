@@ -37,22 +37,22 @@ interface AdditionalTip {
 const setupSteps: SetupStep[] = [
     {
         id: 'postgresql',
-        title: 'projects.cardanoDbSyncSetup.steps.postgresql.title',
-        description: 'projects.cardanoDbSyncSetup.steps.postgresql.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.postgresql.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.postgresql.description',
         commands: [
             {
                 command: 'sudo apt install postgresql postgresql-contrib',
-                description: 'projects.cardanoDbSyncSetup.commands.postgresql.install',
+                description: 'documentations.cardanoDbSyncSetup.commands.postgresql.install',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl enable postgresql',
-                description: 'projects.cardanoDbSyncSetup.commands.postgresql.enable',
+                description: 'documentations.cardanoDbSyncSetup.commands.postgresql.enable',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl start postgresql',
-                description: 'projects.cardanoDbSyncSetup.commands.postgresql.start',
+                description: 'documentations.cardanoDbSyncSetup.commands.postgresql.start',
                 language: 'bash'
             }
         ],
@@ -61,33 +61,33 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'database',
-        title: 'projects.cardanoDbSyncSetup.steps.database.title',
-        description: 'projects.cardanoDbSyncSetup.steps.database.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.database.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.database.description',
         commands: [
             {
                 command: 'sudo -u postgres psql',
-                description: 'projects.cardanoDbSyncSetup.commands.database.connect',
+                description: 'documentations.cardanoDbSyncSetup.commands.database.connect',
                 language: 'bash'
             },
             {
                 command: "CREATE USER cardano WITH PASSWORD 'PASSWORD';",
-                description: 'projects.cardanoDbSyncSetup.commands.database.createUser',
-                note: 'projects.cardanoDbSyncSetup.commands.database.passwordNote',
+                description: 'documentations.cardanoDbSyncSetup.commands.database.createUser',
+                note: 'documentations.cardanoDbSyncSetup.commands.database.passwordNote',
                 language: 'sql'
             },
             {
                 command: 'CREATE DATABASE cexplorer OWNER cardano;',
-                description: 'projects.cardanoDbSyncSetup.commands.database.createDatabase',
+                description: 'documentations.cardanoDbSyncSetup.commands.database.createDatabase',
                 language: 'sql'
             },
             {
                 command: 'GRANT ALL PRIVILEGES ON DATABASE cexplorer TO cardano;',
-                description: 'projects.cardanoDbSyncSetup.commands.database.grantPrivileges',
+                description: 'documentations.cardanoDbSyncSetup.commands.database.grantPrivileges',
                 language: 'sql'
             },
             {
                 command: '\\q',
-                description: 'projects.cardanoDbSyncSetup.commands.database.quit',
+                description: 'documentations.cardanoDbSyncSetup.commands.database.quit',
                 language: 'sql'
             }
         ],
@@ -96,53 +96,53 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'clone-install',
-        title: 'projects.cardanoDbSyncSetup.steps.cloneInstall.title',
-        description: 'projects.cardanoDbSyncSetup.steps.cloneInstall.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.cloneInstall.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.cloneInstall.description',
         commands: [
             {
                 command: 'sudo -i -u cardano',
-                description: 'projects.cardanoDbSyncSetup.commands.clone.switchUser',
+                description: 'documentations.cardanoDbSyncSetup.commands.clone.switchUser',
                 language: 'bash'
             },
             {
                 command: 'git clone https://github.com/IntersectMBO/cardano-db-sync.git',
-                description: 'projects.cardanoDbSyncSetup.commands.clone.clone',
+                description: 'documentations.cardanoDbSyncSetup.commands.clone.clone',
                 language: 'bash'
             },
             {
                 command: 'ls -al',
-                description: 'projects.cardanoDbSyncSetup.commands.clone.listFiles',
+                description: 'documentations.cardanoDbSyncSetup.commands.clone.listFiles',
                 language: 'bash'
             },
             {
                 command: 'cd cardano-db-sync/',
-                description: 'projects.cardanoDbSyncSetup.commands.clone.changeDir',
+                description: 'documentations.cardanoDbSyncSetup.commands.clone.changeDir',
                 language: 'bash'
             },
             {
                 command: 'git tag | sort -V',
-                description: 'projects.cardanoDbSyncSetup.commands.install.listTags',
+                description: 'documentations.cardanoDbSyncSetup.commands.install.listTags',
                 language: 'bash'
             },
             {
                 command: 'git switch -d tags/13.6.0.5',
-                description: 'projects.cardanoDbSyncSetup.commands.install.checkout',
+                description: 'documentations.cardanoDbSyncSetup.commands.install.checkout',
                 language: 'bash'
             },
             {
                 command: 'nix profile install .',
-                description: 'projects.cardanoDbSyncSetup.commands.install.nixInstall',
-                note: 'projects.cardanoDbSyncSetup.commands.install.nixNote',
+                description: 'documentations.cardanoDbSyncSetup.commands.install.nixInstall',
+                note: 'documentations.cardanoDbSyncSetup.commands.install.nixNote',
                 language: 'bash'
             },
             {
                 command: 'cardano-db-sync --version',
-                description: 'projects.cardanoDbSyncSetup.commands.install.checkVersion',
+                description: 'documentations.cardanoDbSyncSetup.commands.install.checkVersion',
                 language: 'bash'
             },
             {
                 command: 'nix profile list',
-                description: 'projects.cardanoDbSyncSetup.commands.install.listProfiles',
+                description: 'documentations.cardanoDbSyncSetup.commands.install.listProfiles',
                 language: 'bash'
             }
         ],
@@ -151,12 +151,12 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'pgpass',
-        title: 'projects.cardanoDbSyncSetup.steps.pgpass.title',
-        description: 'projects.cardanoDbSyncSetup.steps.pgpass.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.pgpass.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.pgpass.description',
         commands: [
             {
                 command: 'nano ~/cardano-config/.pgpass',
-                description: 'projects.cardanoDbSyncSetup.commands.pgpass.create',
+                description: 'documentations.cardanoDbSyncSetup.commands.pgpass.create',
                 isFile: true,
                 fileName: '~/cardano-config/.pgpass',
                 fileContent: 'localhost:5432:cexplorer:cardano:PASSWORD',
@@ -164,12 +164,12 @@ const setupSteps: SetupStep[] = [
             },
             {
                 command: 'chmod 600 ~/cardano-config/.pgpass',
-                description: 'projects.cardanoDbSyncSetup.commands.pgpass.chmod',
+                description: 'documentations.cardanoDbSyncSetup.commands.pgpass.chmod',
                 language: 'bash'
             },
             {
                 command: 'exit',
-                description: 'projects.cardanoDbSyncSetup.commands.pgpass.exit',
+                description: 'documentations.cardanoDbSyncSetup.commands.pgpass.exit',
                 language: 'bash'
             }
         ],
@@ -178,17 +178,17 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'symlink',
-        title: 'projects.cardanoDbSyncSetup.steps.symlink.title',
-        description: 'projects.cardanoDbSyncSetup.steps.symlink.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.symlink.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.symlink.description',
         commands: [
             {
                 command: 'sudo ln -sf /home/cardano/.nix-profile/bin/cardano-db-sync /usr/local/bin/cardano-db-sync',
-                description: 'projects.cardanoDbSyncSetup.commands.symlink.create',
+                description: 'documentations.cardanoDbSyncSetup.commands.symlink.create',
                 language: 'bash'
             },
             {
                 command: 'cardano-db-sync --version',
-                description: 'projects.cardanoDbSyncSetup.commands.symlink.verify',
+                description: 'documentations.cardanoDbSyncSetup.commands.symlink.verify',
                 language: 'bash'
             }
         ],
@@ -197,12 +197,12 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'service',
-        title: 'projects.cardanoDbSyncSetup.steps.service.title',
-        description: 'projects.cardanoDbSyncSetup.steps.service.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.service.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.service.description',
         commands: [
             {
                 command: 'nano /etc/systemd/system/cardano-db-sync.service',
-                description: 'projects.cardanoDbSyncSetup.commands.service.create',
+                description: 'documentations.cardanoDbSyncSetup.commands.service.create',
                 isFile: true,
                 fileName: '/etc/systemd/system/cardano-db-sync.service',
                 fileContent: `[Unit]
@@ -231,17 +231,17 @@ WantedBy=multi-user.target`,
             },
             {
                 command: 'sudo systemctl daemon-reload',
-                description: 'projects.cardanoDbSyncSetup.commands.service.reload',
+                description: 'documentations.cardanoDbSyncSetup.commands.service.reload',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl enable cardano-db-sync',
-                description: 'projects.cardanoDbSyncSetup.commands.service.enable',
+                description: 'documentations.cardanoDbSyncSetup.commands.service.enable',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl start cardano-db-sync',
-                description: 'projects.cardanoDbSyncSetup.commands.service.start',
+                description: 'documentations.cardanoDbSyncSetup.commands.service.start',
                 language: 'bash'
             }
         ],
@@ -250,17 +250,17 @@ WantedBy=multi-user.target`,
     },
     {
         id: 'monitoring',
-        title: 'projects.cardanoDbSyncSetup.steps.monitoring.title',
-        description: 'projects.cardanoDbSyncSetup.steps.monitoring.description',
+        title: 'documentations.cardanoDbSyncSetup.steps.monitoring.title',
+        description: 'documentations.cardanoDbSyncSetup.steps.monitoring.description',
         commands: [
             {
                 command: 'sudo systemctl status cardano-db-sync',
-                description: 'projects.cardanoDbSyncSetup.commands.monitoring.status',
+                description: 'documentations.cardanoDbSyncSetup.commands.monitoring.status',
                 language: 'bash'
             },
             {
                 command: 'journalctl -u cardano-db-sync -f',
-                description: 'projects.cardanoDbSyncSetup.commands.monitoring.logs',
+                description: 'documentations.cardanoDbSyncSetup.commands.monitoring.logs',
                 language: 'bash'
             }
         ],
@@ -272,11 +272,11 @@ WantedBy=multi-user.target`,
 const additionalTips: AdditionalTip[] = [
     {
         id: 'sync-status',
-        title: 'projects.cardanoDbSyncSetup.tips.syncStatus.title',
+        title: 'documentations.cardanoDbSyncSetup.tips.syncStatus.title',
         commands: [
             {
                 command: 'sudo -u postgres psql -d cexplorer -c "SELECT * FROM meta;"',
-                description: 'projects.cardanoDbSyncSetup.tips.syncStatus.checkMeta',
+                description: 'documentations.cardanoDbSyncSetup.tips.syncStatus.checkMeta',
                 language: 'bash'
             }
         ],
@@ -285,11 +285,11 @@ const additionalTips: AdditionalTip[] = [
     },
     {
         id: 'troubleshooting',
-        title: 'projects.cardanoDbSyncSetup.tips.troubleshooting.title',
+        title: 'documentations.cardanoDbSyncSetup.tips.troubleshooting.title',
         commands: [
             {
                 command: 'sudo systemctl restart cardano-db-sync',
-                description: 'projects.cardanoDbSyncSetup.tips.troubleshooting.restart',
+                description: 'documentations.cardanoDbSyncSetup.tips.troubleshooting.restart',
                 language: 'bash'
             }
         ],
@@ -298,11 +298,11 @@ const additionalTips: AdditionalTip[] = [
     },
     {
         id: 'disk-space',
-        title: 'projects.cardanoDbSyncSetup.tips.diskSpace.title',
+        title: 'documentations.cardanoDbSyncSetup.tips.diskSpace.title',
         commands: [
             {
                 command: 'df -h /home/cardano/',
-                description: 'projects.cardanoDbSyncSetup.tips.diskSpace.check',
+                description: 'documentations.cardanoDbSyncSetup.tips.diskSpace.check',
                 language: 'bash'
             }
         ],
@@ -326,7 +326,7 @@ onMounted(() => {
 <template>
     <div class="w-full">
         <!-- Navigation -->
-        <UiSubNavigation :title="t('projects.cardanoDbSyncSetup.title')" />
+        <UiSubNavigation :title="t('documentations.cardanoDbSyncSetup.title')" />
 
         <!-- Content Area -->
         <div class="w-full">
@@ -349,13 +349,13 @@ onMounted(() => {
                     <!-- Title -->
                     <h1
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
-                        {{ t('projects.cardanoDbSyncSetup.title') }}
+                        {{ t('documentations.cardanoDbSyncSetup.title') }}
                     </h1>
 
                     <!-- Description -->
                     <p
                         class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
-                        {{ t('projects.cardanoDbSyncSetup.description') }}
+                        {{ t('documentations.cardanoDbSyncSetup.description') }}
                     </p>
 
                     <!-- Tags -->
@@ -393,7 +393,7 @@ onMounted(() => {
                                 <Icon name="mdi:alert-circle" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                             </div>
                             <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                                {{ t('projects.cardanoDbSyncSetup.notes.title') }}
+                                {{ t('documentations.cardanoDbSyncSetup.notes.title') }}
                             </h2>
                         </div>
 
@@ -403,7 +403,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoDbSyncSetup.notes.cardanoNode') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.notes.cardanoNode') }}
                                 </span>
                             </div>
                             <div
@@ -411,7 +411,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoDbSyncSetup.notes.diskSpace') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.notes.diskSpace') }}
                                 </span>
                             </div>
                             <div
@@ -419,7 +419,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoDbSyncSetup.notes.ramRequirement') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.notes.ramRequirement') }}
                                 </span>
                             </div>
                             <div
@@ -427,7 +427,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoDbSyncSetup.notes.syncTime') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.notes.syncTime') }}
                                 </span>
                             </div>
                             <div
@@ -435,7 +435,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t('projects.cardanoDbSyncSetup.notes.rootAccess') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.notes.rootAccess') }}
                                 </span>
                             </div>
                         </div>
@@ -446,10 +446,10 @@ onMounted(() => {
                 <div class="max-w-7xl mx-auto mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoDbSyncSetup.steps.title') }}
+                            {{ t('documentations.cardanoDbSyncSetup.steps.title') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.cardanoDbSyncSetup.stepsSubtitle') }}
+                            {{ t('documentations.cardanoDbSyncSetup.stepsSubtitle') }}
                         </p>
                     </div>
 
@@ -543,10 +543,10 @@ onMounted(() => {
                 <div class="mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoDbSyncSetup.tips.sectionTitle') }}
+                            {{ t('documentations.cardanoDbSyncSetup.tips.sectionTitle') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.cardanoDbSyncSetup.tips.sectionSubtitle') }}
+                            {{ t('documentations.cardanoDbSyncSetup.tips.sectionSubtitle') }}
                         </p>
                     </div>
 
@@ -580,10 +580,10 @@ onMounted(() => {
                 <div class="mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoDbSyncSetup.resources.sectionTitle') }}
+                            {{ t('documentations.cardanoDbSyncSetup.resources.sectionTitle') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.cardanoDbSyncSetup.resources.sectionSubtitle') }}
+                            {{ t('documentations.cardanoDbSyncSetup.resources.sectionSubtitle') }}
                         </p>
                     </div>
 
@@ -598,13 +598,13 @@ onMounted(() => {
                                     <Icon name="mdi:github" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t('projects.cardanoDbSyncSetup.resources.github.title') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.resources.github.title') }}
                                 </h3>
                                 <Icon name="mdi:external-link"
                                     class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
                             </div>
                             <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ t('projects.cardanoDbSyncSetup.resources.github.description') }}
+                                {{ t('documentations.cardanoDbSyncSetup.resources.github.description') }}
                             </p>
                         </a>
 
@@ -617,13 +617,13 @@ onMounted(() => {
                                     <Icon name="mdi:database" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t('projects.cardanoDbSyncSetup.resources.postgresql.title') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.title') }}
                                 </h3>
                                 <Icon name="mdi:external-link"
                                     class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
                             </div>
                             <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ t('projects.cardanoDbSyncSetup.resources.postgresql.description') }}
+                                {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.description') }}
                             </p>
                         </a>
 
@@ -638,13 +638,13 @@ onMounted(() => {
                                         class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t('projects.cardanoDbSyncSetup.resources.cardanoDocs.title') }}
+                                    {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.title') }}
                                 </h3>
                                 <Icon name="mdi:external-link"
                                     class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
                             </div>
                             <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ t('projects.cardanoDbSyncSetup.resources.cardanoDocs.description') }}
+                                {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.description') }}
                             </p>
                         </a>
                     </div>
@@ -659,10 +659,10 @@ onMounted(() => {
                             <Icon name="mdi:check-circle" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                         </div>
                         <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.cardanoDbSyncSetup.completion.title') }}
+                            {{ t('documentations.cardanoDbSyncSetup.completion.title') }}
                         </h3>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-                            {{ t('projects.cardanoDbSyncSetup.completion.message') }}
+                            {{ t('documentations.cardanoDbSyncSetup.completion.message') }}
                         </p>
                     </div>
                 </div>

@@ -503,6 +503,120 @@
                     "description": "Umfangreiche Icon-Bibliothek mit über 100.000 Icons und optimaler Leistung durch Icon-on-Demand"
                 }
             }
+        }
+    },
+    "documentations": {
+        "ollamaSetup": {
+            "title": "Linux - Ollama Installation",
+            "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
+            "notes": {
+                "title": "Wichtige Hinweise",
+                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich",
+                "domainRequired": "Eine gültige Domain und DNS-Konfiguration sind notwendig",
+                "firewallConfig": "Firewall-Konfiguration für Ports 80/443 erforderlich",
+                "securePassword": "Verwenden Sie ein starkes Passwort für HTTP Basic Auth",
+                "backupConfig": "Erstellen Sie Backups vor wichtigen Konfigurationsänderungen",
+                "resourceRequirements": "Mindestens 4GB RAM für größere Modelle empfohlen"
+            },
+            "steps": {
+                "title": "Installationsschritte",
+                "subtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Ollama-Installation mit sicherer API",
+                "dependencies": {
+                    "title": "Abhängigkeiten installieren",
+                    "description": "Installation der erforderlichen Systempakete und Abhängigkeiten für Ollama und Apache2."
+                },
+                "ollama": {
+                    "title": "Ollama installieren",
+                    "description": "Installation von Ollama und erste Konfiguration mit einem Testmodell."
+                },
+                "apache": {
+                    "title": "Apache2 konfigurieren",
+                    "description": "Installation und Konfiguration von Apache2 als Reverse Proxy für Ollama."
+                },
+                "ssl": {
+                    "title": "SSL-Zertifikat einrichten",
+                    "description": "Einrichtung von Let's Encrypt SSL-Zertifikaten für sichere HTTPS-Verbindungen."
+                },
+                "authentication": {
+                    "title": "HTTP Basic Authentication",
+                    "description": "Konfiguration der HTTP Basic Authentication für sicheren API-Zugriff."
+                },
+                "virtualhost": {
+                    "title": "Virtual Host aktivieren",
+                    "description": "Aktivierung des Virtual Hosts und Neustart der Apache-Services."
+                },
+                "testing": {
+                    "title": "Installation testen",
+                    "description": "Überprüfung der Installation und Test der API-Funktionalität."
+                }
+            },
+            "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Ollama-Installation mit sicherer API",
+            "commands": {
+                "dependencies": {
+                    "updateAgain": "Paketlisten erneut aktualisieren",
+                    "installBasic": "Grundlegende Pakete installieren"
+                },
+                "ollama": {
+                    "install": "Ollama herunterladen und installieren",
+                    "testModel": "Kleines Testmodell herunterladen und testen",
+                    "reexec": "Systemd-Manager neu laden",
+                    "reload": "Ollama-Service neu laden",
+                    "restart": "Ollama-Service neu starten",
+                    "checkPort": "Überprüfen, ob Ollama auf Port 11434 lauscht"
+                },
+                "apache": {
+                    "install": "Apache2 und SSL-Module installieren",
+                    "enableModules": "Erforderliche Apache-Module aktivieren",
+                    "restart": "Apache2 neu starten"
+                },
+                "ssl": {
+                    "installCertbot": "Certbot für Let's Encrypt installieren",
+                    "getCertificate": "SSL-Zertifikat für Domain anfordern"
+                },
+                "authentication": {
+                    "createDirectory": "Verzeichnis für Auth-Dateien erstellen",
+                    "createUser": "Benutzer mit Passwort für HTTP Basic Auth erstellen",
+                    "passwordNote": "Geben Sie ein sicheres Passwort ein, wenn Sie dazu aufgefordert werden"
+                },
+                "virtualhost": {
+                    "enableSite": "Neue Site-Konfiguration aktivieren",
+                    "disableDefault": "Standard Apache-Site deaktivieren",
+                    "disableDefaultSSL": "Standard SSL-Site deaktivieren",
+                    "reloadApache": "Apache-Konfiguration neu laden"
+                },
+                "testing": {
+                    "testApi": "API-Endpunkt mit curl testen",
+                    "testNote": "Verwenden Sie Ihren konfigurierten Benutzernamen und Ihr Passwort"
+                },
+                "troubleshooting": {
+                    "checkPort": "Überprüfen, welcher Service auf Port 11434 läuft",
+                    "checkStatus": "Ollama-Service-Status überprüfen",
+                    "checkLogs": "Ollama-Service-Logs anzeigen",
+                    "testConfig": "Apache-Konfiguration testen",
+                    "checkApache": "Apache-Service-Status überprüfen",
+                    "checkApacheLogs": "Apache-Error-Logs anzeigen",
+                    "listCertificates": "Alle Certbot-Zertifikate auflisten",
+                    "testRenewal": "Zertifikat-Erneuerung testen",
+                    "testSSL": "SSL-Verbindung mit OpenSSL testen"
+                }
+            },
+            "troubleshooting": {
+                "title": "Fehlerbehebung",
+                "subtitle": "Häufige Probleme und ihre Lösungen bei der Ollama-Installation",
+                "ollamaIssues": {
+                    "title": "Ollama-Probleme"
+                },
+                "apacheIssues": {
+                    "title": "Apache-Probleme"
+                },
+                "sslIssues": {
+                    "title": "SSL-Probleme"
+                }
+            },
+            "completion": {
+                "title": "Installation abgeschlossen!",
+                "description": "Ihr Ollama-Server ist jetzt vollständig konfiguriert und über HTTPS mit Basic Authentication gesichert. Sie können jetzt sicher auf die API zugreifen."
+            }
         },
         "debianInitialSetup": {
             "title": "Debian 12 - Server Ersteinrichtung",
@@ -621,6 +735,281 @@
             "completion": {
                 "title": "Einrichtung abgeschlossen!",
                 "message": "Ihr Debian 12 Server ist jetzt grundlegend konfiguriert und einsatzbereit. Vergessen Sie nicht, weitere sicherheitsrelevante Konfigurationen entsprechend Ihren Anforderungen vorzunehmen."
+            }
+        },
+        "cardanoNodeSetup": {
+            "title": "Linux - Cardano Node Installation",
+            "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung.",
+            "notes": {
+                "title": "Wichtige Hinweise",
+                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich",
+                "networkConnection": "Stabile Internetverbindung wird benötigt",
+                "diskSpace": "Mindestens 50GB freier Speicherplatz erforderlich",
+                "timeRequired": "Gesamtzeit: ca. 2-3 Stunden (inklusive Synchronisation)"
+            },
+            "steps": {
+                "title": "Installationsschritte",
+                "dependencies": {
+                    "title": "Systemabhängigkeiten installieren",
+                    "description": "Installation der erforderlichen Systempakete für die NIX-Paketmanager Installation."
+                },
+                "nix": {
+                    "title": "NIX Paketmanager installieren",
+                    "description": "Installation des NIX-Paketmanagers für die Verwaltung der Cardano-Node Abhängigkeiten."
+                },
+                "nixconfig": {
+                    "title": "NIX für Cardano konfigurieren",
+                    "description": "Konfiguration des NIX-Paketmanagers mit den offiziellen IOHK-Binär-Caches für optimierte Downloads."
+                },
+                "user": {
+                    "title": "Cardano-Benutzer erstellen",
+                    "description": "Erstellung eines dedizierten Benutzers für den Cardano-Node-Betrieb."
+                },
+                "install": {
+                    "title": "Cardano-Node installieren",
+                    "description": "Installation der Cardano-Node und CLI-Tools über das NIX-System."
+                },
+                "symlinks": {
+                    "title": "System-Symlinks erstellen",
+                    "description": "Erstellung von Symlinks für systemweiten Zugriff auf die Cardano-Tools."
+                },
+                "config": {
+                    "title": "Node-Konfiguration herunterladen",
+                    "description": "Download der offiziellen Cardano-Netzwerkkonfigurationsdateien."
+                },
+                "service": {
+                    "title": "Systemd-Service einrichten",
+                    "description": "Konfiguration der Cardano-Node als Systemd-Service für automatischen Start."
+                },
+                "monitor": {
+                    "title": "Node-Überwachung einrichten",
+                    "description": "Überwachung der Node-Logs und des Synchronisationsprozesses."
+                }
+            },
+            "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Cardano-Node Installation",
+            "commands": {
+                "dependencies": {
+                    "installDeps": "Systemabhängigkeiten installieren"
+                },
+                "nix": {
+                    "rebootNote": "Ein Neustart ist nach der NIX-Installation erforderlich",
+                    "install": "NIX-Paketmanager installieren",
+                    "reboot": "System neu starten",
+                    "verify": "NIX-Installation verifizieren"
+                },
+                "nixconfig": {
+                    "restart": "NIX-Daemon neu starten"
+                },
+                "user": {
+                    "createUser": "Cardano-Benutzer erstellen"
+                },
+                "install": {
+                    "switchUser": "Zu Cardano-Benutzer wechseln",
+                    "clone": "Cardano-Node Repository klonen",
+                    "changeDir": "In Cardano-Node Verzeichnis wechseln",
+                    "listTags": "Verfügbare Versionen anzeigen",
+                    "checkout": "Aktuelle stabile Version auschecken",
+                    "profileInstall": "Cardano-Node und CLI in NIX-Profil installieren",
+                    "profileNote": "Dies kann 30-60 Minuten dauern, da alle Abhängigkeiten kompiliert werden",
+                    "profileList": "Installierte Profile auflisten",
+                    "checkNode": "Cardano-Node Version überprüfen",
+                    "checkCli": "Cardano-CLI Version überprüfen",
+                    "exitUser": "Zurück zu Root-Benutzer wechseln"
+                },
+                "symlinks": {
+                    "profileNote": "Passen Sie den Pfad entsprechend Ihrem NIX-Profil an",
+                    "linkNode": "Symlink für Cardano-Node erstellen",
+                    "linkCli": "Symlink für Cardano-CLI erstellen",
+                    "verifyLinks": "Symlinks verifizieren",
+                    "testNode": "Cardano-Node systemweit testen",
+                    "testCli": "Cardano-CLI systemweit testen"
+                },
+                "config": {
+                    "switchUser": "Zu Cardano-Benutzer wechseln",
+                    "createDirs": "Konfigurationsverzeichnisse erstellen",
+                    "changeDir": "In Konfigurationsverzeichnis wechseln",
+                    "downloadConfigs": "Offizielle Konfigurationsdateien herunterladen",
+                    "listConfigs": "Heruntergeladene Konfigurationsdateien auflisten",
+                    "checkConfig": "Genesis-Konfiguration überprüfen",
+                    "exitUser": "Zurück zu Root-Benutzer wechseln"
+                },
+                "service": {
+                    "reload": "Systemd-Manager neu laden",
+                    "enable": "Cardano-Node Service aktivieren",
+                    "start": "Cardano-Node Service starten"
+                },
+                "monitor": {
+                    "syncNote": "Die initiale Blockchain-Synchronisation kann 24-48 Stunden dauern",
+                    "logs": "Service-Logs verfolgen",
+                    "syncProgress": "Synchronisationsfortschritt überprüfen"
+                },
+                "tips": {
+                    "syncStatus": "Synchronisationsstatus überprüfen",
+                    "syncSize": "Aktuelle Blockchain-Größe anzeigen",
+                    "restart": "Cardano-Node Service neu starten",
+                    "stop": "Cardano-Node Service stoppen",
+                    "fullLogs": "Vollständige Logs anzeigen",
+                    "checkProcess": "Cardano-Node Prozess überprüfen"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Zusätzliche Tipps",
+                "sectionSubtitle": "Nützliche Befehle und Wartungstipps für die Cardano-Node",
+                "sync": {
+                    "title": "Synchronisationsüberwachung"
+                },
+                "maintenance": {
+                    "title": "Service-Verwaltung"
+                },
+                "troubleshooting": {
+                    "title": "Fehlerbehebung"
+                }
+            },
+            "resources": {
+                "sectionTitle": "Nützliche Ressourcen",
+                "sectionSubtitle": "Weiterführende Links und Dokumentation für die Cardano-Node",
+                "nixDownload": {
+                    "title": "NIX Download",
+                    "description": "Offizielle NIX-Paketmanager Website mit Installationsanleitungen"
+                },
+                "cardanoInstall": {
+                    "title": "Cardano Installation Guide",
+                    "description": "Offizielle Cardano-Node Installationsdokumentation"
+                },
+                "cardanoRunning": {
+                    "title": "Running a Node",
+                    "description": "Offizielle Anleitung zum Betrieb einer Cardano-Node"
+                }
+            },
+            "completion": {
+                "title": "Installation abgeschlossen!",
+                "message": "Ihre Cardano-Node ist erfolgreich installiert und läuft als Systemd-Service. Die Blockchain-Synchronisation läuft im Hintergrund und kann 24-48 Stunden dauern."
+            }
+        },
+        "cardanoDbSyncSetup": {
+            "title": "Linux - Cardano DB Sync Installation",
+            "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration.",
+            "notes": {
+                "title": "Wichtige Hinweise",
+                "cardanoNode": "Eine funktionierende Cardano-Node ist erforderlich",
+                "diskSpace": "Mindestens 200GB freier Speicherplatz für die Datenbank",
+                "ramRequirement": "Mindestens 16GB RAM für optimale Performance",
+                "syncTime": "Erste Synchronisation kann mehrere Tage dauern",
+                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich"
+            },
+            "steps": {
+                "title": "Installationsschritte",
+                "postgresql": {
+                    "title": "PostgreSQL installieren",
+                    "description": "Installation und Konfiguration der PostgreSQL-Datenbank für Cardano DB Sync."
+                },
+                "database": {
+                    "title": "Datenbank einrichten",
+                    "description": "Erstellung der Datenbank und des Benutzers für Cardano DB Sync."
+                },
+                "cloneInstall": {
+                    "title": "DB Sync klonen und installieren",
+                    "description": "Klonen des Cardano DB Sync Repositories und Installation mit NIX."
+                },
+                "pgpass": {
+                    "title": "Passwort-Datei erstellen",
+                    "description": "Erstellung der .pgpass-Datei für automatische Datenbank-Authentifizierung."
+                },
+                "symlink": {
+                    "title": "Symbolische Links erstellen",
+                    "description": "Erstellen symbolischer Links für die Cardano DB Sync Binärdateien."
+                },
+                "service": {
+                    "title": "Systemd Service konfigurieren",
+                    "description": "Erstellung und Aktivierung des Systemd-Services für Cardano DB Sync."
+                },
+                "monitoring": {
+                    "title": "Service überwachen",
+                    "description": "Überwachung des Services und der Datenbank-Synchronisation."
+                }
+            },
+            "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Cardano DB Sync Installation",
+            "commands": {
+                "postgresql": {
+                    "install": "PostgreSQL installieren",
+                    "enable": "PostgreSQL aktivieren",
+                    "start": "PostgreSQL starten"
+                },
+                "database": {
+                    "connect": "Als postgres-Benutzer verbinden",
+                    "createUser": "Datenbankbenutzer erstellen",
+                    "passwordNote": "Sichere Passwort wählen und merken",
+                    "createDatabase": "Datenbank erstellen",
+                    "grantPrivileges": "Berechtigungen gewähren",
+                    "quit": "PostgreSQL-Konsole verlassen"
+                },
+                "clone": {
+                    "switchUser": "Zu cardano-Benutzer wechseln",
+                    "clone": "Cardano DB Sync Repository klonen",
+                    "listFiles": "Repository-Inhalte anzeigen",
+                    "changeDir": "In Repository-Verzeichnis wechseln"
+                },
+                "install": {
+                    "listTags": "Verfügbare Tags anzeigen",
+                    "checkout": "Neueste stabile Version auschecken",
+                    "nixInstall": "DB Sync mit NIX installieren",
+                    "nixNote": "Installation kann 30-60 Minuten dauern",
+                    "checkVersion": "Installation überprüfen",
+                    "listProfiles": "NIX Profile anzeigen"
+                },
+                "pgpass": {
+                    "chmod": "Dateiberechtigungen setzen",
+                    "exit": "Benutzer-Session beenden"
+                },
+                "symlink": {
+                    "create": "Symbolischen Link erstellen",
+                    "verify": "Link überprüfen"
+                },
+                "service": {
+                    "reload": "Systemd-Daemon neu laden",
+                    "enable": "Service aktivieren",
+                    "start": "Service starten"
+                },
+                "monitoring": {
+                    "status": "Service-Status prüfen",
+                    "logs": "Service-Logs anzeigen"
+                }
+            },
+            "tips": {
+                "sectionTitle": "Hilfreiche Tipps",
+                "sectionSubtitle": "Nützliche Kommandos und Hinweise für die Verwaltung von Cardano DB Sync",
+                "syncStatus": {
+                    "title": "Synchronisationsstatus",
+                    "checkMeta": "Datenbank-Metadaten für Sync-Status prüfen"
+                },
+                "troubleshooting": {
+                    "title": "Fehlerbehebung",
+                    "restart": "Service bei Problemen neu starten"
+                },
+                "diskSpace": {
+                    "title": "Speicherplatz",
+                    "check": "Verfügbaren Speicherplatz regelmäßig überwachen"
+                }
+            },
+            "resources": {
+                "sectionTitle": "Nützliche Ressourcen",
+                "sectionSubtitle": "Zusätzliche Dokumentation und Tools für Cardano DB Sync",
+                "github": {
+                    "title": "Cardano DB Sync GitHub",
+                    "description": "Offizielles Repository mit Dokumentation und Updates"
+                },
+                "postgresql": {
+                    "title": "PostgreSQL Dokumentation",
+                    "description": "Umfassende Dokumentation für PostgreSQL-Administration"
+                },
+                "cardanoDocs": {
+                    "title": "Cardano Developer Portal",
+                    "description": "Entwickler-Ressourcen und API-Dokumentation"
+                }
+            },
+            "completion": {
+                "title": "Installation Abgeschlossen",
+                "message": "Cardano DB Sync ist jetzt erfolgreich installiert und läuft. Die Synchronisation mit der Blockchain wird automatisch fortgesetzt und die Datenbank wird gefüllt."
             }
         }
     },

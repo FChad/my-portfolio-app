@@ -30,17 +30,17 @@ interface SetupStep {
 const setupSteps: SetupStep[] = [
     {
         id: 'dependencies',
-        title: 'projects.ollamaSetup.steps.dependencies.title',
-        description: 'projects.ollamaSetup.steps.dependencies.description',
+        title: 'documentations.ollamaSetup.steps.dependencies.title',
+        description: 'documentations.ollamaSetup.steps.dependencies.description',
         commands: [
             {
                 command: 'apt update -y && apt upgrade -y',
-                description: 'projects.ollamaSetup.commands.dependencies.updateAgain',
+                description: 'documentations.ollamaSetup.commands.dependencies.updateAgain',
                 language: 'bash'
             },
             {
                 command: 'apt install sudo curl',
-                description: 'projects.ollamaSetup.commands.dependencies.installBasic',
+                description: 'documentations.ollamaSetup.commands.dependencies.installBasic',
                 language: 'bash'
             }
         ],
@@ -49,22 +49,22 @@ const setupSteps: SetupStep[] = [
     },
     {
         id: 'ollama',
-        title: 'projects.ollamaSetup.steps.ollama.title',
-        description: 'projects.ollamaSetup.steps.ollama.description',
+        title: 'documentations.ollamaSetup.steps.ollama.title',
+        description: 'documentations.ollamaSetup.steps.ollama.description',
         commands: [
             {
                 command: 'curl -fsSL https://ollama.com/install.sh | sh',
-                description: 'projects.ollamaSetup.commands.ollama.install',
+                description: 'documentations.ollamaSetup.commands.ollama.install',
                 language: 'bash'
             },
             {
                 command: 'ollama run gemma3:4b',
-                description: 'projects.ollamaSetup.commands.ollama.testModel',
+                description: 'documentations.ollamaSetup.commands.ollama.testModel',
                 language: 'bash'
             },
             {
                 command: 'systemctl edit ollama.service',
-                description: 'projects.ollamaSetup.commands.ollama.configureService',
+                description: 'documentations.ollamaSetup.commands.ollama.configureService',
                 isFile: true,
                 fileName: '/etc/systemd/system/ollama.service.d/override.conf',
                 fileContent: `[Service]
@@ -75,22 +75,22 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
             },
             {
                 command: 'sudo systemctl daemon-reexec',
-                description: 'projects.ollamaSetup.commands.ollama.reexec',
+                description: 'documentations.ollamaSetup.commands.ollama.reexec',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl daemon-reload',
-                description: 'projects.ollamaSetup.commands.ollama.reload',
+                description: 'documentations.ollamaSetup.commands.ollama.reload',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl restart ollama',
-                description: 'projects.ollamaSetup.commands.ollama.restart',
+                description: 'documentations.ollamaSetup.commands.ollama.restart',
                 language: 'bash'
             },
             {
                 command: 'sudo ss -tulpen | grep 11434',
-                description: 'projects.ollamaSetup.commands.ollama.checkPort',
+                description: 'documentations.ollamaSetup.commands.ollama.checkPort',
                 language: 'bash'
             }
         ],
@@ -99,22 +99,22 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
     },
     {
         id: 'apache',
-        title: 'projects.ollamaSetup.steps.apache.title',
-        description: 'projects.ollamaSetup.steps.apache.description',
+        title: 'documentations.ollamaSetup.steps.apache.title',
+        description: 'documentations.ollamaSetup.steps.apache.description',
         commands: [
             {
                 command: 'sudo apt update && sudo apt install apache2 apache2-utils -y',
-                description: 'projects.ollamaSetup.commands.apache.install',
+                description: 'documentations.ollamaSetup.commands.apache.install',
                 language: 'bash'
             },
             {
                 command: 'sudo a2enmod proxy proxy_http ssl headers rewrite',
-                description: 'projects.ollamaSetup.commands.apache.enableModules',
+                description: 'documentations.ollamaSetup.commands.apache.enableModules',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl restart apache2',
-                description: 'projects.ollamaSetup.commands.apache.restart',
+                description: 'documentations.ollamaSetup.commands.apache.restart',
                 language: 'bash'
             }
         ],
@@ -123,17 +123,17 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
     },
     {
         id: 'ssl',
-        title: 'projects.ollamaSetup.steps.ssl.title',
-        description: 'projects.ollamaSetup.steps.ssl.description',
+        title: 'documentations.ollamaSetup.steps.ssl.title',
+        description: 'documentations.ollamaSetup.steps.ssl.description',
         commands: [
             {
                 command: 'sudo apt install certbot python3-certbot-apache -y',
-                description: 'projects.ollamaSetup.commands.ssl.installCertbot',
+                description: 'documentations.ollamaSetup.commands.ssl.installCertbot',
                 language: 'bash'
             },
             {
                 command: 'sudo certbot --apache -d server.chad.lu --register-unsafely-without-email',
-                description: 'projects.ollamaSetup.commands.ssl.getCertificate',
+                description: 'documentations.ollamaSetup.commands.ssl.getCertificate',
                 language: 'bash'
             }
         ],
@@ -142,18 +142,18 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
     },
     {
         id: 'authentication',
-        title: 'projects.ollamaSetup.steps.authentication.title',
-        description: 'projects.ollamaSetup.steps.authentication.description',
+        title: 'documentations.ollamaSetup.steps.authentication.title',
+        description: 'documentations.ollamaSetup.steps.authentication.description',
         commands: [
             {
                 command: 'sudo mkdir -p /etc/apache2/htpasswd',
-                description: 'projects.ollamaSetup.commands.authentication.createDirectory',
+                description: 'documentations.ollamaSetup.commands.authentication.createDirectory',
                 language: 'bash'
             },
             {
                 command: 'sudo htpasswd -c /etc/apache2/htpasswd/ollama-api.htpasswd apiuser',
-                description: 'projects.ollamaSetup.commands.authentication.createUser',
-                note: 'projects.ollamaSetup.commands.authentication.passwordNote',
+                description: 'documentations.ollamaSetup.commands.authentication.createUser',
+                note: 'documentations.ollamaSetup.commands.authentication.passwordNote',
                 language: 'bash'
             }
         ],
@@ -162,12 +162,12 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
     },
     {
         id: 'virtualhost',
-        title: 'projects.ollamaSetup.steps.virtualhost.title',
-        description: 'projects.ollamaSetup.steps.virtualhost.description',
+        title: 'documentations.ollamaSetup.steps.virtualhost.title',
+        description: 'documentations.ollamaSetup.steps.virtualhost.description',
         commands: [
             {
                 command: 'sudo nano /etc/apache2/sites-available/server.chad.lu.conf',
-                description: 'projects.ollamaSetup.commands.virtualhost.createConfig',
+                description: 'documentations.ollamaSetup.commands.virtualhost.createConfig',
                 isFile: true,
                 fileName: '/etc/apache2/sites-available/server.chad.lu.conf',
                 fileContent: `<VirtualHost *:80>
@@ -217,22 +217,22 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
             },
             {
                 command: 'sudo a2ensite server.chad.lu.conf',
-                description: 'projects.ollamaSetup.commands.virtualhost.enableSite',
+                description: 'documentations.ollamaSetup.commands.virtualhost.enableSite',
                 language: 'bash'
             },
             {
                 command: 'sudo a2dissite 000-default.conf',
-                description: 'projects.ollamaSetup.commands.virtualhost.disableDefault',
+                description: 'documentations.ollamaSetup.commands.virtualhost.disableDefault',
                 language: 'bash'
             },
             {
                 command: 'sudo a2dissite 000-default-le-ssl.conf',
-                description: 'projects.ollamaSetup.commands.virtualhost.disableDefaultSSL',
+                description: 'documentations.ollamaSetup.commands.virtualhost.disableDefaultSSL',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl reload apache2',
-                description: 'projects.ollamaSetup.commands.virtualhost.reloadApache',
+                description: 'documentations.ollamaSetup.commands.virtualhost.reloadApache',
                 language: 'bash'
             }
         ],
@@ -241,13 +241,13 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
     },
     {
         id: 'testing',
-        title: 'projects.ollamaSetup.steps.testing.title',
-        description: 'projects.ollamaSetup.steps.testing.description',
+        title: 'documentations.ollamaSetup.steps.testing.title',
+        description: 'documentations.ollamaSetup.steps.testing.description',
         commands: [
             {
                 command: 'curl -u apiuser https://server.chad.lu/ollama/api/generate -H "Content-Type: application/json" -d \'{"model": "gemma3:4b", "prompt": "Erzähl mir eine Geschichte.", "stream": true}\'',
-                description: 'projects.ollamaSetup.commands.testing.testApi',
-                note: 'projects.ollamaSetup.commands.testing.testNote',
+                description: 'documentations.ollamaSetup.commands.testing.testApi',
+                note: 'documentations.ollamaSetup.commands.testing.testNote',
                 language: 'bash'
             }
         ],
@@ -259,63 +259,63 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
 const troubleshooting = [
     {
         id: 'ollama-issues',
-        title: 'projects.ollamaSetup.troubleshooting.ollamaIssues.title',
+        title: 'documentations.ollamaSetup.troubleshooting.ollamaIssues.title',
         commands: [
             {
                 command: 'sudo ss -tulpen | grep 11434',
-                description: 'projects.ollamaSetup.commands.troubleshooting.checkPort',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.checkPort',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl status ollama',
-                description: 'projects.ollamaSetup.commands.troubleshooting.checkStatus',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.checkStatus',
                 language: 'bash'
             },
             {
                 command: 'sudo journalctl -u ollama -f',
-                description: 'projects.ollamaSetup.commands.troubleshooting.checkLogs',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.checkLogs',
                 language: 'bash'
             }
         ]
     },
     {
         id: 'apache-issues',
-        title: 'projects.ollamaSetup.troubleshooting.apacheIssues.title',
+        title: 'documentations.ollamaSetup.troubleshooting.apacheIssues.title',
         commands: [
             {
                 command: 'sudo apache2ctl configtest',
-                description: 'projects.ollamaSetup.commands.troubleshooting.testConfig',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.testConfig',
                 language: 'bash'
             },
             {
                 command: 'sudo systemctl status apache2',
-                description: 'projects.ollamaSetup.commands.troubleshooting.checkApache',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.checkApache',
                 language: 'bash'
             },
             {
                 command: 'sudo tail -f /var/log/apache2/error.log',
-                description: 'projects.ollamaSetup.commands.troubleshooting.checkApacheLogs',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.checkApacheLogs',
                 language: 'bash'
             }
         ]
     },
     {
         id: 'ssl-issues',
-        title: 'projects.ollamaSetup.troubleshooting.sslIssues.title',
+        title: 'documentations.ollamaSetup.troubleshooting.sslIssues.title',
         commands: [
             {
                 command: 'sudo certbot certificates',
-                description: 'projects.ollamaSetup.commands.troubleshooting.listCertificates',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.listCertificates',
                 language: 'bash'
             },
             {
                 command: 'sudo certbot renew --dry-run',
-                description: 'projects.ollamaSetup.commands.troubleshooting.testRenewal',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.testRenewal',
                 language: 'bash'
             },
             {
                 command: 'openssl s_client -connect server.chad.lu:443',
-                description: 'projects.ollamaSetup.commands.troubleshooting.testSSL',
+                description: 'documentations.ollamaSetup.commands.troubleshooting.testSSL',
                 language: 'bash'
             }
         ]
@@ -347,7 +347,7 @@ onMounted(() => {
 <template>
     <div class="w-full">
         <!-- Navigation -->
-        <UiSubNavigation :title="t('projects.ollamaSetup.title')" />
+        <UiSubNavigation :title="t('documentations.ollamaSetup.title')" />
 
         <!-- Content Area -->
         <div class="w-full">
@@ -368,13 +368,13 @@ onMounted(() => {
                     <!-- Title -->
                     <h1
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-2">
-                        {{ t('projects.ollamaSetup.title') }}
+                        {{ t('documentations.ollamaSetup.title') }}
                     </h1>
 
                     <!-- Description -->
                     <p
                         class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
-                        {{ t('projects.ollamaSetup.description') }}
+                        {{ t('documentations.ollamaSetup.description') }}
                     </p>
 
                     <!-- Tags -->
@@ -412,7 +412,7 @@ onMounted(() => {
                                 <Icon name="mdi:alert-circle" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                             </div>
                             <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                                {{ t('projects.ollamaSetup.notes.title') }}
+                                {{ t('documentations.ollamaSetup.notes.title') }}
                             </h2>
                         </div>
 
@@ -422,7 +422,7 @@ onMounted(() => {
                                 <Icon name="mdi:check-circle"
                                     class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t(`projects.ollamaSetup.notes.${note}`) }}
+                                    {{ t(`documentations.ollamaSetup.notes.${note}`) }}
                                 </span>
                             </div>
                         </div>
@@ -433,10 +433,10 @@ onMounted(() => {
                 <div class="space-y-4 sm:space-y-6 md:space-y-8 mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.ollamaSetup.steps.title') }}
+                            {{ t('documentations.ollamaSetup.steps.title') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.ollamaSetup.stepsSubtitle') }}
+                            {{ t('documentations.ollamaSetup.stepsSubtitle') }}
                         </p>
                     </div>
 
@@ -457,7 +457,7 @@ onMounted(() => {
                                             <div
                                                 :class="`relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${step.color} rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center`">
                                                 <span class="text-white font-bold text-base sm:text-lg">{{ index + 1
-                                                }}</span>
+                                                    }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -525,10 +525,10 @@ onMounted(() => {
                 <div class="mb-8 sm:mb-12">
                     <div class="text-center mb-6 sm:mb-8">
                         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.ollamaSetup.troubleshooting.title') }}
+                            {{ t('documentations.ollamaSetup.troubleshooting.title') }}
                         </h2>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('projects.ollamaSetup.troubleshooting.subtitle') }}
+                            {{ t('documentations.ollamaSetup.troubleshooting.subtitle') }}
                         </p>
                     </div>
 
@@ -567,10 +567,10 @@ onMounted(() => {
                             <Icon name="mdi:check-circle" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                         </div>
                         <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('projects.ollamaSetup.completion.title') }}
+                            {{ t('documentations.ollamaSetup.completion.title') }}
                         </h3>
                         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-                            {{ t('projects.ollamaSetup.completion.description') }}
+                            {{ t('documentations.ollamaSetup.completion.description') }}
                         </p>
                     </div>
                 </div>
