@@ -112,7 +112,8 @@ const totalCount = computed(() => showcaseItems.length)
     </section>
 
     <!-- Showcase Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12">
+    <section
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full min-h-[calc(100vh-65px)]">
         <!-- Filter and Search Bar -->
         <div class="flex flex-col sm:flex-row gap-4">
             <!-- Filter Buttons -->
