@@ -114,7 +114,7 @@ const totalCount = computed(() => showcaseItems.length)
         <!-- Filter and Search Bar -->
         <div class="flex flex-col sm:flex-row gap-4">
             <!-- Filter Buttons -->
-            <div class="flex gap-2">
+            <div class="flex flex-col sm:flex-row gap-2">
                 <button @click="activeFilter = 'all'"
                     :class="activeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
                     class="px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2 shadow-sm">
