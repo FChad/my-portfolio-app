@@ -2,9 +2,25 @@
 import { ref, watch, nextTick } from 'vue'
 import { useLocalePath, useI18n, useColorMode } from '#imports'
 
+// Layout definieren
+definePageMeta({
+    layout: 'with-subnav'
+})
+
+// Subnavigation konfigurieren
 const localePath = useLocalePath()
 const { t } = useI18n()
 const colorMode = useColorMode()
+const { configure } = useSubNavigation()
+
+onMounted(() => {
+    configure({
+        title: t('documentations.debianInitialSetup.title'),
+        showBackButton: true,
+        backTo: '/showcase',
+        backLabel: 'Back to Showcase'
+    })
+})
 
 interface Command {
     command: string
@@ -332,9 +348,6 @@ const toggleExpanded = (stepId: string) => {
 
 <template>
     <div class="w-full">
-        <!-- Navigation -->
-        <UiSubNavigation :title="t('documentations.debianInitialSetup.title')" />
-
         <!-- Content Area -->
         <div class="w-full">
             <!-- Hero Section -->

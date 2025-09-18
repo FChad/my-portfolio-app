@@ -2,10 +2,26 @@
 import { onMounted, ref, watch, nextTick } from 'vue'
 import { useLocalePath, useI18n, useColorMode } from '#imports'
 
+// Layout definieren
+definePageMeta({
+    layout: 'with-subnav'
+})
+
+// Subnavigation konfigurieren
 const localePath = useLocalePath()
 const { t } = useI18n()
 const colorMode = useColorMode()
+const { configure } = useSubNavigation()
 const isExpanded = ref<Record<string, boolean>>({})
+
+onMounted(() => {
+    configure({
+        title: t('documentations.debianOllamaSetup.title'),
+        showBackButton: true,
+        backTo: '/showcase',
+        backLabel: 'Back to Showcase'
+    })
+})
 
 interface Command {
     command: string
@@ -346,9 +362,6 @@ onMounted(() => {
 
 <template>
     <div class="w-full">
-        <!-- Navigation -->
-        <UiSubNavigation :title="t('documentations.ollamaSetup.title')" />
-
         <!-- Content Area -->
         <div class="w-full">
             <!-- Hero Section -->

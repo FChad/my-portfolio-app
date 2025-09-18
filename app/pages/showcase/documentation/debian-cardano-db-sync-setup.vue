@@ -2,9 +2,25 @@
 import { onMounted, ref } from 'vue'
 import { useLocalePath, useI18n } from '#imports'
 
+// Layout definieren
+definePageMeta({
+    layout: 'with-subnav'
+})
+
+// Subnavigation konfigurieren
 const localePath = useLocalePath()
 const { t } = useI18n()
+const { configure } = useSubNavigation()
 const isExpanded = ref<Record<string, boolean>>({})
+
+onMounted(() => {
+    configure({
+        title: t('documentations.debianCardanoDbSyncSetup.title'),
+        showBackButton: true,
+        backTo: '/showcase',
+        backLabel: 'Back to Showcase'
+    })
+})
 
 interface Command {
     command: string
@@ -325,9 +341,6 @@ onMounted(() => {
 
 <template>
     <div class="w-full">
-        <!-- Navigation -->
-        <UiSubNavigation :title="t('documentations.cardanoDbSyncSetup.title')" />
-
         <!-- Content Area -->
         <div class="w-full">
             <!-- Hero Section -->
