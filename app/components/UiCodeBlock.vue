@@ -181,7 +181,7 @@ const copyToClipboard = async () => {
 
         <!-- Code Content -->
         <div class="relative" :style="props.maxHeight ? `max-height: ${props.maxHeight}px; overflow: auto;` : ''">
-            <div class="overflow-auto scrollbar-thin bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+            <div class="overflow-auto scrollbar-code bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
                 <!-- Line Numbers + Code -->
                 <div v-if="showLineNumbers && formattedLines.length > 1" class="flex">
                     <!-- Line Numbers -->
@@ -263,46 +263,35 @@ code::-moz-selection {
     color: inherit !important;
 }
 
-/* Scrollbar styling */
-.scrollbar-thin {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(148, 163, 184, 0.5) transparent;
-}
-
-.dark .scrollbar-thin {
-    scrollbar-color: rgba(71, 85, 105, 0.5) transparent;
-}
-
-/* WebKit scrollbars */
-.scrollbar-thin::-webkit-scrollbar {
+/* Scrollbar styling for code blocks - consistent with global styles */
+.scrollbar-code::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-.scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
+.scrollbar-code::-webkit-scrollbar-track {
+    background: rgba(156, 163, 175, 0.1);
 }
 
-.scrollbar-thin::-webkit-scrollbar-thumb {
-    background: rgba(148, 163, 184, 0.5);
+.dark .scrollbar-code::-webkit-scrollbar-track {
+    background: rgba(17, 24, 39, 0.5);
+}
+
+.scrollbar-code::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.3);
     border-radius: 4px;
 }
 
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: rgba(148, 163, 184, 0.7);
+.dark .scrollbar-code::-webkit-scrollbar-thumb {
+    background: rgba(75, 85, 99, 0.5);
 }
 
-.dark .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: rgba(71, 85, 105, 0.5);
+.scrollbar-code::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.5);
 }
 
-.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: rgba(71, 85, 105, 0.7);
-}
-
-/* Smooth transitions for hover effects */
-.group:hover .transition-all {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.dark .scrollbar-code::-webkit-scrollbar-thumb:hover {
+    background: rgba(75, 85, 99, 0.7);
 }
 
 /* Enhanced focus styles for accessibility */

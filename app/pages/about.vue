@@ -16,50 +16,7 @@ const calculateAge = (birthDate: string): number => {
 }
 
 const currentAge = calculateAge('1999-08-03')
-
-// Color mapping for consistent theming
-const colorMap = {
-    blue: {
-        bg: 'bg-blue-500',
-        bgLight: 'bg-blue-100 dark:bg-blue-900/30',
-        text: 'text-blue-800 dark:text-blue-300',
-        textAccent: 'text-blue-600 dark:text-blue-400',
-        hover: 'bg-blue-600 hover:bg-blue-700'
-    },
-    green: {
-        bg: 'bg-green-500',
-        bgLight: 'bg-green-100 dark:bg-green-900/30',
-        text: 'text-green-800 dark:text-green-300',
-        textAccent: 'text-green-600 dark:text-green-400',
-        hover: 'bg-green-600 hover:bg-green-700'
-    },
-    purple: {
-        bg: 'bg-purple-500',
-        bgLight: 'bg-purple-100 dark:bg-purple-900/30',
-        text: 'text-purple-800 dark:text-purple-300',
-        textAccent: 'text-purple-600 dark:text-purple-400',
-        hover: 'bg-purple-600 hover:bg-purple-700'
-    },
-    orange: {
-        bg: 'bg-orange-500',
-        bgLight: 'bg-orange-100 dark:bg-orange-900/30',
-        text: 'text-orange-800 dark:text-orange-300',
-        textAccent: 'text-orange-600 dark:text-orange-400',
-        hover: 'bg-orange-600 hover:bg-orange-700'
-    },
-    red: {
-        bg: 'bg-red-500',
-        bgLight: 'bg-red-100 dark:bg-red-900/30',
-        text: 'text-red-800 dark:text-red-300',
-        textAccent: 'text-red-600 dark:text-red-400',
-        hover: 'bg-red-600 hover:bg-red-700'
-    }
-} as const
-
-// Helper function to get color classes
-const getColorClasses = (color: string) => {
-    return (colorMap as any)[color] || colorMap.blue
-}
+const { getColorClasses } = useColorMapping()
 
 const languages = [
     { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
@@ -536,7 +493,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                        }}</span>
+                                    }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">

@@ -15,38 +15,7 @@ definePageMeta({
 
 // Setup composables
 const { t } = useI18n()
-
-// Color mapping for consistent theming
-const colorMap = {
-    blue: {
-        gradient: 'from-blue-500 to-blue-600',
-        bg: 'bg-blue-500'
-    },
-    green: {
-        gradient: 'from-green-500 to-green-600',
-        bg: 'bg-green-500'
-    },
-    purple: {
-        gradient: 'from-purple-500 to-purple-600',
-        bg: 'bg-purple-500'
-    },
-    orange: {
-        gradient: 'from-orange-500 to-orange-600',
-        bg: 'bg-orange-500'
-    },
-    red: {
-        gradient: 'from-red-500 to-red-600',
-        bg: 'bg-red-500'
-    },
-    emerald: {
-        gradient: 'from-emerald-500 to-emerald-600',
-        bg: 'bg-emerald-500'
-    }
-} as const
-
-const getColorClasses = (color: string) => {
-    return (colorMap as any)[color] || colorMap.blue
-}
+const { getColorClasses } = useColorMapping()
 
 interface Command {
     command: string
@@ -465,29 +434,3 @@ const toggleExpanded = (stepId: string) => {
         </div>
     </section>
 </template>
-
-<style scoped>
-/* Code block styling */
-pre {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace !important;
-    line-height: 1.5 !important;
-}
-
-code {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace !important;
-    background: transparent !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
-}
-
-/* Better selection styles for code */
-pre::selection {
-    background: rgba(59, 130, 246, 0.3) !important;
-}
-</style>

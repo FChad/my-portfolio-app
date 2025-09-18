@@ -150,7 +150,3 @@ const isActiveRoute = (path: string) => {
         </div>
     </header>
 </template>
-
-<style scoped>
-/* Custom styles if needed */
-</style>

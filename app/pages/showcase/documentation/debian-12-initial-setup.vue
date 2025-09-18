@@ -16,63 +16,7 @@ definePageMeta({
 // Setup composables
 const { t } = useI18n()
 const colorMode = useColorMode()
-
-// Color mapping for consistent theming
-const colorMap = {
-    blue: {
-        bg: 'bg-blue-500',
-        bgLight: 'bg-blue-100 dark:bg-blue-900/30',
-        text: 'text-blue-800 dark:text-blue-300',
-        textAccent: 'text-blue-600 dark:text-blue-400',
-        hover: 'bg-blue-600 hover:bg-blue-700',
-        gradient: 'from-blue-500 to-blue-600'
-    },
-    green: {
-        bg: 'bg-green-500',
-        bgLight: 'bg-green-100 dark:bg-green-900/30',
-        text: 'text-green-800 dark:text-green-300',
-        textAccent: 'text-green-600 dark:text-green-400',
-        hover: 'bg-green-600 hover:bg-green-700',
-        gradient: 'from-green-500 to-green-600'
-    },
-    purple: {
-        bg: 'bg-purple-500',
-        bgLight: 'bg-purple-100 dark:bg-purple-900/30',
-        text: 'text-purple-800 dark:text-purple-300',
-        textAccent: 'text-purple-600 dark:text-purple-400',
-        hover: 'bg-purple-600 hover:bg-purple-700',
-        gradient: 'from-purple-500 to-purple-600'
-    },
-    orange: {
-        bg: 'bg-orange-500',
-        bgLight: 'bg-orange-100 dark:bg-orange-900/30',
-        text: 'text-orange-800 dark:text-orange-300',
-        textAccent: 'text-orange-600 dark:text-orange-400',
-        hover: 'bg-orange-600 hover:bg-orange-700',
-        gradient: 'from-orange-500 to-orange-600'
-    },
-    red: {
-        bg: 'bg-red-500',
-        bgLight: 'bg-red-100 dark:bg-red-900/30',
-        text: 'text-red-800 dark:text-red-300',
-        textAccent: 'text-red-600 dark:text-red-400',
-        hover: 'bg-red-600 hover:bg-red-700',
-        gradient: 'from-red-500 to-red-600'
-    },
-    emerald: {
-        bg: 'bg-emerald-500',
-        bgLight: 'bg-emerald-100 dark:bg-emerald-900/30',
-        text: 'text-emerald-800 dark:text-emerald-300',
-        textAccent: 'text-emerald-600 dark:text-emerald-400',
-        hover: 'bg-emerald-600 hover:bg-emerald-700',
-        gradient: 'from-emerald-500 to-emerald-600'
-    }
-} as const
-
-// Helper function to get color classes
-const getColorClasses = (color: string) => {
-    return (colorMap as any)[color] || colorMap.blue
-}
+const { getColorClasses } = useColorMapping()
 
 interface Command {
     command: string
@@ -604,29 +548,3 @@ const toggleExpanded = (stepId: string) => {
         </div>
     </section>
 </template>
-
-<style scoped>
-/* Code block styling */
-pre {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace !important;
-    line-height: 1.5 !important;
-}
-
-code {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace !important;
-    background: transparent !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
-}
-
-/* Better selection styles for code */
-pre::selection {
-    background: rgba(59, 130, 246, 0.3) !important;
-}
-</style>
