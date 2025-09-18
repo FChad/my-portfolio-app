@@ -304,6 +304,9 @@
             "projects": "Projets",
             "documentation": "Documentation"
         },
+        "search": {
+            "placeholder": "Rechercher..."
+        },
         "labels": {
             "viewDetails": "Voir Détails"
         },
