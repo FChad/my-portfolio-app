@@ -511,12 +511,26 @@
             "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir Ollama op Debian 12 ze installéieren mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir sécher ëffentlech API-Notzung.",
             "notes": {
                 "title": "Wichteg Notizen",
-                "rootAccess": "Root-Zougang oder sudo-Privilegie erfuerderlech",
-                "domainRequired": "Eng valabel Domain an DNS-Konfiguratioun sinn néideg",
-                "firewallConfig": "Firewall-Konfiguratioun fir Porten 80/443 erfuerderlech",
-                "securePassword": "Benotzt e staarke Passwuert fir HTTP Basic Auth",
-                "backupConfig": "Erstellt Backuppen virun wichtegen Konfiguratiounsännerungen",
-                "resourceRequirements": "Op d'mannst 4GB RAM recommandéiert fir méi grouss Modeller"
+                "hardware": {
+                    "title": "Hardware-Ufuerderungen",
+                    "description": "Op d'mannst 4GB RAM fir kleng Modeller, 8GB+ recommandéiert fir méi grouss"
+                },
+                "diskSpace": {
+                    "title": "Späicherplaz",
+                    "description": "Modeller brauchen 1-10GB Späicher jeeweils jee no Gréisst - plangt entspriechend"
+                },
+                "internetConnection": {
+                    "title": "Internet-Verbindung",
+                    "description": "Stabil Verbindung erfuerderlech fir AI-Modeller erofzelueden"
+                },
+                "modelSizes": {
+                    "title": "Modell-Gréissten berücksichtegen",
+                    "description": "Méi grouss Modeller bidden besser Qualitéit mee brauchen méi Ressourcen"
+                },
+                "performance": {
+                    "title": "Performance-Iwwerwaachung",
+                    "description": "Iwwerwaacht CPU- an RAM-Notzung während der Modell-Ausféierung"
+                }
             },
             "steps": {
                 "title": "Installatiounsschrëtt",
@@ -623,12 +637,30 @@
             "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir d'éischt Arichtung vun engem frësche Debian 12 Server mat de wichtegsten Konfiguratiounsschrëtt.",
             "notes": {
                 "title": "Wichteg Notizen",
-                "rootAccess": "Root-Zougang oder sudo-Berechtigungen erfuerderlech",
-                "networkConnection": "Aktiv Internet-Verbindung néideg",
-                "backupImportant": "Erstellt Backuppen virun Ännerungen u wichtegen Daten",
-                "timeRequired": "Gesamt-Zäit: ongeféier 30-45 Minutten",
-                "securityConsiderations": "Berücksichtegt Sécherheetsaspekter bei der Konfiguratioun",
-                "documentChanges": "Dokumentéiert all gemaachten Ännerungen"
+                "rootAccess": {
+                    "title": "Root-Zougang erfuerderlech",
+                    "description": "Root-Zougang oder sudo-Berechtigungen sinn fir all Konfiguratiounsschrëtt erfuerderlech"
+                },
+                "networkConnection": {
+                    "title": "Internet-Verbindung néideg",
+                    "description": "Aktiv Internet-Verbindung ass fir Paket-Updates an Downloads néideg"
+                },
+                "backupImportant": {
+                    "title": "Backup erstellen",
+                    "description": "Erstellt Backuppen vun ären kritische Daten virun all wichteg Ännerungen"
+                },
+                "timeRequired": {
+                    "title": "Zäitbedarf",
+                    "description": "Gesamt-Zäit: ongeféier 30-45 Minutten jee no System-Performance"
+                },
+                "securityConsiderations": {
+                    "title": "Sécherheetsaspekter",
+                    "description": "Berücksichtegt all Sécherheetsaspekter bei der Server-Konfiguratioun"
+                },
+                "documentChanges": {
+                    "title": "Ännerungen dokumentéieren",
+                    "description": "Dokumentéiert all gemaachten Ännerungen fir spéider Referenz"
+                }
             },
             "steps": {
                 "title": "Arichtungsschrëtt",
@@ -742,10 +774,26 @@
             "description": "Komplett Guide fir eng Cardano-Node op Debian 12 ze installéieren mam NIX-Paketmanager, inklusiv Service-Konfiguratioun a Iwwerwaachung.",
             "notes": {
                 "title": "Wichteg Notizen",
-                "rootAccess": "Root-Zougang oder sudo-Berechtigungen erfuerderlech",
-                "networkConnection": "Stabil Internet-Verbindung néideg",
-                "diskSpace": "Op d'mannst 50GB fräie Späicherplaz erfuerderlech",
-                "timeRequired": "Gesamt-Zäit: ongeféier 2-3 Stonnen (inklusiv Synchronisatioun)"
+                "nodeRequirements": {
+                    "title": "Hardware-Ufuerderungen",
+                    "description": "Op d'mannst 8GB RAM an 100GB Späicher fir optimal Node-Performance"
+                },
+                "nixDaemon": {
+                    "title": "NIX-Daemon erfuerderlech",
+                    "description": "Den NIX-Daemon muss korrekt installéiert a gestart sinn"
+                },
+                "diskSpace": {
+                    "title": "Späicherplaz",
+                    "description": "Op d'mannst 50GB fräie Späicherplaz fir d'Blockchain-Daten erfuerderlech"
+                },
+                "syncTime": {
+                    "title": "Synchronisatiounszäit",
+                    "description": "Éischt Synchronisatioun kann 24-48 Stonnen daueren jee no Internet-Verbindung"
+                },
+                "networkStability": {
+                    "title": "Netzwierk-Stabilitéit",
+                    "description": "Stabil Internet-Verbindung fir kontinuéierlech Synchronisatioun néideg"
+                }
             },
             "steps": {
                 "title": "Installatiounsschrëtt",
@@ -891,11 +939,26 @@
             "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun.",
             "notes": {
                 "title": "Wichteg Notizen",
-                "cardanoNode": "Eng fonktionéierend Cardano-Node ass erfuerderlech",
-                "diskSpace": "Op d'mannst 200GB fräie Späicherplaz fir d'Datebank",
-                "ramRequirement": "Op d'mannst 16GB RAM fir optimal Performance",
-                "syncTime": "Éischt Synchronisatioun kann e puer Deeg daueren",
-                "rootAccess": "Root-Zougang oder sudo-Berechtigungen erfuerderlech"
+                "prerequisite": {
+                    "title": "Cardano-Node erfuerderlech",
+                    "description": "Eng fonktionéierend Cardano-Node muss éischt installéiert a synchroniséiert sinn"
+                },
+                "databaseSecurity": {
+                    "title": "Datebank-Sécherheet",
+                    "description": "Benotzt sécher Passwierder a limitéiert den Datebank-Zougang entspriechend"
+                },
+                "syncTime": {
+                    "title": "Synchronisatiounsdauer",
+                    "description": "Éischt Synchronisatioun kann e puer Deeg daueren jee no Hardware"
+                },
+                "diskSpace": {
+                    "title": "Späicherplaz",
+                    "description": "Op d'mannst 200GB fräie Späicherplaz fir d'PostgreSQL-Datebank erfuerderlech"
+                },
+                "cardanoNode": {
+                    "title": "Hardware-Ufuerderungen",
+                    "description": "Op d'mannst 16GB RAM recommandéiert fir optimal Performance"
+                }
             },
             "steps": {
                 "title": "Installatiounsschrëtt",

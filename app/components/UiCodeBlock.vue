@@ -165,10 +165,10 @@ const copyToClipboard = async () => {
             <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                 <!-- Copy Button -->
                 <button @click="copyToClipboard" :class="[
-                    'flex items-center justify-center rounded-md transition-all duration-200 w-7 h-7 touch-manipulation active:scale-90',
+                    'flex items-center justify-center rounded-md transition-all duration-200 w-8 h-8 touch-manipulation active:scale-90',
                     isCopied
-                        ? 'bg-green-500 text-white shadow-lg shadow-green-500/25'
-                        : 'bg-blue-500 hover:bg-blue-600 text-white hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25'
+                        ? 'bg-green-500 text-white shadow-lg'
+                        : 'bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-500 text-white hover:scale-105 hover:shadow-lg'
                 ]" :title="isCopied ? 'Copied!' : 'Copy code'"
                     :aria-label="isCopied ? 'Code copied to clipboard' : 'Copy code to clipboard'">
                     <Transition name="icon-fade" mode="out-in">
@@ -181,7 +181,7 @@ const copyToClipboard = async () => {
 
         <!-- Code Content -->
         <div class="relative" :style="props.maxHeight ? `max-height: ${props.maxHeight}px; overflow: auto;` : ''">
-            <div class="overflow-auto scrollbar-thin bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+            <div class="overflow-auto scrollbar-thin bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
                 <!-- Line Numbers + Code -->
                 <div v-if="showLineNumbers && formattedLines.length > 1" class="flex">
                     <!-- Line Numbers -->

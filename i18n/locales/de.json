@@ -511,12 +511,26 @@
             "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
             "notes": {
                 "title": "Wichtige Hinweise",
-                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich",
-                "domainRequired": "Eine gültige Domain und DNS-Konfiguration sind notwendig",
-                "firewallConfig": "Firewall-Konfiguration für Ports 80/443 erforderlich",
-                "securePassword": "Verwenden Sie ein starkes Passwort für HTTP Basic Auth",
-                "backupConfig": "Erstellen Sie Backups vor wichtigen Konfigurationsänderungen",
-                "resourceRequirements": "Mindestens 4GB RAM für größere Modelle empfohlen"
+                "hardware": {
+                    "title": "Hardware-Anforderungen",
+                    "description": "Mindestens 4GB RAM für kleinere Modelle, 8GB+ für größere Modelle empfohlen"
+                },
+                "diskSpace": {
+                    "title": "Speicherplatz",
+                    "description": "Modelle benötigen 1-10GB Speicher je nach Größe - planen Sie entsprechend"
+                },
+                "internetConnection": {
+                    "title": "Internetverbindung",
+                    "description": "Stabile Verbindung für Downloads der KI-Modelle erforderlich"
+                },
+                "modelSizes": {
+                    "title": "Modellgrößen beachten",
+                    "description": "Größere Modelle bieten bessere Qualität, benötigen aber mehr Ressourcen"
+                },
+                "performance": {
+                    "title": "Performance-Überwachung",
+                    "description": "Überwachen Sie CPU und RAM-Auslastung während der Modell-Ausführung"
+                }
             },
             "steps": {
                 "title": "Installationsschritte",
@@ -623,12 +637,30 @@
             "description": "Eine umfassende Schritt-für-Schritt Anleitung für die Ersteinrichtung eines frischen Debian 12 Servers mit den wichtigsten Konfigurationsschritten.",
             "notes": {
                 "title": "Wichtige Hinweise",
-                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich",
-                "networkConnection": "Aktive Internetverbindung wird benötigt",
-                "backupImportant": "Erstellen Sie vor Änderungen Backups wichtiger Daten",
-                "timeRequired": "Gesamtzeit: ca. 30-45 Minuten",
-                "securityConsiderations": "Beachten Sie Sicherheitsaspekte bei der Konfiguration",
-                "documentChanges": "Dokumentieren Sie alle vorgenommenen Änderungen"
+                "rootAccess": {
+                    "title": "Root-Zugriff erforderlich",
+                    "description": "Root-Zugriff oder sudo-Berechtigung ist für alle Konfigurationsschritte erforderlich"
+                },
+                "networkConnection": {
+                    "title": "Internetverbindung notwendig",
+                    "description": "Aktive Internetverbindung wird für Paket-Updates und Downloads benötigt"
+                },
+                "backupImportant": {
+                    "title": "Backup erstellen",
+                    "description": "Erstellen Sie vor allen wichtigen Änderungen Backups Ihrer kritischen Daten"
+                },
+                "timeRequired": {
+                    "title": "Zeitaufwand",
+                    "description": "Gesamtzeit: ca. 30-45 Minuten je nach Systemleistung"
+                },
+                "securityConsiderations": {
+                    "title": "Sicherheitsaspekte",
+                    "description": "Beachten Sie alle Sicherheitsaspekte bei der Server-Konfiguration"
+                },
+                "documentChanges": {
+                    "title": "Änderungen dokumentieren",
+                    "description": "Dokumentieren Sie alle vorgenommenen Änderungen für spätere Referenz"
+                }
             },
             "steps": {
                 "title": "Einrichtungsschritte",
@@ -742,10 +774,26 @@
             "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung.",
             "notes": {
                 "title": "Wichtige Hinweise",
-                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich",
-                "networkConnection": "Stabile Internetverbindung wird benötigt",
-                "diskSpace": "Mindestens 50GB freier Speicherplatz erforderlich",
-                "timeRequired": "Gesamtzeit: ca. 2-3 Stunden (inklusive Synchronisation)"
+                "nodeRequirements": {
+                    "title": "Hardware-Anforderungen",
+                    "description": "Mindestens 8GB RAM und 100GB Speicherplatz für optimale Node-Performance"
+                },
+                "nixDaemon": {
+                    "title": "NIX-Daemon erforderlich",
+                    "description": "Der NIX-Daemon muss korrekt installiert und gestartet sein"
+                },
+                "diskSpace": {
+                    "title": "Speicherplatz",
+                    "description": "Mindestens 50GB freier Speicherplatz für die Blockchain-Daten erforderlich"
+                },
+                "syncTime": {
+                    "title": "Synchronisationszeit",
+                    "description": "Erste Synchronisation kann 24-48 Stunden dauern je nach Internetverbindung"
+                },
+                "networkStability": {
+                    "title": "Netzwerkstabilität",
+                    "description": "Stabile Internetverbindung für kontinuierliche Synchronisation notwendig"
+                }
             },
             "steps": {
                 "title": "Installationsschritte",
@@ -891,11 +939,26 @@
             "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration.",
             "notes": {
                 "title": "Wichtige Hinweise",
-                "cardanoNode": "Eine funktionierende Cardano-Node ist erforderlich",
-                "diskSpace": "Mindestens 200GB freier Speicherplatz für die Datenbank",
-                "ramRequirement": "Mindestens 16GB RAM für optimale Performance",
-                "syncTime": "Erste Synchronisation kann mehrere Tage dauern",
-                "rootAccess": "Root-Zugriff oder sudo-Berechtigung erforderlich"
+                "prerequisite": {
+                    "title": "Cardano-Node erforderlich",
+                    "description": "Eine funktionierende Cardano-Node muss bereits installiert und synchronisiert sein"
+                },
+                "databaseSecurity": {
+                    "title": "Datenbank-Sicherheit",
+                    "description": "Verwenden Sie sichere Passwörter und beschränken Sie den Datenbankzugriff"
+                },
+                "syncTime": {
+                    "title": "Synchronisationsdauer",
+                    "description": "Erste Synchronisation kann mehrere Tage dauern je nach Hardware"
+                },
+                "diskSpace": {
+                    "title": "Speicherplatz",
+                    "description": "Mindestens 200GB freier Speicherplatz für die PostgreSQL-Datenbank"
+                },
+                "cardanoNode": {
+                    "title": "Hardware-Anforderungen",
+                    "description": "Mindestens 16GB RAM für optimale Performance empfohlen"
+                }
             },
             "steps": {
                 "title": "Installationsschritte",

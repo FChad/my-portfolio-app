@@ -511,12 +511,26 @@
             "description": "A comprehensive step-by-step guide for installing Ollama on Debian 12 with Apache2 reverse proxy, SSL encryption and HTTP Basic Authentication for secure public API usage.",
             "notes": {
                 "title": "Important Notes",
-                "rootAccess": "Root access or sudo privileges required",
-                "domainRequired": "A valid domain and DNS configuration are necessary",
-                "firewallConfig": "Firewall configuration for ports 80/443 required",
-                "securePassword": "Use a strong password for HTTP Basic Auth",
-                "backupConfig": "Create backups before important configuration changes",
-                "resourceRequirements": "At least 4GB RAM recommended for larger models"
+                "hardware": {
+                    "title": "Hardware Requirements",
+                    "description": "At least 4GB RAM for smaller models, 8GB+ recommended for larger models"
+                },
+                "diskSpace": {
+                    "title": "Disk Space",
+                    "description": "Models require 1-10GB storage each depending on size - plan accordingly"
+                },
+                "internetConnection": {
+                    "title": "Internet Connection",
+                    "description": "Stable connection required for downloading AI models"
+                },
+                "modelSizes": {
+                    "title": "Consider Model Sizes",
+                    "description": "Larger models provide better quality but require more resources"
+                },
+                "performance": {
+                    "title": "Performance Monitoring",
+                    "description": "Monitor CPU and RAM usage during model execution"
+                }
             },
             "steps": {
                 "title": "Installation Steps",
@@ -623,12 +637,30 @@
             "description": "A comprehensive step-by-step guide for the initial setup of a fresh Debian 12 server with the most important configuration steps.",
             "notes": {
                 "title": "Important Notes",
-                "rootAccess": "Root access or sudo privileges required",
-                "networkConnection": "Active internet connection needed",
-                "backupImportant": "Create backups before making changes to important data",
-                "timeRequired": "Total time: approximately 30-45 minutes",
-                "securityConsiderations": "Consider security aspects during configuration",
-                "documentChanges": "Document all changes made"
+                "rootAccess": {
+                    "title": "Root Access Required",
+                    "description": "Root access or sudo privileges are required for all configuration steps"
+                },
+                "networkConnection": {
+                    "title": "Internet Connection Required",
+                    "description": "Active internet connection is needed for package updates and downloads"
+                },
+                "backupImportant": {
+                    "title": "Create Backup",
+                    "description": "Create backups of your critical data before making any important changes"
+                },
+                "timeRequired": {
+                    "title": "Time Required",
+                    "description": "Total time: approximately 30-45 minutes depending on system performance"
+                },
+                "securityConsiderations": {
+                    "title": "Security Aspects",
+                    "description": "Consider all security aspects during server configuration"
+                },
+                "documentChanges": {
+                    "title": "Document Changes",
+                    "description": "Document all changes made for future reference"
+                }
             },
             "steps": {
                 "title": "Setup Steps",
@@ -742,10 +774,26 @@
             "description": "Complete guide for installing a Cardano Node on Debian 12 with the NIX package manager, including service configuration and monitoring.",
             "notes": {
                 "title": "Important Notes",
-                "rootAccess": "Root access or sudo privileges required",
-                "networkConnection": "Stable internet connection needed",
-                "diskSpace": "At least 50GB free disk space required",
-                "timeRequired": "Total time: approximately 2-3 hours (including synchronization)"
+                "nodeRequirements": {
+                    "title": "Hardware Requirements",
+                    "description": "At least 8GB RAM and 100GB storage for optimal node performance"
+                },
+                "nixDaemon": {
+                    "title": "NIX Daemon Required",
+                    "description": "The NIX daemon must be correctly installed and started"
+                },
+                "diskSpace": {
+                    "title": "Disk Space",
+                    "description": "At least 50GB free disk space required for blockchain data"
+                },
+                "syncTime": {
+                    "title": "Synchronization Time",
+                    "description": "Initial synchronization can take 24-48 hours depending on internet connection"
+                },
+                "networkStability": {
+                    "title": "Network Stability",
+                    "description": "Stable internet connection necessary for continuous synchronization"
+                }
             },
             "steps": {
                 "title": "Installation Steps",
@@ -891,11 +939,26 @@
             "description": "Complete guide for installing Cardano DB Sync on Debian 12 with PostgreSQL database and NIX package manager, including service configuration.",
             "notes": {
                 "title": "Important Notes",
-                "cardanoNode": "A working Cardano Node is required",
-                "diskSpace": "At least 200GB free disk space for the database",
-                "ramRequirement": "At least 16GB RAM for optimal performance",
-                "syncTime": "Initial synchronization can take several days",
-                "rootAccess": "Root access or sudo privileges required"
+                "prerequisite": {
+                    "title": "Cardano Node Required",
+                    "description": "A working Cardano Node must be installed and synchronized first"
+                },
+                "databaseSecurity": {
+                    "title": "Database Security",
+                    "description": "Use secure passwords and restrict database access appropriately"
+                },
+                "syncTime": {
+                    "title": "Synchronization Duration",
+                    "description": "Initial synchronization can take several days depending on hardware"
+                },
+                "diskSpace": {
+                    "title": "Disk Space",
+                    "description": "At least 200GB free disk space required for the PostgreSQL database"
+                },
+                "cardanoNode": {
+                    "title": "Hardware Requirements",
+                    "description": "At least 16GB RAM recommended for optimal performance"
+                }
             },
             "steps": {
                 "title": "Installation Steps",

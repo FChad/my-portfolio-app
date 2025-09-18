@@ -17,6 +17,63 @@ definePageMeta({
 const { t } = useI18n()
 const colorMode = useColorMode()
 
+// Color mapping for consistent theming
+const colorMap = {
+    blue: {
+        bg: 'bg-blue-500',
+        bgLight: 'bg-blue-100 dark:bg-blue-900/30',
+        text: 'text-blue-800 dark:text-blue-300',
+        textAccent: 'text-blue-600 dark:text-blue-400',
+        hover: 'bg-blue-600 hover:bg-blue-700',
+        gradient: 'from-blue-500 to-blue-600'
+    },
+    green: {
+        bg: 'bg-green-500',
+        bgLight: 'bg-green-100 dark:bg-green-900/30',
+        text: 'text-green-800 dark:text-green-300',
+        textAccent: 'text-green-600 dark:text-green-400',
+        hover: 'bg-green-600 hover:bg-green-700',
+        gradient: 'from-green-500 to-green-600'
+    },
+    purple: {
+        bg: 'bg-purple-500',
+        bgLight: 'bg-purple-100 dark:bg-purple-900/30',
+        text: 'text-purple-800 dark:text-purple-300',
+        textAccent: 'text-purple-600 dark:text-purple-400',
+        hover: 'bg-purple-600 hover:bg-purple-700',
+        gradient: 'from-purple-500 to-purple-600'
+    },
+    orange: {
+        bg: 'bg-orange-500',
+        bgLight: 'bg-orange-100 dark:bg-orange-900/30',
+        text: 'text-orange-800 dark:text-orange-300',
+        textAccent: 'text-orange-600 dark:text-orange-400',
+        hover: 'bg-orange-600 hover:bg-orange-700',
+        gradient: 'from-orange-500 to-orange-600'
+    },
+    red: {
+        bg: 'bg-red-500',
+        bgLight: 'bg-red-100 dark:bg-red-900/30',
+        text: 'text-red-800 dark:text-red-300',
+        textAccent: 'text-red-600 dark:text-red-400',
+        hover: 'bg-red-600 hover:bg-red-700',
+        gradient: 'from-red-500 to-red-600'
+    },
+    emerald: {
+        bg: 'bg-emerald-500',
+        bgLight: 'bg-emerald-100 dark:bg-emerald-900/30',
+        text: 'text-emerald-800 dark:text-emerald-300',
+        textAccent: 'text-emerald-600 dark:text-emerald-400',
+        hover: 'bg-emerald-600 hover:bg-emerald-700',
+        gradient: 'from-emerald-500 to-emerald-600'
+    }
+} as const
+
+// Helper function to get color classes
+const getColorClasses = (color: string) => {
+    return (colorMap as any)[color] || colorMap.blue
+}
+
 interface Command {
     command: string
     description: string
@@ -66,7 +123,7 @@ const setupSteps: SetupStep[] = [
         ],
         note: 'documentations.debianInitialSetup.commands.language.restartNote',
         icon: 'mdi:translate',
-        color: 'from-blue-500 to-indigo-600'
+        color: 'blue'
     },
     {
         id: 'timezone',
@@ -100,7 +157,7 @@ const setupSteps: SetupStep[] = [
             }
         ],
         icon: 'mdi:clock',
-        color: 'from-green-500 to-emerald-600'
+        color: 'green'
     },
     {
         id: 'sources',
@@ -140,7 +197,7 @@ const setupSteps: SetupStep[] = [
         ],
         note: 'documentations.debianInitialSetup.commands.sources.wikiReference',
         icon: 'mdi:package-variant',
-        color: 'from-orange-500 to-red-600'
+        color: 'purple'
     },
     {
         id: 'hostname',
@@ -173,7 +230,7 @@ const setupSteps: SetupStep[] = [
             }
         ],
         icon: 'mdi:server',
-        color: 'from-cyan-500 to-blue-600'
+        color: 'blue'
     },
     {
         id: 'motd',
@@ -187,7 +244,7 @@ const setupSteps: SetupStep[] = [
             }
         ],
         icon: 'mdi:message-text',
-        color: 'from-pink-500 to-rose-600'
+        color: 'red'
     },
     {
         id: 'hardware',
@@ -221,7 +278,7 @@ const setupSteps: SetupStep[] = [
             }
         ],
         icon: 'mdi:chip',
-        color: 'from-purple-500 to-violet-600'
+        color: 'purple'
     },
     {
         id: 'verification',
@@ -250,26 +307,16 @@ const setupSteps: SetupStep[] = [
             }
         ],
         icon: 'mdi:check-circle',
-        color: 'from-teal-500 to-cyan-600'
+        color: 'emerald'
     }
 ];
-
-// Initialize expanded state to prevent hydration mismatch  
-const getInitialExpandedState = () => {
-    const initialState: Record<string, boolean> = {}
-    setupSteps.forEach(step => {
-        initialState[step.id] = true
-    })
-    return initialState
-}
-const isExpanded = ref<Record<string, boolean>>(getInitialExpandedState())
 
 const additionalTips = [
     {
         id: 'security',
         title: 'documentations.debianInitialSetup.tips.security.title',
         icon: 'mdi:shield-check',
-        color: 'from-red-500 to-pink-600',
+        color: 'red',
         commands: [
             {
                 command: 'apt install ufw -y',
@@ -292,7 +339,7 @@ const additionalTips = [
         id: 'essentials',
         title: 'documentations.debianInitialSetup.tips.essentials.title',
         icon: 'mdi:tools',
-        color: 'from-amber-500 to-orange-600',
+        color: 'orange',
         commands: [
             {
                 command: 'apt install sudo curl wget git nano htop tree -y',
@@ -310,7 +357,7 @@ const additionalTips = [
         id: 'updates',
         title: 'documentations.debianInitialSetup.tips.updates.title',
         icon: 'mdi:update',
-        color: 'from-emerald-500 to-teal-600',
+        color: 'emerald',
         commands: [
             {
                 command: 'apt install unattended-upgrades -y',
@@ -326,13 +373,59 @@ const additionalTips = [
     }
 ];
 
+// Initialize expanded state to prevent hydration mismatch  
+const getInitialExpandedState = () => {
+    const initialState: Record<string, boolean> = {}
+    setupSteps.forEach(step => {
+        initialState[step.id] = true
+    })
+    return initialState
+}
+const isExpanded = ref<Record<string, boolean>>(getInitialExpandedState())
+
 const importantNotes = [
-    'rootAccess',
-    'networkConnection',
-    'backupImportant',
-    'timeRequired',
-    'securityConsiderations',
-    'documentChanges'
+    {
+        id: 'rootAccess',
+        title: 'documentations.debianInitialSetup.notes.rootAccess.title',
+        description: 'documentations.debianInitialSetup.notes.rootAccess.description',
+        icon: 'mdi:shield-account',
+        color: 'blue'
+    },
+    {
+        id: 'networkConnection',
+        title: 'documentations.debianInitialSetup.notes.networkConnection.title',
+        description: 'documentations.debianInitialSetup.notes.networkConnection.description',
+        icon: 'mdi:wifi',
+        color: 'green'
+    },
+    {
+        id: 'backupImportant',
+        title: 'documentations.debianInitialSetup.notes.backupImportant.title',
+        description: 'documentations.debianInitialSetup.notes.backupImportant.description',
+        icon: 'mdi:backup-restore',
+        color: 'purple'
+    },
+    {
+        id: 'timeRequired',
+        title: 'documentations.debianInitialSetup.notes.timeRequired.title',
+        description: 'documentations.debianInitialSetup.notes.timeRequired.description',
+        icon: 'mdi:clock-outline',
+        color: 'orange'
+    },
+    {
+        id: 'securityConsiderations',
+        title: 'documentations.debianInitialSetup.notes.securityConsiderations.title',
+        description: 'documentations.debianInitialSetup.notes.securityConsiderations.description',
+        icon: 'mdi:security',
+        color: 'red'
+    },
+    {
+        id: 'documentChanges',
+        title: 'documentations.debianInitialSetup.notes.documentChanges.title',
+        description: 'documentations.debianInitialSetup.notes.documentChanges.description',
+        icon: 'mdi:file-document-edit',
+        color: 'blue'
+    }
 ];
 
 // Toggle step expansion
@@ -342,237 +435,178 @@ const toggleExpanded = (stepId: string) => {
 </script>
 
 <template>
-    <div class="w-full">
-        <!-- Content Area -->
-        <div class="w-full">
-            <!-- Hero Section -->
-            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-12">
-                <div class="text-center mb-6 sm:mb-8 md:mb-12">
-                    <!-- Main Icon -->
-                    <div
-                        class="relative mx-auto w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 mb-4 sm:mb-5 md:mb-6">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-violet-500/20 rounded-2xl blur-xl animate-pulse">
-                        </div>
-                        <div
-                            class="relative w-full h-full bg-gradient-to-br from-blue-500 to-violet-600 rounded-2xl shadow-xl flex items-center justify-center">
-                            <Icon name="mdi:server"
-                                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 text-white" />
-                        </div>
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+        <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ t('documentations.debianInitialSetup.title') }}
+        </h1>
+
+        <!-- Introduction -->
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8">
+                {{ t('documentations.debianInitialSetup.description') }}
+            </p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <span v-for="tag in ['Debian 12', 'Server Setup', 'Linux', 'System Administration']" :key="tag"
+                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                    {{ tag }}
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Notes Section -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+            Wichtige Hinweise
+        </h2>
+
+        <div class="max-w-4xl mx-auto text-center mb-8">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                Beachten Sie diese wichtigen Punkte vor dem Setup
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div v-for="note in importantNotes" :key="note.id"
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div :class="[
+                        'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform',
+                        getColorClasses(note.color).bg
+                    ]">
+                        <Icon :name="note.icon" class="w-6 h-6 text-white" />
                     </div>
-
-                    <!-- Title -->
-                    <h1
-                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
-                        {{ t('documentations.debianInitialSetup.title') }}
-                    </h1>
-
-                    <!-- Description -->
-                    <p
-                        class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
-                        {{ t('documentations.debianInitialSetup.description') }}
-                    </p>
-
-                    <!-- Tags -->
-                    <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-4">
-                        <span
-                            class="px-2 sm:px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
-                            Debian 12
-                        </span>
-                        <span
-                            class="px-2 sm:px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
-                            Server Setup
-                        </span>
-                        <span
-                            class="px-2 sm:px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
-                            Linux
-                        </span>
-                        <span
-                            class="px-2 sm:px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
-                            System Administration
-                        </span>
-                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        {{ t(note.title) }}
+                    </h3>
                 </div>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ t(note.description) }}
+                </p>
+            </div>
+        </div>
+    </section>
 
-                <!-- Important Notes Section -->
-                <div class="mb-6 sm:mb-8 md:mb-12">
-                    <div
-                        class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-200/60 dark:border-gray-700/60 shadow-xl">
-                        <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                            <div
-                                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
-                                <Icon name="mdi:alert-circle" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
-                            </div>
-                            <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                                {{ t('documentations.debianInitialSetup.notes.title') }}
-                            </h2>
-                        </div>
+    <!-- Setup Steps Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
+            Setup Schritte
+        </h2>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                            <div v-for="note in importantNotes" :key="note"
-                                class="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-gray-50/80 dark:bg-gray-700/50 border border-gray-200/60 dark:border-gray-600/40">
-                                <Icon name="mdi:check-circle"
-                                    class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                                <span class="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    {{ t(`documentations.debianInitialSetup.notes.${note}`) }}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="space-y-6">
+            <div v-for="(step, index) in setupSteps" :key="step.id"
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
 
-                <!-- Setup Steps -->
-                <div class="space-y-4 sm:space-y-6 md:space-y-8 mb-8 sm:mb-10 md:mb-12">
-                    <div class="text-center mb-6 sm:mb-8">
-                        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 px-4">
-                            {{ t('documentations.debianInitialSetup.steps.title') }}
-                        </h2>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('documentations.debianInitialSetup.steps.subtitle') }}
-                        </p>
-                    </div>
-
-                    <div v-for="(step, index) in setupSteps" :key="step.id" class="group relative">
-                        <!-- Step Card -->
+                <!-- Step Header -->
+                <button @click="toggleExpanded(step.id)"
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
+                    <div class="flex items-center gap-4">
                         <div
-                            class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl sm:rounded-3xl border border-gray-200/60 dark:border-gray-700/60 shadow-md overflow-hidden transition-all duration-300 touch-manipulation">
-
-                            <!-- Step Header -->
-                            <div class="p-4 sm:p-6 md:p-8 pb-4 sm:pb-5 md:pb-6">
-                                <div class="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                                    <!-- Step Number -->
-                                    <div class="flex items-center gap-3 sm:gap-4">
-                                        <div class="relative flex-shrink-0">
-                                            <div
-                                                :class="`absolute inset-0 bg-gradient-to-r ${step.color} rounded-lg sm:rounded-xl blur-lg opacity-30 animate-pulse`">
-                                            </div>
-                                            <div
-                                                :class="`relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${step.color} rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center`">
-                                                <span class="text-white font-bold text-sm sm:text-base md:text-lg">{{
-                                                    index + 1 }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Step Title -->
-                                    <div class="flex-1 min-w-0">
-                                        <h3
-                                            class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2">
-                                            {{ t(step.title) }}
-                                        </h3>
-                                        <p
-                                            class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                                            {{ t(step.description) }}
-                                        </p>
-                                    </div>
-
-                                    <!-- Toggle Button -->
-                                    <button @click="toggleExpanded(step.id)"
-                                        class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center justify-center transition-all duration-300 group-hover:scale-105 touch-manipulation flex-shrink-0">
-                                        <Icon name="mdi:chevron-down"
-                                            :class="`w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 transition-transform duration-300 ${isExpanded[step.id] ? 'rotate-180' : ''}`" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Commands Section -->
-                            <div v-show="isExpanded[step.id]"
-                                class="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 transition-all duration-300 ease-in-out">
-                                <!-- Step Note if exists -->
-                                <div v-if="step.note" class="mb-4 sm:mb-6">
-                                    <div
-                                        class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 rounded-lg sm:rounded-xl p-3 sm:p-4">
-                                        <div class="flex items-start gap-2 sm:gap-3">
-                                            <Icon name="mdi:information"
-                                                class="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
-                                            <p
-                                                class="text-xs sm:text-sm text-amber-800 dark:text-amber-200 leading-relaxed">
-                                                {{ t(step.note) }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-4 sm:space-y-6">
-                                    <div v-for="(cmd, cmdIndex) in step.commands" :key="cmdIndex">
-                                        <!-- Regular Command -->
-                                        <template v-if="!cmd.isFile">
-                                            <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
-                                                :note="cmd.note ? t(cmd.note) : undefined" :language="cmd.language" />
-                                        </template>
-
-                                        <!-- File Content -->
-                                        <template v-else>
-                                            <UiCodeBlock :file-content="cmd.fileContent" :file-name="cmd.fileName"
-                                                :language="cmd.language" is-file />
-                                        </template>
-                                    </div>
-                                </div>
-                            </div>
+                            :class="`w-12 h-12 bg-gradient-to-br ${getColorClasses(step.color).gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`">
+                            <span class="text-white font-bold text-lg">{{ index + 1 }}</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Additional Tips Section -->
-                <div class="mb-8 sm:mb-12">
-                    <div class="text-center mb-6 sm:mb-8">
-                        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('documentations.debianInitialSetup.tips.sectionTitle') }}
-                        </h2>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 px-4">
-                            {{ t('documentations.debianInitialSetup.tips.sectionSubtitle') }}
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                        <div v-for="tip in additionalTips" :key="tip.id"
-                            class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-gray-200/60 dark:border-gray-700/60 shadow-xl hover:shadow-2xl transition-all duration-300">
-
-                            <!-- Tip Header -->
-                            <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                                <div
-                                    :class="`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br ${tip.color} rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center flex-shrink-0`">
-                                    <Icon :name="tip.icon" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
-                                </div>
-                                <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                                    {{ t(tip.title) }}
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                    {{ t(step.title) }}
                                 </h3>
                             </div>
-
-                            <!-- Commands -->
-                            <div class="space-y-3 sm:space-y-4">
-                                <div v-for="(cmd, cmdIndex) in tip.commands" :key="cmdIndex">
-                                    <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
-                                        :language="cmd.language" />
-                                </div>
-                            </div>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                {{ t(step.description) }}
+                            </p>
                         </div>
                     </div>
-                </div>
+                    <Icon name="mdi:chevron-down"
+                        :class="`w-5 h-5 text-gray-400 transition-transform duration-300 ${isExpanded[step.id] ? 'rotate-180' : ''}`" />
+                </button>
 
-                <!-- Completion Message -->
-                <div class="text-center">
-                    <div
-                        class="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-emerald-200/60 dark:border-emerald-700/60">
-                        <div
-                            class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl shadow-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                            <Icon name="mdi:check-circle" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+                <!-- Step Content -->
+                <div v-show="isExpanded[step.id]" class="px-6 pb-6">
+                    <div class="pt-4">
+                        <div class="space-y-4">
+                            <div v-for="(cmd, cmdIndex) in step.commands" :key="cmdIndex">
+                                <template v-if="!cmd.isFile">
+                                    <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
+                                        :note="cmd.note ? t(cmd.note) : undefined" :language="cmd.language" />
+                                </template>
+                                <template v-else>
+                                    <UiCodeBlock :file-content="cmd.fileContent" :file-name="cmd.fileName"
+                                        :language="cmd.language" is-file />
+                                </template>
+                            </div>
                         </div>
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {{ t('documentations.debianInitialSetup.completion.title') }}
-                        </h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-                            {{ t('documentations.debianInitialSetup.completion.message') }}
-                        </p>
+                        <div v-if="step.note"
+                            class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/50 rounded-xl">
+                            <div class="flex items-start gap-3">
+                                <Icon name="mdi:information"
+                                    class="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
+                                <p class="text-blue-800 dark:text-blue-300 text-sm">
+                                    {{ t(step.note) }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Additional Tips Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ t('documentations.debianInitialSetup.tips.sectionTitle') }}
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg text-center max-w-4xl mx-auto mb-8">
+            {{ t('documentations.debianInitialSetup.tips.sectionSubtitle') }}
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div v-for="(tip, tipIndex) in additionalTips" :key="tip.id"
+                class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
+
+                <div class="flex items-center gap-4 mb-4">
+                    <div
+                        :class="`w-12 h-12 bg-gradient-to-br ${getColorClasses(tip.color).gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`">
+                        <span class="text-white font-bold text-lg">{{ tipIndex + 1 }}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                        {{ t(tip.title) }}
+                    </h3>
+                </div>
+
+                <div class="space-y-4">
+                    <div v-for="(cmd, cmdIndex) in tip.commands" :key="cmdIndex">
+                        <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
+                            :language="cmd.language" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completion Message -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+        <div
+            class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700/50 rounded-2xl p-8 text-center">
+            <div
+                class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Icon name="mdi:check-circle" class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-2xl font-bold text-emerald-800 dark:text-emerald-300 mb-4">
+                {{ t('documentations.debianInitialSetup.completion.title') }}
+            </h3>
+            <p class="text-emerald-700 dark:text-emerald-200 text-lg max-w-2xl mx-auto">
+                {{ t('documentations.debianInitialSetup.completion.message') }}
+            </p>
+        </div>
+    </section>
 </template>
 
-<style lang="postcss" scoped>
-/* Code block styling without HighlightJS */
+<style scoped>
+/* Code block styling */
 pre {
     margin: 0 !important;
     padding: 0 !important;
