@@ -20,7 +20,7 @@ const { t } = useI18n()
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Breadcrumb -->
-                <div class="hidden sm:flex items-center space-x-2 text-sm">
+                <div class="hidden sm:flex items-center space-x-2 text-sm md:text-base">
                     <NuxtLinkLocale to="/"
                         class="flex items-center justify-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
                         <Icon name="mdi:home" class="w-5 h-5" />
