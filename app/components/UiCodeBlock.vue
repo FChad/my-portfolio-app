@@ -138,15 +138,10 @@ const copyToClipboard = async () => {
             <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
                 <!-- Language Badge -->
                 <div class="flex items-center gap-2 flex-shrink-0">
-                    <div
-                        class="rounded-lg flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 dark:bg-gray-700">
-                        <Icon :name="languageInfo.icon" :class="['w-4 h-4 sm:w-5 sm:h-5', languageInfo.color]" />
-                    </div>
-                    <div class="hidden sm:block">
-                        <span class="font-medium text-gray-800 dark:text-gray-200 text-base">
-                            {{ languageInfo.name }}
-                        </span>
-                    </div>
+                    <Icon :name="languageInfo.icon" :class="['w-4 h-4 sm:w-5 sm:h-5', languageInfo.color]" />
+                    <span class="font-medium text-gray-800 dark:text-gray-200 text-base">
+                        {{ languageInfo.name }}
+                    </span>
                 </div>
 
                 <!-- File Name / Title -->
@@ -170,15 +165,15 @@ const copyToClipboard = async () => {
             <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                 <!-- Copy Button -->
                 <button @click="copyToClipboard" :class="[
-                    'flex items-center justify-center rounded-lg transition-all duration-200 w-8 h-8 sm:w-10 sm:h-10 touch-manipulation active:scale-90',
+                    'flex items-center justify-center rounded-md transition-all duration-200 w-7 h-7 touch-manipulation active:scale-90',
                     isCopied
-                        ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 shadow-sm'
-                        : 'bg-gray-100/80 dark:bg-gray-600/50 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-500 hover:scale-105 hover:shadow-md'
+                        ? 'bg-green-500 text-white shadow-lg shadow-green-500/25'
+                        : 'bg-blue-500 hover:bg-blue-600 text-white hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25'
                 ]" :title="isCopied ? 'Copied!' : 'Copy code'"
                     :aria-label="isCopied ? 'Code copied to clipboard' : 'Copy code to clipboard'">
                     <Transition name="icon-fade" mode="out-in">
-                        <Icon :key="isCopied ? 'check' : 'copy'" :name="isCopied ? 'mdi:check' : 'mdi:clipboard'"
-                            class="w-4 h-4 sm:w-5 sm:h-5" />
+                        <Icon :key="isCopied ? 'check' : 'copy'" :name="isCopied ? 'mdi:check' : 'mdi:content-copy'"
+                            class="w-4 h-4" />
                     </Transition>
                 </button>
             </div>
