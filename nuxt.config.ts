@@ -44,7 +44,27 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
                 { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
                 { rel: 'manifest', href: '/site.webmanifest' }
+            ],
+            script: [
+                {
+                    src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
+                    async: true,
+                    defer: true
+                }
             ]
+        }
+    },
+    runtimeConfig: {
+        // Private keys (only available on the server-side)
+        resendApiKey: process.env.RESEND_API_KEY,
+        emailFrom: process.env.EMAIL_FROM,
+        emailFromName: process.env.EMAIL_FROM_NAME,
+        emailTo: process.env.EMAIL_TO,
+        turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
+
+        // Public keys (exposed to the client-side code)
+        public: {
+            turnstileSiteKey: process.env.TURNSTILE_SITE_KEY,
         }
     }
 })

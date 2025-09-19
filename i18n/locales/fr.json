@@ -1110,7 +1110,11 @@
                 "messageMaxLength": "Le message ne doit pas dépasser 2000 caractères",
                 "rateLimited": "Trop de requêtes. Veuillez réessayer plus tard.",
                 "invalidData": "Données de formulaire invalides. Veuillez vérifier vos entrées.",
-                "serverError": "Une erreur s'est produite. Veuillez réessayer plus tard."
+                "serverError": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+                "captchaRequired": "Veuillez compléter la vérification de sécurité.",
+                "captchaFailed": "La vérification de sécurité a échoué. Veuillez réessayer.",
+                "captchaExpired": "La vérification de sécurité a expiré. Veuillez la résoudre à nouveau.",
+                "captchaError": "Erreur de vérification de sécurité. Veuillez actualiser la page."
             }
         }
     },

@@ -1110,7 +1110,11 @@
                 "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
                 "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
                 "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
-                "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier."
+                "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier.",
+                "captchaRequired": "Maacht w.e.g. d'Sécherheetsverifikatioun fäerdeg.",
+                "captchaFailed": "Sécherheetsverifikatioun feelgeschloen. Probéiert w.e.g. nach eng Kéier.",
+                "captchaExpired": "Sécherheetsverifikatioun ass ofgelaf. Léist se w.e.g. nach eng Kéier.",
+                "captchaError": "Sécherheetsverifikatiounsfeeler. Luet d'Säit w.e.g. nei."
             }
         }
     },

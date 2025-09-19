@@ -7,6 +7,7 @@ interface ContactFormData {
     subject: string
     message: string
     locale?: string
+    turnstileToken: string
 }
 
 // Email validation regex
@@ -16,15 +17,49 @@ function sanitizeInput(input: string): string {
     return input.trim().replace(/[<>]/g, '')
 }
 
+// Add Turnstile verification function
+async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+    const secretKey = process.env.TURNSTILE_SECRET_KEY
+
+    if (!secretKey) {
+        console.error('❌ TURNSTILE_SECRET_KEY is not configured')
+        return false
+    }
+
+    try {
+        console.log('🔒 Verifying Turnstile token for IP:', ip)
+
+        const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                secret: secretKey,
+                response: token,
+                remoteip: ip
+            })
+        })
+
+        const result = await response.json()
+        console.log('🔒 Turnstile verification result:', result.success ? '✅ Success' : '❌ Failed')
+
+        return result.success === true
+    } catch (error) {
+        console.error('❌ Turnstile verification failed:', error)
+        return false
+    }
+}
+
 function validateContactForm(data: any): ContactFormData | null {
     if (!data || typeof data !== 'object') {
         return null
     }
 
-    const { name, email, subject, message, locale } = data
+    const { name, email, subject, message, locale, turnstileToken } = data
 
-    // Required field validation
-    if (!name || !email || !subject || !message) {
+    // Required field validation (including Turnstile token)
+    if (!name || !email || !subject || !message || !turnstileToken) {
         return null
     }
 
@@ -45,12 +80,18 @@ function validateContactForm(data: any): ContactFormData | null {
         return null
     }
 
+    // Validate Turnstile token
+    if (typeof turnstileToken !== 'string' || turnstileToken.length === 0) {
+        return null
+    }
+
     return {
         name: sanitizeInput(name),
         email: email.toLowerCase().trim(),
         subject: sanitizeInput(subject),
         message: sanitizeInput(message),
-        locale: locale || 'de'
+        locale: locale || 'de',
+        turnstileToken: turnstileToken.trim()
     }
 }
 
@@ -242,6 +283,26 @@ export default defineEventHandler(async (event) => {
                 statusMessage: 'Invalid form data'
             })
         }
+
+        // Get client IP for Turnstile verification
+        const clientIP = getHeader(event, 'cf-connecting-ip') ||
+            getHeader(event, 'x-forwarded-for') ||
+            getHeader(event, 'x-real-ip') ||
+            event.node.req.socket.remoteAddress ||
+            'unknown'
+
+        // Verify Turnstile token
+        const isTurnstileValid = await verifyTurnstile(validatedData.turnstileToken, clientIP)
+
+        if (!isTurnstileValid) {
+            console.log('❌ Turnstile verification failed for IP:', clientIP)
+            throw createError({
+                statusCode: 400,
+                statusMessage: 'CAPTCHA verification failed. Please try again.'
+            })
+        }
+
+        console.log('✅ Turnstile verification passed for IP:', clientIP)
 
         // Initialize Resend
         const resendApiKey = process.env.RESEND_API_KEY

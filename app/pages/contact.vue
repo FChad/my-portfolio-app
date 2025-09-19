@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
+const runtimeConfig = useRuntimeConfig()
 
 // Form state
 const form = ref({
@@ -9,11 +10,16 @@ const form = ref({
     message: ''
 })
 
+// Turnstile state
+const turnstileToken = ref('')
+const turnstileRef = ref()
+
 // Form validation and submission states
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
 const submitError = ref<string>('')
 const errors = ref<Record<string, string>>({})
+const showTurnstileError = ref(false)
 
 // Contact methods
 const contactMethods = [
@@ -90,6 +96,14 @@ const validateForm = () => {
         errors.value.message = t('contact.form.errors.messageMaxLength')
     }
 
+    // Turnstile validation
+    if (!turnstileToken.value.trim()) {
+        errors.value.turnstile = t('contact.form.errors.captchaRequired')
+        showTurnstileError.value = true
+    } else {
+        showTurnstileError.value = false
+    }
+
     return Object.keys(errors.value).length === 0
 }
 
@@ -105,13 +119,14 @@ const submitForm = async () => {
             method: 'POST',
             body: {
                 ...form.value,
+                turnstileToken: turnstileToken.value,
                 locale: locale.value
             }
         })
 
         if (response.success) {
             isSubmitted.value = true
-            
+
             // Form zurücksetzen
             form.value = {
                 name: '',
@@ -119,7 +134,9 @@ const submitForm = async () => {
                 subject: '',
                 message: ''
             }
-            
+            turnstileToken.value = ''
+            turnstileRef.value?.reset()
+
             // Auto-hide success message after 10 seconds
             setTimeout(() => {
                 isSubmitted.value = false
@@ -127,12 +144,19 @@ const submitForm = async () => {
         }
     } catch (error: any) {
         console.error('Error submitting contact form:', error)
-        
+
         // Handle different error types
         if (error?.statusCode === 429) {
             submitError.value = t('contact.form.errors.rateLimited')
         } else if (error?.statusCode === 400) {
-            submitError.value = t('contact.form.errors.invalidData')
+            // Check if it's a CAPTCHA error
+            if (error?.statusMessage?.toLowerCase().includes('captcha') ||
+                error?.statusMessage?.toLowerCase().includes('verification')) {
+                submitError.value = t('contact.form.errors.captchaFailed')
+                turnstileRef.value?.reset()
+            } else {
+                submitError.value = t('contact.form.errors.invalidData')
+            }
         } else {
             submitError.value = t('contact.form.errors.serverError')
         }
@@ -140,6 +164,37 @@ const submitForm = async () => {
         isSubmitting.value = false
     }
 }
+
+// Turnstile event handlers
+const onTurnstileVerified = (token: string) => {
+    console.log('✅ Turnstile verified')
+    showTurnstileError.value = false
+    submitError.value = ''
+}
+
+const onTurnstileExpired = () => {
+    console.log('⏰ Turnstile expired')
+    turnstileToken.value = ''
+    showTurnstileError.value = true
+    submitError.value = t('contact.form.errors.captchaExpired')
+}
+
+const onTurnstileError = (errorMessage: string) => {
+    console.error('❌ Turnstile error:', errorMessage)
+    turnstileToken.value = ''
+    showTurnstileError.value = true
+    submitError.value = t('contact.form.errors.captchaError')
+}
+
+// SEO
+useSeoMeta({
+    title: t('contact.title'),
+    description: t('contact.subtitle')
+})
+
+definePageMeta({
+    layout: 'default'
+})
 </script>
 
 <template>
@@ -319,6 +374,17 @@ const submitForm = async () => {
                         :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
                     <p v-if="errors.message" class="text-sm text-red-600 dark:text-red-400">
                         {{ errors.message }}
+                    </p>
+                </div>
+
+                <!-- Turnstile Widget -->
+                <div v-if="runtimeConfig.public.turnstileSiteKey">
+                    <TurnstileWidget v-model="turnstileToken" :site-key="runtimeConfig.public.turnstileSiteKey"
+                        @verified="onTurnstileVerified" @expired="onTurnstileExpired" @error="onTurnstileError"
+                        ref="turnstileRef" />
+                    <p v-if="showTurnstileError || errors.turnstile"
+                        class="text-sm text-red-600 dark:text-red-400 text-center mt-2">
+                        {{ errors.turnstile }}
                     </p>
                 </div>
 

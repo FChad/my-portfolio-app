@@ -1110,7 +1110,11 @@
                 "messageMaxLength": "Nachricht darf höchstens 2000 Zeichen lang sein",
                 "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
                 "invalidData": "Ungültige Formulardaten. Bitte überprüfen Sie Ihre Eingaben.",
-                "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+                "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+                "captchaRequired": "Bitte lösen Sie die Sicherheitsüberprüfung.",
+                "captchaFailed": "Sicherheitsüberprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+                "captchaExpired": "Sicherheitsüberprüfung ist abgelaufen. Bitte lösen Sie sie erneut.",
+                "captchaError": "Fehler bei der Sicherheitsüberprüfung. Bitte laden Sie die Seite neu."
             }
         }
     },
