@@ -1097,7 +1097,21 @@
             "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
             "submit": "Nachricht senden",
             "sending": "Wird gesendet...",
-            "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden."
+            "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
+            "errors": {
+                "nameRequired": "Name ist erforderlich",
+                "nameLength": "Name muss zwischen 2 und 100 Zeichen lang sein",
+                "emailRequired": "E-Mail ist erforderlich",
+                "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+                "subjectRequired": "Betreff ist erforderlich",
+                "subjectLength": "Betreff muss zwischen 5 und 200 Zeichen lang sein",
+                "messageRequired": "Nachricht ist erforderlich",
+                "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein",
+                "messageMaxLength": "Nachricht darf höchstens 2000 Zeichen lang sein",
+                "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
+                "invalidData": "Ungültige Formulardaten. Bitte überprüfen Sie Ihre Eingaben.",
+                "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+            }
         }
     },
     "footer": {

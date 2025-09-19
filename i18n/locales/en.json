@@ -1097,7 +1097,21 @@
             "messagePlaceholder": "Tell me about your project or inquiry...",
             "submit": "Send Message",
             "sending": "Sending...",
-            "success": "Thank you! Your message has been sent successfully. I'll get back to you soon."
+            "success": "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+            "errors": {
+                "nameRequired": "Name is required",
+                "nameLength": "Name must be between 2 and 100 characters",
+                "emailRequired": "Email is required",
+                "emailInvalid": "Please enter a valid email address",
+                "subjectRequired": "Subject is required",
+                "subjectLength": "Subject must be between 5 and 200 characters",
+                "messageRequired": "Message is required",
+                "messageMinLength": "Message must be at least 10 characters long",
+                "messageMaxLength": "Message must not exceed 2000 characters",
+                "rateLimited": "Too many requests. Please try again later.",
+                "invalidData": "Invalid form data. Please check your inputs.",
+                "serverError": "An error occurred. Please try again later."
+            }
         }
     },
     "footer": {

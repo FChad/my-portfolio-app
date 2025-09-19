@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 // Form state
 const form = ref({
@@ -12,6 +12,7 @@ const form = ref({
 // Form validation and submission states
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
+const submitError = ref<string>('')
 const errors = ref<Record<string, string>>({})
 
 // Contact methods
@@ -57,25 +58,36 @@ const scrollToContactForm = () => {
 // Form validation
 const validateForm = () => {
     errors.value = {}
+    submitError.value = ''
 
+    // Name validation
     if (!form.value.name.trim()) {
-        errors.value.name = 'Name ist erforderlich'
+        errors.value.name = t('contact.form.errors.nameRequired')
+    } else if (form.value.name.length < 2 || form.value.name.length > 100) {
+        errors.value.name = t('contact.form.errors.nameLength')
     }
 
+    // Email validation
     if (!form.value.email.trim()) {
-        errors.value.email = 'E-Mail ist erforderlich'
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)) {
-        errors.value.email = 'Bitte geben Sie eine gültige E-Mail-Adresse ein'
+        errors.value.email = t('contact.form.errors.emailRequired')
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email) || form.value.email.length > 254) {
+        errors.value.email = t('contact.form.errors.emailInvalid')
     }
 
+    // Subject validation
     if (!form.value.subject.trim()) {
-        errors.value.subject = 'Betreff ist erforderlich'
+        errors.value.subject = t('contact.form.errors.subjectRequired')
+    } else if (form.value.subject.length < 5 || form.value.subject.length > 200) {
+        errors.value.subject = t('contact.form.errors.subjectLength')
     }
 
+    // Message validation
     if (!form.value.message.trim()) {
-        errors.value.message = 'Nachricht ist erforderlich'
+        errors.value.message = t('contact.form.errors.messageRequired')
     } else if (form.value.message.length < 10) {
-        errors.value.message = 'Nachricht muss mindestens 10 Zeichen lang sein'
+        errors.value.message = t('contact.form.errors.messageMinLength')
+    } else if (form.value.message.length > 2000) {
+        errors.value.message = t('contact.form.errors.messageMaxLength')
     }
 
     return Object.keys(errors.value).length === 0
@@ -86,36 +98,48 @@ const submitForm = async () => {
     if (!validateForm()) return
 
     isSubmitting.value = true
+    submitError.value = ''
 
     try {
-        // Hier würde normalerweise eine API-Anfrage stehen
-        // Für Demo-Zwecke simulieren wir nur eine Verzögerung
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        const response = await $fetch<{ success: boolean; message: string; id?: string }>('/api/contact', {
+            method: 'POST',
+            body: {
+                ...form.value,
+                locale: locale.value
+            }
+        })
 
-        isSubmitted.value = true
-
-        // Form zurücksetzen
-        form.value = {
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
+        if (response.success) {
+            isSubmitted.value = true
+            
+            // Form zurücksetzen
+            form.value = {
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            }
+            
+            // Auto-hide success message after 10 seconds
+            setTimeout(() => {
+                isSubmitted.value = false
+            }, 10000)
         }
-    } catch (error) {
-        console.error('Fehler beim Senden der Nachricht:', error)
+    } catch (error: any) {
+        console.error('Error submitting contact form:', error)
+        
+        // Handle different error types
+        if (error?.statusCode === 429) {
+            submitError.value = t('contact.form.errors.rateLimited')
+        } else if (error?.statusCode === 400) {
+            submitError.value = t('contact.form.errors.invalidData')
+        } else {
+            submitError.value = t('contact.form.errors.serverError')
+        }
     } finally {
         isSubmitting.value = false
     }
 }
-
-// Reset success message after 5 seconds
-watch(isSubmitted, (newVal) => {
-    if (newVal) {
-        setTimeout(() => {
-            isSubmitted.value = false
-        }, 5000)
-    }
-})
 </script>
 
 <template>
@@ -207,6 +231,17 @@ watch(isSubmitted, (newVal) => {
                     <Icon name="mdi:check-circle" class="w-6 h-6 text-green-500" />
                     <p class="text-green-800 dark:text-green-200 font-medium">
                         {{ $t('contact.form.success') }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div v-if="submitError"
+                class="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
+                <div class="flex items-center gap-3">
+                    <Icon name="mdi:alert-circle" class="w-6 h-6 text-red-500" />
+                    <p class="text-red-800 dark:text-red-200 font-medium">
+                        {{ submitError }}
                     </p>
                 </div>
             </div>

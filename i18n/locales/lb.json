@@ -1097,7 +1097,21 @@
             "messagePlaceholder": "Erzielt mer vun Ärem Projet oder Ärer Ufro...",
             "submit": "Message schécken",
             "sending": "Gëtt geschéckt...",
-            "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech."
+            "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech.",
+            "errors": {
+                "nameRequired": "Numm ass obligatoresch",
+                "nameLength": "Numm muss tëschent 2 an 100 Zeechen sinn",
+                "emailRequired": "E-Mail ass obligatoresch",
+                "emailInvalid": "Gitt w.e.g. eng gülteg E-Mail-Adress an",
+                "subjectRequired": "Sujet ass obligatoresch",
+                "subjectLength": "Sujet muss tëschent 5 an 200 Zeechen sinn",
+                "messageRequired": "Message ass obligatoresch",
+                "messageMinLength": "Message muss op d'mannst 10 Zeechen hunn",
+                "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
+                "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
+                "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
+                "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier."
+            }
         }
     },
     "footer": {
