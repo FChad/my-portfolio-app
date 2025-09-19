@@ -1,3 +1,5 @@
+import { Resend } from 'resend'
+
 // Contact form data interface
 interface ContactFormData {
     name: string
@@ -314,8 +316,6 @@ export default defineEventHandler(async (event) => {
 
         console.log('🔑 Resend API key found:', resendApiKey.substring(0, 10) + '...')
 
-        // Use dynamic import to avoid bundling issues
-        const { Resend } = await import('resend')
         const resend = new Resend(resendApiKey)
 
         // Email configuration from environment
