@@ -64,6 +64,19 @@ const onError = (error: string) => {
 const renderTurnstile = () => {
     if (import.meta.client && window.turnstile && turnstileElement.value) {
         try {
+            // Remove existing widget if it exists
+            if (widgetId.value) {
+                try {
+                    window.turnstile.remove(widgetId.value)
+                } catch (error) {
+                    console.warn('Failed to remove existing Turnstile widget:', error)
+                }
+                widgetId.value = undefined
+            }
+            
+            // Clear the DOM element to ensure clean state
+            turnstileElement.value.innerHTML = ''
+            
             widgetId.value = window.turnstile.render(turnstileElement.value, {
                 sitekey: props.siteKey,
                 callback: callbackName,
@@ -87,7 +100,9 @@ const resetTurnstile = () => {
 // Watch for theme changes
 watch(isDark, () => {
     if (widgetId.value && isReady.value) {
-        resetTurnstile()
+        // Clear token when theme changes to ensure clean state
+        emit('update:modelValue', '')
+        // Re-render with new theme
         nextTick(() => renderTurnstile())
     }
 })
@@ -113,6 +128,15 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+    // Clean up Turnstile widget
+    if (import.meta.client && window.turnstile && widgetId.value) {
+        try {
+            window.turnstile.remove(widgetId.value)
+        } catch (error) {
+            console.warn('Failed to remove Turnstile widget on unmount:', error)
+        }
+    }
+    
     // Clean up global callbacks
     if (import.meta.client) {
         delete window[callbackName]
