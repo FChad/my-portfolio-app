@@ -1,5 +1,6 @@
-import { Resend } from 'resend'
-import { renderContactEmailTemplate, renderContactEmailText, type ContactEmailData } from '../utils/emailTemplates'
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Contact form data interface
 interface ContactFormData {
@@ -7,7 +8,6 @@ interface ContactFormData {
     email: string
     subject: string
     message: string
-    locale?: string
     turnstileToken: string
 }
 
@@ -18,7 +18,7 @@ function sanitizeInput(input: string): string {
     return input.trim().replace(/[<>]/g, '')
 }
 
-// Add Turnstile verification function
+// Turnstile verification function
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
     const secretKey = process.env.TURNSTILE_SECRET_KEY
 
@@ -28,8 +28,6 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
     }
 
     try {
-        console.log('🔒 Verifying Turnstile token for IP:', ip)
-
         const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
             method: 'POST',
             headers: {
@@ -43,8 +41,6 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
         })
 
         const result = await response.json()
-        console.log('🔒 Turnstile verification result:', result.success ? '✅ Success' : '❌ Failed')
-
         return result.success === true
     } catch (error) {
         console.error('❌ Turnstile verification failed:', error)
@@ -57,9 +53,9 @@ function validateContactForm(data: any): ContactFormData | null {
         return null
     }
 
-    const { name, email, subject, message, locale, turnstileToken } = data
+    const { name, email, subject, message, turnstileToken } = data
 
-    // Required field validation (including Turnstile token)
+    // Required field validation
     if (!name || !email || !subject || !message || !turnstileToken) {
         return null
     }
@@ -81,7 +77,6 @@ function validateContactForm(data: any): ContactFormData | null {
         return null
     }
 
-    // Validate Turnstile token
     if (typeof turnstileToken !== 'string' || turnstileToken.length === 0) {
         return null
     }
@@ -91,7 +86,6 @@ function validateContactForm(data: any): ContactFormData | null {
         email: email.toLowerCase().trim(),
         subject: sanitizeInput(subject),
         message: sanitizeInput(message),
-        locale: locale || 'de',
         turnstileToken: turnstileToken.trim()
     }
 }
@@ -128,98 +122,43 @@ export default defineEventHandler(async (event) => {
         const isTurnstileValid = await verifyTurnstile(validatedData.turnstileToken, clientIP)
 
         if (!isTurnstileValid) {
-            console.log('❌ Turnstile verification failed for IP:', clientIP)
             throw createError({
                 statusCode: 400,
                 statusMessage: 'CAPTCHA verification failed. Please try again.'
             })
         }
 
-        console.log('✅ Turnstile verification passed for IP:', clientIP)
-
-        // Initialize Resend
-        const resendApiKey = process.env.RESEND_API_KEY
-        if (!resendApiKey) {
-            console.error('❌ RESEND_API_KEY is not configured')
-            throw createError({
-                statusCode: 500,
-                statusMessage: 'Email service not configured'
-            })
-        }
-
-        console.log('🔑 Resend API key found:', resendApiKey.substring(0, 10) + '...')
-
-        const resend = new Resend(resendApiKey)
-
-        // Email configuration from environment
-        const emailFrom = process.env.EMAIL_FROM
-        const emailFromName = process.env.EMAIL_FROM_NAME
-        const emailTo = process.env.EMAIL_TO
-
-        // Check if all required email configuration is present
-        if (!emailFrom) {
-            console.error('EMAIL_FROM is not configured')
+        // Check environment variables
+        if (!process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
             throw createError({
                 statusCode: 500,
                 statusMessage: 'Email configuration incomplete'
             })
         }
 
-        if (!emailFromName) {
-            console.error('EMAIL_FROM_NAME is not configured')
-            throw createError({
-                statusCode: 500,
-                statusMessage: 'Email configuration incomplete'
-            })
-        }
-
-        if (!emailTo) {
-            console.error('EMAIL_TO is not configured')
-            throw createError({
-                statusCode: 500,
-                statusMessage: 'Email configuration incomplete'
-            })
-        }
-
-        // Create email templates using our new template utility
-        const emailData: ContactEmailData = {
-            name: validatedData.name,
-            email: validatedData.email,
-            message: `${validatedData.subject}\n\n${validatedData.message}`
-        }
-
-        const htmlTemplate = renderContactEmailTemplate(emailData)
-        const textTemplate = renderContactEmailText(emailData)
-
-        // Send email
-        const { data, error } = await resend.emails.send({
-            from: `${emailFromName} <${emailFrom}>`,
-            to: [emailTo],
+        // Send email using Resend - exactly as in official docs
+        const data = await resend.emails.send({
+            from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
+            to: [process.env.EMAIL_TO],
             replyTo: validatedData.email,
-            subject: `Portfolio Kontakt: ${validatedData.name} - ${validatedData.subject}`,
-            html: htmlTemplate,
-            text: textTemplate
-        })
-
-        if (error) {
-            console.error('Resend API error:', error)
-            throw createError({
-                statusCode: 500,
-                statusMessage: 'Failed to send email'
-            })
-        }
-
-        // Log success for monitoring
-        console.log('Email sent successfully:', data?.id)
+            subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
+            html: `
+                <h2>New Contact Request</h2>
+                <p><strong>Name:</strong> ${validatedData.name}</p>
+                <p><strong>Email:</strong> ${validatedData.email}</p>
+                <p><strong>Subject:</strong> ${validatedData.subject}</p>
+                <p><strong>Message:</strong></p>
+                <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+            `,
+        });
 
         return {
             success: true,
             message: 'Email sent successfully',
-            id: data?.id
-        }
+            id: data.data?.id
+        };
 
     } catch (error) {
-        // Log error for monitoring
         console.error('Contact form error:', error)
 
         // Re-throw createError instances
@@ -227,10 +166,10 @@ export default defineEventHandler(async (event) => {
             throw error
         }
 
-        // Generic error for unexpected issues
-        throw createError({
-            statusCode: 500,
-            statusMessage: 'Internal Server Error'
-        })
+        // Handle Resend API errors
+        return {
+            success: false,
+            error: error instanceof Error ? error.message : 'Unknown error'
+        };
     }
-})
+});

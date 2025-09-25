@@ -66,5 +66,13 @@ export default defineNuxtConfig({
         public: {
             turnstileSiteKey: process.env.TURNSTILE_SITE_KEY,
         }
+    },
+    nitro: {
+        experimental: {
+            wasm: true
+        },
+        rollupConfig: {
+            external: ['@react-email/render']
+        }
     }
 })
