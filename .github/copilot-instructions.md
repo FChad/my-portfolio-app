@@ -97,16 +97,18 @@ definePageMeta({
 
 ## Navigation & Sub-Navigation
 
-### Sub-Navigation Composable
-Use `useSubNavigation()` composable for pages needing back buttons:
+### Sub-Navigation Configuration
+Configure sub-navigation through page meta for pages needing back buttons:
 ```typescript
-const { configure } = useSubNavigation()
-
-configure({
-    title: 'Project Details',
-    showBackButton: true,
-    backTo: '/showcase',
-    backLabel: 'Back to Showcase'
+// In page components
+definePageMeta({
+    layout: 'with-subnav',
+    subNav: {
+        title: 'Project Details',
+        showBackButton: true,
+        backTo: '/showcase',
+        backLabel: 'Back to Showcase'
+    }
 })
 ```
 
