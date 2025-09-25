@@ -1,1124 +1,1124 @@
 {
-    "nav": {
-        "home": "Startseite",
-        "about": "Über mich",
-        "showcase": "Showcase",
-        "contact": "Kontakt"
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "showcase": "Showcase",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "greeting": "Hallo, ich bin",
+    "roles": {
+      "fullstack": "Full-Stack Entwickler",
+      "serveradmin": "Server Administrator",
+      "solver": "Problemlöser"
     },
-    "home": {
-        "greeting": "Hallo, ich bin",
-        "roles": {
-            "fullstack": "Full-Stack Entwickler",
-            "serveradmin": "Server Administrator",
-            "solver": "Problemlöser"
-        },
-        "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit – und lernen Sie mich besser kennen.",
-        "cta": {
-            "primary": "Projekte entdecken",
-            "secondary": "Kontakt aufnehmen"
-        },
-        "stats": {
-            "experience": "Jahre Erfahrung",
-            "experienceDesc": "Professionelle IT-Erfahrung",
-            "certifications": "Zertifizierungen",
-            "certificationsDesc": "Professionelle Zertifikate",
-            "languages": "Sprachen",
-            "languagesDesc": "Gesprochene Sprachen",
-            "projects": "Projekte",
-            "projectsDesc": "Abgeschlossene Projekte"
-        },
-        "about": {
-            "title": "Lernen Sie Mich Kennen",
-            "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
-            "cta": "Mehr über mich erfahren",
-            "role": "Full-Stack Entwickler & IT-Techniker",
-            "story": "Ich bin Chad Feierstein, ein leidenschaftlicher Full-Stack Entwickler und IT-Administrator aus Luxemburg. Mit Fokus auf Cloud Computing und moderne Webtechnologien erstelle ich innovative digitale Lösungen, die einen Unterschied machen.",
-            "location": "Rumelange, Luxemburg",
-            "experience": "Techniker in der Informatik",
-            "education": "BTS Cloud Computing",
-            "passion": "Technologie & Innovation"
-        },
-        "services": {
-            "title": "Was Ich Biete",
-            "subtitle": "Von der Konzeption bis zur Umsetzung - ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
-            "webdev": {
-                "title": "Web-Entwicklung",
-                "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
-                "features": {
-                    "spa": "Single Page Applications",
-                    "ssr": "Server-Side Rendering",
-                    "pwa": "Progressive Web Apps"
-                }
-            },
-            "cloud": {
-                "title": "Cloud Computing",
-                "description": "Skalierbare Cloud-Lösungen mit AWS, Google Cloud und Azure für moderne Anwendungen.",
-                "features": {
-                    "aws": "Amazon Web Services",
-                    "azure": "Microsoft Azure",
-                    "gcp": "Google Cloud Platform"
-                }
-            },
-            "itadmin": {
-                "title": "IT-Administration",
-                "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur.",
-                "features": {
-                    "linux": "Linux Systemadministration",
-                    "networks": "Netzwerkkonfiguration",
-                    "security": "Sicherheitsimplementierung"
-                }
-            }
-        },
-        "featured": {
-            "title": "Ausgewähltes Projekt",
-            "subtitle": "Entdecken Sie meine neueste Innovation - wo modernste KI auf intuitives Design trifft.",
-            "projectTitle": "KI Chat Bot",
-            "projectSubtitle": "Meine Neueste Innovation",
-            "badge": "Ausgewählt",
-            "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Mit modernster AI-Technologie und einem eleganten Interface bietet er eine nahtlose Benutzererfahrung.",
-            "features": {
-                "ai": {
-                    "title": "Intelligente KI",
-                    "description": "Erweiterte Sprachverarbeitung und Kontextverständnis"
-                },
-                "realtime": {
-                    "title": "Echtzeit Chat",
-                    "description": "Sofortige Antworten und flüssige Konversationen"
-                },
-                "ui": {
-                    "title": "Modernes UI",
-                    "description": "Intuitive Benutzeroberfläche mit Dark/Light Mode"
-                },
-                "security": {
-                    "title": "Sicher & Privat",
-                    "description": "Datenschutz und sichere Kommunikation"
-                }
-            },
-            "techStack": "Verwendete Technologien",
-            "cta": {
-                "view": "Details ansehen",
-                "demo": "Live Demo testen"
-            }
-        }
+    "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit – und lernen Sie mich besser kennen.",
+    "cta": {
+      "primary": "Projekte entdecken",
+      "secondary": "Kontakt aufnehmen"
+    },
+    "stats": {
+      "experience": "Jahre Erfahrung",
+      "experienceDesc": "Professionelle IT-Erfahrung",
+      "certifications": "Zertifizierungen",
+      "certificationsDesc": "Professionelle Zertifikate",
+      "languages": "Sprachen",
+      "languagesDesc": "Gesprochene Sprachen",
+      "projects": "Projekte",
+      "projectsDesc": "Abgeschlossene Projekte"
     },
     "about": {
-        "hero": {
-            "title": "Über mich"
-        },
-        "profile": {
-            "nationality": "Luxemburgisch",
-            "location": "Rümelingen, Luxemburg",
-            "status": "Single",
-            "driving": "Führerschein Kategorie B",
-            "role": "Full-Stack Developer & IT-Techniker",
-            "currentWork": "Derzeit beschäftigt bei Rotyre SARL",
-            "labels": {
-                "location": "Standort",
-                "nationality": "Nationalität",
-                "age": "Alter",
-                "status": "Status",
-                "license": "Führerschein",
-                "years": "Jahre alt"
-            }
-        },
-        "story": {
-            "intro": "Ich bin Chad Feierstein, Full-Stack Webentwickler und IT-Administrator mit Schwerpunkt auf Cloud Computing. Meine Leidenschaft liegt in der Entwicklung moderner Webanwendungen und der Serververwaltung. Mit meiner Ausbildung als IT-Techniker und einem Abschluss im Bereich Cloud Computing verbinde ich fundiertes Wissen mit praktischer Erfahrung, um effiziente und individuelle Lösungen umzusetzen."
-        },
-        "details": {
-            "title": "Persönliche Details"
-        },
-        "interests": {
-            "title": "Interessen & Hobbys"
-        },
-        "passion": {
-            "title": "Leidenschaft für Technologie",
-            "description": "Meine Leidenschaft gilt der Webentwicklung und Serververwaltung. Mit Begeisterung entwickle ich maßgeschneiderte Webanwendungen und implementiere effiziente Serverlösungen."
-        },
-        "hobbies": {
-            "title": "Hobbys und Interessen",
-            "description": "Abseits der digitalen Welt genieße ich wertvolle Momente im Kreise meiner Familie, zu der auch unsere drei pelzigen Begleiter gehören. Regelmäßige Treffen mit Freunden und gelegentliche Gaming-Sessions sorgen für den perfekten Ausgleich zu meinem technologiegeprägten Alltag."
-        },
-        "languages": {
-            "title": "Sprachen",
-            "levels": {
-                "A1": "Grundkenntnisse",
-                "A2": "Grundlegende Kenntnisse",
-                "B1": "Mittelstufe",
-                "B2": "Gute Mittelstufe",
-                "C1": "Fortgeschritten",
-                "C2": "Annähernd muttersprachlich"
-            }
-        },
-        "education": {
-            "title": "Bildung",
-            "viewMore": "Mehr erfahren",
-            "bts": {
-                "degree": "Höherer technischer Abschluss (BTS)",
-                "field": "Fachrichtung: Cloud Computing",
-                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
-                "grade": "Diplom (mit Bewertung: Gut)"
-            },
-            "dap": {
-                "degree": "Techniker in der Informatik",
-                "field": "IT-Techniker (DAP)",
-                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
-                "grade": "Diplom (mit Bewertung: Gut)"
-            }
-        },
-        "work": {
-            "title": "Berufserfahrung",
-            "mainTasks": "Hauptaufgaben:",
-            "moreTasks": "weitere Aufgaben"
-        },
-        "certifications": {
-            "title": "Zertifizierungen",
-            "subtitle": "Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen Technologiebereichen belegen"
-        },
-        "experiences": {
-            "title": "Besondere Erlebnisse"
-        },
-        "cta": {
-            "title": "Lassen Sie uns zusammenarbeiten",
-            "subtitle": "Haben Sie ein Projekt im Sinn? Ich würde gerne von Ihnen hören und besprechen, wie ich Ihnen helfen kann.",
-            "button": "Kontakt aufnehmen"
-        },
-        "languageNames": {
-            "luxemburgish": "Luxemburgisch",
-            "german": "Deutsch",
-            "english": "Englisch",
-            "french": "Französisch"
-        },
-        "certificationsList": {
-            "cert1": {
-                "title": "Die allgemeine Eignungsprüfung",
-                "description": "Staatlicher Sektor (Verwaltung)"
-            },
-            "cert2": {
-                "title": "Cisco Certified CyberOps Associate",
-                "description": "Cybersecurity Operations"
-            },
-            "cert3": {
-                "title": "Cisco Certified Network Associate 3",
-                "description": "7.0 Enterprise-Netzwerke, Sicherheit und Automatisierung"
-            },
-            "cert4": {
-                "title": "Cisco Certified Network Associate 2",
-                "description": "7.0 Switching, Routing und Wireless-Grundlagen"
-            },
-            "cert5": {
-                "title": "Cisco Certified Network Associate 1",
-                "description": "7.0 Einführung in Netzwerke"
-            },
-            "cert6": {
-                "title": "Microsoft Office Specialist 2016",
-                "description": "PowerPoint, Word, Excel, Outlook"
-            }
-        },
-        "timelineItems": {
-            "item1": {
-                "title": "Web-Entwickler bei Rotyre SARL",
-                "description": "Hauptverantwortlich für die Wartung und Weiterentwicklung der Webseite 'mullerpneus.lu'. Unbefristete Anstellung mit Fokus auf Frontend-Entwicklung und Website-Optimierung.",
-                "company": "Rotyre SARL",
-                "type": "Vollzeit",
-                "task1": "Wartung und Weiterentwicklung der Firmenwebsite",
-                "task2": "Frontend-Entwicklung und UI/UX-Optimierung",
-                "task3": "Performance-Optimierung und SEO-Verbesserungen",
-                "task4": "Content-Management und technische Updates"
-            },
-            "item2": {
-                "title": "IT-Cloud-Ingenieur Praktikum",
-                "description": "12-wöchiges Praktikum bei QPark Consulting mit Fokus auf Cloud-Technologien und agile Projektmethoden. Arbeit an zwei großen Cloud-Projekten mit AWS und GCP.",
-                "company": "QPark Consulting",
-                "type": "Praktikum",
-                "task1": "Erstellung eines Projektplans mit agilen Methoden",
-                "task2": "Konfiguration virtueller Maschinen auf Google Cloud Platform",
-                "task3": "Website-Implementierung in GCP-VMs",
-                "task4": "Statische Website-Bereitstellung auf AWS S3",
-                "task5": "REST API-Integration und Datenverarbeitung",
-                "task6": "Cloud-Kostenoptimierung und Best Practices"
-            },
-            "item3": {
-                "title": "IT-Techniker Ferienjob",
-                "description": "8-wöchige Sommertätigkeit am Lycée Guillaume Kroll in der IT-Abteilung. Schwerpunkt auf Netzwerkinfrastruktur und Telefonsystem-Management.",
-                "company": "Lycée Guillaume Kroll",
-                "type": "Ferienjob",
-                "task1": "Einrichtung und Verwaltung von MIXvoip-Telefonen",
-                "task2": "Installation neuer Telefonanschlüsse im Serverraum",
-                "task3": "Aktualisierung der Patchpanel-Dokumentation in Excel",
-                "task4": "Netzwerk-Kabelmanagement und -organisation"
-            },
-            "item4": {
-                "title": "IT-Techniker Projektabschluss",
-                "description": "4-wöchiger Ferienjob zur Fertigstellung eines Website-Projekts, das während des Praktikums begonnen wurde. Fokus auf Backend-Entwicklung und SAML-Integration.",
-                "company": "Lycée Guillaume Kroll",
-                "type": "Ferienjob",
-                "task1": "Kundenbesprechungen und Projektkoordination",
-                "task2": "Backend-Programmierung und -Modifikation",
-                "task3": "SAML-Authentifizierungsdienst-Integration",
-                "task4": "Frontend-Entwicklung und UI-Anpassungen",
-                "task5": "Fachgerechte Hardware-Entsorgung"
-            },
-            "item5": {
-                "title": "IT-Techniker Hauptpraktikum",
-                "description": "6-wöchiges Praktikum am Lycée Guillaume Kroll mit Schwerpunkt auf Web-Entwicklung und Datenbankdesign. Entwicklung einer vollständigen Website-Lösung.",
-                "company": "Lycée Guillaume Kroll",
-                "type": "Praktikum",
-                "task1": "Kundenbesprechungen und Anforderungsanalyse",
-                "task2": "Backend- und Frontend-Entwicklung",
-                "task3": "Konzeptionelle Datenbankmodellierung",
-                "task4": "Logische Datenbankmodellierung",
-                "task5": "Datenbank-Implementierung mit korrekten Beziehungen"
-            },
-            "item6": {
-                "title": "IT-Netzwerktechniker Praktikum",
-                "description": "6-wöchiges Praktikum bei STEP Syndicat intercommunal in Peppange. Einführung in Netzwerktechnik und Infrastruktur-Management in einer Kläranlage.",
-                "company": "STEP Syndicat intercommunal",
-                "type": "Praktikum",
-                "task1": "Einführung in die Organisationsstruktur",
-                "task2": "Erlernen der Kläranlageprozesstechnik",
-                "task3": "Erstellung neuer Patchpanel-Pläne",
-                "task4": "Patchkabel-Management und -Beschriftung",
-                "task5": "Praktische Netzwerkstruktur-Analyse"
-            }
-        },
-        "experiencesList": {
-            "exp1": {
-                "title": "Helikopterrundflug",
-                "description": "Ein unvergessliches Erlebnis über die Landschaften der dominikanischen Republik"
-            },
-            "exp2": {
-                "title": "Fallschirmsprung über Luxemburg",
-                "description": "Adrenalinstoß aus 4000 Metern Höhe"
-            },
-            "exp3": {
-                "title": "Tomorrowland Belgien 2025",
-                "description": "Das ultimative elektronische Musikfestival-Erlebnis"
-            }
-        }
+      "title": "Lernen Sie Mich Kennen",
+      "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
+      "cta": "Mehr über mich erfahren",
+      "role": "Full-Stack Entwickler & IT-Techniker",
+      "story": "Ich bin Chad Feierstein, ein leidenschaftlicher Full-Stack Entwickler und IT-Administrator aus Luxemburg. Mit Fokus auf Cloud Computing und moderne Webtechnologien erstelle ich innovative digitale Lösungen, die einen Unterschied machen.",
+      "location": "Rumelange, Luxemburg",
+      "experience": "Techniker in der Informatik",
+      "education": "BTS Cloud Computing",
+      "passion": "Technologie & Innovation"
     },
-    "showcase": {
-        "title": "Showcase",
-        "subtitle": "Entdecken Sie meine Projekte und Dokumentationen",
-        "filters": {
-            "all": "Alle",
-            "projects": "Projekte",
-            "documentation": "Dokumentation"
-        },
-        "search": {
-            "placeholder": "Suchen..."
-        },
-        "labels": {
-            "viewDetails": "Details anzeigen"
-        },
-        "projects": {
-            "myChatBot": {
-                "title": "Mein Chat Bot",
-                "description": "Eine moderne, optimierte Chat-Anwendung mit Ollama-Integration für direkten Chat mit KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features."
-            },
-            "myPortfolio": {
-                "title": "Meine Portfolio Webseite",
-                "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung."
-            }
-        },
-        "documentation": {
-            "debianInitialSetup": {
-                "title": "Debian 12 - Server Ersteinrichtung",
-                "description": "Schritt-für-Schritt Anleitung für die ersten wichtigen Schritte bei der Einrichtung eines frischen Debian 12 Servers"
-            },
-            "ollamaSetup": {
-                "title": "Linux - Ollama Installation",
-                "description": "Vollständige Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für eine sichere öffentliche API"
-            },
-            "cardanoNodeSetup": {
-                "title": "Linux - Cardano Node Installation",
-                "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung"
-            },
-            "cardanoDbSyncSetup": {
-                "title": "Linux - Cardano DB Sync Installation",
-                "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration"
-            }
+    "services": {
+      "title": "Was Ich Biete",
+      "subtitle": "Von der Konzeption bis zur Umsetzung - ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
+      "webdev": {
+        "title": "Web-Entwicklung",
+        "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
+        "features": {
+          "spa": "Single Page Applications",
+          "ssr": "Server-Side Rendering",
+          "pwa": "Progressive Web Apps"
         }
+      },
+      "cloud": {
+        "title": "Cloud Computing",
+        "description": "Skalierbare Cloud-Lösungen mit AWS, Google Cloud und Azure für moderne Anwendungen.",
+        "features": {
+          "aws": "Amazon Web Services",
+          "azure": "Microsoft Azure",
+          "gcp": "Google Cloud Platform"
+        }
+      },
+      "itadmin": {
+        "title": "IT-Administration",
+        "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur.",
+        "features": {
+          "linux": "Linux Systemadministration",
+          "networks": "Netzwerkkonfiguration",
+          "security": "Sicherheitsimplementierung"
+        }
+      }
+    },
+    "featured": {
+      "title": "Ausgewähltes Projekt",
+      "subtitle": "Entdecken Sie meine neueste Innovation - wo modernste KI auf intuitives Design trifft.",
+      "projectTitle": "KI Chat Bot",
+      "projectSubtitle": "Meine Neueste Innovation",
+      "badge": "Ausgewählt",
+      "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Mit modernster AI-Technologie und einem eleganten Interface bietet er eine nahtlose Benutzererfahrung.",
+      "features": {
+        "ai": {
+          "title": "Intelligente KI",
+          "description": "Erweiterte Sprachverarbeitung und Kontextverständnis"
+        },
+        "realtime": {
+          "title": "Echtzeit Chat",
+          "description": "Sofortige Antworten und flüssige Konversationen"
+        },
+        "ui": {
+          "title": "Modernes UI",
+          "description": "Intuitive Benutzeroberfläche mit Dark/Light Mode"
+        },
+        "security": {
+          "title": "Sicher & Privat",
+          "description": "Datenschutz und sichere Kommunikation"
+        }
+      },
+      "techStack": "Verwendete Technologien",
+      "cta": {
+        "view": "Details ansehen",
+        "demo": "Live Demo testen"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Über mich"
+    },
+    "profile": {
+      "nationality": "Luxemburgisch",
+      "location": "Rümelingen, Luxemburg",
+      "status": "Single",
+      "driving": "Führerschein Kategorie B",
+      "role": "Full-Stack Developer & IT-Techniker",
+      "currentWork": "Derzeit beschäftigt bei Rotyre SARL",
+      "labels": {
+        "location": "Standort",
+        "nationality": "Nationalität",
+        "age": "Alter",
+        "status": "Status",
+        "license": "Führerschein",
+        "years": "Jahre alt"
+      }
+    },
+    "story": {
+      "intro": "Ich bin Chad Feierstein, Full-Stack Webentwickler und IT-Administrator mit Schwerpunkt auf Cloud Computing. Meine Leidenschaft liegt in der Entwicklung moderner Webanwendungen und der Serververwaltung. Mit meiner Ausbildung als IT-Techniker und einem Abschluss im Bereich Cloud Computing verbinde ich fundiertes Wissen mit praktischer Erfahrung, um effiziente und individuelle Lösungen umzusetzen."
+    },
+    "details": {
+      "title": "Persönliche Details"
+    },
+    "interests": {
+      "title": "Interessen & Hobbys"
+    },
+    "passion": {
+      "title": "Leidenschaft für Technologie",
+      "description": "Meine Leidenschaft gilt der Webentwicklung und Serververwaltung. Mit Begeisterung entwickle ich maßgeschneiderte Webanwendungen und implementiere effiziente Serverlösungen."
+    },
+    "hobbies": {
+      "title": "Hobbys und Interessen",
+      "description": "Abseits der digitalen Welt genieße ich wertvolle Momente im Kreise meiner Familie, zu der auch unsere drei pelzigen Begleiter gehören. Regelmäßige Treffen mit Freunden und gelegentliche Gaming-Sessions sorgen für den perfekten Ausgleich zu meinem technologiegeprägten Alltag."
+    },
+    "languages": {
+      "title": "Sprachen",
+      "levels": {
+        "A1": "Grundkenntnisse",
+        "A2": "Grundlegende Kenntnisse",
+        "B1": "Mittelstufe",
+        "B2": "Gute Mittelstufe",
+        "C1": "Fortgeschritten",
+        "C2": "Annähernd muttersprachlich"
+      }
+    },
+    "education": {
+      "title": "Bildung",
+      "viewMore": "Mehr erfahren",
+      "bts": {
+        "degree": "Höherer technischer Abschluss (BTS)",
+        "field": "Fachrichtung: Cloud Computing",
+        "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+        "grade": "Diplom (mit Bewertung: Gut)"
+      },
+      "dap": {
+        "degree": "Techniker in der Informatik",
+        "field": "IT-Techniker (DAP)",
+        "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+        "grade": "Diplom (mit Bewertung: Gut)"
+      }
+    },
+    "work": {
+      "title": "Berufserfahrung",
+      "mainTasks": "Hauptaufgaben:",
+      "moreTasks": "weitere Aufgaben"
+    },
+    "certifications": {
+      "title": "Zertifizierungen",
+      "subtitle": "Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen Technologiebereichen belegen"
+    },
+    "experiences": {
+      "title": "Besondere Erlebnisse"
+    },
+    "cta": {
+      "title": "Lassen Sie uns zusammenarbeiten",
+      "subtitle": "Haben Sie ein Projekt im Sinn? Ich würde gerne von Ihnen hören und besprechen, wie ich Ihnen helfen kann.",
+      "button": "Kontakt aufnehmen"
+    },
+    "languageNames": {
+      "luxemburgish": "Luxemburgisch",
+      "german": "Deutsch",
+      "english": "Englisch",
+      "french": "Französisch"
+    },
+    "certificationsList": {
+      "cert1": {
+        "title": "Die allgemeine Eignungsprüfung",
+        "description": "Staatlicher Sektor (Verwaltung)"
+      },
+      "cert2": {
+        "title": "Cisco Certified CyberOps Associate",
+        "description": "Cybersecurity Operations"
+      },
+      "cert3": {
+        "title": "Cisco Certified Network Associate 3",
+        "description": "7.0 Enterprise-Netzwerke, Sicherheit und Automatisierung"
+      },
+      "cert4": {
+        "title": "Cisco Certified Network Associate 2",
+        "description": "7.0 Switching, Routing und Wireless-Grundlagen"
+      },
+      "cert5": {
+        "title": "Cisco Certified Network Associate 1",
+        "description": "7.0 Einführung in Netzwerke"
+      },
+      "cert6": {
+        "title": "Microsoft Office Specialist 2016",
+        "description": "PowerPoint, Word, Excel, Outlook"
+      }
+    },
+    "timelineItems": {
+      "item1": {
+        "title": "Web-Entwickler bei Rotyre SARL",
+        "description": "Hauptverantwortlich für die Wartung und Weiterentwicklung der Webseite 'mullerpneus.lu'. Unbefristete Anstellung mit Fokus auf Frontend-Entwicklung und Website-Optimierung.",
+        "company": "Rotyre SARL",
+        "type": "Vollzeit",
+        "task1": "Wartung und Weiterentwicklung der Firmenwebsite",
+        "task2": "Frontend-Entwicklung und UI/UX-Optimierung",
+        "task3": "Performance-Optimierung und SEO-Verbesserungen",
+        "task4": "Content-Management und technische Updates"
+      },
+      "item2": {
+        "title": "IT-Cloud-Ingenieur Praktikum",
+        "description": "12-wöchiges Praktikum bei QPark Consulting mit Fokus auf Cloud-Technologien und agile Projektmethoden. Arbeit an zwei großen Cloud-Projekten mit AWS und GCP.",
+        "company": "QPark Consulting",
+        "type": "Praktikum",
+        "task1": "Erstellung eines Projektplans mit agilen Methoden",
+        "task2": "Konfiguration virtueller Maschinen auf Google Cloud Platform",
+        "task3": "Website-Implementierung in GCP-VMs",
+        "task4": "Statische Website-Bereitstellung auf AWS S3",
+        "task5": "REST API-Integration und Datenverarbeitung",
+        "task6": "Cloud-Kostenoptimierung und Best Practices"
+      },
+      "item3": {
+        "title": "IT-Techniker Ferienjob",
+        "description": "8-wöchige Sommertätigkeit am Lycée Guillaume Kroll in der IT-Abteilung. Schwerpunkt auf Netzwerkinfrastruktur und Telefonsystem-Management.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Ferienjob",
+        "task1": "Einrichtung und Verwaltung von MIXvoip-Telefonen",
+        "task2": "Installation neuer Telefonanschlüsse im Serverraum",
+        "task3": "Aktualisierung der Patchpanel-Dokumentation in Excel",
+        "task4": "Netzwerk-Kabelmanagement und -organisation"
+      },
+      "item4": {
+        "title": "IT-Techniker Projektabschluss",
+        "description": "4-wöchiger Ferienjob zur Fertigstellung eines Website-Projekts, das während des Praktikums begonnen wurde. Fokus auf Backend-Entwicklung und SAML-Integration.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Ferienjob",
+        "task1": "Kundenbesprechungen und Projektkoordination",
+        "task2": "Backend-Programmierung und -Modifikation",
+        "task3": "SAML-Authentifizierungsdienst-Integration",
+        "task4": "Frontend-Entwicklung und UI-Anpassungen",
+        "task5": "Fachgerechte Hardware-Entsorgung"
+      },
+      "item5": {
+        "title": "IT-Techniker Hauptpraktikum",
+        "description": "6-wöchiges Praktikum am Lycée Guillaume Kroll mit Schwerpunkt auf Web-Entwicklung und Datenbankdesign. Entwicklung einer vollständigen Website-Lösung.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Praktikum",
+        "task1": "Kundenbesprechungen und Anforderungsanalyse",
+        "task2": "Backend- und Frontend-Entwicklung",
+        "task3": "Konzeptionelle Datenbankmodellierung",
+        "task4": "Logische Datenbankmodellierung",
+        "task5": "Datenbank-Implementierung mit korrekten Beziehungen"
+      },
+      "item6": {
+        "title": "IT-Netzwerktechniker Praktikum",
+        "description": "6-wöchiges Praktikum bei STEP Syndicat intercommunal in Peppange. Einführung in Netzwerktechnik und Infrastruktur-Management in einer Kläranlage.",
+        "company": "STEP Syndicat intercommunal",
+        "type": "Praktikum",
+        "task1": "Einführung in die Organisationsstruktur",
+        "task2": "Erlernen der Kläranlageprozesstechnik",
+        "task3": "Erstellung neuer Patchpanel-Pläne",
+        "task4": "Patchkabel-Management und -Beschriftung",
+        "task5": "Praktische Netzwerkstruktur-Analyse"
+      }
+    },
+    "experiencesList": {
+      "exp1": {
+        "title": "Helikopterrundflug",
+        "description": "Ein unvergessliches Erlebnis über die Landschaften der dominikanischen Republik"
+      },
+      "exp2": {
+        "title": "Fallschirmsprung über Luxemburg",
+        "description": "Adrenalinstoß aus 4000 Metern Höhe"
+      },
+      "exp3": {
+        "title": "Tomorrowland Belgien 2025",
+        "description": "Das ultimative elektronische Musikfestival-Erlebnis"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Showcase",
+    "subtitle": "Entdecken Sie meine Projekte und Dokumentationen",
+    "filters": {
+      "all": "Alle",
+      "projects": "Projekte",
+      "documentation": "Dokumentation"
+    },
+    "search": {
+      "placeholder": "Suchen..."
+    },
+    "labels": {
+      "viewDetails": "Details anzeigen"
     },
     "projects": {
-        "myChatBot": {
-            "features": {
-                "aiChat": {
-                    "title": "KI-Chat",
-                    "description": "Chatte direkt mit verschiedenen KI-Modellen über eine intuitive Benutzeroberfläche"
-                },
-                "conversationManagement": {
-                    "title": "Unterhaltungs-Management",
-                    "description": "Mehrere Unterhaltungen verwalten wie bei ChatGPT mit automatischer Speicherung"
-                },
-                "modelSelection": {
-                    "title": "Modell-Auswahl",
-                    "description": "Wähle zwischen verfügbaren Ollama-Modellen für verschiedene Anwendungsfälle"
-                },
-                "localStorage": {
-                    "title": "Lokale Speicherung",
-                    "description": "Unterhaltungen werden sicher im Browser gespeichert ohne externe Abhängigkeiten"
-                },
-                "modernUI": {
-                    "title": "Modernes UI",
-                    "description": "Schöne, responsive Benutzeroberfläche mit Tailwind CSS und Dark-Mode"
-                },
-                "streaming": {
-                    "title": "Echtzeit-Streaming",
-                    "description": "Echtzeitantworten mit Server-Sent Events für flüssige Kommunikation"
-                }
-            },
-            "keyFeatures": {
-                "title": "Hauptfunktionen",
-                "subtitle": "Entdecke die leistungsstarken Features, die Mein Chat Bot zu einer umfassenden KI-Chat-Lösung machen"
-            },
-            "builtWith": {
-                "title": "Entwickelt mit",
-                "subtitle": "Moderne Technologien und Frameworks, die die Anwendung antreiben"
-            },
-            "callToAction": {
-                "title": "Bereit, KI-Chat zu erleben?",
-                "subtitle": "Probiere Mein Chat Bot heute aus und entdecke die Kraft lokaler KI-Modelle mit einer intuitiven Chat-Oberfläche.",
-                "button": "Demo starten"
-            },
-            "technologies": {
-                "nuxt3": {
-                    "name": "Frontend Framework",
-                    "tech": "Nuxt 3",
-                    "description": "Modernes Vue.js-Framework mit SSR-Funktionen, automatischem Routing und verbesserter Leistungsoptimierung"
-                },
-                "vue3": {
-                    "name": "Frontend Library",
-                    "tech": "Vue 3",
-                    "description": "Progressives JavaScript-Framework mit Composition API und reaktiver Datenbindung"
-                },
-                "typescript": {
-                    "name": "Typsicherheit",
-                    "tech": "TypeScript",
-                    "description": "Strenge Typprüfung, verbesserte Codezuverlässigkeit und bessere Entwicklererfahrung"
-                },
-                "pinia": {
-                    "name": "State Management",
-                    "tech": "Pinia",
-                    "description": "Moderner State-Management-Store für Vue mit intuitiver API und TypeScript-Unterstützung"
-                },
-                "tailwind": {
-                    "name": "Styling",
-                    "tech": "Tailwind CSS",
-                    "description": "Utility-First-CSS-Framework mit individueller Konfiguration und responsiven Design-Mustern"
-                },
-                "ollama": {
-                    "name": "KI-Integration",
-                    "tech": "Ollama",
-                    "description": "Lokale KI-Modell-Verwaltungsplattform für nahtlose KI-Integration"
-                },
-                "highlight": {
-                    "name": "Code-Highlighting",
-                    "tech": "Highlight.js",
-                    "description": "Syntax-Highlighting für Code-Blöcke in Chat-Nachrichten mit Unterstützung für mehrere Programmiersprachen"
-                },
-                "marked": {
-                    "name": "Markdown-Parsing",
-                    "tech": "Marked",
-                    "description": "Schneller Markdown-Parser und -Compiler für die Darstellung von formatiertem Text und Code in Chat-Antworten"
-                }
-            }
-        },
-        "myPortfolio": {
-            "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung.",
-            "features": {
-                "multilingual": {
-                    "title": "Mehrsprachig",
-                    "description": "Unterstützung für Luxemburgisch, Deutsch, Französisch und Englisch mit i18n"
-                },
-                "responsive": {
-                    "title": "Responsive Design",
-                    "description": "Perfekte Darstellung auf allen Geräten - Desktop, Tablet und Mobile"
-                },
-                "darkMode": {
-                    "title": "Dark Mode",
-                    "description": "Elegantes Dark/Light Theme mit automatischer Browser-Erkennung"
-                },
-                "performance": {
-                    "title": "Hochleistung",
-                    "description": "Optimierte Ladezeiten und SEO mit Nuxt 3 Server-Side Rendering"
-                },
-                "seo": {
-                    "title": "SEO Optimiert",
-                    "description": "Vollständige Suchmaschinenoptimierung mit Sitemap und Meta-Tags"
-                },
-                "contact": {
-                    "title": "Kontaktformular",
-                    "description": "Funktionales Kontaktformular mit VeeValidate und Resend Integration"
-                }
-            },
-            "keyFeatures": {
-                "title": "Hauptfunktionen",
-                "subtitle": "Entdecke die Features, die diese Portfolio-Webseite zu einer modernen, professionellen Lösung machen"
-            },
-            "builtWith": {
-                "title": "Entwickelt mit",
-                "subtitle": "Moderne Technologien und Best Practices für eine erstklassige Benutzererfahrung"
-            },
-            "callToAction": {
-                "title": "Interessiert an einer ähnlichen Webseite?",
-                "subtitle": "Entdecke meine Portfolio-Webseite und sehe, wie moderne Webtechnologien eine beeindruckende Online-Präsenz schaffen können.",
-                "button": "Webseite besuchen"
-            },
-            "technologies": {
-                "nuxt3": {
-                    "name": "Frontend Framework",
-                    "tech": "Nuxt 3",
-                    "description": "Fortschrittliches Vue.js-Framework mit Server-Side Rendering, automatischem Code-Splitting und Leistungsoptimierung"
-                },
-                "vue3": {
-                    "name": "UI Library",
-                    "tech": "Vue 3",
-                    "description": "Modernes, reaktives JavaScript-Framework mit Composition API und optimaler Developer Experience"
-                },
-                "typescript": {
-                    "name": "Typsicherheit",
-                    "tech": "TypeScript",
-                    "description": "Statische Typisierung für bessere Code-Qualität, Fehlerprävention und erweiterte IDE-Unterstützung"
-                },
-                "tailwind": {
-                    "name": "CSS Framework",
-                    "tech": "Tailwind CSS",
-                    "description": "Utility-First-CSS-Framework für schnelles, konsistentes Styling und responsive Designs"
-                },
-                "i18n": {
-                    "name": "Internationalisierung",
-                    "tech": "Nuxt i18n",
-                    "description": "Vollständige Mehrsprachigkeitsunterstützung mit automatischem Routing und Locale-Management"
-                },
-                "veevalidate": {
-                    "name": "Formularvalidierung",
-                    "tech": "VeeValidate",
-                    "description": "Leistungsstarke Formularvalidierung mit benutzerfreundlicher Fehlerbehandlung und TypeScript-Support"
-                },
-                "resend": {
-                    "name": "E-Mail Service",
-                    "tech": "Resend",
-                    "description": "Moderne E-Mail-API für zuverlässige Kontaktformular-Übermittlung mit Entwickler-freundlicher Integration"
-                },
-                "iconify": {
-                    "name": "Icon System",
-                    "tech": "Iconify",
-                    "description": "Umfangreiche Icon-Bibliothek mit über 100.000 Icons und optimaler Leistung durch Icon-on-Demand"
-                }
-            }
-        }
+      "myChatBot": {
+        "title": "Mein Chat Bot",
+        "description": "Eine moderne, optimierte Chat-Anwendung mit Ollama-Integration für direkten Chat mit KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features."
+      },
+      "myPortfolio": {
+        "title": "Meine Portfolio Webseite",
+        "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung."
+      }
     },
-    "documentations": {
-        "ollamaSetup": {
-            "title": "Linux - Ollama Installation",
-            "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
-            "notes": {
-                "title": "Wichtige Hinweise",
-                "hardware": {
-                    "title": "Hardware-Anforderungen",
-                    "description": "Mindestens 4GB RAM für kleinere Modelle, 8GB+ für größere Modelle empfohlen"
-                },
-                "diskSpace": {
-                    "title": "Speicherplatz",
-                    "description": "Modelle benötigen 1-10GB Speicher je nach Größe - planen Sie entsprechend"
-                },
-                "internetConnection": {
-                    "title": "Internetverbindung",
-                    "description": "Stabile Verbindung für Downloads der KI-Modelle erforderlich"
-                },
-                "modelSizes": {
-                    "title": "Modellgrößen beachten",
-                    "description": "Größere Modelle bieten bessere Qualität, benötigen aber mehr Ressourcen"
-                },
-                "performance": {
-                    "title": "Performance-Überwachung",
-                    "description": "Überwachen Sie CPU und RAM-Auslastung während der Modell-Ausführung"
-                }
-            },
-            "steps": {
-                "title": "Installationsschritte",
-                "subtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Ollama-Installation mit sicherer API",
-                "dependencies": {
-                    "title": "Abhängigkeiten installieren",
-                    "description": "Installation der erforderlichen Systempakete und Abhängigkeiten für Ollama und Apache2."
-                },
-                "ollama": {
-                    "title": "Ollama installieren",
-                    "description": "Installation von Ollama und erste Konfiguration mit einem Testmodell."
-                },
-                "apache": {
-                    "title": "Apache2 konfigurieren",
-                    "description": "Installation und Konfiguration von Apache2 als Reverse Proxy für Ollama."
-                },
-                "ssl": {
-                    "title": "SSL-Zertifikat einrichten",
-                    "description": "Einrichtung von Let's Encrypt SSL-Zertifikaten für sichere HTTPS-Verbindungen."
-                },
-                "authentication": {
-                    "title": "HTTP Basic Authentication",
-                    "description": "Konfiguration der HTTP Basic Authentication für sicheren API-Zugriff."
-                },
-                "virtualhost": {
-                    "title": "Virtual Host aktivieren",
-                    "description": "Aktivierung des Virtual Hosts und Neustart der Apache-Services."
-                },
-                "testing": {
-                    "title": "Installation testen",
-                    "description": "Überprüfung der Installation und Test der API-Funktionalität."
-                }
-            },
-            "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Ollama-Installation mit sicherer API",
-            "commands": {
-                "dependencies": {
-                    "updateAgain": "Paketlisten erneut aktualisieren",
-                    "installBasic": "Grundlegende Pakete installieren"
-                },
-                "ollama": {
-                    "install": "Ollama herunterladen und installieren",
-                    "testModel": "Kleines Testmodell herunterladen und testen",
-                    "reexec": "Systemd-Manager neu laden",
-                    "reload": "Ollama-Service neu laden",
-                    "restart": "Ollama-Service neu starten",
-                    "checkPort": "Überprüfen, ob Ollama auf Port 11434 lauscht"
-                },
-                "apache": {
-                    "install": "Apache2 und SSL-Module installieren",
-                    "enableModules": "Erforderliche Apache-Module aktivieren",
-                    "restart": "Apache2 neu starten"
-                },
-                "ssl": {
-                    "installCertbot": "Certbot für Let's Encrypt installieren",
-                    "getCertificate": "SSL-Zertifikat für Domain anfordern"
-                },
-                "authentication": {
-                    "createDirectory": "Verzeichnis für Auth-Dateien erstellen",
-                    "createUser": "Benutzer mit Passwort für HTTP Basic Auth erstellen",
-                    "passwordNote": "Geben Sie ein sicheres Passwort ein, wenn Sie dazu aufgefordert werden"
-                },
-                "virtualhost": {
-                    "enableSite": "Neue Site-Konfiguration aktivieren",
-                    "disableDefault": "Standard Apache-Site deaktivieren",
-                    "disableDefaultSSL": "Standard SSL-Site deaktivieren",
-                    "reloadApache": "Apache-Konfiguration neu laden"
-                },
-                "testing": {
-                    "testApi": "API-Endpunkt mit curl testen",
-                    "testNote": "Verwenden Sie Ihren konfigurierten Benutzernamen und Ihr Passwort"
-                },
-                "troubleshooting": {
-                    "checkPort": "Überprüfen, welcher Service auf Port 11434 läuft",
-                    "checkStatus": "Ollama-Service-Status überprüfen",
-                    "checkLogs": "Ollama-Service-Logs anzeigen",
-                    "testConfig": "Apache-Konfiguration testen",
-                    "checkApache": "Apache-Service-Status überprüfen",
-                    "checkApacheLogs": "Apache-Error-Logs anzeigen",
-                    "listCertificates": "Alle Certbot-Zertifikate auflisten",
-                    "testRenewal": "Zertifikat-Erneuerung testen",
-                    "testSSL": "SSL-Verbindung mit OpenSSL testen"
-                }
-            },
-            "troubleshooting": {
-                "title": "Fehlerbehebung",
-                "subtitle": "Häufige Probleme und ihre Lösungen bei der Ollama-Installation",
-                "ollamaIssues": {
-                    "title": "Ollama-Probleme"
-                },
-                "apacheIssues": {
-                    "title": "Apache-Probleme"
-                },
-                "sslIssues": {
-                    "title": "SSL-Probleme"
-                }
-            },
-            "completion": {
-                "title": "Installation abgeschlossen!",
-                "description": "Ihr Ollama-Server ist jetzt vollständig konfiguriert und über HTTPS mit Basic Authentication gesichert. Sie können jetzt sicher auf die API zugreifen."
-            }
-        },
-        "debianInitialSetup": {
-            "title": "Debian 12 - Server Ersteinrichtung",
-            "description": "Eine umfassende Schritt-für-Schritt Anleitung für die Ersteinrichtung eines frischen Debian 12 Servers mit den wichtigsten Konfigurationsschritten.",
-            "notes": {
-                "title": "Wichtige Hinweise",
-                "rootAccess": {
-                    "title": "Root-Zugriff erforderlich",
-                    "description": "Root-Zugriff oder sudo-Berechtigung ist für alle Konfigurationsschritte erforderlich"
-                },
-                "networkConnection": {
-                    "title": "Internetverbindung notwendig",
-                    "description": "Aktive Internetverbindung wird für Paket-Updates und Downloads benötigt"
-                },
-                "backupImportant": {
-                    "title": "Backup erstellen",
-                    "description": "Erstellen Sie vor allen wichtigen Änderungen Backups Ihrer kritischen Daten"
-                },
-                "timeRequired": {
-                    "title": "Zeitaufwand",
-                    "description": "Gesamtzeit: ca. 30-45 Minuten je nach Systemleistung"
-                },
-                "securityConsiderations": {
-                    "title": "Sicherheitsaspekte",
-                    "description": "Beachten Sie alle Sicherheitsaspekte bei der Server-Konfiguration"
-                },
-                "documentChanges": {
-                    "title": "Änderungen dokumentieren",
-                    "description": "Dokumentieren Sie alle vorgenommenen Änderungen für spätere Referenz"
-                }
-            },
-            "steps": {
-                "title": "Einrichtungsschritte",
-                "subtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine optimale Server-Konfiguration",
-                "language": {
-                    "title": "Sprache und Locale konfigurieren",
-                    "description": "Konfiguration der Systemsprache und Locale-Einstellungen für eine korrekte Zeichendarstellung."
-                },
-                "timezone": {
-                    "title": "Zeitzone einstellen",
-                    "description": "Einstellung der korrekten Zeitzone für genaue Zeit- und Datumsangaben."
-                },
-                "sources": {
-                    "title": "Paketquellen aktualisieren",
-                    "description": "Aktualisierung der APT-Paketquellen und des Systems auf den neuesten Stand."
-                },
-                "hostname": {
-                    "title": "Hostname konfigurieren",
-                    "description": "Festlegung eines eindeutigen Hostnamens für die Serveridentifikation im Netzwerk."
-                },
-                "motd": {
-                    "title": "MOTD bereinigen",
-                    "description": "Entfernung der Standard-Willkommensnachricht für eine saubere Anmeldung."
-                },
-                "hardware": {
-                    "title": "Hardware-Informationen anzeigen",
-                    "description": "Überprüfung und Anzeige der verfügbaren Hardware-Ressourcen des Servers."
-                },
-                "verification": {
-                    "title": "System-Verifikation",
-                    "description": "Abschließende Überprüfung aller Konfigurationen und des Systemstatus."
-                }
-            },
-            "commands": {
-                "language": {
-                    "listLocales": "Verfügbare Locales auflisten",
-                    "generateLocale": "UTF-8 Locale generieren",
-                    "updateLocale": "System-Locale aktualisieren",
-                    "checkLocale": "Aktuelle Locale-Konfiguration überprüfen",
-                    "restartNote": "Ein Neustart kann erforderlich sein, um die Änderungen vollständig zu übernehmen"
-                },
-                "timezone": {
-                    "checkDate": "Aktuelles Datum und Uhrzeit anzeigen",
-                    "checkTimezone": "Zeitzone-Konfiguration überprüfen",
-                    "listTimezones": "Alle verfügbaren Zeitzonen auflisten",
-                    "setTimezone": "Zeitzone auf Europa/Luxemburg setzen",
-                    "verifyTimezone": "Neue Zeitzone-Konfiguration bestätigen"
-                },
-                "sources": {
-                    "updatePackages": "Paketlisten aktualisieren",
-                    "upgradeSystem": "System auf neuesten Stand bringen",
-                    "autoremove": "Nicht mehr benötigte Pakete entfernen",
-                    "autoclean": "Paket-Cache bereinigen",
-                    "verifySources": "Haupt-Paketquellen anzeigen",
-                    "checkAdditionalSources": "Zusätzliche Paketquellen überprüfen",
-                    "wikiReference": "Weitere Informationen finden Sie im Debian Wiki zu APT-Konfiguration"
-                },
-                "hostname": {
-                    "editCloudConfig": "Cloud-Init Konfiguration bearbeiten (falls vorhanden)",
-                    "setHostname": "Neuen Hostnamen setzen",
-                    "verifyHostname": "Hostnamen-Konfiguration überprüfen",
-                    "reboot": "System für vollständige Anwendung neu starten",
-                    "virtualizationNote": "Nur bei virtualisierten Umgebungen mit cloud-init erforderlich"
-                },
-                "motd": {
-                    "clearMotd": "Standard MOTD-Datei leeren"
-                },
-                "hardware": {
-                    "installInxi": "Hardware-Informationstool installieren",
-                    "showHardwareInfo": "Vollständige Hardware-Informationen anzeigen",
-                    "showCpuInfo": "CPU-Informationen anzeigen",
-                    "showMemoryInfo": "Speicher-Informationen anzeigen",
-                    "showDiskInfo": "Festplatten-Informationen anzeigen"
-                },
-                "verification": {
-                    "systemInfo": "System-Versionsinformationen anzeigen",
-                    "kernelInfo": "Kernel-Informationen anzeigen",
-                    "systemStatus": "Systemd-Status überprüfen",
-                    "checkUpdates": "Verfügbare Updates überprüfen"
-                },
-                "tips": {
-                    "installFirewall": "UFW Firewall installieren",
-                    "enableFirewall": "Firewall aktivieren",
-                    "installFail2ban": "Fail2Ban für erweiterte Sicherheit installieren",
-                    "installEssentials": "Wichtige System-Tools installieren",
-                    "installBuildTools": "Build-Tools für Kompilierung installieren",
-                    "installAutoUpdates": "Automatische Updates installieren",
-                    "configureAutoUpdates": "Automatische Updates konfigurieren"
-                }
-            },
-            "tips": {
-                "sectionTitle": "Zusätzliche Empfehlungen",
-                "sectionSubtitle": "Optional: Weitere nützliche Konfigurationen für erweiterte Sicherheit und Funktionalität",
-                "security": {
-                    "title": "Sicherheitsmaßnahmen"
-                },
-                "essentials": {
-                    "title": "Essential Tools"
-                },
-                "updates": {
-                    "title": "Automatische Updates"
-                }
-            },
-            "completion": {
-                "title": "Einrichtung abgeschlossen!",
-                "message": "Ihr Debian 12 Server ist jetzt grundlegend konfiguriert und einsatzbereit. Vergessen Sie nicht, weitere sicherheitsrelevante Konfigurationen entsprechend Ihren Anforderungen vorzunehmen."
-            }
-        },
-        "cardanoNodeSetup": {
-            "title": "Linux - Cardano Node Installation",
-            "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung.",
-            "notes": {
-                "title": "Wichtige Hinweise",
-                "nodeRequirements": {
-                    "title": "Hardware-Anforderungen",
-                    "description": "Mindestens 8GB RAM und 100GB Speicherplatz für optimale Node-Performance"
-                },
-                "nixDaemon": {
-                    "title": "NIX-Daemon erforderlich",
-                    "description": "Der NIX-Daemon muss korrekt installiert und gestartet sein"
-                },
-                "diskSpace": {
-                    "title": "Speicherplatz",
-                    "description": "Mindestens 50GB freier Speicherplatz für die Blockchain-Daten erforderlich"
-                },
-                "syncTime": {
-                    "title": "Synchronisationszeit",
-                    "description": "Erste Synchronisation kann 24-48 Stunden dauern je nach Internetverbindung"
-                },
-                "networkStability": {
-                    "title": "Netzwerkstabilität",
-                    "description": "Stabile Internetverbindung für kontinuierliche Synchronisation notwendig"
-                }
-            },
-            "steps": {
-                "title": "Installationsschritte",
-                "dependencies": {
-                    "title": "Systemabhängigkeiten installieren",
-                    "description": "Installation der erforderlichen Systempakete für die NIX-Paketmanager Installation."
-                },
-                "nix": {
-                    "title": "NIX Paketmanager installieren",
-                    "description": "Installation des NIX-Paketmanagers für die Verwaltung der Cardano-Node Abhängigkeiten."
-                },
-                "nixconfig": {
-                    "title": "NIX für Cardano konfigurieren",
-                    "description": "Konfiguration des NIX-Paketmanagers mit den offiziellen IOHK-Binär-Caches für optimierte Downloads."
-                },
-                "user": {
-                    "title": "Cardano-Benutzer erstellen",
-                    "description": "Erstellung eines dedizierten Benutzers für den Cardano-Node-Betrieb."
-                },
-                "install": {
-                    "title": "Cardano-Node installieren",
-                    "description": "Installation der Cardano-Node und CLI-Tools über das NIX-System."
-                },
-                "symlinks": {
-                    "title": "System-Symlinks erstellen",
-                    "description": "Erstellung von Symlinks für systemweiten Zugriff auf die Cardano-Tools."
-                },
-                "config": {
-                    "title": "Node-Konfiguration herunterladen",
-                    "description": "Download der offiziellen Cardano-Netzwerkkonfigurationsdateien."
-                },
-                "service": {
-                    "title": "Systemd-Service einrichten",
-                    "description": "Konfiguration der Cardano-Node als Systemd-Service für automatischen Start."
-                },
-                "monitor": {
-                    "title": "Node-Überwachung einrichten",
-                    "description": "Überwachung der Node-Logs und des Synchronisationsprozesses."
-                }
-            },
-            "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Cardano-Node Installation",
-            "commands": {
-                "dependencies": {
-                    "installDeps": "Systemabhängigkeiten installieren"
-                },
-                "nix": {
-                    "rebootNote": "Ein Neustart ist nach der NIX-Installation erforderlich",
-                    "install": "NIX-Paketmanager installieren",
-                    "reboot": "System neu starten",
-                    "verify": "NIX-Installation verifizieren"
-                },
-                "nixconfig": {
-                    "restart": "NIX-Daemon neu starten"
-                },
-                "user": {
-                    "createUser": "Cardano-Benutzer erstellen"
-                },
-                "install": {
-                    "switchUser": "Zu Cardano-Benutzer wechseln",
-                    "clone": "Cardano-Node Repository klonen",
-                    "changeDir": "In Cardano-Node Verzeichnis wechseln",
-                    "listTags": "Verfügbare Versionen anzeigen",
-                    "checkout": "Aktuelle stabile Version auschecken",
-                    "profileInstall": "Cardano-Node und CLI in NIX-Profil installieren",
-                    "profileNote": "Dies kann 30-60 Minuten dauern, da alle Abhängigkeiten kompiliert werden",
-                    "profileList": "Installierte Profile auflisten",
-                    "checkNode": "Cardano-Node Version überprüfen",
-                    "checkCli": "Cardano-CLI Version überprüfen",
-                    "exitUser": "Zurück zu Root-Benutzer wechseln"
-                },
-                "symlinks": {
-                    "profileNote": "Passen Sie den Pfad entsprechend Ihrem NIX-Profil an",
-                    "linkNode": "Symlink für Cardano-Node erstellen",
-                    "linkCli": "Symlink für Cardano-CLI erstellen",
-                    "verifyLinks": "Symlinks verifizieren",
-                    "testNode": "Cardano-Node systemweit testen",
-                    "testCli": "Cardano-CLI systemweit testen"
-                },
-                "config": {
-                    "switchUser": "Zu Cardano-Benutzer wechseln",
-                    "createDirs": "Konfigurationsverzeichnisse erstellen",
-                    "changeDir": "In Konfigurationsverzeichnis wechseln",
-                    "downloadConfigs": "Offizielle Konfigurationsdateien herunterladen",
-                    "listConfigs": "Heruntergeladene Konfigurationsdateien auflisten",
-                    "checkConfig": "Genesis-Konfiguration überprüfen",
-                    "exitUser": "Zurück zu Root-Benutzer wechseln"
-                },
-                "service": {
-                    "reload": "Systemd-Manager neu laden",
-                    "enable": "Cardano-Node Service aktivieren",
-                    "start": "Cardano-Node Service starten"
-                },
-                "monitor": {
-                    "syncNote": "Die initiale Blockchain-Synchronisation kann 24-48 Stunden dauern",
-                    "logs": "Service-Logs verfolgen",
-                    "syncProgress": "Synchronisationsfortschritt überprüfen"
-                },
-                "tips": {
-                    "syncStatus": "Synchronisationsstatus überprüfen",
-                    "syncSize": "Aktuelle Blockchain-Größe anzeigen",
-                    "restart": "Cardano-Node Service neu starten",
-                    "stop": "Cardano-Node Service stoppen",
-                    "fullLogs": "Vollständige Logs anzeigen",
-                    "checkProcess": "Cardano-Node Prozess überprüfen"
-                }
-            },
-            "tips": {
-                "sectionTitle": "Zusätzliche Tipps",
-                "sectionSubtitle": "Nützliche Befehle und Wartungstipps für die Cardano-Node",
-                "sync": {
-                    "title": "Synchronisationsüberwachung"
-                },
-                "maintenance": {
-                    "title": "Service-Verwaltung"
-                },
-                "troubleshooting": {
-                    "title": "Fehlerbehebung"
-                }
-            },
-            "resources": {
-                "sectionTitle": "Nützliche Ressourcen",
-                "sectionSubtitle": "Weiterführende Links und Dokumentation für die Cardano-Node",
-                "nixDownload": {
-                    "title": "NIX Download",
-                    "description": "Offizielle NIX-Paketmanager Website mit Installationsanleitungen"
-                },
-                "cardanoInstall": {
-                    "title": "Cardano Installation Guide",
-                    "description": "Offizielle Cardano-Node Installationsdokumentation"
-                },
-                "cardanoRunning": {
-                    "title": "Running a Node",
-                    "description": "Offizielle Anleitung zum Betrieb einer Cardano-Node"
-                }
-            },
-            "completion": {
-                "title": "Installation abgeschlossen!",
-                "message": "Ihre Cardano-Node ist erfolgreich installiert und läuft als Systemd-Service. Die Blockchain-Synchronisation läuft im Hintergrund und kann 24-48 Stunden dauern."
-            }
-        },
-        "cardanoDbSyncSetup": {
-            "title": "Linux - Cardano DB Sync Installation",
-            "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration.",
-            "notes": {
-                "title": "Wichtige Hinweise",
-                "prerequisite": {
-                    "title": "Cardano-Node erforderlich",
-                    "description": "Eine funktionierende Cardano-Node muss bereits installiert und synchronisiert sein"
-                },
-                "databaseSecurity": {
-                    "title": "Datenbank-Sicherheit",
-                    "description": "Verwenden Sie sichere Passwörter und beschränken Sie den Datenbankzugriff"
-                },
-                "syncTime": {
-                    "title": "Synchronisationsdauer",
-                    "description": "Erste Synchronisation kann mehrere Tage dauern je nach Hardware"
-                },
-                "diskSpace": {
-                    "title": "Speicherplatz",
-                    "description": "Mindestens 200GB freier Speicherplatz für die PostgreSQL-Datenbank"
-                },
-                "cardanoNode": {
-                    "title": "Hardware-Anforderungen",
-                    "description": "Mindestens 16GB RAM für optimale Performance empfohlen"
-                }
-            },
-            "steps": {
-                "title": "Installationsschritte",
-                "postgresql": {
-                    "title": "PostgreSQL installieren",
-                    "description": "Installation und Konfiguration der PostgreSQL-Datenbank für Cardano DB Sync."
-                },
-                "database": {
-                    "title": "Datenbank einrichten",
-                    "description": "Erstellung der Datenbank und des Benutzers für Cardano DB Sync."
-                },
-                "cloneInstall": {
-                    "title": "DB Sync klonen und installieren",
-                    "description": "Klonen des Cardano DB Sync Repositories und Installation mit NIX."
-                },
-                "pgpass": {
-                    "title": "Passwort-Datei erstellen",
-                    "description": "Erstellung der .pgpass-Datei für automatische Datenbank-Authentifizierung."
-                },
-                "symlink": {
-                    "title": "Symbolische Links erstellen",
-                    "description": "Erstellen symbolischer Links für die Cardano DB Sync Binärdateien."
-                },
-                "service": {
-                    "title": "Systemd Service konfigurieren",
-                    "description": "Erstellung und Aktivierung des Systemd-Services für Cardano DB Sync."
-                },
-                "monitoring": {
-                    "title": "Service überwachen",
-                    "description": "Überwachung des Services und der Datenbank-Synchronisation."
-                }
-            },
-            "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Cardano DB Sync Installation",
-            "commands": {
-                "postgresql": {
-                    "install": "PostgreSQL installieren",
-                    "enable": "PostgreSQL aktivieren",
-                    "start": "PostgreSQL starten"
-                },
-                "database": {
-                    "connect": "Als postgres-Benutzer verbinden",
-                    "createUser": "Datenbankbenutzer erstellen",
-                    "passwordNote": "Sichere Passwort wählen und merken",
-                    "createDatabase": "Datenbank erstellen",
-                    "grantPrivileges": "Berechtigungen gewähren",
-                    "quit": "PostgreSQL-Konsole verlassen"
-                },
-                "clone": {
-                    "switchUser": "Zu cardano-Benutzer wechseln",
-                    "clone": "Cardano DB Sync Repository klonen",
-                    "listFiles": "Repository-Inhalte anzeigen",
-                    "changeDir": "In Repository-Verzeichnis wechseln"
-                },
-                "install": {
-                    "listTags": "Verfügbare Tags anzeigen",
-                    "checkout": "Neueste stabile Version auschecken",
-                    "nixInstall": "DB Sync mit NIX installieren",
-                    "nixNote": "Installation kann 30-60 Minuten dauern",
-                    "checkVersion": "Installation überprüfen",
-                    "listProfiles": "NIX Profile anzeigen"
-                },
-                "pgpass": {
-                    "chmod": "Dateiberechtigungen setzen",
-                    "exit": "Benutzer-Session beenden"
-                },
-                "symlink": {
-                    "create": "Symbolischen Link erstellen",
-                    "verify": "Link überprüfen"
-                },
-                "service": {
-                    "reload": "Systemd-Daemon neu laden",
-                    "enable": "Service aktivieren",
-                    "start": "Service starten"
-                },
-                "monitoring": {
-                    "status": "Service-Status prüfen",
-                    "logs": "Service-Logs anzeigen"
-                }
-            },
-            "tips": {
-                "sectionTitle": "Hilfreiche Tipps",
-                "sectionSubtitle": "Nützliche Kommandos und Hinweise für die Verwaltung von Cardano DB Sync",
-                "syncStatus": {
-                    "title": "Synchronisationsstatus",
-                    "checkMeta": "Datenbank-Metadaten für Sync-Status prüfen"
-                },
-                "troubleshooting": {
-                    "title": "Fehlerbehebung",
-                    "restart": "Service bei Problemen neu starten"
-                },
-                "diskSpace": {
-                    "title": "Speicherplatz",
-                    "check": "Verfügbaren Speicherplatz regelmäßig überwachen"
-                }
-            },
-            "resources": {
-                "sectionTitle": "Nützliche Ressourcen",
-                "sectionSubtitle": "Zusätzliche Dokumentation und Tools für Cardano DB Sync",
-                "github": {
-                    "title": "Cardano DB Sync GitHub",
-                    "description": "Offizielles Repository mit Dokumentation und Updates"
-                },
-                "postgresql": {
-                    "title": "PostgreSQL Dokumentation",
-                    "description": "Umfassende Dokumentation für PostgreSQL-Administration"
-                },
-                "cardanoDocs": {
-                    "title": "Cardano Developer Portal",
-                    "description": "Entwickler-Ressourcen und API-Dokumentation"
-                }
-            },
-            "completion": {
-                "title": "Installation Abgeschlossen",
-                "message": "Cardano DB Sync ist jetzt erfolgreich installiert und läuft. Die Synchronisation mit der Blockchain wird automatisch fortgesetzt und die Datenbank wird gefüllt."
-            }
-        }
-    },
-    "contact": {
-        "title": "Kontakt",
-        "subtitle": "Haben Sie Fragen oder Feedback? Ich bin hier, um zu helfen. Senden Sie mir eine Nachricht.",
-        "methods": {
-            "title": "Kontaktmöglichkeiten"
-        },
-        "form": {
-            "title": "Nachricht senden",
-            "description": "Füllen Sie das untenstehende Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.",
-            "name": "Name",
-            "namePlaceholder": "Ihr vollständiger Name",
-            "email": "E-Mail",
-            "subject": "Betreff",
-            "subjectPlaceholder": "Worum geht es?",
-            "message": "Nachricht",
-            "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
-            "submit": "Nachricht senden",
-            "sending": "Wird gesendet...",
-            "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
-            "errors": {
-                "nameRequired": "Name ist erforderlich",
-                "nameLength": "Name muss zwischen 2 und 100 Zeichen lang sein",
-                "emailRequired": "E-Mail ist erforderlich",
-                "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-                "subjectRequired": "Betreff ist erforderlich",
-                "subjectLength": "Betreff muss zwischen 5 und 200 Zeichen lang sein",
-                "messageRequired": "Nachricht ist erforderlich",
-                "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein",
-                "messageMaxLength": "Nachricht darf höchstens 2000 Zeichen lang sein",
-                "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
-                "invalidData": "Ungültige Formulardaten. Bitte überprüfen Sie Ihre Eingaben.",
-                "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
-                "captchaRequired": "Bitte lösen Sie die Sicherheitsüberprüfung.",
-                "captchaFailed": "Sicherheitsüberprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-                "captchaExpired": "Sicherheitsüberprüfung ist abgelaufen. Bitte lösen Sie sie erneut.",
-                "captchaError": "Fehler bei der Sicherheitsüberprüfung. Bitte laden Sie die Seite neu."
-            }
-        }
-    },
-    "footer": {
-        "copyright": "© 2024 Chad Feierstein. Erstellt mit Nuxt 3, Tailwind CSS und Color Mode"
+    "documentation": {
+      "debianInitialSetup": {
+        "title": "Debian 12 - Server Ersteinrichtung",
+        "description": "Schritt-für-Schritt Anleitung für die ersten wichtigen Schritte bei der Einrichtung eines frischen Debian 12 Servers"
+      },
+      "ollamaSetup": {
+        "title": "Linux - Ollama Installation",
+        "description": "Vollständige Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für eine sichere öffentliche API"
+      },
+      "cardanoNodeSetup": {
+        "title": "Linux - Cardano Node Installation",
+        "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung"
+      },
+      "cardanoDbSyncSetup": {
+        "title": "Linux - Cardano DB Sync Installation",
+        "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration"
+      }
     }
+  },
+  "projects": {
+    "myChatBot": {
+      "features": {
+        "aiChat": {
+          "title": "KI-Chat",
+          "description": "Chatte direkt mit verschiedenen KI-Modellen über eine intuitive Benutzeroberfläche"
+        },
+        "conversationManagement": {
+          "title": "Unterhaltungs-Management",
+          "description": "Mehrere Unterhaltungen verwalten wie bei ChatGPT mit automatischer Speicherung"
+        },
+        "modelSelection": {
+          "title": "Modell-Auswahl",
+          "description": "Wähle zwischen verfügbaren Ollama-Modellen für verschiedene Anwendungsfälle"
+        },
+        "localStorage": {
+          "title": "Lokale Speicherung",
+          "description": "Unterhaltungen werden sicher im Browser gespeichert ohne externe Abhängigkeiten"
+        },
+        "modernUI": {
+          "title": "Modernes UI",
+          "description": "Schöne, responsive Benutzeroberfläche mit Tailwind CSS und Dark-Mode"
+        },
+        "streaming": {
+          "title": "Echtzeit-Streaming",
+          "description": "Echtzeitantworten mit Server-Sent Events für flüssige Kommunikation"
+        }
+      },
+      "keyFeatures": {
+        "title": "Hauptfunktionen",
+        "subtitle": "Entdecke die leistungsstarken Features, die Mein Chat Bot zu einer umfassenden KI-Chat-Lösung machen"
+      },
+      "builtWith": {
+        "title": "Entwickelt mit",
+        "subtitle": "Moderne Technologien und Frameworks, die die Anwendung antreiben"
+      },
+      "callToAction": {
+        "title": "Bereit, KI-Chat zu erleben?",
+        "subtitle": "Probiere Mein Chat Bot heute aus und entdecke die Kraft lokaler KI-Modelle mit einer intuitiven Chat-Oberfläche.",
+        "button": "Demo starten"
+      },
+      "technologies": {
+        "nuxt3": {
+          "name": "Frontend Framework",
+          "tech": "Nuxt 3",
+          "description": "Modernes Vue.js-Framework mit SSR-Funktionen, automatischem Routing und verbesserter Leistungsoptimierung"
+        },
+        "vue3": {
+          "name": "Frontend Library",
+          "tech": "Vue 3",
+          "description": "Progressives JavaScript-Framework mit Composition API und reaktiver Datenbindung"
+        },
+        "typescript": {
+          "name": "Typsicherheit",
+          "tech": "TypeScript",
+          "description": "Strenge Typprüfung, verbesserte Codezuverlässigkeit und bessere Entwicklererfahrung"
+        },
+        "pinia": {
+          "name": "State Management",
+          "tech": "Pinia",
+          "description": "Moderner State-Management-Store für Vue mit intuitiver API und TypeScript-Unterstützung"
+        },
+        "tailwind": {
+          "name": "Styling",
+          "tech": "Tailwind CSS",
+          "description": "Utility-First-CSS-Framework mit individueller Konfiguration und responsiven Design-Mustern"
+        },
+        "ollama": {
+          "name": "KI-Integration",
+          "tech": "Ollama",
+          "description": "Lokale KI-Modell-Verwaltungsplattform für nahtlose KI-Integration"
+        },
+        "highlight": {
+          "name": "Code-Highlighting",
+          "tech": "Highlight.js",
+          "description": "Syntax-Highlighting für Code-Blöcke in Chat-Nachrichten mit Unterstützung für mehrere Programmiersprachen"
+        },
+        "marked": {
+          "name": "Markdown-Parsing",
+          "tech": "Marked",
+          "description": "Schneller Markdown-Parser und -Compiler für die Darstellung von formatiertem Text und Code in Chat-Antworten"
+        }
+      }
+    },
+    "myPortfolio": {
+      "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung.",
+      "features": {
+        "multilingual": {
+          "title": "Mehrsprachig",
+          "description": "Unterstützung für Luxemburgisch, Deutsch, Französisch und Englisch mit i18n"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "description": "Perfekte Darstellung auf allen Geräten - Desktop, Tablet und Mobile"
+        },
+        "darkMode": {
+          "title": "Dark Mode",
+          "description": "Elegantes Dark/Light Theme mit automatischer Browser-Erkennung"
+        },
+        "performance": {
+          "title": "Hochleistung",
+          "description": "Optimierte Ladezeiten und SEO mit Nuxt 3 Server-Side Rendering"
+        },
+        "seo": {
+          "title": "SEO Optimiert",
+          "description": "Vollständige Suchmaschinenoptimierung mit Sitemap und Meta-Tags"
+        },
+        "contact": {
+          "title": "Kontaktformular",
+          "description": "Funktionales Kontaktformular mit VeeValidate und Resend Integration"
+        }
+      },
+      "keyFeatures": {
+        "title": "Hauptfunktionen",
+        "subtitle": "Entdecke die Features, die diese Portfolio-Webseite zu einer modernen, professionellen Lösung machen"
+      },
+      "builtWith": {
+        "title": "Entwickelt mit",
+        "subtitle": "Moderne Technologien und Best Practices für eine erstklassige Benutzererfahrung"
+      },
+      "callToAction": {
+        "title": "Interessiert an einer ähnlichen Webseite?",
+        "subtitle": "Entdecke meine Portfolio-Webseite und sehe, wie moderne Webtechnologien eine beeindruckende Online-Präsenz schaffen können.",
+        "button": "Webseite besuchen"
+      },
+      "technologies": {
+        "nuxt3": {
+          "name": "Frontend Framework",
+          "tech": "Nuxt 3",
+          "description": "Fortschrittliches Vue.js-Framework mit Server-Side Rendering, automatischem Code-Splitting und Leistungsoptimierung"
+        },
+        "vue3": {
+          "name": "UI Library",
+          "tech": "Vue 3",
+          "description": "Modernes, reaktives JavaScript-Framework mit Composition API und optimaler Developer Experience"
+        },
+        "typescript": {
+          "name": "Typsicherheit",
+          "tech": "TypeScript",
+          "description": "Statische Typisierung für bessere Code-Qualität, Fehlerprävention und erweiterte IDE-Unterstützung"
+        },
+        "tailwind": {
+          "name": "CSS Framework",
+          "tech": "Tailwind CSS",
+          "description": "Utility-First-CSS-Framework für schnelles, konsistentes Styling und responsive Designs"
+        },
+        "i18n": {
+          "name": "Internationalisierung",
+          "tech": "Nuxt i18n",
+          "description": "Vollständige Mehrsprachigkeitsunterstützung mit automatischem Routing und Locale-Management"
+        },
+        "veevalidate": {
+          "name": "Formularvalidierung",
+          "tech": "VeeValidate",
+          "description": "Leistungsstarke Formularvalidierung mit benutzerfreundlicher Fehlerbehandlung und TypeScript-Support"
+        },
+        "resend": {
+          "name": "E-Mail Service",
+          "tech": "Resend",
+          "description": "Moderne E-Mail-API für zuverlässige Kontaktformular-Übermittlung mit Entwickler-freundlicher Integration"
+        },
+        "iconify": {
+          "name": "Icon System",
+          "tech": "Iconify",
+          "description": "Umfangreiche Icon-Bibliothek mit über 100.000 Icons und optimaler Leistung durch Icon-on-Demand"
+        }
+      }
+    }
+  },
+  "documentations": {
+    "ollamaSetup": {
+      "title": "Linux - Ollama Installation",
+      "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
+      "notes": {
+        "title": "Wichtige Hinweise",
+        "hardware": {
+          "title": "Hardware-Anforderungen",
+          "description": "Mindestens 4GB RAM für kleinere Modelle, 8GB+ für größere Modelle empfohlen"
+        },
+        "diskSpace": {
+          "title": "Speicherplatz",
+          "description": "Modelle benötigen 1-10GB Speicher je nach Größe - planen Sie entsprechend"
+        },
+        "internetConnection": {
+          "title": "Internetverbindung",
+          "description": "Stabile Verbindung für Downloads der KI-Modelle erforderlich"
+        },
+        "modelSizes": {
+          "title": "Modellgrößen beachten",
+          "description": "Größere Modelle bieten bessere Qualität, benötigen aber mehr Ressourcen"
+        },
+        "performance": {
+          "title": "Performance-Überwachung",
+          "description": "Überwachen Sie CPU und RAM-Auslastung während der Modell-Ausführung"
+        }
+      },
+      "steps": {
+        "title": "Installationsschritte",
+        "subtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Ollama-Installation mit sicherer API",
+        "dependencies": {
+          "title": "Abhängigkeiten installieren",
+          "description": "Installation der erforderlichen Systempakete und Abhängigkeiten für Ollama und Apache2."
+        },
+        "ollama": {
+          "title": "Ollama installieren",
+          "description": "Installation von Ollama und erste Konfiguration mit einem Testmodell."
+        },
+        "apache": {
+          "title": "Apache2 konfigurieren",
+          "description": "Installation und Konfiguration von Apache2 als Reverse Proxy für Ollama."
+        },
+        "ssl": {
+          "title": "SSL-Zertifikat einrichten",
+          "description": "Einrichtung von Let's Encrypt SSL-Zertifikaten für sichere HTTPS-Verbindungen."
+        },
+        "authentication": {
+          "title": "HTTP Basic Authentication",
+          "description": "Konfiguration der HTTP Basic Authentication für sicheren API-Zugriff."
+        },
+        "virtualhost": {
+          "title": "Virtual Host aktivieren",
+          "description": "Aktivierung des Virtual Hosts und Neustart der Apache-Services."
+        },
+        "testing": {
+          "title": "Installation testen",
+          "description": "Überprüfung der Installation und Test der API-Funktionalität."
+        }
+      },
+      "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Ollama-Installation mit sicherer API",
+      "commands": {
+        "dependencies": {
+          "updateAgain": "Paketlisten erneut aktualisieren",
+          "installBasic": "Grundlegende Pakete installieren"
+        },
+        "ollama": {
+          "install": "Ollama herunterladen und installieren",
+          "testModel": "Kleines Testmodell herunterladen und testen",
+          "reexec": "Systemd-Manager neu laden",
+          "reload": "Ollama-Service neu laden",
+          "restart": "Ollama-Service neu starten",
+          "checkPort": "Überprüfen, ob Ollama auf Port 11434 lauscht"
+        },
+        "apache": {
+          "install": "Apache2 und SSL-Module installieren",
+          "enableModules": "Erforderliche Apache-Module aktivieren",
+          "restart": "Apache2 neu starten"
+        },
+        "ssl": {
+          "installCertbot": "Certbot für Let's Encrypt installieren",
+          "getCertificate": "SSL-Zertifikat für Domain anfordern"
+        },
+        "authentication": {
+          "createDirectory": "Verzeichnis für Auth-Dateien erstellen",
+          "createUser": "Benutzer mit Passwort für HTTP Basic Auth erstellen",
+          "passwordNote": "Geben Sie ein sicheres Passwort ein, wenn Sie dazu aufgefordert werden"
+        },
+        "virtualhost": {
+          "enableSite": "Neue Site-Konfiguration aktivieren",
+          "disableDefault": "Standard Apache-Site deaktivieren",
+          "disableDefaultSSL": "Standard SSL-Site deaktivieren",
+          "reloadApache": "Apache-Konfiguration neu laden"
+        },
+        "testing": {
+          "testApi": "API-Endpunkt mit curl testen",
+          "testNote": "Verwenden Sie Ihren konfigurierten Benutzernamen und Ihr Passwort"
+        },
+        "troubleshooting": {
+          "checkPort": "Überprüfen, welcher Service auf Port 11434 läuft",
+          "checkStatus": "Ollama-Service-Status überprüfen",
+          "checkLogs": "Ollama-Service-Logs anzeigen",
+          "testConfig": "Apache-Konfiguration testen",
+          "checkApache": "Apache-Service-Status überprüfen",
+          "checkApacheLogs": "Apache-Error-Logs anzeigen",
+          "listCertificates": "Alle Certbot-Zertifikate auflisten",
+          "testRenewal": "Zertifikat-Erneuerung testen",
+          "testSSL": "SSL-Verbindung mit OpenSSL testen"
+        }
+      },
+      "troubleshooting": {
+        "title": "Fehlerbehebung",
+        "subtitle": "Häufige Probleme und ihre Lösungen bei der Ollama-Installation",
+        "ollamaIssues": {
+          "title": "Ollama-Probleme"
+        },
+        "apacheIssues": {
+          "title": "Apache-Probleme"
+        },
+        "sslIssues": {
+          "title": "SSL-Probleme"
+        }
+      },
+      "completion": {
+        "title": "Installation abgeschlossen!",
+        "description": "Ihr Ollama-Server ist jetzt vollständig konfiguriert und über HTTPS mit Basic Authentication gesichert. Sie können jetzt sicher auf die API zugreifen."
+      }
+    },
+    "debianInitialSetup": {
+      "title": "Debian 12 - Server Ersteinrichtung",
+      "description": "Eine umfassende Schritt-für-Schritt Anleitung für die Ersteinrichtung eines frischen Debian 12 Servers mit den wichtigsten Konfigurationsschritten.",
+      "notes": {
+        "title": "Wichtige Hinweise",
+        "rootAccess": {
+          "title": "Root-Zugriff erforderlich",
+          "description": "Root-Zugriff oder sudo-Berechtigung ist für alle Konfigurationsschritte erforderlich"
+        },
+        "networkConnection": {
+          "title": "Internetverbindung notwendig",
+          "description": "Aktive Internetverbindung wird für Paket-Updates und Downloads benötigt"
+        },
+        "backupImportant": {
+          "title": "Backup erstellen",
+          "description": "Erstellen Sie vor allen wichtigen Änderungen Backups Ihrer kritischen Daten"
+        },
+        "timeRequired": {
+          "title": "Zeitaufwand",
+          "description": "Gesamtzeit: ca. 30-45 Minuten je nach Systemleistung"
+        },
+        "securityConsiderations": {
+          "title": "Sicherheitsaspekte",
+          "description": "Beachten Sie alle Sicherheitsaspekte bei der Server-Konfiguration"
+        },
+        "documentChanges": {
+          "title": "Änderungen dokumentieren",
+          "description": "Dokumentieren Sie alle vorgenommenen Änderungen für spätere Referenz"
+        }
+      },
+      "steps": {
+        "title": "Einrichtungsschritte",
+        "subtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine optimale Server-Konfiguration",
+        "language": {
+          "title": "Sprache und Locale konfigurieren",
+          "description": "Konfiguration der Systemsprache und Locale-Einstellungen für eine korrekte Zeichendarstellung."
+        },
+        "timezone": {
+          "title": "Zeitzone einstellen",
+          "description": "Einstellung der korrekten Zeitzone für genaue Zeit- und Datumsangaben."
+        },
+        "sources": {
+          "title": "Paketquellen aktualisieren",
+          "description": "Aktualisierung der APT-Paketquellen und des Systems auf den neuesten Stand."
+        },
+        "hostname": {
+          "title": "Hostname konfigurieren",
+          "description": "Festlegung eines eindeutigen Hostnamens für die Serveridentifikation im Netzwerk."
+        },
+        "motd": {
+          "title": "MOTD bereinigen",
+          "description": "Entfernung der Standard-Willkommensnachricht für eine saubere Anmeldung."
+        },
+        "hardware": {
+          "title": "Hardware-Informationen anzeigen",
+          "description": "Überprüfung und Anzeige der verfügbaren Hardware-Ressourcen des Servers."
+        },
+        "verification": {
+          "title": "System-Verifikation",
+          "description": "Abschließende Überprüfung aller Konfigurationen und des Systemstatus."
+        }
+      },
+      "commands": {
+        "language": {
+          "listLocales": "Verfügbare Locales auflisten",
+          "generateLocale": "UTF-8 Locale generieren",
+          "updateLocale": "System-Locale aktualisieren",
+          "checkLocale": "Aktuelle Locale-Konfiguration überprüfen",
+          "restartNote": "Ein Neustart kann erforderlich sein, um die Änderungen vollständig zu übernehmen"
+        },
+        "timezone": {
+          "checkDate": "Aktuelles Datum und Uhrzeit anzeigen",
+          "checkTimezone": "Zeitzone-Konfiguration überprüfen",
+          "listTimezones": "Alle verfügbaren Zeitzonen auflisten",
+          "setTimezone": "Zeitzone auf Europa/Luxemburg setzen",
+          "verifyTimezone": "Neue Zeitzone-Konfiguration bestätigen"
+        },
+        "sources": {
+          "updatePackages": "Paketlisten aktualisieren",
+          "upgradeSystem": "System auf neuesten Stand bringen",
+          "autoremove": "Nicht mehr benötigte Pakete entfernen",
+          "autoclean": "Paket-Cache bereinigen",
+          "verifySources": "Haupt-Paketquellen anzeigen",
+          "checkAdditionalSources": "Zusätzliche Paketquellen überprüfen",
+          "wikiReference": "Weitere Informationen finden Sie im Debian Wiki zu APT-Konfiguration"
+        },
+        "hostname": {
+          "editCloudConfig": "Cloud-Init Konfiguration bearbeiten (falls vorhanden)",
+          "setHostname": "Neuen Hostnamen setzen",
+          "verifyHostname": "Hostnamen-Konfiguration überprüfen",
+          "reboot": "System für vollständige Anwendung neu starten",
+          "virtualizationNote": "Nur bei virtualisierten Umgebungen mit cloud-init erforderlich"
+        },
+        "motd": {
+          "clearMotd": "Standard MOTD-Datei leeren"
+        },
+        "hardware": {
+          "installInxi": "Hardware-Informationstool installieren",
+          "showHardwareInfo": "Vollständige Hardware-Informationen anzeigen",
+          "showCpuInfo": "CPU-Informationen anzeigen",
+          "showMemoryInfo": "Speicher-Informationen anzeigen",
+          "showDiskInfo": "Festplatten-Informationen anzeigen"
+        },
+        "verification": {
+          "systemInfo": "System-Versionsinformationen anzeigen",
+          "kernelInfo": "Kernel-Informationen anzeigen",
+          "systemStatus": "Systemd-Status überprüfen",
+          "checkUpdates": "Verfügbare Updates überprüfen"
+        },
+        "tips": {
+          "installFirewall": "UFW Firewall installieren",
+          "enableFirewall": "Firewall aktivieren",
+          "installFail2ban": "Fail2Ban für erweiterte Sicherheit installieren",
+          "installEssentials": "Wichtige System-Tools installieren",
+          "installBuildTools": "Build-Tools für Kompilierung installieren",
+          "installAutoUpdates": "Automatische Updates installieren",
+          "configureAutoUpdates": "Automatische Updates konfigurieren"
+        }
+      },
+      "tips": {
+        "sectionTitle": "Zusätzliche Empfehlungen",
+        "sectionSubtitle": "Optional: Weitere nützliche Konfigurationen für erweiterte Sicherheit und Funktionalität",
+        "security": {
+          "title": "Sicherheitsmaßnahmen"
+        },
+        "essentials": {
+          "title": "Essential Tools"
+        },
+        "updates": {
+          "title": "Automatische Updates"
+        }
+      },
+      "completion": {
+        "title": "Einrichtung abgeschlossen!",
+        "message": "Ihr Debian 12 Server ist jetzt grundlegend konfiguriert und einsatzbereit. Vergessen Sie nicht, weitere sicherheitsrelevante Konfigurationen entsprechend Ihren Anforderungen vorzunehmen."
+      }
+    },
+    "cardanoNodeSetup": {
+      "title": "Linux - Cardano Node Installation",
+      "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung.",
+      "notes": {
+        "title": "Wichtige Hinweise",
+        "nodeRequirements": {
+          "title": "Hardware-Anforderungen",
+          "description": "Mindestens 8GB RAM und 100GB Speicherplatz für optimale Node-Performance"
+        },
+        "nixDaemon": {
+          "title": "NIX-Daemon erforderlich",
+          "description": "Der NIX-Daemon muss korrekt installiert und gestartet sein"
+        },
+        "diskSpace": {
+          "title": "Speicherplatz",
+          "description": "Mindestens 50GB freier Speicherplatz für die Blockchain-Daten erforderlich"
+        },
+        "syncTime": {
+          "title": "Synchronisationszeit",
+          "description": "Erste Synchronisation kann 24-48 Stunden dauern je nach Internetverbindung"
+        },
+        "networkStability": {
+          "title": "Netzwerkstabilität",
+          "description": "Stabile Internetverbindung für kontinuierliche Synchronisation notwendig"
+        }
+      },
+      "steps": {
+        "title": "Installationsschritte",
+        "dependencies": {
+          "title": "Systemabhängigkeiten installieren",
+          "description": "Installation der erforderlichen Systempakete für die NIX-Paketmanager Installation."
+        },
+        "nix": {
+          "title": "NIX Paketmanager installieren",
+          "description": "Installation des NIX-Paketmanagers für die Verwaltung der Cardano-Node Abhängigkeiten."
+        },
+        "nixconfig": {
+          "title": "NIX für Cardano konfigurieren",
+          "description": "Konfiguration des NIX-Paketmanagers mit den offiziellen IOHK-Binär-Caches für optimierte Downloads."
+        },
+        "user": {
+          "title": "Cardano-Benutzer erstellen",
+          "description": "Erstellung eines dedizierten Benutzers für den Cardano-Node-Betrieb."
+        },
+        "install": {
+          "title": "Cardano-Node installieren",
+          "description": "Installation der Cardano-Node und CLI-Tools über das NIX-System."
+        },
+        "symlinks": {
+          "title": "System-Symlinks erstellen",
+          "description": "Erstellung von Symlinks für systemweiten Zugriff auf die Cardano-Tools."
+        },
+        "config": {
+          "title": "Node-Konfiguration herunterladen",
+          "description": "Download der offiziellen Cardano-Netzwerkkonfigurationsdateien."
+        },
+        "service": {
+          "title": "Systemd-Service einrichten",
+          "description": "Konfiguration der Cardano-Node als Systemd-Service für automatischen Start."
+        },
+        "monitor": {
+          "title": "Node-Überwachung einrichten",
+          "description": "Überwachung der Node-Logs und des Synchronisationsprozesses."
+        }
+      },
+      "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Cardano-Node Installation",
+      "commands": {
+        "dependencies": {
+          "installDeps": "Systemabhängigkeiten installieren"
+        },
+        "nix": {
+          "rebootNote": "Ein Neustart ist nach der NIX-Installation erforderlich",
+          "install": "NIX-Paketmanager installieren",
+          "reboot": "System neu starten",
+          "verify": "NIX-Installation verifizieren"
+        },
+        "nixconfig": {
+          "restart": "NIX-Daemon neu starten"
+        },
+        "user": {
+          "createUser": "Cardano-Benutzer erstellen"
+        },
+        "install": {
+          "switchUser": "Zu Cardano-Benutzer wechseln",
+          "clone": "Cardano-Node Repository klonen",
+          "changeDir": "In Cardano-Node Verzeichnis wechseln",
+          "listTags": "Verfügbare Versionen anzeigen",
+          "checkout": "Aktuelle stabile Version auschecken",
+          "profileInstall": "Cardano-Node und CLI in NIX-Profil installieren",
+          "profileNote": "Dies kann 30-60 Minuten dauern, da alle Abhängigkeiten kompiliert werden",
+          "profileList": "Installierte Profile auflisten",
+          "checkNode": "Cardano-Node Version überprüfen",
+          "checkCli": "Cardano-CLI Version überprüfen",
+          "exitUser": "Zurück zu Root-Benutzer wechseln"
+        },
+        "symlinks": {
+          "profileNote": "Passen Sie den Pfad entsprechend Ihrem NIX-Profil an",
+          "linkNode": "Symlink für Cardano-Node erstellen",
+          "linkCli": "Symlink für Cardano-CLI erstellen",
+          "verifyLinks": "Symlinks verifizieren",
+          "testNode": "Cardano-Node systemweit testen",
+          "testCli": "Cardano-CLI systemweit testen"
+        },
+        "config": {
+          "switchUser": "Zu Cardano-Benutzer wechseln",
+          "createDirs": "Konfigurationsverzeichnisse erstellen",
+          "changeDir": "In Konfigurationsverzeichnis wechseln",
+          "downloadConfigs": "Offizielle Konfigurationsdateien herunterladen",
+          "listConfigs": "Heruntergeladene Konfigurationsdateien auflisten",
+          "checkConfig": "Genesis-Konfiguration überprüfen",
+          "exitUser": "Zurück zu Root-Benutzer wechseln"
+        },
+        "service": {
+          "reload": "Systemd-Manager neu laden",
+          "enable": "Cardano-Node Service aktivieren",
+          "start": "Cardano-Node Service starten"
+        },
+        "monitor": {
+          "syncNote": "Die initiale Blockchain-Synchronisation kann 24-48 Stunden dauern",
+          "logs": "Service-Logs verfolgen",
+          "syncProgress": "Synchronisationsfortschritt überprüfen"
+        },
+        "tips": {
+          "syncStatus": "Synchronisationsstatus überprüfen",
+          "syncSize": "Aktuelle Blockchain-Größe anzeigen",
+          "restart": "Cardano-Node Service neu starten",
+          "stop": "Cardano-Node Service stoppen",
+          "fullLogs": "Vollständige Logs anzeigen",
+          "checkProcess": "Cardano-Node Prozess überprüfen"
+        }
+      },
+      "tips": {
+        "sectionTitle": "Zusätzliche Tipps",
+        "sectionSubtitle": "Nützliche Befehle und Wartungstipps für die Cardano-Node",
+        "sync": {
+          "title": "Synchronisationsüberwachung"
+        },
+        "maintenance": {
+          "title": "Service-Verwaltung"
+        },
+        "troubleshooting": {
+          "title": "Fehlerbehebung"
+        }
+      },
+      "resources": {
+        "sectionTitle": "Nützliche Ressourcen",
+        "sectionSubtitle": "Weiterführende Links und Dokumentation für die Cardano-Node",
+        "nixDownload": {
+          "title": "NIX Download",
+          "description": "Offizielle NIX-Paketmanager Website mit Installationsanleitungen"
+        },
+        "cardanoInstall": {
+          "title": "Cardano Installation Guide",
+          "description": "Offizielle Cardano-Node Installationsdokumentation"
+        },
+        "cardanoRunning": {
+          "title": "Running a Node",
+          "description": "Offizielle Anleitung zum Betrieb einer Cardano-Node"
+        }
+      },
+      "completion": {
+        "title": "Installation abgeschlossen!",
+        "message": "Ihre Cardano-Node ist erfolgreich installiert und läuft als Systemd-Service. Die Blockchain-Synchronisation läuft im Hintergrund und kann 24-48 Stunden dauern."
+      }
+    },
+    "cardanoDbSyncSetup": {
+      "title": "Linux - Cardano DB Sync Installation",
+      "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration.",
+      "notes": {
+        "title": "Wichtige Hinweise",
+        "prerequisite": {
+          "title": "Cardano-Node erforderlich",
+          "description": "Eine funktionierende Cardano-Node muss bereits installiert und synchronisiert sein"
+        },
+        "databaseSecurity": {
+          "title": "Datenbank-Sicherheit",
+          "description": "Verwenden Sie sichere Passwörter und beschränken Sie den Datenbankzugriff"
+        },
+        "syncTime": {
+          "title": "Synchronisationsdauer",
+          "description": "Erste Synchronisation kann mehrere Tage dauern je nach Hardware"
+        },
+        "diskSpace": {
+          "title": "Speicherplatz",
+          "description": "Mindestens 200GB freier Speicherplatz für die PostgreSQL-Datenbank"
+        },
+        "cardanoNode": {
+          "title": "Hardware-Anforderungen",
+          "description": "Mindestens 16GB RAM für optimale Performance empfohlen"
+        }
+      },
+      "steps": {
+        "title": "Installationsschritte",
+        "postgresql": {
+          "title": "PostgreSQL installieren",
+          "description": "Installation und Konfiguration der PostgreSQL-Datenbank für Cardano DB Sync."
+        },
+        "database": {
+          "title": "Datenbank einrichten",
+          "description": "Erstellung der Datenbank und des Benutzers für Cardano DB Sync."
+        },
+        "cloneInstall": {
+          "title": "DB Sync klonen und installieren",
+          "description": "Klonen des Cardano DB Sync Repositories und Installation mit NIX."
+        },
+        "pgpass": {
+          "title": "Passwort-Datei erstellen",
+          "description": "Erstellung der .pgpass-Datei für automatische Datenbank-Authentifizierung."
+        },
+        "symlink": {
+          "title": "Symbolische Links erstellen",
+          "description": "Erstellen symbolischer Links für die Cardano DB Sync Binärdateien."
+        },
+        "service": {
+          "title": "Systemd Service konfigurieren",
+          "description": "Erstellung und Aktivierung des Systemd-Services für Cardano DB Sync."
+        },
+        "monitoring": {
+          "title": "Service überwachen",
+          "description": "Überwachung des Services und der Datenbank-Synchronisation."
+        }
+      },
+      "stepsSubtitle": "Folgen Sie diesen Schritten in der angegebenen Reihenfolge für eine vollständige Cardano DB Sync Installation",
+      "commands": {
+        "postgresql": {
+          "install": "PostgreSQL installieren",
+          "enable": "PostgreSQL aktivieren",
+          "start": "PostgreSQL starten"
+        },
+        "database": {
+          "connect": "Als postgres-Benutzer verbinden",
+          "createUser": "Datenbankbenutzer erstellen",
+          "passwordNote": "Sichere Passwort wählen und merken",
+          "createDatabase": "Datenbank erstellen",
+          "grantPrivileges": "Berechtigungen gewähren",
+          "quit": "PostgreSQL-Konsole verlassen"
+        },
+        "clone": {
+          "switchUser": "Zu cardano-Benutzer wechseln",
+          "clone": "Cardano DB Sync Repository klonen",
+          "listFiles": "Repository-Inhalte anzeigen",
+          "changeDir": "In Repository-Verzeichnis wechseln"
+        },
+        "install": {
+          "listTags": "Verfügbare Tags anzeigen",
+          "checkout": "Neueste stabile Version auschecken",
+          "nixInstall": "DB Sync mit NIX installieren",
+          "nixNote": "Installation kann 30-60 Minuten dauern",
+          "checkVersion": "Installation überprüfen",
+          "listProfiles": "NIX Profile anzeigen"
+        },
+        "pgpass": {
+          "chmod": "Dateiberechtigungen setzen",
+          "exit": "Benutzer-Session beenden"
+        },
+        "symlink": {
+          "create": "Symbolischen Link erstellen",
+          "verify": "Link überprüfen"
+        },
+        "service": {
+          "reload": "Systemd-Daemon neu laden",
+          "enable": "Service aktivieren",
+          "start": "Service starten"
+        },
+        "monitoring": {
+          "status": "Service-Status prüfen",
+          "logs": "Service-Logs anzeigen"
+        }
+      },
+      "tips": {
+        "sectionTitle": "Hilfreiche Tipps",
+        "sectionSubtitle": "Nützliche Kommandos und Hinweise für die Verwaltung von Cardano DB Sync",
+        "syncStatus": {
+          "title": "Synchronisationsstatus",
+          "checkMeta": "Datenbank-Metadaten für Sync-Status prüfen"
+        },
+        "troubleshooting": {
+          "title": "Fehlerbehebung",
+          "restart": "Service bei Problemen neu starten"
+        },
+        "diskSpace": {
+          "title": "Speicherplatz",
+          "check": "Verfügbaren Speicherplatz regelmäßig überwachen"
+        }
+      },
+      "resources": {
+        "sectionTitle": "Nützliche Ressourcen",
+        "sectionSubtitle": "Zusätzliche Dokumentation und Tools für Cardano DB Sync",
+        "github": {
+          "title": "Cardano DB Sync GitHub",
+          "description": "Offizielles Repository mit Dokumentation und Updates"
+        },
+        "postgresql": {
+          "title": "PostgreSQL Dokumentation",
+          "description": "Umfassende Dokumentation für PostgreSQL-Administration"
+        },
+        "cardanoDocs": {
+          "title": "Cardano Developer Portal",
+          "description": "Entwickler-Ressourcen und API-Dokumentation"
+        }
+      },
+      "completion": {
+        "title": "Installation Abgeschlossen",
+        "message": "Cardano DB Sync ist jetzt erfolgreich installiert und läuft. Die Synchronisation mit der Blockchain wird automatisch fortgesetzt und die Datenbank wird gefüllt."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie Fragen oder Feedback? Ich bin hier, um zu helfen. Senden Sie mir eine Nachricht.",
+    "methods": {
+      "title": "Kontaktmöglichkeiten"
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "description": "Füllen Sie das untenstehende Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.",
+      "name": "Name",
+      "namePlaceholder": "Ihr vollständiger Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Worum geht es?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
+      "errors": {
+        "nameRequired": "Name ist erforderlich",
+        "nameLength": "Name muss zwischen 2 und 100 Zeichen lang sein",
+        "emailRequired": "E-Mail ist erforderlich",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "subjectRequired": "Betreff ist erforderlich",
+        "subjectLength": "Betreff muss zwischen 5 und 200 Zeichen lang sein",
+        "messageRequired": "Nachricht ist erforderlich",
+        "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein",
+        "messageMaxLength": "Nachricht darf höchstens 2000 Zeichen lang sein",
+        "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
+        "invalidData": "Ungültige Formulardaten. Bitte überprüfen Sie Ihre Eingaben.",
+        "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+        "captchaRequired": "Bitte lösen Sie die Sicherheitsüberprüfung.",
+        "captchaFailed": "Sicherheitsüberprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+        "captchaExpired": "Sicherheitsüberprüfung ist abgelaufen. Bitte lösen Sie sie erneut.",
+        "captchaError": "Fehler bei der Sicherheitsüberprüfung. Bitte laden Sie die Seite neu."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Chad Feierstein. Erstellt mit Nuxt 3, Tailwind CSS und Color Mode"
+  }
 }

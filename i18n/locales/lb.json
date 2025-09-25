@@ -1,1124 +1,1124 @@
 {
-    "nav": {
-        "home": "Doheem",
-        "about": "Iwwer mech",
-        "showcase": "Showcase",
-        "contact": "Kontakt"
+  "nav": {
+    "home": "Doheem",
+    "about": "Iwwer mech",
+    "showcase": "Showcase",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "greeting": "Moien, ech sinn",
+    "roles": {
+      "fullstack": "Full-Stack Developer",
+      "serveradmin": "Server Administrator",
+      "solver": "Problem Solver"
     },
-    "home": {
-        "greeting": "Moien, ech sinn",
-        "roles": {
-            "fullstack": "Full-Stack Developer",
-            "serveradmin": "Server Administrator",
-            "solver": "Problem Solver"
-        },
-        "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten – a léiert mech dobäi besser kennen.",
-        "cta": {
-            "primary": "Projeten entdecken",
-            "secondary": "Kontakt ophuelen"
-        },
-        "stats": {
-            "experience": "Joer Erfahrung",
-            "experienceDesc": "Professionell IT-Erfahrung",
-            "certifications": "Zertifizéierungen",
-            "certificationsDesc": "Professionell Zertifikater",
-            "languages": "Sproochen",
-            "languagesDesc": "Geschwate Sproochen",
-            "projects": "Projeten",
-            "projectsDesc": "Ofgeschlossen Projeten"
-        },
-        "about": {
-            "title": "Léiert mech kennen",
-            "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
-            "cta": "Méi iwwer mech erfahren",
-            "role": "Full-Stack Developer & IT-Techniker",
-            "story": "Ech sinn de Chad Feierstein, e leidenschaftlechen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Mat Focus op Cloud Computing a modern Webtechnologien kreéieren ech innovativ digital Léisungen, déi e Ënnerscheed maachen.",
-            "location": "Rëmeleng, Lëtzebuerg",
-            "experience": "Techniker an der Informatik",
-            "education": "BTS Cloud Computing",
-            "passion": "Technologie & Innovation"
-        },
-        "services": {
-            "title": "Wat ech ubidden",
-            "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
-            "webdev": {
-                "title": "Web Development",
-                "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
-                "features": {
-                    "spa": "Single Page Applications",
-                    "ssr": "Server-Side Rendering",
-                    "pwa": "Progressive Web Apps"
-                }
-            },
-            "cloud": {
-                "title": "Cloud Computing",
-                "description": "Skaléierbar Cloud-Léisungen mat AWS, Google Cloud an Azure fir modern Applikatiounen.",
-                "features": {
-                    "aws": "Amazon Web Services",
-                    "azure": "Microsoft Azure",
-                    "gcp": "Google Cloud Platform"
-                }
-            },
-            "itadmin": {
-                "title": "IT-Administratioun",
-                "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur.",
-                "features": {
-                    "linux": "Linux System-Administratioun",
-                    "networks": "Netzwierks-Konfiguratioun",
-                    "security": "Sécherheeds-Implementéierung"
-                }
-            }
-        },
-        "featured": {
-            "title": "Featured Projet",
-            "subtitle": "Entdeckt meng lescht Innovatioun - wou spëtzt KI op intuitiv Design treffen.",
-            "projectTitle": "KI Chat Bot",
-            "projectSubtitle": "Meng Lescht Innovatioun",
-            "badge": "Featured",
-            "description": "En erweiderten KI Chat Bot, deen intelligent Gespréicher féiert an komplex Ufrogen behandelt. Mat spëtzester KI-Technologie an engem elegant Interface bitt et eng nahtlos Benotzer-Erfahrung.",
-            "features": {
-                "ai": {
-                    "title": "Intelligent KI",
-                    "description": "Erweidert Sprooch-Veraarbechtung a Kontext-Verständnis"
-                },
-                "realtime": {
-                    "title": "Echtzäit Chat",
-                    "description": "Soforteg Äntwerten a flësseg Konversatiounen"
-                },
-                "ui": {
-                    "title": "Modern UI",
-                    "description": "Intuitiv Benotzer-Interface mat Donkel/Hell Modus"
-                },
-                "security": {
-                    "title": "Sécher & Privat",
-                    "description": "Dateschutz a sécher Kommunikatioun"
-                }
-            },
-            "techStack": "Benotzt Technologien",
-            "cta": {
-                "view": "Detailer kucken",
-                "demo": "Live Demo testen"
-            }
-        }
+    "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten – a léiert mech dobäi besser kennen.",
+    "cta": {
+      "primary": "Projeten entdecken",
+      "secondary": "Kontakt ophuelen"
+    },
+    "stats": {
+      "experience": "Joer Erfahrung",
+      "experienceDesc": "Professionell IT-Erfahrung",
+      "certifications": "Zertifizéierungen",
+      "certificationsDesc": "Professionell Zertifikater",
+      "languages": "Sproochen",
+      "languagesDesc": "Geschwate Sproochen",
+      "projects": "Projeten",
+      "projectsDesc": "Ofgeschlossen Projeten"
     },
     "about": {
-        "hero": {
-            "title": "Iwwer mech"
-        },
-        "profile": {
-            "nationality": "Lëtzebuergesch",
-            "location": "Rëmeleng, Lëtzebuerg",
-            "status": "Single",
-            "driving": "Führerschäin Kategorie B",
-            "role": "Full-Stack Developer & IT-Techniker",
-            "currentWork": "Aktuell beschäftegt bei Rotyre SARL",
-            "labels": {
-                "location": "Standort",
-                "nationality": "Nationalitéit",
-                "age": "Alter",
-                "status": "Status",
-                "license": "Führerschäin",
-                "years": "Joer al"
-            }
-        },
-        "story": {
-            "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
-        },
-        "details": {
-            "title": "Perséinlech Detailer"
-        },
-        "interests": {
-            "title": "Interessen & Hobbyen"
-        },
-        "passion": {
-            "title": "Passioun fir Technologie",
-            "description": "Meng Passioun gëllt der Webentwicklung a Serververwaltung. Mat Begeeschterung entwéckelen ech maßgeschneiderte Webanwendungen an implementéieren effizient Serverlëisungen."
-        },
-        "hobbies": {
-            "title": "Hobbyen an Interessen",
-            "description": "Niewent der digitaler Welt genéissen ech wäertvollt Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelméisseg Treffen mat Frënn an gelegentlech Gaming-Sessiounen suergen fir de perfekten Ausgleich zu mengem technologie-geprägte Alldag."
-        },
-        "languages": {
-            "title": "Sproochen",
-            "levels": {
-                "A1": "Grondkenntnisser",
-                "A2": "Grondleeënd Kenntnisser",
-                "B1": "Mëttelstuuf",
-                "B2": "Gutt Mëttelstuuf",
-                "C1": "Fortgeschratt",
-                "C2": "Bal muttersprochlech"
-            }
-        },
-        "education": {
-            "title": "Bildung",
-            "viewMore": "Méi erfahren",
-            "bts": {
-                "degree": "Héijen techneschen Ofschloss (BTS)",
-                "field": "Fachrichtung: Cloud Computing",
-                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
-                "grade": "Diplom (mat Bewäertung: Gutt)"
-            },
-            "dap": {
-                "degree": "Techniker an der Informatik",
-                "field": "IT-Techniker (DAP)",
-                "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
-                "grade": "Diplom (mat Bewäertung: Gutt)"
-            }
-        },
-        "work": {
-            "title": "Beruffserfahrung",
-            "mainTasks": "Haaptaufgaben:",
-            "moreTasks": "weider Aufgaben"
-        },
-        "certifications": {
-            "title": "Zertifizéierungen",
-            "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen"
-        },
-        "experiences": {
-            "title": "Besonner Erliefnesser"
-        },
-        "cta": {
-            "title": "Loosst eis zesummenarbechten",
-            "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gär vun Iech héieren a bespriech, wéi ech Iech hëllefen kann.",
-            "button": "Kontakt ophuelen"
-        },
-        "languageNames": {
-            "luxemburgish": "Lëtzebuergesch",
-            "german": "Däitsch",
-            "english": "Englesch",
-            "french": "Franséisch"
-        },
-        "certificationsList": {
-            "cert1": {
-                "title": "Déi allgemeng Eignungsprüfung",
-                "description": "Staatleche Sektor (Verwaltung)"
-            },
-            "cert2": {
-                "title": "Cisco Certified CyberOps Associate",
-                "description": "Cybersecurity Operations"
-            },
-            "cert3": {
-                "title": "Cisco Certified Network Associate 3",
-                "description": "7.0 Enterprise-Netzwierker, Sécherheet an Automatisatioun"
-            },
-            "cert4": {
-                "title": "Cisco Certified Network Associate 2",
-                "description": "7.0 Switching, Routing a Wireless-Grondlagen"
-            },
-            "cert5": {
-                "title": "Cisco Certified Network Associate 1",
-                "description": "7.0 Aféierung an Netzwierker"
-            },
-            "cert6": {
-                "title": "Microsoft Office Specialist 2016",
-                "description": "PowerPoint, Word, Excel, Outlook"
-            }
-        },
-        "timelineItems": {
-            "item1": {
-                "title": "Web-Entwéckler bei Rotyre SARL",
-                "description": "Haaptverantwortlech fir d'Wuertung an d'Weiderentwécklung vun der Websäit 'mullerpneus.lu'. Onbegrenzte Plaatz mat Fokus op Frontend-Entwécklung an Websäit-Optimiséierung.",
-                "company": "Rotyre SARL",
-                "type": "Vollzäit",
-                "task1": "Websäit-Wuertung an -Entwécklung",
-                "task2": "Frontend-Entwécklung an UI/UX-Optimiséierung",
-                "task3": "Leeschtungsoptimiséierung an SEO-Verbesserungen",
-                "task4": "Content-Management an technesch Updates"
-            },
-            "item2": {
-                "title": "IT-Cloud-Ingenieur Praktikum",
-                "description": "12-wöchegt Praktikum bei QPark Consulting mat Fokus op Cloud-Technologien an agil Projet-Methoden. Schaffen op zwou grouss Cloud-Projeten mat AWS an GCP.",
-                "company": "QPark Consulting",
-                "type": "Praktikum",
-                "task1": "Projet-Planung mat agile Methodologien",
-                "task2": "Virtual Maschinn-Konfiguratioun op Google Cloud Platform",
-                "task3": "Websäit-Implementéierung a GCP-VMs",
-                "task4": "Statesch Websäit-Bereetstellung op AWS S3",
-                "task5": "REST API-Integratioun an Daten-Veraarbechtung",
-                "task6": "Cloud-Käschten-Optimiséierung a Best Practices"
-            },
-            "item3": {
-                "title": "IT-Techniker Summerjoob",
-                "description": "8-wöchege Summerposten um Lycée Guillaume Kroll an der IT-Abteilung. Fokus op Netzwierks-Infrastruktur an Telefonsystem-Management.",
-                "company": "Lycée Guillaume Kroll",
-                "type": "Summerjoob",
-                "task1": "Ariichtung a Gestioun vu MIXvoip-Telefonnen",
-                "task2": "Installatioun vun neien Telefonsverbindungen am Server-Raum",
-                "task3": "Patch Panel-Dokumentatioun Updates an Excel",
-                "task4": "Netzwierk-Kabel-Management an -Organisatioun"
-            },
-            "item4": {
-                "title": "IT-Techniker Projet-Ofschloss",
-                "description": "4-wöchege Summerjoob fir e Websäit-Projet ze vollenden, deen am Praktikum ugefaangen huet. Fokus op Backend-Entwécklung an SAML-Integratioun.",
-                "company": "Lycée Guillaume Kroll",
-                "type": "Summerjoob",
-                "task1": "Client-Reuniounen a Projet-Koordinatioun",
-                "task2": "Backend-Programméierung a Modifikatiounen",
-                "task3": "SAML-Authentifizéierungs-Service-Integratioun",
-                "task4": "Frontend-Entwécklung an UI-Upassungen",
-                "task5": "Professionnell Hardware-Entsorgung"
-            },
-            "item5": {
-                "title": "IT-Techniker Haaptpraktikum",
-                "description": "6-wöchegt Praktikum um Lycée Guillaume Kroll mat Fokus op Web-Entwécklung an Datebank-Design. Entwécklung vun enger kompletter Websäit-Léisung.",
-                "company": "Lycée Guillaume Kroll",
-                "type": "Praktikum",
-                "task1": "Client-Reuniounen an Ufuerderungs-Analyse",
-                "task2": "Backend- an Frontend-Entwécklung",
-                "task3": "Konzeptuel Datebank-Modelléierung",
-                "task4": "Logesch Datebank-Modelléierung",
-                "task5": "Datebank-Implementéierung mat richtegen Bezéiungen"
-            },
-            "item6": {
-                "title": "IT-Netzwierkstechniker Praktikum",
-                "description": "6-wöchegt Praktikum bei STEP Syndicat intercommunal zu Péiteng. Aféierung an Netzwierkstechnik an Infrastruktur-Management an enger Kläranlag.",
-                "company": "STEP Syndicat intercommunal",
-                "type": "Praktikum",
-                "task1": "Aféierung an d'Organisatiounsstruktur",
-                "task2": "Léieren vun de Kläranlag-Prozesser",
-                "task3": "Kreatioun vun neien Patch Panel-Pläng",
-                "task4": "Patch-Kabel-Management a -Beschrëftung",
-                "task5": "Praktesch Netzwierkstruktur-Analyse"
-            }
-        },
-        "experiencesList": {
-            "exp1": {
-                "title": "Helicopter-Ronndfluch",
-                "description": "En onvergiesslechen Erliefnis iwwer d'Landschaften vun der dominikanescher Republik"
-            },
-            "exp2": {
-                "title": "Fallschiermsprong iwwer Lëtzebuerg",
-                "description": "Adrenalinstouss aus 4000 Meter Héicht"
-            },
-            "exp3": {
-                "title": "Tomorrowland Belsch 2025",
-                "description": "Dat ultimativt elektronescht Musikfestival-Erliefnis"
-            }
-        }
+      "title": "Léiert mech kennen",
+      "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
+      "cta": "Méi iwwer mech erfahren",
+      "role": "Full-Stack Developer & IT-Techniker",
+      "story": "Ech sinn de Chad Feierstein, e leidenschaftlechen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Mat Focus op Cloud Computing a modern Webtechnologien kreéieren ech innovativ digital Léisungen, déi e Ënnerscheed maachen.",
+      "location": "Rëmeleng, Lëtzebuerg",
+      "experience": "Techniker an der Informatik",
+      "education": "BTS Cloud Computing",
+      "passion": "Technologie & Innovation"
     },
-    "showcase": {
-        "title": "Showcase",
-        "subtitle": "Entdeckt meng Projeten an Dokumentatiounen",
-        "filters": {
-            "all": "All",
-            "projects": "Projeten",
-            "documentation": "Dokumentatiounen"
-        },
-        "search": {
-            "placeholder": "Sichen..."
-        },
-        "labels": {
-            "viewDetails": "Detailer weisen"
-        },
-        "projects": {
-            "myChatBot": {
-                "title": "Mäin Chat Bot",
-                "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
-            },
-            "myPortfolio": {
-                "title": "Meng Portfolio Websäit",
-                "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung."
-            }
-        },
-        "documentation": {
-            "debianInitialSetup": {
-                "title": "Debian 12 - Server Éischtariichtung",
-                "description": "Schrëtt-fir-Schrëtt Uleedung fir déi éischt wichteg Schrëtt beim Ariichten vun engem frësche Debian 12 Server"
-            },
-            "ollamaSetup": {
-                "title": "Linux - Ollama Installatioun",
-                "description": "Vollständeg Uleedung fir d'Installatioun vum Ollama op Debian 12 mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir eng sécher ëffentlech API"
-            },
-            "cardanoNodeSetup": {
-                "title": "Linux - Cardano Node Installatioun",
-                "description": "Vollständeg Uleedung fir d'Installatioun vun enger Cardano-Node op Debian 12 mam NIX-Paketmanager, inklusiv Service-Konfiguratioun an Iwwerwaachung"
-            },
-            "cardanoDbSyncSetup": {
-                "title": "Linux - Cardano DB Sync Installatioun",
-                "description": "Vollständeg Uleedung fir d'Installatioun vum Cardano DB Sync op Debian 12 mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun"
-            }
+    "services": {
+      "title": "Wat ech ubidden",
+      "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
+      "webdev": {
+        "title": "Web Development",
+        "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
+        "features": {
+          "spa": "Single Page Applications",
+          "ssr": "Server-Side Rendering",
+          "pwa": "Progressive Web Apps"
         }
+      },
+      "cloud": {
+        "title": "Cloud Computing",
+        "description": "Skaléierbar Cloud-Léisungen mat AWS, Google Cloud an Azure fir modern Applikatiounen.",
+        "features": {
+          "aws": "Amazon Web Services",
+          "azure": "Microsoft Azure",
+          "gcp": "Google Cloud Platform"
+        }
+      },
+      "itadmin": {
+        "title": "IT-Administratioun",
+        "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur.",
+        "features": {
+          "linux": "Linux System-Administratioun",
+          "networks": "Netzwierks-Konfiguratioun",
+          "security": "Sécherheeds-Implementéierung"
+        }
+      }
+    },
+    "featured": {
+      "title": "Featured Projet",
+      "subtitle": "Entdeckt meng lescht Innovatioun - wou spëtzt KI op intuitiv Design treffen.",
+      "projectTitle": "KI Chat Bot",
+      "projectSubtitle": "Meng Lescht Innovatioun",
+      "badge": "Featured",
+      "description": "En erweiderten KI Chat Bot, deen intelligent Gespréicher féiert an komplex Ufrogen behandelt. Mat spëtzester KI-Technologie an engem elegant Interface bitt et eng nahtlos Benotzer-Erfahrung.",
+      "features": {
+        "ai": {
+          "title": "Intelligent KI",
+          "description": "Erweidert Sprooch-Veraarbechtung a Kontext-Verständnis"
+        },
+        "realtime": {
+          "title": "Echtzäit Chat",
+          "description": "Soforteg Äntwerten a flësseg Konversatiounen"
+        },
+        "ui": {
+          "title": "Modern UI",
+          "description": "Intuitiv Benotzer-Interface mat Donkel/Hell Modus"
+        },
+        "security": {
+          "title": "Sécher & Privat",
+          "description": "Dateschutz a sécher Kommunikatioun"
+        }
+      },
+      "techStack": "Benotzt Technologien",
+      "cta": {
+        "view": "Detailer kucken",
+        "demo": "Live Demo testen"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Iwwer mech"
+    },
+    "profile": {
+      "nationality": "Lëtzebuergesch",
+      "location": "Rëmeleng, Lëtzebuerg",
+      "status": "Single",
+      "driving": "Führerschäin Kategorie B",
+      "role": "Full-Stack Developer & IT-Techniker",
+      "currentWork": "Aktuell beschäftegt bei Rotyre SARL",
+      "labels": {
+        "location": "Standort",
+        "nationality": "Nationalitéit",
+        "age": "Alter",
+        "status": "Status",
+        "license": "Führerschäin",
+        "years": "Joer al"
+      }
+    },
+    "story": {
+      "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
+    },
+    "details": {
+      "title": "Perséinlech Detailer"
+    },
+    "interests": {
+      "title": "Interessen & Hobbyen"
+    },
+    "passion": {
+      "title": "Passioun fir Technologie",
+      "description": "Meng Passioun gëllt der Webentwicklung a Serververwaltung. Mat Begeeschterung entwéckelen ech maßgeschneiderte Webanwendungen an implementéieren effizient Serverlëisungen."
+    },
+    "hobbies": {
+      "title": "Hobbyen an Interessen",
+      "description": "Niewent der digitaler Welt genéissen ech wäertvollt Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelméisseg Treffen mat Frënn an gelegentlech Gaming-Sessiounen suergen fir de perfekten Ausgleich zu mengem technologie-geprägte Alldag."
+    },
+    "languages": {
+      "title": "Sproochen",
+      "levels": {
+        "A1": "Grondkenntnisser",
+        "A2": "Grondleeënd Kenntnisser",
+        "B1": "Mëttelstuuf",
+        "B2": "Gutt Mëttelstuuf",
+        "C1": "Fortgeschratt",
+        "C2": "Bal muttersprochlech"
+      }
+    },
+    "education": {
+      "title": "Bildung",
+      "viewMore": "Méi erfahren",
+      "bts": {
+        "degree": "Héijen techneschen Ofschloss (BTS)",
+        "field": "Fachrichtung: Cloud Computing",
+        "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+        "grade": "Diplom (mat Bewäertung: Gutt)"
+      },
+      "dap": {
+        "degree": "Techniker an der Informatik",
+        "field": "IT-Techniker (DAP)",
+        "school": "Lycée Guillaume Kroll, Esch-sur-Alzette",
+        "grade": "Diplom (mat Bewäertung: Gutt)"
+      }
+    },
+    "work": {
+      "title": "Beruffserfahrung",
+      "mainTasks": "Haaptaufgaben:",
+      "moreTasks": "weider Aufgaben"
+    },
+    "certifications": {
+      "title": "Zertifizéierungen",
+      "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen"
+    },
+    "experiences": {
+      "title": "Besonner Erliefnesser"
+    },
+    "cta": {
+      "title": "Loosst eis zesummenarbechten",
+      "subtitle": "Hutt Dir e Projet am Kapp? Ech géif gär vun Iech héieren a bespriech, wéi ech Iech hëllefen kann.",
+      "button": "Kontakt ophuelen"
+    },
+    "languageNames": {
+      "luxemburgish": "Lëtzebuergesch",
+      "german": "Däitsch",
+      "english": "Englesch",
+      "french": "Franséisch"
+    },
+    "certificationsList": {
+      "cert1": {
+        "title": "Déi allgemeng Eignungsprüfung",
+        "description": "Staatleche Sektor (Verwaltung)"
+      },
+      "cert2": {
+        "title": "Cisco Certified CyberOps Associate",
+        "description": "Cybersecurity Operations"
+      },
+      "cert3": {
+        "title": "Cisco Certified Network Associate 3",
+        "description": "7.0 Enterprise-Netzwierker, Sécherheet an Automatisatioun"
+      },
+      "cert4": {
+        "title": "Cisco Certified Network Associate 2",
+        "description": "7.0 Switching, Routing a Wireless-Grondlagen"
+      },
+      "cert5": {
+        "title": "Cisco Certified Network Associate 1",
+        "description": "7.0 Aféierung an Netzwierker"
+      },
+      "cert6": {
+        "title": "Microsoft Office Specialist 2016",
+        "description": "PowerPoint, Word, Excel, Outlook"
+      }
+    },
+    "timelineItems": {
+      "item1": {
+        "title": "Web-Entwéckler bei Rotyre SARL",
+        "description": "Haaptverantwortlech fir d'Wuertung an d'Weiderentwécklung vun der Websäit 'mullerpneus.lu'. Onbegrenzte Plaatz mat Fokus op Frontend-Entwécklung an Websäit-Optimiséierung.",
+        "company": "Rotyre SARL",
+        "type": "Vollzäit",
+        "task1": "Websäit-Wuertung an -Entwécklung",
+        "task2": "Frontend-Entwécklung an UI/UX-Optimiséierung",
+        "task3": "Leeschtungsoptimiséierung an SEO-Verbesserungen",
+        "task4": "Content-Management an technesch Updates"
+      },
+      "item2": {
+        "title": "IT-Cloud-Ingenieur Praktikum",
+        "description": "12-wöchegt Praktikum bei QPark Consulting mat Fokus op Cloud-Technologien an agil Projet-Methoden. Schaffen op zwou grouss Cloud-Projeten mat AWS an GCP.",
+        "company": "QPark Consulting",
+        "type": "Praktikum",
+        "task1": "Projet-Planung mat agile Methodologien",
+        "task2": "Virtual Maschinn-Konfiguratioun op Google Cloud Platform",
+        "task3": "Websäit-Implementéierung a GCP-VMs",
+        "task4": "Statesch Websäit-Bereetstellung op AWS S3",
+        "task5": "REST API-Integratioun an Daten-Veraarbechtung",
+        "task6": "Cloud-Käschten-Optimiséierung a Best Practices"
+      },
+      "item3": {
+        "title": "IT-Techniker Summerjoob",
+        "description": "8-wöchege Summerposten um Lycée Guillaume Kroll an der IT-Abteilung. Fokus op Netzwierks-Infrastruktur an Telefonsystem-Management.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Summerjoob",
+        "task1": "Ariichtung a Gestioun vu MIXvoip-Telefonnen",
+        "task2": "Installatioun vun neien Telefonsverbindungen am Server-Raum",
+        "task3": "Patch Panel-Dokumentatioun Updates an Excel",
+        "task4": "Netzwierk-Kabel-Management an -Organisatioun"
+      },
+      "item4": {
+        "title": "IT-Techniker Projet-Ofschloss",
+        "description": "4-wöchege Summerjoob fir e Websäit-Projet ze vollenden, deen am Praktikum ugefaangen huet. Fokus op Backend-Entwécklung an SAML-Integratioun.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Summerjoob",
+        "task1": "Client-Reuniounen a Projet-Koordinatioun",
+        "task2": "Backend-Programméierung a Modifikatiounen",
+        "task3": "SAML-Authentifizéierungs-Service-Integratioun",
+        "task4": "Frontend-Entwécklung an UI-Upassungen",
+        "task5": "Professionnell Hardware-Entsorgung"
+      },
+      "item5": {
+        "title": "IT-Techniker Haaptpraktikum",
+        "description": "6-wöchegt Praktikum um Lycée Guillaume Kroll mat Fokus op Web-Entwécklung an Datebank-Design. Entwécklung vun enger kompletter Websäit-Léisung.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Praktikum",
+        "task1": "Client-Reuniounen an Ufuerderungs-Analyse",
+        "task2": "Backend- an Frontend-Entwécklung",
+        "task3": "Konzeptuel Datebank-Modelléierung",
+        "task4": "Logesch Datebank-Modelléierung",
+        "task5": "Datebank-Implementéierung mat richtegen Bezéiungen"
+      },
+      "item6": {
+        "title": "IT-Netzwierkstechniker Praktikum",
+        "description": "6-wöchegt Praktikum bei STEP Syndicat intercommunal zu Péiteng. Aféierung an Netzwierkstechnik an Infrastruktur-Management an enger Kläranlag.",
+        "company": "STEP Syndicat intercommunal",
+        "type": "Praktikum",
+        "task1": "Aféierung an d'Organisatiounsstruktur",
+        "task2": "Léieren vun de Kläranlag-Prozesser",
+        "task3": "Kreatioun vun neien Patch Panel-Pläng",
+        "task4": "Patch-Kabel-Management a -Beschrëftung",
+        "task5": "Praktesch Netzwierkstruktur-Analyse"
+      }
+    },
+    "experiencesList": {
+      "exp1": {
+        "title": "Helicopter-Ronndfluch",
+        "description": "En onvergiesslechen Erliefnis iwwer d'Landschaften vun der dominikanescher Republik"
+      },
+      "exp2": {
+        "title": "Fallschiermsprong iwwer Lëtzebuerg",
+        "description": "Adrenalinstouss aus 4000 Meter Héicht"
+      },
+      "exp3": {
+        "title": "Tomorrowland Belsch 2025",
+        "description": "Dat ultimativt elektronescht Musikfestival-Erliefnis"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Showcase",
+    "subtitle": "Entdeckt meng Projeten an Dokumentatiounen",
+    "filters": {
+      "all": "All",
+      "projects": "Projeten",
+      "documentation": "Dokumentatiounen"
+    },
+    "search": {
+      "placeholder": "Sichen..."
+    },
+    "labels": {
+      "viewDetails": "Detailer weisen"
     },
     "projects": {
-        "myChatBot": {
-            "features": {
-                "aiChat": {
-                    "title": "AI Chat",
-                    "description": "Chatten direkt mat verschiddenen AI-Modeller iwwer eng intuitiv Benotzeroberfläch"
-                },
-                "conversationManagement": {
-                    "title": "Konversatiounsgestioun",
-                    "description": "Méi Konversatioune geréieren wéi bei ChatGPT mat automatescher Späicherung"
-                },
-                "modelSelection": {
-                    "title": "Modellauswiel",
-                    "description": "Wielt tëschent verfügbaren Ollama-Modeller fir verschidden Utilisatiouns-Fäll"
-                },
-                "localStorage": {
-                    "title": "Lokal Späicherung",
-                    "description": "Konversatiounen ginn sécher am Browser gespäichert ouni extern Ofhängegkeeten"
-                },
-                "modernUI": {
-                    "title": "Modern UI",
-                    "description": "Schéin, responsive Benotzeroberfläch mat Tailwind CSS an Däischteren Modus"
-                },
-                "streaming": {
-                    "title": "Echtzäit-Streaming",
-                    "description": "Echtzäit-Äntwerten mat Server-Sent Events fir glat Kommunikatioun"
-                }
-            },
-            "keyFeatures": {
-                "title": "Haaptfunktiounen",
-                "subtitle": "Entdeckt déi mächteg Features, déi Mäin Chat Bot zu enger komplett AI-Chat-Léisung maachen"
-            },
-            "builtWith": {
-                "title": "Entwéckelt mat",
-                "subtitle": "Modern Technologien a Frameworks, déi d'Applikatioun udreiwen"
-            },
-            "callToAction": {
-                "title": "Prett fir AI Chat z'erliewen?",
-                "subtitle": "Probéiert Mäin Chat Bot haut aus an entdeckt d'Kraaft vun lokalen AI-Modeller mat enger intuitiver Chat-Oberfläch.",
-                "button": "Demo starten"
-            },
-            "technologies": {
-                "nuxt3": {
-                    "name": "Frontend Framework",
-                    "tech": "Nuxt 3",
-                    "description": "Modern Vue.js Framework mat SSR-Fäegkeeten, automatesch Routing an verbessert Leeschtungsoptimisatioun"
-                },
-                "vue3": {
-                    "name": "Frontend Library",
-                    "tech": "Vue 3",
-                    "description": "Progressiven JavaScript Framework mat Composition API a reaktiver Datenbindung"
-                },
-                "typescript": {
-                    "name": "Typsécherheet",
-                    "tech": "TypeScript",
-                    "description": "Strikt Typprüfung, verbessert Code-Zouverlässegkeet a besser Entwéckler-Experienz"
-                },
-                "pinia": {
-                    "name": "State Management",
-                    "tech": "Pinia",
-                    "description": "Modern State-Management-Store fir Vue mat intuitiver API a TypeScript-Ënnerstëtzung"
-                },
-                "tailwind": {
-                    "name": "Styling",
-                    "tech": "Tailwind CSS",
-                    "description": "Utility-First-CSS-Framework mat personaliséierter Konfiguratioun a responsive Design-Musteren"
-                },
-                "ollama": {
-                    "name": "AI Integration",
-                    "tech": "Ollama",
-                    "description": "Lokal AI-Modell-Verwaltungsplattform fir nahtlos AI-Integratioun"
-                },
-                "highlight": {
-                    "name": "Code-Highlighting",
-                    "tech": "Highlight.js",
-                    "description": "Syntax-Highlighting fir Code-Blöck a Chat-Messagen mat Ënnerstëtzung fir verschidden Programméierungssproochen"
-                },
-                "marked": {
-                    "name": "Markdown-Parsing",
-                    "tech": "Marked",
-                    "description": "Schnelle Markdown-Parser a -Compiler fir d'Duerstellung vum formatéierten Text a Code a Chat-Äntwerten"
-                }
-            }
-        },
-        "myPortfolio": {
-            "description": "Eng modern, responsive Portfolio-Websäit, déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung.",
-            "features": {
-                "multilingual": {
-                    "title": "Méisproocheg",
-                    "description": "Ënnerstëtzung fir Lëtzebuergesch, Däitsch, Franséisch an Englesch mat i18n"
-                },
-                "responsive": {
-                    "title": "Responsive Design",
-                    "description": "Perfekt Duerstellung op allen Apparater - Desktop, Tablet a Mobile"
-                },
-                "darkMode": {
-                    "title": "Däischteren Modus",
-                    "description": "Elegant Däischteren/Hellen Theme mat automatescher Browser-Detektioun"
-                },
-                "performance": {
-                    "title": "Héich Leeschtung",
-                    "description": "Optimiséiert Luedzäiten a SEO mat Nuxt 3 Server-Side Rendering"
-                },
-                "seo": {
-                    "title": "SEO Optimiséiert",
-                    "description": "Komplett Sichmotor-Optimisatioun mat Sitemap a Meta-Tags"
-                },
-                "contact": {
-                    "title": "Kontakt-Formulaire",
-                    "description": "Funktionellt Kontakt-Formulaire mat VeeValidate a Resend Integration"
-                }
-            },
-            "keyFeatures": {
-                "title": "Haaptfunktiounen",
-                "subtitle": "Entdeckt d'Features, déi dës Portfolio-Websäit zu enger moderner, professioneller Léisung maachen"
-            },
-            "builtWith": {
-                "title": "Entwéckelt mat",
-                "subtitle": "Modern Technologien a Best Practices fir eng eeschtklasseg Benotzer-Experienz"
-            },
-            "callToAction": {
-                "title": "Interesséiert un enger ähnlecher Websäit?",
-                "subtitle": "Entdeckt meng Portfolio-Websäit a kuckt, wéi modern Webtechnologien eng impressionnant Online-Presenz schafen kënnen.",
-                "button": "Websäit besichen"
-            },
-            "technologies": {
-                "nuxt3": {
-                    "name": "Frontend Framework",
-                    "tech": "Nuxt 3",
-                    "description": "Fortgeschrattenen Vue.js Framework mat Server-Side Rendering, automatesch Code-Splitting a Leeschtungsoptimisatioun"
-                },
-                "vue3": {
-                    "name": "UI Library",
-                    "tech": "Vue 3",
-                    "description": "Modern, reaktiven JavaScript Framework mat Composition API an optimaler Entwéckler-Experienz"
-                },
-                "typescript": {
-                    "name": "Typsécherheet",
-                    "tech": "TypeScript",
-                    "description": "Statesch Typisatioun fir besser Code-Qualitéit, Feeler-Preventioun an erweiderten IDE-Support"
-                },
-                "tailwind": {
-                    "name": "CSS Framework",
-                    "tech": "Tailwind CSS",
-                    "description": "Utility-First-CSS-Framework fir séier, konsistent Styling a responsive Designen"
-                },
-                "i18n": {
-                    "name": "Internationalisatioun",
-                    "tech": "Nuxt i18n",
-                    "description": "Komplett méisproocheg Ënnerstëtzung mat automatesch Routing a Locale-Management"
-                },
-                "veevalidate": {
-                    "name": "Formulaire-Validatioun",
-                    "tech": "VeeValidate",
-                    "description": "Mächteg Formulaire-Validatioun mat benotzerfrëndlecher Feeler-Behandlung a TypeScript-Support"
-                },
-                "resend": {
-                    "name": "E-Mail Service",
-                    "tech": "Resend",
-                    "description": "Modern E-Mail-API fir zouverlässeg Kontakt-Formulaire-Iwwermëttlung mat entwéckler-frëndlecher Integration"
-                },
-                "iconify": {
-                    "name": "Icon System",
-                    "tech": "Iconify",
-                    "description": "Extensiv Icon-Bibliothéik mat iwwer 100.000 Iconen an optimaler Leeschtung duerch Icon-op-Nofro"
-                }
-            }
-        }
+      "myChatBot": {
+        "title": "Mäin Chat Bot",
+        "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
+      },
+      "myPortfolio": {
+        "title": "Meng Portfolio Websäit",
+        "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung."
+      }
     },
-    "documentations": {
-        "ollamaSetup": {
-            "title": "Linux - Ollama Installation",
-            "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir Ollama op Debian 12 ze installéieren mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir sécher ëffentlech API-Notzung.",
-            "notes": {
-                "title": "Wichteg Notizen",
-                "hardware": {
-                    "title": "Hardware-Ufuerderungen",
-                    "description": "Op d'mannst 4GB RAM fir kleng Modeller, 8GB+ recommandéiert fir méi grouss"
-                },
-                "diskSpace": {
-                    "title": "Späicherplaz",
-                    "description": "Modeller brauchen 1-10GB Späicher jeeweils jee no Gréisst - plangt entspriechend"
-                },
-                "internetConnection": {
-                    "title": "Internet-Verbindung",
-                    "description": "Stabil Verbindung erfuerderlech fir AI-Modeller erofzelueden"
-                },
-                "modelSizes": {
-                    "title": "Modell-Gréissten berücksichtegen",
-                    "description": "Méi grouss Modeller bidden besser Qualitéit mee brauchen méi Ressourcen"
-                },
-                "performance": {
-                    "title": "Performance-Iwwerwaachung",
-                    "description": "Iwwerwaacht CPU- an RAM-Notzung während der Modell-Ausféierung"
-                }
-            },
-            "steps": {
-                "title": "Installatiounsschrëtt",
-                "subtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
-                "dependencies": {
-                    "title": "Dependenzen installéieren",
-                    "description": "Installation vun erfuerderlechen Systempakete an Dependenzen fir Ollama an Apache2."
-                },
-                "ollama": {
-                    "title": "Ollama installéieren",
-                    "description": "Installation vun Ollama an initial Konfiguratioun mat engem Testmodell."
-                },
-                "apache": {
-                    "title": "Apache2 konfiguréieren",
-                    "description": "Installation an Konfiguratioun vun Apache2 als Reverse Proxy fir Ollama."
-                },
-                "ssl": {
-                    "title": "SSL-Zertifikat ariichten",
-                    "description": "Arichtung vun Let's Encrypt SSL-Zertifikate fir sécher HTTPS-Verbindungen."
-                },
-                "authentication": {
-                    "title": "HTTP Basic Authentication",
-                    "description": "Konfiguratioun vun HTTP Basic Authentication fir sécheren API-Zougang."
-                },
-                "virtualhost": {
-                    "title": "Virtual Host aktivéieren",
-                    "description": "Aktivéierung vum Virtual Host an Restart vun Apache-Servicer."
-                },
-                "testing": {
-                    "title": "Installation testen",
-                    "description": "Iwwerpréiwung vun der Installation an Test vun der API-Funktionalitéit."
-                }
-            },
-            "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
-            "commands": {
-                "dependencies": {
-                    "updateAgain": "Paketlëschten erëm aktualiséieren",
-                    "installBasic": "Basis-Pakete installéieren"
-                },
-                "ollama": {
-                    "install": "Ollama eroflueden an installéieren",
-                    "testModel": "Klengt Testmodell eroflueden an testen",
-                    "reexec": "Systemd-Manager nei lueden",
-                    "reload": "Ollama-Service nei lueden",
-                    "restart": "Ollama-Service nei starten",
-                    "checkPort": "Iwwerpréiwen ob Ollama op Port 11434 lauschtert"
-                },
-                "apache": {
-                    "install": "Apache2 an SSL-Modulen installéieren",
-                    "enableModules": "Erfuerderlech Apache-Modulen aktivéieren",
-                    "restart": "Apache2 nei starten"
-                },
-                "ssl": {
-                    "installCertbot": "Certbot fir Let's Encrypt installéieren",
-                    "getCertificate": "SSL-Zertifikat fir Domain ufroe"
-                },
-                "authentication": {
-                    "createDirectory": "Verzeechnes fir Auth-Fichieren erstellen",
-                    "createUser": "Benotzer mat Passwuert fir HTTP Basic Auth erstellen",
-                    "passwordNote": "Gitt e séchere Passwuert an wann gefrot"
-                },
-                "virtualhost": {
-                    "enableSite": "Nei Site-Konfiguratioun aktivéieren",
-                    "disableDefault": "Standard Apache-Site deaktivéieren",
-                    "disableDefaultSSL": "Standard SSL-Site deaktivéieren",
-                    "reloadApache": "Apache-Konfiguratioun nei lueden"
-                },
-                "testing": {
-                    "testApi": "API-Endpunkt mat curl testen",
-                    "testNote": "Benotzt Äre konfiguréierten Benotzernumm a Passwuert"
-                },
-                "troubleshooting": {
-                    "checkPort": "Iwwerpréiwen wéi een Service op Port 11434 leeft",
-                    "checkStatus": "Ollama-Service-Status iwwerpréiwen",
-                    "checkLogs": "Ollama-Service-Logs uweisen",
-                    "testConfig": "Apache-Konfiguratioun testen",
-                    "checkApache": "Apache-Service-Status iwwerpréiwen",
-                    "checkApacheLogs": "Apache-Error-Logs uweisen",
-                    "listCertificates": "All Certbot-Zertifikater oplëschten",
-                    "testRenewal": "Zertifikat-Erneierung testen",
-                    "testSSL": "SSL-Verbindung mat OpenSSL testen"
-                }
-            },
-            "troubleshooting": {
-                "title": "Problemléisung",
-                "subtitle": "Heefeg Problemer an hir Léisungen bei der Ollama-Installation",
-                "ollamaIssues": {
-                    "title": "Ollama-Problemer"
-                },
-                "apacheIssues": {
-                    "title": "Apache-Problemer"
-                },
-                "sslIssues": {
-                    "title": "SSL-Problemer"
-                }
-            },
-            "completion": {
-                "title": "Installation ofgeschloss!",
-                "description": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen."
-            }
-        },
-        "debianInitialSetup": {
-            "title": "Debian 12 - Server Éischt-Arichtung",
-            "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir d'éischt Arichtung vun engem frësche Debian 12 Server mat de wichtegsten Konfiguratiounsschrëtt.",
-            "notes": {
-                "title": "Wichteg Notizen",
-                "rootAccess": {
-                    "title": "Root-Zougang erfuerderlech",
-                    "description": "Root-Zougang oder sudo-Berechtigungen sinn fir all Konfiguratiounsschrëtt erfuerderlech"
-                },
-                "networkConnection": {
-                    "title": "Internet-Verbindung néideg",
-                    "description": "Aktiv Internet-Verbindung ass fir Paket-Updates an Downloads néideg"
-                },
-                "backupImportant": {
-                    "title": "Backup erstellen",
-                    "description": "Erstellt Backuppen vun ären kritische Daten virun all wichteg Ännerungen"
-                },
-                "timeRequired": {
-                    "title": "Zäitbedarf",
-                    "description": "Gesamt-Zäit: ongeféier 30-45 Minutten jee no System-Performance"
-                },
-                "securityConsiderations": {
-                    "title": "Sécherheetsaspekter",
-                    "description": "Berücksichtegt all Sécherheetsaspekter bei der Server-Konfiguratioun"
-                },
-                "documentChanges": {
-                    "title": "Ännerungen dokumentéieren",
-                    "description": "Dokumentéiert all gemaachten Ännerungen fir spéider Referenz"
-                }
-            },
-            "steps": {
-                "title": "Arichtungsschrëtt",
-                "subtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir optimal Server-Konfiguratioun",
-                "language": {
-                    "title": "Sprooch a Locale konfiguréieren",
-                    "description": "Konfiguratioun vun der Systemsprooch a Locale-Astellungen fir korrekt Zeechen-Duerstellen."
-                },
-                "timezone": {
-                    "title": "Zäitzon astellen",
-                    "description": "Astellen vun der korrekter Zäitzon fir genau Zäit- an Datumsangaben."
-                },
-                "sources": {
-                    "title": "Paketquellen aktualiséieren",
-                    "description": "Aktualiséierung vun APT-Paketquellen a System op de leschten Stand."
-                },
-                "hostname": {
-                    "title": "Hostname konfiguréieren",
-                    "description": "Festleeung vun engem eendeitegen Hostname fir d'Server-Identifikatioun am Netzwierk."
-                },
-                "motd": {
-                    "title": "MOTD botzelen",
-                    "description": "Entfernung vun der Standard-Welkomsnoriicht fir eng proper Umeldung."
-                },
-                "hardware": {
-                    "title": "Hardware-Informatiounen uweisen",
-                    "description": "Iwwerpréiwung an Uweise vun verfügbare Hardware-Ressourcen vum Server."
-                },
-                "verification": {
-                    "title": "System-Verifikatioun",
-                    "description": "Ofschléissend Iwwerpréiwung vun allen Konfiguratiounen a Systemstatus."
-                }
-            },
-            "commands": {
-                "language": {
-                    "listLocales": "Verfügbar Locales oplëschten",
-                    "generateLocale": "UTF-8 Locale generéieren",
-                    "updateLocale": "System-Locale aktualiséieren",
-                    "checkLocale": "Aktuell Locale-Konfiguratioun iwwerpréiwen",
-                    "restartNote": "E Restart kann néideg sinn fir d'Ännerungen komplett ze iwwerhuelen"
-                },
-                "timezone": {
-                    "checkDate": "Aktuell Datum an Auer uweisen",
-                    "checkTimezone": "Zäitzon-Konfiguratioun iwwerpréiwen",
-                    "listTimezones": "All verfügbar Zäitzonen oplëschten",
-                    "setTimezone": "Zäitzon op Europa/Lëtzebuerg setzen",
-                    "verifyTimezone": "Nei Zäitzon-Konfiguratioun bestätegen"
-                },
-                "sources": {
-                    "updatePackages": "Paketlëschten aktualiséieren",
-                    "upgradeSystem": "System op leschten Stand bréngen",
-                    "autoremove": "Net méi néideg Pakete ewechhuelen",
-                    "autoclean": "Paket-Cache botzelen",
-                    "verifySources": "Haaptpaketquellen uweisen",
-                    "checkAdditionalSources": "Zousätzlech Paketquellen iwwerpréiwen",
-                    "wikiReference": "Méi Informatiounen fënnt Dir am Debian Wiki zur APT-Konfiguratioun"
-                },
-                "hostname": {
-                    "editCloudConfig": "Cloud-Init Konfiguratioun editéieren (falls do)",
-                    "setHostname": "Neien Hostname setzen",
-                    "verifyHostname": "Hostname-Konfiguratioun iwwerpréiwen",
-                    "reboot": "System fir komplett Applicatioun nei starten",
-                    "virtualizationNote": "Nëmmen bei virtualiséierte Ëmfeld mat cloud-init néideg"
-                },
-                "motd": {
-                    "clearMotd": "Standard MOTD-Fichier eidel maachen"
-                },
-                "hardware": {
-                    "installInxi": "Hardware-Informatiouns-Tool installéieren",
-                    "showHardwareInfo": "Komplett Hardware-Informatiounen uweisen",
-                    "showCpuInfo": "CPU-Informatiounen uweisen",
-                    "showMemoryInfo": "Späicher-Informatiounen uweisen",
-                    "showDiskInfo": "Festplaten-Informatiounen uweisen"
-                },
-                "verification": {
-                    "systemInfo": "System-Versiounsinformatiounen uweisen",
-                    "kernelInfo": "Kernel-Informatiounen uweisen",
-                    "systemStatus": "Systemd-Status iwwerpréiwen",
-                    "checkUpdates": "Verfügbar Updates iwwerpréiwen"
-                },
-                "tips": {
-                    "installFirewall": "UFW Firewall installéieren",
-                    "enableFirewall": "Firewall aktivéieren",
-                    "installFail2ban": "Fail2Ban fir erweidert Sécherheet installéieren",
-                    "installEssentials": "Wichteg System-Tools installéieren",
-                    "installBuildTools": "Build-Tools fir Kompiléierung installéieren",
-                    "installAutoUpdates": "Automatesch Updates installéieren",
-                    "configureAutoUpdates": "Automatesch Updates konfiguréieren"
-                }
-            },
-            "tips": {
-                "sectionTitle": "Zousätzlech Recommandatiounen",
-                "sectionSubtitle": "Optional: Weider nëtzlech Konfiguratiounen fir erweidert Sécherheet a Funktionalitéit",
-                "security": {
-                    "title": "Sécherheetsmoossnamen"
-                },
-                "essentials": {
-                    "title": "Essential Tools"
-                },
-                "updates": {
-                    "title": "Automatesch Updates"
-                }
-            },
-            "completion": {
-                "title": "Arichtung ofgeschloss!",
-                "message": "Äre Debian 12 Server ass elo grondsätzlech konfiguréiert a betribsbereet. Vergiess net weider sécherheetsrelevant Konfiguratiounen entspriechend Ären Ufuerderungen ze maachen."
-            }
-        },
-        "cardanoNodeSetup": {
-            "title": "Linux - Cardano Node Installation",
-            "description": "Komplett Guide fir eng Cardano-Node op Debian 12 ze installéieren mam NIX-Paketmanager, inklusiv Service-Konfiguratioun a Iwwerwaachung.",
-            "notes": {
-                "title": "Wichteg Notizen",
-                "nodeRequirements": {
-                    "title": "Hardware-Ufuerderungen",
-                    "description": "Op d'mannst 8GB RAM an 100GB Späicher fir optimal Node-Performance"
-                },
-                "nixDaemon": {
-                    "title": "NIX-Daemon erfuerderlech",
-                    "description": "Den NIX-Daemon muss korrekt installéiert a gestart sinn"
-                },
-                "diskSpace": {
-                    "title": "Späicherplaz",
-                    "description": "Op d'mannst 50GB fräie Späicherplaz fir d'Blockchain-Daten erfuerderlech"
-                },
-                "syncTime": {
-                    "title": "Synchronisatiounszäit",
-                    "description": "Éischt Synchronisatioun kann 24-48 Stonnen daueren jee no Internet-Verbindung"
-                },
-                "networkStability": {
-                    "title": "Netzwierk-Stabilitéit",
-                    "description": "Stabil Internet-Verbindung fir kontinuéierlech Synchronisatioun néideg"
-                }
-            },
-            "steps": {
-                "title": "Installatiounsschrëtt",
-                "dependencies": {
-                    "title": "System-Dependenzen installéieren",
-                    "description": "Installation vun erfuerderlechen Systempakete fir d'NIX-Paketmanager Installation."
-                },
-                "nix": {
-                    "title": "NIX Paketmanager installéieren",
-                    "description": "Installation vum NIX-Paketmanager fir d'Verwaltung vun Cardano-Node Dependenzen."
-                },
-                "nixconfig": {
-                    "title": "NIX fir Cardano konfiguréieren",
-                    "description": "Konfiguratioun vum NIX-Paketmanager mat den offiziellen IOHK-Binär-Caches fir optimiséiert Downloads."
-                },
-                "user": {
-                    "title": "Cardano-Benotzer erstellen",
-                    "description": "Erstellung vun engem dediziéierte Benotzer fir den Cardano-Node-Betrib."
-                },
-                "install": {
-                    "title": "Cardano-Node installéieren",
-                    "description": "Installation vun der Cardano-Node a CLI-Tools iwwert d'NIX-System."
-                },
-                "symlinks": {
-                    "title": "System-Symlinks erstellen",
-                    "description": "Erstellung vu Symlinks fir systemwäite Zougang zu Cardano-Tools."
-                },
-                "config": {
-                    "title": "Node-Konfiguratioun eroflueden",
-                    "description": "Download vun den offiziellen Cardano-Netzwierk-Konfiguratiounsfichieren."
-                },
-                "service": {
-                    "title": "Systemd-Service ariichten",
-                    "description": "Konfiguratioun vun der Cardano-Node als Systemd-Service fir automateschen Start."
-                },
-                "monitor": {
-                    "title": "Node-Iwwerwaachung ariichten",
-                    "description": "Iwwerwaachung vun Node-Logs a Synchronisatiounsprozess."
-                }
-            },
-            "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano-Node Installation",
-            "commands": {
-                "dependencies": {
-                    "installDeps": "System-Dependenzen installéieren"
-                },
-                "nix": {
-                    "rebootNote": "E Restart ass no der NIX-Installation erfuerderlech",
-                    "install": "NIX-Paketmanager installéieren",
-                    "reboot": "System nei starten",
-                    "verify": "NIX-Installation verifizéieren"
-                },
-                "nixconfig": {
-                    "restart": "NIX-Daemon nei starten"
-                },
-                "user": {
-                    "createUser": "Cardano-Benotzer erstellen"
-                },
-                "install": {
-                    "switchUser": "Zu Cardano-Benotzer wiesselen",
-                    "clone": "Cardano-Node Repository klonen",
-                    "changeDir": "An Cardano-Node Verzeechnes wiesselen",
-                    "listTags": "Verfügbar Versiounen uweisen",
-                    "checkout": "Aktuell stabil Versioun auschecken",
-                    "profileInstall": "Cardano-Node a CLI an NIX-Profil installéieren",
-                    "profileNote": "Dëst kann 30-60 Minutten daueren, well all Dependenzen kompiléiert ginn",
-                    "profileList": "Installéiert Profiler oplëschten",
-                    "checkNode": "Cardano-Node Versioun iwwerpréiwen",
-                    "checkCli": "Cardano-CLI Versioun iwwerpréiwen",
-                    "exitUser": "Zeréck zu Root-Benotzer wiesselen"
-                },
-                "symlinks": {
-                    "profileNote": "Passt de Wee entspriechend Ärem NIX-Profil un",
-                    "linkNode": "Symlink fir Cardano-Node erstellen",
-                    "linkCli": "Symlink fir Cardano-CLI erstellen",
-                    "verifyLinks": "Symlinks verifizéieren",
-                    "testNode": "Cardano-Node systemwäit testen",
-                    "testCli": "Cardano-CLI systemwäit testen"
-                },
-                "config": {
-                    "switchUser": "Zu Cardano-Benotzer wiesselen",
-                    "createDirs": "Konfiguratiounsverzeechnisser erstellen",
-                    "changeDir": "An Konfiguratiounsverzeechnes wiesselen",
-                    "downloadConfigs": "Offiziell Konfiguratiounsfichiere eroflueden",
-                    "listConfigs": "Erofgeluedene Konfiguratiounsfichiere oplëschten",
-                    "checkConfig": "Genesis-Konfiguratioun iwwerpréiwen",
-                    "exitUser": "Zeréck zu Root-Benotzer wiesselen"
-                },
-                "service": {
-                    "reload": "Systemd-Manager nei lueden",
-                    "enable": "Cardano-Node Service aktivéieren",
-                    "start": "Cardano-Node Service starten"
-                },
-                "monitor": {
-                    "syncNote": "D'initial Blockchain-Synchronisatioun kann 24-48 Stonnen daueren",
-                    "logs": "Service-Logs verfollegen",
-                    "syncProgress": "Synchronisatiounsfortschrëtt iwwerpréiwen"
-                },
-                "tips": {
-                    "syncStatus": "Synchronisatiounsstatus iwwerpréiwen",
-                    "syncSize": "Aktuell Blockchain-Gréisst uweisen",
-                    "restart": "Cardano-Node Service nei starten",
-                    "stop": "Cardano-Node Service stoppen",
-                    "fullLogs": "Komplett Logs uweisen",
-                    "checkProcess": "Cardano-Node Prozess iwwerpréiwen"
-                }
-            },
-            "tips": {
-                "sectionTitle": "Zousätzlech Tipps",
-                "sectionSubtitle": "Nëtzlech Kommandoen a Ënnerhaltungstipps fir d'Cardano-Node",
-                "sync": {
-                    "title": "Synchronisatiounsiwwerwaachung"
-                },
-                "maintenance": {
-                    "title": "Service-Verwaltung"
-                },
-                "troubleshooting": {
-                    "title": "Problemléisung"
-                }
-            },
-            "resources": {
-                "sectionTitle": "Nëtzlech Ressourcen",
-                "sectionSubtitle": "Weiderfierend Linken a Dokumentatioun fir d'Cardano-Node",
-                "nixDownload": {
-                    "title": "NIX Download",
-                    "description": "Offiziell NIX-Paketmanager Websäit mat Installatiounsuleedungen"
-                },
-                "cardanoInstall": {
-                    "title": "Cardano Installation Guide",
-                    "description": "Offiziell Cardano-Node Installatiounsdokumentatioun"
-                },
-                "cardanoRunning": {
-                    "title": "Running a Node",
-                    "description": "Offiziell Uleedung fir de Betrib vun enger Cardano-Node"
-                }
-            },
-            "completion": {
-                "title": "Installation ofgeschloss!",
-                "message": "Är Cardano-Node ass erfollegräich installéiert a leeft als Systemd-Service. D'Blockchain-Synchronisatioun leeft am Hannergrond a kann 24-48 Stonnen daueren."
-            }
-        },
-        "cardanoDbSyncSetup": {
-            "title": "Linux - Cardano DB Sync Installation",
-            "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun.",
-            "notes": {
-                "title": "Wichteg Notizen",
-                "prerequisite": {
-                    "title": "Cardano-Node erfuerderlech",
-                    "description": "Eng fonktionéierend Cardano-Node muss éischt installéiert a synchroniséiert sinn"
-                },
-                "databaseSecurity": {
-                    "title": "Datebank-Sécherheet",
-                    "description": "Benotzt sécher Passwierder a limitéiert den Datebank-Zougang entspriechend"
-                },
-                "syncTime": {
-                    "title": "Synchronisatiounsdauer",
-                    "description": "Éischt Synchronisatioun kann e puer Deeg daueren jee no Hardware"
-                },
-                "diskSpace": {
-                    "title": "Späicherplaz",
-                    "description": "Op d'mannst 200GB fräie Späicherplaz fir d'PostgreSQL-Datebank erfuerderlech"
-                },
-                "cardanoNode": {
-                    "title": "Hardware-Ufuerderungen",
-                    "description": "Op d'mannst 16GB RAM recommandéiert fir optimal Performance"
-                }
-            },
-            "steps": {
-                "title": "Installatiounsschrëtt",
-                "postgresql": {
-                    "title": "PostgreSQL installéieren",
-                    "description": "Installation a Konfiguratioun vun der PostgreSQL-Datebank fir Cardano DB Sync."
-                },
-                "database": {
-                    "title": "Datebank ariichten",
-                    "description": "Erstellung vun der Datebank a Benotzer fir Cardano DB Sync."
-                },
-                "cloneInstall": {
-                    "title": "DB Sync klonen an installéieren",
-                    "description": "Klonen vum Cardano DB Sync Repository an Installation mat NIX."
-                },
-                "pgpass": {
-                    "title": "Passwuert-Fichier erstellen",
-                    "description": "Erstellung vun der .pgpass-Fichier fir automatesch Datebank-Authentifizéierung."
-                },
-                "symlink": {
-                    "title": "Symbolësch Linken erstellen",
-                    "description": "Erstellen vu symbolësche Linken fir d'Cardano DB Sync Binärdateien."
-                },
-                "service": {
-                    "title": "Systemd Service konfiguréieren",
-                    "description": "Erstellung an Aktivéierung vum Systemd-Service fir Cardano DB Sync."
-                },
-                "monitoring": {
-                    "title": "Service iwwerwaachen",
-                    "description": "Iwwerwaachung vum Service an der Datebank-Synchronisatioun."
-                }
-            },
-            "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano DB Sync Installation",
-            "commands": {
-                "postgresql": {
-                    "install": "PostgreSQL installéieren",
-                    "enable": "PostgreSQL aktivéieren",
-                    "start": "PostgreSQL starten"
-                },
-                "database": {
-                    "connect": "Als postgres-Benotzer verbannen",
-                    "createUser": "Datebankbenotzer erstellen",
-                    "passwordNote": "Sécher Passwuert wielen a merken",
-                    "createDatabase": "Datebank erstellen",
-                    "grantPrivileges": "Berechtigungen accordéieren",
-                    "quit": "PostgreSQL-Konsole verloossen"
-                },
-                "clone": {
-                    "switchUser": "Zu cardano-Benotzer wiesselen",
-                    "clone": "Cardano DB Sync Repository klonen",
-                    "listFiles": "Repository-Inhalter uweisen",
-                    "changeDir": "An Repository-Verzeechnes wiesselen"
-                },
-                "install": {
-                    "listTags": "Verfügbar Tags uweisen",
-                    "checkout": "Neist stabil Versioun auschecken",
-                    "nixInstall": "DB Sync mat NIX installéieren",
-                    "nixNote": "Installation kann 30-60 Minutten daueren",
-                    "checkVersion": "Installation iwwerpréiwen",
-                    "listProfiles": "NIX Profile uweisen"
-                },
-                "pgpass": {
-                    "chmod": "Dateiberechtegungen setzen",
-                    "exit": "Benotzer-Sessioun verloossen"
-                },
-                "symlink": {
-                    "create": "Symbolësche Link erstellen",
-                    "verify": "Link iwwerpréiwen"
-                },
-                "service": {
-                    "reload": "Systemd-Daemon nei lueden",
-                    "enable": "Service aktivéieren",
-                    "start": "Service starten"
-                },
-                "monitoring": {
-                    "status": "Service-Status kucken",
-                    "logs": "Service-Logs uweisen"
-                }
-            },
-            "tips": {
-                "sectionTitle": "Hëllefräich Tipps",
-                "sectionSubtitle": "Nëtzlech Kommandoen a Weisungen fir d'Verwaltung vum Cardano DB Sync",
-                "syncStatus": {
-                    "title": "Synchronisatiounsstatus",
-                    "checkMeta": "Datebank-Metadaten fir Sync-Status kucken"
-                },
-                "troubleshooting": {
-                    "title": "Problemléisung",
-                    "restart": "Service bei Problemer nei starten"
-                },
-                "diskSpace": {
-                    "title": "Späicherplaz",
-                    "check": "Verfügbare Späicherplaz reegelméisseg iwwerwaachen"
-                }
-            },
-            "resources": {
-                "sectionTitle": "Nëtzlech Ressourcen",
-                "sectionSubtitle": "Zousätzlech Dokumentatioun an Tools fir Cardano DB Sync",
-                "github": {
-                    "title": "Cardano DB Sync GitHub",
-                    "description": "Offiziellt Repository mat Dokumentatioun an Updates"
-                },
-                "postgresql": {
-                    "title": "PostgreSQL Dokumentatioun",
-                    "description": "Ëmfassend Dokumentatioun fir PostgreSQL-Administratioun"
-                },
-                "cardanoDocs": {
-                    "title": "Cardano Developer Portal",
-                    "description": "Entwéckler-Ressourcen an API-Dokumentatioun"
-                }
-            },
-            "completion": {
-                "title": "Installation Ofgeschloss",
-                "message": "Cardano DB Sync ass elo erfollegräich installéiert a leeft. D'Synchronisatioun mat der Blockchain wäert automatesch weiderfueren an d'Datebank gëtt gefëllt."
-            }
-        }
-    },
-    "contact": {
-        "title": "Kontakt",
-        "subtitle": "Loosst eis iwwer Äert nächst Projet schwätzen",
-        "methods": {
-            "title": "Kontaktméiglechkeeten"
-        },
-        "form": {
-            "title": "Message schécken",
-            "description": "Fëllt de Formulaire hei ënnendrënner aus an ech mellen mech sou séier wéi méiglech bei Iech.",
-            "name": "Numm",
-            "namePlaceholder": "Äre kompletten Numm",
-            "email": "E-Mail",
-            "subject": "Sujet",
-            "subjectPlaceholder": "Wou geet et drëm?",
-            "message": "Message",
-            "messagePlaceholder": "Erzielt mer vun Ärem Projet oder Ärer Ufro...",
-            "submit": "Message schécken",
-            "sending": "Gëtt geschéckt...",
-            "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech.",
-            "errors": {
-                "nameRequired": "Numm ass obligatoresch",
-                "nameLength": "Numm muss tëschent 2 an 100 Zeechen sinn",
-                "emailRequired": "E-Mail ass obligatoresch",
-                "emailInvalid": "Gitt w.e.g. eng gülteg E-Mail-Adress an",
-                "subjectRequired": "Sujet ass obligatoresch",
-                "subjectLength": "Sujet muss tëschent 5 an 200 Zeechen sinn",
-                "messageRequired": "Message ass obligatoresch",
-                "messageMinLength": "Message muss op d'mannst 10 Zeechen hunn",
-                "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
-                "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
-                "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
-                "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier.",
-                "captchaRequired": "Maacht w.e.g. d'Sécherheetsverifikatioun fäerdeg.",
-                "captchaFailed": "Sécherheetsverifikatioun feelgeschloen. Probéiert w.e.g. nach eng Kéier.",
-                "captchaExpired": "Sécherheetsverifikatioun ass ofgelaf. Léist se w.e.g. nach eng Kéier.",
-                "captchaError": "Sécherheetsverifikatiounsfeeler. Luet d'Säit w.e.g. nei."
-            }
-        }
-    },
-    "footer": {
-        "copyright": "© 2024 Chad Feierstein. Erstallt mat Nuxt 3, Tailwind CSS a Color Mode"
+    "documentation": {
+      "debianInitialSetup": {
+        "title": "Debian 12 - Server Éischtariichtung",
+        "description": "Schrëtt-fir-Schrëtt Uleedung fir déi éischt wichteg Schrëtt beim Ariichten vun engem frësche Debian 12 Server"
+      },
+      "ollamaSetup": {
+        "title": "Linux - Ollama Installatioun",
+        "description": "Vollständeg Uleedung fir d'Installatioun vum Ollama op Debian 12 mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir eng sécher ëffentlech API"
+      },
+      "cardanoNodeSetup": {
+        "title": "Linux - Cardano Node Installatioun",
+        "description": "Vollständeg Uleedung fir d'Installatioun vun enger Cardano-Node op Debian 12 mam NIX-Paketmanager, inklusiv Service-Konfiguratioun an Iwwerwaachung"
+      },
+      "cardanoDbSyncSetup": {
+        "title": "Linux - Cardano DB Sync Installatioun",
+        "description": "Vollständeg Uleedung fir d'Installatioun vum Cardano DB Sync op Debian 12 mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun"
+      }
     }
+  },
+  "projects": {
+    "myChatBot": {
+      "features": {
+        "aiChat": {
+          "title": "AI Chat",
+          "description": "Chatten direkt mat verschiddenen AI-Modeller iwwer eng intuitiv Benotzeroberfläch"
+        },
+        "conversationManagement": {
+          "title": "Konversatiounsgestioun",
+          "description": "Méi Konversatioune geréieren wéi bei ChatGPT mat automatescher Späicherung"
+        },
+        "modelSelection": {
+          "title": "Modellauswiel",
+          "description": "Wielt tëschent verfügbaren Ollama-Modeller fir verschidden Utilisatiouns-Fäll"
+        },
+        "localStorage": {
+          "title": "Lokal Späicherung",
+          "description": "Konversatiounen ginn sécher am Browser gespäichert ouni extern Ofhängegkeeten"
+        },
+        "modernUI": {
+          "title": "Modern UI",
+          "description": "Schéin, responsive Benotzeroberfläch mat Tailwind CSS an Däischteren Modus"
+        },
+        "streaming": {
+          "title": "Echtzäit-Streaming",
+          "description": "Echtzäit-Äntwerten mat Server-Sent Events fir glat Kommunikatioun"
+        }
+      },
+      "keyFeatures": {
+        "title": "Haaptfunktiounen",
+        "subtitle": "Entdeckt déi mächteg Features, déi Mäin Chat Bot zu enger komplett AI-Chat-Léisung maachen"
+      },
+      "builtWith": {
+        "title": "Entwéckelt mat",
+        "subtitle": "Modern Technologien a Frameworks, déi d'Applikatioun udreiwen"
+      },
+      "callToAction": {
+        "title": "Prett fir AI Chat z'erliewen?",
+        "subtitle": "Probéiert Mäin Chat Bot haut aus an entdeckt d'Kraaft vun lokalen AI-Modeller mat enger intuitiver Chat-Oberfläch.",
+        "button": "Demo starten"
+      },
+      "technologies": {
+        "nuxt3": {
+          "name": "Frontend Framework",
+          "tech": "Nuxt 3",
+          "description": "Modern Vue.js Framework mat SSR-Fäegkeeten, automatesch Routing an verbessert Leeschtungsoptimisatioun"
+        },
+        "vue3": {
+          "name": "Frontend Library",
+          "tech": "Vue 3",
+          "description": "Progressiven JavaScript Framework mat Composition API a reaktiver Datenbindung"
+        },
+        "typescript": {
+          "name": "Typsécherheet",
+          "tech": "TypeScript",
+          "description": "Strikt Typprüfung, verbessert Code-Zouverlässegkeet a besser Entwéckler-Experienz"
+        },
+        "pinia": {
+          "name": "State Management",
+          "tech": "Pinia",
+          "description": "Modern State-Management-Store fir Vue mat intuitiver API a TypeScript-Ënnerstëtzung"
+        },
+        "tailwind": {
+          "name": "Styling",
+          "tech": "Tailwind CSS",
+          "description": "Utility-First-CSS-Framework mat personaliséierter Konfiguratioun a responsive Design-Musteren"
+        },
+        "ollama": {
+          "name": "AI Integration",
+          "tech": "Ollama",
+          "description": "Lokal AI-Modell-Verwaltungsplattform fir nahtlos AI-Integratioun"
+        },
+        "highlight": {
+          "name": "Code-Highlighting",
+          "tech": "Highlight.js",
+          "description": "Syntax-Highlighting fir Code-Blöck a Chat-Messagen mat Ënnerstëtzung fir verschidden Programméierungssproochen"
+        },
+        "marked": {
+          "name": "Markdown-Parsing",
+          "tech": "Marked",
+          "description": "Schnelle Markdown-Parser a -Compiler fir d'Duerstellung vum formatéierten Text a Code a Chat-Äntwerten"
+        }
+      }
+    },
+    "myPortfolio": {
+      "description": "Eng modern, responsive Portfolio-Websäit, déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung.",
+      "features": {
+        "multilingual": {
+          "title": "Méisproocheg",
+          "description": "Ënnerstëtzung fir Lëtzebuergesch, Däitsch, Franséisch an Englesch mat i18n"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "description": "Perfekt Duerstellung op allen Apparater - Desktop, Tablet a Mobile"
+        },
+        "darkMode": {
+          "title": "Däischteren Modus",
+          "description": "Elegant Däischteren/Hellen Theme mat automatescher Browser-Detektioun"
+        },
+        "performance": {
+          "title": "Héich Leeschtung",
+          "description": "Optimiséiert Luedzäiten a SEO mat Nuxt 3 Server-Side Rendering"
+        },
+        "seo": {
+          "title": "SEO Optimiséiert",
+          "description": "Komplett Sichmotor-Optimisatioun mat Sitemap a Meta-Tags"
+        },
+        "contact": {
+          "title": "Kontakt-Formulaire",
+          "description": "Funktionellt Kontakt-Formulaire mat VeeValidate a Resend Integration"
+        }
+      },
+      "keyFeatures": {
+        "title": "Haaptfunktiounen",
+        "subtitle": "Entdeckt d'Features, déi dës Portfolio-Websäit zu enger moderner, professioneller Léisung maachen"
+      },
+      "builtWith": {
+        "title": "Entwéckelt mat",
+        "subtitle": "Modern Technologien a Best Practices fir eng eeschtklasseg Benotzer-Experienz"
+      },
+      "callToAction": {
+        "title": "Interesséiert un enger ähnlecher Websäit?",
+        "subtitle": "Entdeckt meng Portfolio-Websäit a kuckt, wéi modern Webtechnologien eng impressionnant Online-Presenz schafen kënnen.",
+        "button": "Websäit besichen"
+      },
+      "technologies": {
+        "nuxt3": {
+          "name": "Frontend Framework",
+          "tech": "Nuxt 3",
+          "description": "Fortgeschrattenen Vue.js Framework mat Server-Side Rendering, automatesch Code-Splitting a Leeschtungsoptimisatioun"
+        },
+        "vue3": {
+          "name": "UI Library",
+          "tech": "Vue 3",
+          "description": "Modern, reaktiven JavaScript Framework mat Composition API an optimaler Entwéckler-Experienz"
+        },
+        "typescript": {
+          "name": "Typsécherheet",
+          "tech": "TypeScript",
+          "description": "Statesch Typisatioun fir besser Code-Qualitéit, Feeler-Preventioun an erweiderten IDE-Support"
+        },
+        "tailwind": {
+          "name": "CSS Framework",
+          "tech": "Tailwind CSS",
+          "description": "Utility-First-CSS-Framework fir séier, konsistent Styling a responsive Designen"
+        },
+        "i18n": {
+          "name": "Internationalisatioun",
+          "tech": "Nuxt i18n",
+          "description": "Komplett méisproocheg Ënnerstëtzung mat automatesch Routing a Locale-Management"
+        },
+        "veevalidate": {
+          "name": "Formulaire-Validatioun",
+          "tech": "VeeValidate",
+          "description": "Mächteg Formulaire-Validatioun mat benotzerfrëndlecher Feeler-Behandlung a TypeScript-Support"
+        },
+        "resend": {
+          "name": "E-Mail Service",
+          "tech": "Resend",
+          "description": "Modern E-Mail-API fir zouverlässeg Kontakt-Formulaire-Iwwermëttlung mat entwéckler-frëndlecher Integration"
+        },
+        "iconify": {
+          "name": "Icon System",
+          "tech": "Iconify",
+          "description": "Extensiv Icon-Bibliothéik mat iwwer 100.000 Iconen an optimaler Leeschtung duerch Icon-op-Nofro"
+        }
+      }
+    }
+  },
+  "documentations": {
+    "ollamaSetup": {
+      "title": "Linux - Ollama Installation",
+      "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir Ollama op Debian 12 ze installéieren mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir sécher ëffentlech API-Notzung.",
+      "notes": {
+        "title": "Wichteg Notizen",
+        "hardware": {
+          "title": "Hardware-Ufuerderungen",
+          "description": "Op d'mannst 4GB RAM fir kleng Modeller, 8GB+ recommandéiert fir méi grouss"
+        },
+        "diskSpace": {
+          "title": "Späicherplaz",
+          "description": "Modeller brauchen 1-10GB Späicher jeeweils jee no Gréisst - plangt entspriechend"
+        },
+        "internetConnection": {
+          "title": "Internet-Verbindung",
+          "description": "Stabil Verbindung erfuerderlech fir AI-Modeller erofzelueden"
+        },
+        "modelSizes": {
+          "title": "Modell-Gréissten berücksichtegen",
+          "description": "Méi grouss Modeller bidden besser Qualitéit mee brauchen méi Ressourcen"
+        },
+        "performance": {
+          "title": "Performance-Iwwerwaachung",
+          "description": "Iwwerwaacht CPU- an RAM-Notzung während der Modell-Ausféierung"
+        }
+      },
+      "steps": {
+        "title": "Installatiounsschrëtt",
+        "subtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
+        "dependencies": {
+          "title": "Dependenzen installéieren",
+          "description": "Installation vun erfuerderlechen Systempakete an Dependenzen fir Ollama an Apache2."
+        },
+        "ollama": {
+          "title": "Ollama installéieren",
+          "description": "Installation vun Ollama an initial Konfiguratioun mat engem Testmodell."
+        },
+        "apache": {
+          "title": "Apache2 konfiguréieren",
+          "description": "Installation an Konfiguratioun vun Apache2 als Reverse Proxy fir Ollama."
+        },
+        "ssl": {
+          "title": "SSL-Zertifikat ariichten",
+          "description": "Arichtung vun Let's Encrypt SSL-Zertifikate fir sécher HTTPS-Verbindungen."
+        },
+        "authentication": {
+          "title": "HTTP Basic Authentication",
+          "description": "Konfiguratioun vun HTTP Basic Authentication fir sécheren API-Zougang."
+        },
+        "virtualhost": {
+          "title": "Virtual Host aktivéieren",
+          "description": "Aktivéierung vum Virtual Host an Restart vun Apache-Servicer."
+        },
+        "testing": {
+          "title": "Installation testen",
+          "description": "Iwwerpréiwung vun der Installation an Test vun der API-Funktionalitéit."
+        }
+      },
+      "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
+      "commands": {
+        "dependencies": {
+          "updateAgain": "Paketlëschten erëm aktualiséieren",
+          "installBasic": "Basis-Pakete installéieren"
+        },
+        "ollama": {
+          "install": "Ollama eroflueden an installéieren",
+          "testModel": "Klengt Testmodell eroflueden an testen",
+          "reexec": "Systemd-Manager nei lueden",
+          "reload": "Ollama-Service nei lueden",
+          "restart": "Ollama-Service nei starten",
+          "checkPort": "Iwwerpréiwen ob Ollama op Port 11434 lauschtert"
+        },
+        "apache": {
+          "install": "Apache2 an SSL-Modulen installéieren",
+          "enableModules": "Erfuerderlech Apache-Modulen aktivéieren",
+          "restart": "Apache2 nei starten"
+        },
+        "ssl": {
+          "installCertbot": "Certbot fir Let's Encrypt installéieren",
+          "getCertificate": "SSL-Zertifikat fir Domain ufroe"
+        },
+        "authentication": {
+          "createDirectory": "Verzeechnes fir Auth-Fichieren erstellen",
+          "createUser": "Benotzer mat Passwuert fir HTTP Basic Auth erstellen",
+          "passwordNote": "Gitt e séchere Passwuert an wann gefrot"
+        },
+        "virtualhost": {
+          "enableSite": "Nei Site-Konfiguratioun aktivéieren",
+          "disableDefault": "Standard Apache-Site deaktivéieren",
+          "disableDefaultSSL": "Standard SSL-Site deaktivéieren",
+          "reloadApache": "Apache-Konfiguratioun nei lueden"
+        },
+        "testing": {
+          "testApi": "API-Endpunkt mat curl testen",
+          "testNote": "Benotzt Äre konfiguréierten Benotzernumm a Passwuert"
+        },
+        "troubleshooting": {
+          "checkPort": "Iwwerpréiwen wéi een Service op Port 11434 leeft",
+          "checkStatus": "Ollama-Service-Status iwwerpréiwen",
+          "checkLogs": "Ollama-Service-Logs uweisen",
+          "testConfig": "Apache-Konfiguratioun testen",
+          "checkApache": "Apache-Service-Status iwwerpréiwen",
+          "checkApacheLogs": "Apache-Error-Logs uweisen",
+          "listCertificates": "All Certbot-Zertifikater oplëschten",
+          "testRenewal": "Zertifikat-Erneierung testen",
+          "testSSL": "SSL-Verbindung mat OpenSSL testen"
+        }
+      },
+      "troubleshooting": {
+        "title": "Problemléisung",
+        "subtitle": "Heefeg Problemer an hir Léisungen bei der Ollama-Installation",
+        "ollamaIssues": {
+          "title": "Ollama-Problemer"
+        },
+        "apacheIssues": {
+          "title": "Apache-Problemer"
+        },
+        "sslIssues": {
+          "title": "SSL-Problemer"
+        }
+      },
+      "completion": {
+        "title": "Installation ofgeschloss!",
+        "description": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen."
+      }
+    },
+    "debianInitialSetup": {
+      "title": "Debian 12 - Server Éischt-Arichtung",
+      "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir d'éischt Arichtung vun engem frësche Debian 12 Server mat de wichtegsten Konfiguratiounsschrëtt.",
+      "notes": {
+        "title": "Wichteg Notizen",
+        "rootAccess": {
+          "title": "Root-Zougang erfuerderlech",
+          "description": "Root-Zougang oder sudo-Berechtigungen sinn fir all Konfiguratiounsschrëtt erfuerderlech"
+        },
+        "networkConnection": {
+          "title": "Internet-Verbindung néideg",
+          "description": "Aktiv Internet-Verbindung ass fir Paket-Updates an Downloads néideg"
+        },
+        "backupImportant": {
+          "title": "Backup erstellen",
+          "description": "Erstellt Backuppen vun ären kritische Daten virun all wichteg Ännerungen"
+        },
+        "timeRequired": {
+          "title": "Zäitbedarf",
+          "description": "Gesamt-Zäit: ongeféier 30-45 Minutten jee no System-Performance"
+        },
+        "securityConsiderations": {
+          "title": "Sécherheetsaspekter",
+          "description": "Berücksichtegt all Sécherheetsaspekter bei der Server-Konfiguratioun"
+        },
+        "documentChanges": {
+          "title": "Ännerungen dokumentéieren",
+          "description": "Dokumentéiert all gemaachten Ännerungen fir spéider Referenz"
+        }
+      },
+      "steps": {
+        "title": "Arichtungsschrëtt",
+        "subtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir optimal Server-Konfiguratioun",
+        "language": {
+          "title": "Sprooch a Locale konfiguréieren",
+          "description": "Konfiguratioun vun der Systemsprooch a Locale-Astellungen fir korrekt Zeechen-Duerstellen."
+        },
+        "timezone": {
+          "title": "Zäitzon astellen",
+          "description": "Astellen vun der korrekter Zäitzon fir genau Zäit- an Datumsangaben."
+        },
+        "sources": {
+          "title": "Paketquellen aktualiséieren",
+          "description": "Aktualiséierung vun APT-Paketquellen a System op de leschten Stand."
+        },
+        "hostname": {
+          "title": "Hostname konfiguréieren",
+          "description": "Festleeung vun engem eendeitegen Hostname fir d'Server-Identifikatioun am Netzwierk."
+        },
+        "motd": {
+          "title": "MOTD botzelen",
+          "description": "Entfernung vun der Standard-Welkomsnoriicht fir eng proper Umeldung."
+        },
+        "hardware": {
+          "title": "Hardware-Informatiounen uweisen",
+          "description": "Iwwerpréiwung an Uweise vun verfügbare Hardware-Ressourcen vum Server."
+        },
+        "verification": {
+          "title": "System-Verifikatioun",
+          "description": "Ofschléissend Iwwerpréiwung vun allen Konfiguratiounen a Systemstatus."
+        }
+      },
+      "commands": {
+        "language": {
+          "listLocales": "Verfügbar Locales oplëschten",
+          "generateLocale": "UTF-8 Locale generéieren",
+          "updateLocale": "System-Locale aktualiséieren",
+          "checkLocale": "Aktuell Locale-Konfiguratioun iwwerpréiwen",
+          "restartNote": "E Restart kann néideg sinn fir d'Ännerungen komplett ze iwwerhuelen"
+        },
+        "timezone": {
+          "checkDate": "Aktuell Datum an Auer uweisen",
+          "checkTimezone": "Zäitzon-Konfiguratioun iwwerpréiwen",
+          "listTimezones": "All verfügbar Zäitzonen oplëschten",
+          "setTimezone": "Zäitzon op Europa/Lëtzebuerg setzen",
+          "verifyTimezone": "Nei Zäitzon-Konfiguratioun bestätegen"
+        },
+        "sources": {
+          "updatePackages": "Paketlëschten aktualiséieren",
+          "upgradeSystem": "System op leschten Stand bréngen",
+          "autoremove": "Net méi néideg Pakete ewechhuelen",
+          "autoclean": "Paket-Cache botzelen",
+          "verifySources": "Haaptpaketquellen uweisen",
+          "checkAdditionalSources": "Zousätzlech Paketquellen iwwerpréiwen",
+          "wikiReference": "Méi Informatiounen fënnt Dir am Debian Wiki zur APT-Konfiguratioun"
+        },
+        "hostname": {
+          "editCloudConfig": "Cloud-Init Konfiguratioun editéieren (falls do)",
+          "setHostname": "Neien Hostname setzen",
+          "verifyHostname": "Hostname-Konfiguratioun iwwerpréiwen",
+          "reboot": "System fir komplett Applicatioun nei starten",
+          "virtualizationNote": "Nëmmen bei virtualiséierte Ëmfeld mat cloud-init néideg"
+        },
+        "motd": {
+          "clearMotd": "Standard MOTD-Fichier eidel maachen"
+        },
+        "hardware": {
+          "installInxi": "Hardware-Informatiouns-Tool installéieren",
+          "showHardwareInfo": "Komplett Hardware-Informatiounen uweisen",
+          "showCpuInfo": "CPU-Informatiounen uweisen",
+          "showMemoryInfo": "Späicher-Informatiounen uweisen",
+          "showDiskInfo": "Festplaten-Informatiounen uweisen"
+        },
+        "verification": {
+          "systemInfo": "System-Versiounsinformatiounen uweisen",
+          "kernelInfo": "Kernel-Informatiounen uweisen",
+          "systemStatus": "Systemd-Status iwwerpréiwen",
+          "checkUpdates": "Verfügbar Updates iwwerpréiwen"
+        },
+        "tips": {
+          "installFirewall": "UFW Firewall installéieren",
+          "enableFirewall": "Firewall aktivéieren",
+          "installFail2ban": "Fail2Ban fir erweidert Sécherheet installéieren",
+          "installEssentials": "Wichteg System-Tools installéieren",
+          "installBuildTools": "Build-Tools fir Kompiléierung installéieren",
+          "installAutoUpdates": "Automatesch Updates installéieren",
+          "configureAutoUpdates": "Automatesch Updates konfiguréieren"
+        }
+      },
+      "tips": {
+        "sectionTitle": "Zousätzlech Recommandatiounen",
+        "sectionSubtitle": "Optional: Weider nëtzlech Konfiguratiounen fir erweidert Sécherheet a Funktionalitéit",
+        "security": {
+          "title": "Sécherheetsmoossnamen"
+        },
+        "essentials": {
+          "title": "Essential Tools"
+        },
+        "updates": {
+          "title": "Automatesch Updates"
+        }
+      },
+      "completion": {
+        "title": "Arichtung ofgeschloss!",
+        "message": "Äre Debian 12 Server ass elo grondsätzlech konfiguréiert a betribsbereet. Vergiess net weider sécherheetsrelevant Konfiguratiounen entspriechend Ären Ufuerderungen ze maachen."
+      }
+    },
+    "cardanoNodeSetup": {
+      "title": "Linux - Cardano Node Installation",
+      "description": "Komplett Guide fir eng Cardano-Node op Debian 12 ze installéieren mam NIX-Paketmanager, inklusiv Service-Konfiguratioun a Iwwerwaachung.",
+      "notes": {
+        "title": "Wichteg Notizen",
+        "nodeRequirements": {
+          "title": "Hardware-Ufuerderungen",
+          "description": "Op d'mannst 8GB RAM an 100GB Späicher fir optimal Node-Performance"
+        },
+        "nixDaemon": {
+          "title": "NIX-Daemon erfuerderlech",
+          "description": "Den NIX-Daemon muss korrekt installéiert a gestart sinn"
+        },
+        "diskSpace": {
+          "title": "Späicherplaz",
+          "description": "Op d'mannst 50GB fräie Späicherplaz fir d'Blockchain-Daten erfuerderlech"
+        },
+        "syncTime": {
+          "title": "Synchronisatiounszäit",
+          "description": "Éischt Synchronisatioun kann 24-48 Stonnen daueren jee no Internet-Verbindung"
+        },
+        "networkStability": {
+          "title": "Netzwierk-Stabilitéit",
+          "description": "Stabil Internet-Verbindung fir kontinuéierlech Synchronisatioun néideg"
+        }
+      },
+      "steps": {
+        "title": "Installatiounsschrëtt",
+        "dependencies": {
+          "title": "System-Dependenzen installéieren",
+          "description": "Installation vun erfuerderlechen Systempakete fir d'NIX-Paketmanager Installation."
+        },
+        "nix": {
+          "title": "NIX Paketmanager installéieren",
+          "description": "Installation vum NIX-Paketmanager fir d'Verwaltung vun Cardano-Node Dependenzen."
+        },
+        "nixconfig": {
+          "title": "NIX fir Cardano konfiguréieren",
+          "description": "Konfiguratioun vum NIX-Paketmanager mat den offiziellen IOHK-Binär-Caches fir optimiséiert Downloads."
+        },
+        "user": {
+          "title": "Cardano-Benotzer erstellen",
+          "description": "Erstellung vun engem dediziéierte Benotzer fir den Cardano-Node-Betrib."
+        },
+        "install": {
+          "title": "Cardano-Node installéieren",
+          "description": "Installation vun der Cardano-Node a CLI-Tools iwwert d'NIX-System."
+        },
+        "symlinks": {
+          "title": "System-Symlinks erstellen",
+          "description": "Erstellung vu Symlinks fir systemwäite Zougang zu Cardano-Tools."
+        },
+        "config": {
+          "title": "Node-Konfiguratioun eroflueden",
+          "description": "Download vun den offiziellen Cardano-Netzwierk-Konfiguratiounsfichieren."
+        },
+        "service": {
+          "title": "Systemd-Service ariichten",
+          "description": "Konfiguratioun vun der Cardano-Node als Systemd-Service fir automateschen Start."
+        },
+        "monitor": {
+          "title": "Node-Iwwerwaachung ariichten",
+          "description": "Iwwerwaachung vun Node-Logs a Synchronisatiounsprozess."
+        }
+      },
+      "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano-Node Installation",
+      "commands": {
+        "dependencies": {
+          "installDeps": "System-Dependenzen installéieren"
+        },
+        "nix": {
+          "rebootNote": "E Restart ass no der NIX-Installation erfuerderlech",
+          "install": "NIX-Paketmanager installéieren",
+          "reboot": "System nei starten",
+          "verify": "NIX-Installation verifizéieren"
+        },
+        "nixconfig": {
+          "restart": "NIX-Daemon nei starten"
+        },
+        "user": {
+          "createUser": "Cardano-Benotzer erstellen"
+        },
+        "install": {
+          "switchUser": "Zu Cardano-Benotzer wiesselen",
+          "clone": "Cardano-Node Repository klonen",
+          "changeDir": "An Cardano-Node Verzeechnes wiesselen",
+          "listTags": "Verfügbar Versiounen uweisen",
+          "checkout": "Aktuell stabil Versioun auschecken",
+          "profileInstall": "Cardano-Node a CLI an NIX-Profil installéieren",
+          "profileNote": "Dëst kann 30-60 Minutten daueren, well all Dependenzen kompiléiert ginn",
+          "profileList": "Installéiert Profiler oplëschten",
+          "checkNode": "Cardano-Node Versioun iwwerpréiwen",
+          "checkCli": "Cardano-CLI Versioun iwwerpréiwen",
+          "exitUser": "Zeréck zu Root-Benotzer wiesselen"
+        },
+        "symlinks": {
+          "profileNote": "Passt de Wee entspriechend Ärem NIX-Profil un",
+          "linkNode": "Symlink fir Cardano-Node erstellen",
+          "linkCli": "Symlink fir Cardano-CLI erstellen",
+          "verifyLinks": "Symlinks verifizéieren",
+          "testNode": "Cardano-Node systemwäit testen",
+          "testCli": "Cardano-CLI systemwäit testen"
+        },
+        "config": {
+          "switchUser": "Zu Cardano-Benotzer wiesselen",
+          "createDirs": "Konfiguratiounsverzeechnisser erstellen",
+          "changeDir": "An Konfiguratiounsverzeechnes wiesselen",
+          "downloadConfigs": "Offiziell Konfiguratiounsfichiere eroflueden",
+          "listConfigs": "Erofgeluedene Konfiguratiounsfichiere oplëschten",
+          "checkConfig": "Genesis-Konfiguratioun iwwerpréiwen",
+          "exitUser": "Zeréck zu Root-Benotzer wiesselen"
+        },
+        "service": {
+          "reload": "Systemd-Manager nei lueden",
+          "enable": "Cardano-Node Service aktivéieren",
+          "start": "Cardano-Node Service starten"
+        },
+        "monitor": {
+          "syncNote": "D'initial Blockchain-Synchronisatioun kann 24-48 Stonnen daueren",
+          "logs": "Service-Logs verfollegen",
+          "syncProgress": "Synchronisatiounsfortschrëtt iwwerpréiwen"
+        },
+        "tips": {
+          "syncStatus": "Synchronisatiounsstatus iwwerpréiwen",
+          "syncSize": "Aktuell Blockchain-Gréisst uweisen",
+          "restart": "Cardano-Node Service nei starten",
+          "stop": "Cardano-Node Service stoppen",
+          "fullLogs": "Komplett Logs uweisen",
+          "checkProcess": "Cardano-Node Prozess iwwerpréiwen"
+        }
+      },
+      "tips": {
+        "sectionTitle": "Zousätzlech Tipps",
+        "sectionSubtitle": "Nëtzlech Kommandoen a Ënnerhaltungstipps fir d'Cardano-Node",
+        "sync": {
+          "title": "Synchronisatiounsiwwerwaachung"
+        },
+        "maintenance": {
+          "title": "Service-Verwaltung"
+        },
+        "troubleshooting": {
+          "title": "Problemléisung"
+        }
+      },
+      "resources": {
+        "sectionTitle": "Nëtzlech Ressourcen",
+        "sectionSubtitle": "Weiderfierend Linken a Dokumentatioun fir d'Cardano-Node",
+        "nixDownload": {
+          "title": "NIX Download",
+          "description": "Offiziell NIX-Paketmanager Websäit mat Installatiounsuleedungen"
+        },
+        "cardanoInstall": {
+          "title": "Cardano Installation Guide",
+          "description": "Offiziell Cardano-Node Installatiounsdokumentatioun"
+        },
+        "cardanoRunning": {
+          "title": "Running a Node",
+          "description": "Offiziell Uleedung fir de Betrib vun enger Cardano-Node"
+        }
+      },
+      "completion": {
+        "title": "Installation ofgeschloss!",
+        "message": "Är Cardano-Node ass erfollegräich installéiert a leeft als Systemd-Service. D'Blockchain-Synchronisatioun leeft am Hannergrond a kann 24-48 Stonnen daueren."
+      }
+    },
+    "cardanoDbSyncSetup": {
+      "title": "Linux - Cardano DB Sync Installation",
+      "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun.",
+      "notes": {
+        "title": "Wichteg Notizen",
+        "prerequisite": {
+          "title": "Cardano-Node erfuerderlech",
+          "description": "Eng fonktionéierend Cardano-Node muss éischt installéiert a synchroniséiert sinn"
+        },
+        "databaseSecurity": {
+          "title": "Datebank-Sécherheet",
+          "description": "Benotzt sécher Passwierder a limitéiert den Datebank-Zougang entspriechend"
+        },
+        "syncTime": {
+          "title": "Synchronisatiounsdauer",
+          "description": "Éischt Synchronisatioun kann e puer Deeg daueren jee no Hardware"
+        },
+        "diskSpace": {
+          "title": "Späicherplaz",
+          "description": "Op d'mannst 200GB fräie Späicherplaz fir d'PostgreSQL-Datebank erfuerderlech"
+        },
+        "cardanoNode": {
+          "title": "Hardware-Ufuerderungen",
+          "description": "Op d'mannst 16GB RAM recommandéiert fir optimal Performance"
+        }
+      },
+      "steps": {
+        "title": "Installatiounsschrëtt",
+        "postgresql": {
+          "title": "PostgreSQL installéieren",
+          "description": "Installation a Konfiguratioun vun der PostgreSQL-Datebank fir Cardano DB Sync."
+        },
+        "database": {
+          "title": "Datebank ariichten",
+          "description": "Erstellung vun der Datebank a Benotzer fir Cardano DB Sync."
+        },
+        "cloneInstall": {
+          "title": "DB Sync klonen an installéieren",
+          "description": "Klonen vum Cardano DB Sync Repository an Installation mat NIX."
+        },
+        "pgpass": {
+          "title": "Passwuert-Fichier erstellen",
+          "description": "Erstellung vun der .pgpass-Fichier fir automatesch Datebank-Authentifizéierung."
+        },
+        "symlink": {
+          "title": "Symbolësch Linken erstellen",
+          "description": "Erstellen vu symbolësche Linken fir d'Cardano DB Sync Binärdateien."
+        },
+        "service": {
+          "title": "Systemd Service konfiguréieren",
+          "description": "Erstellung an Aktivéierung vum Systemd-Service fir Cardano DB Sync."
+        },
+        "monitoring": {
+          "title": "Service iwwerwaachen",
+          "description": "Iwwerwaachung vum Service an der Datebank-Synchronisatioun."
+        }
+      },
+      "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano DB Sync Installation",
+      "commands": {
+        "postgresql": {
+          "install": "PostgreSQL installéieren",
+          "enable": "PostgreSQL aktivéieren",
+          "start": "PostgreSQL starten"
+        },
+        "database": {
+          "connect": "Als postgres-Benotzer verbannen",
+          "createUser": "Datebankbenotzer erstellen",
+          "passwordNote": "Sécher Passwuert wielen a merken",
+          "createDatabase": "Datebank erstellen",
+          "grantPrivileges": "Berechtigungen accordéieren",
+          "quit": "PostgreSQL-Konsole verloossen"
+        },
+        "clone": {
+          "switchUser": "Zu cardano-Benotzer wiesselen",
+          "clone": "Cardano DB Sync Repository klonen",
+          "listFiles": "Repository-Inhalter uweisen",
+          "changeDir": "An Repository-Verzeechnes wiesselen"
+        },
+        "install": {
+          "listTags": "Verfügbar Tags uweisen",
+          "checkout": "Neist stabil Versioun auschecken",
+          "nixInstall": "DB Sync mat NIX installéieren",
+          "nixNote": "Installation kann 30-60 Minutten daueren",
+          "checkVersion": "Installation iwwerpréiwen",
+          "listProfiles": "NIX Profile uweisen"
+        },
+        "pgpass": {
+          "chmod": "Dateiberechtegungen setzen",
+          "exit": "Benotzer-Sessioun verloossen"
+        },
+        "symlink": {
+          "create": "Symbolësche Link erstellen",
+          "verify": "Link iwwerpréiwen"
+        },
+        "service": {
+          "reload": "Systemd-Daemon nei lueden",
+          "enable": "Service aktivéieren",
+          "start": "Service starten"
+        },
+        "monitoring": {
+          "status": "Service-Status kucken",
+          "logs": "Service-Logs uweisen"
+        }
+      },
+      "tips": {
+        "sectionTitle": "Hëllefräich Tipps",
+        "sectionSubtitle": "Nëtzlech Kommandoen a Weisungen fir d'Verwaltung vum Cardano DB Sync",
+        "syncStatus": {
+          "title": "Synchronisatiounsstatus",
+          "checkMeta": "Datebank-Metadaten fir Sync-Status kucken"
+        },
+        "troubleshooting": {
+          "title": "Problemléisung",
+          "restart": "Service bei Problemer nei starten"
+        },
+        "diskSpace": {
+          "title": "Späicherplaz",
+          "check": "Verfügbare Späicherplaz reegelméisseg iwwerwaachen"
+        }
+      },
+      "resources": {
+        "sectionTitle": "Nëtzlech Ressourcen",
+        "sectionSubtitle": "Zousätzlech Dokumentatioun an Tools fir Cardano DB Sync",
+        "github": {
+          "title": "Cardano DB Sync GitHub",
+          "description": "Offiziellt Repository mat Dokumentatioun an Updates"
+        },
+        "postgresql": {
+          "title": "PostgreSQL Dokumentatioun",
+          "description": "Ëmfassend Dokumentatioun fir PostgreSQL-Administratioun"
+        },
+        "cardanoDocs": {
+          "title": "Cardano Developer Portal",
+          "description": "Entwéckler-Ressourcen an API-Dokumentatioun"
+        }
+      },
+      "completion": {
+        "title": "Installation Ofgeschloss",
+        "message": "Cardano DB Sync ass elo erfollegräich installéiert a leeft. D'Synchronisatioun mat der Blockchain wäert automatesch weiderfueren an d'Datebank gëtt gefëllt."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Loosst eis iwwer Äert nächst Projet schwätzen",
+    "methods": {
+      "title": "Kontaktméiglechkeeten"
+    },
+    "form": {
+      "title": "Message schécken",
+      "description": "Fëllt de Formulaire hei ënnendrënner aus an ech mellen mech sou séier wéi méiglech bei Iech.",
+      "name": "Numm",
+      "namePlaceholder": "Äre kompletten Numm",
+      "email": "E-Mail",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Wou geet et drëm?",
+      "message": "Message",
+      "messagePlaceholder": "Erzielt mer vun Ärem Projet oder Ärer Ufro...",
+      "submit": "Message schécken",
+      "sending": "Gëtt geschéckt...",
+      "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech.",
+      "errors": {
+        "nameRequired": "Numm ass obligatoresch",
+        "nameLength": "Numm muss tëschent 2 an 100 Zeechen sinn",
+        "emailRequired": "E-Mail ass obligatoresch",
+        "emailInvalid": "Gitt w.e.g. eng gülteg E-Mail-Adress an",
+        "subjectRequired": "Sujet ass obligatoresch",
+        "subjectLength": "Sujet muss tëschent 5 an 200 Zeechen sinn",
+        "messageRequired": "Message ass obligatoresch",
+        "messageMinLength": "Message muss op d'mannst 10 Zeechen hunn",
+        "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
+        "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
+        "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
+        "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier.",
+        "captchaRequired": "Maacht w.e.g. d'Sécherheetsverifikatioun fäerdeg.",
+        "captchaFailed": "Sécherheetsverifikatioun feelgeschloen. Probéiert w.e.g. nach eng Kéier.",
+        "captchaExpired": "Sécherheetsverifikatioun ass ofgelaf. Léist se w.e.g. nach eng Kéier.",
+        "captchaError": "Sécherheetsverifikatiounsfeeler. Luet d'Säit w.e.g. nei."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Chad Feierstein. Erstallt mat Nuxt 3, Tailwind CSS a Color Mode"
+  }
 }

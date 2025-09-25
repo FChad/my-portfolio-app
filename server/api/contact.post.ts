@@ -4,172 +4,172 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Contact form data interface
 interface ContactFormData {
-    name: string
-    email: string
-    subject: string
-    message: string
-    turnstileToken: string
+  name: string
+  email: string
+  subject: string
+  message: string
+  turnstileToken: string
 }
 
 // Email validation regex
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function sanitizeInput(input: string): string {
-    return input.trim().replace(/[<>]/g, '')
+  return input.trim().replace(/[<>]/g, '')
 }
 
 // Turnstile verification function
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
-    const secretKey = process.env.TURNSTILE_SECRET_KEY
+  const secretKey = process.env.TURNSTILE_SECRET_KEY
 
-    if (!secretKey) {
-        console.error('❌ TURNSTILE_SECRET_KEY is not configured')
-        return false
-    }
+  if (!secretKey) {
+    console.error('❌ TURNSTILE_SECRET_KEY is not configured')
+    return false
+  }
 
-    try {
-        const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                secret: secretKey,
-                response: token,
-                remoteip: ip
-            })
-        })
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        secret: secretKey,
+        response: token,
+        remoteip: ip
+      })
+    })
 
-        const result = await response.json()
-        return result.success === true
-    } catch (error) {
-        console.error('❌ Turnstile verification failed:', error)
-        return false
-    }
+    const result = await response.json()
+    return result.success === true
+  } catch (error) {
+    console.error('❌ Turnstile verification failed:', error)
+    return false
+  }
 }
 
 function validateContactForm(data: any): ContactFormData | null {
-    if (!data || typeof data !== 'object') {
-        return null
-    }
+  if (!data || typeof data !== 'object') {
+    return null
+  }
 
-    const { name, email, subject, message, turnstileToken } = data
+  const { name, email, subject, message, turnstileToken } = data
 
-    // Required field validation
-    if (!name || !email || !subject || !message || !turnstileToken) {
-        return null
-    }
+  // Required field validation
+  if (!name || !email || !subject || !message || !turnstileToken) {
+    return null
+  }
 
-    // Type and length validation
-    if (typeof name !== 'string' || name.length < 2 || name.length > 100) {
-        return null
-    }
+  // Type and length validation
+  if (typeof name !== 'string' || name.length < 2 || name.length > 100) {
+    return null
+  }
 
-    if (typeof email !== 'string' || !EMAIL_REGEX.test(email) || email.length > 254) {
-        return null
-    }
+  if (typeof email !== 'string' || !EMAIL_REGEX.test(email) || email.length > 254) {
+    return null
+  }
 
-    if (typeof subject !== 'string' || subject.length < 5 || subject.length > 200) {
-        return null
-    }
+  if (typeof subject !== 'string' || subject.length < 5 || subject.length > 200) {
+    return null
+  }
 
-    if (typeof message !== 'string' || message.length < 10 || message.length > 2000) {
-        return null
-    }
+  if (typeof message !== 'string' || message.length < 10 || message.length > 2000) {
+    return null
+  }
 
-    if (typeof turnstileToken !== 'string' || turnstileToken.length === 0) {
-        return null
-    }
+  if (typeof turnstileToken !== 'string' || turnstileToken.length === 0) {
+    return null
+  }
 
-    return {
-        name: sanitizeInput(name),
-        email: email.toLowerCase().trim(),
-        subject: sanitizeInput(subject),
-        message: sanitizeInput(message),
-        turnstileToken: turnstileToken.trim()
-    }
+  return {
+    name: sanitizeInput(name),
+    email: email.toLowerCase().trim(),
+    subject: sanitizeInput(subject),
+    message: sanitizeInput(message),
+    turnstileToken: turnstileToken.trim()
+  }
 }
 
 export default defineEventHandler(async (event) => {
-    // Only allow POST requests
-    if (event.node.req.method !== 'POST') {
-        throw createError({
-            statusCode: 405,
-            statusMessage: 'Method Not Allowed'
-        })
+  // Only allow POST requests
+  if (event.node.req.method !== 'POST') {
+    throw createError({
+      statusCode: 405,
+      statusMessage: 'Method Not Allowed'
+    })
+  }
+
+  try {
+    // Parse and validate request body
+    const body = await readBody(event)
+    const validatedData = validateContactForm(body)
+
+    if (!validatedData) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: 'Invalid form data'
+      })
     }
 
-    try {
-        // Parse and validate request body
-        const body = await readBody(event)
-        const validatedData = validateContactForm(body)
+    // Get client IP for Turnstile verification
+    const clientIP = getHeader(event, 'cf-connecting-ip') ||
+      getHeader(event, 'x-forwarded-for') ||
+      getHeader(event, 'x-real-ip') ||
+      event.node.req.socket.remoteAddress ||
+      'unknown'
 
-        if (!validatedData) {
-            throw createError({
-                statusCode: 400,
-                statusMessage: 'Invalid form data'
-            })
-        }
+    // Verify Turnstile token
+    const isTurnstileValid = await verifyTurnstile(validatedData.turnstileToken, clientIP)
 
-        // Get client IP for Turnstile verification
-        const clientIP = getHeader(event, 'cf-connecting-ip') ||
-            getHeader(event, 'x-forwarded-for') ||
-            getHeader(event, 'x-real-ip') ||
-            event.node.req.socket.remoteAddress ||
-            'unknown'
-
-        // Verify Turnstile token
-        const isTurnstileValid = await verifyTurnstile(validatedData.turnstileToken, clientIP)
-
-        if (!isTurnstileValid) {
-            throw createError({
-                statusCode: 400,
-                statusMessage: 'CAPTCHA verification failed. Please try again.'
-            })
-        }
-
-        // Check environment variables
-        if (!process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
-            throw createError({
-                statusCode: 500,
-                statusMessage: 'Email configuration incomplete'
-            })
-        }
-
-        // Send email using Resend - exactly as in official docs
-        const data = await resend.emails.send({
-            from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
-            to: [process.env.EMAIL_TO],
-            replyTo: validatedData.email,
-            subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
-            html: `
-                <h2>New Contact Request</h2>
-                <p><strong>Name:</strong> ${validatedData.name}</p>
-                <p><strong>Email:</strong> ${validatedData.email}</p>
-                <p><strong>Subject:</strong> ${validatedData.subject}</p>
-                <p><strong>Message:</strong></p>
-                <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-            `,
-        });
-
-        return {
-            success: true,
-            message: 'Email sent successfully',
-            id: data.data?.id
-        };
-
-    } catch (error) {
-        console.error('Contact form error:', error)
-
-        // Re-throw createError instances
-        if (error && typeof error === 'object' && 'statusCode' in error) {
-            throw error
-        }
-
-        // Handle Resend API errors
-        return {
-            success: false,
-            error: error instanceof Error ? error.message : 'Unknown error'
-        };
+    if (!isTurnstileValid) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: 'CAPTCHA verification failed. Please try again.'
+      })
     }
+
+    // Check environment variables
+    if (!process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
+      throw createError({
+        statusCode: 500,
+        statusMessage: 'Email configuration incomplete'
+      })
+    }
+
+    // Send email using Resend - exactly as in official docs
+    const data = await resend.emails.send({
+      from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
+      to: [process.env.EMAIL_TO],
+      replyTo: validatedData.email,
+      subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
+      html: `
+        <h2>New Contact Request</h2>
+        <p><strong>Name:</strong> ${validatedData.name}</p>
+        <p><strong>Email:</strong> ${validatedData.email}</p>
+        <p><strong>Subject:</strong> ${validatedData.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+    `,
+    });
+
+    return {
+      success: true,
+      message: 'Email sent successfully',
+      id: data.data?.id
+    };
+
+  } catch (error) {
+    console.error('Contact form error:', error)
+
+    // Re-throw createError instances
+    if (error && typeof error === 'object' && 'statusCode' in error) {
+      throw error
+    }
+
+    // Handle Resend API errors
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error'
+    };
+  }
 });
