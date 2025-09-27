@@ -5,8 +5,7 @@ definePageMeta({
     subNav: {
         titleKey: 'showcase.projects.myChatBot.title',
         showBackButton: true,
-        backTo: '/showcase',
-        backLabel: 'Back to Showcase'
+        backTo: '/showcase'
     }
 })
 

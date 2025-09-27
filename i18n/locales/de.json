@@ -59,7 +59,8 @@
     "home": "Startseite",
     "about": "Über mich",
     "showcase": "Showcase",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "back": "Zurück"
   },
   "home": {
     "greeting": "Hallo, ich bin",

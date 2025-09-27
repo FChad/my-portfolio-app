@@ -8,8 +8,7 @@ definePageMeta({
     subNav: {
         titleKey: 'documentations.cardanoNodeSetup.title',
         showBackButton: true,
-        backTo: '/showcase',
-        backLabel: 'Back to Showcase'
+        backTo: '/showcase'
     }
 })
 

@@ -59,7 +59,8 @@
     "home": "Home",
     "about": "About",
     "showcase": "Showcase",
-    "contact": "Contact"
+    "contact": "Contact",
+    "back": "Back"
   },
   "home": {
     "greeting": "Hello, I'm",

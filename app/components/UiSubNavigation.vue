@@ -3,13 +3,11 @@ interface Props {
     title: string
     showBackButton?: boolean
     backTo?: string
-    backLabel?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
     showBackButton: true,
-    backTo: '/showcase',
-    backLabel: 'Back to Showcase'
+    backTo: '/showcase'
 })
 
 const { t } = useI18n()
@@ -38,7 +36,7 @@ const { t } = useI18n()
                 <NuxtLinkLocale v-if="props.showBackButton" :to="props.backTo"
                     class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors">
                     <Icon name="mdi:arrow-left" class="w-5 h-5" />
-                    {{ props.backLabel }}
+                    {{ t('nav.back') }}
                 </NuxtLinkLocale>
             </div>
         </div>

@@ -22,7 +22,6 @@ interface SubNavProps {
     title: string
     showBackButton?: boolean
     backTo?: string
-    backLabel?: string
 }
 
 // Get subnav configuration from page meta
@@ -37,8 +36,7 @@ const subNavConfig = computed((): SubNavProps | null => {
     return {
         title: typeof meta.titleKey === 'string' ? t(meta.titleKey) : meta.title,
         showBackButton: meta.showBackButton ?? false,
-        backTo: meta.backTo,
-        backLabel: meta.backLabel
+        backTo: meta.backTo
     }
 })
 </script>
