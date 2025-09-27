@@ -1,9 +1,9 @@
 <template>
-    <div class="turnstile-container">
+    <div class="flex justify-center my-6">
         <div v-if="isReady" ref="turnstileElement" class="cf-turnstile" :data-sitekey="siteKey"
             :data-callback="callbackName" :data-expired-callback="expiredCallbackName"
             :data-error-callback="errorCallbackName" :data-theme="isDark ? 'dark' : 'light'" data-language="auto" />
-        <div v-else class="turnstile-skeleton">
+        <div v-else class="w-80 mx-auto">
             <div class="animate-pulse bg-gray-200 dark:bg-gray-700 h-16 rounded-lg flex items-center justify-center">
                 <Icon name="mdi:loading" class="animate-spin text-gray-500 dark:text-gray-400 text-xl" />
             </div>
@@ -14,8 +14,15 @@
 <script setup lang="ts">
 declare global {
     interface Window {
-        turnstile?: any
-        [key: string]: any // Allow string keys for dynamic callback names
+        turnstile: {
+            render: (element: HTMLElement, options: any) => string
+            reset: (widgetId: string) => void
+            remove: (widgetId: string) => void
+        }
+        [key: `turnstileCallback_${string}`]: (token: string) => void
+        [key: `turnstileExpired_${string}`]: () => void
+        [key: `turnstileError_${string}`]: (error: string) => void
+        [key: string]: any // Allow other dynamic properties
     }
 }
 
@@ -149,13 +156,3 @@ defineExpose({
     reset: resetTurnstile
 })
 </script>
-
-<style scoped>
-.turnstile-container {
-    @apply flex justify-center my-6;
-}
-
-.turnstile-skeleton {
-    @apply w-80 mx-auto;
-}
-</style>
