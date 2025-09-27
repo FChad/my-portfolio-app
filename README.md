@@ -215,11 +215,13 @@ Create a `.env` file in the root directory and configure the following variables
 
 ## 📝 License
 
-This project is private and proprietary. All rights reserved.
+This project is licensed under the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+You are free to use, modify, and distribute this code for any purpose, including commercial use, as long as you provide appropriate attribution to Chad Feierstein and link back to the original source.
 
 ## 🤝 Contributing
 
-This is a personal portfolio project and is not open for contributions. However, feel free to fork it and adapt it for your own use!
+This is a personal portfolio project and is not open for direct contributions. However, you are welcome to fork it, learn from it, and adapt it for your own use under the CC BY 4.0 license terms!
 
 ## 📧 Contact
 
