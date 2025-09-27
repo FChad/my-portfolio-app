@@ -17,10 +17,30 @@ export default defineNuxtConfig({
     baseUrl: 'https://www.chad.lu',
     defaultLocale: 'de',
     locales: [
-      { code: 'lb', name: 'Lëtzebuergesch', file: 'lb.json', iso: 'lb-LU' },
-      { code: 'de', name: 'Deutsch', file: 'de.json', iso: 'de-DE' },
-      { code: 'fr', name: 'Français', file: 'fr.json', iso: 'fr-FR' },
-      { code: 'en', name: 'English', file: 'en.json', iso: 'en-US' }
+      {
+        code: 'lb',
+        name: 'Lëtzebuergesch',
+        file: 'lb.json',
+        language: 'lb-LU'
+      },
+      {
+        code: 'de',
+        name: 'Deutsch',
+        file: 'de.json',
+        language: 'de-DE'
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+        file: 'fr.json',
+        language: 'fr-FR'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json',
+        language: 'en-US'
+      }
     ],
     langDir: 'locales',
     strategy: 'prefix_except_default',
