@@ -7,6 +7,29 @@ definePageMeta({
 })
 
 const { t } = useI18n()
+const { setSeoMeta, getStructuredData } = useSeo()
+
+// SEO Implementation
+setSeoMeta({
+    title: t('seo.home.title'),
+    description: t('seo.home.description'),
+    keywords: t('seo.home.keywords'),
+    type: 'website'
+})
+
+// Add structured data for homepage
+useHead(() => ({
+    script: [
+        {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(getStructuredData('Person'))
+        },
+        {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(getStructuredData('WebSite'))
+        }
+    ]
+}))
 
 // Get translated texts dynamically
 const texts = computed(() => [

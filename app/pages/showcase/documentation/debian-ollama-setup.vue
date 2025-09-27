@@ -16,6 +16,25 @@ definePageMeta({
 // Setup composables
 const { t } = useI18n()
 const { getColorClasses } = useColorMapping()
+const { setSeoMeta, getStructuredData } = useSeo()
+
+// SEO Implementation
+setSeoMeta({
+    title: t('seo.documentation.ollama.title'),
+    description: t('seo.documentation.ollama.description'),
+    keywords: t('seo.documentation.ollama.keywords'),
+    type: 'article'
+})
+
+// Add structured data for article
+useHead(() => ({
+    script: [
+        {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(getStructuredData('Article'))
+        }
+    ]
+}))
 
 interface Command {
     command: string

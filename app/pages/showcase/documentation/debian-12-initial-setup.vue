@@ -17,6 +17,25 @@ definePageMeta({
 const { t } = useI18n()
 const colorMode = useColorMode()
 const { getColorClasses } = useColorMapping()
+const { setSeoMeta, getStructuredData } = useSeo()
+
+// SEO Implementation
+setSeoMeta({
+    title: t('seo.documentation.debian12.title'),
+    description: t('seo.documentation.debian12.description'),
+    keywords: t('seo.documentation.debian12.keywords'),
+    type: 'article'
+})
+
+// Add structured data for article
+useHead(() => ({
+    script: [
+        {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(getStructuredData('Article'))
+        }
+    ]
+}))
 
 interface Command {
     command: string

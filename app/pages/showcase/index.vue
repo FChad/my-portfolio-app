@@ -1,5 +1,14 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { setSeoMeta } = useSeo()
+
+// SEO Implementation
+setSeoMeta({
+    title: t('seo.showcase.title'),
+    description: t('seo.showcase.description'),
+    keywords: t('seo.showcase.keywords'),
+    type: 'website'
+})
 
 interface ShowcaseItem {
     id: number;

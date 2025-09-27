@@ -13,6 +13,25 @@ definePageMeta({
 // I18n für Übersetzungen
 const { t } = useI18n()
 const { getColorClasses } = useColorMapping()
+const { setSeoMeta, getStructuredData } = useSeo()
+
+// SEO Implementation
+setSeoMeta({
+    title: t('seo.projects.chatbot.title'),
+    description: t('seo.projects.chatbot.description'),
+    keywords: t('seo.projects.chatbot.keywords'),
+    type: 'article'
+})
+
+// Add structured data for project
+useHead(() => ({
+    script: [
+        {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(getStructuredData('Project'))
+        }
+    ]
+}))
 
 const keyFeatures = [
     {

@@ -1,6 +1,15 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
 const runtimeConfig = useRuntimeConfig()
+const { setSeoMeta } = useSeo()
+
+// SEO Implementation
+setSeoMeta({
+    title: t('seo.contact.title'),
+    description: t('seo.contact.description'),
+    keywords: t('seo.contact.keywords'),
+    type: 'website'
+})
 
 // Form state
 const form = ref({

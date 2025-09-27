@@ -1,0 +1,44 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <radialGradient id="bg-gradient" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Stars Background -->
+  <circle cx="150" cy="80" r="2" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="300" cy="120" r="1.5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="480" cy="90" r="1" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="620" cy="110" r="2" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="800" cy="85" r="1.5" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="950" cy="105" r="1" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="1050" cy="75" r="2" fill="rgba(255,255,255,0.5)"/>
+  
+  <circle cx="200" cy="450" r="1.5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="400" cy="480" r="1" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="600" cy="500" r="2" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="850" cy="470" r="1.5" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="1100" cy="490" r="1" fill="rgba(255,255,255,0.4)"/>
+  
+  <!-- Main Content -->
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">
+    Chad Feierstein
+  </text>
+  
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#60a5fa" text-anchor="middle">
+    Full-Stack Developer &amp; IT Administrator
+  </text>
+  
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.8)" text-anchor="middle">
+    Modern Web Technologies • Cloud Computing • Digital Solutions
+  </text>
+  
+  <!-- Website URL -->
+  <text x="600" y="530" font-family="Arial, sans-serif" font-size="28" fill="#3b82f6" text-anchor="middle">
+    www.chad.lu
+  </text>
+</svg>
