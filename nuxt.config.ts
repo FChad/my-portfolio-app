@@ -17,20 +17,20 @@ export default defineNuxtConfig({
     baseUrl: 'https://www.chad.lu',
     defaultLocale: 'de',
     locales: [
-      { code: 'lb', name: 'Lëtzebuergesch', file: 'lb.json' },
-      { code: 'de', name: 'Deutsch', file: 'de.json' },
-      { code: 'fr', name: 'Français', file: 'fr.json' },
-      { code: 'en', name: 'English', file: 'en.json' }
+      { code: 'lb', name: 'Lëtzebuergesch', file: 'lb.json', iso: 'lb-LU' },
+      { code: 'de', name: 'Deutsch', file: 'de.json', iso: 'de-DE' },
+      { code: 'fr', name: 'Français', file: 'fr.json', iso: 'fr-FR' },
+      { code: 'en', name: 'English', file: 'en.json', iso: 'en-US' }
     ],
     langDir: 'locales',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false
   },
   robots: {
-    disallow: '/'
+    disallow: '/'  // Blockiert alle Crawler
   },
   sitemap: {
-    enabled: false
+    enabled: false  // Sitemap deaktiviert
   },
   app: {
     head: {
@@ -65,6 +65,7 @@ export default defineNuxtConfig({
     // Public keys (exposed to the client-side code)
     public: {
       turnstileSiteKey: process.env.TURNSTILE_SITE_KEY,
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL || 'https://www.chad.lu'
     }
   },
   nitro: {
@@ -73,6 +74,11 @@ export default defineNuxtConfig({
     },
     rollupConfig: {
       external: ['@react-email/render']
-    }
-  }
+    },
+    prerender: {
+      crawlLinks: true,  // Crawlt alle internen Links beim Build
+    },
+    compressPublicAssets: true
+  },
+  ssr: true
 })
