@@ -1,22 +1,22 @@
 {
   "seo": {
     "home": {
-      "title": "Chad Feierstein - Full-Stack Developer & IT Administrator",
+      "title": "Chad Feierstein - Home",
       "description": "Professional Full-Stack Developer and IT Administrator from Luxembourg. Specialized in modern web technologies, cloud computing and innovative digital solutions.",
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
     },
     "about": {
-      "title": "About Chad Feierstein - My Experience & Passion for Technology",
+      "title": "Chad Feierstein - About",
       "description": "Learn more about Chad Feierstein - Full-Stack Developer with BTS Cloud Computing education and professional IT experience in Luxembourg.",
       "keywords": "Chad Feierstein, About, IT Experience, BTS Cloud Computing, IT Technician, Luxembourg"
     },
     "showcase": {
-      "title": "Portfolio & Projects - Chad Feierstein's Showcase",
+      "title": "Chad Feierstein - Showcase",
       "description": "Discover my latest projects, documentation and technical solutions. From web development to cloud infrastructures.",
       "keywords": "Portfolio, Projects, Web Development, AI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
-      "title": "Contact - Hire Chad Feierstein",
+      "title": "Chad Feierstein - Contact",
       "description": "Get in touch for professional web development, IT administration and cloud computing solutions. Fast and reliable responses guaranteed.",
       "keywords": "Contact, Chad Feierstein, Hire Web Developer, IT Services, Cloud Computing Consulting"
     },

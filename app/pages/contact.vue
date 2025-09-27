@@ -195,12 +195,6 @@ const onTurnstileError = (errorMessage: string) => {
     submitError.value = t('contact.form.errors.captchaError')
 }
 
-// SEO
-useSeoMeta({
-    title: t('contact.title'),
-    description: t('contact.subtitle')
-})
-
 definePageMeta({
     layout: 'default'
 })
