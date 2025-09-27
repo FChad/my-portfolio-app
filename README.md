@@ -180,10 +180,38 @@ npm run generate
 
 ### Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `RESEND_API_KEY` | Resend API key for contact form | Yes |
-| `NUXT_PUBLIC_SITE_URL` | Production site URL | No (defaults to https://www.chad.lu) |
+Create a `.env` file in the root directory and configure the following variables:
+
+| Variable | Description | Required | Default/Example |
+|----------|-------------|----------|-----------------|
+| `BASE_URL` | The base URL of your portfolio website | No | `https://www.chad.lu` |
+| `RESEND_API_KEY` | Resend API key for contact form functionality | Yes | `re_xxxxxxxxxxxxxxxxxx` |
+| `EMAIL_FROM` | Sender email address (must be from verified Resend domain) | Yes | `your-system@email.com` |
+| `EMAIL_FROM_NAME` | Display name for the sender | Yes | `Contact Form` |
+| `EMAIL_TO` | Your email address where contact form messages are sent | Yes | `your@email.com` |
+| `TURNSTILE_SITE_KEY` | Cloudflare Turnstile public site key | Yes | `0x4AAAAAAA...` |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile private secret key | Yes | `0x4AAAAAAA...` |
+
+#### Setup Instructions
+
+1. **Copy the example file:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Configure Resend (Email Service):**
+   - Sign up at [Resend.com](https://resend.com)
+   - Get your API key from [API Keys page](https://resend.com/api-keys)
+   - Verify your domain in Resend dashboard
+   - Set `EMAIL_FROM` to an address from your verified domain
+
+3. **Configure Cloudflare Turnstile (CAPTCHA):**
+   - Go to [Cloudflare Dashboard > Turnstile](https://dash.cloudflare.com/profile/api-tokens)
+   - Create a new site with your domain
+   - Copy the Site Key (public) and Secret Key (private)
+
+4. **Update contact recipient:**
+   - Set `EMAIL_TO` to your personal email address where you want to receive contact form submissions
 
 ## 📝 License
 
