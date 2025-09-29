@@ -439,8 +439,8 @@ const scrollToAbout = () => {
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="flex items-start gap-4">
                                 <div
-                                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:brain" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <Icon name="mdi:brain" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h4 class="font-semibold text-gray-800 dark:text-white">
@@ -454,8 +454,8 @@ const scrollToAbout = () => {
 
                             <div class="flex items-start gap-4">
                                 <div
-                                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:chat-processing" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <Icon name="mdi:chat-processing" class="w-5 h-5 text-green-600 dark:text-green-400" />
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h4 class="font-semibold text-gray-800 dark:text-white">
@@ -484,8 +484,8 @@ const scrollToAbout = () => {
 
                             <div class="flex items-start gap-4">
                                 <div
-                                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:shield-check" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <Icon name="mdi:shield-check" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <h4 class="font-semibold text-gray-800 dark:text-white">
@@ -506,28 +506,24 @@ const scrollToAbout = () => {
                             </h4>
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                                     Vue.js 3
                                 </span>
                                 <span
-                                    class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                                     Nuxt.js
                                 </span>
                                 <span
-                                    class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                                     TypeScript
                                 </span>
                                 <span
-                                    class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                                     Ollama API
                                 </span>
                                 <span
-                                    class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
-                                    Tailwind CSS
-                                </span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200/60 dark:border-gray-600/60">
-                                    Server-Sent Events
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-sm">
+                                    +2
                                 </span>
                             </div>
                         </div>
