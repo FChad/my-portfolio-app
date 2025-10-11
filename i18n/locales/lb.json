@@ -772,10 +772,7 @@
           "verifyTimezone": "Nei Zäitzon-Konfiguratioun bestätegen"
         },
         "sources": {
-          "updatePackages": "Paketlëschten aktualiséieren",
-          "upgradeSystem": "System op leschten Stand bréngen",
-          "autoremove": "Net méi néideg Pakete ewechhuelen",
-          "autoclean": "Paket-Cache botzelen",
+          "updateAndCleanup": "System aktualiséieren, upgraden a botzen",
           "verifySources": "Haaptpaketquellen uweisen",
           "checkAdditionalSources": "Zousätzlech Paketquellen iwwerpréiwen",
           "wikiReference": "Méi Informatiounen fënnt Dir am Debian Wiki zur APT-Konfiguratioun"

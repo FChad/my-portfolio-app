@@ -772,10 +772,7 @@
           "verifyTimezone": "Confirmer la nouvelle configuration du fuseau horaire"
         },
         "sources": {
-          "updatePackages": "Mettre à jour les listes de paquets",
-          "upgradeSystem": "Amener le système au dernier état",
-          "autoremove": "Supprimer les paquets qui ne sont plus nécessaires",
-          "autoclean": "Nettoyer le cache des paquets",
+          "updateAndCleanup": "Mettre à jour, upgrader et nettoyer le système",
           "verifySources": "Afficher les sources de paquets principales",
           "checkAdditionalSources": "Vérifier les sources de paquets supplémentaires",
           "wikiReference": "Plus d'informations peuvent être trouvées dans le Wiki Debian sur la configuration APT"

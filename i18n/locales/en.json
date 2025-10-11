@@ -772,10 +772,7 @@
           "verifyTimezone": "Confirm new timezone configuration"
         },
         "sources": {
-          "updatePackages": "Update package lists",
-          "upgradeSystem": "Bring system to latest state",
-          "autoremove": "Remove packages no longer needed",
-          "autoclean": "Clean package cache",
+          "updateAndCleanup": "Update, upgrade and cleanup system",
           "verifySources": "Display main package sources",
           "checkAdditionalSources": "Check additional package sources",
           "wikiReference": "More information can be found in the Debian Wiki on APT configuration"

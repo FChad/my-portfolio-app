@@ -108,7 +108,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             },
             {
-                command: 'timedatectl set-timezone Europe/Luxembourg',
+                command: 'timedatectl set-timezone Europe/Berlin',
                 description: 'documentations.debianInitialSetup.commands.timezone.setTimezone',
                 language: 'bash'
             },
@@ -127,23 +127,8 @@ const setupSteps: SetupStep[] = [
         description: 'documentations.debianInitialSetup.steps.sources.description',
         commands: [
             {
-                command: 'apt update',
-                description: 'documentations.debianInitialSetup.commands.sources.updatePackages',
-                language: 'bash'
-            },
-            {
-                command: 'apt upgrade -y',
-                description: 'documentations.debianInitialSetup.commands.sources.upgradeSystem',
-                language: 'bash'
-            },
-            {
-                command: 'apt autoremove -y',
-                description: 'documentations.debianInitialSetup.commands.sources.autoremove',
-                language: 'bash'
-            },
-            {
-                command: 'apt autoclean -y',
-                description: 'documentations.debianInitialSetup.commands.sources.autoclean',
+                command: 'apt update && apt upgrade -y && apt autoremove -y && apt autoclean -y',
+                description: 'documentations.debianInitialSetup.commands.sources.updateAndCleanup',
                 language: 'bash'
             },
             {
