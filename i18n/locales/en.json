@@ -768,7 +768,7 @@
           "checkDate": "Display current date and time",
           "checkTimezone": "Check timezone configuration",
           "listTimezones": "List all available timezones",
-          "setTimezone": "Set timezone to Europe/Luxembourg",
+          "setTimezone": "Set timezone to Europe/Berlin",
           "verifyTimezone": "Confirm new timezone configuration"
         },
         "sources": {

@@ -768,7 +768,7 @@
           "checkDate": "Aktuell Datum an Auer uweisen",
           "checkTimezone": "Zäitzon-Konfiguratioun iwwerpréiwen",
           "listTimezones": "All verfügbar Zäitzonen oplëschten",
-          "setTimezone": "Zäitzon op Europa/Lëtzebuerg setzen",
+          "setTimezone": "Zäitzon op Europe/Berlin setzen",
           "verifyTimezone": "Nei Zäitzon-Konfiguratioun bestätegen"
         },
         "sources": {

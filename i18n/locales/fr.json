@@ -768,7 +768,7 @@
           "checkDate": "Afficher la date et l'heure actuelles",
           "checkTimezone": "Vérifier la configuration du fuseau horaire",
           "listTimezones": "Lister tous les fuseaux horaires disponibles",
-          "setTimezone": "Définir le fuseau horaire sur Europe/Luxembourg",
+          "setTimezone": "Définir le fuseau horaire sur Europe/Berlin",
           "verifyTimezone": "Confirmer la nouvelle configuration du fuseau horaire"
         },
         "sources": {
