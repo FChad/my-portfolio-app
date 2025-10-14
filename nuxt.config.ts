@@ -48,19 +48,10 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false
   },
-  robots: {
-    disallow: '/'  // Blockiert alle Crawler
-  },
-  sitemap: {
-    enabled: false  // Sitemap deaktiviert
-  },
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      meta: [
-        { name: 'robots', content: 'noindex, nofollow' }
-      ],
       link: [
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
