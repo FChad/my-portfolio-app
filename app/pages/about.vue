@@ -240,7 +240,7 @@ const experiences = [
             <!-- About Me Card - Header + Story -->
             <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg transition-all">
                 <div class="text-center">
-                    <div class="flex items-center justify-center flex-col sm:flex-row gap-4 mb-6">
+                    <div class="flex items-center justify-center flex-col sm:flex-row gap-4 mb-4">
                         <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center shadow-md">
                             <Icon name="mdi:account-heart" class="w-10 h-10 text-white" />
                         </div>
@@ -252,7 +252,7 @@ const experiences = [
                     </div>
 
                     <!-- Story Text -->
-                    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-600">
+                    <div class="mt-4 pt-6 border-t border-gray-200 dark:border-gray-600">
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                             {{ $t('about.story.intro') }}
                         </p>
@@ -512,7 +512,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
