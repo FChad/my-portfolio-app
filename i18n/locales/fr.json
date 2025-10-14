@@ -108,12 +108,12 @@
         }
       },
       "cloud": {
-        "title": "Cloud Computing",
-        "description": "Solutions cloud évolutives avec AWS, Google Cloud et Azure pour les applications modernes.",
+        "title": "Virtualisation",
+        "description": "Solutions de virtualisation professionnelles pour des infrastructures IT efficaces et flexibles.",
         "features": {
-          "aws": "Amazon Web Services",
-          "azure": "Microsoft Azure",
-          "gcp": "Google Cloud Platform"
+          "aws": "Docker",
+          "azure": "Proxmox",
+          "gcp": "VirtualBox"
         }
       },
       "itadmin": {
@@ -1175,6 +1175,6 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Chad Feierstein. Construit avec Nuxt 3, Tailwind CSS et Color Mode"
+    "copyright": "© 2025 Chad Feierstein. Construit avec Nuxt 3, Tailwind CSS et Color Mode"
   }
 }

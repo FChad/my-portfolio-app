@@ -108,12 +108,12 @@
         }
       },
       "cloud": {
-        "title": "Cloud Computing",
-        "description": "Skalierbare Cloud-Lösungen mit AWS, Google Cloud und Azure für moderne Anwendungen.",
+        "title": "Virtualisierung",
+        "description": "Professionelle Virtualisierungslösungen für effiziente und flexible IT-Infrastrukturen.",
         "features": {
-          "aws": "Amazon Web Services",
-          "azure": "Microsoft Azure",
-          "gcp": "Google Cloud Platform"
+          "aws": "Docker",
+          "azure": "Proxmox",
+          "gcp": "VirtualBox"
         }
       },
       "itadmin": {
@@ -1175,6 +1175,6 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Chad Feierstein. Erstellt mit Nuxt 3, Tailwind CSS und Color Mode"
+    "copyright": "© 2025 Chad Feierstein. Erstellt mit Nuxt 3, Tailwind CSS und Color Mode"
   }
 }

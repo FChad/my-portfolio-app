@@ -106,7 +106,7 @@ export const useSeo = () => {
         '@type': 'WebPage',
         '@id': getCanonicalUrl()
       },
-      datePublished: '2024-01-01',
+      datePublished: '2025-10-14',
       dateModified: new Date().toISOString().split('T')[0],
       inLanguage: locale.value
     }
