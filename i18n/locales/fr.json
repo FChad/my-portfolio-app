@@ -372,7 +372,7 @@
     "projects": {
       "myChatBot": {
         "title": "Mon Chat Bot",
-        "description": "Une application de chat moderne et optimisée avec intégration Ollama pour discuter directement avec des modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées."
+        "description": "Une application de chat moderne et optimisée avec intégration OpenRouter.ai pour discuter directement avec différents modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées."
       },
       "myPortfolio": {
         "title": "Mon Site Web Portfolio",
@@ -467,8 +467,8 @@
         },
         "ollama": {
           "name": "Intégration IA",
-          "tech": "Ollama",
-          "description": "Plateforme de gestion de modèles IA locaux pour une intégration IA transparente"
+          "tech": "OpenRouter.ai",
+          "description": "Accès à différents modèles IA via une interface API unifiée"
         },
         "highlight": {
           "name": "Coloration Syntaxique",

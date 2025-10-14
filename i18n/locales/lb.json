@@ -372,7 +372,7 @@
     "projects": {
       "myChatBot": {
         "title": "Mäin Chat Bot",
-        "description": "Eng modern, optimiséiert Chat-Applikatioun mat Ollama-Integratioun fir direkten Chat mat AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
+        "description": "Eng modern, optimiséiert Chat-Applikatioun mat OpenRouter.ai-Integratioun fir direkten Chat mat verschiddenen AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
       },
       "myPortfolio": {
         "title": "Meng Portfolio Websäit",
@@ -467,8 +467,8 @@
         },
         "ollama": {
           "name": "AI Integration",
-          "tech": "Ollama",
-          "description": "Lokal AI-Modell-Verwaltungsplattform fir nahtlos AI-Integratioun"
+          "tech": "OpenRouter.ai",
+          "description": "Zougang zu verschiddenen AI-Modeller iwwer eng eenheetlech API-Schnëttstell"
         },
         "highlight": {
           "name": "Code-Highlighting",

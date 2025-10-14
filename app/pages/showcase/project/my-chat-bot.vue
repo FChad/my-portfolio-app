@@ -179,7 +179,7 @@ const technologies = [
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 justify-center">
-                <span v-for="tag in ['Nuxt3', 'Vue3', 'TypeScript', 'Pinia', 'Tailwind', 'Ollama', 'AI', 'Chat']"
+                <span v-for="tag in ['Nuxt3', 'Vue3', 'TypeScript', 'Pinia', 'Tailwind', 'OpenRouter', 'AI', 'Chat']"
                     :key="tag"
                     class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                     {{ tag }}

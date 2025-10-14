@@ -519,7 +519,7 @@ const scrollToAbout = () => {
                                 </span>
                                 <span
                                     class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
-                                    Ollama API
+                                    OpenRouter.ai
                                 </span>
                                 <span
                                     class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-sm">
