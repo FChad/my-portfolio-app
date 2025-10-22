@@ -12,6 +12,19 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss'
   ],
+  site: {
+    url: 'https://www.chad.lu',
+    name: 'Chad Feierstein - Portfolio'
+  },
+  sitemap: {
+    enabled: true,
+    xsl: false,
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date().toISOString(),
+    },
+  },
   colorMode: {
     classSuffix: ''
   },
