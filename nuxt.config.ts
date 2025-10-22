@@ -21,7 +21,9 @@ export default defineNuxtConfig({
     defaults: {
       changefreq: 'weekly',
       priority: 0.8,
+      lastmod: new Date().toISOString(),
     },
+    autoLastmod: true,
   },
   colorMode: {
     classSuffix: ''
