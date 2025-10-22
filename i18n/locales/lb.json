@@ -1005,144 +1005,132 @@
     },
     "cardanoDbSyncSetup": {
       "title": "Linux - Cardano DB Sync Installation",
-      "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun.",
+      "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun",
       "notes": {
-        "title": "Wichteg Notizen",
-        "prerequisite": {
-          "title": "Cardano-Node erfuerderlech",
-          "description": "Eng fonktionéierend Cardano-Node muss éischt installéiert a synchroniséiert sinn"
-        },
-        "databaseSecurity": {
-          "title": "Datebank-Sécherheet",
-          "description": "Benotzt sécher Passwierder a limitéiert den Datebank-Zougang entspriechend"
-        },
-        "syncTime": {
-          "title": "Synchronisatiounsdauer",
-          "description": "Éischt Synchronisatioun kann e puer Deeg daueren jee no Hardware"
-        },
-        "diskSpace": {
-          "title": "Späicherplaz",
-          "description": "Op d'mannst 200GB fräie Späicherplaz fir d'PostgreSQL-Datebank erfuerderlech"
-        },
-        "cardanoNode": {
-          "title": "Hardware-Ufuerderungen",
-          "description": "Op d'mannst 16GB RAM recommandéiert fir optimal Performance"
-        }
+        "title": "Wichteg Hiwäiser",
+        "subtitle": "Beacht dës wichteg Punkten virun dem Setup",
+        "cardanoNode": "Eng lафend Cardano-Node ass erfuerderlech fir DB Sync",
+        "diskSpace": "Op d'mannst 700GB fräie Späicherplaz (Cardano Node: 203GB, DB Sync: 10GB, PostgreSQL: 438GB)",
+        "ramRequirement": "Op d'mannst 48GB RAM (Cardano Node: 24GB, DB Sync: 21GB, System: 3GB)",
+        "syncTime": "Éischt Synchronisatioun kann e puer Deeg daueren",
+        "rootAccess": "Root-Zougang oder sudo-Berechtegung erfuerderlech"
       },
       "steps": {
-        "title": "Installatiounsschrëtt",
+        "title": "Setup-Schrëtt",
         "postgresql": {
           "title": "PostgreSQL installéieren",
           "description": "Installation a Konfiguratioun vun der PostgreSQL-Datebank fir Cardano DB Sync."
         },
         "database": {
           "title": "Datebank ariichten",
-          "description": "Erstellung vun der Datebank a Benotzer fir Cardano DB Sync."
+          "description": "Erstellung vum Datebankbenotzer an der Datebank mat entspriechende Berechtigungen."
         },
         "cloneInstall": {
-          "title": "DB Sync klonen an installéieren",
-          "description": "Klonen vum Cardano DB Sync Repository an Installation mat NIX."
+          "title": "Repository klonen an DB Sync installéieren",
+          "description": "Klonen vum offiziellen Cardano DB Sync Repository vu GitHub an Installation mat NIX."
         },
         "pgpass": {
-          "title": "Passwuert-Fichier erstellen",
-          "description": "Erstellung vun der .pgpass-Fichier fir automatesch Datebank-Authentifizéierung."
+          "title": "Datebank-Authentifizéierung",
+          "description": "Ariichtung vun der PostgreSQL-Authentifizéierung mat .pgpass-Fichier."
         },
         "symlink": {
-          "title": "Symbolësch Linken erstellen",
-          "description": "Erstellen vu symbolësche Linken fir d'Cardano DB Sync Binärdateien."
+          "title": "System-Integratioun",
+          "description": "Erstellen vu systemwäite symbolësche Linken fir Cardano DB Sync."
         },
         "service": {
-          "title": "Systemd Service konfiguréieren",
-          "description": "Erstellung an Aktivéierung vum Systemd-Service fir Cardano DB Sync."
+          "title": "Systemd-Service",
+          "description": "Konfiguratioun vum systemd-Service fir automateschen Start a Verwaltung."
         },
         "monitoring": {
-          "title": "Service iwwerwaachen",
-          "description": "Iwwerwaachung vum Service an der Datebank-Synchronisatioun."
+          "title": "Iwwerwaachung",
+          "description": "Service-Status iwwerpréiwen a Log-Iwwerwaachung ariichten."
         }
       },
-      "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano DB Sync Installation",
       "commands": {
         "postgresql": {
-          "install": "PostgreSQL installéieren",
-          "enable": "PostgreSQL aktivéieren",
-          "start": "PostgreSQL starten"
+          "install": "PostgreSQL a zousätzlech Erweiderungen installéieren",
+          "enable": "PostgreSQL-Service fir automateschen Start aktivéieren",
+          "start": "PostgreSQL-Service starten"
         },
         "database": {
-          "connect": "Als postgres-Benotzer verbannen",
-          "createUser": "Datebankbenotzer erstellen",
-          "passwordNote": "Sécher Passwuert wielen a merken",
-          "createDatabase": "Datebank erstellen",
-          "grantPrivileges": "Berechtigungen accordéieren",
+          "connect": "Als postgres-Benotzer mat der PostgreSQL-Konsole verbannen",
+          "createUser": "Cardano-Datebankbenotzer mat Passwuert erstellen",
+          "passwordNote": "Benotzt e staarkt, séchert Passwuert",
+          "createDatabase": "Cardano-Explorer-Datebank erstellen",
+          "grantPrivileges": "All Berechtigungen fir d'Datebank accordéieren",
           "quit": "PostgreSQL-Konsole verloossen"
         },
         "clone": {
-          "switchUser": "Zu cardano-Benotzer wiesselen",
+          "switchUser": "Zum cardano-Benotzerkonto wiesselen",
           "clone": "Cardano DB Sync Repository klonen",
-          "listFiles": "Repository-Inhalter uweisen",
-          "changeDir": "An Repository-Verzeechnes wiesselen"
+          "listFiles": "Fichieren am cardano-Verzeechnes oplëschten",
+          "changeDir": "An d'cardano-db-sync-Verzeechnes wiesselen"
         },
         "install": {
-          "listTags": "Verfügbar Tags uweisen",
-          "checkout": "Neist stabil Versioun auschecken",
-          "nixInstall": "DB Sync mat NIX installéieren",
-          "nixNote": "Installation kann 30-60 Minutten daueren",
-          "checkVersion": "Installation iwwerpréiwen",
-          "listProfiles": "NIX Profile uweisen"
+          "listTags": "Verfügbar Versiounen-Tags oplëschten",
+          "checkout": "Zu spezifeschem Versiounen-Tag wiesselen",
+          "nixInstall": "Cardano DB Sync mat NIX installéieren",
+          "nixNote": "Dës Installation kann e bësse Zäit daueren",
+          "checkVersion": "Installation duerch Versiounspréifung verifizéieren",
+          "listProfiles": "Installéiert NIX-Profiler oplëschten"
         },
         "pgpass": {
-          "chmod": "Dateiberechtegungen setzen",
-          "exit": "Benotzer-Sessioun verloossen"
+          "create": "PostgreSQL-Passwuert-Fichier erstellen",
+          "chmod": "Dateiberechtegungen fir Sécherheet setzen",
+          "exit": "Cardano-Benotzerkonto verloossen"
         },
         "symlink": {
-          "create": "Symbolësche Link erstellen",
-          "verify": "Link iwwerpréiwen"
+          "create": "Systemwäite symbolësche Link erstellen",
+          "verify": "Symbolësche Link duerch Versiounspréifung testen"
         },
         "service": {
-          "reload": "Systemd-Daemon nei lueden",
-          "enable": "Service aktivéieren",
-          "start": "Service starten"
+          "create": "Systemd-Service-Konfiguratiounsfichier erstellen",
+          "reload": "Systemd nei lueden fir neien Service",
+          "enable": "Service fir automateschen Start aktivéieren",
+          "start": "Cardano DB Sync Service starten"
         },
         "monitoring": {
-          "status": "Service-Status kucken",
-          "logs": "Service-Logs uweisen"
+          "status": "Service-Status iwwerpréiwen",
+          "logs": "Service-Logs an Echtzäit verfollegen"
         }
       },
       "tips": {
-        "sectionTitle": "Hëllefräich Tipps",
-        "sectionSubtitle": "Nëtzlech Kommandoen a Weisungen fir d'Verwaltung vum Cardano DB Sync",
+        "sectionTitle": "Zousätzlech Operatiounen",
+        "sectionSubtitle": "Nëtzlech Kommandoen fir d'Iwwerwaachung an d'Ënnerhale vun Ärer Cardano DB Sync Installation",
         "syncStatus": {
           "title": "Synchronisatiounsstatus",
-          "checkMeta": "Datebank-Metadaten fir Sync-Status kucken"
+          "checkMeta": "Metadaten-Tabell fir Synchronisatiounsstatus offroen"
         },
         "troubleshooting": {
           "title": "Problemléisung",
-          "restart": "Service bei Problemer nei starten"
+          "restart": "Cardano DB Sync Service nei starten"
         },
         "diskSpace": {
           "title": "Späicherplaz",
-          "check": "Verfügbare Späicherplaz reegelméisseg iwwerwaachen"
+          "check": "Verfügbare Späicherplaz iwwerpréiwen"
         }
       },
       "resources": {
-        "sectionTitle": "Nëtzlech Ressourcen",
-        "sectionSubtitle": "Zousätzlech Dokumentatioun an Tools fir Cardano DB Sync",
+        "sectionTitle": "Zousätzlech Ressourcen",
+        "sectionSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken fir Cardano DB Sync",
         "github": {
-          "title": "Cardano DB Sync GitHub",
-          "description": "Offiziellt Repository mat Dokumentatioun an Updates"
+          "title": "Cardano DB Sync Repository",
+          "description": "Offiziellt GitHub-Repository mat Quellcode an Dokumentatioun"
         },
         "postgresql": {
           "title": "PostgreSQL Dokumentatioun",
-          "description": "Ëmfassend Dokumentatioun fir PostgreSQL-Administratioun"
+          "description": "Offiziell PostgreSQL-Dokumentatioun fir Datebank-Administratioun"
         },
         "cardanoDocs": {
-          "title": "Cardano Developer Portal",
-          "description": "Entwéckler-Ressourcen an API-Dokumentatioun"
+          "title": "Cardano Entwéckler Portal",
+          "description": "Offiziellt Cardano-Entwécklerportal mat DB Sync Dokumentatioun"
         }
       },
       "completion": {
-        "title": "Installation Ofgeschloss",
-        "message": "Cardano DB Sync ass elo erfollegräich installéiert a leeft. D'Synchronisatioun mat der Blockchain wäert automatesch weiderfueren an d'Datebank gëtt gefëllt."
-      }
+        "title": "Cardano DB Sync Installation ofgeschloss!",
+        "message": "Är Cardano DB Sync leeft elo a synchroniséiert Blockchain-Donnéeën an d'PostgreSQL-Datebank. Iwwerwaacht reegelméisseg d'Logs an de Synchronisatiounsfortschrëtt."
+      },
+      "stepsSubtitle": "Befollegt dës Schrëtt an der spezifizéierter Reiefolleg fir eng erfollegräich Cardano DB Sync Installation."
     }
   },
   "contact": {

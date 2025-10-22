@@ -1005,144 +1005,132 @@
     },
     "cardanoDbSyncSetup": {
       "title": "Linux - Cardano DB Sync Installation",
-      "description": "Complete guide for installing Cardano DB Sync on Debian 12 with PostgreSQL database and NIX package manager, including service configuration.",
+      "description": "Complete guide for installing Cardano DB Sync on Debian 12 with PostgreSQL database and NIX package manager, including service configuration",
       "notes": {
         "title": "Important Notes",
-        "prerequisite": {
-          "title": "Cardano Node Required",
-          "description": "A working Cardano Node must be installed and synchronized first"
-        },
-        "databaseSecurity": {
-          "title": "Database Security",
-          "description": "Use secure passwords and restrict database access appropriately"
-        },
-        "syncTime": {
-          "title": "Synchronization Duration",
-          "description": "Initial synchronization can take several days depending on hardware"
-        },
-        "diskSpace": {
-          "title": "Disk Space",
-          "description": "At least 200GB free disk space required for the PostgreSQL database"
-        },
-        "cardanoNode": {
-          "title": "Hardware Requirements",
-          "description": "At least 16GB RAM recommended for optimal performance"
-        }
+        "subtitle": "Please note these important points before setup",
+        "cardanoNode": "A running Cardano Node is required for DB Sync",
+        "diskSpace": "At least 700GB free disk space (Cardano Node: 203GB, DB Sync: 10GB, PostgreSQL: 438GB)",
+        "ramRequirement": "At least 48GB RAM (Cardano Node: 24GB, DB Sync: 21GB, System: 3GB)",
+        "syncTime": "Initial synchronization can take several days",
+        "rootAccess": "Root access or sudo permission required"
       },
       "steps": {
-        "title": "Installation Steps",
+        "title": "Setup Steps",
         "postgresql": {
           "title": "Install PostgreSQL",
           "description": "Installation and configuration of PostgreSQL database for Cardano DB Sync."
         },
         "database": {
           "title": "Setup Database",
-          "description": "Creating the database and user for Cardano DB Sync."
+          "description": "Creating database user and database with appropriate permissions."
         },
         "cloneInstall": {
-          "title": "Clone and Install DB Sync",
-          "description": "Cloning the Cardano DB Sync repository and installation with NIX."
+          "title": "Clone Repository and Install DB Sync",
+          "description": "Cloning the official Cardano DB Sync repository from GitHub and installation with NIX."
         },
         "pgpass": {
-          "title": "Create Password File",
-          "description": "Creating the .pgpass file for automatic database authentication."
+          "title": "Database Authentication",
+          "description": "Setting up PostgreSQL authentication with .pgpass file."
         },
         "symlink": {
-          "title": "Create Symbolic Links",
-          "description": "Creating symbolic links for the Cardano DB Sync binaries."
+          "title": "System Integration",
+          "description": "Creating system-wide symbolic links for Cardano DB Sync."
         },
         "service": {
-          "title": "Configure Systemd Service",
-          "description": "Creating and enabling the systemd service for Cardano DB Sync."
+          "title": "Systemd Service",
+          "description": "Configuring systemd service for automatic startup and management."
         },
         "monitoring": {
-          "title": "Monitor Service",
-          "description": "Monitoring the service and database synchronization."
+          "title": "Monitoring",
+          "description": "Checking service status and setting up log monitoring."
         }
       },
-      "stepsSubtitle": "Follow these steps in the given order for a complete Cardano DB Sync installation",
       "commands": {
         "postgresql": {
-          "install": "Install PostgreSQL",
-          "enable": "Enable PostgreSQL",
-          "start": "Start PostgreSQL"
+          "install": "Install PostgreSQL and additional extensions",
+          "enable": "Enable PostgreSQL service for automatic startup",
+          "start": "Start PostgreSQL service"
         },
         "database": {
-          "connect": "Connect as postgres user",
-          "createUser": "Create database user",
-          "passwordNote": "Choose and remember a secure password",
-          "createDatabase": "Create database",
-          "grantPrivileges": "Grant privileges",
+          "connect": "Connect to PostgreSQL console as postgres user",
+          "createUser": "Create Cardano database user with password",
+          "passwordNote": "Use a strong, secure password",
+          "createDatabase": "Create Cardano Explorer database",
+          "grantPrivileges": "Grant all privileges for the database",
           "quit": "Exit PostgreSQL console"
         },
         "clone": {
-          "switchUser": "Switch to cardano user",
+          "switchUser": "Switch to cardano user account",
           "clone": "Clone Cardano DB Sync repository",
-          "listFiles": "Display repository contents",
-          "changeDir": "Change to repository directory"
+          "listFiles": "List files in cardano directory",
+          "changeDir": "Change to cardano-db-sync directory"
         },
         "install": {
-          "listTags": "Display available tags",
-          "checkout": "Checkout latest stable version",
-          "nixInstall": "Install DB Sync with NIX",
-          "nixNote": "Installation can take 30-60 minutes",
-          "checkVersion": "Check installation",
-          "listProfiles": "Display NIX profiles"
+          "listTags": "List available version tags",
+          "checkout": "Switch to specific version tag",
+          "nixInstall": "Install Cardano DB Sync with NIX",
+          "nixNote": "This installation may take some time",
+          "checkVersion": "Verify installation by checking version",
+          "listProfiles": "List installed NIX profiles"
         },
         "pgpass": {
-          "chmod": "Set file permissions",
-          "exit": "Exit user session"
+          "create": "Create PostgreSQL password file",
+          "chmod": "Set file permissions for security",
+          "exit": "Exit cardano user account"
         },
         "symlink": {
-          "create": "Create symbolic link",
-          "verify": "Verify link"
+          "create": "Create system-wide symbolic link",
+          "verify": "Test symbolic link by checking version"
         },
         "service": {
-          "reload": "Reload systemd daemon",
-          "enable": "Enable service",
-          "start": "Start service"
+          "create": "Create systemd service configuration file",
+          "reload": "Reload systemd for new service",
+          "enable": "Enable service for automatic startup",
+          "start": "Start Cardano DB Sync service"
         },
         "monitoring": {
           "status": "Check service status",
-          "logs": "Display service logs"
+          "logs": "Follow service logs in real-time"
         }
       },
       "tips": {
-        "sectionTitle": "Helpful Tips",
-        "sectionSubtitle": "Useful commands and notes for managing Cardano DB Sync",
+        "sectionTitle": "Additional Operations",
+        "sectionSubtitle": "Useful commands for monitoring and maintaining your Cardano DB Sync installation",
         "syncStatus": {
           "title": "Synchronization Status",
-          "checkMeta": "Check database metadata for sync status"
+          "checkMeta": "Query metadata table for synchronization status"
         },
         "troubleshooting": {
           "title": "Troubleshooting",
-          "restart": "Restart service if problems occur"
+          "restart": "Restart Cardano DB Sync service"
         },
         "diskSpace": {
           "title": "Disk Space",
-          "check": "Monitor available disk space regularly"
+          "check": "Check available disk space"
         }
       },
       "resources": {
-        "sectionTitle": "Useful Resources",
-        "sectionSubtitle": "Additional documentation and tools for Cardano DB Sync",
+        "sectionTitle": "Additional Resources",
+        "sectionSubtitle": "Official documentation and helpful links for Cardano DB Sync",
         "github": {
-          "title": "Cardano DB Sync GitHub",
-          "description": "Official repository with documentation and updates"
+          "title": "Cardano DB Sync Repository",
+          "description": "Official GitHub repository with source code and documentation"
         },
         "postgresql": {
           "title": "PostgreSQL Documentation",
-          "description": "Comprehensive documentation for PostgreSQL administration"
+          "description": "Official PostgreSQL documentation for database administration"
         },
         "cardanoDocs": {
           "title": "Cardano Developer Portal",
-          "description": "Developer resources and API documentation"
+          "description": "Official Cardano developer portal with DB Sync documentation"
         }
       },
       "completion": {
-        "title": "Installation Complete",
-        "message": "Cardano DB Sync is now successfully installed and running. Synchronization with the blockchain will continue automatically and the database will be populated."
-      }
+        "title": "Cardano DB Sync Installation Complete!",
+        "message": "Your Cardano DB Sync is now running and synchronizing blockchain data to the PostgreSQL database. Monitor logs and synchronization progress regularly."
+      },
+      "stepsSubtitle": "Follow these steps in the specified order for a successful Cardano DB Sync installation."
     }
   },
   "contact": {
