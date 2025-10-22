@@ -685,7 +685,8 @@ const toggleExpanded = (stepId: string) => {
             </NuxtLink>
 
             <!-- Cardano Node Installation Guide -->
-            <NuxtLink external to="https://developers.cardano.org/docs/get-started/cardano-node/installing-cardano-node"
+            <NuxtLink external
+                to="https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/installing-cardano-node/"
                 target="_blank"
                 class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
                 <div
@@ -707,7 +708,8 @@ const toggleExpanded = (stepId: string) => {
             </NuxtLink>
 
             <!-- Cardano Node Running Guide -->
-            <NuxtLink external to="https://developers.cardano.org/docs/get-started/cardano-node/running-cardano"
+            <NuxtLink external
+                to="https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/running-cardano"
                 target="_blank"
                 class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
                 <div
