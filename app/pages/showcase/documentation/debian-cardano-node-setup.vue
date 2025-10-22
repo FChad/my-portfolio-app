@@ -665,61 +665,67 @@ const toggleExpanded = (stepId: string) => {
         <div class="flex flex-col gap-6">
             <!-- NIX Official Documentation -->
             <NuxtLink external to="https://nixos.org/download/#nix-install-linux" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center">
-                        <Icon name="mdi:download" class="w-6 h-6 text-white" />
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white flex-1">
-                        {{ t('documentations.cardanoNodeSetup.resources.nixDownload.title') }}
-                    </h3>
-                    <Icon name="mdi:external-link"
-                        class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                <div
+                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:download" class="w-6 h-6 text-white" />
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {{ t('documentations.cardanoNodeSetup.resources.nixDownload.description') }}
-                </p>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t('documentations.cardanoNodeSetup.resources.nixDownload.title') }}
+                        </h3>
+                        <Icon name="mdi:external-link"
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ t('documentations.cardanoNodeSetup.resources.nixDownload.description') }}
+                    </p>
+                </div>
             </NuxtLink>
 
             <!-- Cardano Node Installation Guide -->
             <NuxtLink external to="https://developers.cardano.org/docs/get-started/cardano-node/installing-cardano-node"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center">
-                        <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white flex-1">
-                        {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.title') }}
-                    </h3>
-                    <Icon name="mdi:external-link"
-                        class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                <div
+                    class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.description') }}
-                </p>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.title') }}
+                        </h3>
+                        <Icon name="mdi:external-link"
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.description') }}
+                    </p>
+                </div>
             </NuxtLink>
 
             <!-- Cardano Node Running Guide -->
             <NuxtLink external to="https://developers.cardano.org/docs/get-started/cardano-node/running-cardano"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg flex items-center justify-center">
-                        <Icon name="mdi:play-circle" class="w-6 h-6 text-white" />
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white flex-1">
-                        {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.title') }}
-                    </h3>
-                    <Icon name="mdi:external-link"
-                        class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                <div
+                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:play-circle" class="w-6 h-6 text-white" />
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.description') }}
-                </p>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.title') }}
+                        </h3>
+                        <Icon name="mdi:external-link"
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.description') }}
+                    </p>
+                </div>
             </NuxtLink>
         </div>
     </section>

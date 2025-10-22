@@ -591,60 +591,66 @@ const toggleExpanded = (stepId: string) => {
         <div class="flex flex-col gap-6">
             <!-- Cardano DB Sync Documentation -->
             <NuxtLink external to="https://github.com/IntersectMBO/cardano-db-sync" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center">
-                        <Icon name="mdi:github" class="w-6 h-6 text-white" />
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white flex-1">
-                        {{ t('documentations.cardanoDbSyncSetup.resources.github.title') }}
-                    </h3>
-                    <Icon name="mdi:external-link"
-                        class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                <div
+                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:github" class="w-6 h-6 text-white" />
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {{ t('documentations.cardanoDbSyncSetup.resources.github.description') }}
-                </p>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t('documentations.cardanoDbSyncSetup.resources.github.title') }}
+                        </h3>
+                        <Icon name="mdi:external-link"
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ t('documentations.cardanoDbSyncSetup.resources.github.description') }}
+                    </p>
+                </div>
             </NuxtLink>
 
             <!-- PostgreSQL Documentation -->
             <NuxtLink external to="https://www.postgresql.org/docs/" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center">
-                        <Icon name="mdi:database" class="w-6 h-6 text-white" />
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white flex-1">
-                        {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.title') }}
-                    </h3>
-                    <Icon name="mdi:external-link"
-                        class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                <div
+                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:database" class="w-6 h-6 text-white" />
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.description') }}
-                </p>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.title') }}
+                        </h3>
+                        <Icon name="mdi:external-link"
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.description') }}
+                    </p>
+                </div>
             </NuxtLink>
 
             <!-- Cardano Developer Portal -->
             <NuxtLink external to="https://github.com/IntersectMBO/cardano-db-sync/blob/master/doc/running.md"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center">
-                        <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white flex-1">
-                        {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.title') }}
-                    </h3>
-                    <Icon name="mdi:external-link"
-                        class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" />
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                <div
+                    class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.description') }}
-                </p>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.title') }}
+                        </h3>
+                        <Icon name="mdi:external-link"
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.description') }}
+                    </p>
+                </div>
             </NuxtLink>
         </div>
     </section>
