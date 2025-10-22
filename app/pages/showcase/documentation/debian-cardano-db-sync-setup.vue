@@ -442,7 +442,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Setup Steps Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('documentations.cardanoDbSyncSetup.steps.title') }}
         </h2>
@@ -512,7 +512,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Additional Tips Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('documentations.cardanoDbSyncSetup.tips.sectionTitle') }}
         </h2>
@@ -548,7 +548,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Additional Resources Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('documentations.cardanoDbSyncSetup.resources.sectionTitle') }}
         </h2>
@@ -621,7 +621,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Completion Message -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <div
             class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700/50 rounded-2xl p-8 text-center">
             <div
