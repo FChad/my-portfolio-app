@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useI18n } from '#imports'
 
 // Layout definieren
@@ -354,6 +354,21 @@ const getInitialExpandedState = () => {
 }
 const isExpanded = ref<Record<string, boolean>>(getInitialExpandedState())
 
+// Initialize expanded state for additional tips
+const getInitialTipsExpandedState = () => {
+    const initialState: Record<string, boolean> = {}
+    additionalTips.forEach(tip => {
+        initialState[tip.id] = false
+    })
+    return initialState
+}
+const isTipsExpanded = ref<Record<string, boolean>>({})
+
+// Toggle tips expansion
+const toggleTipsExpanded = (tipId: string) => {
+    isTipsExpanded.value[tipId] = !isTipsExpanded.value[tipId]
+}
+
 const importantNotes = [
     {
         id: 'nodeRequirements',
@@ -448,6 +463,11 @@ const additionalTips = [
         ]
     }
 ]
+
+// Initialize tips expanded state on mount
+onMounted(() => {
+    isTipsExpanded.value = getInitialTipsExpandedState()
+})
 
 // Toggle step expansion
 const toggleExpanded = (stepId: string) => {
@@ -597,26 +617,35 @@ const toggleExpanded = (stepId: string) => {
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="flex flex-col gap-6">
             <div v-for="tip in additionalTips" :key="tip.id"
-                class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
-                <div class="flex items-center gap-3 mb-6">
-                    <div :class="[
-                        'w-12 h-12 rounded-xl flex items-center justify-center shadow-lg',
-                        getColorClasses(tip.color).bg
-                    ]">
-                        <Icon :name="tip.icon" class="w-6 h-6 text-white" />
+                class="bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-lg transition-all">
+                <button @click="toggleTipsExpanded(tip.id)"
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-3xl">
+                    <div class="flex items-center gap-3">
+                        <div :class="[
+                            'w-12 h-12 rounded-xl flex items-center justify-center shadow-lg',
+                            getColorClasses(tip.color).bg
+                        ]">
+                            <Icon :name="tip.icon" class="w-6 h-6 text-white" />
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            {{ t(tip.title) }}
+                        </h3>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
-                        {{ t(tip.title) }}
-                    </h3>
-                </div>
-                <div class="space-y-4">
-                    <div v-for="(cmd, cmdIndex) in tip.commands" :key="cmdIndex">
-                        <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
-                            :language="cmd.language" />
+                    <Icon :name="isTipsExpanded[tip.id] ? 'mdi:chevron-up' : 'mdi:chevron-down'"
+                        class="w-6 h-6 text-gray-400 transition-transform" />
+                </button>
+                <Transition name="expand">
+                    <div v-show="isTipsExpanded[tip.id]" class="pt-4 px-6 pb-6">
+                        <div class="space-y-4">
+                            <div v-for="(cmd, cmdIndex) in tip.commands" :key="cmdIndex">
+                                <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
+                                    :language="cmd.language" />
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </Transition>
             </div>
         </div>
     </section>
@@ -633,7 +662,7 @@ const toggleExpanded = (stepId: string) => {
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex flex-col gap-6">
             <!-- NIX Official Documentation -->
             <NuxtLink external to="https://nixos.org/download/#nix-install-linux" target="_blank"
                 class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
@@ -676,7 +705,7 @@ const toggleExpanded = (stepId: string) => {
             <!-- Cardano Node Running Guide -->
             <NuxtLink external to="https://developers.cardano.org/docs/get-started/cardano-node/running-cardano"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all md:col-span-2 lg:col-span-1">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
                 <div class="flex items-center gap-3 mb-4">
                     <div
                         class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg flex items-center justify-center">
