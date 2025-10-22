@@ -573,25 +573,29 @@
       "description": "A comprehensive step-by-step guide for installing Ollama on Debian 12 with Apache2 reverse proxy, SSL encryption and HTTP Basic Authentication for secure public API usage.",
       "notes": {
         "title": "Important Notes",
-        "hardware": {
+        "rootAccess": {
+          "title": "Root Access Required",
+          "description": "Root access or sudo permissions are required for all installation steps"
+        },
+        "domainRequired": {
+          "title": "Domain Required",
+          "description": "Valid domain with DNS configuration is necessary for SSL certificates"
+        },
+        "firewallConfig": {
+          "title": "Firewall Configuration",
+          "description": "Open ports 80 and 443 in your firewall for HTTP/HTTPS access"
+        },
+        "securePassword": {
+          "title": "Secure Password",
+          "description": "Use a strong password for API authentication"
+        },
+        "backupConfig": {
+          "title": "Create Backup",
+          "description": "Backup all configuration files before making important changes"
+        },
+        "resourceRequirements": {
           "title": "Hardware Requirements",
-          "description": "At least 4GB RAM for smaller models, 8GB+ recommended for larger models"
-        },
-        "diskSpace": {
-          "title": "Disk Space",
-          "description": "Models require 1-10GB storage each depending on size - plan accordingly"
-        },
-        "internetConnection": {
-          "title": "Internet Connection",
-          "description": "Stable connection required for downloading AI models"
-        },
-        "modelSizes": {
-          "title": "Consider Model Sizes",
-          "description": "Larger models provide better quality but require more resources"
-        },
-        "performance": {
-          "title": "Performance Monitoring",
-          "description": "Monitor CPU and RAM usage during model execution"
+          "description": "At least 8GB RAM is recommended for running Ollama models"
         }
       },
       "steps": {
@@ -635,6 +639,8 @@
         "ollama": {
           "install": "Download and install Ollama",
           "testModel": "Download and test small test model",
+          "editService": "Open Ollama service configuration",
+          "configureService": "Add the following environment variables",
           "reexec": "Reload systemd manager",
           "reload": "Reload Ollama service",
           "restart": "Restart Ollama service",
@@ -655,6 +661,7 @@
           "passwordNote": "Enter a secure password when prompted"
         },
         "virtualhost": {
+          "createConfig": "Create the Apache Virtual Host configuration file",
           "enableSite": "Enable new site configuration",
           "disableDefault": "Disable default Apache site",
           "disableDefaultSSL": "Disable default SSL site",
@@ -662,7 +669,7 @@
         },
         "testing": {
           "testApi": "Test API endpoint with curl",
-          "testNote": "Use your configured username and password"
+          "testNote": "You will be prompted for the 'apiuser' password. On successful test, you will receive JSON responses with generated text fragments."
         },
         "troubleshooting": {
           "checkPort": "Check which service is running on port 11434",
@@ -691,7 +698,8 @@
       },
       "completion": {
         "title": "Installation Complete!",
-        "description": "Your Ollama server is now fully configured and secured with HTTPS and Basic Authentication. You can now safely access the API."
+        "message": "Your Ollama server is now fully configured and secured with HTTPS and Basic Authentication. You can now safely access the API.",
+        "description": "Your Ollama installation is now ready. You can access your AI models through the secured API."
       }
     },
     "debianInitialSetup": {

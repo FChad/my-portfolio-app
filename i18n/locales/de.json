@@ -573,25 +573,29 @@
       "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
       "notes": {
         "title": "Wichtige Hinweise",
-        "hardware": {
+        "rootAccess": {
+          "title": "Root-Zugriff erforderlich",
+          "description": "Root-Zugriff oder sudo-Berechtigung ist für alle Installationsschritte erforderlich"
+        },
+        "domainRequired": {
+          "title": "Domain erforderlich",
+          "description": "Gültige Domain mit DNS-Konfiguration ist für SSL-Zertifikate notwendig"
+        },
+        "firewallConfig": {
+          "title": "Firewall-Konfiguration",
+          "description": "Öffnen Sie die Ports 80 und 443 in Ihrer Firewall für HTTP/HTTPS-Zugriff"
+        },
+        "securePassword": {
+          "title": "Sicheres Passwort",
+          "description": "Verwenden Sie ein starkes Passwort für die API-Authentifizierung"
+        },
+        "backupConfig": {
+          "title": "Backup erstellen",
+          "description": "Sichern Sie alle Konfigurationsdateien vor wichtigen Änderungen"
+        },
+        "resourceRequirements": {
           "title": "Hardware-Anforderungen",
-          "description": "Mindestens 4GB RAM für kleinere Modelle, 8GB+ für größere Modelle empfohlen"
-        },
-        "diskSpace": {
-          "title": "Speicherplatz",
-          "description": "Modelle benötigen 1-10GB Speicher je nach Größe - planen Sie entsprechend"
-        },
-        "internetConnection": {
-          "title": "Internetverbindung",
-          "description": "Stabile Verbindung für Downloads der KI-Modelle erforderlich"
-        },
-        "modelSizes": {
-          "title": "Modellgrößen beachten",
-          "description": "Größere Modelle bieten bessere Qualität, benötigen aber mehr Ressourcen"
-        },
-        "performance": {
-          "title": "Performance-Überwachung",
-          "description": "Überwachen Sie CPU und RAM-Auslastung während der Modell-Ausführung"
+          "description": "Mindestens 8GB RAM werden für die Ausführung von Ollama-Modellen empfohlen"
         }
       },
       "steps": {
@@ -635,6 +639,8 @@
         "ollama": {
           "install": "Ollama herunterladen und installieren",
           "testModel": "Kleines Testmodell herunterladen und testen",
+          "editService": "Ollama-Service-Konfiguration öffnen",
+          "configureService": "Fügen Sie folgende Umgebungsvariablen hinzu",
           "reexec": "Systemd-Manager neu laden",
           "reload": "Ollama-Service neu laden",
           "restart": "Ollama-Service neu starten",
@@ -655,6 +661,7 @@
           "passwordNote": "Geben Sie ein sicheres Passwort ein, wenn Sie dazu aufgefordert werden"
         },
         "virtualhost": {
+          "createConfig": "Erstellen Sie die Apache Virtual Host Konfigurationsdatei",
           "enableSite": "Neue Site-Konfiguration aktivieren",
           "disableDefault": "Standard Apache-Site deaktivieren",
           "disableDefaultSSL": "Standard SSL-Site deaktivieren",
@@ -662,7 +669,7 @@
         },
         "testing": {
           "testApi": "API-Endpunkt mit curl testen",
-          "testNote": "Verwenden Sie Ihren konfigurierten Benutzernamen und Ihr Passwort"
+          "testNote": "Sie werden nach dem Passwort für 'apiuser' gefragt. Bei erfolgreichem Test erhalten Sie JSON-Antworten mit generierten Textfragmenten."
         },
         "troubleshooting": {
           "checkPort": "Überprüfen, welcher Service auf Port 11434 läuft",
@@ -691,7 +698,8 @@
       },
       "completion": {
         "title": "Installation abgeschlossen!",
-        "description": "Ihr Ollama-Server ist jetzt vollständig konfiguriert und über HTTPS mit Basic Authentication gesichert. Sie können jetzt sicher auf die API zugreifen."
+        "message": "Ihr Ollama-Server ist jetzt vollständig konfiguriert und über HTTPS mit Basic Authentication gesichert. Sie können jetzt sicher auf die API zugreifen.",
+        "description": "Ihre Ollama-Installation ist jetzt bereit. Sie können über die gesicherte API auf Ihre KI-Modelle zugreifen."
       }
     },
     "debianInitialSetup": {

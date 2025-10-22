@@ -573,25 +573,29 @@
       "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir Ollama op Debian 12 ze installéieren mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir sécher ëffentlech API-Notzung.",
       "notes": {
         "title": "Wichteg Notizen",
-        "hardware": {
+        "rootAccess": {
+          "title": "Root-Zougang Erfuerderlech",
+          "description": "Root-Zougang oder sudo-Berechtigungen sinn fir all Installatiounsschrëtt erfuerderlech"
+        },
+        "domainRequired": {
+          "title": "Domain Erfuerderlech",
+          "description": "Eng gëlteg Domain mat DNS-Konfiguratioun ass néideg fir SSL-Zertifikater"
+        },
+        "firewallConfig": {
+          "title": "Firewall-Konfiguratioun",
+          "description": "Maacht d'Porten 80 an 443 an Ärer Firewall op fir HTTP/HTTPS-Zougang"
+        },
+        "securePassword": {
+          "title": "Séchert Passwuert",
+          "description": "Benotzt e staarkt Passwuert fir d'API-Authentifizéierung"
+        },
+        "backupConfig": {
+          "title": "Backup Erstellen",
+          "description": "Sécheréiert all Konfiguratiounsdateien ier Dir wichteg Ännerungen maacht"
+        },
+        "resourceRequirements": {
           "title": "Hardware-Ufuerderungen",
-          "description": "Op d'mannst 4GB RAM fir kleng Modeller, 8GB+ recommandéiert fir méi grouss"
-        },
-        "diskSpace": {
-          "title": "Späicherplaz",
-          "description": "Modeller brauchen 1-10GB Späicher jeeweils jee no Gréisst - plangt entspriechend"
-        },
-        "internetConnection": {
-          "title": "Internet-Verbindung",
-          "description": "Stabil Verbindung erfuerderlech fir AI-Modeller erofzelueden"
-        },
-        "modelSizes": {
-          "title": "Modell-Gréissten berücksichtegen",
-          "description": "Méi grouss Modeller bidden besser Qualitéit mee brauchen méi Ressourcen"
-        },
-        "performance": {
-          "title": "Performance-Iwwerwaachung",
-          "description": "Iwwerwaacht CPU- an RAM-Notzung während der Modell-Ausféierung"
+          "description": "Op d'mannst 8GB RAM sinn recommandéiert fir Ollama-Modeller ze bedreiwen"
         }
       },
       "steps": {
@@ -635,6 +639,8 @@
         "ollama": {
           "install": "Ollama eroflueden an installéieren",
           "testModel": "Klengt Testmodell eroflueden an testen",
+          "editService": "Ollama-Service-Konfiguratioun opmaachen",
+          "configureService": "Füügt dës Ëmweltvariabelen derbäi",
           "reexec": "Systemd-Manager nei lueden",
           "reload": "Ollama-Service nei lueden",
           "restart": "Ollama-Service nei starten",
@@ -655,6 +661,7 @@
           "passwordNote": "Gitt e séchere Passwuert an wann gefrot"
         },
         "virtualhost": {
+          "createConfig": "Den Apache Virtual Host Konfiguratiounsfichier erstellen",
           "enableSite": "Nei Site-Konfiguratioun aktivéieren",
           "disableDefault": "Standard Apache-Site deaktivéieren",
           "disableDefaultSSL": "Standard SSL-Site deaktivéieren",
@@ -662,7 +669,7 @@
         },
         "testing": {
           "testApi": "API-Endpunkt mat curl testen",
-          "testNote": "Benotzt Äre konfiguréierten Benotzernumm a Passwuert"
+          "testNote": "Dir gitt no dem Passwuert fir 'apiuser' gefrot. Bei engem erfollegräichen Test kritt Dir JSON-Äntwerten mat generéierten Textfragmenter."
         },
         "troubleshooting": {
           "checkPort": "Iwwerpréiwen wéi een Service op Port 11434 leeft",
@@ -691,7 +698,8 @@
       },
       "completion": {
         "title": "Installation ofgeschloss!",
-        "description": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen."
+        "message": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen.",
+        "description": "Är Ollama-Installation ass elo prett. Dir kënnt iwwer déi geséchert API op Är AI-Modeller zougräifen."
       }
     },
     "debianInitialSetup": {

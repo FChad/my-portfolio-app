@@ -573,25 +573,29 @@
       "description": "Un guide complet étape par étape pour installer Ollama sur Debian 12 avec un reverse proxy Apache2, le chiffrement SSL et l'authentification HTTP Basic pour un usage d'API publique sécurisé.",
       "notes": {
         "title": "Notes Importantes",
-        "hardware": {
+        "rootAccess": {
+          "title": "Accès Root Requis",
+          "description": "L'accès root ou les permissions sudo sont requis pour toutes les étapes d'installation"
+        },
+        "domainRequired": {
+          "title": "Domaine Requis",
+          "description": "Un domaine valide avec configuration DNS est nécessaire pour les certificats SSL"
+        },
+        "firewallConfig": {
+          "title": "Configuration du Pare-feu",
+          "description": "Ouvrez les ports 80 et 443 dans votre pare-feu pour l'accès HTTP/HTTPS"
+        },
+        "securePassword": {
+          "title": "Mot de Passe Sécurisé",
+          "description": "Utilisez un mot de passe fort pour l'authentification API"
+        },
+        "backupConfig": {
+          "title": "Créer une Sauvegarde",
+          "description": "Sauvegardez tous les fichiers de configuration avant de faire des changements importants"
+        },
+        "resourceRequirements": {
           "title": "Exigences Matérielles",
-          "description": "Au moins 4Go de RAM pour les petits modèles, 8Go+ recommandés pour les plus grands"
-        },
-        "diskSpace": {
-          "title": "Espace Disque",
-          "description": "Les modèles nécessitent 1-10Go de stockage chacun selon leur taille - planifiez en conséquence"
-        },
-        "internetConnection": {
-          "title": "Connexion Internet",
-          "description": "Connexion stable requise pour télécharger les modèles d'IA"
-        },
-        "modelSizes": {
-          "title": "Considérer les Tailles de Modèles",
-          "description": "Les modèles plus grands offrent une meilleure qualité mais nécessitent plus de ressources"
-        },
-        "performance": {
-          "title": "Surveillance des Performances",
-          "description": "Surveillez l'utilisation du CPU et de la RAM pendant l'exécution des modèles"
+          "description": "Au moins 8Go de RAM sont recommandés pour exécuter les modèles Ollama"
         }
       },
       "steps": {
@@ -635,6 +639,8 @@
         "ollama": {
           "install": "Télécharger et installer Ollama",
           "testModel": "Télécharger et tester un petit modèle de test",
+          "editService": "Ouvrir la configuration du service Ollama",
+          "configureService": "Ajouter les variables d'environnement suivantes",
           "reexec": "Recharger le gestionnaire systemd",
           "reload": "Recharger le service Ollama",
           "restart": "Redémarrer le service Ollama",
@@ -655,6 +661,7 @@
           "passwordNote": "Entrez un mot de passe sécurisé lorsque demandé"
         },
         "virtualhost": {
+          "createConfig": "Créer le fichier de configuration Apache Virtual Host",
           "enableSite": "Activer la nouvelle configuration de site",
           "disableDefault": "Désactiver le site Apache par défaut",
           "disableDefaultSSL": "Désactiver le site SSL par défaut",
@@ -662,7 +669,7 @@
         },
         "testing": {
           "testApi": "Tester le point de terminaison de l'API avec curl",
-          "testNote": "Utilisez votre nom d'utilisateur et mot de passe configurés"
+          "testNote": "Vous serez invité à entrer le mot de passe pour 'apiuser'. En cas de test réussi, vous recevrez des réponses JSON avec des fragments de texte générés."
         },
         "troubleshooting": {
           "checkPort": "Vérifier quel service fonctionne sur le port 11434",
@@ -691,7 +698,8 @@
       },
       "completion": {
         "title": "Installation Terminée !",
-        "description": "Votre serveur Ollama est maintenant entièrement configuré et sécurisé avec HTTPS et l'authentification Basic. Vous pouvez maintenant accéder à l'API en toute sécurité."
+        "message": "Votre serveur Ollama est maintenant entièrement configuré et sécurisé avec HTTPS et l'authentification Basic. Vous pouvez maintenant accéder à l'API en toute sécurité.",
+        "description": "Votre installation Ollama est maintenant prête. Vous pouvez accéder à vos modèles d'IA via l'API sécurisée."
       }
     },
     "debianInitialSetup": {
