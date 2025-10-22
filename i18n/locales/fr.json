@@ -913,6 +913,7 @@
           "verify": "Vérifier l'installation de NIX"
         },
         "nixconfig": {
+          "editConfig": "Modifier la configuration NIX",
           "restart": "Redémarrer le démon NIX"
         },
         "user": {
@@ -949,6 +950,7 @@
           "exitUser": "Revenir à l'utilisateur root"
         },
         "service": {
+          "createService": "Créer le fichier de service systemd",
           "reload": "Recharger le gestionnaire systemd",
           "enable": "Activer le service Nœud Cardano",
           "start": "Démarrer le service Nœud Cardano"

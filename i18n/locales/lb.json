@@ -913,6 +913,7 @@
           "verify": "NIX-Installation verifizéieren"
         },
         "nixconfig": {
+          "editConfig": "NIX-Konfiguratioun änneren",
           "restart": "NIX-Daemon nei starten"
         },
         "user": {
@@ -949,6 +950,7 @@
           "exitUser": "Zeréck zu Root-Benotzer wiesselen"
         },
         "service": {
+          "createService": "Systemd-Service Fichier erstellen",
           "reload": "Systemd-Manager nei lueden",
           "enable": "Cardano-Node Service aktivéieren",
           "start": "Cardano-Node Service starten"

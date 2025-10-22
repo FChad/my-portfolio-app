@@ -913,6 +913,7 @@
           "verify": "Verify NIX installation"
         },
         "nixconfig": {
+          "editConfig": "Edit NIX configuration",
           "restart": "Restart NIX daemon"
         },
         "user": {
@@ -949,6 +950,7 @@
           "exitUser": "Switch back to root user"
         },
         "service": {
+          "createService": "Create systemd service file",
           "reload": "Reload systemd manager",
           "enable": "Enable Cardano Node service",
           "start": "Start Cardano Node service"
