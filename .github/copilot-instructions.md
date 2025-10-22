@@ -20,7 +20,7 @@ This is a multilingual portfolio website built with Nuxt 4, Vue 3, and TypeScrip
 - **Build**: ES modules (type: "module" in package.json)
 
 ### Key Modules & Configuration
-- **SEO**: Robots.txt disabled (`disallow: '/'`), sitemap disabled (dev mode)
+- **SEO**: Sitemap enabled for indexing, robots.txt configured for production
 - **Color Mode**: Uses `classSuffix: ''` for Tailwind dark mode integration
 - **Base URL**: Production site at `https://www.chad.lu`
 
