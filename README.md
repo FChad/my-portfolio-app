@@ -1,7 +1,7 @@
 # Chad Feierstein - Portfolio Website
 
-[![Nuxt 4](https://img.shields.io/badge/Nuxt-4.1.2-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)](https://nuxt.com)
-[![Vue 3](https://img.shields.io/badge/Vue-3.5.20-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![Nuxt 4](https://img.shields.io/badge/Nuxt-4.1.3-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)](https://nuxt.com)
+[![Vue 3](https://img.shields.io/badge/Vue-3.5.22-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4.17-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
@@ -38,12 +38,12 @@ A modern, multilingual portfolio website showcasing projects, technical document
 
 | Category | Technologies |
 |----------|-------------|
-| **Framework** | Nuxt 4.1.2, Vue 3.5.20 |
+| **Framework** | Nuxt 4.1.3, Vue 3.5.22 |
 | **Language** | TypeScript 5.7.2 |
 | **Styling** | TailwindCSS 3.4.17, @nuxtjs/color-mode |
 | **Icons** | @nuxt/icon with Circle Flags & MDI sets |
-| **i18n** | @nuxtjs/i18n 10.0.6 |
-| **Email** | Resend 6.1.0 |
+| **i18n** | @nuxtjs/i18n 10.1.1 |
+| **Email** | Resend 6.2.2 |
 | **SEO** | @nuxtjs/robots, @nuxtjs/sitemap |
 
 ## 📦 Installation
