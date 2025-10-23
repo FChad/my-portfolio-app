@@ -53,7 +53,6 @@ interface SetupStep {
     commands: Command[]
     note?: string
     icon: string
-    color: string
 }
 
 const setupSteps: SetupStep[] = [
@@ -84,8 +83,7 @@ const setupSteps: SetupStep[] = [
             }
         ],
         note: 'documentations.debianInitialSetup.commands.language.restartNote',
-        icon: 'mdi:translate',
-        color: 'blue'
+        icon: 'mdi:translate'
     },
     {
         id: 'timezone',
@@ -118,8 +116,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             }
         ],
-        icon: 'mdi:clock',
-        color: 'green'
+        icon: 'mdi:clock'
     },
     {
         id: 'sources',
@@ -143,8 +140,7 @@ const setupSteps: SetupStep[] = [
             }
         ],
         note: 'documentations.debianInitialSetup.commands.sources.wikiReference',
-        icon: 'mdi:package-variant',
-        color: 'purple'
+        icon: 'mdi:package-variant'
     },
     {
         id: 'hostname',
@@ -176,8 +172,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             }
         ],
-        icon: 'mdi:server',
-        color: 'blue'
+        icon: 'mdi:server'
     },
     {
         id: 'motd',
@@ -190,8 +185,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             }
         ],
-        icon: 'mdi:message-text',
-        color: 'red'
+        icon: 'mdi:message-text'
     },
     {
         id: 'hardware',
@@ -224,8 +218,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             }
         ],
-        icon: 'mdi:chip',
-        color: 'purple'
+        icon: 'mdi:chip'
     },
     {
         id: 'verification',
@@ -253,8 +246,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             }
         ],
-        icon: 'mdi:check-circle',
-        color: 'emerald'
+        icon: 'mdi:check-circle'
     }
 ];
 
@@ -472,7 +464,7 @@ const toggleExpanded = (stepId: string) => {
                     class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
                     <div class="flex items-center gap-4">
                         <div
-                            :class="`w-12 h-12 bg-gradient-to-br ${getColorClasses(step.color).gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`">
+                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                             <span class="text-white font-bold text-lg">{{ index + 1 }}</span>
                         </div>
                         <div>
@@ -538,8 +530,8 @@ const toggleExpanded = (stepId: string) => {
                     class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
-                            :class="`w-12 h-12 bg-gradient-to-br ${getColorClasses(tip.color).gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`">
-                            <span class="text-white font-bold text-lg">{{ tipIndex + 1 }}</span>
+                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
+                            <Icon :name="tip.icon" class="w-6 h-6 text-white" />
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                             {{ t(tip.title) }}

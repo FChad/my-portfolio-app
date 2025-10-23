@@ -52,7 +52,6 @@ interface SetupStep {
     commands: Command[]
     note?: string
     icon: string
-    color: string
 }
 
 const setupSteps: SetupStep[] = [
@@ -72,8 +71,7 @@ const setupSteps: SetupStep[] = [
                 language: 'bash'
             }
         ],
-        icon: 'mdi:package-variant',
-        color: 'green'
+        icon: 'mdi:package-variant'
     },
     {
         id: 'ollama',
@@ -127,8 +125,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
                 language: 'bash'
             }
         ],
-        icon: 'mdi:robot',
-        color: 'purple'
+        icon: 'mdi:robot'
     },
     {
         id: 'apache',
@@ -151,8 +148,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
                 language: 'bash'
             }
         ],
-        icon: 'mdi:web',
-        color: 'orange'
+        icon: 'mdi:web'
     },
     {
         id: 'ssl',
@@ -170,8 +166,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
                 language: 'bash'
             }
         ],
-        icon: 'mdi:shield-lock',
-        color: 'teal'
+        icon: 'mdi:shield-lock'
     },
     {
         id: 'authentication',
@@ -190,8 +185,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
                 language: 'bash'
             }
         ],
-        icon: 'mdi:key',
-        color: 'amber'
+        icon: 'mdi:key'
     },
     {
         id: 'virtualhost',
@@ -269,8 +263,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
                 language: 'bash'
             }
         ],
-        icon: 'mdi:server',
-        color: 'indigo'
+        icon: 'mdi:server'
     },
     {
         id: 'testing',
@@ -284,8 +277,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
                 language: 'bash'
             }
         ],
-        icon: 'mdi:test-tube',
-        color: 'blue'
+        icon: 'mdi:test-tube'
     }
 ]
 
@@ -363,12 +355,14 @@ interface TroubleshootingIssue {
     id: string
     title: string
     commands: Command[]
+    icon: string
 }
 
 const troubleshooting: TroubleshootingIssue[] = [
     {
         id: 'ollama-issues',
         title: 'documentations.ollamaSetup.troubleshooting.ollamaIssues.title',
+        icon: 'mdi:robot-angry',
         commands: [
             {
                 command: 'sudo ss -tulpen | grep 11434',
@@ -390,6 +384,7 @@ const troubleshooting: TroubleshootingIssue[] = [
     {
         id: 'apache-issues',
         title: 'documentations.ollamaSetup.troubleshooting.apacheIssues.title',
+        icon: 'mdi:web-off',
         commands: [
             {
                 command: 'sudo apache2ctl configtest',
@@ -411,6 +406,7 @@ const troubleshooting: TroubleshootingIssue[] = [
     {
         id: 'ssl-issues',
         title: 'documentations.ollamaSetup.troubleshooting.sslIssues.title',
+        icon: 'mdi:shield-alert',
         commands: [
             {
                 command: 'sudo certbot certificates',
@@ -513,7 +509,7 @@ const toggleExpanded = (stepId: string) => {
                     class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
                     <div class="flex items-center gap-4">
                         <div
-                            :class="`w-12 h-12 bg-gradient-to-br ${getColorClasses(step.color).gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`">
+                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                             <span class="text-white font-bold text-lg">{{ index + 1 }}</span>
                         </div>
                         <div>
@@ -579,8 +575,8 @@ const toggleExpanded = (stepId: string) => {
                     class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
                     <div class="flex items-center gap-4">
                         <div
-                            class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
-                            <span class="text-white font-bold text-lg">{{ issueIndex + 1 }}</span>
+                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
+                            <Icon :name="issue.icon" class="w-6 h-6 text-white" />
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                             {{ t(issue.title) }}
