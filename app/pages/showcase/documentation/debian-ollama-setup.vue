@@ -576,7 +576,7 @@ const toggleExpanded = (stepId: string) => {
                 class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
 
                 <button @click="toggleTroubleshootingExpanded(issue.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-2xl">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -586,12 +586,12 @@ const toggleExpanded = (stepId: string) => {
                             {{ t(issue.title) }}
                         </h3>
                     </div>
-                    <Icon :name="isTroubleshootingExpanded[issue.id] ? 'mdi:chevron-up' : 'mdi:chevron-down'"
-                        class="w-6 h-6 text-gray-400 transition-transform" />
+                    <Icon name="mdi:chevron-down"
+                        :class="`w-5 h-5 text-gray-400 transition-transform duration-300 ${isTroubleshootingExpanded[issue.id] ? 'rotate-180' : ''}`" />
                 </button>
 
-                <Transition name="expand">
-                    <div v-show="isTroubleshootingExpanded[issue.id]" class="pt-4 px-6 pb-6">
+                <div v-show="isTroubleshootingExpanded[issue.id]" class="px-6 pb-6">
+                    <div class="pt-4">
                         <div class="space-y-4">
                             <div v-for="(cmd, cmdIndex) in issue.commands" :key="cmdIndex">
                                 <UiCodeBlock :command="cmd.command" :description="t(cmd.description)"
@@ -599,7 +599,7 @@ const toggleExpanded = (stepId: string) => {
                             </div>
                         </div>
                     </div>
-                </Transition>
+                </div>
             </div>
         </div>
     </section>

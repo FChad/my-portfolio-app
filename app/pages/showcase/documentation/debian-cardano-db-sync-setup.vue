@@ -378,36 +378,22 @@ const toggleExpanded = (stepId: string) => {
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-4 md:gap-6">
-        <div class="space-y-4">
-            <h1 class="text-4xl md:text-6xl font-black text-gray-800 dark:text-white">
-                {{ t('documentations.cardanoDbSyncSetup.title') }}
-            </h1>
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+        <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+            {{ t('documentations.cardanoDbSyncSetup.title') }}
+        </h1>
 
-            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+        <!-- Introduction -->
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8">
                 {{ t('documentations.cardanoDbSyncSetup.description') }}
             </p>
 
-            <div class="flex flex-wrap justify-center gap-2">
-                <span
-                    class="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                    Debian 12
-                </span>
-                <span
-                    class="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                    Cardano DB Sync
-                </span>
-                <span
-                    class="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                    PostgreSQL
-                </span>
-                <span
-                    class="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                    NIX
-                </span>
-                <span
-                    class="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                    Blockchain
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <span v-for="tag in ['Debian 12', 'Cardano DB Sync', 'PostgreSQL', 'NIX', 'Blockchain']" :key="tag"
+                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                    {{ tag }}
                 </span>
             </div>
         </div>
@@ -425,53 +411,85 @@ const toggleExpanded = (stepId: string) => {
             </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md">
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50">
-                    <Icon name="mdi:check-circle" class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {{ t('documentations.cardanoDbSyncSetup.notes.cardanoNode') }}
-                    </span>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-blue-500">
+                        <Icon name="mdi:server" class="w-6 h-6 text-white" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        Cardano Node
+                    </h3>
                 </div>
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50">
-                    <Icon name="mdi:check-circle" class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {{ t('documentations.cardanoDbSyncSetup.notes.diskSpace') }}
-                    </span>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ t('documentations.cardanoDbSyncSetup.notes.cardanoNode') }}
+                </p>
+            </div>
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-purple-500">
+                        <Icon name="mdi:harddisk" class="w-6 h-6 text-white" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        Speicherplatz
+                    </h3>
                 </div>
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50">
-                    <Icon name="mdi:check-circle" class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {{ t('documentations.cardanoDbSyncSetup.notes.ramRequirement') }}
-                    </span>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ t('documentations.cardanoDbSyncSetup.notes.diskSpace') }}
+                </p>
+            </div>
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-green-500">
+                        <Icon name="mdi:memory" class="w-6 h-6 text-white" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        RAM-Bedarf
+                    </h3>
                 </div>
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50">
-                    <Icon name="mdi:check-circle" class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {{ t('documentations.cardanoDbSyncSetup.notes.syncTime') }}
-                    </span>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ t('documentations.cardanoDbSyncSetup.notes.ramRequirement') }}
+                </p>
+            </div>
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-orange-500">
+                        <Icon name="mdi:clock-outline" class="w-6 h-6 text-white" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        Synchronisationszeit
+                    </h3>
                 </div>
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50 md:col-span-2">
-                    <Icon name="mdi:check-circle" class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {{ t('documentations.cardanoDbSyncSetup.notes.rootAccess') }}
-                    </span>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ t('documentations.cardanoDbSyncSetup.notes.syncTime') }}
+                </p>
+            </div>
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-red-500">
+                        <Icon name="mdi:shield-account" class="w-6 h-6 text-white" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        Root-Zugriff
+                    </h3>
                 </div>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ t('documentations.cardanoDbSyncSetup.notes.rootAccess') }}
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Setup Steps Section -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
-            {{ t('documentations.cardanoDbSyncSetup.steps.title') }}
+        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
+            Setup Schritte
         </h2>
-
-        <div class="max-w-4xl mx-auto text-center mb-8">
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                {{ t('documentations.cardanoDbSyncSetup.stepsSubtitle') }}
-            </p>
-        </div>
 
         <div class="space-y-6">
             <div v-for="(step, index) in setupSteps" :key="step.id"
@@ -536,32 +554,29 @@ const toggleExpanded = (stepId: string) => {
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('documentations.cardanoDbSyncSetup.tips.sectionTitle') }}
         </h2>
-
-        <div class="max-w-4xl mx-auto text-center mb-8">
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                {{ t('documentations.cardanoDbSyncSetup.tips.sectionSubtitle') }}
-            </p>
-        </div>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg text-center max-w-4xl mx-auto mb-8">
+            {{ t('documentations.cardanoDbSyncSetup.tips.sectionSubtitle') }}
+        </p>
 
         <div class="flex flex-col gap-6">
-            <div v-for="tip in additionalTips" :key="tip.id"
-                class="bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-lg transition-all">
+            <div v-for="(tip, tipIndex) in additionalTips" :key="tip.id"
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+
                 <button @click="toggleTipsExpanded(tip.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-3xl">
-                    <div class="flex items-center gap-3">
-                        <div :class="[
-                            'w-12 h-12 rounded-xl flex items-center justify-center shadow-lg',
-                            getColorClasses(tip.color).bg
-                        ]">
-                            <Icon :name="tip.icon" class="w-6 h-6 text-white" />
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-2xl">
+                    <div class="flex items-center gap-4">
+                        <div
+                            :class="`w-12 h-12 bg-gradient-to-br ${getColorClasses(tip.color).gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`">
+                            <span class="text-white font-bold text-lg">{{ tipIndex + 1 }}</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                             {{ t(tip.title) }}
                         </h3>
                     </div>
                     <Icon :name="isTipsExpanded[tip.id] ? 'mdi:chevron-up' : 'mdi:chevron-down'"
                         class="w-6 h-6 text-gray-400 transition-transform" />
                 </button>
+
                 <Transition name="expand">
                     <div v-show="isTipsExpanded[tip.id]" class="pt-4 px-6 pb-6">
                         <div class="space-y-4">
