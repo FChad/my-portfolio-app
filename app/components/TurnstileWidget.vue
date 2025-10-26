@@ -17,10 +17,6 @@ declare global {
             reset: (widgetId: string) => void
             remove: (widgetId: string) => void
         }
-        [key: `turnstileCallback_${string}`]: (token: string) => void
-        [key: `turnstileExpired_${string}`]: () => void
-        [key: `turnstileError_${string}`]: (error: string) => void
-        [key: string]: any // Allow other dynamic properties
     }
 }
 
@@ -44,28 +40,6 @@ const isReady = ref(false)
 
 const isDark = computed(() => $colorMode?.value === 'dark')
 
-// Create unique callback names for this instance
-const instanceId = Math.random().toString(36).substr(2, 9)
-const callbackName = `turnstileCallback_${instanceId}`
-const expiredCallbackName = `turnstileExpired_${instanceId}`
-const errorCallbackName = `turnstileError_${instanceId}`
-
-// Callback functions
-const onVerify = (token: string) => {
-    emit('update:modelValue', token)
-    emit('verified', token)
-}
-
-const onExpired = () => {
-    emit('update:modelValue', '')
-    emit('expired')
-}
-
-const onError = (error: string) => {
-    emit('update:modelValue', '')
-    emit('error', error)
-}
-
 const renderTurnstile = () => {
     if (import.meta.client && window.turnstile && turnstileElement.value) {
         try {
@@ -82,14 +56,29 @@ const renderTurnstile = () => {
             // Clear the DOM element to ensure clean state
             turnstileElement.value.innerHTML = ''
 
+            // Render with direct function references
             widgetId.value = window.turnstile.render(turnstileElement.value, {
                 sitekey: props.siteKey,
-                callback: callbackName,
-                'expired-callback': expiredCallbackName,
-                'error-callback': errorCallbackName,
+                callback: (token: string) => {
+                    console.log('Turnstile callback triggered with token')
+                    emit('update:modelValue', token)
+                    emit('verified', token)
+                },
+                'expired-callback': () => {
+                    console.log('Turnstile expired')
+                    emit('update:modelValue', '')
+                    emit('expired')
+                },
+                'error-callback': (error: string) => {
+                    console.log('Turnstile error:', error)
+                    emit('update:modelValue', '')
+                    emit('error', error)
+                },
                 theme: isDark.value ? 'dark' : 'light',
                 language: 'auto'
             })
+
+            console.log('Turnstile rendered with widgetId:', widgetId.value)
         } catch (error) {
             console.error('Failed to render Turnstile:', error)
         }
@@ -114,16 +103,9 @@ watch(isDark, () => {
 })
 
 onMounted(() => {
-    // Register global callbacks
-    if (import.meta.client) {
-        window[callbackName] = onVerify
-        window[expiredCallbackName] = onExpired
-        window[errorCallbackName] = onError
-    }
-
     // Wait for Turnstile script to load
     const checkTurnstile = () => {
-        if (window.turnstile) {
+        if (import.meta.client && window.turnstile) {
             isReady.value = true
             nextTick(() => renderTurnstile())
         } else {
@@ -141,13 +123,6 @@ onBeforeUnmount(() => {
         } catch (error) {
             console.warn('Failed to remove Turnstile widget on unmount:', error)
         }
-    }
-
-    // Clean up global callbacks
-    if (import.meta.client) {
-        delete window[callbackName]
-        delete window[expiredCallbackName]
-        delete window[errorCallbackName]
     }
 })
 
