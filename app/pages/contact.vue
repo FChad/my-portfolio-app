@@ -105,8 +105,8 @@ const validateForm = () => {
         errors.value.message = t('contact.form.errors.messageMaxLength')
     }
 
-    // Turnstile validation
-    if (!turnstileToken.value.trim()) {
+    // Turnstile validation - check if token exists and is a string
+    if (!turnstileToken.value || typeof turnstileToken.value !== 'string' || !turnstileToken.value.trim()) {
         errors.value.turnstile = t('contact.form.errors.captchaRequired')
         showTurnstileError.value = true
     } else {
@@ -118,7 +118,9 @@ const validateForm = () => {
 
 // Submit form
 const submitForm = async () => {
-    if (!validateForm()) return
+    if (!validateForm()) {
+        return
+    }
 
     isSubmitting.value = true
     submitError.value = ''
@@ -133,24 +135,23 @@ const submitForm = async () => {
             }
         })
 
-        if (response.success) {
-            isSubmitted.value = true
+        // Success
+        isSubmitted.value = true
 
-            // Form zurücksetzen
-            form.value = {
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
-            }
-            turnstileToken.value = ''
-            turnstileRef.value?.reset()
-
-            // Auto-hide success message after 10 seconds
-            setTimeout(() => {
-                isSubmitted.value = false
-            }, 10000)
+        // Form zurücksetzen
+        form.value = {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
         }
+        turnstileToken.value = ''
+        turnstileRef.value?.reset()
+
+        // Auto-hide success message after 10 seconds
+        setTimeout(() => {
+            isSubmitted.value = false
+        }, 10000)
     } catch (error: any) {
         // Handle different error types
         if (error?.statusCode === 429) {
@@ -161,11 +162,14 @@ const submitForm = async () => {
                 error?.statusMessage?.toLowerCase().includes('verification')) {
                 submitError.value = t('contact.form.errors.captchaFailed')
                 turnstileRef.value?.reset()
+                turnstileToken.value = ''
             } else {
                 submitError.value = t('contact.form.errors.invalidData')
             }
-        } else {
+        } else if (error?.statusCode === 500) {
             submitError.value = t('contact.form.errors.serverError')
+        } else {
+            submitError.value = error?.statusMessage || t('contact.form.errors.serverError')
         }
     } finally {
         isSubmitting.value = false
@@ -177,6 +181,10 @@ const onTurnstileVerified = (token: string) => {
     turnstileToken.value = token
     showTurnstileError.value = false
     submitError.value = ''
+    // Clear turnstile error from errors object
+    if (errors.value.turnstile) {
+        delete errors.value.turnstile
+    }
 }
 
 const onTurnstileExpired = () => {

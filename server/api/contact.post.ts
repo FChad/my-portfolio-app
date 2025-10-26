@@ -27,6 +27,8 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
     return false
   }
 
+  console.log('🔐 Verifying Turnstile token from IP:', ip)
+
   try {
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
@@ -41,6 +43,8 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
     })
 
     const result = await response.json()
+    console.log('🔐 Turnstile verification result:', result.success ? '✅ Success' : '❌ Failed', result)
+
     return result.success === true
   } catch (error) {
     console.error('❌ Turnstile verification failed:', error)
@@ -102,14 +106,19 @@ export default defineEventHandler(async (event) => {
   try {
     // Parse and validate request body
     const body = await readBody(event)
+    console.log('📨 Contact form submission received')
+
     const validatedData = validateContactForm(body)
 
     if (!validatedData) {
+      console.error('❌ Form validation failed')
       throw createError({
         statusCode: 400,
         statusMessage: 'Invalid form data'
       })
     }
+
+    console.log('✅ Form data validated')
 
     // Get client IP for Turnstile verification
     const clientIP = getHeader(event, 'cf-connecting-ip') ||
@@ -118,23 +127,31 @@ export default defineEventHandler(async (event) => {
       event.node.req.socket.remoteAddress ||
       'unknown'
 
+    console.log('🌐 Client IP:', clientIP)
+
     // Verify Turnstile token
     const isTurnstileValid = await verifyTurnstile(validatedData.turnstileToken, clientIP)
 
     if (!isTurnstileValid) {
+      console.error('❌ Turnstile verification failed')
       throw createError({
         statusCode: 400,
         statusMessage: 'CAPTCHA verification failed. Please try again.'
       })
     }
 
+    console.log('✅ Turnstile verification successful')
+
     // Check environment variables
     if (!process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
+      console.error('❌ Email configuration incomplete')
       throw createError({
         statusCode: 500,
         statusMessage: 'Email configuration incomplete'
       })
     }
+
+    console.log('📧 Sending email via Resend...')
 
     // Send email using Resend - exactly as in official docs
     const data = await resend.emails.send({
@@ -152,6 +169,8 @@ export default defineEventHandler(async (event) => {
     `,
     });
 
+    console.log('✅ Email sent successfully:', data.data?.id)
+
     return {
       success: true,
       message: 'Email sent successfully',
@@ -166,10 +185,10 @@ export default defineEventHandler(async (event) => {
       throw error
     }
 
-    // Handle Resend API errors
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error'
-    };
+    // Handle Resend API errors - throw error instead of returning
+    throw createError({
+      statusCode: 500,
+      statusMessage: error instanceof Error ? error.message : 'Failed to send email. Please try again.'
+    })
   }
 });
