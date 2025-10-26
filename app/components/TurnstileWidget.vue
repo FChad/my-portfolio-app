@@ -1,8 +1,6 @@
 <template>
     <div class="flex justify-center my-6">
-        <div v-if="isReady" ref="turnstileElement" class="cf-turnstile" :data-sitekey="siteKey"
-            :data-callback="callbackName" :data-expired-callback="expiredCallbackName"
-            :data-error-callback="errorCallbackName" :data-theme="isDark ? 'dark' : 'light'" data-language="auto" />
+        <div v-if="isReady" ref="turnstileElement" />
         <div v-else class="w-80 mx-auto">
             <div class="animate-pulse bg-gray-200 dark:bg-gray-700 h-16 rounded-lg flex items-center justify-center">
                 <Icon name="mdi:loading" class="animate-spin text-gray-500 dark:text-gray-400 text-xl" />
@@ -80,16 +78,17 @@ const renderTurnstile = () => {
                 }
                 widgetId.value = undefined
             }
-            
+
             // Clear the DOM element to ensure clean state
             turnstileElement.value.innerHTML = ''
-            
+
             widgetId.value = window.turnstile.render(turnstileElement.value, {
                 sitekey: props.siteKey,
                 callback: callbackName,
                 'expired-callback': expiredCallbackName,
                 'error-callback': errorCallbackName,
-                theme: isDark.value ? 'dark' : 'light'
+                theme: isDark.value ? 'dark' : 'light',
+                language: 'auto'
             })
         } catch (error) {
             console.error('Failed to render Turnstile:', error)
@@ -143,7 +142,7 @@ onBeforeUnmount(() => {
             console.warn('Failed to remove Turnstile widget on unmount:', error)
         }
     }
-    
+
     // Clean up global callbacks
     if (import.meta.client) {
         delete window[callbackName]
