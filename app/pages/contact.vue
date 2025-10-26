@@ -152,8 +152,6 @@ const submitForm = async () => {
             }, 10000)
         }
     } catch (error: any) {
-        console.error('Error submitting contact form:', error)
-
         // Handle different error types
         if (error?.statusCode === 429) {
             submitError.value = t('contact.form.errors.rateLimited')
@@ -176,20 +174,18 @@ const submitForm = async () => {
 
 // Turnstile event handlers
 const onTurnstileVerified = (token: string) => {
-    console.log('✅ Turnstile verified')
+    turnstileToken.value = token
     showTurnstileError.value = false
     submitError.value = ''
 }
 
 const onTurnstileExpired = () => {
-    console.log('⏰ Turnstile expired')
     turnstileToken.value = ''
     showTurnstileError.value = true
     submitError.value = t('contact.form.errors.captchaExpired')
 }
 
 const onTurnstileError = (errorMessage: string) => {
-    console.error('❌ Turnstile error:', errorMessage)
     turnstileToken.value = ''
     showTurnstileError.value = true
     submitError.value = t('contact.form.errors.captchaError')
