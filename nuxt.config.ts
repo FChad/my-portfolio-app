@@ -73,8 +73,9 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
-          async: true
+          src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
+          async: true,
+          defer: true
         }
       ]
     }
