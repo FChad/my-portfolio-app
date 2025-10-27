@@ -1137,7 +1137,19 @@
     "title": "Kontakt",
     "subtitle": "Haben Sie Fragen oder Feedback? Ich bin hier, um zu helfen. Senden Sie mir eine Nachricht.",
     "methods": {
-      "title": "Kontaktmöglichkeiten"
+      "title": "Kontaktmöglichkeiten",
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Berufliches Netzwerk"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Code Repository"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Direkte Kontaktaufnahme"
+      }
     },
     "form": {
       "title": "Nachricht senden",

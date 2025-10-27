@@ -28,33 +28,33 @@ const submitError = ref<string>('')
 const errors = ref<Record<string, string>>({})
 const showTurnstileError = ref(false)
 
-// Contact methods
-const contactMethods = [
+// Contact methods with i18n keys
+const contactMethods = computed(() => [
     {
-        title: 'LinkedIn',
+        titleKey: 'contact.methods.linkedin.title',
         icon: 'mdi:linkedin',
         href: 'https://www.linkedin.com/in/chad-feierstein/',
         color: 'bg-[#0077B5] hover:bg-[#005885]',
-        description: 'Berufliches Netzwerk',
+        descriptionKey: 'contact.methods.linkedin.description',
         isExternal: true
     },
     {
-        title: 'GitHub',
+        titleKey: 'contact.methods.github.title',
         icon: 'mdi:github',
         href: 'https://github.com/FChad',
         color: 'bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600',
-        description: 'Code Repository',
+        descriptionKey: 'contact.methods.github.description',
         isExternal: true
     },
     {
-        title: 'Email',
+        titleKey: 'contact.methods.email.title',
         icon: 'mdi:email',
         href: '#contact-form',
         color: 'bg-red-500 hover:bg-red-600',
-        description: 'Direkte Kontaktaufnahme',
+        descriptionKey: 'contact.methods.email.description',
         isExternal: false
     }
-]
+])
 
 // Scroll to contact form function
 const scrollToContactForm = () => {
@@ -220,7 +220,7 @@ definePageMeta({
         </h2>
 
         <div class="grid md:grid-cols-3 gap-6">
-            <div v-for="method in contactMethods" :key="method.title"
+            <div v-for="method in contactMethods" :key="method.titleKey"
                 class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
 
                 <!-- External links -->
@@ -238,12 +238,12 @@ definePageMeta({
                         <div class="flex flex-col gap-2">
                             <h3
                                 class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
-                                {{ method.title }}
+                                {{ $t(method.titleKey) }}
                                 <Icon name="mdi:external-link"
                                     class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300">
-                                {{ method.description }}
+                                {{ $t(method.descriptionKey) }}
                             </p>
                         </div>
                     </div>
@@ -264,12 +264,12 @@ definePageMeta({
                         <div class="flex flex-col gap-2">
                             <h3
                                 class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
-                                {{ method.title }}
+                                {{ $t(method.titleKey) }}
                                 <Icon name="mdi:arrow-down"
                                     class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300">
-                                {{ method.description }}
+                                {{ $t(method.descriptionKey) }}
                             </p>
                         </div>
                     </div>

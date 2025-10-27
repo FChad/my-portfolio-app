@@ -1137,7 +1137,19 @@
     "title": "Contact",
     "subtitle": "Let's talk about your next project",
     "methods": {
-      "title": "Contact Methods"
+      "title": "Contact Methods",
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Professional Network"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Code Repository"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Direct Contact"
+      }
     },
     "form": {
       "title": "Send a Message",
