@@ -509,7 +509,7 @@ const experiences = [
                                 <div class="flex items-center gap-3">
                                     <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
                                     <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                    }}</span>
+                                        }}</span>
                                 </div>
                                 <span
                                     class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
