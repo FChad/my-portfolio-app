@@ -6,8 +6,7 @@ const { setSeoMeta } = useSeo()
 setSeoMeta({
     title: t('seo.showcase.title'),
     description: t('seo.showcase.description'),
-    keywords: t('seo.showcase.keywords'),
-    type: 'website'
+    keywords: t('seo.showcase.keywords')
 })
 
 interface ShowcaseItem {

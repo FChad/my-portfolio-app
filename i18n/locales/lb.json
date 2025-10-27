@@ -1,55 +1,55 @@
 {
   "seo": {
     "home": {
-      "title": "Chad Feierstein - Home",
+      "title": "Home",
       "description": "Professionnellen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Spezialiséiert op modern Web-Technologien, Cloud Computing an innovativ digital Léisungen.",
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Lëtzebuerg"
     },
     "about": {
-      "title": "Chad Feierstein - Iwwer mech",
+      "title": "Iwwer mech",
       "description": "Léiert méi iwwer Chad Feierstein - Full-Stack Developer mat BTS Cloud Computing Ausbildung a professionneller IT-Erfahrung zu Lëtzebuerg.",
       "keywords": "Chad Feierstein, Iwwer mech, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Lëtzebuerg"
     },
     "showcase": {
-      "title": "Chad Feierstein - Showcase",
+      "title": "Showcase",
       "description": "Entdeckt meng neist Projeten, Dokumentatiounen a technesch Léisungen. Vun der Web-Entwécklung bis hin zu Cloud-Infrastrukturen.",
       "keywords": "Portfolio, Projeten, Web Development, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
-      "title": "Chad Feierstein - Kontakt",
+      "title": "Kontakt",
       "description": "Huelt Kontakt op fir professionnell Web-Entwécklung, IT-Administratioun a Cloud Computing Léisungen. Séier a zouverlässeg Äntwerten garantéiert.",
       "keywords": "Kontakt, Chad Feierstein, Web Developer engagéieren, IT Servicer, Cloud Computing Berodung"
     },
     "projects": {
       "chatbot": {
-        "title": "KI Chat Bot - Intelligent Konversatioun-KI vum Chad Feierstein",
+        "title": "KI Chat Bot",
         "description": "Modernen KI Chat Bot mat erweiderten Sprooch-Veraarbechtungs-Fäegketen. Entwéckelt mat Vue.js an integréierten KI-APIs fir natierlech Gespréicher.",
         "keywords": "KI Chat Bot, Kënschtlech Intelligenz, Vue.js, Chat Assistant, Natural Language Processing"
       },
       "portfolio": {
-        "title": "Portfolio Websäit - Nuxt 4 & Vue 3 Showcase Projet",
+        "title": "Portfolio Websäit",
         "description": "Modern Portfolio Websäit gebaut mat Nuxt 4, Vue 3 an TypeScript. Méisproocheg, SEO-optimiséiert mat Dark Mode a performant Animatiounen.",
         "keywords": "Portfolio Websäit, Nuxt 4, Vue 3, TypeScript, Méisproocheg, SEO, Dark Mode"
       }
     },
     "documentation": {
       "debian12": {
-        "title": "Debian 12 Initial Setup - Komplett Server Konfiguratioun",
+        "title": "Debian 12 Initial Setup",
         "description": "Vollstänneg Guide fir d'initial Ariichtung vum Debian 12 Server. Vun der Basis-Konfiguratioun bis zur Sécherheets-Häertung.",
         "keywords": "Debian 12, Server Setup, Linux Administratioun, System Konfiguratioun, Server Sécherheet"
       },
       "cardanoNode": {
-        "title": "Cardano Node Setup op Debian - Blockchain Infrastruktur",
+        "title": "Cardano Node Setup",
         "description": "Schrëtt-fir-Schrëtt Guide fir d'Installatioun a Konfiguratioun vum Cardano Node op Debian 12. Mat Monitoring an Optimiséierung.",
         "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
       },
       "cardanoDbSync": {
-        "title": "Cardano DB Sync Installatioun - Blockchain Datebank Setup",
+        "title": "Cardano DB Sync Installatioun",
         "description": "Detailléiert Guide fir d'Installatioun vu Cardano DB Sync op Debian. PostgreSQL Konfiguratioun a Datebank-Synchronisatioun.",
         "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
       },
       "ollama": {
-        "title": "Ollama Installatioun op Debian - Lokal KI Modeller",
+        "title": "Ollama Installatioun",
         "description": "Komplett Guide fir d'Installatioun a Konfiguratioun vum Ollama op Debian 12. Lokal KI Model Verwaltung a GPU Acceleratioun.",
         "keywords": "Ollama, KI Modeller, Lokal KI, Debian, Machine Learning, GPU Acceleratioun, LLM"
       }

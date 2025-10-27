@@ -18,12 +18,10 @@ export default defineNuxtConfig({
   },
   sitemap: {
     enabled: true,
-    defaults: {
-      changefreq: 'weekly',
-      priority: 0.8,
-      lastmod: new Date().toISOString(),
-    },
-    autoLastmod: true,
+    autoLastmod: true
+  },
+  robots: {
+    enabled: true
   },
   colorMode: {
     classSuffix: ''

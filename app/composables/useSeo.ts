@@ -3,217 +3,104 @@ interface SeoOptions {
   description?: string
   image?: string
   keywords?: string
-  type?: 'website' | 'article' | 'profile'
 }
 
-type SchemaType = 'Person' | 'WebSite' | 'Article' | 'Project'
+type SchemaType = 'Person' | 'WebSite' | 'SoftwareApplication'
 
 /**
- * SEO Composable für Portfolio Website
+ * Minimaler SEO Composable für Portfolio Website
+ * 
+ * Nutzt Nuxt 4 Standards und @nuxtjs/i18n Automatisierung:
+ * - useHead() für title und meta description
+ * - useSeoMeta() für SEO-spezifische Tags (og:*, twitter:*)
+ * - @nuxtjs/i18n generiert automatisch: hreflang, og:locale, canonical, lang attr
  */
 export const useSeo = () => {
-  const { t, locale } = useI18n()
-  const route = useRoute()
+  const { t } = useI18n()
   const config = useRuntimeConfig()
-
   const baseUrl = config.public.baseUrl
-  const supportedLocales = ['lb', 'de', 'fr', 'en']
 
-  /** Generiert die kanonische URL für die aktuelle Seite */
-  const getCanonicalUrl = () => `${baseUrl}${route.path}`
-
-  /** Generiert Schema.org strukturierte Daten für SEO */
+  /** Generiert minimale Schema.org strukturierte Daten */
   const getStructuredData = (type: SchemaType) => {
-    const personData = {
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Chad Feierstein',
-      url: baseUrl,
-      sameAs: [
-        'https://www.linkedin.com/in/chad-feierstein/',
-        'https://github.com/FChad'
-      ],
-      jobTitle: t('about.profile.role'),
-      worksFor: {
-        '@type': 'Organization',
-        name: 'Rotyre SARL'
-      },
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: t('about.profile.city'),
-        addressCountry: t('about.profile.country')
-      },
-      knowsLanguage: supportedLocales,
-      email: 'contact@chad.lu',
-      alumniOf: {
-        '@type': 'EducationalOrganization',
-        name: 'LTEch',
-        address: {
-          '@type': 'PostalAddress',
-          addressCountry: 'LU'
-        }
-      },
-      hasCredential: [
-        {
-          '@type': 'EducationalOccupationalCredential',
-          name: 'BTS Cloud Computing',
-          credentialCategory: 'degree'
-        },
-        {
-          '@type': 'EducationalOccupationalCredential',
-          name: 'Techniker in der Informatik',
-          credentialCategory: 'certificate'
-        }
-      ]
-    }
-
-    const websiteData = {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: `Chad Feierstein - ${t('nav.home')}`,
-      url: baseUrl,
-      author: {
-        '@type': 'Person',
-        name: 'Chad Feierstein'
-      },
-      inLanguage: supportedLocales,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${baseUrl}/showcase?search={search_term_string}`,
-        'query-input': 'required name=search_term_string'
-      },
-      mainEntity: {
-        '@type': 'Person',
-        name: 'Chad Feierstein'
-      }
-    }
-
-    const articleData = {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'Chad Feierstein Portfolio Project',
-      author: {
-        '@type': 'Person',
-        name: 'Chad Feierstein',
-        url: baseUrl
-      },
-      publisher: {
-        '@type': 'Person',
-        name: 'Chad Feierstein',
-        url: baseUrl
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': getCanonicalUrl()
-      },
-      datePublished: '2025-10-14',
-      dateModified: new Date().toISOString().split('T')[0],
-      inLanguage: locale.value
-    }
-
-    const projectData = {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'Chad Feierstein Project',
-      author: {
-        '@type': 'Person',
-        name: 'Chad Feierstein',
-        url: baseUrl
-      },
-      applicationCategory: 'WebApplication',
-      operatingSystem: 'Web Browser',
-      url: getCanonicalUrl(),
-      inLanguage: locale.value
+    const baseData = {
+      '@context': 'https://schema.org'
     }
 
     switch (type) {
       case 'Person':
-        return personData
+        return {
+          ...baseData,
+          '@type': 'Person',
+          name: 'Chad Feierstein',
+          url: baseUrl,
+          sameAs: [
+            'https://www.linkedin.com/in/chad-feierstein/',
+            'https://github.com/FChad'
+          ],
+          jobTitle: t('about.profile.role')
+        }
+
       case 'WebSite':
-        return websiteData
-      case 'Article':
-        return articleData
-      case 'Project':
-        return projectData
-      default:
-        return websiteData
+        return {
+          ...baseData,
+          '@type': 'WebSite',
+          name: 'Chad Feierstein Portfolio',
+          url: baseUrl,
+          inLanguage: ['lb', 'de', 'fr', 'en']
+        }
+
+      case 'SoftwareApplication':
+        return {
+          ...baseData,
+          '@type': 'SoftwareApplication',
+          name: t('nav.home'),
+          author: {
+            '@type': 'Person',
+            name: 'Chad Feierstein'
+          },
+          applicationCategory: 'WebApplication'
+        }
     }
   }
 
   /** 
-   * Setzt alle SEO Meta-Tags für die aktuelle Seite
+   * Setzt SEO Meta-Tags nach Nuxt 4 Best Practices
+   * - useHead() für title
+   * - useSeoMeta() für SEO-spezifische Tags (og:*, twitter:*)
    */
   const setSeoMeta = (options: SeoOptions = {}) => {
     const title = options.title || t('nav.home')
     const description = options.description || t('home.tagline')
     const image = options.image || `${baseUrl}/img/og/default-og-image.svg`
-    const type = options.type || 'website'
 
-    const i18nHead = useLocaleHead()
-
-    const seoMeta: any = {
+    // Title in useHead() setzen (Best Practice)
+    useHead({
       title,
-      description,
-      author: 'Chad Feierstein',
-      robots: 'index, follow',
+      meta: [
+        { name: 'description', content: description }
+      ]
+    })
 
-      // Open Graph Meta Tags
+    // Nur SEO-spezifische Meta-Tags in useSeoMeta()
+    useSeoMeta({
       ogTitle: title,
       ogDescription: description,
-      ogType: type,
-      ogUrl: getCanonicalUrl(),
-      ogLocale: locale.value,
       ogImage: image,
       ogImageAlt: title,
-      ogSiteName: 'Chad Feierstein - Portfolio',
-
-      // Twitter Card Meta Tags
       twitterCard: 'summary_large_image',
       twitterTitle: title,
       twitterDescription: description,
-      twitterImage: image,
-      twitterImageAlt: title,
-      twitterSite: '@chadfeierstein',
-      twitterCreator: '@chadfeierstein',
+      twitterImage: image
+    })
 
-      // Additional Meta Tags
-      themeColor: '#3b82f6',
-      colorScheme: 'light dark',
-      creator: 'Chad Feierstein',
-      publisher: 'Chad Feierstein',
-      applicationName: 'Chad Feierstein Portfolio',
-      msapplicationTileColor: '#3b82f6'
-    }
-
-    // Article-specific meta tags
-    if (type === 'article') {
-      seoMeta.articleAuthor = 'Chad Feierstein'
-      seoMeta.articlePublisher = baseUrl
-      seoMeta.ogArticleAuthor = 'Chad Feierstein'
-      seoMeta.ogArticlePublisher = baseUrl
-    }
-
-    // Keywords nur hinzufügen wenn verfügbar
+    // Keywords optional
     if (options.keywords) {
-      seoMeta.keywords = options.keywords
+      useSeoMeta({ keywords: options.keywords })
     }
-
-    useSeoMeta(seoMeta)
-
-    useHead(() => ({
-      title,
-      htmlAttrs: i18nHead.value.htmlAttrs,
-      link: [
-        ...(i18nHead.value.link || []),
-        { rel: 'canonical', href: getCanonicalUrl() }
-      ],
-      meta: [...(i18nHead.value.meta || [])]
-    }))
   }
 
   return {
     setSeoMeta,
-    getStructuredData,
-    getCanonicalUrl
+    getStructuredData
   }
 }

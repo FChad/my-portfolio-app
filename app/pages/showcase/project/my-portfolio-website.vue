@@ -18,8 +18,7 @@ const { setSeoMeta, getStructuredData } = useSeo()
 setSeoMeta({
     title: t('seo.projects.portfolio.title'),
     description: t('seo.projects.portfolio.description'),
-    keywords: t('seo.projects.portfolio.keywords'),
-    type: 'article'
+    keywords: t('seo.projects.portfolio.keywords')
 })
 
 // Add structured data for project
@@ -27,7 +26,7 @@ useHead(() => ({
     script: [
         {
             type: 'application/ld+json',
-            innerHTML: JSON.stringify(getStructuredData('Project'))
+            innerHTML: JSON.stringify(getStructuredData('SoftwareApplication'))
         }
     ]
 }))

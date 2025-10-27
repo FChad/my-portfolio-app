@@ -1,55 +1,55 @@
 {
   "seo": {
     "home": {
-      "title": "Chad Feierstein - Home",
+      "title": "Home",
       "description": "Professioneller Full-Stack Entwickler und IT-Administrator aus Luxemburg. Spezialisiert auf moderne Webtechnologien, Cloud Computing und innovative digitale Lösungen.",
       "keywords": "Chad Feierstein, Full-Stack Entwickler, Web Entwickler, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxemburg"
     },
     "about": {
-      "title": "Chad Feierstein - Über mich",
+      "title": "Über mich",
       "description": "Erfahren Sie mehr über Chad Feierstein - Full-Stack Entwickler mit BTS Cloud Computing Ausbildung und professioneller IT-Erfahrung in Luxemburg.",
       "keywords": "Chad Feierstein, Über mich, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Luxemburg"
     },
     "showcase": {
-      "title": "Chad Feierstein - Showcase",
+      "title": "Showcase",
       "description": "Entdecken Sie meine neuesten Projekte, Dokumentationen und technischen Lösungen. Von Web-Entwicklung bis hin zu Cloud-Infrastrukturen.",
       "keywords": "Portfolio, Projekte, Web Entwicklung, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
-      "title": "Chad Feierstein - Kontakt",
+      "title": "Kontakt",
       "description": "Nehmen Sie Kontakt auf für professionelle Web-Entwicklung, IT-Administration und Cloud Computing Lösungen. Schnelle und zuverlässige Antworten garantiert.",
       "keywords": "Kontakt, Chad Feierstein, Web Entwicklung beauftragen, IT Services, Cloud Computing Beratung"
     },
     "projects": {
       "chatbot": {
-        "title": "KI Chat Bot - Intelligente Konversations-AI von Chad Feierstein",
+        "title": "KI Chat Bot",
         "description": "Moderner KI Chat Bot mit erweiterten Sprachverarbeitungsfähigkeiten. Entwickelt mit Vue.js und integrierten AI-APIs für natürliche Gespräche.",
         "keywords": "KI Chat Bot, Artificial Intelligence, Vue.js, Chat Assistant, Natural Language Processing"
       },
       "portfolio": {
-        "title": "Portfolio Website - Nuxt 4 & Vue 3 Showcase Projekt",
+        "title": "Portfolio Website",
         "description": "Moderne Portfolio Website gebaut mit Nuxt 4, Vue 3 und TypeScript. Mehrsprachig, SEO-optimiert mit Dark Mode und performanten Animationen.",
         "keywords": "Portfolio Website, Nuxt 4, Vue 3, TypeScript, Multilingual, SEO, Dark Mode"
       }
     },
     "documentation": {
       "debian12": {
-        "title": "Debian 12 Initial Setup - Komplette Server Konfiguration",
+        "title": "Debian 12 Initial Setup",
         "description": "Vollständige Anleitung für die initiale Einrichtung eines Debian 12 Servers. Von der Grundkonfiguration bis zur Sicherheitshärtung.",
         "keywords": "Debian 12, Server Setup, Linux Administration, System Konfiguration, Server Sicherheit"
       },
       "cardanoNode": {
-        "title": "Cardano Node Setup auf Debian - Blockchain Infrastruktur",
+        "title": "Cardano Node Setup",
         "description": "Schritt-für-Schritt Anleitung zur Installation und Konfiguration eines Cardano Nodes auf Debian 12. Inklusive Monitoring und Optimierung.",
         "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
       },
       "cardanoDbSync": {
-        "title": "Cardano DB Sync Installation - Blockchain Datenbank Setup",
+        "title": "Cardano DB Sync Installation",
         "description": "Detaillierte Anleitung für die Installation von Cardano DB Sync auf Debian. PostgreSQL Konfiguration und Datenbank-Synchronisation.",
         "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
       },
       "ollama": {
-        "title": "Ollama Installation auf Debian - Lokale AI Models",
+        "title": "Ollama Installation",
         "description": "Komplette Anleitung zur Installation und Konfiguration von Ollama auf Debian 12. Lokale AI Model Verwaltung und GPU Acceleration.",
         "keywords": "Ollama, AI Models, Local AI, Debian, Machine Learning, GPU Acceleration, LLM"
       }

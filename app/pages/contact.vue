@@ -7,8 +7,7 @@ const { setSeoMeta } = useSeo()
 setSeoMeta({
     title: t('seo.contact.title'),
     description: t('seo.contact.description'),
-    keywords: t('seo.contact.keywords'),
-    type: 'website'
+    keywords: t('seo.contact.keywords')
 })
 
 // Form state
