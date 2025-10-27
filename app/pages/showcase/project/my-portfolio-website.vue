@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// Layout definieren
 definePageMeta({
     layout: 'with-subnav',
     subNav: {
@@ -9,19 +8,16 @@ definePageMeta({
     }
 })
 
-// I18n für Übersetzungen
 const { t } = useI18n()
 const { getColorClasses } = useColorMapping()
 const { setSeoMeta, getStructuredData } = useSeo()
 
-// SEO Implementation
 setSeoMeta({
     title: t('seo.projects.portfolio.title'),
     description: t('seo.projects.portfolio.description'),
     keywords: t('seo.projects.portfolio.keywords')
 })
 
-// Add structured data for project
 useHead(() => ({
     script: [
         {

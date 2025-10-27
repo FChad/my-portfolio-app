@@ -9,14 +9,12 @@ definePageMeta({
 const { t } = useI18n()
 const { setSeoMeta, getStructuredData } = useSeo()
 
-// SEO Implementation
 setSeoMeta({
     title: t('seo.home.title'),
     description: t('seo.home.description'),
     keywords: t('seo.home.keywords')
 })
 
-// Add structured data for homepage
 useHead(() => ({
     script: [
         {

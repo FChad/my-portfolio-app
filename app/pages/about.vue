@@ -2,14 +2,12 @@
 const { t } = useI18n()
 const { setSeoMeta, getStructuredData } = useSeo()
 
-// SEO Implementation
 setSeoMeta({
     title: t('seo.about.title'),
     description: t('seo.about.description'),
     keywords: t('seo.about.keywords')
 })
 
-// Add structured data for person
 useHead(() => ({
     script: [
         {

@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue'
 import { useI18n } from '#imports'
 
-// Layout definieren
 definePageMeta({
     layout: 'with-subnav',
     subNav: {
@@ -12,12 +11,10 @@ definePageMeta({
     }
 })
 
-// Setup composables
 const { t } = useI18n()
 const { getColorClasses } = useColorMapping()
 const { setSeoMeta } = useSeo()
 
-// SEO Implementation
 setSeoMeta({
     title: t('seo.documentation.cardanoDbSync.title'),
     description: t('seo.documentation.cardanoDbSync.description'),

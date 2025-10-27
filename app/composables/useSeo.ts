@@ -7,20 +7,11 @@ interface SeoOptions {
 
 type SchemaType = 'Person' | 'WebSite' | 'SoftwareApplication'
 
-/**
- * Minimaler SEO Composable für Portfolio Website
- * 
- * Nutzt Nuxt 4 Standards und @nuxtjs/i18n Automatisierung:
- * - useHead() für title und meta description
- * - useSeoMeta() für SEO-spezifische Tags (og:*, twitter:*)
- * - @nuxtjs/i18n generiert automatisch: hreflang, og:locale, canonical, lang attr
- */
 export const useSeo = () => {
   const { t } = useI18n()
   const config = useRuntimeConfig()
   const baseUrl = config.public.baseUrl
 
-  /** Generiert minimale Schema.org strukturierte Daten */
   const getStructuredData = (type: SchemaType) => {
     const baseData = {
       '@context': 'https://schema.org'
@@ -63,40 +54,26 @@ export const useSeo = () => {
     }
   }
 
-  /** 
-   * Setzt SEO Meta-Tags nach Nuxt 4 Best Practices
-   * - useHead() für title
-   * - useSeoMeta() für SEO-spezifische Tags (og:*, twitter:*)
-   */
   const setSeoMeta = (options: SeoOptions = {}) => {
     const title = options.title || t('nav.home')
     const description = options.description || t('home.tagline')
     const image = options.image || `${baseUrl}/img/og/default-og-image.svg`
 
-    // Title in useHead() setzen (Best Practice)
-    useHead({
-      title,
-      meta: [
-        { name: 'description', content: description }
-      ]
-    })
+    useHead({ title })
 
-    // Nur SEO-spezifische Meta-Tags in useSeoMeta()
     useSeoMeta({
+      description,
       ogTitle: title,
       ogDescription: description,
       ogImage: image,
       ogImageAlt: title,
+      ogType: 'website',
       twitterCard: 'summary_large_image',
       twitterTitle: title,
       twitterDescription: description,
-      twitterImage: image
+      twitterImage: image,
+      keywords: options.keywords
     })
-
-    // Keywords optional
-    if (options.keywords) {
-      useSeoMeta({ keywords: options.keywords })
-    }
   }
 
   return {

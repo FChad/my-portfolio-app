@@ -2,7 +2,6 @@
 import { ref, watch, nextTick, onMounted } from 'vue'
 import { useI18n, useColorMode } from '#imports'
 
-// Layout definieren
 definePageMeta({
     layout: 'with-subnav',
     subNav: {
@@ -12,13 +11,11 @@ definePageMeta({
     }
 })
 
-// Setup composables
 const { t } = useI18n()
 const colorMode = useColorMode()
 const { getColorClasses } = useColorMapping()
 const { setSeoMeta } = useSeo()
 
-// SEO Implementation
 setSeoMeta({
     title: t('seo.documentation.debian12.title'),
     description: t('seo.documentation.debian12.description'),
