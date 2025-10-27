@@ -164,7 +164,7 @@ export const useSeo = () => {
       ogUrl: getCanonicalUrl(),
       ogLocale: locale.value,
       ogImage: image,
-      ogImageAlt: `${title} - Chad Feierstein`,
+      ogImageAlt: title,
       ogSiteName: 'Chad Feierstein - Portfolio',
 
       // Twitter Card Meta Tags
@@ -172,7 +172,7 @@ export const useSeo = () => {
       twitterTitle: title,
       twitterDescription: description,
       twitterImage: image,
-      twitterImageAlt: `${title} - Chad Feierstein`,
+      twitterImageAlt: title,
       twitterSite: '@chadfeierstein',
       twitterCreator: '@chadfeierstein',
 
@@ -201,6 +201,7 @@ export const useSeo = () => {
     useSeoMeta(seoMeta)
 
     useHead(() => ({
+      title,
       htmlAttrs: i18nHead.value.htmlAttrs,
       link: [
         ...(i18nHead.value.link || []),
