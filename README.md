@@ -64,8 +64,35 @@ npm run preview   # Preview production build
 
 ## 📝 License
 
-[Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
+This project is licensed under the **MIT License with Content Restrictions**.
+
+### ✅ What You Can Use
+
+- **Code Structure**: Components, layouts, composables, and technical implementation
+- **Styling & Design Patterns**: TailwindCSS configurations and design approaches
+- **Technical Features**: i18n setup, dark mode, routing patterns, and animations
+- **Learning**: Study the codebase and use it as inspiration for your own projects
+
+### ❌ What You Cannot Copy
+
+- **Personal Content**: My name, biographical information, and personal data
+- **Projects & Portfolio Items**: Descriptions of my projects and achievements
+- **Documentation Content**: Articles and guides I've written
+- **Translations**: All personal content in i18n locale files (de.json, en.json, fr.json, lb.json)
+- **Personal Media**: Images and graphics representing my personal brand
+
+### 💡 How to Use This Repository
+
+1. Fork or clone the repository
+2. **Replace all personal content** with your own information
+3. Create your own project descriptions and portfolio items
+4. Write your own translations and textual content
+5. Customize the design and features to match your style
+
+**Important**: This is a template for building your own portfolio. Use the code structure and technical implementation, but create your own unique content!
+
+See the [LICENSE](./LICENSE) file for full details.
 
 <div align="center">
-  Made with ❤️ using Nuxt 4, Vue 3, and TypeScript
+  Made with ❤️
 </div>

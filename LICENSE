@@ -1,32 +1,61 @@
-Creative Commons Attribution 4.0 International Public License
+MIT License with Content Restrictions
 
 Copyright (c) 2025 Chad Feierstein
 
-This work is licensed under the Creative Commons Attribution 4.0 International License.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-You are free to:
-- Share — copy and redistribute the material in any medium or format
-- Adapt — remix, transform, and build upon the material for any purpose, even commercially
+**CONTENT RESTRICTIONS:**
 
-Under the following terms:
-- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+While you are free to use the code structure, components, and technical implementation
+of this portfolio website, you are **NOT permitted** to copy or reuse:
 
-No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+1. **Personal Information**: My name (Chad Feierstein), personal data, contact details, 
+   biographical information, or any personally identifiable information.
 
-Notices:
-You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+2. **Personal Content**: Project descriptions, portfolio items, showcase entries, 
+   blog posts, articles, documentation content, or any other textual content that 
+   represents my personal work and achievements.
 
-No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+3. **Personal Media**: Images, graphics, logos, or visual assets that represent me 
+   or my personal brand.
+
+4. **Translation Content**: All text content in the i18n localization files 
+   (de.json, en.json, fr.json, lb.json) that describes my personal information, 
+   projects, or achievements.
+
+**YOU ARE PERMITTED TO:**
+
+- Use the code structure, architecture, and technical implementation as inspiration
+- Adapt components, layouts, and styling for your own projects
+- Study and learn from the codebase
+- Fork and modify the code for your own portfolio with your own content
+- Use the technical patterns and configurations demonstrated in this project
+
+**YOU MUST:**
+
+- Replace all personal content with your own information
+- Remove or replace my name, projects, and personal data
+- Create your own project descriptions and portfolio items
+- Provide your own translations and textual content
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ---
 
-This portfolio website and its source code are made available under the CC BY 4.0 license to encourage learning and inspiration in the web development community. 
-
-If you use this code as inspiration or base for your own project, please provide attribution by:
-1. Mentioning Chad Feierstein as the original author
-2. Linking back to https://www.chad.lu or the original repository
-3. Indicating any modifications you made
-
-Thank you for respecting the open-source spirit!
+**Summary**: Feel free to use this codebase as inspiration and technical reference 
+for building your own portfolio, but please respect that my personal content, 
+projects, and identity are not to be copied. Create your own unique content!
