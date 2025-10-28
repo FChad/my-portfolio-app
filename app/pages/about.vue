@@ -519,7 +519,7 @@ const experiences = [
                                     <h3 class="text-lg font-bold mb-1">{{ item.title }}</h3>
                                     <p v-if="item.company"
                                         class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
-                                        <Icon name="mdi:office-building" class="w-4 h-4" />
+                                        <Icon name="mdi:office-building" class="w-5 h-5" />
                                         {{ item.company }}
                                     </p>
                                 </div>
@@ -637,14 +637,19 @@ const experiences = [
                 <h3 class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
                     {{ selectedWorkItem.title }}
                 </h3>
-                <p class="font-semibold text-sm sm:text-base text-blue-600 dark:text-blue-400 truncate">{{
-                    selectedWorkItem.company }}</p>
             </div>
         </template>
 
         <div v-if="selectedWorkItem" class="flex flex-col gap-6">
-            <!-- Type and Year Badges -->
+            <!-- Company, Type and Year Badges -->
             <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                <!-- Company Badge -->
+                <div v-if="selectedWorkItem.company"
+                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg sm:rounded-xl border border-blue-200 dark:border-blue-700/50">
+                    <Icon name="mdi:office-building" class="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                    <span class="text-blue-900 dark:text-blue-200 font-semibold text-base">{{
+                        selectedWorkItem.company }}</span>
+                </div>
                 <!-- Type Badge -->
                 <div v-if="selectedWorkItem.type"
                     class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg sm:rounded-xl border border-purple-200 dark:border-purple-700/50">
@@ -654,9 +659,9 @@ const experiences = [
                 </div>
                 <!-- Year Badge -->
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg sm:rounded-xl border border-blue-200 dark:border-blue-700/50">
-                    <Icon name="mdi:calendar" class="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                    <span class="text-blue-900 dark:text-blue-200 font-bold text-base">{{
+                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-green-50 dark:bg-green-900/30 rounded-lg sm:rounded-xl border border-green-200 dark:border-green-700/50">
+                    <Icon name="mdi:calendar" class="w-4 h-4 text-green-600 dark:text-green-400" />
+                    <span class="text-green-900 dark:text-green-200 font-bold text-base">{{
                         selectedWorkItem.year }}</span>
                 </div>
             </div>
