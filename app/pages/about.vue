@@ -34,6 +34,15 @@ const calculateAge = (birthDate: string): number => {
 const currentAge = calculateAge('1999-08-03')
 const { getColorClasses } = useColorMapping()
 
+// Modal state for work experience details
+const isModalOpen = ref(false)
+const selectedWorkItem = ref<typeof workTimeline[0] | null>(null)
+
+const openWorkDetails = (item: typeof workTimeline[0]) => {
+    selectedWorkItem.value = item
+    isModalOpen.value = true
+}
+
 const languages = [
     { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
     { name: t('about.languageNames.german'), level: 'C1', flag: 'circle-flags:de' },
@@ -504,50 +513,34 @@ const experiences = [
                         index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                     ]">
                         <div class="flex flex-col gap-4">
-                            <!-- Header with icon, type and year -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <Icon :name="item.icon" class="w-6 h-6 text-blue-500" />
-                                    <span v-if="item.type" class="font-medium text-gray-500">{{ item.type
-                                        }}</span>
+                            <!-- Title, Company and Year -->
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold mb-1">{{ item.title }}</h3>
+                                    <p v-if="item.company"
+                                        class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
+                                        <Icon name="mdi:office-building" class="w-4 h-4" />
+                                        {{ item.company }}
+                                    </p>
                                 </div>
+                                <!-- Year Badge -->
                                 <span
-                                    class="px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium">
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium flex-shrink-0">
                                     {{ item.year }}
                                 </span>
-                            </div>
-
-                            <!-- Title and Company -->
-                            <div>
-                                <h3 class="text-lg font-bold mb-1">{{ item.title }}</h3>
-                                <p v-if="item.company"
-                                    class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
-                                    <Icon name="mdi:office-building" class="w-4 h-4" />
-                                    {{ item.company }}
-                                </p>
                             </div>
 
                             <!-- Description -->
                             <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
                                 item.description }}</p>
 
-                            <!-- Tasks list -->
-                            <div v-if="item.tasks && item.tasks.length > 0" class="mt-3">
-                                <h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
-                                    <Icon name="mdi:clipboard-check" class="w-4 h-4" />
-                                    {{ $t('about.work.mainTasks') }}
-                                </h4>
-                                <ul class="space-y-1">
-                                    <li v-for="(task, taskIndex) in item.tasks.slice(0, 3)" :key="taskIndex"
-                                        class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
-                                        <span class="w-1 h-1 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                                        {{ task }}
-                                    </li>
-                                    <li v-if="item.tasks.length > 3"
-                                        class="text-sm text-blue-600 dark:text-blue-400 italic">
-                                        + {{ item.tasks.length - 3 }} {{ $t('about.work.moreTasks') }}
-                                    </li>
-                                </ul>
+                            <!-- Details Button -->
+                            <div class="mt-auto ml-auto">
+                                <button @click="openWorkDetails(item)"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                                    <Icon name="mdi:information-outline" class="w-5 h-5" />
+                                    {{ $t('about.work.viewDetails') }}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -635,4 +628,70 @@ const experiences = [
             </div>
         </div>
     </section>
+
+    <!-- Work Experience Details Modal -->
+    <UiModal v-model="isModalOpen" max-width="2xl">
+        <template #header>
+            <div v-if="selectedWorkItem" class="flex flex-col gap-1 w-full">
+                <!-- Title and Company -->
+                <h3 class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+                    {{ selectedWorkItem.title }}
+                </h3>
+                <p class="font-semibold text-sm sm:text-base text-blue-600 dark:text-blue-400 truncate">{{
+                    selectedWorkItem.company }}</p>
+            </div>
+        </template>
+
+        <div v-if="selectedWorkItem" class="flex flex-col gap-6">
+            <!-- Type and Year Badges -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                <!-- Type Badge -->
+                <div v-if="selectedWorkItem.type"
+                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg sm:rounded-xl border border-purple-200 dark:border-purple-700/50">
+                    <Icon name="mdi:briefcase" class="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                    <span class="text-purple-900 dark:text-purple-200 font-semibold text-base">{{
+                        selectedWorkItem.type }}</span>
+                </div>
+                <!-- Year Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg sm:rounded-xl border border-blue-200 dark:border-blue-700/50">
+                    <Icon name="mdi:calendar" class="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                    <span class="text-blue-900 dark:text-blue-200 font-bold text-base">{{
+                        selectedWorkItem.year }}</span>
+                </div>
+            </div>
+
+            <!-- Description Section -->
+            <div
+                class="flex flex-col gap-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-gray-700">
+                <h4 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">
+                    {{ $t('about.work.modal.description') }}
+                </h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+                    {{ selectedWorkItem.description }}
+                </p>
+            </div>
+
+            <!-- Tasks Section -->
+            <div v-if="selectedWorkItem.tasks && selectedWorkItem.tasks.length > 0"
+                class="flex flex-col gap-3 bg-white dark:bg-gray-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-gray-700">
+                <h4 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">
+                    {{ $t('about.work.modal.tasks') }}
+                </h4>
+                <ul class="flex flex-col gap-2">
+                    <li v-for="(task, taskIndex) in selectedWorkItem.tasks" :key="taskIndex"
+                        class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                        <!-- Number Badge -->
+                        <span class="text-blue-600 dark:text-blue-400 font-semibold flex-shrink-0">
+                            {{ taskIndex + 1 }}.
+                        </span>
+                        <!-- Task Text -->
+                        <span class="flex-1 text-sm sm:text-base">
+                            {{ task }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </UiModal>
 </template>

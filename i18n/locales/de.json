@@ -226,8 +226,11 @@
     },
     "work": {
       "title": "Berufserfahrung",
-      "mainTasks": "Hauptaufgaben:",
-      "moreTasks": "weitere Aufgaben"
+      "viewDetails": "Details anzeigen",
+      "modal": {
+        "description": "Beschreibung",
+        "tasks": "Hauptaufgaben"
+      }
     },
     "certifications": {
       "title": "Zertifizierungen",

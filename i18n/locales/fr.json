@@ -226,8 +226,11 @@
     },
     "work": {
       "title": "Expérience Professionnelle",
-      "mainTasks": "Tâches Principales :",
-      "moreTasks": "tâches supplémentaires"
+      "viewDetails": "Voir les détails",
+      "modal": {
+        "description": "Description",
+        "tasks": "Tâches Principales"
+      }
     },
     "certifications": {
       "title": "Certifications",

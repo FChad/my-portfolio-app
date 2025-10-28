@@ -226,8 +226,11 @@
     },
     "work": {
       "title": "Beruffserfahrung",
-      "mainTasks": "Haaptaufgaben:",
-      "moreTasks": "weider Aufgaben"
+      "viewDetails": "Detailer weisen",
+      "modal": {
+        "description": "Beschreiwung",
+        "tasks": "Haaptaufgaben"
+      }
     },
     "certifications": {
       "title": "Zertifizéierungen",

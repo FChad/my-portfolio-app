@@ -226,8 +226,11 @@
     },
     "work": {
       "title": "Work Experience",
-      "mainTasks": "Main Tasks:",
-      "moreTasks": "more tasks"
+      "viewDetails": "View Details",
+      "modal": {
+        "description": "Description",
+        "tasks": "Main Tasks"
+      }
     },
     "certifications": {
       "title": "Certifications",
