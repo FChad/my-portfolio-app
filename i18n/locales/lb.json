@@ -1184,6 +1184,19 @@
       }
     }
   },
+  "error": {
+    "404": {
+      "title": "Säit net fonnt",
+      "message": "Déi gesichte Säit existéiert leider net oder gouf verréckelt."
+    },
+    "general": {
+      "title": "Ups! Eppes ass schif gaang",
+      "message": "En onerwaarte Feeler ass opgetrueden. Probéiert w.e.g. méi spéit nach eng Kéier."
+    },
+    "backHome": "Zréck op d'Startsäit",
+    "contact": "Kontakt ophuelen",
+    "helpfulLinks": "Hëllefräich Linken:"
+  },
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Erstallt mat ❤"
   }

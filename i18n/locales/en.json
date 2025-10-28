@@ -1184,6 +1184,19 @@
       }
     }
   },
+  "error": {
+    "404": {
+      "title": "Page Not Found",
+      "message": "The page you're looking for doesn't exist or has been moved."
+    },
+    "general": {
+      "title": "Oops! Something went wrong",
+      "message": "An unexpected error occurred. Please try again later."
+    },
+    "backHome": "Back to Home",
+    "contact": "Contact Us",
+    "helpfulLinks": "Helpful Links:"
+  },
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Built with ❤"
   }

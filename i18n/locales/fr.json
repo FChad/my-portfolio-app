@@ -1184,6 +1184,19 @@
       }
     }
   },
+  "error": {
+    "404": {
+      "title": "Page non trouvée",
+      "message": "La page que vous recherchez n'existe pas ou a été déplacée."
+    },
+    "general": {
+      "title": "Oups ! Quelque chose s'est mal passé",
+      "message": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+    },
+    "backHome": "Retour à l'accueil",
+    "contact": "Nous contacter",
+    "helpfulLinks": "Liens utiles :"
+  },
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Créé avec ❤"
   }

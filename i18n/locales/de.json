@@ -1184,6 +1184,19 @@
       }
     }
   },
+  "error": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "message": "Die gesuchte Seite existiert leider nicht oder wurde verschoben."
+    },
+    "general": {
+      "title": "Ups! Etwas ist schiefgelaufen",
+      "message": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+    },
+    "backHome": "Zurück zur Startseite",
+    "contact": "Kontakt aufnehmen",
+    "helpfulLinks": "Hilfreiche Links:"
+  },
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Erstellt mit ❤"
   }
