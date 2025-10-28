@@ -7,7 +7,7 @@
     },
     "about": {
       "title": "About",
-      "description": "Learn more about Chad Feierstein - Full-Stack Developer with BTS Cloud Computing education and professional IT experience in Luxembourg.",
+      "description": "Learn more about Chad Feierstein, Full-Stack Developer with BTS Cloud Computing education and professional IT experience in Luxembourg.",
       "keywords": "Chad Feierstein, About, IT Experience, BTS Cloud Computing, IT Technician, Luxembourg"
     },
     "showcase": {
@@ -69,7 +69,7 @@
       "serveradmin": "Server Administrator",
       "solver": "Problem Solver"
     },
-    "tagline": "Discover my projects, skills and previous work – and get to know me better.",
+    "tagline": "Discover my projects, skills and previous work and get to know me better.",
     "cta": {
       "primary": "Discover Projects",
       "secondary": "Get in Touch"
@@ -97,7 +97,7 @@
     },
     "services": {
       "title": "What I Offer",
-      "subtitle": "From concept to implementation - I develop customized solutions for your digital requirements.",
+      "subtitle": "From concept to implementation: I develop customized solutions for your digital requirements.",
       "webdev": {
         "title": "Web Development",
         "description": "Modern, responsive websites with Vue.js, Nuxt.js and the latest web standards.",
@@ -128,7 +128,7 @@
     },
     "featured": {
       "title": "Featured Project",
-      "subtitle": "Discover my latest innovation - where cutting-edge AI meets intuitive design.",
+      "subtitle": "Discover my latest innovation, where cutting-edge AI meets intuitive design.",
       "projectTitle": "AI Chat Bot",
       "projectSubtitle": "My Latest Innovation",
       "badge": "Featured",
@@ -491,7 +491,7 @@
         },
         "responsive": {
           "title": "Responsive Design",
-          "description": "Perfect display on all devices - Desktop, Tablet, and Mobile"
+          "description": "Perfect display on all devices: Desktop, Tablet, and Mobile"
         },
         "darkMode": {
           "title": "Dark Mode",

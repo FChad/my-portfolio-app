@@ -7,7 +7,7 @@
     },
     "about": {
       "title": "Über mich",
-      "description": "Erfahren Sie mehr über Chad Feierstein - Full-Stack Entwickler mit BTS Cloud Computing Ausbildung und professioneller IT-Erfahrung in Luxemburg.",
+      "description": "Erfahren Sie mehr über Chad Feierstein, Full-Stack Entwickler mit BTS Cloud Computing Ausbildung und professioneller IT-Erfahrung in Luxemburg.",
       "keywords": "Chad Feierstein, Über mich, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Luxemburg"
     },
     "showcase": {
@@ -69,7 +69,7 @@
       "serveradmin": "Server Administrator",
       "solver": "Problemlöser"
     },
-    "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit – und lernen Sie mich besser kennen.",
+    "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit und lernen Sie mich besser kennen.",
     "cta": {
       "primary": "Projekte entdecken",
       "secondary": "Kontakt aufnehmen"
@@ -97,7 +97,7 @@
     },
     "services": {
       "title": "Was Ich Biete",
-      "subtitle": "Von der Konzeption bis zur Umsetzung - ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
+      "subtitle": "Von der Konzeption bis zur Umsetzung: ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
       "webdev": {
         "title": "Web-Entwicklung",
         "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
@@ -128,7 +128,7 @@
     },
     "featured": {
       "title": "Ausgewähltes Projekt",
-      "subtitle": "Entdecken Sie meine neueste Innovation - wo modernste KI auf intuitives Design trifft.",
+      "subtitle": "Entdecken Sie meine neueste Innovation, wo modernste KI auf intuitives Design trifft.",
       "projectTitle": "KI Chat Bot",
       "projectSubtitle": "Meine Neueste Innovation",
       "badge": "Ausgewählt",
@@ -491,7 +491,7 @@
         },
         "responsive": {
           "title": "Responsive Design",
-          "description": "Perfekte Darstellung auf allen Geräten - Desktop, Tablet und Mobile"
+          "description": "Perfekte Darstellung auf allen Geräten: Desktop, Tablet und Mobile"
         },
         "darkMode": {
           "title": "Dark Mode",

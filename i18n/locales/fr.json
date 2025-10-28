@@ -7,7 +7,7 @@
     },
     "about": {
       "title": "À propos",
-      "description": "Découvrez Chad Feierstein - Développeur Full-Stack avec formation BTS Cloud Computing et expérience professionnelle IT au Luxembourg.",
+      "description": "Découvrez Chad Feierstein, Développeur Full-Stack avec formation BTS Cloud Computing et expérience professionnelle IT au Luxembourg.",
       "keywords": "Chad Feierstein, À propos, Expérience IT, BTS Cloud Computing, Technicien Informatique, Luxembourg"
     },
     "showcase": {
@@ -69,7 +69,7 @@
       "serveradmin": "Administrateur Serveur",
       "solver": "Résolveur de Problèmes"
     },
-    "tagline": "Découvrez mes projets, compétences et travaux précédents – et apprenez à me connaître davantage.",
+    "tagline": "Découvrez mes projets, compétences et travaux précédents et apprenez à me connaître davantage.",
     "cta": {
       "primary": "Découvrir les Projets",
       "secondary": "Me Contacter"
@@ -97,7 +97,7 @@
     },
     "services": {
       "title": "Ce Que J'Offre",
-      "subtitle": "De la conception à la mise en œuvre - je développe des solutions sur mesure pour vos besoins numériques.",
+      "subtitle": "De la conception à la mise en œuvre : je développe des solutions sur mesure pour vos besoins numériques.",
       "webdev": {
         "title": "Développement Web",
         "description": "Sites web modernes et responsives avec Vue.js, Nuxt.js et les derniers standards web.",
@@ -128,7 +128,7 @@
     },
     "featured": {
       "title": "Projet en Vedette",
-      "subtitle": "Découvrez ma dernière innovation - où l'IA de pointe rencontre un design intuitif.",
+      "subtitle": "Découvrez ma dernière innovation, où l'IA de pointe rencontre un design intuitif.",
       "projectTitle": "Chat Bot IA",
       "projectSubtitle": "Ma Dernière Innovation",
       "badge": "En Vedette",
@@ -491,7 +491,7 @@
         },
         "responsive": {
           "title": "Design Responsive",
-          "description": "Affichage parfait sur tous les appareils - Desktop, Tablette et Mobile"
+          "description": "Affichage parfait sur tous les appareils : Desktop, Tablette et Mobile"
         },
         "darkMode": {
           "title": "Mode Sombre",

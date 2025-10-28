@@ -7,7 +7,7 @@
     },
     "about": {
       "title": "Iwwer mech",
-      "description": "Léiert méi iwwer Chad Feierstein - Full-Stack Developer mat BTS Cloud Computing Ausbildung a professionneller IT-Erfahrung zu Lëtzebuerg.",
+      "description": "Léiert méi iwwer Chad Feierstein, Full-Stack Developer mat BTS Cloud Computing Ausbildung a professionneller IT-Erfahrung zu Lëtzebuerg.",
       "keywords": "Chad Feierstein, Iwwer mech, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Lëtzebuerg"
     },
     "showcase": {
@@ -69,7 +69,7 @@
       "serveradmin": "Server Administrator",
       "solver": "Problem Solver"
     },
-    "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten – a léiert mech dobäi besser kennen.",
+    "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten a léiert mech dobäi besser kennen.",
     "cta": {
       "primary": "Projeten entdecken",
       "secondary": "Kontakt ophuelen"
@@ -97,7 +97,7 @@
     },
     "services": {
       "title": "Wat ech ubidden",
-      "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung - ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
+      "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung: ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
       "webdev": {
         "title": "Web Development",
         "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
@@ -128,7 +128,7 @@
     },
     "featured": {
       "title": "Featured Projet",
-      "subtitle": "Entdeckt meng lescht Innovatioun - wou spëtzt KI op intuitiv Design treffen.",
+      "subtitle": "Entdeckt meng lescht Innovatioun, wou spëtzt KI op intuitiv Design treffen.",
       "projectTitle": "KI Chat Bot",
       "projectSubtitle": "Meng Lescht Innovatioun",
       "badge": "Featured",
@@ -491,7 +491,7 @@
         },
         "responsive": {
           "title": "Responsive Design",
-          "description": "Perfekt Duerstellung op allen Apparater - Desktop, Tablet a Mobile"
+          "description": "Perfekt Duerstellung op allen Apparater: Desktop, Tablet a Mobile"
         },
         "darkMode": {
           "title": "Däischteren Modus",
