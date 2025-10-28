@@ -253,27 +253,27 @@
     "certificationsList": {
       "cert1": {
         "title": "Déi allgemeng Eignungsprüfung",
-        "description": "Staatleche Sektor (Verwaltung)"
+        "description": "Staatlech Eignungsprüfung fir den ëffentleche Sektor zu Lëtzebuerg. Dës Prüfung bestätegt d'Eignunge fir administrativ Tätigkeeten an der ëffentlecher Verwaltung an ass Viraussetzung fir eng Bewäerbung am staatleche Déngscht."
       },
       "cert2": {
         "title": "Cisco Certified CyberOps Associate",
-        "description": "Cybersecurity Operations"
+        "description": "Professionell Zertifiziéierung am Beräich Cybersecurity Operations. Bestätegt fundéiert Kenntnisser an der Iwwerwaachung, Erkennunge an Reaktioun op Sécherheetsvirfäll, souwéi der Analyse vu Sécherheetsbedrohungen an Netzwierker."
       },
       "cert3": {
         "title": "Cisco Certified Network Associate 3",
-        "description": "7.0 Enterprise-Netzwierker, Sécherheet an Automatisatioun"
+        "description": "Fortgeschridden CCNA-Zertifiziéierung mat Schwéierpunkt op Enterprise-Netzwierker. Ëmfaasst erweidert Routing-Protokoller, Netzwierk-Sécherheet, Quality of Service a modern Netzwierkautomatiséierung."
       },
       "cert4": {
         "title": "Cisco Certified Network Associate 2",
-        "description": "7.0 Switching, Routing a Wireless-Grondlagen"
+        "description": "Mëttel CCNA-Stuf mat Fokus op Switching a Routing. Behandelt VLANs, Inter-VLAN-Routing, dynamescht Routing, WLAN-Konzepter a grondsätzlech Netzwierk-Sécherheet."
       },
       "cert5": {
         "title": "Cisco Certified Network Associate 1",
-        "description": "7.0 Aféierung an Netzwierker"
+        "description": "Grondlagen-Zertifiziéierung am Beräich Netzwierktechnologie. Vermëttelt essentiell Kenntnisser iwwer Netzwierkmodeller, IP-Adresséierung, Ethernet, grondsätzlech Switch- a Router-Konfiguratioun."
       },
       "cert6": {
         "title": "Microsoft Office Specialist 2016",
-        "description": "PowerPoint, Word, Excel, Outlook"
+        "description": "Offiziell Microsoft-Zertifiziéierung fir professionell Office-Kenntnisser. Bestätegt fortgeschridden Fäegkeeten a PowerPoint, Word, Excel an Outlook fir effizient Bürokommunikatioun an Dokumenterstellung."
       }
     },
     "timelineItems": {

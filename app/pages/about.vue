@@ -389,13 +389,7 @@ const experiences = [
             <div v-for="lang in languages" :key="lang.name"
                 class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="relative">
-                        <Icon :name="lang.flag" class="w-8 h-8" />
-                        <div v-if="lang.native"
-                            class="absolute -top-1 -right-1 w-4 h-4 bg-green-600 rounded-full flex items-center justify-center shadow-md">
-                            <Icon name="mdi:check" class="w-3 h-3 text-white" />
-                        </div>
-                    </div>
+                    <Icon :name="lang.flag" class="w-8 h-8" />
                     <h3 class="text-lg font-bold">{{ lang.name }}</h3>
                 </div>
                 <div class="text-center">
@@ -418,53 +412,33 @@ const experiences = [
 
         <div class="grid md:grid-cols-2 gap-8">
             <div v-for="(edu, index) in education" :key="edu.year"
-                class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all transform flex flex-col">
-                <div class="flex flex-col gap-4 flex-1">
-                    <!-- Header with icon and title, year on right -->
-                    <div class="flex items-center justify-between flex-col lg:flex-row">
-                        <div class="flex items-center flex-col md:flex-row gap-3">
-                            <div :class="[
-                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform',
-                                getColorClasses(edu.color).bg
-                            ]">
-                                <Icon :name="edu.icon" class="w-6 h-6 text-white" />
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ edu.degree }}</h3>
+                class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all">
+                <div class="flex flex-col gap-4">
+                    <!-- Title, School and Year -->
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">{{ edu.degree }}</h3>
+                            <p class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
+                                <Icon name="mdi:school" class="w-5 h-5" />
+                                {{ edu.school }}
+                            </p>
                         </div>
-                        <span :class="[
-                            'px-3 py-1 text-sm rounded-full font-medium',
-                            getColorClasses(edu.color).bgLight,
-                            getColorClasses(edu.color).text
-                        ]">
+                        <!-- Year Badge -->
+                        <span
+                            class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium flex-shrink-0">
                             {{ edu.year }}
                         </span>
                     </div>
 
-                    <!-- Field -->
-                    <div class="flex flex-col gap-2">
-                        <p :class="[
-                            'font-medium',
-                            getColorClasses(edu.color).textAccent
-                        ]">{{ edu.field }}</p>
-                    </div>
+                    <!-- Field and Grade -->
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ edu.field }} <br /> {{ edu.grade }}
+                    </p>
 
-                    <!-- School and grade details -->
-                    <div class="flex flex-col gap-3">
-                        <div class="flex items-center gap-3">
-                            <Icon name="mdi:school" class="w-5 h-5 text-gray-500" />
-                            <span class="text-gray-600 dark:text-gray-300">{{ edu.school }}</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <Icon name="mdi:trophy" class="w-5 h-5 text-gray-500" />
-                            <span class="text-gray-600 dark:text-gray-300">{{ edu.grade }}</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-auto ml-auto">
-                        <a v-if="edu.link" :href="edu.link" target="_blank" :class="[
-                            'inline-flex items-center gap-2 px-4 py-2 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg',
-                            getColorClasses(edu.color).hover
-                        ]">
+                    <!-- View More Link -->
+                    <div v-if="edu.link" class="mt-auto ml-auto">
+                        <a :href="edu.link" target="_blank"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
                             <Icon name="mdi:open-in-new" class="w-5 h-5" />
                             {{ $t('about.education.viewMore') }}
                         </a>
@@ -561,31 +535,22 @@ const experiences = [
 
         <div class="grid md:grid-cols-2 gap-8">
             <div v-for="(cert, index) in certifications" :key="cert.title"
-                class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all transform flex flex-col">
-                <div class="flex flex-col gap-4 flex-1">
-                    <div class="flex items-center justify-between flex-col lg:flex-row">
-                        <div class="flex items-center flex-col md:flex-row gap-3">
-                            <div :class="[
-                                'w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform',
-                                getColorClasses(cert.color).bg
-                            ]">
-                                <Icon :name="cert.icon" class="w-6 h-6 text-white" />
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ cert.title }}</h3>
+                class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all">
+                <div class="flex flex-col gap-4">
+                    <!-- Title and Year -->
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">{{ cert.title }}</h3>
                         </div>
-                        <span :class="[
-                            'px-3 py-1 text-sm rounded-full font-medium',
-                            getColorClasses(cert.color).bgLight,
-                            getColorClasses(cert.color).text
-                        ]">
+                        <!-- Year Badge -->
+                        <span
+                            class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium flex-shrink-0">
                             {{ cert.year }}
                         </span>
                     </div>
 
                     <!-- Description -->
-                    <div class="flex flex-col gap-3">
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ cert.description }}</p>
-                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ cert.description }}</p>
                 </div>
             </div>
         </div>

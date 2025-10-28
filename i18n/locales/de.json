@@ -253,27 +253,27 @@
     "certificationsList": {
       "cert1": {
         "title": "Die allgemeine Eignungsprüfung",
-        "description": "Staatlicher Sektor (Verwaltung)"
+        "description": "Staatliche Eignungsprüfung für den öffentlichen Sektor in Luxemburg. Diese Prüfung bestätigt die Eignung für administrative Tätigkeiten in der öffentlichen Verwaltung und ist Voraussetzung für eine Bewerbung im staatlichen Dienst."
       },
       "cert2": {
         "title": "Cisco Certified CyberOps Associate",
-        "description": "Cybersecurity Operations"
+        "description": "Professionelle Zertifizierung im Bereich Cybersecurity Operations. Bestätigt fundierte Kenntnisse in der Überwachung, Erkennung und Reaktion auf Sicherheitsvorfälle sowie der Analyse von Sicherheitsbedrohungen in Netzwerken."
       },
       "cert3": {
         "title": "Cisco Certified Network Associate 3",
-        "description": "7.0 Enterprise-Netzwerke, Sicherheit und Automatisierung"
+        "description": "Fortgeschrittene CCNA-Zertifizierung mit Schwerpunkt auf Enterprise-Netzwerken. Umfasst erweiterte Routing-Protokolle, Netzwerksicherheit, Quality of Service und moderne Netzwerkautomatisierung."
       },
       "cert4": {
         "title": "Cisco Certified Network Associate 2",
-        "description": "7.0 Switching, Routing und Wireless-Grundlagen"
+        "description": "Mittlere CCNA-Stufe mit Fokus auf Switching und Routing. Behandelt VLANs, Inter-VLAN-Routing, dynamisches Routing, WLAN-Konzepte und grundlegende Netzwerksicherheit."
       },
       "cert5": {
         "title": "Cisco Certified Network Associate 1",
-        "description": "7.0 Einführung in Netzwerke"
+        "description": "Grundlagen-Zertifizierung im Bereich Netzwerktechnologie. Vermittelt essenzielle Kenntnisse über Netzwerkmodelle, IP-Adressierung, Ethernet, grundlegende Switch- und Router-Konfiguration."
       },
       "cert6": {
         "title": "Microsoft Office Specialist 2016",
-        "description": "PowerPoint, Word, Excel, Outlook"
+        "description": "Offizielle Microsoft-Zertifizierung für professionelle Office-Kenntnisse. Bestätigt fortgeschrittene Fähigkeiten in PowerPoint, Word, Excel und Outlook für effiziente Bürokommunikation und Dokumentenerstellung."
       }
     },
     "timelineItems": {

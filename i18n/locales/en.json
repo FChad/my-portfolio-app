@@ -253,27 +253,27 @@
     "certificationsList": {
       "cert1": {
         "title": "General Aptitude Test",
-        "description": "State Sector (Administration)"
+        "description": "State eligibility test for the public sector in Luxembourg. This examination confirms suitability for administrative positions in public administration and is a prerequisite for applying to government positions."
       },
       "cert2": {
         "title": "Cisco Certified CyberOps Associate",
-        "description": "Cybersecurity Operations"
+        "description": "Professional certification in Cybersecurity Operations. Validates comprehensive knowledge in monitoring, detecting and responding to security incidents, as well as analyzing security threats in networks."
       },
       "cert3": {
         "title": "Cisco Certified Network Associate 3",
-        "description": "7.0 Enterprise Networks, Security and Automation"
+        "description": "Advanced CCNA certification focusing on Enterprise Networks. Covers advanced routing protocols, network security, Quality of Service, and modern network automation technologies."
       },
       "cert4": {
         "title": "Cisco Certified Network Associate 2",
-        "description": "7.0 Switching, Routing and Wireless Essentials"
+        "description": "Intermediate CCNA level focusing on Switching and Routing. Covers VLANs, Inter-VLAN routing, dynamic routing, WLAN concepts, and fundamental network security."
       },
       "cert5": {
         "title": "Cisco Certified Network Associate 1",
-        "description": "7.0 Introduction to Networks"
+        "description": "Foundation certification in networking technology. Provides essential knowledge about network models, IP addressing, Ethernet, and basic switch and router configuration."
       },
       "cert6": {
         "title": "Microsoft Office Specialist 2016",
-        "description": "PowerPoint, Word, Excel, Outlook"
+        "description": "Official Microsoft certification for professional Office skills. Validates advanced capabilities in PowerPoint, Word, Excel, and Outlook for efficient business communication and document creation."
       }
     },
     "timelineItems": {
