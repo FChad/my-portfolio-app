@@ -390,7 +390,7 @@ const scrollToAbout = () => {
             <!-- Creative Split-Screen Layout -->
             <div class="relative">
                 <!-- Main Container with Perspective -->
-                <div class="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 lg:p-12">
+                <div class="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <!-- Left: Visual/Interactive Side -->
                     <div class="relative order-2 lg:order-1">
                         <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited" :show-floating-icons="true"
