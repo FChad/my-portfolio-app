@@ -176,17 +176,17 @@ const scrollToAbout = () => {
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:heart" class="w-5 h-5 text-red-500" />
@@ -199,8 +199,7 @@ const scrollToAbout = () => {
                 <!-- Right: Enhanced Stats Grid -->
                 <div class="grid sm:grid-cols-2 gap-6">
                     <!-- Experience Card -->
-                    <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:-translate-y-2">
+                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:briefcase" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -209,15 +208,14 @@ const scrollToAbout = () => {
                             <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                             </div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                                }}</div>
+                            }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.experienceDesc') }}</div>
                         </div>
                     </div>
 
                     <!-- Certifications Card -->
-                    <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:-translate-y-2">
+                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:certificate" class="w-5 h-5 text-green-600 dark:text-green-400" />
@@ -232,8 +230,7 @@ const scrollToAbout = () => {
                     </div>
 
                     <!-- Languages Card -->
-                    <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:-translate-y-2">
+                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:translate" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -241,15 +238,14 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                                }}</div>
+                            }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.languagesDesc') }}</div>
                         </div>
                     </div>
 
                     <!-- Projects Card -->
-                    <div
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:-translate-y-2">
+                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
                         <div
                             class="absolute top-4 right-4 w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
                             <Icon name="mdi:code-braces" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
@@ -257,7 +253,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                                }}</div>
+                            }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.projectsDesc') }}</div>
                         </div>

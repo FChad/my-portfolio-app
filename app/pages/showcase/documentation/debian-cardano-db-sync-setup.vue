@@ -584,7 +584,7 @@ const toggleExpanded = (stepId: string) => {
         <div class="flex flex-col gap-6">
             <!-- Cardano DB Sync Documentation -->
             <NuxtLink external to="https://github.com/IntersectMBO/cardano-db-sync" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:github" class="w-6 h-6 text-white" />
@@ -605,7 +605,7 @@ const toggleExpanded = (stepId: string) => {
 
             <!-- PostgreSQL Documentation -->
             <NuxtLink external to="https://www.postgresql.org/docs/" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:database" class="w-6 h-6 text-white" />
@@ -627,7 +627,7 @@ const toggleExpanded = (stepId: string) => {
             <!-- Cardano Developer Portal -->
             <NuxtLink external to="https://github.com/IntersectMBO/cardano-db-sync/blob/master/doc/running.md"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />

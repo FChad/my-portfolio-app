@@ -628,7 +628,7 @@ const toggleExpanded = (stepId: string) => {
         <div class="flex flex-col gap-6">
             <!-- NIX Official Documentation -->
             <NuxtLink external to="https://nixos.org/download/#nix-install-linux" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:download" class="w-6 h-6 text-white" />
@@ -651,7 +651,7 @@ const toggleExpanded = (stepId: string) => {
             <NuxtLink external
                 to="https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/installing-cardano-node/"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
@@ -674,7 +674,7 @@ const toggleExpanded = (stepId: string) => {
             <NuxtLink external
                 to="https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/running-cardano"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:play-circle" class="w-6 h-6 text-white" />
