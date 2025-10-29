@@ -176,17 +176,17 @@ const scrollToAbout = () => {
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:heart" class="w-5 h-5 text-red-500" />
@@ -208,7 +208,7 @@ const scrollToAbout = () => {
                             <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                             </div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                            }}</div>
+                                }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.experienceDesc') }}</div>
                         </div>
@@ -238,7 +238,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                            }}</div>
+                                }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.languagesDesc') }}</div>
                         </div>
@@ -253,7 +253,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                            }}</div>
+                                }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.projectsDesc') }}</div>
                         </div>
@@ -380,10 +380,11 @@ const scrollToAbout = () => {
         </div>
     </section>
 
-    <!-- Featured Project Showcase -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
-            <div class="text-center flex flex-col gap-4">
+    <!-- Featured Project Showcase - Creative Design -->
+    <section class="py-16 md:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center flex flex-col gap-4 mb-16">
                 <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
                     {{ $t('home.featured.title') }}
                 </h2>
@@ -392,110 +393,171 @@ const scrollToAbout = () => {
                 </p>
             </div>
 
-            <!-- Featured Project Card -->
-            <div class="max-w-4xl mx-auto">
-                <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+            <!-- Creative Split-Screen Layout -->
+            <div class="relative">
+                <!-- Main Container with Perspective -->
+                <div class="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 lg:p-12">
+                    <!-- Left: Visual/Interactive Side -->
+                    <div class="relative order-2 lg:order-1">
+                        <!-- Project Visual Container with 3D Effect -->
+                        <div class="relative group">
+                            <!-- Main Visual Box -->
+                            <div class="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl">
+                                <!-- Browser Header with Address Bar -->
+                                <div class="flex flex-col gap-3 mb-6">
+                                    <!-- Window Controls -->
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex gap-2">
+                                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Address Bar -->
+                                    <div
+                                        class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 rounded-xl px-4 py-2">
+                                        <Icon name="mdi:lock" class="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300 text-sm font-medium flex-1 truncate">https://ai.chad.lu</span>
+                                        <Icon name="mdi:robot-excited"
+                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                    </div>
+                                </div>
 
-                    <!-- Project Header - Simplified -->
-                    <div class="p-8 border-b border-gray-200/60 dark:border-gray-600/60">
-                        <div class="flex items-center gap-6">
-                            <div
-                                class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center">
-                                <Icon name="mdi:robot-excited" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-2xl font-black text-gray-800 dark:text-white">
-                                    {{ $t('home.featured.projectTitle') }}
-                                </h3>
-                                <p class="text-gray-600 dark:text-gray-400 font-medium">
-                                    {{ $t('home.featured.projectSubtitle') }}
-                                </p>
-                            </div>
-                            <div class="hidden sm:block">
-                                <div
-                                    class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-xl font-medium text-sm flex items-center gap-2">
-                                    <Icon name="mdi:star" class="w-4 h-4" />
-                                    {{ $t('home.featured.badge') }}
+                                <!-- Simulated Chat Interface -->
+                                <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 space-y-4">
+                                    <!-- First User Message -->
+                                    <div class="flex items-start gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+                                            <Icon name="mdi:account" class="w-5 h-5 text-white" />
+                                        </div>
+                                        <div
+                                            class="flex-1 bg-blue-100 dark:bg-blue-900/40 rounded-2xl rounded-tl-none p-3">
+                                            <p class="text-gray-800 dark:text-gray-200 text-sm">Was ist Vue.js?</p>
+                                        </div>
+                                    </div>
+                                    <!-- First AI Response -->
+                                    <div class="flex items-start gap-3 justify-end">
+                                        <div
+                                            class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-2xl rounded-tr-none p-3">
+                                            <p class="text-gray-800 dark:text-gray-200 text-sm">Vue.js ist ein
+                                                progressives Framework für den
+                                                Aufbau von Benutzeroberflächen.</p>
+                                        </div>
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
+                                            <Icon name="mdi:robot" class="w-5 h-5 text-white" />
+                                        </div>
+                                    </div>
+                                    <!-- Second User Message -->
+                                    <div class="flex items-start gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+                                            <Icon name="mdi:account" class="w-5 h-5 text-white" />
+                                        </div>
+                                        <div
+                                            class="flex-1 bg-blue-100 dark:bg-blue-900/40 rounded-2xl rounded-tl-none p-3">
+                                            <p class="text-gray-800 dark:text-gray-200 text-sm">Erkläre TypeScript</p>
+                                        </div>
+                                    </div>
+                                    <!-- Second AI Response with typing indicator -->
+                                    <div class="flex items-start gap-3 justify-end">
+                                        <div
+                                            class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-2xl rounded-tr-none p-3">
+                                            <p class="text-gray-800 dark:text-gray-200 text-sm">TypeScript ist eine
+                                                typisierte Obermenge von
+                                                JavaScript...</p>
+                                            <div class="mt-2 flex gap-1">
+                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-400 animate-bounce"
+                                                    style="animation-delay: 0ms"></div>
+                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-400 animate-bounce"
+                                                    style="animation-delay: 150ms"></div>
+                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-400 animate-bounce"
+                                                    style="animation-delay: 300ms"></div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
+                                            <Icon name="mdi:robot" class="w-5 h-5 text-white" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Tech Icons -->
+                                <div class="absolute -bottom-4 -right-4 flex gap-2">
+                                    <div
+                                        class="w-10 h-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg flex items-center justify-center">
+                                        <Icon name="mdi:vuejs" class="w-6 h-6 text-green-600 dark:text-green-400" />
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg flex items-center justify-center">
+                                        <Icon name="mdi:language-typescript"
+                                            class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg flex items-center justify-center">
+                                        <Icon name="mdi:brain" class="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project Content -->
-                    <div class="p-8 flex flex-col gap-8">
+                    <!-- Right: Content Side -->
+                    <div class="space-y-6 order-1 lg:order-2">
+                        <!-- Project Title -->
+                        <div class="space-y-3">
+                            <h3 class="text-3xl md:text-4xl font-black text-gray-800 dark:text-white leading-tight">
+                                {{ $t('home.featured.projectTitle') }}
+                            </h3>
+                            <p class="text-lg text-blue-600 dark:text-blue-400 font-semibold">
+                                {{ $t('home.featured.projectSubtitle') }}
+                            </p>
+                        </div>
+
+                        <!-- Description -->
                         <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                             {{ $t('home.featured.description') }}
                         </p>
 
-                        <!-- Key Features Grid -->
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:brain" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h4 class="font-semibold text-gray-800 dark:text-white">
-                                        {{ $t('home.featured.features.ai.title') }}
-                                    </h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                                        {{ $t('home.featured.features.ai.description') }}
-                                    </p>
-                                </div>
+                        <!-- Key Features - Compact -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="flex items-center gap-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+                                <Icon name="mdi:brain"
+                                    class="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $t('home.featured.features.ai.title') }}
+                                </span>
                             </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:chat-processing"
-                                        class="w-5 h-5 text-green-600 dark:text-green-400" />
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h4 class="font-semibold text-gray-800 dark:text-white">
-                                        {{ $t('home.featured.features.realtime.title') }}
-                                    </h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                                        {{ $t('home.featured.features.realtime.description') }}
-                                    </p>
-                                </div>
+                            <div class="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                                <Icon name="mdi:chat-processing"
+                                    class="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $t('home.featured.features.realtime.title') }}
+                                </span>
                             </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:palette" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h4 class="font-semibold text-gray-800 dark:text-white">
-                                        {{ $t('home.featured.features.ui.title') }}
-                                    </h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                                        {{ $t('home.featured.features.ui.description') }}
-                                    </p>
-                                </div>
+                            <div class="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                                <Icon name="mdi:palette"
+                                    class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $t('home.featured.features.ui.title') }}
+                                </span>
                             </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Icon name="mdi:shield-check"
-                                        class="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h4 class="font-semibold text-gray-800 dark:text-white">
-                                        {{ $t('home.featured.features.security.title') }}
-                                    </h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                                        {{ $t('home.featured.features.security.description') }}
-                                    </p>
-                                </div>
+                            <div class="flex items-center gap-3 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-xl">
+                                <Icon name="mdi:shield-check"
+                                    class="w-5 h-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $t('home.featured.features.security.title') }}
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Tech Stack - Einheitliches Design -->
-                        <div class="border-t border-gray-200/60 dark:border-gray-600/60 pt-8 flex flex-col gap-4">
-                            <h4 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center gap-2">
-                                <Icon name="mdi:cog" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        <!-- Tech Stack - Floating Pills -->
+                        <div class="space-y-3">
+                            <h4
+                                class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                                <Icon name="mdi:cog" class="w-4 h-4" />
                                 {{ $t('home.featured.techStack') }}
                             </h4>
                             <div class="flex flex-wrap gap-2">
@@ -522,16 +584,16 @@ const scrollToAbout = () => {
                             </div>
                         </div>
 
-                        <!-- Action Buttons - Konsistenter mit anderen Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-4">
+                        <!-- Action Buttons - Enhanced -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
                             <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-md hover:shadow-lg ">
+                                class="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:shadow-lg">
                                 <Icon name="mdi:eye" class="w-5 h-5" />
                                 {{ $t('home.featured.cta.view') }}
                             </NuxtLinkLocale>
 
                             <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg ">
+                                class="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-2xl font-semibold border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg">
                                 <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                                 {{ $t('home.featured.cta.demo') }}
                             </a>
@@ -571,5 +633,67 @@ const scrollToAbout = () => {
 
 .animate-bounce {
     animation: scroll-bounce 2s infinite;
+}
+
+/* Floating animation for badges and elements */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Slow pulse animation */
+@keyframes pulse-slow {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Gradient shift animation for background */
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
 }
 </style>
