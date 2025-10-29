@@ -1201,6 +1201,8 @@
     "helpfulLinks": "Liens utiles :"
   },
   "footer": {
-    "copyright": "© 2025 Chad Feierstein. Créé avec ❤"
+    "copyright": "© 2025 Chad Feierstein. Créé avec ❤",
+    "description": "Développeur Full-Stack & Technicien IT du Luxembourg",
+    "navigation": "Navigation"
   }
 }

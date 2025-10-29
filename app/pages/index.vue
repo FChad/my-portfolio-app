@@ -331,14 +331,15 @@ const techStack = computed(() => [
             <!-- Services Grid -->
             <div class="flex flex-col lg:flex-row gap-8 mt-16">
                 <div v-for="service in services" :key="service.key"
-                    :class="`group relative bg-gradient-to-br ${service.bgGradient} rounded-3xl p-8 hover:shadow-lg transform flex flex-col`">
+                    :class="`group relative bg-gradient-to-br ${service.bgGradient} rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:scale-[1.02] hover:-translate-y-1 flex flex-col cursor-pointer`">
                     <div class="flex flex-col gap-4 flex-1">
                         <div class="flex items-center gap-3">
                             <div
-                                :class="`w-10 h-10 ${service.iconBg} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`">
+                                :class="`w-10 h-10 ${service.iconBg} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`">
                                 <Icon :name="service.icon" class="w-6 h-6 text-white" />
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">
+                            <h3
+                                class="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                                 {{ $t(`home.services.${service.key}.title`) }}
                             </h3>
                         </div>

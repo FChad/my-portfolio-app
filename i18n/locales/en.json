@@ -1201,6 +1201,8 @@
     "helpfulLinks": "Helpful Links:"
   },
   "footer": {
-    "copyright": "© 2025 Chad Feierstein. Built with ❤"
+    "copyright": "© 2025 Chad Feierstein. Built with ❤",
+    "description": "Full-Stack Developer & IT Technician from Luxembourg",
+    "navigation": "Navigation"
   }
 }
