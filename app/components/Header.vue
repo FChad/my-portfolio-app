@@ -40,50 +40,50 @@ const isActiveRoute = (path: string) => {
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-8 text-lg">
                     <NuxtLinkLocale to="/" :class="[
-                        'font-medium transition-colors relative group',
+                        'font-medium relative group',
                         isActiveRoute('/')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     ]">
                         {{ $t('nav.home') }}
                         <span :class="[
-                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all',
+                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400',
                             isActiveRoute('/') ? 'w-full' : 'w-0 group-hover:w-full'
                         ]"></span>
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/about" :class="[
-                        'font-medium transition-colors relative group',
+                        'font-medium relative group',
                         isActiveRoute('/about')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     ]">
                         {{ $t('nav.about') }}
                         <span :class="[
-                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all',
+                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400',
                             isActiveRoute('/about') ? 'w-full' : 'w-0 group-hover:w-full'
                         ]"></span>
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/showcase" :class="[
-                        'font-medium transition-colors relative group',
+                        'font-medium relative group',
                         isActiveRoute('/showcase')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     ]">
                         {{ $t('nav.showcase') }}
                         <span :class="[
-                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all',
+                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400',
                             isActiveRoute('/showcase') ? 'w-full' : 'w-0 group-hover:w-full'
                         ]"></span>
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/contact" :class="[
-                        'font-medium transition-colors relative group',
+                        'font-medium relative group',
                         isActiveRoute('/contact')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     ]">
                         {{ $t('nav.contact') }}
                         <span :class="[
-                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all',
+                            'absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400',
                             isActiveRoute('/contact') ? 'w-full' : 'w-0 group-hover:w-full'
                         ]"></span>
                     </NuxtLinkLocale>
@@ -93,7 +93,7 @@ const isActiveRoute = (path: string) => {
                 <div class="flex items-center gap-4">
                     <!-- Mobile Menu Button -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors">
+                        class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300">
                         <Icon v-if="!mobileMenuOpen" name="mdi:menu" class="w-5 h-5" />
                         <Icon v-else name="mdi:close" class="w-5 h-5" />
                     </button>
@@ -110,7 +110,7 @@ const isActiveRoute = (path: string) => {
             <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col space-y-3 text-lg">
                     <NuxtLinkLocale to="/" @click="mobileMenuOpen = false" :class="[
-                        'text-center font-medium transition-colors px-3 py-2',
+                        'text-center font-medium px-3 py-2',
                         isActiveRoute('/')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
@@ -118,7 +118,7 @@ const isActiveRoute = (path: string) => {
                         {{ $t('nav.home') }}
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/about" @click="mobileMenuOpen = false" :class="[
-                        'text-center font-medium transition-colors px-3 py-2',
+                        'text-center font-medium px-3 py-2',
                         isActiveRoute('/about')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
@@ -126,7 +126,7 @@ const isActiveRoute = (path: string) => {
                         {{ $t('nav.about') }}
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/showcase" @click="mobileMenuOpen = false" :class="[
-                        'text-center font-medium transition-colors px-3 py-2',
+                        'text-center font-medium px-3 py-2',
                         isActiveRoute('/showcase')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
@@ -134,7 +134,7 @@ const isActiveRoute = (path: string) => {
                         {{ $t('nav.showcase') }}
                     </NuxtLinkLocale>
                     <NuxtLinkLocale to="/contact" @click="mobileMenuOpen = false" :class="[
-                        'text-center font-medium transition-colors px-3 py-2',
+                        'text-center font-medium px-3 py-2',
                         isActiveRoute('/contact')
                             ? 'text-blue-600 dark:text-blue-400'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'

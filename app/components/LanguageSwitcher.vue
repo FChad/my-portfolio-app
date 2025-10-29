@@ -51,7 +51,7 @@ onUnmounted(() => {
     <div class="relative">
         <!-- Dropdown Button -->
         <button @click.stop="toggleDropdown"
-            class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+            class="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
             :aria-expanded="isOpen" aria-haspopup="true">
             <Icon :name="getFlag(locale)" class="w-5 h-5" />
 
@@ -64,7 +64,7 @@ onUnmounted(() => {
             class="absolute top-full right-0 mt-1 flex flex-col gap-1 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-[60] p-2">
             <SwitchLocalePathLink v-for="localeOption in availableLocales" :key="localeOption.code"
                 :locale="localeOption.code" @click="closeDropdown"
-                class="flex items-center gap-3 w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md transition-colors no-underline">
+                class="flex items-center gap-3 w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md no-underline">
                 <Icon :name="getFlag(localeOption.code)" class="w-5 h-5" />
                 <span>{{ localeOption.name }}</span>
             </SwitchLocalePathLink>

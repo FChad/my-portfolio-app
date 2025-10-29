@@ -221,14 +221,14 @@ definePageMeta({
 
         <div class="grid md:grid-cols-3 gap-6">
             <div v-for="method in contactMethods" :key="method.titleKey"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
 
                 <!-- External links -->
                 <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
                     <div class="flex flex-col items-center gap-4 text-center">
                         <!-- Icon Container -->
                         <div :class="[
-                            'w-16 h-16 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 shadow-lg',
+                            'w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 shadow-lg',
                             method.color
                         ]">
                             <Icon :name="method.icon" class="w-8 h-8 text-white" />
@@ -240,7 +240,7 @@ definePageMeta({
                                 class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
                                 {{ $t(method.titleKey) }}
                                 <Icon name="mdi:external-link"
-                                    class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                    class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300">
                                 {{ $t(method.descriptionKey) }}
@@ -254,7 +254,7 @@ definePageMeta({
                     <div class="flex flex-col items-center gap-4 text-center">
                         <!-- Icon Container -->
                         <div :class="[
-                            'w-16 h-16 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 shadow-lg',
+                            'w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 shadow-lg',
                             method.color
                         ]">
                             <Icon :name="method.icon" class="w-8 h-8 text-white" />
@@ -265,8 +265,7 @@ definePageMeta({
                             <h3
                                 class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
                                 {{ $t(method.titleKey) }}
-                                <Icon name="mdi:arrow-down"
-                                    class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                <Icon name="mdi:arrow-down" class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300">
                                 {{ $t(method.descriptionKey) }}
@@ -281,7 +280,7 @@ definePageMeta({
     <!-- Contact Form Section -->
     <section id="contact-form"
         class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
-        <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-md hover:shadow-lg transition-all">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-md hover:shadow-lg">
             <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
                 {{ $t('contact.form.title') }}
             </h2>
@@ -320,7 +319,7 @@ definePageMeta({
                             {{ $t('contact.form.name') }} *
                         </label>
                         <input v-model="form.name" type="text" id="name" :class="[
-                            'w-full px-4 py-3 rounded-xl border transition-colors',
+                            'w-full px-4 py-3 rounded-xl border',
                             errors.name
                                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                 : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
@@ -337,7 +336,7 @@ definePageMeta({
                             {{ $t('contact.form.email') }} *
                         </label>
                         <input v-model="form.email" type="email" id="email" :class="[
-                            'w-full px-4 py-3 rounded-xl border transition-colors',
+                            'w-full px-4 py-3 rounded-xl border',
                             errors.email
                                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                 : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
@@ -355,7 +354,7 @@ definePageMeta({
                         {{ $t('contact.form.subject') }} *
                     </label>
                     <input v-model="form.subject" type="text" id="subject" :class="[
-                        'w-full px-4 py-3 rounded-xl border transition-colors',
+                        'w-full px-4 py-3 rounded-xl border',
                         errors.subject
                             ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                             : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
@@ -372,7 +371,7 @@ definePageMeta({
                         {{ $t('contact.form.message') }} *
                     </label>
                     <textarea v-model="form.message" id="message" rows="6" :class="[
-                        'w-full px-4 py-3 rounded-xl border transition-colors resize-none',
+                        'w-full px-4 py-3 rounded-xl border resize-none',
                         errors.message
                             ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                             : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
@@ -397,7 +396,7 @@ definePageMeta({
                 <!-- Submit Button -->
                 <div class="flex justify-center">
                     <button type="submit" :disabled="isSubmitting" :class="[
-                        'px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-3',
+                        'px-8 py-4 rounded-xl font-semibold flex items-center gap-3',
                         isSubmitting
                             ? 'bg-gray-400 cursor-not-allowed'
                             : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl'

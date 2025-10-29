@@ -461,7 +461,7 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="note in importantNotes" :key="note.id"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div :class="[
                         'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform',
@@ -488,11 +488,11 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="space-y-6">
             <div v-for="(step, index) in setupSteps" :key="step.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
 
                 <!-- Step Header -->
                 <button @click="toggleExpanded(step.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -555,10 +555,10 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="flex flex-col gap-6">
             <div v-for="(issue, issueIndex) in troubleshooting" :key="issue.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
 
                 <button @click="toggleTroubleshootingExpanded(issue.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">

@@ -64,13 +64,13 @@ const errorCode = computed(() => {
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <button @click="handleError"
-                        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                         <Icon name="mdi:home" class="w-5 h-5" />
                         {{ t('error.backHome') }}
                     </button>
 
                     <NuxtLinkLocale to="/contact"
-                        class="px-6 py-3 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
+                        class="px-6 py-3 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg flex items-center justify-center gap-2">
                         <Icon name="mdi:email" class="w-5 h-5" />
                         {{ t('error.contact') }}
                     </NuxtLinkLocale>

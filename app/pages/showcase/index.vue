@@ -124,7 +124,7 @@ const totalCount = computed(() => showcaseItems.length)
             <div class="flex flex-col sm:flex-row gap-2">
                 <button @click="activeFilter = 'all'"
                     :class="activeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
-                    class="px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2 shadow-sm">
+                    class="px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow-sm">
                     <Icon name="mdi:view-grid" class="w-4 h-4" />
                     <span>{{ t('showcase.filters.all') }}</span>
                     <span class="px-2 py-1 text-xs rounded-full"
@@ -134,7 +134,7 @@ const totalCount = computed(() => showcaseItems.length)
                 </button>
                 <button @click="activeFilter = 'project'"
                     :class="activeFilter === 'project' ? 'bg-green-600 text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-gray-700'"
-                    class="px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2 shadow-sm">
+                    class="px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow-sm">
                     <Icon name="mdi:code-braces" class="w-4 h-4" />
                     <span>{{ t('showcase.filters.projects') }}</span>
                     <span class="px-2 py-1 text-xs rounded-full"
@@ -144,7 +144,7 @@ const totalCount = computed(() => showcaseItems.length)
                 </button>
                 <button @click="activeFilter = 'documentation'"
                     :class="activeFilter === 'documentation' ? 'bg-amber-600 text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-gray-700'"
-                    class="px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2 shadow-sm">
+                    class="px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow-sm">
                     <Icon name="mdi:file-document-outline" class="w-4 h-4" />
                     <span>{{ t('showcase.filters.documentation') }}</span>
                     <span class="px-2 py-1 text-xs rounded-full"
@@ -160,9 +160,9 @@ const totalCount = computed(() => showcaseItems.length)
                     <Icon name="mdi:magnify"
                         class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <input v-model="searchTerm" type="text" :placeholder="t('showcase.search.placeholder')"
-                        class="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400" />
+                        class="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-400" />
                     <button v-if="searchTerm" @click="searchTerm = ''"
-                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
                         <Icon name="mdi:close" class="w-4 h-4" />
                     </button>
                 </div>
@@ -172,7 +172,7 @@ const totalCount = computed(() => showcaseItems.length)
         <!-- Showcase Items Grid -->
         <div class="grid md:grid-cols-2 gap-8">
             <div v-for="item in filteredItems" :key="item.id"
-                class="group bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-lg transition-all overflow-hidden flex flex-col">
+                class="group bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-lg overflow-hidden flex flex-col">
                 <!-- Content -->
                 <div class="p-6 flex flex-col gap-4 flex-1">
                     <div class="flex items-center justify-between">
@@ -207,7 +207,7 @@ const totalCount = computed(() => showcaseItems.length)
                     <!-- Action Button -->
                     <div class="mt-auto ml-auto">
                         <NuxtLinkLocale :to="item.link"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 shadow-md hover:shadow-lg">
                             <Icon name="mdi:open-in-new" class="w-5 h-5" />
                             {{ t('showcase.labels.viewDetails') }}
                         </NuxtLinkLocale>

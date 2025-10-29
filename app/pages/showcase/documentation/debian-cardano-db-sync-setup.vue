@@ -390,7 +390,7 @@ const toggleExpanded = (stepId: string) => {
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div
                         class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-blue-500">
@@ -404,7 +404,7 @@ const toggleExpanded = (stepId: string) => {
                     {{ t('documentations.cardanoDbSyncSetup.notes.cardanoNode') }}
                 </p>
             </div>
-            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div
                         class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-purple-500">
@@ -418,7 +418,7 @@ const toggleExpanded = (stepId: string) => {
                     {{ t('documentations.cardanoDbSyncSetup.notes.diskSpace') }}
                 </p>
             </div>
-            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div
                         class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-green-500">
@@ -432,7 +432,7 @@ const toggleExpanded = (stepId: string) => {
                     {{ t('documentations.cardanoDbSyncSetup.notes.ramRequirement') }}
                 </p>
             </div>
-            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div
                         class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-orange-500">
@@ -446,7 +446,7 @@ const toggleExpanded = (stepId: string) => {
                     {{ t('documentations.cardanoDbSyncSetup.notes.syncTime') }}
                 </p>
             </div>
-            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+            <div class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div
                         class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform bg-red-500">
@@ -471,11 +471,11 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="space-y-6">
             <div v-for="(step, index) in setupSteps" :key="step.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
 
                 <!-- Step Header -->
                 <button @click="toggleExpanded(step.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -538,10 +538,10 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="flex flex-col gap-6">
             <div v-for="(tip, tipIndex) in additionalTips" :key="tip.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
 
                 <button @click="toggleTipsExpanded(tip.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-2xl">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -584,7 +584,7 @@ const toggleExpanded = (stepId: string) => {
         <div class="flex flex-col gap-6">
             <!-- Cardano DB Sync Documentation -->
             <NuxtLink external to="https://github.com/IntersectMBO/cardano-db-sync" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:github" class="w-6 h-6 text-white" />
@@ -595,7 +595,7 @@ const toggleExpanded = (stepId: string) => {
                             {{ t('documentations.cardanoDbSyncSetup.resources.github.title') }}
                         </h3>
                         <Icon name="mdi:external-link"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 flex-shrink-0" />
                     </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ t('documentations.cardanoDbSyncSetup.resources.github.description') }}
@@ -605,7 +605,7 @@ const toggleExpanded = (stepId: string) => {
 
             <!-- PostgreSQL Documentation -->
             <NuxtLink external to="https://www.postgresql.org/docs/" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:database" class="w-6 h-6 text-white" />
@@ -616,7 +616,7 @@ const toggleExpanded = (stepId: string) => {
                             {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.title') }}
                         </h3>
                         <Icon name="mdi:external-link"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 flex-shrink-0" />
                     </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ t('documentations.cardanoDbSyncSetup.resources.postgresql.description') }}
@@ -627,7 +627,7 @@ const toggleExpanded = (stepId: string) => {
             <!-- Cardano Developer Portal -->
             <NuxtLink external to="https://github.com/IntersectMBO/cardano-db-sync/blob/master/doc/running.md"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
@@ -638,7 +638,7 @@ const toggleExpanded = (stepId: string) => {
                             {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.title') }}
                         </h3>
                         <Icon name="mdi:external-link"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 flex-shrink-0" />
                     </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ t('documentations.cardanoDbSyncSetup.resources.cardanoDocs.description') }}

@@ -131,10 +131,10 @@ const copyToClipboard = async () => {
 
 <template>
     <div
-        class="backdrop-blur-sm rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-500 group border bg-white/90 dark:bg-gray-800/90 border-gray-200/60 dark:border-gray-700/60">
+        class="backdrop-blur-sm rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-lg group border bg-white/90 dark:bg-gray-800/90 border-gray-200/60 dark:border-gray-700/60">
         <!-- Header -->
         <div
-            class="flex items-center justify-between border-b transition-colors duration-300 px-3 sm:px-4 py-2 sm:py-3 bg-gray-50/90 dark:bg-gray-700/70 border-gray-200/60 dark:border-gray-600/50">
+            class="flex items-center justify-between border-b duration-300 px-3 sm:px-4 py-2 sm:py-3 bg-gray-50/90 dark:bg-gray-700/70 border-gray-200/60 dark:border-gray-600/50">
             <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
                 <!-- Language Badge -->
                 <div class="flex items-center gap-2 flex-shrink-0">
@@ -147,13 +147,13 @@ const copyToClipboard = async () => {
                 <!-- File Name / Title -->
                 <div class="min-w-0 flex-1">
                     <div v-if="isFile && fileName"
-                        class="font-mono font-semibold truncate transition-colors duration-300 text-gray-800 dark:text-gray-200 text-base">
+                        class="font-mono font-semibold truncate duration-300 text-gray-800 dark:text-gray-200 text-base">
                         <Icon name="mdi:file-document"
                             class="w-4 h-4 sm:w-5 sm:h-5 inline mr-2 text-gray-600 dark:text-gray-400" />
                         {{ fileName }}
                     </div>
                     <div v-if="description" :class="[
-                        'truncate transition-colors duration-300 text-gray-600 dark:text-gray-400 text-base',
+                        'truncate duration-300 text-gray-600 dark:text-gray-400 text-base',
                         { 'text-xs mt-0.5': isFile && fileName }
                     ]">
                         {{ description }}
@@ -165,7 +165,7 @@ const copyToClipboard = async () => {
             <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                 <!-- Copy Button -->
                 <button @click="copyToClipboard" :class="[
-                    'flex items-center justify-center rounded-md transition-all duration-200 w-8 h-8 touch-manipulation active:scale-90',
+                    'flex items-center justify-center rounded-md w-8 h-8 touch-manipulation active:scale-90',
                     isCopied
                         ? 'bg-green-500 text-white shadow-lg'
                         : 'bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-500 text-white hover:scale-105 hover:shadow-lg'
@@ -214,7 +214,7 @@ const copyToClipboard = async () => {
 
         <!-- Note Section -->
         <div v-if="note"
-            class="border-t transition-colors duration-300 px-3 sm:px-4 py-2 sm:py-3 bg-amber-50/80 dark:bg-amber-900/20 border-amber-200/60 dark:border-amber-800/40 text-amber-800 dark:text-amber-200">
+            class="border-t duration-300 px-3 sm:px-4 py-2 sm:py-3 bg-amber-50/80 dark:bg-amber-900/20 border-amber-200/60 dark:border-amber-800/40 text-amber-800 dark:text-amber-200">
             <div class="flex items-start gap-2 sm:gap-3">
                 <Icon name="mdi:information"
                     class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 text-amber-600 dark:text-amber-400" />

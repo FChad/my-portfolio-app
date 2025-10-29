@@ -488,7 +488,7 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="note in importantNotes" :key="note.id"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
                 <div class="flex items-center gap-3 mb-4">
                     <div :class="[
                         'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform',
@@ -515,11 +515,11 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="space-y-6">
             <div v-for="(step, index) in setupSteps" :key="step.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
 
                 <!-- Step Header -->
                 <button @click="toggleExpanded(step.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -582,10 +582,10 @@ const toggleExpanded = (stepId: string) => {
 
         <div class="flex flex-col gap-6">
             <div v-for="(tip, tipIndex) in additionalTips" :key="tip.id"
-                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+                class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
 
                 <button @click="toggleTipsExpanded(tip.id)"
-                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors rounded-2xl">
+                    class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-2xl">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -628,7 +628,7 @@ const toggleExpanded = (stepId: string) => {
         <div class="flex flex-col gap-6">
             <!-- NIX Official Documentation -->
             <NuxtLink external to="https://nixos.org/download/#nix-install-linux" target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:download" class="w-6 h-6 text-white" />
@@ -639,7 +639,7 @@ const toggleExpanded = (stepId: string) => {
                             {{ t('documentations.cardanoNodeSetup.resources.nixDownload.title') }}
                         </h3>
                         <Icon name="mdi:external-link"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 flex-shrink-0" />
                     </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ t('documentations.cardanoNodeSetup.resources.nixDownload.description') }}
@@ -651,7 +651,7 @@ const toggleExpanded = (stepId: string) => {
             <NuxtLink external
                 to="https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/installing-cardano-node/"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:book-open-variant" class="w-6 h-6 text-white" />
@@ -662,7 +662,7 @@ const toggleExpanded = (stepId: string) => {
                             {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.title') }}
                         </h3>
                         <Icon name="mdi:external-link"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 flex-shrink-0" />
                     </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ t('documentations.cardanoNodeSetup.resources.cardanoInstall.description') }}
@@ -674,7 +674,7 @@ const toggleExpanded = (stepId: string) => {
             <NuxtLink external
                 to="https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/running-cardano"
                 target="_blank"
-                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-start gap-4">
+                class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-start gap-4">
                 <div
                     class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="mdi:play-circle" class="w-6 h-6 text-white" />
@@ -685,7 +685,7 @@ const toggleExpanded = (stepId: string) => {
                             {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.title') }}
                         </h3>
                         <Icon name="mdi:external-link"
-                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex-shrink-0" />
+                            class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 flex-shrink-0" />
                     </div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ t('documentations.cardanoNodeSetup.resources.cardanoRunning.description') }}
