@@ -9,7 +9,7 @@
         </div>
 
         <!-- Main Content with padding to account for fixed headers -->
-        <main class="overflow-hidden flex flex-col gap-16 md:gap-24 pt-10 pb-20">
+        <main>
             <slot />
         </main>
 

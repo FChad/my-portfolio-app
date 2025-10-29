@@ -236,7 +236,7 @@ const experiences = [
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.hero.title') }}
         </h1>
@@ -269,7 +269,7 @@ const experiences = [
     </section>
 
     <!-- Personal Details Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.details.title') }}
         </h2>
@@ -348,7 +348,7 @@ const experiences = [
     </section>
 
     <!-- Interests & Hobbies Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('about.interests.title') }}
         </h2>
@@ -381,7 +381,7 @@ const experiences = [
     </section>
 
     <!-- Languages Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.languages.title') }}</h2>
 
@@ -406,7 +406,7 @@ const experiences = [
     </section>
 
     <!-- Education Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.education.title') }}</h2>
 
@@ -449,7 +449,7 @@ const experiences = [
     </section>
 
     <!-- Work Experience Timeline Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.work.title') }}</h2>
 
@@ -524,7 +524,7 @@ const experiences = [
     </section>
 
     <!-- Certifications Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <div class="text-center">
             <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{
                 $t('about.certifications.title') }}</h2>
@@ -557,7 +557,7 @@ const experiences = [
     </section>
 
     <!-- Special Experiences Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
             $t('about.experiences.title') }}</h2>
 
@@ -577,7 +577,7 @@ const experiences = [
     </section>
 
     <!-- CTA Section -->
-    <section>
+    <section class="py-16 md:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-4 md:gap-6">
             <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{ $t('about.cta.title') }}
             </h2>

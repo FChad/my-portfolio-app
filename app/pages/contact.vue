@@ -60,7 +60,7 @@ const contactMethods = computed(() => [
 const scrollToContactForm = () => {
     const element = document.querySelector('#contact-form') as HTMLElement
     if (element) {
-        const elementPosition = element.offsetTop - 65 - 10 // Account for navbar height and extra padding
+        const elementPosition = element.offsetTop;
         window.scrollTo({
             top: elementPosition,
             behavior: 'smooth'
@@ -204,7 +204,7 @@ definePageMeta({
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('contact.title') }}
         </h1>
@@ -214,7 +214,7 @@ definePageMeta({
     </section>
 
     <!-- Contact Methods Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ $t('contact.methods.title') || 'Kontaktmöglichkeiten' }}
         </h2>
@@ -279,7 +279,8 @@ definePageMeta({
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contact-form" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
+    <section id="contact-form"
+        class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
         <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-md hover:shadow-lg transition-all">
             <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
                 {{ $t('contact.form.title') }}

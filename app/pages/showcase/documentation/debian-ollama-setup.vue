@@ -426,7 +426,7 @@ const toggleExpanded = (stepId: string) => {
 
 <template>
     <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('documentations.ollamaSetup.title') }}
         </h1>
@@ -448,7 +448,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Important Notes Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             Wichtige Hinweise
         </h2>
@@ -481,7 +481,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Setup Steps Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
             Setup Schritte
         </h2>
@@ -545,7 +545,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Troubleshooting Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('documentations.ollamaSetup.troubleshooting.title') }}
         </h2>
@@ -587,7 +587,7 @@ const toggleExpanded = (stepId: string) => {
     </section>
 
     <!-- Completion Message -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
+    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
         <div
             class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700/50 rounded-2xl p-8 text-center">
             <div

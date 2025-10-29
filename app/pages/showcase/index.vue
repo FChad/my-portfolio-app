@@ -105,7 +105,7 @@ const totalCount = computed(() => showcaseItems.length)
 <template>
     <!-- Hero Section -->
     <section
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full min-h-[calc(100vh-65px)]">
+        class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full min-h-[calc(100vh-65px)]">
         <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
             {{ t('showcase.title') }}
         </h1>
