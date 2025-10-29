@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
     <!-- Project Visual Container with 3D Effect -->
     <div class="relative group">
         <!-- Main Visual Box -->
-        <div class="relative bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-2xl">
+        <div class="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl">
             <!-- Browser Header with Address Bar -->
             <div class="flex flex-col gap-3 mb-6">
                 <!-- Window Controls -->

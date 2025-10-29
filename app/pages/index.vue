@@ -377,12 +377,7 @@ const techStack = computed(() => [
                 <div class="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <!-- Left: Visual/Interactive Side -->
                     <div class="relative order-2 lg:order-1">
-                        <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited" :show-floating-icons="true"
-                            :floating-icons="[
-                                { name: 'mdi:vuejs', color: 'text-green-600 dark:text-green-400' },
-                                { name: 'mdi:language-typescript', color: 'text-blue-600 dark:text-blue-400' },
-                                { name: 'mdi:brain', color: 'text-purple-600 dark:text-purple-400' }
-                            ]">
+                        <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited">
                             <AiChatInterface />
                         </VisualBrowser>
                     </div>
