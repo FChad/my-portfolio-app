@@ -176,17 +176,17 @@ const scrollToAbout = () => {
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
                                 <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <Icon name="mdi:heart" class="w-5 h-5 text-red-500" />
@@ -208,7 +208,7 @@ const scrollToAbout = () => {
                             <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
                             </div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                                }}</div>
+                            }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.experienceDesc') }}</div>
                         </div>
@@ -238,7 +238,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                                }}</div>
+                            }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.languagesDesc') }}</div>
                         </div>
@@ -253,7 +253,7 @@ const scrollToAbout = () => {
                         <div class="text-center flex flex-col gap-2">
                             <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                                }}</div>
+                            }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{
                                 $t('home.stats.projectsDesc') }}</div>
                         </div>
@@ -399,109 +399,14 @@ const scrollToAbout = () => {
                 <div class="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 lg:p-12">
                     <!-- Left: Visual/Interactive Side -->
                     <div class="relative order-2 lg:order-1">
-                        <!-- Project Visual Container with 3D Effect -->
-                        <div class="relative group">
-                            <!-- Main Visual Box -->
-                            <div class="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl">
-                                <!-- Browser Header with Address Bar -->
-                                <div class="flex flex-col gap-3 mb-6">
-                                    <!-- Window Controls -->
-                                    <div class="flex justify-between items-center">
-                                        <div class="flex gap-2">
-                                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Address Bar -->
-                                    <div
-                                        class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 rounded-xl px-4 py-2">
-                                        <Icon name="mdi:lock" class="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                                        <span
-                                            class="text-gray-700 dark:text-gray-300 text-sm font-medium flex-1 truncate">https://ai.chad.lu</span>
-                                        <Icon name="mdi:robot-excited"
-                                            class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                                    </div>
-                                </div>
-
-                                <!-- Simulated Chat Interface -->
-                                <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 space-y-4">
-                                    <!-- First User Message -->
-                                    <div class="flex items-start gap-3">
-                                        <div
-                                            class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
-                                            <Icon name="mdi:account" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div
-                                            class="flex-1 bg-blue-100 dark:bg-blue-900/40 rounded-2xl rounded-tl-none p-3">
-                                            <p class="text-gray-800 dark:text-gray-200 text-sm">Was ist Vue.js?</p>
-                                        </div>
-                                    </div>
-                                    <!-- First AI Response -->
-                                    <div class="flex items-start gap-3 justify-end">
-                                        <div
-                                            class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-2xl rounded-tr-none p-3">
-                                            <p class="text-gray-800 dark:text-gray-200 text-sm">Vue.js ist ein
-                                                progressives Framework für den
-                                                Aufbau von Benutzeroberflächen.</p>
-                                        </div>
-                                        <div
-                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
-                                            <Icon name="mdi:robot" class="w-5 h-5 text-white" />
-                                        </div>
-                                    </div>
-                                    <!-- Second User Message -->
-                                    <div class="flex items-start gap-3">
-                                        <div
-                                            class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
-                                            <Icon name="mdi:account" class="w-5 h-5 text-white" />
-                                        </div>
-                                        <div
-                                            class="flex-1 bg-blue-100 dark:bg-blue-900/40 rounded-2xl rounded-tl-none p-3">
-                                            <p class="text-gray-800 dark:text-gray-200 text-sm">Erkläre TypeScript</p>
-                                        </div>
-                                    </div>
-                                    <!-- Second AI Response with typing indicator -->
-                                    <div class="flex items-start gap-3 justify-end">
-                                        <div
-                                            class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-2xl rounded-tr-none p-3">
-                                            <p class="text-gray-800 dark:text-gray-200 text-sm">TypeScript ist eine
-                                                typisierte Obermenge von
-                                                JavaScript...</p>
-                                            <div class="mt-2 flex gap-1">
-                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-400 animate-bounce"
-                                                    style="animation-delay: 0ms"></div>
-                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-400 animate-bounce"
-                                                    style="animation-delay: 150ms"></div>
-                                                <div class="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-400 animate-bounce"
-                                                    style="animation-delay: 300ms"></div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
-                                            <Icon name="mdi:robot" class="w-5 h-5 text-white" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Floating Tech Icons -->
-                                <div class="absolute -bottom-4 -right-4 flex gap-2">
-                                    <div
-                                        class="w-10 h-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg flex items-center justify-center">
-                                        <Icon name="mdi:vuejs" class="w-6 h-6 text-green-600 dark:text-green-400" />
-                                    </div>
-                                    <div
-                                        class="w-10 h-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg flex items-center justify-center">
-                                        <Icon name="mdi:language-typescript"
-                                            class="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                                    </div>
-                                    <div
-                                        class="w-10 h-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg flex items-center justify-center">
-                                        <Icon name="mdi:brain" class="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited" :show-floating-icons="true"
+                            :floating-icons="[
+                                { name: 'mdi:vuejs', color: 'text-green-600 dark:text-green-400' },
+                                { name: 'mdi:language-typescript', color: 'text-blue-600 dark:text-blue-400' },
+                                { name: 'mdi:brain', color: 'text-purple-600 dark:text-purple-400' }
+                            ]">
+                            <AiChatInterface />
+                        </VisualBrowser>
                     </div>
 
                     <!-- Right: Content Side -->
