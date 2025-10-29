@@ -40,6 +40,119 @@ const scrollToAbout = () => {
         })
     }
 }
+
+// Quick Facts Data
+const quickFacts = computed(() => [
+    { icon: 'mdi:map-marker', color: 'text-blue-500', key: 'location' },
+    { icon: 'mdi:school', color: 'text-purple-500', key: 'experience' },
+    { icon: 'mdi:school', color: 'text-purple-500', key: 'education' },
+    { icon: 'mdi:heart', color: 'text-red-500', key: 'passion' }
+])
+
+// Stats Data
+const stats = computed(() => [
+    {
+        icon: 'mdi:briefcase',
+        value: '5+',
+        bgColor: 'bg-blue-100 dark:bg-blue-900/30',
+        iconColor: 'text-blue-600 dark:text-blue-400',
+        valueColor: 'text-blue-600 dark:text-blue-400',
+        titleKey: 'experience',
+        descKey: 'experienceDesc'
+    },
+    {
+        icon: 'mdi:certificate',
+        value: '10+',
+        bgColor: 'bg-green-100 dark:bg-green-900/30',
+        iconColor: 'text-green-600 dark:text-green-400',
+        valueColor: 'text-green-600 dark:text-green-400',
+        titleKey: 'certifications',
+        descKey: 'certificationsDesc'
+    },
+    {
+        icon: 'mdi:translate',
+        value: '4',
+        bgColor: 'bg-purple-100 dark:bg-purple-900/30',
+        iconColor: 'text-purple-600 dark:text-purple-400',
+        valueColor: 'text-purple-600 dark:text-purple-400',
+        titleKey: 'languages',
+        descKey: 'languagesDesc'
+    },
+    {
+        icon: 'mdi:code-braces',
+        value: '15+',
+        bgColor: 'bg-orange-100 dark:bg-orange-900/30',
+        iconColor: 'text-orange-600 dark:text-orange-400',
+        valueColor: 'text-orange-600 dark:text-orange-400',
+        titleKey: 'projects',
+        descKey: 'projectsDesc'
+    }
+])
+
+// Services Data
+const services = computed(() => [
+    {
+        key: 'webdev',
+        icon: 'mdi:web',
+        bgGradient: 'from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20',
+        iconBg: 'bg-blue-500',
+        checkColor: 'text-blue-500',
+        features: ['spa', 'ssr', 'pwa']
+    },
+    {
+        key: 'cloud',
+        icon: 'mdi:cloud',
+        bgGradient: 'from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20',
+        iconBg: 'bg-purple-500',
+        checkColor: 'text-purple-500',
+        features: ['aws', 'azure', 'gcp']
+    },
+    {
+        key: 'itadmin',
+        icon: 'mdi:server',
+        bgGradient: 'from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20',
+        iconBg: 'bg-green-500',
+        checkColor: 'text-green-500',
+        features: ['linux', 'networks', 'security']
+    }
+])
+
+// Featured Project Features
+const featuredFeatures = computed(() => [
+    {
+        icon: 'mdi:brain',
+        bgColor: 'bg-purple-50 dark:bg-purple-900/20',
+        iconColor: 'text-purple-600 dark:text-purple-400',
+        key: 'ai'
+    },
+    {
+        icon: 'mdi:chat-processing',
+        bgColor: 'bg-green-50 dark:bg-green-900/20',
+        iconColor: 'text-green-600 dark:text-green-400',
+        key: 'realtime'
+    },
+    {
+        icon: 'mdi:palette',
+        bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+        iconColor: 'text-blue-600 dark:text-blue-400',
+        key: 'ui'
+    },
+    {
+        icon: 'mdi:shield-check',
+        bgColor: 'bg-orange-50 dark:bg-orange-900/20',
+        iconColor: 'text-orange-600 dark:text-orange-400',
+        key: 'security'
+    }
+])
+
+// Tech Stack
+const techStack = computed(() => [
+    'Vue.js 3',
+    'Nuxt.js',
+    'TypeScript',
+    'OpenRouter.ai',
+    '+2'
+])
 </script>
 
 <template>
@@ -167,24 +280,9 @@ const scrollToAbout = () => {
 
                         <!-- Quick Facts -->
                         <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="flex items-center gap-3">
-                                <Icon name="mdi:map-marker" class="w-5 h-5 text-blue-500" />
-                                <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.location')
-                                    }}</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
-                                <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.experience')
-                                    }}</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <Icon name="mdi:school" class="w-5 h-5 text-purple-500" />
-                                <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.education')
-                                    }}</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <Icon name="mdi:heart" class="w-5 h-5 text-red-500" />
-                                <span class="text-gray-600 dark:text-gray-400">{{ $t('home.about.passion') }}</span>
+                            <div v-for="fact in quickFacts" :key="fact.key" class="flex items-center gap-3">
+                                <Icon :name="fact.icon" :class="`w-5 h-5 ${fact.color}`" />
+                                <span class="text-gray-600 dark:text-gray-400">{{ $t(`home.about.${fact.key}`) }}</span>
                             </div>
                         </div>
                     </div>
@@ -192,64 +290,18 @@ const scrollToAbout = () => {
 
                 <!-- Right: Enhanced Stats Grid -->
                 <div class="grid sm:grid-cols-2 gap-6">
-                    <!-- Experience Card -->
-                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
+                    <div v-for="stat in stats" :key="stat.titleKey"
+                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
                         <div
-                            class="absolute top-4 right-4 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                            <Icon name="mdi:briefcase" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                            :class="`absolute top-4 right-4 w-10 h-10 ${stat.bgColor} rounded-full flex items-center justify-center`">
+                            <Icon :name="stat.icon" :class="`w-5 h-5 ${stat.iconColor}`" />
                         </div>
                         <div class="text-center flex flex-col gap-2">
-                            <div class="text-4xl font-black text-blue-600 dark:text-blue-400">5+
-                            </div>
-                            <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.experience')
-                                }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{
-                                $t('home.stats.experienceDesc') }}</div>
-                        </div>
-                    </div>
-
-                    <!-- Certifications Card -->
-                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
-                        <div
-                            class="absolute top-4 right-4 w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                            <Icon name="mdi:certificate" class="w-5 h-5 text-green-600 dark:text-green-400" />
-                        </div>
-                        <div class="text-center flex flex-col gap-2">
-                            <div class="text-4xl font-black text-green-600 dark:text-green-400">10+</div>
+                            <div :class="`text-4xl font-black ${stat.valueColor}`">{{ stat.value }}</div>
                             <div class="text-gray-600 dark:text-gray-300 font-medium">{{
-                                $t('home.stats.certifications') }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{
-                                $t('home.stats.certificationsDesc') }}</div>
-                        </div>
-                    </div>
-
-                    <!-- Languages Card -->
-                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
-                        <div
-                            class="absolute top-4 right-4 w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
-                            <Icon name="mdi:translate" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                        </div>
-                        <div class="text-center flex flex-col gap-2">
-                            <div class="text-4xl font-black text-purple-600 dark:text-purple-400">4</div>
-                            <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.languages')
-                                }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{
-                                $t('home.stats.languagesDesc') }}</div>
-                        </div>
-                    </div>
-
-                    <!-- Projects Card -->
-                    <div class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
-                        <div
-                            class="absolute top-4 right-4 w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
-                            <Icon name="mdi:code-braces" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                        </div>
-                        <div class="text-center flex flex-col gap-2">
-                            <div class="text-4xl font-black text-orange-600 dark:text-orange-400">15+</div>
-                            <div class="text-gray-600 dark:text-gray-300 font-medium">{{ $t('home.stats.projects')
-                                }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{
-                                $t('home.stats.projectsDesc') }}</div>
+                                $t(`home.stats.${stat.titleKey}`) }}</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ $t(`home.stats.${stat.descKey}`) }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -278,94 +330,26 @@ const scrollToAbout = () => {
 
             <!-- Services Grid -->
             <div class="flex flex-col lg:flex-row gap-8 mt-16">
-                <!-- Web Development -->
-                <div
-                    class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl p-8 hover:shadow-lg transform flex flex-col">
+                <div v-for="service in services" :key="service.key"
+                    :class="`group relative bg-gradient-to-br ${service.bgGradient} rounded-3xl p-8 hover:shadow-lg transform flex flex-col`">
                     <div class="flex flex-col gap-4 flex-1">
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                                <Icon name="mdi:web" class="w-6 h-6 text-white" />
+                                :class="`w-10 h-10 ${service.iconBg} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`">
+                                <Icon :name="service.icon" class="w-6 h-6 text-white" />
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{
-                                $t('home.services.webdev.title') }}</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">
+                                {{ $t(`home.services.${service.key}.title`) }}
+                            </h3>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
-                            $t('home.services.webdev.description') }}</p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            {{ $t(`home.services.${service.key}.description`) }}
+                        </p>
                         <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-blue-500" />
-                                {{ $t('home.services.webdev.features.spa') }}
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-blue-500" />
-                                {{ $t('home.services.webdev.features.ssr') }}
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-blue-500" />
-                                {{ $t('home.services.webdev.features.pwa') }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Cloud Computing -->
-                <div
-                    class="group relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl p-8 hover:shadow-lg transform flex flex-col">
-                    <div class="flex flex-col gap-4 flex-1">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                                <Icon name="mdi:cloud" class="w-6 h-6 text-white" />
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{
-                                $t('home.services.cloud.title') }}</h3>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
-                            $t('home.services.cloud.description') }}</p>
-                        <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-purple-500" />
-                                {{ $t('home.services.cloud.features.aws') }}
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-purple-500" />
-                                {{ $t('home.services.cloud.features.azure') }}
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-purple-500" />
-                                {{ $t('home.services.cloud.features.gcp') }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- IT Administration -->
-                <div
-                    class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 hover:shadow-lg transform flex flex-col">
-                    <div class="flex flex-col gap-4 flex-1">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                                <Icon name="mdi:server" class="w-6 h-6 text-white" />
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{
-                                $t('home.services.itadmin.title') }}</h3>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
-                            $t('home.services.itadmin.description') }}</p>
-                        <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-green-500" />
-                                {{ $t('home.services.itadmin.features.linux') }}
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-green-500" />
-                                {{ $t('home.services.itadmin.features.networks') }}
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 text-green-500" />
-                                {{ $t('home.services.itadmin.features.security') }}
+                            <li v-for="feature in service.features" :key="feature"
+                                class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                                <Icon name="mdi:check-circle" :class="`w-4 h-4 ${service.checkColor}`" />
+                                {{ $t(`home.services.${service.key}.features.${feature}`) }}
                             </li>
                         </ul>
                     </div>
@@ -419,32 +403,11 @@ const scrollToAbout = () => {
 
                         <!-- Key Features - Compact -->
                         <div class="grid grid-cols-2 gap-3">
-                            <div class="flex items-center gap-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
-                                <Icon name="mdi:brain"
-                                    class="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                            <div v-for="feature in featuredFeatures" :key="feature.key"
+                                :class="`flex items-center gap-3 p-3 ${feature.bgColor} rounded-xl`">
+                                <Icon :name="feature.icon" :class="`w-5 h-5 ${feature.iconColor} flex-shrink-0`" />
                                 <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    {{ $t('home.featured.features.ai.title') }}
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-xl">
-                                <Icon name="mdi:chat-processing"
-                                    class="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    {{ $t('home.featured.features.realtime.title') }}
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-                                <Icon name="mdi:palette"
-                                    class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    {{ $t('home.featured.features.ui.title') }}
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-xl">
-                                <Icon name="mdi:shield-check"
-                                    class="w-5 h-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    {{ $t('home.featured.features.security.title') }}
+                                    {{ $t(`home.featured.features.${feature.key}.title`) }}
                                 </span>
                             </div>
                         </div>
@@ -457,25 +420,11 @@ const scrollToAbout = () => {
                                 {{ $t('home.featured.techStack') }}
                             </h4>
                             <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
-                                    Vue.js 3
-                                </span>
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
-                                    Nuxt.js
-                                </span>
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
-                                    TypeScript
-                                </span>
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
-                                    OpenRouter.ai
-                                </span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-sm">
-                                    +2
+                                <span v-for="(tech, index) in techStack" :key="index"
+                                    :class="index === techStack.length - 1
+                                        ? 'px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-sm'
+                                        : 'px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium'">
+                                    {{ tech }}
                                 </span>
                             </div>
                         </div>
