@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
-// Define layout for hero page
 definePageMeta({
     layout: 'hero'
 })
@@ -28,20 +25,17 @@ useHead(() => ({
     ]
 }))
 
-// Get translated texts dynamically
 const texts = computed(() => [
     t('home.roles.fullstack'),
     t('home.roles.serveradmin'),
     t('home.roles.solver')
 ])
 
-// Smooth scroll to next section when clicking scroll indicator
 const scrollToAbout = () => {
     const aboutSection = document.querySelector('#about-section') as HTMLElement
     if (aboutSection) {
-        const elementPosition = aboutSection.offsetTop // Account for navbar height and extra padding
         window.scrollTo({
-            top: elementPosition,
+            top: aboutSection.offsetTop,
             behavior: 'smooth'
         })
     }
@@ -538,67 +532,5 @@ const scrollToAbout = () => {
 
 .animate-bounce {
     animation: scroll-bounce 2s infinite;
-}
-
-/* Floating animation for badges and elements */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    25% {
-        transform: translateY(-10px) rotate(2deg);
-    }
-
-    50% {
-        transform: translateY(-5px) rotate(-2deg);
-    }
-
-    75% {
-        transform: translateY(-12px) rotate(1deg);
-    }
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Slow pulse animation */
-@keyframes pulse-slow {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-}
-
-.animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
-}
-
-/* Gradient shift animation for background */
-@keyframes gradient-shift {
-
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-.animate-gradient-shift {
-    background-size: 200% 200%;
-    animation: gradient-shift 15s ease infinite;
 }
 </style>
