@@ -34,14 +34,27 @@ const calculateAge = (birthDate: string): number => {
 const currentAge = calculateAge('1999-08-03')
 const { getColorClasses } = useColorMapping()
 
+// Interactive states
+const hoveredExperience = ref<number | null>(null)
+const activeSection = ref<string>('intro')
+const selectedSkillCategory = ref<string>('all')
+
 // Modal state for work experience details
 const isModalOpen = ref(false)
-const selectedWorkItem = ref<typeof workTimeline[0] | null>(null)
+const selectedWorkItem = ref<typeof combinedTimeline[0] | null>(null)
 
-const openWorkDetails = (item: typeof workTimeline[0]) => {
+const openWorkDetails = (item: typeof combinedTimeline[0]) => {
     selectedWorkItem.value = item
     isModalOpen.value = true
 }
+
+// Skill categories for interactive filter
+const skillCategories = [
+    { id: 'all', label: 'All', icon: 'mdi:view-grid' },
+    { id: 'technical', label: 'Technical', icon: 'mdi:code-braces' },
+    { id: 'soft', label: 'Soft Skills', icon: 'mdi:account-group' },
+    { id: 'tools', label: 'Tools', icon: 'mdi:tools' }
+]
 
 const languages = [
     { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
@@ -95,32 +108,22 @@ const certifications = [
     }
 ]
 
-const education = [
-    {
-        year: '2021',
-        degree: t('about.education.bts.degree'),
-        field: t('about.education.bts.field'),
-        school: t('about.education.bts.school'),
-        grade: t('about.education.bts.grade'),
-        link: 'https://www.lgk.lu/bts/clc/',
-        icon: 'mdi:school-outline',
-        type: 'higher',
-        color: 'purple'
-    },
-    {
-        year: '2019',
-        degree: t('about.education.dap.degree'),
-        field: t('about.education.dap.field'),
-        school: t('about.education.dap.school'),
-        grade: t('about.education.dap.grade'),
-        link: 'https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap',
-        icon: 'mdi:school-outline',
-        type: 'technical',
-        color: 'orange'
-    }
-]
+interface TimelineItem {
+    year: string
+    title: string
+    description: string
+    icon: string
+    category: 'work' | 'education'
+    company?: string
+    type?: string
+    tasks?: string[]
+    school?: string
+    grade?: string
+    link?: string
+}
 
-const workTimeline = [
+// Combined timeline with work and education
+const combinedTimeline: TimelineItem[] = [
     {
         year: '2024',
         title: t('about.timelineItems.item1.title'),
@@ -133,7 +136,18 @@ const workTimeline = [
             t('about.timelineItems.item1.task3'),
             t('about.timelineItems.item1.task4')
         ],
-        icon: 'mdi:code-braces'
+        icon: 'mdi:code-braces',
+        category: 'work'
+    },
+    {
+        year: '2021',
+        title: t('about.education.bts.degree'),
+        description: t('about.education.bts.field'),
+        school: t('about.education.bts.school'),
+        grade: t('about.education.bts.grade'),
+        link: 'https://www.lgk.lu/bts/clc/',
+        icon: 'mdi:school-outline',
+        category: 'education'
     },
     {
         year: '2021',
@@ -149,7 +163,8 @@ const workTimeline = [
             t('about.timelineItems.item2.task5'),
             t('about.timelineItems.item2.task6')
         ],
-        icon: 'mdi:cloud'
+        icon: 'mdi:cloud',
+        category: 'work'
     },
     {
         year: '2020',
@@ -163,7 +178,18 @@ const workTimeline = [
             t('about.timelineItems.item3.task3'),
             t('about.timelineItems.item3.task4')
         ],
-        icon: 'mdi:wrench'
+        icon: 'mdi:wrench',
+        category: 'work'
+    },
+    {
+        year: '2019',
+        title: t('about.education.dap.degree'),
+        description: t('about.education.dap.field'),
+        school: t('about.education.dap.school'),
+        grade: t('about.education.dap.grade'),
+        link: 'https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap',
+        icon: 'mdi:school-outline',
+        category: 'education'
     },
     {
         year: '2019',
@@ -178,7 +204,8 @@ const workTimeline = [
             t('about.timelineItems.item4.task4'),
             t('about.timelineItems.item4.task5')
         ],
-        icon: 'mdi:web'
+        icon: 'mdi:web',
+        category: 'work'
     },
     {
         year: '2019',
@@ -193,7 +220,8 @@ const workTimeline = [
             t('about.timelineItems.item5.task4'),
             t('about.timelineItems.item5.task5')
         ],
-        icon: 'mdi:database'
+        icon: 'mdi:database',
+        category: 'work'
     },
     {
         year: '2016',
@@ -208,9 +236,12 @@ const workTimeline = [
             t('about.timelineItems.item6.task4'),
             t('about.timelineItems.item6.task5')
         ],
-        icon: 'mdi:network'
+        icon: 'mdi:network',
+        category: 'work'
     }
 ]
+
+const workTimeline = combinedTimeline.filter(item => item.category === 'work')
 
 const experiences = [
     {
@@ -235,223 +266,223 @@ const experiences = [
 </script>
 
 <template>
-    <!-- Hero Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
-            <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
-                {{ $t('about.hero.title') }}
-            </h1>
+    <!-- Immersive Hero with Floating Elements -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+        <!-- Animated gradient background -->
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+        </div>
 
-            <!-- Profile Introduction -->
-            <div class="max-w-4xl mx-auto">
-                <!-- About Me Card - Header + Story -->
-                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-md hover:shadow-lg">
-                    <div class="text-center">
-                        <div class="flex items-center justify-center flex-col sm:flex-row gap-4 mb-4">
-                            <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center shadow-md">
-                                <Icon name="mdi:account-heart" class="w-10 h-10 text-white" />
-                            </div>
-                            <div class="flex flex-col items-center sm:items-start">
-                                <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
-                                <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('about.profile.role') }}
-                                </p>
-                                <p class="text-gray-500 dark:text-gray-400">{{ $t('about.profile.currentWork') }}</p>
-                            </div>
-                        </div>
-
-                        <!-- Story Text -->
-                        <div class="mt-4 pt-6 border-t border-gray-200 dark:border-gray-600">
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                {{ $t('about.story.intro') }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div
+                class="absolute top-40 right-20 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-75">
+            </div>
+            <div
+                class="absolute bottom-20 left-1/4 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-150">
             </div>
         </div>
-    </section>
 
-    <!-- Personal Details Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
-                {{ $t('about.details.title') }}
-            </h2>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div
-                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Main intro with creative layout -->
+                <div class="space-y-8">
+                    <!-- Animated label -->
                     <div
-                        class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon name="mdi:map-marker" class="w-5 h-5 text-white" />
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('about.profile.role')
+                        }}</span>
                     </div>
-                    <div>
-                        <span class="text-sm text-gray-500 dark:text-gray-400 block">{{
-                            $t('about.profile.labels.location') }}</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                            $t('about.profile.location') }}</span>
-                    </div>
-                </div>
 
-                <div
-                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon name="mdi:flag" class="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <span class="text-sm text-gray-500 dark:text-gray-400 block">{{
-                            $t('about.profile.labels.nationality') }}</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                            $t('about.profile.nationality') }}</span>
-                    </div>
-                </div>
-
-                <div
-                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon name="mdi:cake-variant" class="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <span class="text-sm text-gray-500 dark:text-gray-400 block">{{
-                            $t('about.profile.labels.age') }}</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                            currentAge }} {{ $t('about.profile.labels.years') }}</span>
-                    </div>
-                </div>
-
-                <div
-                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon name="mdi:heart" class="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <span class="text-sm text-gray-500 dark:text-gray-400 block">{{
-                            $t('about.profile.labels.status') }}</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                            $t('about.profile.status') }}</span>
-                    </div>
-                </div>
-
-                <div
-                    class="group flex items-center gap-4 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-md hover:shadow-lg">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon name="mdi:car" class="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <span class="text-sm text-gray-500 dark:text-gray-400 block">{{
-                            $t('about.profile.labels.license') }}</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-200">{{
-                            $t('about.profile.driving') }}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interests & Hobbies Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
-                {{ $t('about.interests.title') }}
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md">
-                            <Icon name="mdi:heart" class="w-6 h-6 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{
-                            $t('about.passion.title') }}</h3>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
-                        $t('about.passion.description') }}</p>
-                </div>
-
-                <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md">
-                            <Icon name="mdi:puzzle" class="w-6 h-6 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{
-                            $t('about.hobbies.title') }}</h3>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
-                        $t('about.hobbies.description') }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Languages Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
-                $t('about.languages.title') }}</h2>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div v-for="lang in languages" :key="lang.name"
-                    class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <Icon :name="lang.flag" class="w-8 h-8" />
-                        <h3 class="text-lg font-bold">{{ lang.name }}</h3>
-                    </div>
-                    <div class="text-center">
-                        <span
-                            class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white font-bold text-lg rounded-full mb-2">
-                            {{ lang.level }}
-                        </span>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
-                            {{ $t(`about.languages.levels.${lang.level}`) }}
+                    <!-- Name -->
+                    <div class="space-y-4">
+                        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-gray-800 dark:text-white">
+                            Chad Feierstein
+                        </h1>
+                        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                            {{ $t('about.story.intro') }}
                         </p>
                     </div>
+
+                    <!-- Quick stats in creative card layout -->
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div
+                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                <Icon name="mdi:cake-variant" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{ currentAge }}
+                            </div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                $t('about.profile.labels.years') }}
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                <Icon name="mdi:briefcase" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                                workTimeline.length }}
+                            </div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
+                                }}</div>
+                        </div>
+
+                        <div
+                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                <Icon name="mdi:certificate" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                                certifications.length }}
+                            </div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                $t('about.certifications.title') }}
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                <Icon name="mdi:translate" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                                languages.length }}</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                $t('about.languages.title') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Personal info with modern bento-style layout -->
+                <div class="flex flex-col gap-3 sm:gap-4">
+                    <!-- Location -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:map-marker" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('about.profile.labels.location') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('about.profile.location') }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nationality -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:flag" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('about.profile.labels.nationality') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('about.profile.nationality') }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:heart" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('about.profile.labels.status') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('about.profile.status') }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Driving license -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:car" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('about.profile.labels.license') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('about.profile.driving') }}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
-                $t('about.education.title') }}</h2>
+    <!-- Languages with interactive cards -->
+    <section class="py-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 to-transparent dark:via-blue-900/10">
+        </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div v-for="(edu, index) in education" :key="edu.year"
-                    class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
-                    <div class="flex flex-col gap-4">
-                        <!-- Title, School and Year -->
-                        <div class="flex items-start justify-between gap-4">
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold mb-1">{{ edu.degree }}</h3>
-                                <p class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
-                                    <Icon name="mdi:school" class="w-5 h-5" />
-                                    {{ edu.school }}
-                                </p>
-                            </div>
-                            <!-- Year Badge -->
-                            <span
-                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium flex-shrink-0">
-                                {{ edu.year }}
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                    {{ $t('about.languages.title') }}
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">{{ $t('about.languages.subtitle') }}</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div v-for="(lang, index) in languages" :key="lang.name"
+                    class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <!-- Decorative corner -->
+
+                    <div class="relative space-y-4 sm:space-y-6">
+                        <!-- Flag with native indicator -->
+                        <div class="flex items-center justify-between">
+                            <Icon :name="lang.flag" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-md" />
+                            <span v-if="lang.native"
+                                class="px-2 py-1 sm:px-3 sm:py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full">
+                                Native
                             </span>
                         </div>
 
-                        <!-- Field and Grade -->
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            {{ edu.field }} <br /> {{ edu.grade }}
-                        </p>
+                        <!-- Language name -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">{{ lang.name }}</h3>
 
-                        <!-- View More Link -->
-                        <div v-if="edu.link" class="mt-auto ml-auto">
-                            <a :href="edu.link" target="_blank"
-                                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 shadow-md hover:shadow-lg">
-                                <Icon name="mdi:open-in-new" class="w-5 h-5" />
-                                {{ $t('about.education.viewMore') }}
-                            </a>
+                        <!-- Level with progress bar -->
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
+                                <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
+                                }}</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
+                                    :style="{ width: lang.level === 'C2' ? '100%' : lang.level === 'C1' ? '85%' : lang.level === 'B2' ? '70%' : '55%' }">
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">{{
+                                $t(`about.languages.levels.${lang.level}`) }}</p>
                         </div>
                     </div>
                 </div>
@@ -459,153 +490,189 @@ const experiences = [
         </div>
     </section>
 
-    <!-- Work Experience Timeline Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
-                $t('about.work.title') }}</h2>
+    <!-- Combined Work & Education Timeline -->
+    <section class="py-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
+        </div>
 
-            <div class="relative">
-                <!-- Timeline line - Desktop centered, Mobile left -->
-                <div
-                    class="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 w-1 bg-blue-600 dark:bg-blue-400 h-full">
-                </div>
-
-                <div class="flex flex-col gap-12">
-                    <div v-for="(item, index) in workTimeline" :key="item.year" :class="[
-                        'relative flex items-center',
-                        'justify-start md:justify-start',
-                        index % 2 === 1 ? 'md:justify-end' : ''
-                    ]">
-                        <!-- Timeline dot - Mobile left positioned, Desktop centered -->
-                        <div :class="[
-                            'absolute w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 z-20 flex items-center justify-center left-[2px]',
-                            'md:left-1/2 md:transform md:-translate-x-1/2'
-                        ]">
-                            <div class="w-2 h-2 bg-gray-50 dark:bg-gray-900 rounded-full"></div>
-                        </div>
-
-                        <!-- Connection line from timeline to card - Desktop only -->
-                        <div :class="[
-                            'absolute hidden md:block h-0.5 bg-blue-600 dark:bg-blue-400 z-10',
-                            index % 2 === 0 ? 'right-1/2' : 'left-1/2',
-                            'w-12'
-                        ]"></div>
-
-                        <!-- Content card - Mobile full width with left margin, Desktop alternating -->
-                        <div :class="[
-                            'p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg',
-                            'ml-8 w-full md:w-5/12 md:ml-0',
-                            index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
-                        ]">
-                            <div class="flex flex-col gap-4">
-                                <!-- Title, Company and Year -->
-                                <div class="flex items-start justify-between gap-4">
-                                    <div class="flex-1">
-                                        <h3 class="text-lg font-bold mb-1">{{ item.title }}</h3>
-                                        <p v-if="item.company"
-                                            class="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2">
-                                            <Icon name="mdi:office-building" class="w-5 h-5" />
-                                            {{ item.company }}
-                                        </p>
-                                    </div>
-                                    <!-- Year Badge -->
-                                    <span
-                                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium flex-shrink-0">
-                                        {{ item.year }}
-                                    </span>
-                                </div>
-
-                                <!-- Description -->
-                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{
-                                    item.description }}</p>
-
-                                <!-- Details Button -->
-                                <div class="mt-auto ml-auto">
-                                    <button @click="openWorkDetails(item)"
-                                        class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 shadow-md hover:shadow-lg">
-                                        <Icon name="mdi:information-outline" class="w-5 h-5" />
-                                        {{ $t('about.work.viewDetails') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                    {{ $t('about.work.journey') }}
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300">{{ $t('about.work.subtitle') }}</p>
             </div>
+
+            <Timeline :items="combinedTimeline" @open-details="openWorkDetails" />
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{
-                    $t('about.certifications.title') }}</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">
+    <section class="py-16 sm:py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                    {{ $t('about.certifications.title') }}
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                     {{ $t('about.certifications.subtitle') }}
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div v-for="(cert, index) in certifications" :key="cert.title"
-                    class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg">
-                    <div class="flex flex-col gap-4">
-                        <!-- Title and Year -->
-                        <div class="flex items-start justify-between gap-4">
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold mb-1">{{ cert.title }}</h3>
+                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+
+                    <div class="space-y-3 sm:space-y-4">
+                        <!-- Icon and year -->
+                        <div class="flex items-start justify-between">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg"
+                                :class="{
+                                    'bg-gradient-to-br from-blue-500 to-blue-600': index === 0,
+                                    'bg-gradient-to-br from-green-500 to-green-600': index === 1,
+                                    'bg-gradient-to-br from-purple-500 to-purple-600': index === 2,
+                                    'bg-gradient-to-br from-orange-500 to-orange-600': index === 3,
+                                    'bg-gradient-to-br from-red-500 to-red-600': index === 4,
+                                    'bg-gradient-to-br from-pink-500 to-pink-600': index === 5
+                                }">
+                                <Icon :name="cert.icon" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
-                            <!-- Year Badge -->
                             <span
-                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm rounded-full font-medium flex-shrink-0">
+                                class="px-2 py-1 sm:px-3 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm font-bold text-gray-700 dark:text-gray-300">
                                 {{ cert.year }}
                             </span>
                         </div>
 
+                        <!-- Title -->
+                        <h3 class="text-base sm:text-lg font-bold text-gray-800 dark:text-white line-clamp-2">{{
+                            cert.title }}</h3>
+
                         <!-- Description -->
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ cert.description }}</p>
+                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                            cert.description }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Special Experiences Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">{{
-                $t('about.experiences.title') }}</h2>
+    <!-- Interests & Passions - Magazine style -->
+    <section class="py-16 sm:py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-900">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/30 to-transparent dark:via-purple-900/10">
+        </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div v-for="experience in experiences" :key="experience.title"
-                    class="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg flex flex-col gap-4">
-                    <div :class="[
-                        'w-16 h-16 mx-auto rounded-full flex items-center justify-center',
-                        getColorClasses(experience.color).bg
-                    ]">
-                        <Icon :name="experience.icon" class="w-8 h-8 text-white" />
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                    {{ $t('about.interests.title') }}
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">{{
+                    $t('about.interests.subtitle') }}</p>
+            </div>
+
+            <!-- Passion & Hobbies in magazine layout -->
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                <!-- Large passion card -->
+                <div
+                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+
+                    <div class="relative space-y-4 sm:space-y-6">
+                        <div
+                            class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                            <Icon name="mdi:heart" class="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                            $t('about.passion.title') }}</h3>
+                        <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                            $t('about.passion.description')
+                            }}</p>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ experience.title }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300">{{ experience.description }}</p>
+                </div>
+
+                <!-- Hobbies card -->
+                <div
+                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="space-y-4 sm:space-y-6">
+                        <div
+                            class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                            <Icon name="mdi:puzzle" class="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">{{
+                            $t('about.hobbies.title') }}
+                        </h3>
+                        <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                            $t('about.hobbies.description')
+                            }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special experiences in card grid -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                <div v-for="(experience, index) in experiences" :key="experience.title"
+                    @mouseenter="hoveredExperience = index" @mouseleave="hoveredExperience = null"
+                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+
+                    <!-- Animated gradient background on hover -->
+                    <div class="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity"
+                        :class="{
+                            'from-blue-500 to-blue-600': experience.color === 'blue',
+                            'from-green-500 to-green-600': experience.color === 'green',
+                            'from-purple-500 to-purple-600': experience.color === 'purple'
+                        }">
+                    </div>
+
+                    <div class="relative space-y-3 sm:space-y-4">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-br transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300"
+                            :class="{
+                                'from-blue-500 to-blue-600': experience.color === 'blue',
+                                'from-green-500 to-green-600': experience.color === 'green',
+                                'from-purple-500 to-purple-600': experience.color === 'purple'
+                            }">
+                            <Icon :name="experience.icon" class="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-white text-center">{{
+                            experience.title }}
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed">{{
+                            experience.description }}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col gap-4 md:gap-6">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400">{{ $t('about.cta.title') }}
-            </h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300">
-                {{ $t('about.cta.subtitle') }}
-            </p>
-            <div class="flex justify-center">
+    <!-- CTA Section - Bold and modern -->
+    <section class="py-16 sm:py-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-950 dark:via-purple-950 dark:to-pink-950">
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 overflow-hidden opacity-10 dark:opacity-5">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-300 dark:bg-purple-700 rounded-full blur-3xl">
+            </div>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
+            <div class="space-y-3 sm:space-y-4">
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 dark:text-white">
+                    {{ $t('about.cta.title') }}
+                </h2>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                    {{ $t('about.cta.subtitle') }}
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <NuxtLinkLocale to="/contact"
-                    class="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 shadow-md hover:shadow-lg w-fit">
-                    {{ $t('about.cta.button') }}
-                    <Icon name="mdi:arrow-right" class="w-5 h-5" />
+                    class="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:scale-105 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <span>{{ $t('about.cta.button') }}</span>
+                    <Icon name="mdi:arrow-right"
+                        class="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform" />
                 </NuxtLinkLocale>
             </div>
         </div>
@@ -682,3 +749,72 @@ const experiences = [
         </div>
     </UiModal>
 </template>
+
+<style scoped>
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.delay-75 {
+    animation-delay: 0.75s;
+}
+
+.delay-150 {
+    animation-delay: 1.5s;
+}
+
+/* Smooth hover transitions */
+.group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+}
+
+.group:hover .group-hover\:rotate-6 {
+    transform: rotate(6deg);
+}
+
+/* Text gradient animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.animate-shimmer {
+    background: linear-gradient(to right, #4F46E5 0%, #7C3AED 50%, #EC4899 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+</style>

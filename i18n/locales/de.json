@@ -168,7 +168,7 @@
       "city": "Rümelingen",
       "country": "Luxemburg",
       "status": "Single",
-      "driving": "Führerschein Kategorie B",
+      "driving": "Kategorie B",
       "role": "Full-Stack Developer & IT-Techniker",
       "currentWork": "Derzeit beschäftigt bei Rotyre SARL",
       "labels": {
@@ -187,7 +187,8 @@
       "title": "Persönliche Details"
     },
     "interests": {
-      "title": "Interessen & Hobbys"
+      "title": "Interessen & Hobbys",
+      "subtitle": "Was mich in meiner Freizeit begeistert"
     },
     "passion": {
       "title": "Leidenschaft für Technologie",
@@ -199,6 +200,7 @@
     },
     "languages": {
       "title": "Sprachen",
+      "subtitle": "Mehrsprachige Kommunikation",
       "levels": {
         "A1": "Grundkenntnisse",
         "A2": "Grundlegende Kenntnisse",
@@ -226,6 +228,8 @@
     },
     "work": {
       "title": "Berufserfahrung",
+      "subtitle": "Berufserfahrung & Bildungsverlauf",
+      "journey": "Meine berufliche Laufbahn",
       "viewDetails": "Details anzeigen",
       "modal": {
         "description": "Beschreibung",

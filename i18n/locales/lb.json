@@ -168,7 +168,7 @@
       "city": "Rëmeleng",
       "country": "Lëtzebuerg",
       "status": "Single",
-      "driving": "Führerschäin Kategorie B",
+      "driving": "Kategorie B",
       "role": "Full-Stack Developer & IT-Techniker",
       "currentWork": "Aktuell beschäftegt bei Rotyre SARL",
       "labels": {
@@ -187,7 +187,8 @@
       "title": "Perséinlech Detailer"
     },
     "interests": {
-      "title": "Interessen & Hobbyen"
+      "title": "Interessen & Hobbyen",
+      "subtitle": "Wat mech a menger Fräizäit begeeschtert"
     },
     "passion": {
       "title": "Passioun fir Technologie",
@@ -199,6 +200,7 @@
     },
     "languages": {
       "title": "Sproochen",
+      "subtitle": "Méisproocheg Kommunikatioun",
       "levels": {
         "A1": "Grondkenntnisser",
         "A2": "Grondleeënd Kenntnisser",
@@ -226,6 +228,8 @@
     },
     "work": {
       "title": "Beruffserfahrung",
+      "subtitle": "Beruffserfahrung & Bildungsverlaf",
+      "journey": "Meng berufflech Laafbahn",
       "viewDetails": "Detailer weisen",
       "modal": {
         "description": "Beschreiwung",
