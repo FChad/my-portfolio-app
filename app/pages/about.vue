@@ -681,66 +681,85 @@ const experiences = [
     <!-- Work Experience Details Modal -->
     <UiModal v-model="isModalOpen" max-width="2xl">
         <template #header>
-            <div v-if="selectedWorkItem" class="flex flex-col gap-1 w-full">
-                <!-- Title and Company -->
-                <h3 class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+            <div v-if="selectedWorkItem" class="flex flex-col gap-2 w-full">
+                <!-- Title -->
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 dark:text-white leading-tight">
                     {{ selectedWorkItem.title }}
                 </h3>
+                <!-- Company with icon -->
+                <div v-if="selectedWorkItem.company" class="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                    <Icon name="mdi:office-building" class="w-5 h-5" />
+                    <span class="text-base sm:text-lg font-semibold">{{ selectedWorkItem.company }}</span>
+                </div>
             </div>
         </template>
 
-        <div v-if="selectedWorkItem" class="flex flex-col gap-6">
-            <!-- Company, Type and Year Badges -->
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-                <!-- Company Badge -->
-                <div v-if="selectedWorkItem.company"
-                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg sm:rounded-xl border border-blue-200 dark:border-blue-700/50">
-                    <Icon name="mdi:office-building" class="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                    <span class="text-blue-900 dark:text-blue-200 font-semibold text-base">{{
-                        selectedWorkItem.company }}</span>
-                </div>
+        <div v-if="selectedWorkItem" class="flex flex-col gap-5 sm:gap-6">
+            <!-- Info Badges in modern card style -->
+            <div class="flex flex-wrap items-center gap-3">
                 <!-- Type Badge -->
                 <div v-if="selectedWorkItem.type"
-                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg sm:rounded-xl border border-purple-200 dark:border-purple-700/50">
-                    <Icon name="mdi:briefcase" class="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                    <span class="text-purple-900 dark:text-purple-200 font-semibold text-base">{{
+                    class="group relative inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border-2 border-purple-200 dark:border-purple-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:shadow-lg hover:scale-105">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-800/50 flex items-center justify-center group-hover:rotate-6 transition-transform">
+                        <Icon name="mdi:briefcase" class="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <span class="text-purple-900 dark:text-purple-200 font-bold text-sm sm:text-base">{{
                         selectedWorkItem.type }}</span>
                 </div>
+
                 <!-- Year Badge -->
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-green-50 dark:bg-green-900/30 rounded-lg sm:rounded-xl border border-green-200 dark:border-green-700/50">
-                    <Icon name="mdi:calendar" class="w-4 h-4 text-green-600 dark:text-green-400" />
-                    <span class="text-green-900 dark:text-green-200 font-bold text-base">{{
+                    class="group relative inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl border-2 border-green-200 dark:border-green-700/50 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 hover:shadow-lg hover:scale-105">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-800/50 flex items-center justify-center group-hover:rotate-6 transition-transform">
+                        <Icon name="mdi:calendar" class="w-4 h-4 text-green-600 dark:text-green-400" />
+                    </div>
+                    <span class="text-green-900 dark:text-green-200 font-bold text-sm sm:text-base">{{
                         selectedWorkItem.year }}</span>
                 </div>
             </div>
 
-            <!-- Description Section -->
+            <!-- Description Section in modern card -->
             <div
-                class="flex flex-col gap-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-gray-700">
-                <h4 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">
-                    {{ $t('about.work.modal.description') }}
-                </h4>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+                class="group relative bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                        <Icon name="mdi:text-box-outline" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h4 class="text-lg sm:text-xl font-black text-gray-900 dark:text-white">
+                        {{ $t('about.work.modal.description') }}
+                    </h4>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base ml-13">
                     {{ selectedWorkItem.description }}
                 </p>
             </div>
 
-            <!-- Tasks Section -->
+            <!-- Tasks Section in modern card with enhanced styling -->
             <div v-if="selectedWorkItem.tasks && selectedWorkItem.tasks.length > 0"
-                class="flex flex-col gap-3 bg-white dark:bg-gray-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-gray-700">
-                <h4 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">
-                    {{ $t('about.work.modal.tasks') }}
-                </h4>
+                class="group relative bg-gradient-to-br from-white to-blue-50/30 dark:from-gray-800/50 dark:to-blue-900/10 rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                        <Icon name="mdi:format-list-checks" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h4 class="text-lg sm:text-xl font-black text-gray-900 dark:text-white">
+                        {{ $t('about.work.modal.tasks') }}
+                    </h4>
+                </div>
                 <ul class="flex flex-col gap-2">
                     <li v-for="(task, taskIndex) in selectedWorkItem.tasks" :key="taskIndex"
-                        class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                        <!-- Number Badge -->
-                        <span class="text-blue-600 dark:text-blue-400 font-semibold flex-shrink-0">
-                            {{ taskIndex + 1 }}.
-                        </span>
+                        class="group/item flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 dark:hover:bg-gray-700/30 transition-all duration-200">
+                        <!-- Number Badge with modern styling -->
+                        <div
+                            class="flex-shrink-0 w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
+                            <span class="text-white font-bold text-xs sm:text-sm">
+                                {{ taskIndex + 1 }}
+                            </span>
+                        </div>
                         <!-- Task Text -->
-                        <span class="flex-1 text-sm sm:text-base">
+                        <span
+                            class="flex-1 text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed pt-0.5">
                             {{ task }}
                         </span>
                     </li>
