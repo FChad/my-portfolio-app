@@ -136,59 +136,83 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
 </script>
 
 <template>
-    <div class="h-32 flex items-center justify-center" role="region" aria-label="Dynamic text display">
-        <div
-            class="bg-white/80 dark:bg-gray-800/80 border border-gray-300/80 dark:border-gray-700/80 rounded-lg p-4 shadow-md font-mono text-left max-w-2xl w-full backdrop-blur-sm hover:shadow-lg">
-            <!-- Terminal Header -->
-            <div class="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200/70 dark:border-gray-700/70">
-                <div class="flex gap-2" role="presentation">
-                    <div class="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600" title="Close"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-600" title="Minimize"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full hover:bg-green-600" title="Maximize"></div>
-                </div>
-                <span class="text-gray-600 dark:text-gray-400 text-sm ml-4">{{ terminalPrompt }}</span>
-            </div>
+    <div class="h-24 flex items-center justify-center" role="region" aria-label="Dynamic text display">
+        <!-- Creative text with gradient and animated cursor -->
+        <div class="flex items-center text-2xl md:text-3xl lg:text-4xl font-bold relative">
+            <!-- Gradient text with subtle glow -->
+            <span
+                class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent animate-gradient-shift"
+                role="status" aria-live="polite" style="background-size: 200% 200%;">
+                {{ typingText }}
+            </span>
 
-            <!-- Terminal Content -->
-            <div class="text-blue-600 dark:text-green-400 text-lg md:text-xl flex items-center min-h-[1.5rem]">
-                <span class="text-gray-700 dark:text-gray-300 mr-2">{{ command }}</span>
-                <span class="text-orange-600 dark:text-orange-400">"</span>
-                <span class="text-blue-600 dark:text-blue-300 font-medium" role="status" aria-live="polite">{{
-                    typingText }}</span>
-                <span class="w-2 h-5 ml-1 inline-block rounded-sm"
-                    :class="isActive ? 'bg-blue-600 dark:bg-blue-300 animate-typing-cursor' : 'bg-transparent'"
-                    aria-hidden="true"></span>
-                <span class="text-orange-600 dark:text-orange-400">"</span>
-            </div>
+            <!-- Animated cursor with glow effect -->
+            <span class="w-1 h-8 md:h-10 lg:h-12 ml-1 inline-block rounded-sm relative"
+                :class="isActive ? 'bg-gradient-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-400 animate-typing-cursor-pulse' : 'bg-transparent'"
+                aria-hidden="true">
+                <!-- Glow effect behind cursor -->
+                <span v-if="isActive"
+                    class="absolute inset-0 bg-gradient-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-400 blur-sm animate-cursor-glow"></span>
+            </span>
         </div>
     </div>
 </template>
 
 <style scoped>
-/* Custom cursor animation - smooth fade between 100% and 20% */
-@keyframes typing-cursor {
+/* Gradient animation for text */
+@keyframes gradient-shift {
     0% {
-        opacity: 1;
-    }
-
-    25% {
-        opacity: 0.2;
+        background-position: 0% 50%;
     }
 
     50% {
-        opacity: 0.2;
-    }
-
-    75% {
-        opacity: 1;
+        background-position: 100% 50%;
     }
 
     100% {
-        opacity: 1;
+        background-position: 0% 50%;
     }
 }
 
-.animate-typing-cursor {
-    animation: typing-cursor 2s infinite;
+.animate-gradient-shift {
+    animation: gradient-shift 8s ease infinite;
+}
+
+/* Enhanced cursor animation with pulsing effect */
+@keyframes typing-cursor-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scaleY(0.95);
+    }
+}
+
+.animate-typing-cursor-pulse {
+    animation: typing-cursor-pulse 1.2s ease-in-out infinite;
+}
+
+/* Glow animation for cursor */
+@keyframes cursor-glow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+.animate-cursor-glow {
+    animation: cursor-glow 1.2s ease-in-out infinite;
 }
 </style>

@@ -162,16 +162,16 @@ const techStack = computed(() => [
         <div class="absolute inset-0">
             <!-- Dynamic Gradient Background - Light/Dark Mode -->
             <div
-                class="absolute inset-0 bg-gradient-radial from-gray-50 via-gray-100 to-gray-300 dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950 ">
+                class="absolute inset-0 bg-gradient-radial from-blue-50 via-blue-100/70 to-blue-200/50 dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950">
             </div>
 
             <!-- Animated Stars Canvas -->
             <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
-                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity " />
+                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
 
             <!-- Adaptive overlay for text readability -->
             <div
-                class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-white/30 dark:from-transparent dark:via-transparent dark:to-gray-900/20 ">
+                class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-blue-50/30 dark:from-transparent dark:via-transparent dark:to-gray-900/20">
             </div>
         </div>
 
@@ -179,49 +179,60 @@ const techStack = computed(() => [
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-16 lg:pb-10">
             <div class="text-center space-y-8">
                 <!-- Main Headline with Enhanced Typography -->
-                <div class="space-y-4 mt-16">
+                <div class="space-y-6 mt-16 animate-fade-in">
+                    <!-- Greeting with subtle animation -->
                     <div class="space-y-2">
-                        <p class="text-2xl font-medium tracking-wide uppercase text-blue-600 dark:text-blue-300">
-                            {{ $t('home.greeting') }}</p>
-                        <h1 class="text-6xl md:text-8xl font-black leading-tight">
+                        <p class="text-2xl font-medium tracking-wide uppercase animate-slide-down opacity-0"
+                            style="animation-delay: 0.2s; animation-fill-mode: forwards;">
                             <span
-                                class="uppercase block text-gray-800 dark:text-white drop-shadow-sm dark:drop-shadow-lg">
+                                class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                                {{ $t('home.greeting') }}
+                            </span>
+                        </p>
+
+                        <!-- Name with gradient and shadow -->
+                        <h1 class="text-6xl md:text-8xl font-black leading-tight animate-slide-up opacity-0"
+                            style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+                            <span
+                                class="uppercase block bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 dark:from-white dark:via-gray-100 dark:to-gray-300 bg-clip-text text-transparent drop-shadow-2xl">
                                 Chad<br />Feierstein
                             </span>
                         </h1>
                     </div>
 
-                    <!-- Enhanced Typing Effect - Linux Shell Style -->
-                    <TypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50" :pause-duration="2000"
-                        terminal-user="chad" terminal-host="portfolio" command="echo" />
+                    <!-- Creative Typing Effect with gradient cursor -->
+                    <div class="animate-fade-in opacity-0"
+                        style="animation-delay: 0.6s; animation-fill-mode: forwards;">
+                        <TypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50" :pause-duration="2000" />
+                    </div>
                 </div>
 
-                <!-- Value Proposition -->
-                <div class="max-w-3xl mx-auto">
-                    <p
-                        class="text-xl md:text-2xl leading-relaxed text-gray-600 dark:text-gray-200 drop-shadow-sm dark:drop-shadow-md">
+                <!-- Value Proposition with animation -->
+                <div class="max-w-3xl mx-auto animate-fade-in opacity-0"
+                    style="animation-delay: 0.8s; animation-fill-mode: forwards;">
+                    <p class="text-xl md:text-2xl leading-relaxed text-gray-700 dark:text-gray-200 drop-shadow-sm">
                         {{ $t('home.tagline') }}
                     </p>
                 </div>
 
-                <!-- Enhanced CTA Section -->
-                <div class="pt-8">
+                <!-- Enhanced CTA Section with hover effects -->
+                <div class="pt-8 animate-fade-in opacity-0" style="animation-delay: 1s; animation-fill-mode: forwards;">
                     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                         <!-- Primary CTA -->
                         <NuxtLinkLocale to="/showcase"
-                            class="group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-md hover:bg-blue-700 hover:shadow-lg inline-flex items-center">
-                            <span class="relative z-10 flex items-center gap-3">
-                                <Icon name="mdi:eye" class="w-6 h-6" />
+                            class="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center transform hover:scale-105">
+                            <span class="flex items-center gap-3">
+                                <Icon name="mdi:eye" class="w-6 h-6 group-hover:scale-110 transition-transform" />
                                 {{ $t('home.cta.primary') }}
                             </span>
                         </NuxtLinkLocale>
 
                         <!-- Secondary CTA -->
                         <NuxtLinkLocale to="/contact"
-                            class="group relative px-10 py-5 border-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-2xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 shadow-md hover:shadow-lg inline-flex items-center">
+                            class="group px-10 py-5 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center transform hover:scale-105">
                             <span class="flex items-center gap-3">
                                 {{ $t('home.cta.secondary') }}
-                                <Icon name="mdi:chat" class="w-6 h-6 transition-transform" />
+                                <Icon name="mdi:chat" class="w-6 h-6 group-hover:scale-110 transition-transform" />
                             </span>
                         </NuxtLinkLocale>
                     </div>
@@ -229,16 +240,22 @@ const techStack = computed(() => [
             </div>
         </div>
 
-        <!-- Scroll Down Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <!-- Scroll Down Indicator with pulse animation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 animate-fade-in opacity-0"
+            style="animation-delay: 1.2s; animation-fill-mode: forwards;">
             <div class="flex flex-col items-center animate-bounce">
                 <div class="relative flex justify-center items-center w-[50px] h-[50px] 
                             border-2 border-blue-500/30 dark:border-blue-400/40 
                             rounded-full bg-white/10 dark:bg-gray-900/20 
                             backdrop-blur-[10px] cursor-pointer
                             hover:-translate-y-0.5 hover:border-blue-500/60 hover:bg-blue-500/10
-                            dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10" @click="scrollToAbout">
-                    <Icon name="mdi:chevron-down" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                            dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10
+                            transition-all duration-300 group" @click="scrollToAbout">
+                    <Icon name="mdi:chevron-down"
+                        class="w-8 h-8 text-blue-600 dark:text-blue-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" />
+                    <!-- Pulse ring effect -->
+                    <span
+                        class="absolute inset-0 rounded-full border-2 border-blue-500/50 dark:border-blue-400/50 animate-ping"></span>
                 </div>
             </div>
         </div>
@@ -450,6 +467,53 @@ const techStack = computed(() => [
 /* Custom Gradient for Hero Background */
 .bg-gradient-radial {
     background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
+/* Hero entrance animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+}
+
+.animate-slide-down {
+    animation: slide-down 0.8s ease-out;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.8s ease-out;
 }
 
 /* Enhanced bounce animation for scroll indicator */
