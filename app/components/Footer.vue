@@ -91,8 +91,8 @@ const scrollToTop = () => {
                             <span>Source Code</span>
                         </a>
                         <span class="text-base text-gray-600 dark:text-gray-400 flex items-center gap-1">
-                            <Icon name="mdi:nuxt" class="w-5 h-5" />
-                            <span>Nuxt 4</span>
+                            <Icon name="simple-icons:cloudflare" class="w-5 h-5" />
+                            <span>Cloudflare</span>
                         </span>
                     </div>
                 </div>
