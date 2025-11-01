@@ -159,18 +159,12 @@
     }
   },
   "about": {
-    "hero": {
-      "title": "About Me"
-    },
     "profile": {
       "nationality": "Luxembourgish",
       "location": "Rümelingen, Luxembourg",
-      "city": "Rümelingen",
-      "country": "Luxembourg",
       "status": "Single",
       "driving": "Category B",
       "role": "Full-Stack Developer & IT Technician",
-      "currentWork": "Currently employed at Rotyre SARL",
       "labels": {
         "location": "Location",
         "nationality": "Nationality",
@@ -182,9 +176,6 @@
     },
     "story": {
       "intro": "I am Chad Feierstein, a Full-Stack Web Developer and IT Administrator specializing in Cloud Computing. My passion lies in developing modern web applications and server management. With my education as an IT technician and a degree in Cloud Computing, I combine solid knowledge with practical experience to implement efficient and customized solutions."
-    },
-    "details": {
-      "title": "Personal Details"
     },
     "interests": {
       "title": "Interests & Hobbies",
@@ -212,7 +203,6 @@
     },
     "education": {
       "title": "Education",
-      "viewMore": "Learn more",
       "bts": {
         "degree": "Higher Technical Degree (BTS)",
         "field": "Specialization: Cloud Computing",
@@ -239,9 +229,6 @@
     "certifications": {
       "title": "Certifications",
       "subtitle": "Professional certifications and qualifications that demonstrate my expertise in various technology areas"
-    },
-    "experiences": {
-      "title": "Special Experiences"
     },
     "cta": {
       "title": "Let's Work Together",

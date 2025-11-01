@@ -159,18 +159,12 @@
     }
   },
   "about": {
-    "hero": {
-      "title": "Iwwer mech"
-    },
     "profile": {
       "nationality": "Lëtzebuergesch",
       "location": "Rëmeleng, Lëtzebuerg",
-      "city": "Rëmeleng",
-      "country": "Lëtzebuerg",
       "status": "Single",
       "driving": "Kategorie B",
       "role": "Full-Stack Developer & IT-Techniker",
-      "currentWork": "Aktuell beschäftegt bei Rotyre SARL",
       "labels": {
         "location": "Standort",
         "nationality": "Nationalitéit",
@@ -182,9 +176,6 @@
     },
     "story": {
       "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
-    },
-    "details": {
-      "title": "Perséinlech Detailer"
     },
     "interests": {
       "title": "Interessen & Hobbyen",
@@ -212,7 +203,6 @@
     },
     "education": {
       "title": "Bildung",
-      "viewMore": "Méi erfahren",
       "bts": {
         "degree": "Héijen techneschen Ofschloss (BTS)",
         "field": "Fachrichtung: Cloud Computing",
@@ -239,9 +229,6 @@
     "certifications": {
       "title": "Zertifizéierungen",
       "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen"
-    },
-    "experiences": {
-      "title": "Besonner Erliefnesser"
     },
     "cta": {
       "title": "Loosst eis zesummenarbechten",
