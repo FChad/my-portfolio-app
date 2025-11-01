@@ -249,7 +249,7 @@ const experiences = [
         description: t('about.experiencesList.exp1.description'),
         icon: 'mdi:helicopter',
         color: 'blue',
-        image: 'helicopter.png',
+        image: 'helicopter.webp',
         alt: 'Chad Feierstein helicopter flight over Dominican Republic city and Caribbean Sea'
     },
     {
@@ -257,7 +257,7 @@ const experiences = [
         description: t('about.experiencesList.exp2.description'),
         icon: 'mdi:parachute',
         color: 'green',
-        image: 'skydiving.jpg',
+        image: 'skydiving.webp',
         alt: 'Chad Feierstein skydiving over Luxembourg from 4000 meters altitude'
     },
     {
@@ -265,7 +265,7 @@ const experiences = [
         description: t('about.experiencesList.exp3.description'),
         icon: 'mdi:music-note',
         color: 'purple',
-        image: 'tomorrowland2025.jpg',
+        image: 'tomorrowland2025.webp',
         alt: 'Chad Feierstein at Tomorrowland Belgium 2025 electronic music festival'
     }
 ]
@@ -623,9 +623,9 @@ const experiences = [
 
                     <!-- Background Image with Overlay -->
                     <div class="absolute inset-0">
-                        <NuxtImg :src="`/img/about/${experience.image}`" :alt="experience.alt"
+                        <img :src="`/img/about/${experience.image}`" :alt="experience.alt"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            loading="lazy" sizes="sm:100vw md:50vw lg:33vw" quality="80" format="webp" />
+                            loading="lazy" />
                         <!-- Dark overlay for better text readability -->
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/70 group-hover:via-black/40 group-hover:to-black/20 transition-all duration-300">
