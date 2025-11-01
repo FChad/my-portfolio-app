@@ -91,7 +91,7 @@ const scrollToTop = () => {
                             <span>Source Code</span>
                         </a>
                         <span class="text-base text-gray-600 dark:text-gray-400 flex items-center gap-1">
-                            <Icon name="simple-icons:cloudflare" class="w-5 h-5" />
+                            <Icon name="mdi:cloud" class="w-5 h-5" />
                             <span>Cloudflare</span>
                         </span>
                     </div>
