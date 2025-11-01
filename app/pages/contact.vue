@@ -203,215 +203,221 @@ definePageMeta({
 </script>
 
 <template>
-    <!-- Hero Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
-                {{ $t('contact.title') }}
-            </h1>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg text-center max-w-4xl mx-auto">
-                {{ $t('contact.subtitle') }}
-            </p>
+    <!-- Single Compact Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20">
+        <!-- Animated gradient background -->
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
-    </section>
 
-    <!-- Contact Methods Section -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
-                {{ $t('contact.methods.title') || 'Kontaktmöglichkeiten' }}
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div v-for="method in contactMethods" :key="method.titleKey"
-                    class="group bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-md hover:shadow-lg">
-
-                    <!-- External links -->
-                    <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
-                        <div class="flex flex-col items-center gap-4 text-center">
-                            <!-- Icon Container -->
-                            <div :class="[
-                                'w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 shadow-lg',
-                                method.color
-                            ]">
-                                <Icon :name="method.icon" class="w-8 h-8 text-white" />
-                            </div>
-
-                            <!-- Content -->
-                            <div class="flex flex-col gap-2">
-                                <h3
-                                    class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
-                                    {{ $t(method.titleKey) }}
-                                    <Icon name="mdi:external-link"
-                                        class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
-                                </h3>
-                                <p class="text-gray-600 dark:text-gray-300">
-                                    {{ $t(method.descriptionKey) }}
-                                </p>
-                            </div>
-                        </div>
-                    </NuxtLink>
-
-                    <!-- Internal scroll action (Email) -->
-                    <button v-else @click="scrollToContactForm" class="block w-full">
-                        <div class="flex flex-col items-center gap-4 text-center">
-                            <!-- Icon Container -->
-                            <div :class="[
-                                'w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 shadow-lg',
-                                method.color
-                            ]">
-                                <Icon :name="method.icon" class="w-8 h-8 text-white" />
-                            </div>
-
-                            <!-- Content -->
-                            <div class="flex flex-col gap-2">
-                                <h3
-                                    class="font-bold text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
-                                    {{ $t(method.titleKey) }}
-                                    <Icon name="mdi:arrow-down"
-                                        class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
-                                </h3>
-                                <p class="text-gray-600 dark:text-gray-300">
-                                    {{ $t(method.descriptionKey) }}
-                                </p>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact-form" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
-            <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-md hover:shadow-lg">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center mb-8">
-                    {{ $t('contact.form.title') }}
-                </h2>
-                <!-- Success Message -->
-                <div v-if="isSubmitted"
-                    class="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
-                    <div class="flex items-center gap-3">
-                        <Icon name="mdi:check-circle" class="w-6 h-6 text-green-500" />
-                        <p class="text-green-800 dark:text-green-200 font-medium">
-                            {{ $t('contact.form.success') }}
-                        </p>
-                    </div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="space-y-8 md:space-y-12">
+                <!-- Header -->
+                <div class="text-center space-y-4">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-800 dark:text-white">
+                        {{ $t('contact.title') }}
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        {{ $t('contact.subtitle') }}
+                    </p>
                 </div>
 
-                <!-- Error Message -->
-                <div v-if="submitError"
-                    class="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
-                    <div class="flex items-center gap-3">
-                        <Icon name="mdi:alert-circle" class="w-6 h-6 text-red-500" />
-                        <p class="text-red-800 dark:text-red-200 font-medium">
-                            {{ submitError }}
-                        </p>
-                    </div>
-                </div>
+                <!-- Contact Methods Grid -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <div v-for="method in contactMethods" :key="method.titleKey"
+                        class="group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
 
-                <div class="text-center mb-6">
-                    <p class="text-gray-600 dark:text-gray-300 text-lg">{{ $t('contact.form.description') }}</p>
-                </div>
+                        <!-- External links -->
+                        <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
+                            <div class="flex flex-col items-center gap-3 md:gap-4 text-center">
+                                <!-- Icon Container -->
+                                <div :class="[
+                                    'w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg',
+                                    method.color
+                                ]">
+                                    <Icon :name="method.icon" class="w-7 h-7 md:w-8 md:h-8 text-white" />
+                                </div>
 
-                <form @submit.prevent="submitForm" class="flex flex-col gap-6">
-                    <!-- Name and Email Fields -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Name Field -->
-                        <div class="flex flex-col gap-2">
-                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                {{ $t('contact.form.name') }} *
-                            </label>
-                            <input v-model="form.name" type="text" id="name" :class="[
-                                'w-full px-4 py-3 rounded-xl border',
-                                errors.name
-                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                    : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                            ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                                :placeholder="$t('contact.form.namePlaceholder')" />
-                            <p v-if="errors.name" class="text-sm text-red-600 dark:text-red-400">
-                                {{ errors.name }}
-                            </p>
-                        </div>
+                                <!-- Content -->
+                                <div class="flex flex-col gap-1 md:gap-2">
+                                    <h3
+                                        class="font-black text-lg md:text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                                        {{ $t(method.titleKey) }}
+                                        <Icon name="mdi:external-link"
+                                            class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                    </h3>
+                                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                                        {{ $t(method.descriptionKey) }}
+                                    </p>
+                                </div>
+                            </div>
+                        </NuxtLink>
 
-                        <!-- Email Field -->
-                        <div class="flex flex-col gap-2">
-                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                {{ $t('contact.form.email') }} *
-                            </label>
-                            <input v-model="form.email" type="email" id="email" :class="[
-                                'w-full px-4 py-3 rounded-xl border',
-                                errors.email
-                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                    : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                            ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                                placeholder="your@email.com" />
-                            <p v-if="errors.email" class="text-sm text-red-600 dark:text-red-400">
-                                {{ errors.email }}
-                            </p>
-                        </div>
-                    </div>
+                        <!-- Internal scroll action (Email) -->
+                        <button v-else @click="scrollToContactForm" class="block w-full">
+                            <div class="flex flex-col items-center gap-3 md:gap-4 text-center">
+                                <!-- Icon Container -->
+                                <div :class="[
+                                    'w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg',
+                                    method.color
+                                ]">
+                                    <Icon :name="method.icon" class="w-7 h-7 md:w-8 md:h-8 text-white" />
+                                </div>
 
-                    <!-- Subject Field -->
-                    <div class="flex flex-col gap-2">
-                        <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            {{ $t('contact.form.subject') }} *
-                        </label>
-                        <input v-model="form.subject" type="text" id="subject" :class="[
-                            'w-full px-4 py-3 rounded-xl border',
-                            errors.subject
-                                ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                        ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                            :placeholder="$t('contact.form.subjectPlaceholder')" />
-                        <p v-if="errors.subject" class="text-sm text-red-600 dark:text-red-400">
-                            {{ errors.subject }}
-                        </p>
-                    </div>
-
-                    <!-- Message Field -->
-                    <div class="flex flex-col gap-2">
-                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            {{ $t('contact.form.message') }} *
-                        </label>
-                        <textarea v-model="form.message" id="message" rows="6" :class="[
-                            'w-full px-4 py-3 rounded-xl border resize-none',
-                            errors.message
-                                ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                        ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                            :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
-                        <p v-if="errors.message" class="text-sm text-red-600 dark:text-red-400">
-                            {{ errors.message }}
-                        </p>
-                    </div>
-
-                    <!-- Turnstile Widget -->
-                    <div v-if="runtimeConfig.public.turnstileSiteKey">
-                        <TurnstileWidget v-model="turnstileToken" :site-key="runtimeConfig.public.turnstileSiteKey"
-                            @verified="onTurnstileVerified" @expired="onTurnstileExpired" @error="onTurnstileError"
-                            ref="turnstileRef" />
-                        <p v-if="showTurnstileError || errors.turnstile"
-                            class="text-sm text-red-600 dark:text-red-400 text-center mt-2">
-                            {{ errors.turnstile }}
-                        </p>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="flex justify-center">
-                        <button type="submit" :disabled="isSubmitting" :class="[
-                            'px-8 py-4 rounded-xl font-semibold flex items-center gap-3',
-                            isSubmitting
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl'
-                        ]" class="text-white">
-                            <Icon v-if="isSubmitting" name="mdi:refresh" class="w-5 h-5 animate-spin" />
-                            <Icon v-else name="mdi:send" class="w-5 h-5" />
-                            {{ isSubmitting ? $t('contact.form.sending') : $t('contact.form.submit') }}
+                                <!-- Content -->
+                                <div class="flex flex-col gap-1 md:gap-2">
+                                    <h3
+                                        class="font-black text-lg md:text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                                        {{ $t(method.titleKey) }}
+                                        <Icon name="mdi:arrow-down"
+                                            class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                    </h3>
+                                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                                        {{ $t(method.descriptionKey) }}
+                                    </p>
+                                </div>
+                            </div>
                         </button>
                     </div>
-                </form>
+                </div>
+
+                <!-- Contact Form -->
+                <div id="contact-form"
+                    class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <h2
+                        class="text-2xl sm:text-3xl md:text-4xl font-black text-gray-800 dark:text-white text-center mb-6 md:mb-8">
+                        {{ $t('contact.form.title') }}
+                    </h2>
+                    <!-- Success Message -->
+                    <div v-if="isSubmitted"
+                        class="mb-4 md:mb-6 p-3 md:p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <Icon name="mdi:check-circle" class="w-5 h-5 md:w-6 md:h-6 text-green-500 flex-shrink-0" />
+                            <p class="text-sm md:text-base text-green-800 dark:text-green-200 font-medium">
+                                {{ $t('contact.form.success') }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div v-if="submitError"
+                        class="mb-4 md:mb-6 p-3 md:p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <Icon name="mdi:alert-circle" class="w-5 h-5 md:w-6 md:h-6 text-red-500 flex-shrink-0" />
+                            <p class="text-sm md:text-base text-red-800 dark:text-red-200 font-medium">
+                                {{ submitError }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-4 md:mb-6">
+                        <p class="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300">{{
+                            $t('contact.form.description') }}</p>
+                    </div>
+
+                    <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-6">
+                        <!-- Name and Email Fields -->
+                        <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+                            <!-- Name Field -->
+                            <div class="flex flex-col gap-1.5 md:gap-2">
+                                <label for="name"
+                                    class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $t('contact.form.name') }} *
+                                </label>
+                                <input v-model="form.name" type="text" id="name" :class="[
+                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
+                                    errors.name
+                                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                        : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
+                                ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                    :placeholder="$t('contact.form.namePlaceholder')" />
+                                <p v-if="errors.name" class="text-xs md:text-sm text-red-600 dark:text-red-400">
+                                    {{ errors.name }}
+                                </p>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="flex flex-col gap-1.5 md:gap-2">
+                                <label for="email"
+                                    class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    {{ $t('contact.form.email') }} *
+                                </label>
+                                <input v-model="form.email" type="email" id="email" :class="[
+                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
+                                    errors.email
+                                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                        : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
+                                ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                    placeholder="your@email.com" />
+                                <p v-if="errors.email" class="text-xs md:text-sm text-red-600 dark:text-red-400">
+                                    {{ errors.email }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div class="flex flex-col gap-1.5 md:gap-2">
+                            <label for="subject"
+                                class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                {{ $t('contact.form.subject') }} *
+                            </label>
+                            <input v-model="form.subject" type="text" id="subject" :class="[
+                                'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
+                                errors.subject
+                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                    : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
+                            ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                :placeholder="$t('contact.form.subjectPlaceholder')" />
+                            <p v-if="errors.subject" class="text-xs md:text-sm text-red-600 dark:text-red-400">
+                                {{ errors.subject }}
+                            </p>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="flex flex-col gap-1.5 md:gap-2">
+                            <label for="message"
+                                class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                {{ $t('contact.form.message') }} *
+                            </label>
+                            <textarea v-model="form.message" id="message" rows="5" :class="[
+                                'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border resize-none text-sm md:text-base',
+                                errors.message
+                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                    : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
+                            ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
+                            <p v-if="errors.message" class="text-xs md:text-sm text-red-600 dark:text-red-400">
+                                {{ errors.message }}
+                            </p>
+                        </div>
+
+                        <!-- Turnstile Widget -->
+                        <div v-if="runtimeConfig.public.turnstileSiteKey">
+                            <TurnstileWidget v-model="turnstileToken" :site-key="runtimeConfig.public.turnstileSiteKey"
+                                @verified="onTurnstileVerified" @expired="onTurnstileExpired" @error="onTurnstileError"
+                                ref="turnstileRef" />
+                            <p v-if="showTurnstileError || errors.turnstile"
+                                class="text-xs md:text-sm text-red-600 dark:text-red-400 text-center mt-2">
+                                {{ errors.turnstile }}
+                            </p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="flex justify-center">
+                            <button type="submit" :disabled="isSubmitting" :class="[
+                                'px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base flex items-center gap-2 md:gap-3 transition-all duration-300',
+                                isSubmitting
+                                    ? 'bg-gray-400 cursor-not-allowed'
+                                    : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl hover:-translate-y-1'
+                            ]" class="text-white">
+                                <Icon v-if="isSubmitting" name="mdi:refresh"
+                                    class="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                                <Icon v-else name="mdi:send" class="w-4 h-4 md:w-5 md:h-5" />
+                                {{ isSubmitting ? $t('contact.form.sending') : $t('contact.form.submit') }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
