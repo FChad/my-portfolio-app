@@ -136,7 +136,7 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
 </script>
 
 <template>
-    <div class="h-24 flex items-center justify-center" role="region" aria-label="Dynamic text display">
+    <div class="h-12 md:h-16 lg:h-20 flex items-center justify-center" role="region" aria-label="Dynamic text display">
         <!-- Creative text with gradient and animated cursor -->
         <div class="flex items-center text-2xl md:text-3xl lg:text-4xl font-bold relative">
             <!-- Gradient text with subtle glow -->
