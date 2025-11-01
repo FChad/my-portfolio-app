@@ -106,7 +106,7 @@ const totalCount = computed(() => showcaseItems.length)
     <!-- Hero Section -->
     <section class="py-16 md:py-24 min-h-[calc(100vh-65px)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
                 {{ t('showcase.title') }}
             </h1>
 
@@ -176,7 +176,7 @@ const totalCount = computed(() => showcaseItems.length)
                     <!-- Content -->
                     <div class="p-6 flex flex-col gap-4 flex-1">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                            <h3 class="text-xl md:text-2xl font-black text-gray-800 dark:text-white">
                                 {{ t(item.title) }}
                             </h3>
                             <span

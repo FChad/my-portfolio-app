@@ -454,7 +454,7 @@ const toggleExpanded = (stepId: string) => {
 <template>
     <!-- Hero Section -->
     <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
-        <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('documentations.cardanoNodeSetup.title') }}
         </h1>
 
@@ -476,7 +476,7 @@ const toggleExpanded = (stepId: string) => {
 
     <!-- Important Notes Section -->
     <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             Wichtige Hinweise
         </h2>
 
@@ -509,7 +509,7 @@ const toggleExpanded = (stepId: string) => {
 
     <!-- Setup Steps Section -->
     <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center mb-8">
             Setup Schritte
         </h2>
 
@@ -573,7 +573,7 @@ const toggleExpanded = (stepId: string) => {
 
     <!-- Additional Tips Section -->
     <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('documentations.cardanoNodeSetup.tips.sectionTitle') }}
         </h2>
         <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg text-center max-w-4xl mx-auto mb-8">
@@ -615,7 +615,7 @@ const toggleExpanded = (stepId: string) => {
 
     <!-- Additional Resources Section -->
     <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('documentations.cardanoNodeSetup.resources.sectionTitle') }}
         </h2>
 

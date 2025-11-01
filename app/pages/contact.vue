@@ -206,7 +206,7 @@ definePageMeta({
     <!-- Hero Section -->
     <section class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6 w-full">
-            <h1 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400 text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
                 {{ $t('contact.title') }}
             </h1>
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg text-center max-w-4xl mx-auto">
@@ -218,7 +218,7 @@ definePageMeta({
     <!-- Contact Methods Section -->
     <section class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
-            <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
                 {{ $t('contact.methods.title') || 'Kontaktmöglichkeiten' }}
             </h2>
 
@@ -286,7 +286,7 @@ definePageMeta({
     <section id="contact-form" class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 md:gap-12 w-full">
             <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-md hover:shadow-lg">
-                <h2 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 text-center mb-8">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center mb-8">
                     {{ $t('contact.form.title') }}
                 </h2>
                 <!-- Success Message -->
