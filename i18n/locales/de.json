@@ -192,11 +192,11 @@
     },
     "passion": {
       "title": "Leidenschaft für Technologie",
-      "description": "Meine Leidenschaft gilt der Webentwicklung und Serververwaltung. Mit Begeisterung entwickle ich maßgeschneiderte Webanwendungen und implementiere effiziente Serverlösungen."
+      "description": "Webentwicklung und Serververwaltung sind nicht nur mein Beruf, sie sind meine Leidenschaft. Es gibt kaum etwas Befriedigenderes, als eine komplexe Herausforderung zu meistern und dabei elegante, effiziente Lösungen zu entwickeln. Ob es darum geht, eine moderne Webanwendung von Grund auf zu erstellen, Serverinfrastrukturen zu optimieren oder neue Technologien zu erkunden: Ich liebe es, täglich zu lernen und meine Fähigkeiten weiterzuentwickeln."
     },
     "hobbies": {
       "title": "Hobbys und Interessen",
-      "description": "Abseits der digitalen Welt genieße ich wertvolle Momente im Kreise meiner Familie, zu der auch unsere drei pelzigen Begleiter gehören. Regelmäßige Treffen mit Freunden und gelegentliche Gaming-Sessions sorgen für den perfekten Ausgleich zu meinem technologiegeprägten Alltag."
+      "description": "Abseits der digitalen Welt genieße ich wertvolle Momente im Kreise meiner Familie, zu der auch unsere drei pelzigen Begleiter gehören. Regelmäßige Treffen mit Freunden und gelegentliche Gaming-Sessions sorgen für den perfekten Ausgleich zu meinem technologiegeprägten Alltag. Besonders begeistert bin ich von elektronischer Musik und besuche gerne Festivals wie Tomorrowland, Parookaville oder das Luxembourg Open Air mit Freunden und Familie."
     },
     "languages": {
       "title": "Sprachen",
@@ -349,16 +349,16 @@
     },
     "experiencesList": {
       "exp1": {
-        "title": "Helikopterrundflug",
-        "description": "Ein unvergessliches Erlebnis über die Landschaften der dominikanischen Republik"
+        "title": "Helikopterflug über die Dominikanische Republik",
+        "description": "Atemberaubender Rundflug über die Stadt und das karibische Meer, ein unvergessliches Erlebnis aus der Vogelperspektive"
       },
       "exp2": {
         "title": "Fallschirmsprung über Luxemburg",
-        "description": "Adrenalinstoß aus 4000 Metern Höhe"
+        "description": "20-minütiger Panoramaflug, dann Sprung aus 4000m Höhe mit 200 km/h freiem Fall, gefolgt von 5-7 Minuten Gleitflug bis zur sanften Landung"
       },
       "exp3": {
         "title": "Tomorrowland Belgien 2025",
-        "description": "Das ultimative elektronische Musikfestival-Erlebnis"
+        "description": "4 unvergessliche Tage voller elektronischer Musik, magischer Atmosphäre und großartiger Menschen aus aller Welt"
       }
     }
   },

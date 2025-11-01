@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image'
   ],
   site: {
     url: 'https://www.chad.lu',

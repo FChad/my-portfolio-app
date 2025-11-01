@@ -192,11 +192,11 @@
     },
     "passion": {
       "title": "Passioun fir Technologie",
-      "description": "Meng Passioun gëllt der Webentwicklung a Serververwaltung. Mat Begeeschterung entwéckelen ech maßgeschneiderte Webanwendungen an implementéieren effizient Serverlëisungen."
+      "description": "Webentwicklung a Serververwaltung sinn net nëmme mäi Beruff, et ass meng Passioun. Et gëtt kaum eppes Befridegenderes, wéi eng komplex Erausfuerderung ze meeschteren an dobäi elegant, effizient Léisungen ze entwéckelen. Ob et drëm geet, eng modern Webanwendung vun Ufank un ze erstellen, Serverinfrastrukturen ze optiméieren oder nei Technologien ze entdecken: Ech hunn et gär, deeglech ze léieren a meng Fäegkeeten weiderzuentwéckelen."
     },
     "hobbies": {
       "title": "Hobbyen an Interessen",
-      "description": "Niewent der digitaler Welt genéissen ech wäertvollt Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelméisseg Treffen mat Frënn an gelegentlech Gaming-Sessiounen suergen fir de perfekten Ausgleich zu mengem technologie-geprägte Alldag."
+      "description": "Niewent der digitaler Welt genéissen ech wäertvollt Momenter am Krees vu menger Famill, zu där och eis dräi pelzeg Begleeder gehéieren. Regelméisseg Treffen mat Frënn an gelegentlech Gaming-Sessiounen suergen fir de perfekten Ausgleich zu mengem technologie-geprägte Alldag. Ech si besonnesch begeeschtert vun elektronescher Musek a besichen gär Festivale wéi Tomorrowland, Parookaville oder d'Luxembourg Open Air mat Frënn a Famill."
     },
     "languages": {
       "title": "Sproochen",
@@ -349,16 +349,16 @@
     },
     "experiencesList": {
       "exp1": {
-        "title": "Helicopter-Ronndfluch",
-        "description": "En onvergiesslechen Erliefnis iwwer d'Landschaften vun der dominikanescher Republik"
+        "title": "Helicopterfluch iwwer d'Dominikanesch Republik",
+        "description": "Atemberauenden Ronndfluch iwwer d'Stad an d'karibbescht Mier, en onvergiesslechen Erliefnis aus der Vulleperspektiv"
       },
       "exp2": {
         "title": "Fallschiermsprong iwwer Lëtzebuerg",
-        "description": "Adrenalinstouss aus 4000 Meter Héicht"
+        "description": "20-minutten Panoramafluch, dunn Sprong aus 4000m Héicht mat 200 km/h fräiem Fall, gefollegt vun 5-7 Minutte Gleitfluch bis zur sanfter Landung"
       },
       "exp3": {
         "title": "Tomorrowland Belsch 2025",
-        "description": "Dat ultimativt elektronescht Musikfestival-Erliefnis"
+        "description": "4 onvergiesslich Deeg voller elektronesch Musek, magëscher Atmosphär a groussaarteg Leit aus der ganzer Welt"
       }
     }
   },

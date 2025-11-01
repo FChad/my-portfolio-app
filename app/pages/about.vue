@@ -247,20 +247,26 @@ const experiences = [
     {
         title: t('about.experiencesList.exp1.title'),
         description: t('about.experiencesList.exp1.description'),
-        icon: 'mdi:send',
-        color: 'blue'
+        icon: 'mdi:helicopter',
+        color: 'blue',
+        image: 'helicopter.png',
+        alt: 'Chad Feierstein helicopter flight over Dominican Republic city and Caribbean Sea'
     },
     {
         title: t('about.experiencesList.exp2.title'),
         description: t('about.experiencesList.exp2.description'),
-        icon: 'mdi:arrow-down-circle',
-        color: 'green'
+        icon: 'mdi:parachute',
+        color: 'green',
+        image: 'skydiving.jpg',
+        alt: 'Chad Feierstein skydiving over Luxembourg from 4000 meters altitude'
     },
     {
         title: t('about.experiencesList.exp3.title'),
         description: t('about.experiencesList.exp3.description'),
         icon: 'mdi:music-note',
-        color: 'purple'
+        color: 'purple',
+        image: 'tomorrowland2025.jpg',
+        alt: 'Chad Feierstein at Tomorrowland Belgium 2025 electronic music festival'
     }
 ]
 </script>
@@ -293,7 +299,7 @@ const experiences = [
                         class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg">
                         <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('about.profile.role')
-                        }}</span>
+                            }}</span>
                     </div>
 
                     <!-- Name -->
@@ -331,7 +337,7 @@ const experiences = [
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                                }}</div>
+                            }}</div>
                         </div>
 
                         <div
@@ -474,7 +480,7 @@ const experiences = [
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
@@ -587,7 +593,7 @@ const experiences = [
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
 
@@ -604,7 +610,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
             </div>
@@ -613,31 +619,50 @@ const experiences = [
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 <div v-for="(experience, index) in experiences" :key="experience.title"
                     @mouseenter="hoveredExperience = index" @mouseleave="hoveredExperience = null"
-                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 
-                    <!-- Animated gradient background on hover -->
-                    <div class="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity"
-                        :class="{
-                            'from-blue-500 to-blue-600': experience.color === 'blue',
-                            'from-green-500 to-green-600': experience.color === 'green',
-                            'from-purple-500 to-purple-600': experience.color === 'purple'
-                        }">
-                    </div>
-
-                    <div class="relative space-y-3 sm:space-y-4">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-br transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300"
+                    <!-- Background Image with Overlay -->
+                    <div class="absolute inset-0">
+                        <NuxtImg :src="`/img/about/${experience.image}`" :alt="experience.alt"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            loading="lazy" sizes="sm:100vw md:50vw lg:33vw" quality="80" format="webp" />
+                        <!-- Dark overlay for better text readability -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/70 group-hover:via-black/40 group-hover:to-black/20 transition-all duration-300">
+                        </div>
+                        <!-- Colored gradient overlay on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                             :class="{
                                 'from-blue-500 to-blue-600': experience.color === 'blue',
                                 'from-green-500 to-green-600': experience.color === 'green',
                                 'from-purple-500 to-purple-600': experience.color === 'purple'
                             }">
-                            <Icon :name="experience.icon" class="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-white text-center">{{
-                            experience.title }}
-                        </h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed">{{
-                            experience.description }}</p>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="relative h-full min-h-[280px] sm:min-h-[320px] flex flex-col justify-end p-6 sm:p-8">
+                        <!-- Icon floating badge -->
+                        <div
+                            class="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <Icon :name="experience.icon" class="w-6 h-6 sm:w-7 sm:h-7" :class="{
+                                'text-blue-600': experience.color === 'blue',
+                                'text-green-600': experience.color === 'green',
+                                'text-purple-600': experience.color === 'purple'
+                            }" />
+                        </div>
+
+                        <!-- Text content -->
+                        <div class="space-y-2 sm:space-y-3">
+                            <h3
+                                class="text-xl sm:text-2xl font-black text-white drop-shadow-lg group-hover:text-shadow-xl transition-all">
+                                {{ experience.title }}
+                            </h3>
+                            <p
+                                class="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-md group-hover:text-white transition-colors">
+                                {{ experience.description }}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

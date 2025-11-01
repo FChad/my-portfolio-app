@@ -192,11 +192,11 @@
     },
     "passion": {
       "title": "Passion pour la Technologie",
-      "description": "Ma passion va au développement web et à l'administration de serveurs. J'développe avec enthousiasme des applications web sur mesure et implémente des solutions serveur efficaces."
+      "description": "Le développement web et l'administration de serveurs ne sont pas seulement mon métier, c'est ma passion. Il n'y a rien de plus satisfaisant que de maîtriser un défi complexe tout en créant des solutions élégantes et efficaces. Qu'il s'agisse de créer une application web moderne de zéro, d'optimiser des infrastructures serveur ou d'explorer de nouvelles technologies : j'adore apprendre quotidiennement et développer continuellement mes compétences."
     },
     "hobbies": {
       "title": "Loisirs et Intérêts",
-      "description": "Loin du monde numérique, j'apprécie les moments précieux en famille, qui comprend nos trois compagnons à fourrure. Des rencontres régulières avec des amis et des sessions de jeu occasionnelles apportent l'équilibre parfait à ma vie quotidienne axée sur la technologie."
+      "description": "Loin du monde numérique, j'apprécie les moments précieux en famille, qui comprend nos trois compagnons à fourrure. Des rencontres régulières avec des amis et des sessions de jeu occasionnelles apportent l'équilibre parfait à ma vie quotidienne axée sur la technologie. Je suis particulièrement passionné par la musique électronique et j'adore participer à des festivals comme Tomorrowland, Parookaville ou le Luxembourg Open Air avec des amis et ma famille."
     },
     "languages": {
       "title": "Langues",
@@ -349,16 +349,16 @@
     },
     "experiencesList": {
       "exp1": {
-        "title": "Tour en Hélicoptère",
-        "description": "Une expérience inoubliable au-dessus des paysages de la République dominicaine"
+        "title": "Vol en Hélicoptère sur la République Dominicaine",
+        "description": "Vol panoramique époustouflant au-dessus de la ville et de la mer des Caraïbes, une expérience inoubliable à vue d'oiseau"
       },
       "exp2": {
         "title": "Saut en Parachute au Luxembourg",
-        "description": "Poussée d'adrénaline depuis 4000 mètres d'altitude"
+        "description": "Vol panoramique de 20 minutes, puis saut depuis 4000m à 200 km/h en chute libre, suivi de 5-7 minutes de vol plané jusqu'à l'atterrissage en douceur"
       },
       "exp3": {
         "title": "Tomorrowland Belgique 2025",
-        "description": "L'expérience ultime du festival de musique électronique"
+        "description": "4 jours inoubliables remplis de musique électronique, d'ambiance magique et de personnes formidables du monde entier"
       }
     }
   },

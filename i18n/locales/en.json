@@ -192,11 +192,11 @@
     },
     "passion": {
       "title": "Passion for Technology",
-      "description": "My passion is for web development and server administration. I enthusiastically develop customized web applications and implement efficient server solutions."
+      "description": "Web development and server administration aren't just my profession, they're my passion. There's hardly anything more satisfying than mastering a complex challenge while creating elegant, efficient solutions. Whether it's building a modern web application from scratch, optimizing server infrastructure, or exploring new technologies: I love learning daily and continuously developing my skills."
     },
     "hobbies": {
       "title": "Hobbies and Interests",
-      "description": "Away from the digital world, I enjoy precious moments with my family, which includes our three furry companions. Regular meetings with friends and occasional gaming sessions provide the perfect balance to my technology-driven everyday life."
+      "description": "Away from the digital world, I enjoy precious moments with my family, which includes our three furry companions. Regular meetings with friends and occasional gaming sessions provide the perfect balance to my technology-driven everyday life. I'm particularly passionate about electronic music and love attending festivals like Tomorrowland, Parookaville, or Luxembourg Open Air with friends and family."
     },
     "languages": {
       "title": "Languages",
@@ -349,16 +349,16 @@
     },
     "experiencesList": {
       "exp1": {
-        "title": "Helicopter Tour",
-        "description": "An unforgettable experience over the landscapes of the Dominican Republic"
+        "title": "Helicopter Flight over Dominican Republic",
+        "description": "Breathtaking aerial tour over the city and Caribbean Sea, an unforgettable bird's-eye view experience"
       },
       "exp2": {
         "title": "Skydiving over Luxembourg",
-        "description": "Adrenaline rush from 4000 meters altitude"
+        "description": "20-minute scenic flight, then jump from 4,000m, reaching 200km/h in freefall, followed by 5-7 minutes gliding to a smooth landing"
       },
       "exp3": {
         "title": "Tomorrowland Belgium 2025",
-        "description": "The ultimate electronic music festival experience"
+        "description": "4 unforgettable days filled with electronic music, magical atmosphere, and amazing people from around the world"
       }
     }
   },
