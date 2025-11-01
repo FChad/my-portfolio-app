@@ -160,9 +160,9 @@ const techStack = computed(() => [
     <section class="relative min-h-[calc(100vh-65px)] flex items-center justify-center overflow-hidden">
         <!-- Animated Stars Background -->
         <div class="absolute inset-0">
-            <!-- Dynamic Gradient Background - Light/Dark Mode -->
+            <!-- Subtle Background -->
             <div
-                class="absolute inset-0 bg-gradient-radial from-blue-50 via-blue-100/70 to-blue-200/50 dark:from-blue-950/90 dark:via-gray-900 dark:to-gray-950">
+                class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
             </div>
 
             <!-- Animated Stars Canvas -->
@@ -171,7 +171,7 @@ const techStack = computed(() => [
 
             <!-- Adaptive overlay for text readability -->
             <div
-                class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-blue-50/30 dark:from-transparent dark:via-transparent dark:to-gray-900/20">
+                class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-white/40 dark:from-transparent dark:via-transparent dark:to-gray-900/20">
             </div>
         </div>
 
@@ -181,26 +181,21 @@ const techStack = computed(() => [
                 <!-- Main Headline with Enhanced Typography -->
                 <div class="space-y-6 mt-16 animate-fade-in">
                     <!-- Greeting with subtle animation -->
-                    <div class="space-y-2">
-                        <p class="text-2xl font-medium tracking-wide uppercase animate-slide-down opacity-0"
-                            style="animation-delay: 0.2s; animation-fill-mode: forwards;">
-                            <span
-                                class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                                {{ $t('home.greeting') }}
-                            </span>
-                        </p>
+                    <p class="text-xl sm:text-2xl font-medium tracking-wide uppercase animate-slide-down opacity-0"
+                        style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+                        <span
+                            class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                            {{ $t('home.greeting') }}
+                        </span>
+                    </p>
 
-                        <!-- Name with gradient and shadow -->
-                        <h1 class="text-6xl md:text-8xl font-black leading-tight animate-slide-up opacity-0"
-                            style="animation-delay: 0.4s; animation-fill-mode: forwards;">
-                            <span
-                                class="uppercase block bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 dark:from-white dark:via-gray-100 dark:to-gray-300 bg-clip-text text-transparent drop-shadow-2xl">
-                                Chad<br />Feierstein
-                            </span>
-                        </h1>
-                    </div>
+                    <!-- Name -->
+                    <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-tight animate-slide-up opacity-0 text-gray-800 dark:text-white uppercase"
+                        style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+                        Chad<br />Feierstein
+                    </h1>
 
-                    <!-- Creative Typing Effect with gradient cursor -->
+                    <!-- Creative Typing Effect -->
                     <div class="animate-fade-in opacity-0"
                         style="animation-delay: 0.6s; animation-fill-mode: forwards;">
                         <TypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50" :pause-duration="2000" />
@@ -210,29 +205,31 @@ const techStack = computed(() => [
                 <!-- Value Proposition with animation -->
                 <div class="max-w-3xl mx-auto animate-fade-in opacity-0"
                     style="animation-delay: 0.8s; animation-fill-mode: forwards;">
-                    <p class="text-xl md:text-2xl leading-relaxed text-gray-700 dark:text-gray-200 drop-shadow-sm">
+                    <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600 dark:text-gray-300">
                         {{ $t('home.tagline') }}
                     </p>
                 </div>
 
                 <!-- Enhanced CTA Section with hover effects -->
                 <div class="pt-8 animate-fade-in opacity-0" style="animation-delay: 1s; animation-fill-mode: forwards;">
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12">
                         <!-- Primary CTA -->
                         <NuxtLinkLocale to="/showcase"
-                            class="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center transform hover:scale-105">
+                            class="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center hover:-translate-y-1">
                             <span class="flex items-center gap-3">
-                                <Icon name="mdi:eye" class="w-6 h-6 group-hover:scale-110 transition-transform" />
+                                <Icon name="mdi:eye"
+                                    class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
                                 {{ $t('home.cta.primary') }}
                             </span>
                         </NuxtLinkLocale>
 
                         <!-- Secondary CTA -->
                         <NuxtLinkLocale to="/contact"
-                            class="group px-10 py-5 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-2xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center transform hover:scale-105">
+                            class="group px-8 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center hover:-translate-y-1">
                             <span class="flex items-center gap-3">
                                 {{ $t('home.cta.secondary') }}
-                                <Icon name="mdi:chat" class="w-6 h-6 group-hover:scale-110 transition-transform" />
+                                <Icon name="mdi:chat"
+                                    class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
                             </span>
                         </NuxtLinkLocale>
                     </div>
@@ -262,11 +259,15 @@ const techStack = computed(() => [
     </section>
 
     <!-- About Preview Section -->
-    <section id="about-section" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
-            <!-- Section Header -->
-            <div class="text-center flex flex-col gap-4">
-                <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
+    <section id="about-section" class="py-16 md:py-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header - Centered -->
+            <div class="text-center mb-12 lg:mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 dark:text-white mb-4">
                     {{ $t('home.about.title') }}
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -274,70 +275,100 @@ const techStack = computed(() => [
                 </p>
             </div>
 
-            <!-- Main About Grid -->
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left: Story & Quick Facts -->
-                <div class="flex flex-col gap-8">
-                    <!-- Personal Story Card -->
-                    <div
-                        class="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-3xl p-8 shadow-lg flex flex-col gap-6">
-                        <div class="flex items-center flex-col sm:flex-row gap-4">
-                            <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
-                                <Icon name="mdi:account-heart" class="w-8 h-8 text-white" />
-                            </div>
-                            <div class="flex flex-col">
-                                <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Chad Feierstein</h3>
-                                <p class="text-blue-600 dark:text-blue-400 font-medium">{{ $t('home.about.role') }}
-                                </p>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            {{ $t('home.about.story') }}
-                        </p>
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Left: Main intro -->
+                <div class="space-y-6">
+                    <!-- Story -->
+                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {{ $t('home.about.story') }}
+                    </p>
 
-                        <!-- Quick Facts -->
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div v-for="fact in quickFacts" :key="fact.key" class="flex items-center gap-3">
-                                <Icon :name="fact.icon" :class="`w-5 h-5 ${fact.color}`" />
-                                <span class="text-gray-600 dark:text-gray-400">{{ $t(`home.about.${fact.key}`) }}</span>
+                    <!-- CTA Button -->
+                    <NuxtLinkLocale to="/about"
+                        class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <Icon name="mdi:open-in-new" class="w-5 h-5" />
+                        {{ $t('home.about.cta') }}
+                    </NuxtLinkLocale>
+                </div>
+
+                <!-- Right: Personal info cards -->
+                <div class="flex flex-col gap-3 sm:gap-4">
+                    <!-- Location -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:map-marker" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('home.about.location') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">Rumelange,
+                                    Luxemburg</div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Right: Enhanced Stats Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div v-for="stat in stats" :key="stat.titleKey"
-                        class="relative group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
-                        <div
-                            :class="`absolute top-4 right-4 w-10 h-10 ${stat.bgColor} rounded-full flex items-center justify-center`">
-                            <Icon :name="stat.icon" :class="`w-5 h-5 ${stat.iconColor}`" />
+                    <!-- Role -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:account-heart" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Position</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('home.about.role') }}</div>
+                            </div>
                         </div>
-                        <div class="text-center flex flex-col gap-2">
-                            <div :class="`text-4xl font-black ${stat.valueColor}`">{{ stat.value }}</div>
-                            <div class="text-gray-600 dark:text-gray-300 font-medium">{{
-                                $t(`home.stats.${stat.titleKey}`) }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ $t(`home.stats.${stat.descKey}`) }}
+                    </div>
+
+                    <!-- Education -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:school" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('home.about.study') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('home.about.education') }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Passion -->
+                    <div
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-md">
+                                <Icon name="mdi:certificate" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('home.about.training') }}</div>
+                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                    $t('home.about.experience') }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- CTA Button -->
-            <NuxtLinkLocale to="/about"
-                class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:shadow-lg transform self-center">
-                <Icon name="mdi:open-in-new" class="w-4 h-4" />
-                {{ $t('home.about.cta') }}
-            </NuxtLinkLocale>
         </div>
     </section>
 
     <!-- Skills & Services Section -->
-    <section class="py-16 md:py-24">
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center flex flex-col gap-4">
-                <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
+            <div class="text-center flex flex-col gap-4 mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 dark:text-white">
                     {{ $t('home.services.title') }}
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -346,28 +377,28 @@ const techStack = computed(() => [
             </div>
 
             <!-- Services Grid -->
-            <div class="flex flex-col lg:flex-row gap-8 mt-16">
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
                 <div v-for="service in services" :key="service.key"
-                    :class="`group relative bg-gradient-to-br ${service.bgGradient} rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:scale-[1.02] hover:-translate-y-1 flex flex-col cursor-pointer`">
-                    <div class="flex flex-col gap-4 flex-1">
-                        <div class="flex items-center gap-3">
+                    class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex flex-col gap-6 h-full">
+                        <div class="flex items-center gap-4">
                             <div
-                                :class="`w-10 h-10 ${service.iconBg} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`">
-                                <Icon :name="service.icon" class="w-6 h-6 text-white" />
+                                :class="`w-14 h-14 ${service.iconBg} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`">
+                                <Icon :name="service.icon" class="w-7 h-7 text-white" />
                             </div>
-                            <h3
-                                class="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                            <h3 class="text-2xl font-black text-gray-800 dark:text-white">
                                 {{ $t(`home.services.${service.key}.title`) }}
                             </h3>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed flex-1">
                             {{ $t(`home.services.${service.key}.description`) }}
                         </p>
-                        <ul class="flex flex-col gap-2">
+                        <ul class="flex flex-col gap-3">
                             <li v-for="feature in service.features" :key="feature"
                                 class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                <Icon name="mdi:check-circle" :class="`w-4 h-4 ${service.checkColor}`" />
-                                {{ $t(`home.services.${service.key}.features.${feature}`) }}
+                                <Icon name="mdi:check-circle" :class="`w-5 h-5 ${service.checkColor}`" />
+                                <span class="font-medium">{{ $t(`home.services.${service.key}.features.${feature}`)
+                                }}</span>
                             </li>
                         </ul>
                     </div>
@@ -376,12 +407,16 @@ const techStack = computed(() => [
         </div>
     </section>
 
-    <!-- Featured Project Showcase - Creative Design -->
-    <section class="py-16 md:py-24 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Featured Project Showcase -->
+    <section class="py-16 md:py-24 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center flex flex-col gap-4 mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-400">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 dark:text-white">
                     {{ $t('home.featured.title') }}
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -389,46 +424,44 @@ const techStack = computed(() => [
                 </p>
             </div>
 
-            <!-- Creative Split-Screen Layout -->
-            <div class="relative">
-                <!-- Main Container with Perspective -->
-                <div class="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <!-- Left: Visual/Interactive Side -->
-                    <div class="relative order-2 lg:order-1">
-                        <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited">
-                            <AiChatInterface />
-                        </VisualBrowser>
-                    </div>
+            <!-- Main Container -->
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Left: Visual/Interactive Side -->
+                <div class="relative order-2 lg:order-1">
+                    <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited">
+                        <AiChatInterface />
+                    </VisualBrowser>
+                </div>
 
-                    <!-- Right: Content Side -->
-                    <div class="space-y-6 order-1 lg:order-2">
+                <!-- Right: Content Side -->
+                <div
+                    class="order-1 lg:order-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+                    <div class="space-y-6">
                         <!-- Project Title -->
-                        <div class="space-y-3">
-                            <h3 class="text-3xl md:text-4xl font-black text-gray-800 dark:text-white leading-tight">
-                                {{ $t('home.featured.projectTitle') }}
-                            </h3>
-                        </div>
+                        <h3 class="text-3xl md:text-4xl font-black text-gray-800 dark:text-white leading-tight">
+                            {{ $t('home.featured.projectTitle') }}
+                        </h3>
 
                         <!-- Description -->
                         <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                             {{ $t('home.featured.description') }}
                         </p>
 
-                        <!-- Key Features - Compact -->
+                        <!-- Key Features -->
                         <div class="grid grid-cols-2 gap-3">
                             <div v-for="feature in featuredFeatures" :key="feature.key"
-                                :class="`flex items-center gap-3 p-3 ${feature.bgColor} rounded-xl`">
+                                :class="`flex items-center gap-3 p-4 ${feature.bgColor} rounded-xl`">
                                 <Icon :name="feature.icon" :class="`w-5 h-5 ${feature.iconColor} flex-shrink-0`" />
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                <span class="text-sm font-bold text-gray-700 dark:text-gray-300">
                                     {{ $t(`home.featured.features.${feature.key}.title`) }}
                                 </span>
                             </div>
                         </div>
 
-                        <!-- Tech Stack - Floating Pills -->
+                        <!-- Tech Stack -->
                         <div class="space-y-3">
                             <h4
-                                class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                                class="text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
                                 <Icon name="mdi:cog" class="w-4 h-4" />
                                 {{ $t('home.featured.techStack') }}
                             </h4>
@@ -442,16 +475,16 @@ const techStack = computed(() => [
                             </div>
                         </div>
 
-                        <!-- Action Buttons - Enhanced -->
+                        <!-- Action Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4 pt-4">
                             <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                class="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:shadow-lg">
+                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                                 <Icon name="mdi:eye" class="w-5 h-5" />
                                 {{ $t('home.featured.cta.view') }}
                             </NuxtLinkLocale>
 
                             <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                class="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-2xl font-semibold border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg">
+                                class="flex-1 inline-flex items-center justify-center gap-3 px-6 py-3 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-2xl font-bold border border-gray-200 dark:border-gray-600 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                                 <Icon name="mdi:rocket-launch" class="w-5 h-5" />
                                 {{ $t('home.featured.cta.demo') }}
                             </a>
@@ -464,11 +497,6 @@ const techStack = computed(() => [
 </template>
 
 <style scoped>
-/* Custom Gradient for Hero Background */
-.bg-gradient-radial {
-    background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
-}
-
 /* Hero entrance animations */
 @keyframes fade-in {
     from {

@@ -88,12 +88,14 @@
       "title": "Léiert mech kennen",
       "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
       "cta": "Méi iwwer mech erfahren",
-      "role": "Full-Stack Developer & IT-Techniker",
-      "story": "Ech sinn de Chad Feierstein, e leidenschaftlechen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Mat Focus op Cloud Computing a modern Webtechnologien kreéieren ech innovativ digital Léisungen, déi e Ënnerscheed maachen.",
+      "role": "Full-Stack Webentwickler",
+      "story": "Ech sinn de Chad Feierstein, e 26-jähregen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Mat enger ofgeschlossener Ausbildung als Techniker an der Informatik an engem BTS am Cloud Computing bréngen ech iwwer 5 Joer professionell IT-Erfahrung mat. Meng Leidenschaft läit doran, modern Webtechnologien a Cloud-Léisungen ze notzen fir innovativ digital Projeten ze realiséieren, déi richtegen Méiwäert schafen. Vun der Frontend-Entwécklung mat Vue.js a Nuxt bis zur Server-Administratioun a Blockchain-Technologie: ech liebe et, komplex Erausfuerderungen ze meeschteren an dobäi stänneg Neies ze léieren.",
       "location": "Rëmeleng, Lëtzebuerg",
       "experience": "Techniker an der Informatik",
       "education": "BTS Cloud Computing",
-      "passion": "Technologie & Innovation"
+      "passion": "Technologie & Innovation",
+      "training": "Ausbildung",
+      "study": "Studium"
     },
     "services": {
       "title": "Wat ech ubidden",

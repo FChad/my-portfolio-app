@@ -257,7 +257,7 @@ const experiences = [
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         <!-- Animated gradient background -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -308,7 +308,7 @@ const experiences = [
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                                }}</div>
+                            }}</div>
                         </div>
 
                         <div
@@ -417,7 +417,7 @@ const experiences = [
     <!-- Languages with interactive cards -->
     <section class="py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 to-transparent dark:via-blue-900/10">
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -451,7 +451,7 @@ const experiences = [
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
@@ -470,7 +470,7 @@ const experiences = [
     <!-- Work & Education Timeline -->
     <section class="py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
+            class="absolute inset-0 bg-gradient-to-b from-blue-100/60 via-purple-100/60 to-pink-100/60 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -537,7 +537,7 @@ const experiences = [
     <!-- Interests & Passions - Magazine style -->
     <section class="py-16 sm:py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-900">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/30 to-transparent dark:via-purple-900/10">
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -564,7 +564,7 @@ const experiences = [
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
 
@@ -581,7 +581,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
             </div>
@@ -643,7 +643,7 @@ const experiences = [
     <!-- CTA Section - Bold and modern -->
     <section class="py-16 sm:py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-950 dark:via-purple-950 dark:to-pink-950">
+            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <!-- Decorative elements -->

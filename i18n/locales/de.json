@@ -88,12 +88,14 @@
       "title": "Lernen Sie Mich Kennen",
       "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
       "cta": "Mehr über mich erfahren",
-      "role": "Full-Stack Entwickler & IT-Techniker",
-      "story": "Ich bin Chad Feierstein, ein leidenschaftlicher Full-Stack Entwickler und IT-Administrator aus Luxemburg. Mit Fokus auf Cloud Computing und moderne Webtechnologien erstelle ich innovative digitale Lösungen, die einen Unterschied machen.",
+      "role": "Full-Stack Webentwickler",
+      "story": "Ich bin Chad Feierstein, ein 26-jähriger Full-Stack Entwickler und IT-Administrator aus Luxemburg. Mit einer abgeschlossenen Ausbildung als Techniker in der Informatik und einem BTS in Cloud Computing bringe ich über 5 Jahre professionelle IT-Erfahrung mit. Meine Leidenschaft liegt darin, moderne Webtechnologien und Cloud-Lösungen zu nutzen, um innovative digitale Projekte zu realisieren, die echten Mehrwert schaffen. Von der Frontend-Entwicklung mit Vue.js und Nuxt bis hin zur Server-Administration und Blockchain-Technologie: ich liebe es, komplexe Herausforderungen zu meistern und dabei ständig Neues zu lernen.",
       "location": "Rumelange, Luxemburg",
       "experience": "Techniker in der Informatik",
       "education": "BTS Cloud Computing",
-      "passion": "Technologie & Innovation"
+      "passion": "Technologie & Innovation",
+      "training": "Ausbildung",
+      "study": "Studium"
     },
     "services": {
       "title": "Was Ich Biete",
