@@ -308,7 +308,7 @@ const experiences = [
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                            }}</div>
+                                }}</div>
                         </div>
 
                         <div
@@ -451,7 +451,7 @@ const experiences = [
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
@@ -564,7 +564,7 @@ const experiences = [
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                        }}</p>
+                            }}</p>
                     </div>
                 </div>
 
@@ -581,7 +581,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                        }}</p>
+                            }}</p>
                     </div>
                 </div>
             </div>
@@ -597,9 +597,9 @@ const experiences = [
                         <img :src="`/img/about/${experience.image}`" :alt="experience.alt"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             loading="lazy" />
-                        <!-- Dark overlay for better text readability -->
+                        <!-- Overlay for better text readability - lighter in light mode -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/70 group-hover:via-black/40 group-hover:to-black/20 transition-all duration-300">
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10 dark:from-black/80 dark:via-black/50 dark:to-black/30 group-hover:from-black/50 group-hover:via-black/20 group-hover:to-transparent dark:group-hover:from-black/70 dark:group-hover:via-black/40 dark:group-hover:to-black/20 transition-all duration-300">
                         </div>
                         <!-- Colored gradient overlay on hover -->
                         <div class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300"
