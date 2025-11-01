@@ -102,29 +102,29 @@
       "subtitle": "De la conception à la mise en œuvre : je développe des solutions sur mesure pour vos besoins numériques.",
       "webdev": {
         "title": "Développement Web",
-        "description": "Sites web modernes et responsives avec Vue.js, Nuxt.js et les derniers standards web.",
+        "description": "Sites web modernes et responsives avec des technologies éprouvées et nouvelles, frontend comme backend. De PHP, JavaScript et CSS à Nuxt 4, Tailwind et les derniers standards web.",
         "features": {
-          "spa": "Applications Page Unique",
-          "ssr": "Rendu Côté Serveur",
-          "pwa": "Applications Web Progressives"
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt 4 & Tailwind",
+          "pwa": "Développement Full-Stack"
         }
       },
       "cloud": {
         "title": "Virtualisation",
-        "description": "Solutions de virtualisation professionnelles pour des infrastructures IT efficaces et flexibles.",
+        "description": "Solutions de virtualisation professionnelles pour des infrastructures IT efficaces et flexibles. Configuration d'environnements de développement, virtualisation de serveurs et optimisation des performances.",
         "features": {
-          "aws": "Docker",
-          "azure": "Proxmox",
-          "gcp": "VirtualBox"
+          "aws": "Environnements de Développement",
+          "azure": "Virtualisation de Serveurs",
+          "gcp": "Optimisation des Performances"
         }
       },
       "itadmin": {
         "title": "Administration IT",
-        "description": "Administration système complète et gestion réseau pour une infrastructure fiable.",
+        "description": "Administration système complète et gestion réseau pour une infrastructure fiable. Avec des connaissances solides en systèmes d'exploitation, gestion de serveurs et technologies réseau.",
         "features": {
-          "linux": "Administration Système Linux",
-          "networks": "Configuration Réseau",
-          "security": "Implémentation de Sécurité"
+          "linux": "Systèmes d'Exploitation",
+          "networks": "Gestion de Serveurs",
+          "security": "Technologies Réseau"
         }
       }
     },

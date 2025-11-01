@@ -102,29 +102,29 @@
       "subtitle": "From concept to implementation: I develop customized solutions for your digital requirements.",
       "webdev": {
         "title": "Web Development",
-        "description": "Modern, responsive websites with Vue.js, Nuxt.js and the latest web standards.",
+        "description": "Modern, responsive websites with proven and new technologies, both frontend and backend. From PHP, JavaScript and CSS to Nuxt 4, Tailwind and the latest web standards.",
         "features": {
-          "spa": "Single Page Applications",
-          "ssr": "Server-Side Rendering",
-          "pwa": "Progressive Web Apps"
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt 4 & Tailwind",
+          "pwa": "Full-Stack Development"
         }
       },
       "cloud": {
         "title": "Virtualization",
-        "description": "Professional virtualization solutions for efficient and flexible IT infrastructures.",
+        "description": "Professional virtualization solutions for efficient and flexible IT infrastructures. Setup of development environments, server virtualization and performance optimization.",
         "features": {
-          "aws": "Docker",
-          "azure": "Proxmox",
-          "gcp": "VirtualBox"
+          "aws": "Development Environments",
+          "azure": "Server Virtualization",
+          "gcp": "Performance Optimization"
         }
       },
       "itadmin": {
         "title": "IT Administration",
-        "description": "Comprehensive system administration and network management for reliable infrastructure.",
+        "description": "Comprehensive system administration and network management for reliable infrastructure. With solid knowledge in operating systems, server management and network technologies.",
         "features": {
-          "linux": "Linux System Administration",
-          "networks": "Network Configuration",
-          "security": "Security Implementation"
+          "linux": "Operating Systems",
+          "networks": "Server Management",
+          "security": "Network Technologies"
         }
       }
     },

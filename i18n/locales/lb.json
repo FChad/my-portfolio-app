@@ -102,29 +102,29 @@
       "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung: ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
       "webdev": {
         "title": "Web Development",
-        "description": "Modern, responsive Websäiten mat Vue.js, Nuxt.js an de neisten Web-Standarden.",
+        "description": "Modern, responsive Websäiten mat bewährten an neien Technologien, Frontend wéi Backend. Vu PHP, JavaScript a CSS bis zu Nuxt 4, Tailwind an de neisten Web-Standarden.",
         "features": {
-          "spa": "Single Page Applications",
-          "ssr": "Server-Side Rendering",
-          "pwa": "Progressive Web Apps"
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt 4 & Tailwind",
+          "pwa": "Full-Stack Development"
         }
       },
       "cloud": {
         "title": "Virtualiséierung",
-        "description": "Professionnell Virtualiséierungs-Léisungen fir effizient a flexibel IT-Infrastrukturen.",
+        "description": "Professionnell Virtualiséierungs-Léisungen fir effizient a flexibel IT-Infrastrukturen. Ariichtung vun Entwécklungs-Ëmfeld, Server-Virtualiséierung an Performance-Optimiséierung.",
         "features": {
-          "aws": "Docker",
-          "azure": "Proxmox",
-          "gcp": "VirtualBox"
+          "aws": "Entwécklungs-Ëmfeld",
+          "azure": "Server-Virtualiséierung",
+          "gcp": "Performance-Optimiséierung"
         }
       },
       "itadmin": {
         "title": "IT-Administratioun",
-        "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur.",
+        "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur. Mat fundéierten Kenntnisser an Betribssystemer, Server-Management an Netzwierkstechnologien.",
         "features": {
-          "linux": "Linux System-Administratioun",
-          "networks": "Netzwierks-Konfiguratioun",
-          "security": "Sécherheeds-Implementéierung"
+          "linux": "Betribssystemer",
+          "networks": "Server-Management",
+          "security": "Netzwierkstechnologien"
         }
       }
     },

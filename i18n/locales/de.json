@@ -102,29 +102,29 @@
       "subtitle": "Von der Konzeption bis zur Umsetzung: ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
       "webdev": {
         "title": "Web-Entwicklung",
-        "description": "Moderne, responsive Websites mit Vue.js, Nuxt.js und den neuesten Web-Standards.",
+        "description": "Moderne, responsive Websites mit bewährten und neuen Technologien, Frontend wie Backend. Von PHP, JavaScript und CSS bis hin zu Nuxt 4, Tailwind und den neuesten Web-Standards.",
         "features": {
-          "spa": "Single Page Applications",
-          "ssr": "Server-Side Rendering",
-          "pwa": "Progressive Web Apps"
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt 4 & Tailwind",
+          "pwa": "Full-Stack Development"
         }
       },
       "cloud": {
         "title": "Virtualisierung",
-        "description": "Professionelle Virtualisierungslösungen für effiziente und flexible IT-Infrastrukturen.",
+        "description": "Professionelle Virtualisierungslösungen für effiziente und flexible IT-Infrastrukturen. Einrichtung von Development-Umgebungen, Server-Virtualisierung und Performance-Optimierung.",
         "features": {
-          "aws": "Docker",
-          "azure": "Proxmox",
-          "gcp": "VirtualBox"
+          "aws": "Development-Umgebungen",
+          "azure": "Server-Virtualisierung",
+          "gcp": "Performance-Optimierung"
         }
       },
       "itadmin": {
         "title": "IT-Administration",
-        "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur.",
+        "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur. Mit fundierten Kenntnissen in Betriebssystemen, Server-Management und Netzwerktechnologien.",
         "features": {
-          "linux": "Linux Systemadministration",
-          "networks": "Netzwerkkonfiguration",
-          "security": "Sicherheitsimplementierung"
+          "linux": "Betriebssysteme",
+          "networks": "Server-Management",
+          "security": "Netzwerktechnologien"
         }
       }
     },
