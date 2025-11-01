@@ -134,7 +134,7 @@
       "projectTitle": "AI Chat Bot",
       "projectSubtitle": "My Latest Innovation",
       "badge": "Featured",
-      "description": "An advanced AI Chat Bot that conducts intelligent conversations and handles complex queries. With state-of-the-art AI technology and an elegant interface, it offers a seamless user experience.",
+      "description": "An advanced AI Chat Bot that conducts intelligent conversations and handles complex queries. This project combines cutting-edge AI technology with an elegant, user-friendly interface, providing a seamless experience for natural conversations. The bot leverages powerful language models through OpenRouter.ai, supports multiple AI models, and intelligently adapts to various conversation contexts. With real-time responses, markdown support, and thoughtful dark/light mode integration, this chat bot is a perfect example of modern full-stack development.",
       "features": {
         "ai": {
           "title": "Intelligent AI",

@@ -134,7 +134,7 @@
       "projectTitle": "Chat Bot IA",
       "projectSubtitle": "Ma Dernière Innovation",
       "badge": "En Vedette",
-      "description": "Un Chat Bot IA avancé qui mène des conversations intelligentes et traite des requêtes complexes. Avec une technologie IA de pointe et une interface élégante, il offre une expérience utilisateur fluide.",
+      "description": "Un Chat Bot IA avancé qui mène des conversations intelligentes et traite des requêtes complexes. Ce projet combine une technologie IA de pointe avec une interface élégante et conviviale, offrant une expérience fluide pour des conversations naturelles. Le bot exploite des modèles linguistiques puissants via OpenRouter.ai, prend en charge plusieurs modèles d'IA et s'adapte intelligemment à différents contextes de conversation. Avec des réponses en temps réel, la prise en charge du markdown et une intégration réfléchie du mode sombre/clair, ce chat bot est un exemple parfait de développement full-stack moderne.",
       "features": {
         "ai": {
           "title": "IA Intelligente",

@@ -134,7 +134,7 @@
       "projectTitle": "KI Chat Bot",
       "projectSubtitle": "Meine Neueste Innovation",
       "badge": "Ausgewählt",
-      "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Mit modernster AI-Technologie und einem eleganten Interface bietet er eine nahtlose Benutzererfahrung.",
+      "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Dieses Projekt vereint modernste AI-Technologie mit einem eleganten, benutzerfreundlichen Interface und bietet eine nahtlose Erfahrung für natürliche Konversationen. Der Bot nutzt leistungsstarke Sprachmodelle über OpenRouter.ai, unterstützt mehrere AI-Modelle und passt sich intelligent an verschiedene Gesprächskontexte an. Mit Echtzeit-Antworten, Markdown-Unterstützung und einer durchdachten Dark/Light Mode Integration ist dieser Chat Bot ein perfektes Beispiel für moderne Full-Stack-Entwicklung.",
       "features": {
         "ai": {
           "title": "Intelligente KI",

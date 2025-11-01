@@ -400,7 +400,7 @@ const techStack = computed(() => [
                                 class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                                 <Icon name="mdi:check-circle" :class="`w-5 h-5 ${service.checkColor}`" />
                                 <span class="font-medium">{{ $t(`home.services.${service.key}.features.${feature}`)
-                                    }}</span>
+                                }}</span>
                             </li>
                         </ul>
                     </div>
@@ -436,8 +436,7 @@ const techStack = computed(() => [
                 </div>
 
                 <!-- Right: Content Side -->
-                <div
-                    class="order-1 lg:order-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+                <div class="order-1 lg:order-2">
                     <div class="space-y-6">
                         <!-- Project Title -->
                         <h3 class="text-3xl md:text-4xl font-black text-gray-800 dark:text-white leading-tight">
@@ -445,19 +444,10 @@ const techStack = computed(() => [
                         </h3>
 
                         <!-- Description -->
-                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                            {{ $t('home.featured.description') }}
-                        </p>
-
-                        <!-- Key Features -->
-                        <div class="grid grid-cols-2 gap-3">
-                            <div v-for="feature in featuredFeatures" :key="feature.key"
-                                :class="`flex items-center gap-3 p-4 ${feature.bgColor} rounded-xl`">
-                                <Icon :name="feature.icon" :class="`w-5 h-5 ${feature.iconColor} flex-shrink-0`" />
-                                <span class="text-sm font-bold text-gray-700 dark:text-gray-300">
-                                    {{ $t(`home.featured.features.${feature.key}.title`) }}
-                                </span>
-                            </div>
+                        <div class="space-y-4">
+                            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                                {{ $t('home.featured.description') }}
+                            </p>
                         </div>
 
                         <!-- Tech Stack -->
