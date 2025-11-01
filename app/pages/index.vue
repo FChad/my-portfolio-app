@@ -259,52 +259,54 @@ const techStack = computed(() => [
     </section>
 
     <!-- About Preview Section -->
-    <section id="about-section" class="py-16 md:py-24 relative overflow-hidden">
+    <section id="about-section" class="py-12 md:py-16 lg:py-24 relative overflow-hidden">
         <div
             class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header - Centered -->
-            <div class="text-center mb-12 lg:mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-gray-800 dark:text-white mb-4">
+            <div class="text-center mb-8 md:mb-12 lg:mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white mb-3 md:mb-4">
                     {{ $t('home.about.title') }}
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-2">
                     {{ $t('home.about.subtitle') }}
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 <!-- Left: Main intro -->
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6">
                     <!-- Story -->
-                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p class="text-base md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
                         {{ $t('home.about.story') }}
                     </p>
 
                     <!-- CTA Button -->
                     <NuxtLinkLocale to="/about"
-                        class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                        <Icon name="mdi:open-in-new" class="w-5 h-5" />
+                        class="group inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl md:rounded-2xl font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-sm md:text-base">
+                        <Icon name="mdi:open-in-new" class="w-4 h-4 md:w-5 md:h-5" />
                         {{ $t('home.about.cta') }}
                     </NuxtLinkLocale>
                 </div>
 
                 <!-- Right: Personal info cards -->
-                <div class="flex flex-col gap-3 sm:gap-4">
+                <div class="flex flex-col gap-3 md:gap-4">
                     <!-- Location -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="flex items-center gap-3 sm:gap-4">
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 md:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
-                                <Icon name="mdi:map-marker" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                                class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg md:rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                                <Icon name="mdi:map-marker" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                             </div>
-                            <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                            <div class="space-y-0.5 md:space-y-1 min-w-0">
+                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('home.about.location') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">Rumelange,
+                                <div
+                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">
+                                    Rumelange,
                                     Luxemburg</div>
                             </div>
                         </div>
@@ -312,15 +314,15 @@ const techStack = computed(() => [
 
                     <!-- Role -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="flex items-center gap-3 sm:gap-4">
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 md:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
-                                <Icon name="mdi:account-heart" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                                class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg md:rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                                <Icon name="mdi:account-heart" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                             </div>
-                            <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Position</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                            <div class="space-y-0.5 md:space-y-1 min-w-0">
+                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Position</div>
+                                <div class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white">{{
                                     $t('home.about.role') }}</div>
                             </div>
                         </div>
@@ -328,16 +330,16 @@ const techStack = computed(() => [
 
                     <!-- Education -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="flex items-center gap-3 sm:gap-4">
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 md:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
-                                <Icon name="mdi:school" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                                class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-lg md:rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                                <Icon name="mdi:school" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                             </div>
-                            <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                            <div class="space-y-0.5 md:space-y-1 min-w-0">
+                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('home.about.study') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                <div class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white">{{
                                     $t('home.about.education') }}</div>
                             </div>
                         </div>
@@ -345,16 +347,16 @@ const techStack = computed(() => [
 
                     <!-- Passion -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="flex items-center gap-3 sm:gap-4">
+                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center gap-3 md:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-md">
-                                <Icon name="mdi:certificate" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                                class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-lg md:rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                                <Icon name="mdi:certificate" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                             </div>
-                            <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                            <div class="space-y-0.5 md:space-y-1 min-w-0">
+                                <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('home.about.training') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                <div class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white">{{
                                     $t('home.about.experience') }}</div>
                             </div>
                         </div>
@@ -398,7 +400,7 @@ const techStack = computed(() => [
                                 class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                                 <Icon name="mdi:check-circle" :class="`w-5 h-5 ${service.checkColor}`" />
                                 <span class="font-medium">{{ $t(`home.services.${service.key}.features.${feature}`)
-                                }}</span>
+                                    }}</span>
                             </li>
                         </ul>
                     </div>
