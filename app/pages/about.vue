@@ -36,25 +36,6 @@ const { getColorClasses } = useColorMapping()
 
 // Interactive states
 const hoveredExperience = ref<number | null>(null)
-const activeSection = ref<string>('intro')
-const selectedSkillCategory = ref<string>('all')
-
-// Modal state for work experience details
-const isModalOpen = ref(false)
-const selectedWorkItem = ref<typeof combinedTimeline[0] | null>(null)
-
-const openWorkDetails = (item: typeof combinedTimeline[0]) => {
-    selectedWorkItem.value = item
-    isModalOpen.value = true
-}
-
-// Skill categories for interactive filter
-const skillCategories = [
-    { id: 'all', label: 'All', icon: 'mdi:view-grid' },
-    { id: 'technical', label: 'Technical', icon: 'mdi:code-braces' },
-    { id: 'soft', label: 'Soft Skills', icon: 'mdi:account-group' },
-    { id: 'tools', label: 'Tools', icon: 'mdi:tools' }
-]
 
 const languages = [
     { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
@@ -279,17 +260,6 @@ const experiences = [
             class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
-        <!-- Floating geometric shapes -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div
-                class="absolute top-40 right-20 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-75">
-            </div>
-            <div
-                class="absolute bottom-20 left-1/4 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-150">
-            </div>
-        </div>
-
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left: Main intro with creative layout -->
@@ -298,8 +268,9 @@ const experiences = [
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg">
                         <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('about.profile.role')
-                            }}</span>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                            {{ $t('about.profile.role') }}
+                        </span>
                     </div>
 
                     <!-- Name -->
@@ -337,7 +308,7 @@ const experiences = [
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                            }}</div>
+                                }}</div>
                         </div>
 
                         <div
@@ -480,7 +451,7 @@ const experiences = [
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
@@ -496,7 +467,7 @@ const experiences = [
         </div>
     </section>
 
-    <!-- Combined Work & Education Timeline -->
+    <!-- Work & Education Timeline -->
     <section class="py-24 relative overflow-hidden">
         <div
             class="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
@@ -510,7 +481,7 @@ const experiences = [
                 <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300">{{ $t('about.work.subtitle') }}</p>
             </div>
 
-            <Timeline :items="combinedTimeline" @open-details="openWorkDetails" />
+            <TimelineSection :items="combinedTimeline" />
         </div>
     </section>
 
@@ -593,7 +564,7 @@ const experiences = [
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                        }}</p>
+                            }}</p>
                     </div>
                 </div>
 
@@ -610,7 +581,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                        }}</p>
+                            }}</p>
                     </div>
                 </div>
             </div>
@@ -702,96 +673,6 @@ const experiences = [
             </div>
         </div>
     </section>
-
-    <!-- Work Experience Details Modal -->
-    <UiModal v-model="isModalOpen" max-width="2xl">
-        <template #header>
-            <div v-if="selectedWorkItem" class="flex flex-col gap-2 w-full">
-                <!-- Title -->
-                <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 dark:text-white leading-tight">
-                    {{ selectedWorkItem.title }}
-                </h3>
-                <!-- Company with icon -->
-                <div v-if="selectedWorkItem.company" class="flex items-center gap-2 text-blue-600 dark:text-blue-400">
-                    <Icon name="mdi:office-building" class="w-5 h-5" />
-                    <span class="text-base sm:text-lg font-semibold">{{ selectedWorkItem.company }}</span>
-                </div>
-            </div>
-        </template>
-
-        <div v-if="selectedWorkItem" class="flex flex-col gap-5 sm:gap-6">
-            <!-- Info Badges in modern card style -->
-            <div class="flex flex-wrap items-center gap-3">
-                <!-- Type Badge -->
-                <div v-if="selectedWorkItem.type"
-                    class="group relative inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border-2 border-purple-200 dark:border-purple-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:shadow-lg hover:scale-105">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-800/50 flex items-center justify-center group-hover:rotate-6 transition-transform">
-                        <Icon name="mdi:briefcase" class="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                    </div>
-                    <span class="text-purple-900 dark:text-purple-200 font-bold text-sm sm:text-base">{{
-                        selectedWorkItem.type }}</span>
-                </div>
-
-                <!-- Year Badge -->
-                <div
-                    class="group relative inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl border-2 border-green-200 dark:border-green-700/50 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 hover:shadow-lg hover:scale-105">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-800/50 flex items-center justify-center group-hover:rotate-6 transition-transform">
-                        <Icon name="mdi:calendar" class="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
-                    <span class="text-green-900 dark:text-green-200 font-bold text-sm sm:text-base">{{
-                        selectedWorkItem.year }}</span>
-                </div>
-            </div>
-
-            <!-- Description Section in modern card -->
-            <div
-                class="group relative bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                        <Icon name="mdi:text-box-outline" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <h4 class="text-lg sm:text-xl font-black text-gray-900 dark:text-white">
-                        {{ $t('about.work.modal.description') }}
-                    </h4>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base ml-13">
-                    {{ selectedWorkItem.description }}
-                </p>
-            </div>
-
-            <!-- Tasks Section in modern card with enhanced styling -->
-            <div v-if="selectedWorkItem.tasks && selectedWorkItem.tasks.length > 0"
-                class="group relative bg-gradient-to-br from-white to-blue-50/30 dark:from-gray-800/50 dark:to-blue-900/10 rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                        <Icon name="mdi:format-list-checks" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <h4 class="text-lg sm:text-xl font-black text-gray-900 dark:text-white">
-                        {{ $t('about.work.modal.tasks') }}
-                    </h4>
-                </div>
-                <ul class="flex flex-col gap-2">
-                    <li v-for="(task, taskIndex) in selectedWorkItem.tasks" :key="taskIndex"
-                        class="group/item flex items-start gap-3 p-3 rounded-xl hover:bg-white/50 dark:hover:bg-gray-700/30 transition-all duration-200">
-                        <!-- Number Badge with modern styling -->
-                        <div
-                            class="flex-shrink-0 w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
-                            <span class="text-white font-bold text-xs sm:text-sm">
-                                {{ taskIndex + 1 }}
-                            </span>
-                        </div>
-                        <!-- Task Text -->
-                        <span
-                            class="flex-1 text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed pt-0.5">
-                            {{ task }}
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </UiModal>
 </template>
 
 <style scoped>
