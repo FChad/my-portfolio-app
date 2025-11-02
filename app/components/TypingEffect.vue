@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 const typingText = ref('')
 const isActive = ref(false)
 
-// Animation state - using more performant approach
+// Animation state (using more performant approach)
 let animationId: number | null = null
 let lastTime = 0
 let currentTextIndex = 0

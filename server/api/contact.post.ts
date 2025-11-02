@@ -153,7 +153,7 @@ export default defineEventHandler(async (event) => {
 
     console.log('📧 Sending email via Resend...')
 
-    // Send email using Resend - exactly as in official docs
+    // Send email using Resend (exactly as in official docs)
     const data = await resend.emails.send({
       from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
       to: [process.env.EMAIL_TO],
@@ -185,7 +185,7 @@ export default defineEventHandler(async (event) => {
       throw error
     }
 
-    // Handle Resend API errors - throw error instead of returning
+    // Handle Resend API errors (throw error instead of returning)
     throw createError({
       statusCode: 500,
       statusMessage: error instanceof Error ? error.message : 'Failed to send email. Please try again.'

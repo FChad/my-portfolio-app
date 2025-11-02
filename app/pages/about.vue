@@ -535,7 +535,7 @@ const experiences = [
         </div>
     </section>
 
-    <!-- Interests & Passions - Magazine style -->
+    <!-- Interests & Passions (Magazine style) -->
     <section class="py-16 sm:py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-900">
         <div
             class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
@@ -598,7 +598,7 @@ const experiences = [
                         <img :src="`/img/about/${experience.image}`" :alt="experience.alt"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             loading="lazy" />
-                        <!-- Overlay for better text readability - lighter in light mode -->
+                        <!-- Overlay for better text readability (lighter in light mode) -->
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10 dark:from-black/80 dark:via-black/50 dark:to-black/30 group-hover:from-black/50 group-hover:via-black/20 group-hover:to-transparent dark:group-hover:from-black/70 dark:group-hover:via-black/40 dark:group-hover:to-black/20 transition-all duration-300">
                         </div>
@@ -641,7 +641,7 @@ const experiences = [
         </div>
     </section>
 
-    <!-- CTA Section - Bold and modern -->
+    <!-- CTA Section (Bold and modern) -->
     <section class="py-16 sm:py-24 relative overflow-hidden">
         <div
             class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">

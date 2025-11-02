@@ -79,7 +79,7 @@ function getFormattedLines() {
     return content.split('\n')
 }
 
-// Static values for server-side rendering - computed for better performance
+// Static values for server-side rendering (computed for better performance)
 const languageInfo = computed(() => getLanguageInfo(props.language))
 const contentText = computed(() => getContent())
 const formattedLines = computed(() => getFormattedLines())
@@ -263,7 +263,7 @@ code::-moz-selection {
     color: inherit !important;
 }
 
-/* Scrollbar styling for code blocks - consistent with global styles */
+/* Scrollbar styling for code blocks (consistent with global styles) */
 .scrollbar-code::-webkit-scrollbar {
     width: 8px;
     height: 8px;

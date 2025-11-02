@@ -103,7 +103,7 @@ const validateForm = () => {
         errors.value.message = t('contact.form.errors.messageMaxLength')
     }
 
-    // Turnstile validation - check if token exists and is a string
+    // Turnstile validation (check if token exists and is a string)
     if (!turnstileToken.value || typeof turnstileToken.value !== 'string' || !turnstileToken.value.trim()) {
         errors.value.turnstile = t('contact.form.errors.captchaRequired')
         showTurnstileError.value = true

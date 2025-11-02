@@ -1,9 +1,9 @@
 <template>
     <div class="w-full h-full flex flex-col">
-        <!-- Header - Fixed at top -->
+        <!-- Header (Fixed at top) -->
         <Header />
 
-        <!-- SubNavigation - Fixed below header -->
+        <!-- SubNavigation (Fixed below header) -->
         <div class="sticky z-40" style="top: var(--header-height);">
             <UiSubNavigation v-if="subNavConfig" v-bind="subNavConfig" />
         </div>
