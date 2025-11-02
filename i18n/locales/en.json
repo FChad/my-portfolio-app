@@ -194,6 +194,7 @@
     "languages": {
       "title": "Languages",
       "subtitle": "Multilingual communication",
+      "proficiency": "Proficiency",
       "levels": {
         "A1": "Basic",
         "A2": "Elementary",

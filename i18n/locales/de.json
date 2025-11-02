@@ -194,6 +194,7 @@
     "languages": {
       "title": "Sprachen",
       "subtitle": "Mehrsprachige Kommunikation",
+      "proficiency": "Kenntnisstand",
       "levels": {
         "A1": "Grundkenntnisse",
         "A2": "Grundlegende Kenntnisse",

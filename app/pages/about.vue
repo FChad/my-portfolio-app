@@ -308,7 +308,7 @@ const experiences = [
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                                }}</div>
+                            }}</div>
                         </div>
 
                         <div
@@ -449,9 +449,10 @@ const experiences = [
                         <!-- Level with progress bar -->
                         <div class="space-y-2">
                             <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">{{
+                                    $t('about.languages.proficiency') }}</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
@@ -564,7 +565,7 @@ const experiences = [
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
 
@@ -581,7 +582,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
             </div>
