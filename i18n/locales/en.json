@@ -163,7 +163,7 @@
   "about": {
     "profile": {
       "nationality": "Luxembourgish",
-      "location": "Rümelingen, Luxembourg",
+      "location": "Rumelange, Luxembourg",
       "status": "Single",
       "driving": "Category B",
       "role": "Full-Stack Developer & IT Technician",
@@ -439,7 +439,7 @@
       "technologies": {
         "nuxt3": {
           "name": "Frontend Framework",
-          "tech": "Nuxt 3",
+          "tech": "Nuxt 4",
           "description": "Modern Vue.js framework with SSR capabilities, automatic routing, and enhanced performance optimization"
         },
         "vue3": {
@@ -496,7 +496,7 @@
         },
         "performance": {
           "title": "High Performance",
-          "description": "Optimized loading times and SEO with Nuxt 3 Server-Side Rendering"
+          "description": "Optimized loading times and SEO with Nuxt 4 Server-Side Rendering"
         },
         "seo": {
           "title": "SEO Optimized",
@@ -523,7 +523,7 @@
       "technologies": {
         "nuxt3": {
           "name": "Frontend Framework",
-          "tech": "Nuxt 3",
+          "tech": "Nuxt 4",
           "description": "Advanced Vue.js framework with Server-Side Rendering, automatic code splitting, and performance optimization"
         },
         "vue3": {
@@ -1132,7 +1132,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Let's talk about your next project",
+    "subtitle": "Do you have questions or feedback? I'm here to help.",
     "methods": {
       "title": "Contact Methods",
       "linkedin": {

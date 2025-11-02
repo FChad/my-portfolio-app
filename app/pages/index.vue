@@ -303,11 +303,10 @@ const techStack = computed(() => [
                             </div>
                             <div class="space-y-0.5 md:space-y-1 min-w-0">
                                 <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">{{
-                                    $t('home.about.location') }}</div>
+                                    $t('about.profile.labels.location') }}</div>
                                 <div
-                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">
-                                    Rumelange,
-                                    Luxemburg</div>
+                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">{{
+                                    $t('about.profile.location') }}</div>
                             </div>
                         </div>
                     </div>
