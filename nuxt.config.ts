@@ -96,6 +96,7 @@ export default defineNuxtConfig({
     experimental: {
       wasm: true
     },
+    preset: 'cloudflare-pages',
     rollupConfig: {
       external: ['@react-email/render']
     },
@@ -104,10 +105,5 @@ export default defineNuxtConfig({
     },
     compressPublicAssets: true
   },
-  ssr: true,
-  router: {
-    options: {
-      strict: true  // Prevents automatic trailing slash addition/removal
-    }
-  }
+  ssr: true
 })
