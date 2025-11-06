@@ -102,6 +102,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,  // Crawlt alle internen Links beim Build
+      autoSubfolderIndex: false  // Verhindert automatische /index.html Generierung
     },
     compressPublicAssets: true
   },
