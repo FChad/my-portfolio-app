@@ -6,9 +6,6 @@ definePageMeta({
 const { t } = useI18n()
 const { setSeoMeta, getStructuredData } = useSeo()
 
-// Asynchrones Laden der AnimatedStars Komponente
-const AnimatedStars = defineAsyncComponent(() => import('~/components/AnimatedStars.vue'))
-
 setSeoMeta({
     title: t('seo.home.title'),
     description: t('seo.home.description'),
@@ -169,14 +166,8 @@ const techStack = computed(() => [
             </div>
 
             <!-- Animated Stars Canvas -->
-            <ClientOnly>
-                <template #fallback>
-                    <!-- Platzhalter mit gleichem Gradient -->
-                    <div class="absolute inset-0 z-0"></div>
-                </template>
-                <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
-                    canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
-            </ClientOnly>
+            <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
+                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
 
             <!-- Adaptive overlay for text readability -->
             <div
@@ -314,9 +305,8 @@ const techStack = computed(() => [
                                 <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('about.profile.labels.location') }}</div>
                                 <div
-                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">
-                                    {{
-                                        $t('about.profile.location') }}</div>
+                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">{{
+                                    $t('about.profile.location') }}</div>
                             </div>
                         </div>
                     </div>
@@ -411,7 +401,7 @@ const techStack = computed(() => [
                                     :class="`w-4 h-4 md:w-5 md:h-5 ${service.checkColor} flex-shrink-0`" />
                                 <span class="font-medium text-sm md:text-base">{{
                                     $t(`home.services.${service.key}.features.${feature}`)
-                                }}</span>
+                                    }}</span>
                             </li>
                         </ul>
                     </div>
