@@ -104,5 +104,10 @@ export default defineNuxtConfig({
     },
     compressPublicAssets: true
   },
-  ssr: true
+  ssr: true,
+  router: {
+    options: {
+      strict: true  // Prevents automatic trailing slash addition/removal
+    }
+  }
 })
