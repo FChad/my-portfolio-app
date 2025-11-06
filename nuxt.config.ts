@@ -57,7 +57,8 @@ export default defineNuxtConfig({
     ],
     langDir: 'locales',
     strategy: 'prefix_except_default',
-    detectBrowserLanguage: false
+    detectBrowserLanguage: false,
+    trailingSlash: true
   },
   app: {
     head: {
