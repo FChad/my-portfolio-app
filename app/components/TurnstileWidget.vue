@@ -1,9 +1,11 @@
 <template>
     <div class="flex justify-center my-6">
-        <div v-if="isReady" ref="turnstileElement" />
-        <div v-else class="w-80 mx-auto">
-            <div class="animate-pulse bg-gray-200 dark:bg-gray-700 h-16 rounded-lg flex items-center justify-center">
-                <Icon name="mdi:loading" class="animate-spin text-gray-500 dark:text-gray-400 text-xl" />
+        <!-- Container mit exakter Turnstile-Größe (300x65px) um Layout-Shift zu vermeiden -->
+        <div class="turnstile-container">
+            <div v-if="isReady" ref="turnstileElement" />
+            <div v-else
+                class="w-full h-full rounded-lg flex items-center justify-center bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 animate-pulse">
+                <Icon name="mdi:loading" class="animate-spin text-gray-400 dark:text-gray-500 text-2xl" />
             </div>
         </div>
     </div>
@@ -130,3 +132,10 @@ defineExpose({
     reset: resetTurnstile
 })
 </script>
+
+<style scoped>
+.turnstile-container {
+    width: 300px;
+    height: 65px;
+}
+</style>
