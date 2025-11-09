@@ -96,7 +96,6 @@ export default defineNuxtConfig({
     experimental: {
       wasm: true
     },
-    preset: 'cloudflare-pages',
     rollupConfig: {
       external: ['@react-email/render']
     },
