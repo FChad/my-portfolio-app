@@ -11,7 +11,7 @@
       "keywords": "Chad Feierstein, Über mich, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Luxemburg"
     },
     "showcase": {
-      "title": "Showcase",
+      "title": "Showcase - Projekte & Dokumentationen",
       "description": "Entdecken Sie meine neuesten Projekte, Dokumentationen und technischen Lösungen. Von Web-Entwicklung bis hin zu Cloud-Infrastrukturen.",
       "keywords": "Portfolio, Projekte, Web Entwicklung, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
@@ -22,34 +22,34 @@
     },
     "projects": {
       "chatbot": {
-        "title": "KI Chat Bot",
+        "title": "KI Chat Bot Projekt",
         "description": "Moderner KI Chat Bot mit erweiterten Sprachverarbeitungsfähigkeiten. Entwickelt mit Vue.js und integrierten AI-APIs für natürliche Gespräche.",
         "keywords": "KI Chat Bot, Artificial Intelligence, Vue.js, Chat Assistant, Natural Language Processing"
       },
       "portfolio": {
-        "title": "Portfolio Website",
+        "title": "Portfolio Website Projekt",
         "description": "Moderne Portfolio Website gebaut mit Nuxt 4, Vue 3 und TypeScript. Mehrsprachig, SEO-optimiert mit Dark Mode und performanten Animationen.",
         "keywords": "Portfolio Website, Nuxt 4, Vue 3, TypeScript, Multilingual, SEO, Dark Mode"
       }
     },
     "documentation": {
       "debian12": {
-        "title": "Debian 12 Initial Setup",
+        "title": "Debian 12 Initial Setup Anleitung",
         "description": "Vollständige Anleitung für die initiale Einrichtung eines Debian 12 Servers. Von der Grundkonfiguration bis zur Sicherheitshärtung.",
         "keywords": "Debian 12, Server Setup, Linux Administration, System Konfiguration, Server Sicherheit"
       },
       "cardanoNode": {
-        "title": "Cardano Node Setup",
+        "title": "Cardano Node Setup Anleitung",
         "description": "Schritt-für-Schritt Anleitung zur Installation und Konfiguration eines Cardano Nodes auf Debian 12. Inklusive Monitoring und Optimierung.",
         "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
       },
       "cardanoDbSync": {
-        "title": "Cardano DB Sync Installation",
+        "title": "Cardano DB Sync Installation Anleitung",
         "description": "Detaillierte Anleitung für die Installation von Cardano DB Sync auf Debian. PostgreSQL Konfiguration und Datenbank-Synchronisation.",
         "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
       },
       "ollama": {
-        "title": "Ollama Installation",
+        "title": "Ollama Installation Anleitung",
         "description": "Komplette Anleitung zur Installation und Konfiguration von Ollama auf Debian 12. Lokale AI Model Verwaltung und GPU Acceleration.",
         "keywords": "Ollama, AI Models, Local AI, Debian, Machine Learning, GPU Acceleration, LLM"
       }

@@ -6,50 +6,50 @@
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
     },
     "about": {
-      "title": "About",
+      "title": "About Me",
       "description": "Learn more about Chad Feierstein, Full-Stack Developer with BTS Cloud Computing education and professional IT experience in Luxembourg.",
       "keywords": "Chad Feierstein, About, IT Experience, BTS Cloud Computing, IT Technician, Luxembourg"
     },
     "showcase": {
-      "title": "Showcase",
+      "title": "Showcase - Projects & Documentation",
       "description": "Discover my latest projects, documentation and technical solutions. From web development to cloud infrastructures.",
       "keywords": "Portfolio, Projects, Web Development, AI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
-      "title": "Contact",
+      "title": "Contact Me",
       "description": "Get in touch for professional web development, IT administration and cloud computing solutions. Fast and reliable responses guaranteed.",
       "keywords": "Contact, Chad Feierstein, Hire Web Developer, IT Services, Cloud Computing Consulting"
     },
     "projects": {
       "chatbot": {
-        "title": "AI Chat Bot",
+        "title": "AI Chat Bot Project",
         "description": "Modern AI Chat Bot with advanced natural language processing capabilities. Built with Vue.js and integrated AI APIs for natural conversations.",
         "keywords": "AI Chat Bot, Artificial Intelligence, Vue.js, Chat Assistant, Natural Language Processing"
       },
       "portfolio": {
-        "title": "Portfolio Website",
+        "title": "Portfolio Website Project",
         "description": "Modern portfolio website built with Nuxt 4, Vue 3 and TypeScript. Multilingual, SEO-optimized with dark mode and performant animations.",
         "keywords": "Portfolio Website, Nuxt 4, Vue 3, TypeScript, Multilingual, SEO, Dark Mode"
       }
     },
     "documentation": {
       "debian12": {
-        "title": "Debian 12 Initial Setup",
+        "title": "Debian 12 Initial Setup Guide",
         "description": "Complete guide for initial Debian 12 server setup. From basic configuration to security hardening.",
         "keywords": "Debian 12, Server Setup, Linux Administration, System Configuration, Server Security"
       },
       "cardanoNode": {
-        "title": "Cardano Node Setup",
+        "title": "Cardano Node Setup Guide",
         "description": "Step-by-step guide for installing and configuring a Cardano Node on Debian 12. Including monitoring and optimization.",
         "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
       },
       "cardanoDbSync": {
-        "title": "Cardano DB Sync Installation",
+        "title": "Cardano DB Sync Installation Guide",
         "description": "Detailed guide for installing Cardano DB Sync on Debian. PostgreSQL configuration and database synchronization.",
         "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
       },
       "ollama": {
-        "title": "Ollama Installation",
+        "title": "Ollama Installation Guide",
         "description": "Complete guide for installing and configuring Ollama on Debian 12. Local AI model management and GPU acceleration.",
         "keywords": "Ollama, AI Models, Local AI, Debian, Machine Learning, GPU Acceleration, LLM"
       }

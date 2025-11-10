@@ -56,6 +56,7 @@ export const useSeo = () => {
 
   const setSeoMeta = (options: SeoOptions = {}) => {
     const title = options.title || t('nav.home')
+    const fullTitle = `Chad Feierstein - ${title}`
     const description = options.description || t('home.tagline')
     const image = options.image || `${baseUrl}/img/og/default-og-image.svg`
 
@@ -63,13 +64,13 @@ export const useSeo = () => {
 
     useSeoMeta({
       description,
-      ogTitle: title,
+      ogTitle: fullTitle,
       ogDescription: description,
       ogImage: image,
-      ogImageAlt: title,
+      ogImageAlt: fullTitle,
       ogType: 'website',
       twitterCard: 'summary_large_image',
-      twitterTitle: title,
+      twitterTitle: fullTitle,
       twitterDescription: description,
       twitterImage: image,
       keywords: options.keywords
