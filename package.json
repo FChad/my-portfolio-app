@@ -12,18 +12,18 @@
   "dependencies": {
     "@nuxt/icon": "^2.1.0",
     "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/i18n": "^10.2.0",
+    "@nuxtjs/i18n": "^10.2.1",
     "@nuxtjs/robots": "^5.5.6",
     "@nuxtjs/sitemap": "^7.4.7",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "nuxt": "^4.2.1",
-    "resend": "^6.4.2",
-    "vue": "^3.5.24",
+    "resend": "^6.5.2",
+    "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@iconify-json/circle-flags": "^1.2.10",
     "@iconify-json/mdi": "^1.2.3",
-    "@types/node": "^24.10.0"
+    "@types/node": "^24.10.1"
   }
 }
