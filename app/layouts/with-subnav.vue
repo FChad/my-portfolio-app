@@ -18,26 +18,38 @@
 </template>
 
 <script setup lang="ts">
-interface SubNavProps {
-    title: string
-    showBackButton?: boolean
-    backTo?: string
-}
+import { getDocumentationBySlug } from '~/data/documentation'
 
-// Get subnav configuration from page meta
 const route = useRoute()
 const { t } = useI18n()
 
-// Extract subnav configuration from page meta
-const subNavConfig = computed((): SubNavProps | null => {
-    const meta = route.meta.subNav as any
-    if (!meta) return null
-
-    return {
-        title: typeof meta.titleKey === 'string' ? t(meta.titleKey) : meta.title,
-        showBackButton: meta.showBackButton ?? false,
-        backTo: meta.backTo
+// Compute SubNav config directly based on route - SSR compatible
+const subNavConfig = computed(() => {
+    // Check if this is a documentation page
+    const pathMatch = route.path.match(/\/showcase\/documentation\/([^/]+)$/)
+    if (pathMatch && pathMatch[1]) {
+        const slug = pathMatch[1]
+        const config = getDocumentationBySlug(slug)
+        if (config) {
+            return {
+                title: t(config.subNav.titleKey),
+                showBackButton: config.subNav.showBackButton,
+                backTo: config.subNav.backTo
+            }
+        }
     }
+
+    // Fallback: route.meta.subNav (for static pages like my-chat-bot, my-portfolio-website)
+    const meta = route.meta.subNav as any
+    if (meta) {
+        return {
+            title: typeof meta.titleKey === 'string' ? t(meta.titleKey) : meta.title,
+            showBackButton: meta.showBackButton ?? false,
+            backTo: meta.backTo
+        }
+    }
+
+    return null
 })
 </script>
 

@@ -144,7 +144,7 @@ const technologies = [
 
 <template>
     <!-- Hero Section -->
-    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('showcase.projects.myPortfolio.title') }}
         </h1>
@@ -184,7 +184,7 @@ const technologies = [
     </section>
 
     <!-- Key Features Section -->
-    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('projects.myPortfolio.keyFeatures.title') }}
         </h2>
@@ -217,7 +217,7 @@ const technologies = [
     </section>
 
     <!-- Tech Stack Section -->
-    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('projects.myPortfolio.builtWith.title') }}
         </h2>
@@ -247,7 +247,7 @@ const technologies = [
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:gap-6">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white text-center">
             {{ t('projects.myPortfolio.callToAction.title') }}
         </h2>

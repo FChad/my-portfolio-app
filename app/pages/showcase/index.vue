@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const { setSeoMeta } = useSeo()
+const { getAllConfigs } = useDocumentation()
 
 setSeoMeta({
     title: t('seo.showcase.title'),
@@ -18,7 +19,8 @@ interface ShowcaseItem {
     icon?: string;
 }
 
-const showcaseItems: ShowcaseItem[] = [
+// Static project items
+const projectItems: ShowcaseItem[] = [
     {
         id: 1,
         title: "showcase.projects.myChatBot.title",
@@ -34,47 +36,34 @@ const showcaseItems: ShowcaseItem[] = [
         tags: ["Nuxt3", "TypeScript", "Tailwind", "i18n", "VeeValidate", "Resend", "Iconify"],
         link: '/showcase/project/my-portfolio-website',
         type: 'project'
-    },
-    {
-        id: 3,
-        title: "showcase.documentation.debianInitialSetup.title",
-        description: "showcase.documentation.debianInitialSetup.description",
-        tags: ["Debian 12", "Server Setup", "Linux", "System Administration"],
-        link: '/showcase/documentation/debian-12-initial-setup',
-        type: 'documentation'
-    },
-    {
-        id: 4,
-        title: "showcase.documentation.ollamaSetup.title",
-        description: "showcase.documentation.ollamaSetup.description",
-        tags: ["Debian 12", "Ollama", "Apache2", "SSL/TLS", "API", "AI"],
-        link: '/showcase/documentation/debian-ollama-setup',
-        type: 'documentation'
-    },
-    {
-        id: 5,
-        title: "showcase.documentation.cardanoNodeSetup.title",
-        description: "showcase.documentation.cardanoNodeSetup.description",
-        tags: ["Debian 12", "Cardano", "NIX", "Blockchain", "Cryptocurrency", "Node"],
-        link: '/showcase/documentation/debian-cardano-node-setup',
-        type: 'documentation'
-    },
-    {
-        id: 6,
-        title: "showcase.documentation.cardanoDbSyncSetup.title",
-        description: "showcase.documentation.cardanoDbSyncSetup.description",
-        tags: ["Debian 12", "Cardano DB Sync", "PostgreSQL", "NIX", "Blockchain", "Database"],
-        link: '/showcase/documentation/debian-cardano-db-sync-setup',
-        type: 'documentation'
     }
-];
+]
+
+// Generate documentation items from centralized registry
+const documentationItems = computed<ShowcaseItem[]>(() => {
+    const configs = getAllConfigs()
+    return configs.map((config, index) => ({
+        id: projectItems.length + index + 1,
+        title: config.titleKey,
+        description: config.descriptionKey,
+        tags: config.tags,
+        link: `/showcase/documentation/${config.slug}`,
+        type: 'documentation' as const
+    }))
+})
+
+// Combine all items
+const showcaseItems = computed<ShowcaseItem[]>(() => [
+    ...projectItems,
+    ...documentationItems.value
+])
 
 // Filter functionality
 const activeFilter = ref<'all' | 'project' | 'documentation'>('all')
 const searchTerm = ref('')
 
 const filteredItems = computed(() => {
-    let items = showcaseItems
+    let items = showcaseItems.value
 
     // Filter by type
     if (activeFilter.value !== 'all') {
@@ -96,21 +85,21 @@ const filteredItems = computed(() => {
 })
 
 // Count items for badges
-const projectCount = computed(() => showcaseItems.filter(item => item.type === 'project').length)
-const documentationCount = computed(() => showcaseItems.filter(item => item.type === 'documentation').length)
-const totalCount = computed(() => showcaseItems.length)
+const projectCount = computed(() => showcaseItems.value.filter(item => item.type === 'project').length)
+const documentationCount = computed(() => showcaseItems.value.filter(item => item.type === 'documentation').length)
+const totalCount = computed(() => showcaseItems.value.length)
 
 </script>
 
 <template>
     <!-- Single Compact Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20">
+    <section class="relative min-h-screen overflow-hidden py-12 sm:py-16 md:py-20">
         <!-- Animated gradient background -->
         <div
             class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="space-y-6 md:space-y-8">
                 <!-- Header -->
                 <div class="text-center space-y-3 md:space-y-4">
@@ -160,11 +149,10 @@ const totalCount = computed(() => showcaseItems.length)
 
                     <!-- Search Bar -->
                     <div class="flex-1 max-w-md sm:ml-auto">
-                        <div class="relative">
-                            <Icon name="mdi:magnify"
-                                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <div class="relative flex items-center gap-2">
+                            <Icon name="mdi:magnify" class="w-5 h-5 text-gray-400 flex-shrink-0" />
                             <input v-model="searchTerm" type="text" :placeholder="t('showcase.search.placeholder')"
-                                class="w-full pl-10 pr-10 py-2 text-sm md:text-base bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-400" />
+                                class="w-full px-4 py-2 text-sm md:text-base bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-400" />
                             <button v-if="searchTerm" @click="searchTerm = ''"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
                                 <Icon name="mdi:close" class="w-4 h-4" />
