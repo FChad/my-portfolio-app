@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const { setSeoMeta } = useSeo()
-const { getAllConfigs } = useDocumentation()
+const { getAllConfigs: getAllDocConfigs } = useDocumentation()
+const { getAllConfigs: getAllProjectConfigs } = useProjects()
 
 setSeoMeta({
     title: t('seo.showcase.title'),
@@ -19,31 +20,24 @@ interface ShowcaseItem {
     icon?: string;
 }
 
-// Static project items
-const projectItems: ShowcaseItem[] = [
-    {
-        id: 1,
-        title: "showcase.projects.myChatBot.title",
-        description: "showcase.projects.myChatBot.description",
-        tags: ["Nuxt3", "Vue3", "TypeScript", "Pinia", "Tailwind", "Ollama", "AI", "Chat", "SSE"],
-        link: '/showcase/project/my-chat-bot',
-        type: 'project'
-    },
-    {
-        id: 2,
-        title: "showcase.projects.myPortfolio.title",
-        description: "showcase.projects.myPortfolio.description",
-        tags: ["Nuxt3", "TypeScript", "Tailwind", "i18n", "VeeValidate", "Resend", "Iconify"],
-        link: '/showcase/project/my-portfolio-website',
-        type: 'project'
-    }
-]
+// Generate project items from centralized registry
+const projectItems = computed<ShowcaseItem[]>(() => {
+    const configs = getAllProjectConfigs()
+    return configs.map((config, index) => ({
+        id: index + 1,
+        title: config.titleKey,
+        description: config.descriptionKey,
+        tags: config.tags,
+        link: `/showcase/project/${config.slug}`,
+        type: 'project' as const
+    }))
+})
 
 // Generate documentation items from centralized registry
 const documentationItems = computed<ShowcaseItem[]>(() => {
-    const configs = getAllConfigs()
+    const configs = getAllDocConfigs()
     return configs.map((config, index) => ({
-        id: projectItems.length + index + 1,
+        id: projectItems.value.length + index + 1,
         title: config.titleKey,
         description: config.descriptionKey,
         tags: config.tags,
@@ -54,7 +48,7 @@ const documentationItems = computed<ShowcaseItem[]>(() => {
 
 // Combine all items
 const showcaseItems = computed<ShowcaseItem[]>(() => [
-    ...projectItems,
+    ...projectItems.value,
     ...documentationItems.value
 ])
 

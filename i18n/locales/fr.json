@@ -9,7 +9,11 @@
       "troubleshooting": "Dépannage",
       "troubleshootingSubtitle": "Problèmes courants et leurs solutions",
       "additionalResources": "Ressources Supplémentaires",
-      "additionalResourcesSubtitle": "Documentation officielle et liens utiles"
+      "additionalResourcesSubtitle": "Documentation officielle et liens utiles",
+      "keyFeatures": "Fonctionnalités Clés",
+      "keyFeaturesSubtitle": "Découvrez les principales fonctionnalités",
+      "builtWith": "Construit Avec",
+      "builtWithSubtitle": "Technologies et frameworks utilisés dans ce projet"
     }
   },
   "seo": {

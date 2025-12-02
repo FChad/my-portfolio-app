@@ -3,9 +3,9 @@
         <!-- Header (Fixed at top) -->
         <LayoutHeader />
 
-        <!-- SubNavigation (Fixed below header) -->
-        <div class="sticky z-40" style="top: var(--header-height);">
-            <UiSubNavigation v-if="subNavConfig" v-bind="subNavConfig" />
+        <!-- SubNavigation (Fixed below header) - always reserve height -->
+        <div class="sticky z-40" style="top: var(--header-height); min-height: var(--subnav-height);">
+            <UiSubNavigation v-bind="subNavConfig" />
         </div>
 
         <!-- Main Content with padding to account for fixed headers -->
@@ -18,39 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { getDocumentationBySlug } from '~/data/documentation'
-
-const route = useRoute()
-const { t } = useI18n()
-
-// Compute SubNav config directly based on route - SSR compatible
-const subNavConfig = computed(() => {
-    // Check if this is a documentation page
-    const pathMatch = route.path.match(/\/showcase\/documentation\/([^/]+)$/)
-    if (pathMatch && pathMatch[1]) {
-        const slug = pathMatch[1]
-        const config = getDocumentationBySlug(slug)
-        if (config) {
-            return {
-                title: t(config.subNav.titleKey),
-                showBackButton: config.subNav.showBackButton,
-                backTo: config.subNav.backTo
-            }
-        }
-    }
-
-    // Fallback: route.meta.subNav (for static pages like my-chat-bot, my-portfolio-website)
-    const meta = route.meta.subNav as any
-    if (meta) {
-        return {
-            title: typeof meta.titleKey === 'string' ? t(meta.titleKey) : meta.title,
-            showBackButton: meta.showBackButton ?? false,
-            backTo: meta.backTo
-        }
-    }
-
-    return null
-})
+const { subNavConfig } = useSubNav()
 </script>
 
 <style lang="postcss">

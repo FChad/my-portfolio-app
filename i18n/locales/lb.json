@@ -9,7 +9,11 @@
       "troubleshooting": "Problemléisung",
       "troubleshootingSubtitle": "Heefeg Problemer an hir Léisungen",
       "additionalResources": "Zousätzlech Ressourcen",
-      "additionalResourcesSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken"
+      "additionalResourcesSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken",
+      "keyFeatures": "Haaptfunktiounen",
+      "keyFeaturesSubtitle": "Entdeckt déi wichtegst Funktiounen",
+      "builtWith": "Gebaut mat",
+      "builtWithSubtitle": "Technologien a Frameworks an dësem Projet"
     }
   },
   "seo": {
