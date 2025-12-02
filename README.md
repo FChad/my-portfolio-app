@@ -23,12 +23,12 @@ Multilingual portfolio website with projects, documentation, and professional ex
 
 | Category | Technologies |
 |----------|-------------|
-| **Framework** | Nuxt 4.2.1, Vue 3.5.25 |
-| **Language** | TypeScript 5.7.2 |
-| **Styling** | TailwindCSS 3.4.17, @nuxtjs/color-mode |
+| **Framework** | Nuxt, Vue |
+| **Language** | TypeScript |
+| **Styling** | TailwindCSS, @nuxtjs/color-mode |
 | **Icons** | @nuxt/icon with Circle Flags & MDI sets |
-| **i18n** | @nuxtjs/i18n 10.2.1 |
-| **Email** | Resend 6.5.2 |
+| **i18n** | @nuxtjs/i18n |
+| **Email** | Resend |
 | **SEO** | @nuxtjs/robots, @nuxtjs/sitemap |
 
 ## 📦 Installation
