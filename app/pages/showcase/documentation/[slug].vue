@@ -43,34 +43,34 @@ setSeoMeta({
 <template>
     <div>
         <!-- Hero Section -->
-        <DocumentationDocHeroSection :title="t(config.titleKey)" :description="t(config.descriptionKey)"
+        <DocumentationHeroSection :title="t(config.titleKey)" :description="t(config.descriptionKey)"
             :tags="config.tags" />
 
         <!-- Important Notes Section -->
-        <DocumentationDocNotesGrid v-if="config.notes && config.notes.length > 0"
+        <DocumentationNotesGrid v-if="config.notes && config.notes.length > 0"
             :title="t('common.sections.importantNotes')" :subtitle="t('common.sections.importantNotesSubtitle')"
             :notes="config.notes" />
 
         <!-- Setup Steps Section -->
-        <DocumentationDocStepsList v-if="config.steps && config.steps.length > 0"
-            :title="t('common.sections.setupSteps')" :steps="config.steps" />
+        <DocumentationStepsList v-if="config.steps && config.steps.length > 0" :title="t('common.sections.setupSteps')"
+            :steps="config.steps" />
 
         <!-- Tips Section (if available) -->
-        <DocumentationDocTipsSection v-if="config.tips && config.tips.length > 0"
+        <DocumentationTipsSection v-if="config.tips && config.tips.length > 0"
             :title="t('common.sections.additionalTips')" :subtitle="t('common.sections.additionalTipsSubtitle')"
             :items="config.tips" type="tips" />
 
         <!-- Troubleshooting Section (if available) -->
-        <DocumentationDocTipsSection v-if="config.troubleshooting && config.troubleshooting.length > 0"
+        <DocumentationTipsSection v-if="config.troubleshooting && config.troubleshooting.length > 0"
             :title="t('common.sections.troubleshooting')" :subtitle="t('common.sections.troubleshootingSubtitle')"
             :items="config.troubleshooting" type="troubleshooting" />
 
         <!-- Resources Section (if available) -->
-        <DocumentationDocResourcesSection v-if="config.resources && config.resources.length > 0"
+        <DocumentationResourcesSection v-if="config.resources && config.resources.length > 0"
             :title="t('common.sections.additionalResources')"
             :subtitle="t('common.sections.additionalResourcesSubtitle')" :resources="config.resources" />
 
         <!-- Completion Message -->
-        <DocumentationDocCompletion :title="t(config.completion.title)" :message="t(config.completion.message)" />
+        <DocumentationCompletion :title="t(config.completion.title)" :message="t(config.completion.message)" />
     </div>
 </template>

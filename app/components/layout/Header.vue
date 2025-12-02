@@ -71,8 +71,8 @@ const isActive = (path: string) => {
 
                     <!-- Desktop Controls -->
                     <div class="hidden md:flex items-center gap-3">
-                        <LanguageSwitcher />
-                        <ThemeSwitcher />
+                        <FeaturesLanguageSwitcher />
+                        <FeaturesThemeSwitcher />
                     </div>
                 </div>
             </div>
@@ -105,8 +105,8 @@ const isActive = (path: string) => {
                         {{ $t('nav.contact') }}
                     </NuxtLinkLocale>
                     <div class="flex justify-center gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-                        <LanguageSwitcher />
-                        <ThemeSwitcher />
+                        <FeaturesLanguageSwitcher />
+                        <FeaturesThemeSwitcher />
                     </div>
                 </div>
             </div>

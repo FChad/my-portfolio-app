@@ -166,7 +166,7 @@ const techStack = computed(() => [
             </div>
 
             <!-- Animated Stars Canvas -->
-            <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
+            <EffectsAnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
                 canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
 
             <!-- Adaptive overlay for text readability -->
@@ -198,7 +198,8 @@ const techStack = computed(() => [
                     <!-- Creative Typing Effect -->
                     <div class="animate-fade-in opacity-0"
                         style="animation-delay: 0.6s; animation-fill-mode: forwards;">
-                        <TypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50" :pause-duration="2000" />
+                        <EffectsTypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50"
+                            :pause-duration="2000" />
                     </div>
                 </div>
 
@@ -305,8 +306,9 @@ const techStack = computed(() => [
                                 <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('about.profile.labels.location') }}</div>
                                 <div
-                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">{{
-                                    $t('about.profile.location') }}</div>
+                                    class="text-sm md:text-base lg:text-xl font-bold text-gray-800 dark:text-white truncate">
+                                    {{
+                                        $t('about.profile.location') }}</div>
                             </div>
                         </div>
                     </div>
@@ -401,7 +403,7 @@ const techStack = computed(() => [
                                     :class="`w-4 h-4 md:w-5 md:h-5 ${service.checkColor} flex-shrink-0`" />
                                 <span class="font-medium text-sm md:text-base">{{
                                     $t(`home.services.${service.key}.features.${feature}`)
-                                    }}</span>
+                                }}</span>
                             </li>
                         </ul>
                     </div>
@@ -431,9 +433,9 @@ const techStack = computed(() => [
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 <!-- Left: Visual/Interactive Side -->
                 <div class="relative order-2 lg:order-1">
-                    <VisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited">
-                        <AiChatInterface />
-                    </VisualBrowser>
+                    <FeaturesVisualBrowser url="https://ai.chad.lu" favicon="mdi:robot-excited">
+                        <FeaturesAiChatInterface />
+                    </FeaturesVisualBrowser>
                 </div>
 
                 <!-- Right: Content Side -->

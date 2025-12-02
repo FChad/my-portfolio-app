@@ -1,12 +1,12 @@
 <template>
     <div class="w-full h-full flex flex-col">
-        <Header />
+        <LayoutHeader />
 
         <!-- Main Content -->
         <main>
             <slot />
         </main>
 
-        <Footer />
+        <LayoutFooter />
     </div>
 </template>

@@ -393,9 +393,9 @@ definePageMeta({
 
                         <!-- Turnstile Widget -->
                         <div v-if="runtimeConfig.public.turnstileSiteKey">
-                            <TurnstileWidget v-model="turnstileToken" :site-key="runtimeConfig.public.turnstileSiteKey"
-                                @verified="onTurnstileVerified" @expired="onTurnstileExpired" @error="onTurnstileError"
-                                ref="turnstileRef" />
+                            <FeaturesTurnstileWidget v-model="turnstileToken"
+                                :site-key="runtimeConfig.public.turnstileSiteKey" @verified="onTurnstileVerified"
+                                @expired="onTurnstileExpired" @error="onTurnstileError" ref="turnstileRef" />
                             <p v-if="showTurnstileError || errors.turnstile"
                                 class="text-xs md:text-sm text-red-600 dark:text-red-400 text-center mt-2">
                                 {{ errors.turnstile }}

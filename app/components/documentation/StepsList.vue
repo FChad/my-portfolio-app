@@ -54,7 +54,7 @@ const toggleExpanded = (stepId: string) => {
                             <div
                                 class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 flex-shrink-0">
                                 <span class="text-white font-black text-base sm:text-lg md:text-xl">{{ index + 1
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="min-w-0">
                                 <h3

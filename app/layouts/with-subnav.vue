@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full flex flex-col">
         <!-- Header (Fixed at top) -->
-        <Header />
+        <LayoutHeader />
 
         <!-- SubNavigation (Fixed below header) -->
         <div class="sticky z-40" style="top: var(--header-height);">
@@ -13,7 +13,7 @@
             <slot />
         </main>
 
-        <Footer />
+        <LayoutFooter />
     </div>
 </template>
 

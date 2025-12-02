@@ -31,7 +31,7 @@ const errorCode = computed(() => {
 <template>
     <div class="w-full min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <!-- Header mit Navigation -->
-        <Header />
+        <LayoutHeader />
 
         <!-- Error Content -->
         <main class="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
@@ -100,6 +100,6 @@ const errorCode = computed(() => {
         </main>
 
         <!-- Footer -->
-        <Footer />
+        <LayoutFooter />
     </div>
 </template>
