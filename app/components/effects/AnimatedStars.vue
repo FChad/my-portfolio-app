@@ -107,7 +107,7 @@ const state = {
     linkPool: [] as StarLink[]
 }
 
-const frameInterval = 1000 / 30 // 60 FPS
+const frameInterval = 1000 / 60 // 60 FPS
 const mouseLerp = 0.08 // Smoothing factor (0.01 = very smooth, 0.1 = responsive)
 const NOISE_TABLE_SIZE = 1000
 
