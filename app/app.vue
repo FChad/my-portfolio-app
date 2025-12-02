@@ -1,10 +1,4 @@
 <script setup lang="ts">
-useHead({
-    titleTemplate: (titleChunk) => {
-        return titleChunk ? `Chad Feierstein - ${titleChunk}` : 'Chad Feierstein - Portfolio'
-    }
-})
-
 const i18nHead = useLocaleHead()
 
 useHead(() => ({

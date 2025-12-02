@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Chad Feierstein - Portfolio",
+    "short_name": "Chad F.",
+    "description": "Professioneller Full-Stack Entwickler und IT-Administrator aus Luxemburg",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +15,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#3b82f6",
     "background_color": "#ffffff",
     "display": "standalone"
 }

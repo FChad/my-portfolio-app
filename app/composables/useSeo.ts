@@ -60,15 +60,19 @@ export const useSeo = () => {
     const description = options.description || t('home.tagline')
     const image = options.image || `${baseUrl}/img/og/default-og-image.svg`
 
+    // Nur den Seitentitel setzen - titleTemplate in nuxt.config.ts macht den Rest
     useHead({ title })
 
+    // SEO Meta-Tags - canonical, og:locale, hreflang werden automatisch von @nuxtjs/i18n gesetzt
     useSeoMeta({
+      author: 'Chad Feierstein',
       description,
       ogTitle: fullTitle,
       ogDescription: description,
       ogImage: image,
       ogImageAlt: fullTitle,
       ogType: 'website',
+      ogSiteName: 'Chad Feierstein - Portfolio',
       twitterCard: 'summary_large_image',
       twitterTitle: fullTitle,
       twitterDescription: description,
