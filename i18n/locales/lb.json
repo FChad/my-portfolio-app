@@ -382,38 +382,12 @@
     },
     "labels": {
       "viewDetails": "Detailer weisen"
-    },
-    "projects": {
-      "myChatBot": {
-        "title": "Mäin Chat Bot",
-        "description": "Eng modern, optimiséiert Chat-Applikatioun mat OpenRouter.ai-Integratioun fir direkten Chat mat verschiddenen AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features."
-      },
-      "myPortfolio": {
-        "title": "Meng Portfolio Websäit",
-        "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung."
-      }
-    },
-    "documentation": {
-      "debianInitialSetup": {
-        "title": "Debian 12 - Server Éischtariichtung",
-        "description": "Schrëtt-fir-Schrëtt Uleedung fir déi éischt wichteg Schrëtt beim Ariichten vun engem frësche Debian 12 Server"
-      },
-      "ollamaSetup": {
-        "title": "Linux - Ollama Installatioun",
-        "description": "Vollständeg Uleedung fir d'Installatioun vum Ollama op Debian 12 mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir eng sécher ëffentlech API"
-      },
-      "cardanoNodeSetup": {
-        "title": "Linux - Cardano Node Installatioun",
-        "description": "Vollständeg Uleedung fir d'Installatioun vun enger Cardano-Node op Debian 12 mam NIX-Paketmanager, inklusiv Service-Konfiguratioun an Iwwerwaachung"
-      },
-      "cardanoDbSyncSetup": {
-        "title": "Linux - Cardano DB Sync Installatioun",
-        "description": "Vollständeg Uleedung fir d'Installatioun vum Cardano DB Sync op Debian 12 mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun"
-      }
     }
   },
   "projects": {
     "myChatBot": {
+      "title": "Mäin Chat Bot",
+      "description": "Eng modern, optimiséiert Chat-Applikatioun mat OpenRouter.ai-Integratioun fir direkten Chat mat verschiddenen AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features.",
       "features": {
         "aiChat": {
           "title": "AI Chat",
@@ -439,14 +413,6 @@
           "title": "Echtzäit-Streaming",
           "description": "Echtzäit-Äntwerten mat Server-Sent Events fir glat Kommunikatioun"
         }
-      },
-      "keyFeatures": {
-        "title": "Haaptfunktiounen",
-        "subtitle": "Entdeckt déi mächteg Features, déi Mäin Chat Bot zu enger komplett AI-Chat-Léisung maachen"
-      },
-      "builtWith": {
-        "title": "Entwéckelt mat",
-        "subtitle": "Modern Technologien a Frameworks, déi d'Applikatioun udreiwen"
       },
       "callToAction": {
         "title": "Prett fir AI Chat z'erliewen?",
@@ -497,7 +463,8 @@
       }
     },
     "myPortfolio": {
-      "description": "Eng modern, responsive Portfolio-Websäit, déi meng Projeten a Fäegkeeten presentéiert. Entwéckelt mat de neisten Webtechnologien mat Fokus op Leeschtung, Barriärfräiheet an Benotzererfuerung.",
+      "title": "Meng Portfolio Websäit",
+      "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Gebaut mat den neisten Webtechnologien mat Fokus op Leeschtung, Accessibilitéit an Benotzer-Experienz.",
       "features": {
         "multilingual": {
           "title": "Méisproocheg",
@@ -523,14 +490,6 @@
           "title": "Kontakt-Formulaire",
           "description": "Funktionellt Kontakt-Formulaire mat VeeValidate a Resend Integration"
         }
-      },
-      "keyFeatures": {
-        "title": "Haaptfunktiounen",
-        "subtitle": "Entdeckt d'Features, déi dës Portfolio-Websäit zu enger moderner, professioneller Léisung maachen"
-      },
-      "builtWith": {
-        "title": "Entwéckelt mat",
-        "subtitle": "Modern Technologien a Best Practices fir eng eeschtklasseg Benotzer-Experienz"
       },
       "callToAction": {
         "title": "Interesséiert un enger ähnlecher Websäit?",

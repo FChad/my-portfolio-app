@@ -382,38 +382,12 @@
     },
     "labels": {
       "viewDetails": "Voir Détails"
-    },
-    "projects": {
-      "myChatBot": {
-        "title": "Mon Chat Bot",
-        "description": "Une application de chat moderne et optimisée avec intégration OpenRouter.ai pour discuter directement avec différents modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées."
-      },
-      "myPortfolio": {
-        "title": "Mon Site Web Portfolio",
-        "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur."
-      }
-    },
-    "documentation": {
-      "debianInitialSetup": {
-        "title": "Debian 12 - Configuration Initiale du Serveur",
-        "description": "Guide étape par étape pour les premières étapes importantes lors de la configuration d'un serveur Debian 12 frais"
-      },
-      "ollamaSetup": {
-        "title": "Linux - Installation d'Ollama",
-        "description": "Guide complet pour l'installation d'Ollama sur Debian 12 avec proxy inverse Apache2, chiffrement SSL et authentification HTTP Basic pour une API publique sécurisée"
-      },
-      "cardanoNodeSetup": {
-        "title": "Linux - Installation de Nœud Cardano",
-        "description": "Guide complet pour l'installation d'un nœud Cardano sur Debian 12 avec le gestionnaire de paquets NIX, y compris la configuration du service et la surveillance"
-      },
-      "cardanoDbSyncSetup": {
-        "title": "Linux - Installation de Cardano DB Sync",
-        "description": "Guide complet pour l'installation de Cardano DB Sync sur Debian 12 avec base de données PostgreSQL et gestionnaire de paquets NIX, y compris la configuration du service"
-      }
     }
   },
   "projects": {
     "myChatBot": {
+      "title": "Mon Chat Bot",
+      "description": "Une application de chat moderne et optimisée avec intégration OpenRouter.ai pour discuter directement avec différents modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées.",
       "features": {
         "aiChat": {
           "title": "Chat IA",
@@ -439,14 +413,6 @@
           "title": "Streaming en Temps Réel",
           "description": "Réponses en temps réel avec Server-Sent Events pour une communication fluide"
         }
-      },
-      "keyFeatures": {
-        "title": "Fonctionnalités Clés",
-        "subtitle": "Découvrez les fonctionnalités puissantes qui font de Mon Chat Bot une solution de chat IA complète"
-      },
-      "builtWith": {
-        "title": "Développé Avec",
-        "subtitle": "Technologies modernes et frameworks qui alimentent l'application"
       },
       "callToAction": {
         "title": "Prêt à Découvrir le Chat IA ?",
@@ -497,7 +463,8 @@
       }
     },
     "myPortfolio": {
-      "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Développé avec les dernières technologies web en mettant l'accent sur les performances, l'accessibilité et l'expérience utilisateur.",
+      "title": "Mon Site Web Portfolio",
+      "description": "Un site web portfolio moderne et responsive présentant mes projets et compétences. Construit avec les dernières technologies web axées sur les performances, l'accessibilité et l'expérience utilisateur.",
       "features": {
         "multilingual": {
           "title": "Multilingue",
@@ -523,14 +490,6 @@
           "title": "Formulaire de Contact",
           "description": "Formulaire de contact fonctionnel avec intégration VeeValidate et Resend"
         }
-      },
-      "keyFeatures": {
-        "title": "Fonctionnalités Clés",
-        "subtitle": "Découvrez les fonctionnalités qui font de ce site web portfolio une solution moderne et professionnelle"
-      },
-      "builtWith": {
-        "title": "Développé Avec",
-        "subtitle": "Technologies modernes et meilleures pratiques pour une expérience utilisateur de premier plan"
       },
       "callToAction": {
         "title": "Intéressé par un Site Web Similaire ?",

@@ -2,7 +2,7 @@ import type { ProjectConfig } from '~/composables/useProjects'
 
 export const myPortfolioWebsiteConfig: ProjectConfig = {
     slug: 'my-portfolio-website',
-    titleKey: 'showcase.projects.myPortfolio.title',
+    titleKey: 'projects.myPortfolio.title',
     descriptionKey: 'projects.myPortfolio.description',
     tags: ['Nuxt3', 'TypeScript', 'Tailwind', 'i18n', 'VeeValidate', 'Resend', 'Iconify'],
     links: [
@@ -21,7 +21,7 @@ export const myPortfolioWebsiteConfig: ProjectConfig = {
         keywordsKey: 'seo.projects.portfolio.keywords'
     },
     subNav: {
-        titleKey: 'showcase.projects.myPortfolio.title',
+        titleKey: 'projects.myPortfolio.title',
         showBackButton: true,
         backTo: '/showcase'
     },

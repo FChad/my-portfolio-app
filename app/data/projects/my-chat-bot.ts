@@ -2,8 +2,8 @@ import type { ProjectConfig } from '~/composables/useProjects'
 
 export const myChatBotConfig: ProjectConfig = {
     slug: 'my-chat-bot',
-    titleKey: 'showcase.projects.myChatBot.title',
-    descriptionKey: 'showcase.projects.myChatBot.description',
+    titleKey: 'projects.myChatBot.title',
+    descriptionKey: 'projects.myChatBot.description',
     tags: ['Nuxt3', 'Vue3', 'TypeScript', 'Pinia', 'Tailwind', 'OpenRouter', 'AI', 'Chat'],
     links: [
         {
@@ -21,7 +21,7 @@ export const myChatBotConfig: ProjectConfig = {
         keywordsKey: 'seo.projects.chatbot.keywords'
     },
     subNav: {
-        titleKey: 'showcase.projects.myChatBot.title',
+        titleKey: 'projects.myChatBot.title',
         showBackButton: true,
         backTo: '/showcase'
     },

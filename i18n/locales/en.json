@@ -382,38 +382,12 @@
     },
     "labels": {
       "viewDetails": "View Details"
-    },
-    "projects": {
-      "myChatBot": {
-        "title": "My Chat Bot",
-        "description": "A modern, optimized chat application with OpenRouter.ai integration for direct chat with various AI models. Offers ChatGPT-like functionality with local storage and advanced features."
-      },
-      "myPortfolio": {
-        "title": "My Portfolio Website",
-        "description": "A modern, responsive portfolio website showcasing my projects and skills. Built with the latest web technologies focusing on performance, accessibility, and user experience."
-      }
-    },
-    "documentation": {
-      "debianInitialSetup": {
-        "title": "Debian 12 - Server Initial Setup",
-        "description": "Step-by-step guide for the first important steps when setting up a fresh Debian 12 server"
-      },
-      "ollamaSetup": {
-        "title": "Linux - Ollama Installation",
-        "description": "Complete guide for installing Ollama on Debian 12 with Apache2 reverse proxy, SSL encryption, and HTTP Basic Authentication for secure public API"
-      },
-      "cardanoNodeSetup": {
-        "title": "Linux - Cardano Node Installation",
-        "description": "Complete guide for installing a Cardano node on Debian 12 with the NIX package manager, including service configuration and monitoring"
-      },
-      "cardanoDbSyncSetup": {
-        "title": "Linux - Cardano DB Sync Installation",
-        "description": "Complete guide for installing Cardano DB Sync on Debian 12 with PostgreSQL database and NIX package manager, including service configuration"
-      }
     }
   },
   "projects": {
     "myChatBot": {
+      "title": "My Chat Bot",
+      "description": "A modern, optimized chat application with OpenRouter.ai integration for direct chat with various AI models. Offers ChatGPT-like functionality with local storage and advanced features.",
       "features": {
         "aiChat": {
           "title": "AI Chat",
@@ -439,14 +413,6 @@
           "title": "Real-time Streaming",
           "description": "Real-time responses with Server-Sent Events for smooth communication"
         }
-      },
-      "keyFeatures": {
-        "title": "Key Features",
-        "subtitle": "Discover the powerful features that make My Chat Bot a comprehensive AI chat solution"
-      },
-      "builtWith": {
-        "title": "Built With",
-        "subtitle": "Modern technologies and frameworks powering the application"
       },
       "callToAction": {
         "title": "Ready to Experience AI Chat?",
@@ -497,6 +463,7 @@
       }
     },
     "myPortfolio": {
+      "title": "My Portfolio Website",
       "description": "A modern, responsive portfolio website showcasing my projects and skills. Built with the latest web technologies focusing on performance, accessibility, and user experience.",
       "features": {
         "multilingual": {
@@ -523,14 +490,6 @@
           "title": "Contact Form",
           "description": "Functional contact form with VeeValidate and Resend integration"
         }
-      },
-      "keyFeatures": {
-        "title": "Key Features",
-        "subtitle": "Discover the features that make this portfolio website a modern, professional solution"
-      },
-      "builtWith": {
-        "title": "Built With",
-        "subtitle": "Modern technologies and best practices for a top-notch user experience"
       },
       "callToAction": {
         "title": "Interested in a Similar Website?",
