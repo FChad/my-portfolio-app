@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, computed, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 
 interface StarParticle {
     x: number
@@ -90,6 +90,9 @@ let cachedLinkColor = '#3B82F6'
 let cachedFlareColor = '#DBEAFE'
 let cachedLinkOpacity = 0.25
 
+// Cached values for hot paths
+let cachedMotion = 0.08
+
 // Reusable position object to avoid allocations
 const tempPos = { x: 0, y: 0 }
 
@@ -117,24 +120,11 @@ const settings = {
             flareOpacityMax: 0.015
         }
     },
-    particle: {
-        sizeBase: 1,
-        sizeMultiplier: 0.5,
-        flickerSmoothing: 15
-    },
-    flare: {
-        sizeBase: 100,
-        sizeMultiplier: 100
-    },
     link: {
         lineWidth: 1,
-        lengthMin: 5,
-        lengthMax: 7,
-        fade: 90,
-        speed: 1
+        lengthMin: 5
     },
     noise: {
-        strength: 1,
         radius: 100
     }
 }
@@ -239,7 +229,7 @@ function resize(): void {
     cachedHalfWidth = newWidth * 0.5
     cachedHalfHeight = newHeight * 0.5
     cachedSizeRatio = Math.max(newWidth, newHeight) || 800
-    cachedLinkSpeed = settings.link.speed * 0.00001 * newWidth
+    cachedLinkSpeed = 0.00001 * newWidth
 
     // Reset mouse position to center
     mouse.x = newWidth * 0.5
@@ -261,11 +251,11 @@ function resize(): void {
 
 // Optimized position calculation using cached values - modifies tempPos in place
 function positionInline(x: number, y: number, z: number): void {
-    const noiseX = (nPos.x - 0.5) * settings.noise.strength
-    const noiseY = (nPos.y - 0.5) * settings.noise.strength
+    const noiseX = nPos.x - 0.5
+    const noiseY = nPos.y - 0.5
 
-    tempPos.x = (x * cachedCanvasWidth) + (((cachedHalfWidth - mouse.x + noiseX) * z) * props.motion)
-    tempPos.y = (y * cachedCanvasHeight) + (((cachedHalfHeight - mouse.y + noiseY) * z) * props.motion)
+    tempPos.x = (x * cachedCanvasWidth) + (((cachedHalfWidth - mouse.x + noiseX) * z) * cachedMotion)
+    tempPos.y = (y * cachedCanvasHeight) + (((cachedHalfHeight - mouse.y + noiseY) * z) * cachedMotion)
 }
 
 // Pre-computed constants
@@ -277,7 +267,7 @@ function renderParticle(p: StarParticle): void {
     if (!context) return
 
     positionInline(p.x, p.y, p.z)
-    const r = ((p.z * settings.particle.sizeMultiplier) + settings.particle.sizeBase) * cachedSizeRatio * SIZE_DIVISOR
+    const r = ((p.z * 0.5) + 1) * cachedSizeRatio * SIZE_DIVISOR
 
     // Flicker effect - simplified
     const flickerRate = performanceMode ? 30 : 15
@@ -303,7 +293,7 @@ function renderFlare(f: StarFlare): void {
     if (!context) return
 
     positionInline(f.x, f.y, f.z)
-    const r = ((f.z * settings.flare.sizeMultiplier) + settings.flare.sizeBase) * cachedSizeRatio * SIZE_DIVISOR
+    const r = ((f.z * 100) + 100) * cachedSizeRatio * SIZE_DIVISOR
 
     context.globalAlpha = f.opacity
     context.beginPath()
@@ -482,10 +472,10 @@ function renderLink(link: StarLink): void {
 
         case 2: // Fade out
             if (link.verts.length > 1) {
-                if (link.fade < settings.link.fade) {
+                if (link.fade < 90) {
                     link.fade++
                     linkPointsBuffer.length = 0
-                    const alpha = (1 - (link.fade / settings.link.fade)) * cachedLinkOpacity
+                    const alpha = (1 - (link.fade / 90)) * cachedLinkOpacity
 
                     for (let i = 0; i < link.verts.length; i++) {
                         const pIndex = link.verts[i]
@@ -535,10 +525,6 @@ function drawLinkLine(points: [number, number][], alpha: number): void {
     context.stroke()
 }
 
-function startLink(vertex: number, length: number): void {
-    links.push(createLink(vertex, length))
-}
-
 function updateMousePosition(): void {
     // Smooth interpolation between current and target mouse position
     mouse.x += (targetMouse.x - mouse.x) * mouseLerp
@@ -579,7 +565,7 @@ function render(): void {
     const linkChance = isLowPower ? props.linkChance << 1 : props.linkChance
     if (((Math.random() * (linkChance + 1)) | 0) === linkChance && links.length < 5) {
         const length = ((Math.random() * 3) | 0) + settings.link.lengthMin
-        startLink((Math.random() * particles.length) | 0, length)
+        links.push(createLink((Math.random() * particles.length) | 0, length))
     }
 
     // Render and clean up links - avoid filter() allocation
@@ -627,20 +613,23 @@ function animate(currentTime = 0): void {
     animationFrame = requestAnimationFrame(animate)
 }
 
-function forceRender(): void {
-    if (context && starsCanvas.value) {
-        render()
-    }
+// Cached rect for mouse position calculation
+let cachedRect: DOMRect | null = null
+let cachedScaleX = 1
+let cachedScaleY = 1
+
+function updateCachedRect(): void {
+    if (!starsCanvas.value) return
+    cachedRect = starsCanvas.value.getBoundingClientRect()
+    cachedScaleX = starsCanvas.value.clientWidth / cachedRect.width
+    cachedScaleY = starsCanvas.value.clientHeight / cachedRect.height
 }
 
 function handleMouseMove(e: MouseEvent): void {
-    if (!starsCanvas.value) return
-    const rect = starsCanvas.value.getBoundingClientRect()
-    const scaleX = starsCanvas.value.clientWidth / rect.width
-    const scaleY = starsCanvas.value.clientHeight / rect.height
+    if (!cachedRect) return
     // Set target position instead of directly updating mouse position
-    targetMouse.x = (e.clientX - rect.left) * scaleX
-    targetMouse.y = (e.clientY - rect.top) * scaleY
+    targetMouse.x = (e.clientX - cachedRect.left) * cachedScaleX
+    targetMouse.y = (e.clientY - cachedRect.top) * cachedScaleY
 }
 
 function onMouseEnter(): void {
@@ -664,12 +653,11 @@ function handleResize(): void {
 
     resizeTimeout = window.setTimeout(() => {
         resize()
-        forceRender()
+        updateCachedRect()
+        render()
         resizeTimeout = null
     }, 50)
 }
-
-
 
 function handleVisibilityChange(): void {
     isVisible = !document.hidden
@@ -689,23 +677,19 @@ function handleVisibilityChange(): void {
 function init(): void {
     if (!starsCanvas.value) return
 
-    // Use alpha: false for better performance if we always clear the canvas
     context = starsCanvas.value.getContext('2d', { alpha: true })
     if (!context) return
 
-    // Initialize noise table
+    // Initialize noise table and cached colors
     initNoiseTable()
-
-    // Initialize cached colors
     updateCachedColors()
+    cachedMotion = props.motion
 
     // Initial resize with a small delay to ensure DOM is ready
     setTimeout(() => {
         resize()
-        // Start animation only after canvas is properly sized
-        if (isCanvasReady) {
-            animate()
-        }
+        updateCachedRect()
+        if (isCanvasReady) animate()
     }, 50)
 
     // Fallback: ensure animation starts after a longer delay
@@ -721,31 +705,25 @@ function init(): void {
     targetMouse.x = mouse.x
     targetMouse.y = mouse.y
 
-    // Create particles using factory function
+    // Create particles
     particles = []
     for (let i = 0; i < props.particleCount; i++) {
         particles.push(createParticle())
     }
-
-    // Set up particle neighbors with simplified algorithm
     createNeighbors()
 
-    // Create flares using factory function
+    // Create flares
     flares = []
     for (let i = 0; i < props.flareCount; i++) {
         flares.push(createFlare())
     }
-
-    // Animation will be started after resize in setTimeout above
 }
 
-// Watch for theme changes and force re-render
+// Watch for theme changes
 watch(currentTheme, () => {
-    nextTick(() => {
-        updateCachedColors()
-        updateFlareOpacities()
-        forceRender()
-    })
+    updateCachedColors()
+    updateFlareOpacities()
+    render()
 }, { immediate: false })
 
 onMounted(() => {
