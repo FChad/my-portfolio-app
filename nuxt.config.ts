@@ -89,6 +89,9 @@ export default defineNuxtConfig({
     experimental: {
       wasm: true
     },
+    rollupConfig: {
+      external: ['@react-email/render']
+    },
     prerender: {
       crawlLinks: true,  // Crawlt alle internen Links beim Build
       autoSubfolderIndex: false  // Verhindert automatische /index.html Generierung
