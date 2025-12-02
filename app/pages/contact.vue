@@ -9,6 +9,16 @@ setSeoMeta({
     keywords: t('seo.contact.keywords')
 })
 
+// Load Turnstile script only on this page
+useHead({
+    script: [
+        {
+            src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
+            defer: true
+        }
+    ]
+})
+
 // Form state
 const form = ref({
     name: '',

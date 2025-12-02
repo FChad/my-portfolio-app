@@ -153,6 +153,11 @@ const techStack = computed(() => [
     'OpenRouter.ai',
     '+2'
 ])
+
+// Lazy load AnimatedStars for better initial page load performance
+const LazyAnimatedStars = defineAsyncComponent(() =>
+    import('~/components/effects/AnimatedStars.vue')
+)
 </script>
 
 <template>
@@ -165,8 +170,8 @@ const techStack = computed(() => [
                 class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
             </div>
 
-            <!-- Animated Stars Canvas -->
-            <EffectsAnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
+            <!-- Animated Stars Canvas (Lazy Loaded) -->
+            <LazyAnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
                 canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
 
             <!-- Adaptive overlay for text readability -->
@@ -403,7 +408,7 @@ const techStack = computed(() => [
                                     :class="`w-4 h-4 md:w-5 md:h-5 ${service.checkColor} flex-shrink-0`" />
                                 <span class="font-medium text-sm md:text-base">{{
                                     $t(`home.services.${service.key}.features.${feature}`)
-                                }}</span>
+                                    }}</span>
                             </li>
                         </ul>
                     </div>
