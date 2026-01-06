@@ -28,7 +28,7 @@
       "keywords": "Chad Feierstein, Iwwer mech, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Lëtzebuerg"
     },
     "showcase": {
-      "title": "Showcase - Projeten & Dokumentatiounen",
+      "title": "Showcase",
       "description": "Entdeckt meng neist Projeten, Dokumentatiounen a technesch Léisungen. Vun der Web-Entwécklung bis hin zu Cloud-Infrastrukturen.",
       "keywords": "Portfolio, Projeten, Web Development, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
@@ -73,7 +73,7 @@
     }
   },
   "nav": {
-    "home": "Doheem",
+    "home": "Startsäit",
     "about": "Iwwer mech",
     "showcase": "Showcase",
     "contact": "Kontakt",
