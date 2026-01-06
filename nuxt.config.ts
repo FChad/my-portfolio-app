@@ -16,13 +16,10 @@ export default defineNuxtConfig({
     name: 'Chad Feierstein - Portfolio'
   },
   sitemap: {
-    enabled: true,
     autoLastmod: true,
     sources: ['/api/__sitemap__/urls']
   },
-  robots: {
-    enabled: true
-  },
+  robots: {},
   colorMode: {
     classSuffix: ''
   },
