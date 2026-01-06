@@ -1,21 +1,12 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { setSeoMeta, getStructuredData } = useSeo()
+const { setSeoMeta } = useSeo()
 
 setSeoMeta({
     title: t('seo.about.title'),
     description: t('seo.about.description'),
     keywords: t('seo.about.keywords')
 })
-
-useHead(() => ({
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify(getStructuredData('Person'))
-        }
-    ]
-}))
 
 // Calculate age dynamically
 const calculateAge = (birthDate: string): number => {

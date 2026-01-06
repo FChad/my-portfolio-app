@@ -2,7 +2,7 @@
 const route = useRoute()
 const { t } = useI18n()
 const { getProject, hasProject } = useProjects()
-const { setSeoMeta, getStructuredData } = useSeo()
+const { setSeoMeta } = useSeo()
 const { setSubNav } = useSubNav()
 
 // Get the slug from the route - use direct access for initial check
@@ -33,13 +33,7 @@ definePageMeta({
 
 // Use useHead for dynamic page configuration
 useHead(() => ({
-    title: t(config.seo.titleKey),
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify(getStructuredData('SoftwareApplication'))
-        }
-    ]
+    title: t(config.seo.titleKey)
 }))
 
 // Set SEO meta synchronously for SSR

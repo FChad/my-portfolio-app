@@ -5,54 +5,10 @@ interface SeoOptions {
   keywords?: string
 }
 
-type SchemaType = 'Person' | 'WebSite' | 'SoftwareApplication'
-
 export const useSeo = () => {
   const { t } = useI18n()
   const config = useRuntimeConfig()
   const baseUrl = config.public.baseUrl
-
-  const getStructuredData = (type: SchemaType) => {
-    const baseData = {
-      '@context': 'https://schema.org'
-    }
-
-    switch (type) {
-      case 'Person':
-        return {
-          ...baseData,
-          '@type': 'Person',
-          name: 'Chad Feierstein',
-          url: baseUrl,
-          sameAs: [
-            'https://www.linkedin.com/in/chad-feierstein/',
-            'https://github.com/FChad'
-          ],
-          jobTitle: t('about.profile.role')
-        }
-
-      case 'WebSite':
-        return {
-          ...baseData,
-          '@type': 'WebSite',
-          name: 'Chad Feierstein Portfolio',
-          url: baseUrl,
-          inLanguage: ['lb', 'de', 'fr', 'en']
-        }
-
-      case 'SoftwareApplication':
-        return {
-          ...baseData,
-          '@type': 'SoftwareApplication',
-          name: t('nav.home'),
-          author: {
-            '@type': 'Person',
-            name: 'Chad Feierstein'
-          },
-          applicationCategory: 'WebApplication'
-        }
-    }
-  }
 
   const setSeoMeta = (options: SeoOptions = {}) => {
     const title = options.title || t('nav.home')
@@ -82,7 +38,6 @@ export const useSeo = () => {
   }
 
   return {
-    setSeoMeta,
-    getStructuredData
+    setSeoMeta
   }
 }
