@@ -19,9 +19,9 @@ if (!slugParam || !hasDocumentation(slugParam)) {
 // Get the documentation config - synchronous for SSR
 const config = getDocumentation(slugParam)!
 
-// Set SubNav configuration - pass the key, not the translated value
+// Set SubNav configuration
 setSubNav({
-    titleKey: config.subNav.titleKey,
+    title: t(config.subNav.titleKey),
     showBackButton: config.subNav.showBackButton,
     backTo: config.subNav.backTo
 })

@@ -3,13 +3,13 @@
 // Uses Nuxt's useState for SSR-safe state management
 
 export interface SubNavConfig {
-    titleKey: string
+    title: string
     showBackButton: boolean
     backTo: string
 }
 
 const defaultConfig: SubNavConfig = {
-    titleKey: '',
+    title: '',
     showBackButton: true,
     backTo: '/showcase'
 }
@@ -30,7 +30,7 @@ export function useSubNav() {
      * Set the SubNav configuration for the current page
      * Call this in your page's setup function
      */
-    const setSubNav = (config: Partial<SubNavConfig> & { titleKey: string }) => {
+    const setSubNav = (config: Partial<SubNavConfig> & { title: string }) => {
         subNavState.value = {
             ...defaultConfig,
             ...config
