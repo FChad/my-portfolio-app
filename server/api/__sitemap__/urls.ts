@@ -3,32 +3,40 @@ import { getAllDocumentationSlugs } from '~/data/documentation'
 import { getAllProjectSlugs } from '~/data/projects'
 
 export default defineSitemapEventHandler(() => {
-    // Locale prefixes: empty string for default (de), prefixed for others
-    const localePrefixes = ['', '/lb', '/fr', '/en']
+    // Locale config: prefix for URL path, _sitemap matches the i18n language code
+    const locales = [
+        { prefix: '', _sitemap: 'de-DE' },
+        { prefix: '/lb', _sitemap: 'lb-LU' },
+        { prefix: '/fr', _sitemap: 'fr-FR' },
+        { prefix: '/en', _sitemap: 'en-US' }
+    ]
 
     // Base paths for static pages
     const staticPaths = ['/', '/about', '/contact', '/showcase']
 
     // Generate static pages for all locales
-    const staticPages = localePrefixes.flatMap(prefix =>
+    const staticPages = locales.flatMap(locale =>
         staticPaths.map(path => ({
-            loc: prefix + (path === '/' && prefix ? '' : path)
+            loc: locale.prefix + (path === '/' && locale.prefix ? '' : path),
+            _sitemap: locale._sitemap
         }))
     )
 
     // Dynamic documentation pages for all locales
     const documentationSlugs = getAllDocumentationSlugs()
-    const documentationUrls = localePrefixes.flatMap(prefix =>
+    const documentationUrls = locales.flatMap(locale =>
         documentationSlugs.map(slug => ({
-            loc: `${prefix}/showcase/documentation/${slug}`
+            loc: `${locale.prefix}/showcase/documentation/${slug}`,
+            _sitemap: locale._sitemap
         }))
     )
 
     // Dynamic project pages for all locales
     const projectSlugs = getAllProjectSlugs()
-    const projectUrls = localePrefixes.flatMap(prefix =>
+    const projectUrls = locales.flatMap(locale =>
         projectSlugs.map(slug => ({
-            loc: `${prefix}/showcase/project/${slug}`
+            loc: `${locale.prefix}/showcase/project/${slug}`,
+            _sitemap: locale._sitemap
         }))
     )
 
