@@ -18,7 +18,8 @@ export default defineNuxtConfig({
   },
   sitemap: {
     enabled: true,
-    autoLastmod: true
+    autoLastmod: true,
+    sources: ['/api/__sitemap__/urls']
   },
   robots: {
     enabled: true
