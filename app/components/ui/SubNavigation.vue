@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-    title: string
+    titleKey: string
     showBackButton?: boolean
     backTo?: string
 }
@@ -11,6 +11,9 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { t } = useI18n()
+
+// Translate the title key - this ensures consistent rendering on server and client
+const title = computed(() => props.titleKey ? t(props.titleKey) : '')
 </script>
 
 <template>

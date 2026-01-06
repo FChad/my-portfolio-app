@@ -19,9 +19,9 @@ if (!slugParam || !hasProject(slugParam)) {
 // Get the project config - synchronous for SSR
 const config = getProject(slugParam)!
 
-// Set SubNav configuration
+// Set SubNav configuration - pass the key, not the translated value
 setSubNav({
-    title: t(config.subNav.titleKey),
+    titleKey: config.subNav.titleKey,
     showBackButton: config.subNav.showBackButton,
     backTo: config.subNav.backTo
 })
