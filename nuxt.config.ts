@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     name: 'Chad Feierstein - Portfolio'
   },
   sitemap: {
-    autoLastmod: true,
+    autoLastmod: false,
     sources: ['/api/__sitemap__/urls']
   },
   robots: {},

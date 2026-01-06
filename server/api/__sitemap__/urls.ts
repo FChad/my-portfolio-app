@@ -11,18 +11,14 @@ export default defineSitemapEventHandler(() => {
         { prefix: '/en', _sitemap: 'en-US' }
     ]
 
-    // Use current date as lastmod for all URLs
-    const lastmod = new Date().toISOString()
-
-    // Base paths for static pages
+    // Static pages
     const staticPaths = ['/', '/about', '/contact', '/showcase']
 
     // Generate static pages for all locales
     const staticPages = locales.flatMap(locale =>
         staticPaths.map(path => ({
             loc: locale.prefix + (path === '/' && locale.prefix ? '' : path),
-            _sitemap: locale._sitemap,
-            lastmod
+            _sitemap: locale._sitemap
         }))
     )
 
@@ -31,8 +27,7 @@ export default defineSitemapEventHandler(() => {
     const documentationUrls = locales.flatMap(locale =>
         documentationSlugs.map(slug => ({
             loc: `${locale.prefix}/showcase/documentation/${slug}`,
-            _sitemap: locale._sitemap,
-            lastmod
+            _sitemap: locale._sitemap
         }))
     )
 
@@ -41,8 +36,7 @@ export default defineSitemapEventHandler(() => {
     const projectUrls = locales.flatMap(locale =>
         projectSlugs.map(slug => ({
             loc: `${locale.prefix}/showcase/project/${slug}`,
-            _sitemap: locale._sitemap,
-            lastmod
+            _sitemap: locale._sitemap
         }))
     )
 
