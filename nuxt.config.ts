@@ -8,8 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
+    '@nuxtjs/seo',
     '@nuxtjs/tailwindcss'
   ],
   site: {
