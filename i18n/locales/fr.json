@@ -582,6 +582,7 @@
       },
       "completion": {
         "title": "Installation Terminée !",
+        "description": "Votre serveur Ollama est maintenant entièrement configuré et sécurisé avec HTTPS et l'authentification Basic. Vous pouvez maintenant accéder à l'API en toute sécurité.",
         "message": "Votre serveur Ollama est maintenant entièrement configuré et sécurisé avec HTTPS et l'authentification Basic. Vous pouvez maintenant accéder à l'API en toute sécurité."
       }
     },

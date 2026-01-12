@@ -582,6 +582,7 @@
       },
       "completion": {
         "title": "Installation ofgeschloss!",
+        "description": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen.",
         "message": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen."
       }
     },

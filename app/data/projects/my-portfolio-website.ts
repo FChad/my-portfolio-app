@@ -8,7 +8,7 @@ export const myPortfolioWebsiteConfig: ProjectConfig = {
     links: [
         {
             type: 'demo',
-            url: 'https://www.chad.lu'
+            url: '/'
         },
         {
             type: 'source',
@@ -139,6 +139,6 @@ export const myPortfolioWebsiteConfig: ProjectConfig = {
         titleKey: 'projects.myPortfolio.callToAction.title',
         subtitleKey: 'projects.myPortfolio.callToAction.subtitle',
         buttonKey: 'projects.myPortfolio.callToAction.button',
-        buttonUrl: 'https://www.chad.lu'
+        buttonUrl: '/'
     }
 }

@@ -20,7 +20,8 @@ const { t } = useI18n()
                 <!-- Breadcrumb -->
                 <div class="hidden sm:flex items-center space-x-2 text-sm md:text-base">
                     <NuxtLinkLocale to="/"
-                        class="flex items-center justify-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                        class="flex items-center justify-center text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                        aria-label="Home">
                         <Icon name="mdi:home" class="w-5 h-5" />
                     </NuxtLinkLocale>
                     <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400" />

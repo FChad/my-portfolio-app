@@ -51,13 +51,13 @@ const { t } = useI18n()
                     <div class="flex-1 min-w-0">
                         <div class="flex items-start justify-between gap-2 mb-1.5 sm:mb-2">
                             <h3 class="text-base sm:text-lg md:text-xl font-bold text-gray-800 dark:text-white">
-                                {{ t(resource.title) }}
+                                {{ resource.title }}
                             </h3>
                             <Icon name="mdi:external-link"
                                 class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 flex-shrink-0 transition-colors" />
                         </div>
                         <p class="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                            {{ t(resource.description) }}
+                            {{ resource.description }}
                         </p>
                     </div>
                 </NuxtLink>
