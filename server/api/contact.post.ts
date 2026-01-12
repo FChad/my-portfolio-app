@@ -1,7 +1,3 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Contact form data interface
 interface ContactFormData {
   name: string
@@ -153,28 +149,42 @@ export default defineEventHandler(async (event) => {
 
     console.log('📧 Sending email via Resend...')
 
-    // Send email using Resend (exactly as in official docs)
-    const data = await resend.emails.send({
-      from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
-      to: [process.env.EMAIL_TO],
-      replyTo: validatedData.email,
-      subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
-      html: `
-        <h2>New Contact Request</h2>
-        <p><strong>Name:</strong> ${validatedData.name}</p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Subject:</strong> ${validatedData.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-    `,
+    // Send email using Resend REST API
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
+        to: [process.env.EMAIL_TO],
+        reply_to: validatedData.email,
+        subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
+        html: `
+          <h2>New Contact Request</h2>
+          <p><strong>Name:</strong> ${validatedData.name}</p>
+          <p><strong>Email:</strong> ${validatedData.email}</p>
+          <p><strong>Subject:</strong> ${validatedData.subject}</p>
+          <p><strong>Message:</strong></p>
+          <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+        `,
+      }),
     });
 
-    console.log('✅ Email sent successfully:', data.data?.id)
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error('❌ Resend API error:', data);
+      throw new Error(data.message || 'Failed to send email');
+    }
+
+    console.log('✅ Email sent successfully:', data.id)
 
     return {
       success: true,
       message: 'Email sent successfully',
-      id: data.data?.id
+      id: data.id
     };
 
   } catch (error) {
