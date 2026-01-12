@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   site: {
-    url: 'https://www.chad.lu',
+    url: process.env.BASE_URL,
     name: 'Chad Feierstein - Portfolio'
   },
   sitemap: {
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   i18n: {
-    baseUrl: 'https://www.chad.lu',
+    baseUrl: process.env.BASE_URL,
     defaultLocale: 'de',
     locales: [
       {
