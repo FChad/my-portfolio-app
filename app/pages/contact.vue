@@ -401,19 +401,20 @@ definePageMeta({
                             </p>
                         </div>
 
-                        <!-- Turnstile Widget -->
-                        <div v-if="runtimeConfig.public.turnstileSiteKey">
-                            <FeaturesTurnstileWidget v-model="turnstileToken"
-                                :site-key="runtimeConfig.public.turnstileSiteKey" @verified="onTurnstileVerified"
-                                @expired="onTurnstileExpired" @error="onTurnstileError" ref="turnstileRef" />
-                            <p v-if="showTurnstileError || errors.turnstile"
-                                class="text-xs md:text-sm text-red-600 dark:text-red-400 text-center mt-2">
-                                {{ errors.turnstile }}
-                            </p>
-                        </div>
+                        <!-- Turnstile Widget and Submit Button -->
+                        <div class="flex flex-col sm:flex-row items-center justify-end gap-4">
+                            <!-- Turnstile Widget -->
+                            <div v-if="runtimeConfig.public.turnstileSiteKey" class="flex flex-col items-center">
+                                <FeaturesTurnstileWidget v-model="turnstileToken"
+                                    :site-key="runtimeConfig.public.turnstileSiteKey" @verified="onTurnstileVerified"
+                                    @expired="onTurnstileExpired" @error="onTurnstileError" ref="turnstileRef" />
+                                <p v-if="showTurnstileError || errors.turnstile"
+                                    class="text-xs md:text-sm text-red-600 dark:text-red-400 text-center mt-2">
+                                    {{ errors.turnstile }}
+                                </p>
+                            </div>
 
-                        <!-- Submit Button -->
-                        <div class="flex justify-center">
+                            <!-- Submit Button -->
                             <button type="submit" :disabled="isSubmitting" :class="[
                                 'px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base flex items-center gap-2 md:gap-3 transition-all duration-300',
                                 isSubmitting

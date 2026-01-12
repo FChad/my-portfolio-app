@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center my-6">
+    <div class="flex justify-center">
         <!-- Container mit exakter Turnstile-Größe (300x65px) um Layout-Shift zu vermeiden -->
         <div class="turnstile-container">
             <div v-if="isReady" ref="turnstileElement" />
