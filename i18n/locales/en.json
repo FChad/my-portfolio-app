@@ -91,16 +91,6 @@
       "primary": "Discover Projects",
       "secondary": "Get in Touch"
     },
-    "stats": {
-      "experience": "Years Experience",
-      "experienceDesc": "Professional IT Experience",
-      "certifications": "Certifications",
-      "certificationsDesc": "Professional Certificates",
-      "languages": "Languages",
-      "languagesDesc": "Spoken Languages",
-      "projects": "Projects",
-      "projectsDesc": "Completed Projects"
-    },
     "about": {
       "title": "Get to Know Me",
       "subtitle": "Learn more about my background, experience and what drives my passion for technology.",
@@ -149,27 +139,7 @@
       "title": "Featured Project",
       "subtitle": "Discover my latest innovation, where cutting-edge AI meets intuitive design.",
       "projectTitle": "AI Chat Bot",
-      "projectSubtitle": "My Latest Innovation",
-      "badge": "Featured",
       "description": "An advanced AI Chat Bot that conducts intelligent conversations and handles complex queries. This project combines cutting-edge AI technology with an elegant, user-friendly interface, providing a seamless experience for natural conversations. The bot leverages powerful language models through OpenRouter.ai, supports multiple AI models, and intelligently adapts to various conversation contexts. With real-time responses, markdown support, and thoughtful dark/light mode integration, this chat bot is a perfect example of modern full-stack development.",
-      "features": {
-        "ai": {
-          "title": "Intelligent AI",
-          "description": "Advanced language processing and context understanding"
-        },
-        "realtime": {
-          "title": "Real-time Chat",
-          "description": "Instant responses and fluid conversations"
-        },
-        "ui": {
-          "title": "Modern UI",
-          "description": "Intuitive user interface with Dark/Light Mode"
-        },
-        "security": {
-          "title": "Safe & Private",
-          "description": "Privacy protection and secure communication"
-        }
-      },
       "techStack": "Technologies Used",
       "cta": {
         "view": "View Details",
@@ -571,15 +541,6 @@
           "description": "At least 8GB RAM is recommended for running Ollama models"
         }
       },
-      "stepsSubtitle": "Follow these steps in the given order for a complete Ollama installation with secure API",
-      "tips": {
-        "sectionTitle": "Additional Tips",
-        "sectionSubtitle": "Useful commands and tips for better management"
-      },
-      "troubleshooting": {
-        "title": "Troubleshooting",
-        "subtitle": "Common issues and their solutions during Ollama installation"
-      },
       "completion": {
         "title": "Installation Complete!",
         "description": "Your Ollama server is now fully configured and secured with HTTPS and Basic Authentication. You can now safely access the API.",
@@ -616,10 +577,6 @@
           "description": "Document all changes made for future reference"
         }
       },
-      "tips": {
-        "sectionTitle": "Additional Recommendations",
-        "sectionSubtitle": "Optional: Additional useful configurations for enhanced security and functionality"
-      },
       "completion": {
         "title": "Setup Complete!",
         "message": "Your Debian 12 server is now basically configured and ready to use. Don't forget to make further security-relevant configurations according to your requirements."
@@ -651,15 +608,6 @@
           "description": "Stable internet connection necessary for continuous synchronization"
         }
       },
-      "stepsSubtitle": "Follow these steps in the given order for a complete Cardano Node installation",
-      "tips": {
-        "sectionTitle": "Additional Tips",
-        "sectionSubtitle": "Useful commands and maintenance tips for the Cardano Node"
-      },
-      "resources": {
-        "sectionTitle": "Useful Resources",
-        "sectionSubtitle": "Additional links and documentation for the Cardano Node"
-      },
       "completion": {
         "title": "Installation Complete!",
         "message": "Your Cardano Node is successfully installed and running as systemd service. Blockchain synchronization is running in the background and can take 24-48 hours."
@@ -682,15 +630,6 @@
         "rootAccessTitle": "Root Access",
         "rootAccess": "Root access or sudo permission required"
       },
-      "stepsSubtitle": "Follow these steps in the specified order for a successful Cardano DB Sync installation.",
-      "tips": {
-        "sectionTitle": "Additional Operations",
-        "sectionSubtitle": "Useful commands for monitoring and maintaining your Cardano DB Sync installation"
-      },
-      "resources": {
-        "sectionTitle": "Additional Resources",
-        "sectionSubtitle": "Official documentation and helpful links for Cardano DB Sync"
-      },
       "completion": {
         "title": "Cardano DB Sync Installation Complete!",
         "message": "Your Cardano DB Sync is now running and synchronizing blockchain data to the PostgreSQL database. Monitor logs and synchronization progress regularly."
@@ -701,7 +640,6 @@
     "title": "Contact",
     "subtitle": "Do you have questions or feedback? I'm here to help.",
     "methods": {
-      "title": "Contact Methods",
       "linkedin": {
         "title": "LinkedIn",
         "description": "Professional Network"

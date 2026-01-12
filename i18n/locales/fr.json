@@ -91,16 +91,6 @@
       "primary": "Découvrir les Projets",
       "secondary": "Me Contacter"
     },
-    "stats": {
-      "experience": "Années d'Expérience",
-      "experienceDesc": "Expérience IT Professionnelle",
-      "certifications": "Certifications",
-      "certificationsDesc": "Certificats Professionnels",
-      "languages": "Langues",
-      "languagesDesc": "Langues Parlées",
-      "projects": "Projets",
-      "projectsDesc": "Projets Terminés"
-    },
     "about": {
       "title": "Apprenez à Me Connaître",
       "subtitle": "Découvrez mon parcours, mon expérience et ce qui motive ma passion pour la technologie.",
@@ -149,27 +139,7 @@
       "title": "Projet en Vedette",
       "subtitle": "Découvrez ma dernière innovation, où l'IA de pointe rencontre un design intuitif.",
       "projectTitle": "Chat Bot IA",
-      "projectSubtitle": "Ma Dernière Innovation",
-      "badge": "En Vedette",
       "description": "Un Chat Bot IA avancé qui mène des conversations intelligentes et traite des requêtes complexes. Ce projet combine une technologie IA de pointe avec une interface élégante et conviviale, offrant une expérience fluide pour des conversations naturelles. Le bot exploite des modèles linguistiques puissants via OpenRouter.ai, prend en charge plusieurs modèles d'IA et s'adapte intelligemment à différents contextes de conversation. Avec des réponses en temps réel, la prise en charge du markdown et une intégration réfléchie du mode sombre/clair, ce chat bot est un exemple parfait de développement full-stack moderne.",
-      "features": {
-        "ai": {
-          "title": "IA Intelligente",
-          "description": "Traitement de langage avancé et compréhension contextuelle"
-        },
-        "realtime": {
-          "title": "Chat en Temps Réel",
-          "description": "Réponses instantanées et conversations fluides"
-        },
-        "ui": {
-          "title": "Interface Moderne",
-          "description": "Interface utilisateur intuitive avec Mode Sombre/Clair"
-        },
-        "security": {
-          "title": "Sûr & Privé",
-          "description": "Protection de la vie privée et communication sécurisée"
-        }
-      },
       "techStack": "Technologies Utilisées",
       "cta": {
         "view": "Voir les Détails",
@@ -571,15 +541,6 @@
           "description": "Au moins 8Go de RAM sont recommandés pour exécuter les modèles Ollama"
         }
       },
-      "stepsSubtitle": "Suivez ces étapes dans l'ordre donné pour une installation complète d'Ollama avec API sécurisée",
-      "tips": {
-        "sectionTitle": "Conseils Supplémentaires",
-        "sectionSubtitle": "Commandes et conseils utiles pour une meilleure gestion"
-      },
-      "troubleshooting": {
-        "title": "Dépannage",
-        "subtitle": "Problèmes courants et leurs solutions lors de l'installation d'Ollama"
-      },
       "completion": {
         "title": "Installation Terminée !",
         "description": "Votre serveur Ollama est maintenant entièrement configuré et sécurisé avec HTTPS et l'authentification Basic. Vous pouvez maintenant accéder à l'API en toute sécurité.",
@@ -616,10 +577,6 @@
           "description": "Documentez tous les changements effectués pour référence future"
         }
       },
-      "tips": {
-        "sectionTitle": "Recommandations Supplémentaires",
-        "sectionSubtitle": "Optionnel : Configurations supplémentaires utiles pour une sécurité et fonctionnalité améliorées"
-      },
       "completion": {
         "title": "Configuration Terminée !",
         "message": "Votre serveur Debian 12 est maintenant configuré de base et prêt à être utilisé. N'oubliez pas d'effectuer d'autres configurations liées à la sécurité selon vos besoins."
@@ -651,15 +608,6 @@
           "description": "Connexion Internet stable nécessaire pour une synchronisation continue"
         }
       },
-      "stepsSubtitle": "Suivez ces étapes dans l'ordre donné pour une installation complète du Nœud Cardano",
-      "tips": {
-        "sectionTitle": "Conseils Supplémentaires",
-        "sectionSubtitle": "Commandes utiles et conseils de maintenance pour le Nœud Cardano"
-      },
-      "resources": {
-        "sectionTitle": "Ressources Utiles",
-        "sectionSubtitle": "Liens supplémentaires et documentation pour le Nœud Cardano"
-      },
       "completion": {
         "title": "Installation Terminée !",
         "message": "Votre Nœud Cardano est installé avec succès et fonctionne comme service systemd. La synchronisation de la blockchain s'exécute en arrière-plan et peut prendre 24-48 heures."
@@ -682,15 +630,6 @@
         "rootAccessTitle": "Accès Root",
         "rootAccess": "Accès root ou permission sudo requis"
       },
-      "stepsSubtitle": "Suivez ces étapes dans l'ordre spécifié pour une installation réussie de Cardano DB Sync.",
-      "tips": {
-        "sectionTitle": "Opérations Supplémentaires",
-        "sectionSubtitle": "Commandes utiles pour surveiller et maintenir votre installation Cardano DB Sync"
-      },
-      "resources": {
-        "sectionTitle": "Ressources Supplémentaires",
-        "sectionSubtitle": "Documentation officielle et liens utiles pour Cardano DB Sync"
-      },
       "completion": {
         "title": "Installation de Cardano DB Sync Terminée !",
         "message": "Votre Cardano DB Sync fonctionne maintenant et synchronise les données blockchain dans la base de données PostgreSQL. Surveillez régulièrement les logs et la progression de la synchronisation."
@@ -701,7 +640,6 @@
     "title": "Contact",
     "subtitle": "Avez-vous des questions ou des commentaires ? Je suis là pour vous aider.",
     "methods": {
-      "title": "Méthodes de Contact",
       "linkedin": {
         "title": "LinkedIn",
         "description": "Réseau Professionnel"

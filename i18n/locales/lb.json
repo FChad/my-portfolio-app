@@ -91,16 +91,6 @@
       "primary": "Projeten entdecken",
       "secondary": "Kontakt ophuelen"
     },
-    "stats": {
-      "experience": "Joer Erfahrung",
-      "experienceDesc": "Professionell IT-Erfahrung",
-      "certifications": "Zertifizéierungen",
-      "certificationsDesc": "Professionell Zertifikater",
-      "languages": "Sproochen",
-      "languagesDesc": "Geschwate Sproochen",
-      "projects": "Projeten",
-      "projectsDesc": "Ofgeschlossen Projeten"
-    },
     "about": {
       "title": "Léiert mech kennen",
       "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
@@ -149,27 +139,7 @@
       "title": "Featured Projet",
       "subtitle": "Entdeckt meng lescht Innovatioun, wou spëtzt KI op intuitiv Design treffen.",
       "projectTitle": "KI Chat Bot",
-      "projectSubtitle": "Meng Lescht Innovatioun",
-      "badge": "Featured",
       "description": "En erweiderten KI Chat Bot, deen intelligent Gespréicher féiert an komplex Ufrogen behandelt. Dëse Projet kombinéiert spëtzt KI-Technologie mat engem elegant, benotzerfrëndleche Interface a bitt eng nahtlos Erfahrung fir natierlech Konversatiounen. De Bot notzt mächteg Sproochmodeller iwwer OpenRouter.ai, ënnerstëtzt verschidde KI-Modeller an adaptéiert sech intelligent un verschidden Gespréichskontexten. Mat Echtzäit-Äntwerten, Markdown-Ënnerstëtzung an enger duerchduechter Donkel/Hell Modus Integratioun ass dëse Chat Bot e perfekt Beispill fir modern Full-Stack-Entwécklung.",
-      "features": {
-        "ai": {
-          "title": "Intelligent KI",
-          "description": "Erweidert Sprooch-Veraarbechtung a Kontext-Verständnis"
-        },
-        "realtime": {
-          "title": "Echtzäit Chat",
-          "description": "Soforteg Äntwerten a flësseg Konversatiounen"
-        },
-        "ui": {
-          "title": "Modern UI",
-          "description": "Intuitiv Benotzer-Interface mat Donkel/Hell Modus"
-        },
-        "security": {
-          "title": "Sécher & Privat",
-          "description": "Dateschutz a sécher Kommunikatioun"
-        }
-      },
       "techStack": "Benotzt Technologien",
       "cta": {
         "view": "Detailer kucken",
@@ -571,15 +541,6 @@
           "description": "Op d'mannst 8GB RAM sinn recommandéiert fir Ollama-Modeller ze bedreiwen"
         }
       },
-      "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Ollama-Installation mat sécherer API",
-      "tips": {
-        "sectionTitle": "Zousätzlech Tipps",
-        "sectionSubtitle": "Nëtzlech Kommandoen an Tipps fir besser Gestioun"
-      },
-      "troubleshooting": {
-        "title": "Problemléisung",
-        "subtitle": "Heefeg Problemer an hir Léisungen bei der Ollama-Installation"
-      },
       "completion": {
         "title": "Installation ofgeschloss!",
         "description": "Äre Ollama-Server ass elo komplett konfiguréiert a mat HTTPS a Basic Authentication geséchert. Dir kënnt elo sécher op d'API zougräifen.",
@@ -616,10 +577,6 @@
           "description": "Dokumentéiert all gemaachten Ännerungen fir spéider Referenz"
         }
       },
-      "tips": {
-        "sectionTitle": "Zousätzlech Recommandatiounen",
-        "sectionSubtitle": "Optional: Weider nëtzlech Konfiguratiounen fir erweidert Sécherheet a Funktionalitéit"
-      },
       "completion": {
         "title": "Arichtung ofgeschloss!",
         "message": "Äre Debian 12 Server ass elo grondsätzlech konfiguréiert a betribsbereet. Vergiess net weider sécherheetsrelevant Konfiguratiounen entspriechend Ären Ufuerderungen ze maachen."
@@ -651,15 +608,6 @@
           "description": "Stabil Internet-Verbindung fir kontinuéierlech Synchronisatioun néideg"
         }
       },
-      "stepsSubtitle": "Suivéiert dës Schrëtt an der ugegebener Reiefolleg fir eng komplett Cardano-Node Installation",
-      "tips": {
-        "sectionTitle": "Zousätzlech Tipps",
-        "sectionSubtitle": "Nëtzlech Kommandoen a Ënnerhaltungstipps fir d'Cardano-Node"
-      },
-      "resources": {
-        "sectionTitle": "Nëtzlech Ressourcen",
-        "sectionSubtitle": "Weiderfierend Linken a Dokumentatioun fir d'Cardano-Node"
-      },
       "completion": {
         "title": "Installation ofgeschloss!",
         "message": "Är Cardano-Node ass erfollegräich installéiert a leeft als Systemd-Service. D'Blockchain-Synchronisatioun leeft am Hannergrond a kann 24-48 Stonnen daueren."
@@ -682,15 +630,6 @@
         "rootAccessTitle": "Root-Zougang",
         "rootAccess": "Root-Zougang oder sudo-Berechtegung erfuerderlech"
       },
-      "stepsSubtitle": "Befollegt dës Schrëtt an der spezifizéierter Reiefolleg fir eng erfollegräich Cardano DB Sync Installation.",
-      "tips": {
-        "sectionTitle": "Zousätzlech Operatiounen",
-        "sectionSubtitle": "Nëtzlech Kommandoen fir d'Iwwerwaachung an d'Ënnerhale vun Ärer Cardano DB Sync Installation"
-      },
-      "resources": {
-        "sectionTitle": "Zousätzlech Ressourcen",
-        "sectionSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken fir Cardano DB Sync"
-      },
       "completion": {
         "title": "Cardano DB Sync Installation ofgeschloss!",
         "message": "Är Cardano DB Sync leeft elo a synchroniséiert Blockchain-Donnéeën an d'PostgreSQL-Datebank. Iwwerwaacht reegelméisseg d'Logs an de Synchronisatiounsfortschrëtt."
@@ -701,7 +640,6 @@
     "title": "Kontakt",
     "subtitle": "Hutt Dir Froen oder Feedback? Ech sinn hei fir ze hëllefen.",
     "methods": {
-      "title": "Kontaktméiglechkeeten",
       "linkedin": {
         "title": "LinkedIn",
         "description": "Berufflechen Netzwierk"
