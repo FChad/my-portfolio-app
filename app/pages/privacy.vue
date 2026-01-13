@@ -8,6 +8,11 @@ setSeoMeta({
     keywords: t('seo.privacy.keywords')
 })
 
+// Exclude privacy page from search engine indexing and sitemap
+useSeoMeta({
+    robots: 'noindex, nofollow'
+})
+
 const runtimeConfig = useRuntimeConfig()
 const baseUrl = runtimeConfig.public.baseUrl || 'https://www.chad.lu'
 </script>
