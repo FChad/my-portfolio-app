@@ -70,6 +70,11 @@
         "description": "Complete guide for installing and configuring Ollama on Debian 12. Local AI model management and GPU acceleration.",
         "keywords": "Ollama, AI Models, Local AI, Debian, Machine Learning, GPU Acceleration, LLM"
       }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy for www.chad.lu. Information about data processing, your rights, and technical storage on this website.",
+      "keywords": "Privacy, GDPR, Privacy Policy, Data Protection, Chad Feierstein"
     }
   },
   "nav": {
@@ -702,6 +707,78 @@
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Built with ❤",
     "description": "Full-Stack Developer & IT Technician from Luxembourg",
-    "navigation": "Navigation"
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "privacy": "Privacy Policy"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "updateDate": "January 2026",
+    "backToHome": "Back to Home",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Protecting your personal data is important to me. This privacy policy informs you about how I process your data on this website and what rights you have."
+      },
+      "responsible": {
+        "title": "Data Controller",
+        "location": "Rumelange, Luxembourg",
+        "contact": "Contact Form"
+      },
+      "dataCollection": {
+        "title": "Data Collection on This Website",
+        "content": "This website was developed with a focus on privacy:",
+        "items": {
+          "noTracking": "No user tracking or behavior analysis",
+          "noAnalytics": "No Google Analytics or similar services",
+          "noThirdParty": "No data sharing with advertisers"
+        }
+      },
+      "technicalStorage": {
+        "title": "Technically Necessary Storage",
+        "content": "For the functionality of the website, the following data is stored locally in your browser:",
+        "localStorage": {
+          "title": "Theme Preference",
+          "badge": "Technically necessary",
+          "description": "Your preferred color setting (light/dark mode) is stored locally in your browser. This data is not transmitted to servers and is used solely for the correct display of the website."
+        },
+        "turnstile": {
+          "title": "Cloudflare Turnstile (Bot Protection)",
+          "badge": "Technically necessary",
+          "description": "The contact form uses Cloudflare Turnstile for protection against automated requests. This is technically necessary for website security."
+        }
+      },
+      "contactForm": {
+        "title": "Contact Form",
+        "content": "When you use the contact form, the following data is processed:",
+        "items": {
+          "name": "Your name",
+          "email": "Your email address",
+          "message": "Your message"
+        },
+        "legalBasis": "Legal basis: Art. 6(1)(b) GDPR (contract initiation) and Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries). The data is used exclusively to process your request.",
+        "resend": {
+          "title": "Email Delivery via Resend",
+          "description": "For email delivery from the contact form, we use Resend (Resend, Inc., USA). Your entered data (name, email, message) is transmitted to Resend for delivery. Resend is certified under the EU-US Data Privacy Framework.",
+          "link": "Resend Privacy Policy"
+        }
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "This website is hosted on Cloudflare Pages. Cloudflare may process technical data such as IP addresses required for website delivery. Cloudflare is certified under the EU-US Data Privacy Framework.",
+        "link": "Cloudflare Privacy Policy"
+      },
+      "rights": {
+        "title": "Your Rights & Data Control",
+        "intro": "Since this website only processes minimal data, you have the following practical options:",
+        "localStorage": "Theme preference: This is only stored locally in your browser. You can delete it yourself at any time (Browser settings → Clear site data) or configure your browser to clear localStorage when closing.",
+        "contact": "Contact form: If you have sent me a message and wish it to be deleted, simply contact me. The email will then be deleted from my inbox."
+      },
+      "noCookieBanner": {
+        "title": "Why No Cookie Banner?",
+        "content": "This website does not use tracking cookies or marketing tools. The only local storage (theme preference) is technically necessary and does not require explicit consent under EU law."
+      }
+    }
   }
 }

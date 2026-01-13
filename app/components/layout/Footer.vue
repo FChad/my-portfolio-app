@@ -85,6 +85,11 @@ const scrollToTop = () => {
                         {{ $t('footer.copyright').replace('2025', currentYear.toString()) }}
                     </p>
                     <div class="flex items-center gap-6">
+                        <NuxtLinkLocale to="/privacy"
+                            class="text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
+                            <Icon name="mdi:shield-lock" class="w-5 h-5" />
+                            <span>{{ $t('footer.privacy') }}</span>
+                        </NuxtLinkLocale>
                         <a href="https://github.com/FChad/my-portfolio-app" target="_blank" rel="noopener noreferrer"
                             class="text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
                             <Icon name="mdi:github" class="w-5 h-5" />

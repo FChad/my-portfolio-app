@@ -702,6 +702,78 @@
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Erstallt mat ❤",
     "description": "Full-Stack Entwéckler & IT-Techniker aus Lëtzebuerg",
-    "navigation": "Navigatioun"
+    "navigation": "Navigatioun",
+    "legal": "Rechtleches",
+    "privacy": "Dateschutz"
+  },
+  "privacy": {
+    "title": "Dateschutzerkläerung",
+    "lastUpdated": "Lescht aktualiséiert",
+    "updateDate": "Januar 2026",
+    "backToHome": "Zréck op d'Haaptsäit",
+    "sections": {
+      "intro": {
+        "title": "Aféierung",
+        "content": "De Schutz vun Äre perséinlechen Daten ass mir wichteg. Dës Dateschutzerkläerung informéiert Iech iwwert wéi ech Är Daten op dëser Websäit veraarbecht a wéi eng Rechter Dir hutt."
+      },
+      "responsible": {
+        "title": "Verantwortlechen",
+        "location": "Rëmeling, Lëtzebuerg",
+        "contact": "Kontaktformulaire"
+      },
+      "dataCollection": {
+        "title": "Datenerfaassung op dëser Websäit",
+        "content": "Dës Websäit gouf mat Fokus op Dateschutz entwéckelt:",
+        "items": {
+          "noTracking": "Keng Benotzer-Tracking oder Verhaalensanalyse",
+          "noAnalytics": "Keng Google Analytics oder ähnlech Servicer",
+          "noThirdParty": "Keng Weidergab vun Daten un Reklamméierer"
+        }
+      },
+      "technicalStorage": {
+        "title": "Technesch néideg Späicherungen",
+        "content": "Fir d'Funktionalitéit vun der Websäit ginn folgend Daten lokal an Ärem Browser gespäichert:",
+        "localStorage": {
+          "title": "Thema-Preferenz",
+          "badge": "Technesch néideg",
+          "description": "Är bevorzugt Faarf-Astéllung (Hell/Donkel-Modus) gëtt lokal an Ärem Browser gespäichert. Dës Daten ginn net un Server iwwerdroe a déngen nëmmen der korrekter Uweissung vun der Websäit."
+        },
+        "turnstile": {
+          "title": "Cloudflare Turnstile (Bot-Schutz)",
+          "badge": "Technesch néideg",
+          "description": "D'Kontaktformulaire benotzt Cloudflare Turnstile fir Schutz géint automatiséiert Ufroen. Dëst ass technesch néideg fir d'Sécherheet vun der Websäit."
+        }
+      },
+      "contactForm": {
+        "title": "Kontaktformulaire",
+        "content": "Wann Dir d'Kontaktformulaire benotzt, ginn folgend Daten veraarbecht:",
+        "items": {
+          "name": "Ären Numm",
+          "email": "Är E-Mail Adress",
+          "message": "Är Noriicht"
+        },
+        "legalBasis": "Rechtsgrondlag: Art. 6 Abs. 1 lit. b DSGVO (Vertrags-Ubahnung) an Art. 6 Abs. 1 lit. f DSGVO (berechtegt Interessi un der Äntwert op Ufroen). D'Daten ginn exklusiv fir d'Veraarbechtung vun Ärer Ufro benotzt.",
+        "resend": {
+          "title": "E-Mail-Versand iwwer Resend",
+          "description": "Fir den E-Mail-Versand vum Kontaktformulaire benotze mir de Service Resend (Resend, Inc., USA). Är aginn Daten (Numm, E-Mail, Noriicht) ginn un Resend iwwerdroe fir d'Liwwerung. Resend ass nom EU-US Data Privacy Framework zertifiéiert.",
+          "link": "Resend Dateschutzerkläerung"
+        }
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "Dës Websäit gëtt op Cloudflare Pages gehost. Cloudflare kann technesch Daten wéi IP-Adressen veraarbechten, déi fir d'Bereetstellung vun der Websäit néideg sinn. Cloudflare ass nom EU-US Data Privacy Framework zertifizéiert.",
+        "link": "Cloudflare Dateschutzerkläerung"
+      },
+      "rights": {
+        "title": "Är Rechter & Datekontroll",
+        "intro": "Well dës Websäit nëmmen minimal Daten veraarbecht, hutt Dir folgend praktesch Méiglechkeeten:",
+        "localStorage": "Thema-Preferenz: Dës gëtt nëmmen lokal an Ärem Browser gespäichert. Dir kënnt se selwer zu all Moment läschen (Browser-Astellungen → Websäitdaten läschen) oder Äre Browser esou astellen, dass localStorage beim Zoumaachen geläscht gëtt.",
+        "contact": "Kontaktformulaire: Wann Dir mir eng Noriicht geschéckt hutt a wëllt dass se geläscht gëtt, kontaktéiert mech einfach. D'E-Mail gëtt dann aus mengem Postfach geläscht."
+      },
+      "noCookieBanner": {
+        "title": "Firwat keng Cookie-Banner?",
+        "content": "Dës Websäit benotzt keng Tracking-Cookien oder Marketing-Tools. Déi eenzeg lokal Späicherung (Thema-Preferenz) ass technesch néideg a brauch no EU-Recht keng ausdréckleg Zoustëmmung."
+      }
+    }
   }
 }

@@ -702,6 +702,78 @@
   "footer": {
     "copyright": "© 2025 Chad Feierstein. Créé avec ❤",
     "description": "Développeur Full-Stack & Technicien IT du Luxembourg",
-    "navigation": "Navigation"
+    "navigation": "Navigation",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité"
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour",
+    "updateDate": "Janvier 2026",
+    "backToHome": "Retour à l'accueil",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "La protection de vos données personnelles est importante pour moi. Cette politique de confidentialité vous informe sur la façon dont je traite vos données sur ce site et sur vos droits."
+      },
+      "responsible": {
+        "title": "Responsable du traitement",
+        "location": "Rumelange, Luxembourg",
+        "contact": "Formulaire de contact"
+      },
+      "dataCollection": {
+        "title": "Collecte de données sur ce site",
+        "content": "Ce site a été développé avec un accent sur la protection de la vie privée :",
+        "items": {
+          "noTracking": "Pas de suivi des utilisateurs ni d'analyse comportementale",
+          "noAnalytics": "Pas de Google Analytics ou services similaires",
+          "noThirdParty": "Pas de partage de données avec des annonceurs"
+        }
+      },
+      "technicalStorage": {
+        "title": "Stockages techniquement nécessaires",
+        "content": "Pour le fonctionnement du site, les données suivantes sont stockées localement dans votre navigateur :",
+        "localStorage": {
+          "title": "Préférence de thème",
+          "badge": "Techniquement nécessaire",
+          "description": "Votre préférence de couleur (mode clair/sombre) est stockée localement dans votre navigateur. Ces données ne sont pas transmises aux serveurs et servent uniquement à l'affichage correct du site."
+        },
+        "turnstile": {
+          "title": "Cloudflare Turnstile (Protection anti-bot)",
+          "badge": "Techniquement nécessaire",
+          "description": "Le formulaire de contact utilise Cloudflare Turnstile pour la protection contre les requêtes automatisées. Ceci est techniquement nécessaire pour la sécurité du site."
+        }
+      },
+      "contactForm": {
+        "title": "Formulaire de contact",
+        "content": "Lorsque vous utilisez le formulaire de contact, les données suivantes sont traitées :",
+        "items": {
+          "name": "Votre nom",
+          "email": "Votre adresse e-mail",
+          "message": "Votre message"
+        },
+        "legalBasis": "Base juridique : Art. 6(1)(b) RGPD (initiation de contrat) et Art. 6(1)(f) RGPD (intérêt légitime à répondre aux demandes). Les données sont utilisées exclusivement pour traiter votre demande.",
+        "resend": {
+          "title": "Envoi d'e-mails via Resend",
+          "description": "Pour l'envoi d'e-mails du formulaire de contact, nous utilisons Resend (Resend, Inc., USA). Vos données saisies (nom, e-mail, message) sont transmises à Resend pour la livraison. Resend est certifié dans le cadre du EU-US Data Privacy Framework.",
+          "link": "Politique de confidentialité de Resend"
+        }
+      },
+      "hosting": {
+        "title": "Hébergement",
+        "content": "Ce site est hébergé sur Cloudflare Pages. Cloudflare peut traiter des données techniques telles que les adresses IP nécessaires à la livraison du site. Cloudflare est certifié dans le cadre du EU-US Data Privacy Framework.",
+        "link": "Politique de confidentialité de Cloudflare"
+      },
+      "rights": {
+        "title": "Vos droits & contrôle des données",
+        "intro": "Étant donné que ce site ne traite que des données minimales, vous avez les options pratiques suivantes :",
+        "localStorage": "Préférence de thème : Elle n'est stockée que localement dans votre navigateur. Vous pouvez la supprimer vous-même à tout moment (Paramètres du navigateur → Effacer les données du site) ou configurer votre navigateur pour effacer le localStorage à la fermeture.",
+        "contact": "Formulaire de contact : Si vous m'avez envoyé un message et souhaitez sa suppression, contactez-moi simplement. L'e-mail sera alors supprimé de ma boîte de réception."
+      },
+      "noCookieBanner": {
+        "title": "Pourquoi pas de bannière de cookies ?",
+        "content": "Ce site n'utilise pas de cookies de suivi ni d'outils marketing. Le seul stockage local (préférence de thème) est techniquement nécessaire et ne nécessite pas de consentement explicite selon le droit européen."
+      }
+    }
   }
 }
