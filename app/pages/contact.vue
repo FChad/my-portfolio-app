@@ -224,7 +224,7 @@ definePageMeta({
             <div class="space-y-8 md:space-y-12">
                 <!-- Header -->
                 <div class="text-center space-y-4">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-800 dark:text-white">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white">
                         {{ $t('contact.title') }}
                     </h1>
                     <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">

@@ -22,11 +22,7 @@ const baseUrl = runtimeConfig.public.baseUrl || 'https://www.chad.lu'
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
             <div class="text-center mb-12">
-                <div
-                    class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-6">
-                    <Icon name="mdi:shield-lock" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                </div>
-                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                     {{ $t('privacy.title') }}
                 </h1>
                 <p class="text-lg text-gray-600 dark:text-gray-400">
