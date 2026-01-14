@@ -266,7 +266,7 @@ const experiences = [
 
                     <!-- Name -->
                     <div class="space-y-4">
-                        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-gray-800 dark:text-white">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 dark:text-white">
                             Chad Feierstein
                         </h1>
                         <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
