@@ -10,21 +10,21 @@ const { t } = useI18n()
 const handleError = () => clearError({ redirect: '/' })
 
 const errorTitle = computed(() => {
-    if (props.error?.statusCode === 404) {
+    if (props.error?.status === 404) {
         return t('error.404.title')
     }
     return t('error.general.title')
 })
 
 const errorMessage = computed(() => {
-    if (props.error?.statusCode === 404) {
+    if (props.error?.status === 404) {
         return t('error.404.message')
     }
     return t('error.general.message')
 })
 
 const errorCode = computed(() => {
-    return props.error?.statusCode || 500
+    return props.error?.status || 500
 })
 </script>
 

@@ -11,8 +11,8 @@ const slugParam = route.params.slug as string
 // Handle 404 if documentation not found
 if (!slugParam || !hasDocumentation(slugParam)) {
     throw createError({
-        statusCode: 404,
-        statusMessage: 'Documentation not found'
+        status: 404,
+        statusText: 'Documentation not found'
     })
 }
 

@@ -94,8 +94,8 @@ export default defineEventHandler(async (event) => {
   // Only allow POST requests
   if (event.node.req.method !== 'POST') {
     throw createError({
-      statusCode: 405,
-      statusMessage: 'Method Not Allowed'
+      status: 405,
+      statusText: 'Method Not Allowed'
     })
   }
 
@@ -109,8 +109,8 @@ export default defineEventHandler(async (event) => {
     if (!validatedData) {
       console.error('❌ Form validation failed')
       throw createError({
-        statusCode: 400,
-        statusMessage: 'Invalid form data'
+        status: 400,
+        statusText: 'Invalid form data'
       })
     }
 
@@ -131,8 +131,8 @@ export default defineEventHandler(async (event) => {
     if (!isTurnstileValid) {
       console.error('❌ Turnstile verification failed')
       throw createError({
-        statusCode: 400,
-        statusMessage: 'CAPTCHA verification failed. Please try again.'
+        status: 400,
+        statusText: 'CAPTCHA verification failed. Please try again.'
       })
     }
 
@@ -142,8 +142,8 @@ export default defineEventHandler(async (event) => {
     if (!process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
       console.error('❌ Email configuration incomplete')
       throw createError({
-        statusCode: 500,
-        statusMessage: 'Email configuration incomplete'
+        status: 500,
+        statusText: 'Email configuration incomplete'
       })
     }
 
@@ -191,14 +191,14 @@ export default defineEventHandler(async (event) => {
     console.error('Contact form error:', error)
 
     // Re-throw createError instances
-    if (error && typeof error === 'object' && 'statusCode' in error) {
+    if (error && typeof error === 'object' && 'status' in error) {
       throw error
     }
 
     // Handle Resend API errors (throw error instead of returning)
     throw createError({
-      statusCode: 500,
-      statusMessage: error instanceof Error ? error.message : 'Failed to send email. Please try again.'
+      status: 500,
+      statusText: error instanceof Error ? error.message : 'Failed to send email. Please try again.'
     })
   }
 });

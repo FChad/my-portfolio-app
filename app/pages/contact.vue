@@ -162,22 +162,22 @@ const submitForm = async () => {
         }, 10000)
     } catch (error: any) {
         // Handle different error types
-        if (error?.statusCode === 429) {
+        if (error?.status === 429) {
             submitError.value = t('contact.form.errors.rateLimited')
-        } else if (error?.statusCode === 400) {
+        } else if (error?.status === 400) {
             // Check if it's a CAPTCHA error
-            if (error?.statusMessage?.toLowerCase().includes('captcha') ||
-                error?.statusMessage?.toLowerCase().includes('verification')) {
+            if (error?.statusText?.toLowerCase().includes('captcha') ||
+                error?.statusText?.toLowerCase().includes('verification')) {
                 submitError.value = t('contact.form.errors.captchaFailed')
                 turnstileRef.value?.reset()
                 turnstileToken.value = ''
             } else {
                 submitError.value = t('contact.form.errors.invalidData')
             }
-        } else if (error?.statusCode === 500) {
+        } else if (error?.status === 500) {
             submitError.value = t('contact.form.errors.serverError')
         } else {
-            submitError.value = error?.statusMessage || t('contact.form.errors.serverError')
+            submitError.value = error?.statusText || t('contact.form.errors.serverError')
         }
     } finally {
         isSubmitting.value = false
