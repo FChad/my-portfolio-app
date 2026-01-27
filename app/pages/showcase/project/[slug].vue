@@ -11,8 +11,8 @@ const slugParam = route.params.slug as string
 // Handle 404 if project not found
 if (!slugParam || !hasProject(slugParam)) {
     throw createError({
-        statusCode: 404,
-        statusMessage: 'Project not found'
+        status: 404,
+        statusText: 'Project not found'
     })
 }
 
