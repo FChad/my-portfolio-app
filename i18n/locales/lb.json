@@ -259,14 +259,15 @@
     },
     "timelineItems": {
       "item1": {
-        "title": "Web-Entwéckler bei Rotyre SARL",
-        "description": "Haaptverantwortlech fir d'Wuertung an d'Weiderentwécklung vun der Websäit 'mullerpneus.lu'. Onbegrenzte Plaatz mat Fokus op Frontend-Entwécklung an Websäit-Optimiséierung.",
-        "company": "Rotyre SARL",
+        "title": "Webentwéckler bei Mullerpneus",
+        "description": "Entwécklung a Wartung vum internen ERP-System an Online-Shop. Verantwortlech fir nei Features, Bugfixing, Datebanken a serverseiteg Konfiguratiounen.",
+        "company": "Mullerpneus",
         "type": "Vollzäit",
-        "task1": "Websäit-Wuertung an -Entwécklung",
-        "task2": "Frontend-Entwécklung an UI/UX-Optimiséierung",
-        "task3": "Leeschtungsoptimiséierung an SEO-Verbesserungen",
-        "task4": "Content-Management an technesch Updates"
+        "task1": "Feature-Entwécklung: Planung an Ëmsetzung vun neie Funktiounen fir ERP a Shop",
+        "task2": "Wartung: Feeleranalyse, Debugging a Performance-Optimiséierung",
+        "task3": "Datebanken: Verwaltung, Fleeë an Optimiséierung vu MySQL-Datebanken",
+        "task4": "Server: Konfiguratioun vu FTP, SFTP, E-Mail, Websockets a PHP-Versiounen",
+        "task5": "Monitoring: Log-Analyse a proaktiv Feelerbéihiewung"
       },
       "item2": {
         "title": "IT-Cloud-Ingenieur Praktikum",

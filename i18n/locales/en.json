@@ -264,14 +264,15 @@
     },
     "timelineItems": {
       "item1": {
-        "title": "Web Developer at Rotyre SARL",
-        "description": "Primary responsibility for maintaining and developing the website 'mullerpneus.lu'. Permanent position focusing on frontend development and website optimization.",
-        "company": "Rotyre SARL",
+        "title": "Web Developer at Mullerpneus",
+        "description": "Development and maintenance of the internal ERP system and online shop. Responsible for new features, bug fixing, databases and server-side configurations.",
+        "company": "Mullerpneus",
         "type": "Full-time",
-        "task1": "Website maintenance and development",
-        "task2": "Frontend development and UI/UX optimization",
-        "task3": "Performance optimization and SEO improvements",
-        "task4": "Content management and technical updates"
+        "task1": "Feature Development: Planning and implementation of new ERP and shop features",
+        "task2": "Maintenance: Error analysis, debugging and performance optimization",
+        "task3": "Databases: Administration, maintenance and optimization of MySQL databases",
+        "task4": "Server: Configuration of FTP, SFTP, email, websockets and PHP versions",
+        "task5": "Monitoring: Log analysis and proactive troubleshooting"
       },
       "item2": {
         "title": "IT Cloud Engineer Internship",

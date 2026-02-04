@@ -264,14 +264,15 @@
     },
     "timelineItems": {
       "item1": {
-        "title": "Web-Entwickler bei Rotyre SARL",
-        "description": "Hauptverantwortlich für die Wartung und Weiterentwicklung der Webseite 'mullerpneus.lu'. Unbefristete Anstellung mit Fokus auf Frontend-Entwicklung und Website-Optimierung.",
-        "company": "Rotyre SARL",
+        "title": "Webentwickler bei Mullerpneus",
+        "description": "Entwicklung und Wartung des internen ERP-Systems und Online-Shops. Verantwortlich für neue Features, Bugfixing, Datenbanken und serverseitige Konfigurationen.",
+        "company": "Mullerpneus",
         "type": "Vollzeit",
-        "task1": "Wartung und Weiterentwicklung der Firmenwebsite",
-        "task2": "Frontend-Entwicklung und UI/UX-Optimierung",
-        "task3": "Performance-Optimierung und SEO-Verbesserungen",
-        "task4": "Content-Management und technische Updates"
+        "task1": "Feature-Entwicklung: Planung und Umsetzung neuer Funktionen für ERP und Shop",
+        "task2": "Wartung: Fehleranalyse, Debugging und Performance-Optimierung",
+        "task3": "Datenbanken: Verwaltung, Pflege und Optimierung von MySQL-Datenbanken",
+        "task4": "Server: Konfiguration von FTP, SFTP, E-Mail, Websockets und PHP-Versionen",
+        "task5": "Monitoring: Log-Analyse und proaktive Fehlerbehebung"
       },
       "item2": {
         "title": "IT-Cloud-Ingenieur Praktikum",

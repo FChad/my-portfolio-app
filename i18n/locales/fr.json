@@ -259,14 +259,15 @@
     },
     "timelineItems": {
       "item1": {
-        "title": "Développeur Web chez Rotyre SARL",
-        "description": "Responsabilité principale de la maintenance et du développement du site web 'mullerpneus.lu'. Poste permanent axé sur le développement frontend et l'optimisation du site web.",
-        "company": "Rotyre SARL",
+        "title": "Développeur Web chez Mullerpneus",
+        "description": "Développement et maintenance du système ERP interne et de la boutique en ligne. Responsable des nouvelles fonctionnalités, correction de bugs, bases de données et configurations serveur.",
+        "company": "Mullerpneus",
         "type": "Temps plein",
-        "task1": "Maintenance et développement du site web",
-        "task2": "Développement frontend et optimisation UI/UX",
-        "task3": "Optimisation des performances et améliorations SEO",
-        "task4": "Gestion de contenu et mises à jour techniques"
+        "task1": "Développement: Planification et implémentation de nouvelles fonctionnalités ERP et boutique",
+        "task2": "Maintenance: Analyse d'erreurs, débogage et optimisation des performances",
+        "task3": "Bases de données: Administration, maintenance et optimisation MySQL",
+        "task4": "Serveur: Configuration FTP, SFTP, e-mail, websockets et versions PHP",
+        "task5": "Monitoring: Analyse des logs et dépannage proactif"
       },
       "item2": {
         "title": "Stage Ingénieur IT Cloud",
