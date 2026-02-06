@@ -66,61 +66,48 @@ const contactMethods = computed(() => [
     }
 ])
 
-// Scroll to contact form function
 const scrollToContactForm = () => {
-    const element = document.querySelector('#contact-form') as HTMLElement
-    if (element) {
-        const elementPosition = element.offsetTop;
-        window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth'
-        })
-    }
+    document.querySelector('#contact-form')?.scrollIntoView({ behavior: 'smooth' })
 }
 
-// Form validation
 const validateForm = () => {
     errors.value = {}
     submitError.value = ''
 
-    // Name validation
-    if (!form.value.name.trim()) {
-        errors.value.name = t('contact.form.errors.nameRequired')
-    } else if (form.value.name.length < 2 || form.value.name.length > 100) {
-        errors.value.name = t('contact.form.errors.nameLength')
+    const rules: [string, () => string | null][] = [
+        ['name', () => {
+            if (!form.value.name.trim()) return t('contact.form.errors.nameRequired')
+            if (form.value.name.length < 2 || form.value.name.length > 100) return t('contact.form.errors.nameLength')
+            return null
+        }],
+        ['email', () => {
+            if (!form.value.email.trim()) return t('contact.form.errors.emailRequired')
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email) || form.value.email.length > 254) return t('contact.form.errors.emailInvalid')
+            return null
+        }],
+        ['subject', () => {
+            if (!form.value.subject.trim()) return t('contact.form.errors.subjectRequired')
+            if (form.value.subject.length < 5 || form.value.subject.length > 200) return t('contact.form.errors.subjectLength')
+            return null
+        }],
+        ['message', () => {
+            if (!form.value.message.trim()) return t('contact.form.errors.messageRequired')
+            if (form.value.message.length < 10) return t('contact.form.errors.messageMinLength')
+            if (form.value.message.length > 2000) return t('contact.form.errors.messageMaxLength')
+            return null
+        }],
+        ['turnstile', () => {
+            if (!turnstileToken.value?.trim()) return t('contact.form.errors.captchaRequired')
+            return null
+        }],
+    ]
+
+    for (const [field, validate] of rules) {
+        const error = validate()
+        if (error) errors.value[field] = error
     }
 
-    // Email validation
-    if (!form.value.email.trim()) {
-        errors.value.email = t('contact.form.errors.emailRequired')
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email) || form.value.email.length > 254) {
-        errors.value.email = t('contact.form.errors.emailInvalid')
-    }
-
-    // Subject validation
-    if (!form.value.subject.trim()) {
-        errors.value.subject = t('contact.form.errors.subjectRequired')
-    } else if (form.value.subject.length < 5 || form.value.subject.length > 200) {
-        errors.value.subject = t('contact.form.errors.subjectLength')
-    }
-
-    // Message validation
-    if (!form.value.message.trim()) {
-        errors.value.message = t('contact.form.errors.messageRequired')
-    } else if (form.value.message.length < 10) {
-        errors.value.message = t('contact.form.errors.messageMinLength')
-    } else if (form.value.message.length > 2000) {
-        errors.value.message = t('contact.form.errors.messageMaxLength')
-    }
-
-    // Turnstile validation (check if token exists and is a string)
-    if (!turnstileToken.value || typeof turnstileToken.value !== 'string' || !turnstileToken.value.trim()) {
-        errors.value.turnstile = t('contact.form.errors.captchaRequired')
-        showTurnstileError.value = true
-    } else {
-        showTurnstileError.value = false
-    }
-
+    showTurnstileError.value = !!errors.value.turnstile
     return Object.keys(errors.value).length === 0
 }
 
@@ -161,51 +148,40 @@ const submitForm = async () => {
             isSubmitted.value = false
         }, 10000)
     } catch (error: any) {
-        // Handle different error types
-        if (error?.status === 429) {
-            submitError.value = t('contact.form.errors.rateLimited')
-        } else if (error?.status === 400) {
-            // Check if it's a CAPTCHA error
-            if (error?.statusText?.toLowerCase().includes('captcha') ||
-                error?.statusText?.toLowerCase().includes('verification')) {
-                submitError.value = t('contact.form.errors.captchaFailed')
-                turnstileRef.value?.reset()
-                turnstileToken.value = ''
-            } else {
-                submitError.value = t('contact.form.errors.invalidData')
-            }
-        } else if (error?.status === 500) {
-            submitError.value = t('contact.form.errors.serverError')
-        } else {
-            submitError.value = error?.statusText || t('contact.form.errors.serverError')
+        const isCaptchaError = /captcha|verification/i.test(error?.statusText || '')
+
+        if (isCaptchaError) {
+            turnstileRef.value?.reset()
+            turnstileToken.value = ''
         }
+
+        const errorMap: Record<number, string> = {
+            429: t('contact.form.errors.rateLimited'),
+            400: isCaptchaError ? t('contact.form.errors.captchaFailed') : t('contact.form.errors.invalidData'),
+            500: t('contact.form.errors.serverError'),
+        }
+
+        submitError.value = errorMap[error?.status] || t('contact.form.errors.serverError')
     } finally {
         isSubmitting.value = false
     }
 }
 
-// Turnstile event handlers
 const onTurnstileVerified = (token: string) => {
     turnstileToken.value = token
     showTurnstileError.value = false
     submitError.value = ''
-    // Clear turnstile error from errors object
-    if (errors.value.turnstile) {
-        delete errors.value.turnstile
-    }
+    delete errors.value.turnstile
 }
 
-const onTurnstileExpired = () => {
+const resetTurnstile = (errorKey: string) => {
     turnstileToken.value = ''
     showTurnstileError.value = true
-    submitError.value = t('contact.form.errors.captchaExpired')
+    submitError.value = t(errorKey)
 }
 
-const onTurnstileError = (errorMessage: string) => {
-    turnstileToken.value = ''
-    showTurnstileError.value = true
-    submitError.value = t('contact.form.errors.captchaError')
-}
+const onTurnstileExpired = () => resetTurnstile('contact.form.errors.captchaExpired')
+const onTurnstileError = () => resetTurnstile('contact.form.errors.captchaError')
 
 definePageMeta({
     layout: 'default'
