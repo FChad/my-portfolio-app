@@ -3,7 +3,7 @@
         <LayoutHeader />
 
         <!-- Main Content -->
-        <main>
+        <main id="main-content">
             <slot />
         </main>
 

@@ -32,10 +32,12 @@ const scrollToTop = () => {
                     <!-- Social Links -->
                     <div class="flex gap-3">
                         <NuxtLink to="https://github.com/FChad" external target="_blank"
+                            aria-label="GitHub"
                             class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-500 text-gray-700 dark:text-gray-300 hover:text-white dark:hover:text-white transition-all duration-300">
                             <Icon name="mdi:github" class="w-5 h-5" />
                         </NuxtLink>
                         <NuxtLink to="https://www.linkedin.com/in/chad-feierstein/" external target="_blank"
+                            aria-label="LinkedIn"
                             class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-500 text-gray-700 dark:text-gray-300 hover:text-white dark:hover:text-white transition-all duration-300">
                             <Icon name="mdi:linkedin" class="w-5 h-5" />
                         </NuxtLink>

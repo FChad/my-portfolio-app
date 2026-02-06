@@ -17,10 +17,36 @@ const close = () => {
     emit('update:modelValue', false)
 }
 
+const modalRef = ref<HTMLElement | null>(null)
+let previouslyFocusedElement: HTMLElement | null = null
+
 // Close on ESC key
 const handleKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Escape' && props.modelValue) {
         close()
+    }
+
+    // Focus trapping
+    if (e.key === 'Tab' && props.modelValue && modalRef.value) {
+        const focusable = modalRef.value.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        )
+        if (focusable.length === 0) return
+
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault()
+                last.focus()
+            }
+        } else {
+            if (document.activeElement === last) {
+                e.preventDefault()
+                first.focus()
+            }
+        }
     }
 }
 
@@ -30,16 +56,33 @@ onMounted(() => {
 
 onUnmounted(() => {
     document.removeEventListener('keydown', handleKeydown)
+    // Ensure body scroll is restored if component unmounts while open
+    document.body.style.overflow = ''
 })
 
-// Prevent body scroll when modal is open
+// Prevent body scroll when modal is open & manage focus
 watch(() => props.modelValue, (isOpen) => {
     if (isOpen) {
         document.body.style.overflow = 'hidden'
+        previouslyFocusedElement = document.activeElement as HTMLElement
+        nextTick(() => {
+            // Focus first focusable element inside modal
+            const focusable = modalRef.value?.querySelectorAll<HTMLElement>(
+                'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+            )
+            if (focusable?.length) {
+                focusable[0].focus()
+            }
+        })
     } else {
         document.body.style.overflow = ''
+        // Restore focus to previously focused element
+        previouslyFocusedElement?.focus()
+        previouslyFocusedElement = null
     }
 })
+
+const modalTitleId = useId()
 
 const maxWidthClasses = {
     sm: 'max-w-sm',
@@ -52,8 +95,9 @@ const maxWidthClasses = {
 
 <template>
     <Teleport to="body">
-        <div v-if="modelValue" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
-            @click.self="close">
+        <div v-if="modelValue" ref="modalRef" role="dialog" aria-modal="true"
+            :aria-labelledby="title ? modalTitleId : undefined"
+            class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4" @click.self="close">
             <!-- Enhanced Backdrop -->
             <div class="absolute inset-0 bg-black/60 backdrop-blur-md" @click="close"></div>
 
@@ -69,7 +113,8 @@ const maxWidthClasses = {
                 <div
                     class="relative flex items-start justify-between px-4 py-4 sm:px-6 sm:py-5 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800/50 dark:to-gray-800">
                     <div class="flex-1 mr-2 sm:mr-4">
-                        <h3 v-if="title" class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
+                        <h3 v-if="title" :id="modalTitleId"
+                            class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
                             {{ title }}
                         </h3>
                         <slot v-else name="header"></slot>

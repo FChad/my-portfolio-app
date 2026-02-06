@@ -48,6 +48,8 @@ const isActive = (path: string) => {
                 <div class="flex items-center gap-4">
                     <!-- Mobile Menu Button -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen"
+                        :aria-expanded="mobileMenuOpen" aria-controls="mobile-menu"
+                        :aria-label="mobileMenuOpen ? $t('common.closeMenu') : $t('common.openMenu')"
                         class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300">
                         <Icon v-if="!mobileMenuOpen" name="mdi:menu" class="w-5 h-5" />
                         <Icon v-else name="mdi:close" class="w-5 h-5" />
@@ -62,7 +64,8 @@ const isActive = (path: string) => {
             </div>
 
             <!-- Mobile Navigation Menu -->
-            <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+            <nav v-show="mobileMenuOpen" id="mobile-menu" :aria-label="$t('common.mobileNav')"
+                class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col space-y-3 text-lg">
                     <NuxtLinkLocale v-for="link in navLinks" :key="link.key" :to="link.to"
                         @click="mobileMenuOpen = false" :class="[
@@ -76,7 +79,7 @@ const isActive = (path: string) => {
                         <FeaturesThemeSwitcher />
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 </template>

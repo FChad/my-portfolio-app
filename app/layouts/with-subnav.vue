@@ -9,7 +9,7 @@
         </div>
 
         <!-- Main Content with padding to account for fixed headers -->
-        <main>
+        <main id="main-content">
             <slot />
         </main>
 

@@ -14,7 +14,11 @@
       "keyFeaturesSubtitle": "Découvrez les principales fonctionnalités",
       "builtWith": "Construit Avec",
       "builtWithSubtitle": "Technologies et frameworks utilisés dans ce projet"
-    }
+    },
+    "skipToContent": "Aller au contenu",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "mobileNav": "Navigation mobile"
   },
   "seo": {
     "home": {

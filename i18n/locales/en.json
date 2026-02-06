@@ -14,7 +14,11 @@
       "keyFeaturesSubtitle": "Explore the main features and functionalities",
       "builtWith": "Built With",
       "builtWithSubtitle": "Technologies and frameworks used in this project"
-    }
+    },
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNav": "Mobile navigation"
   },
   "seo": {
     "home": {

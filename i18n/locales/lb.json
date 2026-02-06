@@ -14,7 +14,11 @@
       "keyFeaturesSubtitle": "Entdeckt déi wichtegst Funktiounen",
       "builtWith": "Gebaut mat",
       "builtWithSubtitle": "Technologien a Frameworks an dësem Projet"
-    }
+    },
+    "skipToContent": "Zum Inhalt sprangen",
+    "openMenu": "Menü opmaachen",
+    "closeMenu": "Menü zoumaachen",
+    "mobileNav": "Mobil Navigatioun"
   },
   "seo": {
     "home": {

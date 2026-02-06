@@ -3,7 +3,7 @@
         <LayoutHeader />
 
         <!-- Main Content for Hero Pages (no padding top) -->
-        <main>
+        <main id="main-content">
             <slot />
         </main>
 
