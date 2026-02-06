@@ -31,11 +31,6 @@ definePageMeta({
     layout: 'with-subnav'
 })
 
-// Use useHead for dynamic page configuration
-useHead(() => ({
-    title: t(config.seo.titleKey)
-}))
-
 // Set SEO meta synchronously for SSR
 setSeoMeta({
     title: t(config.seo.titleKey),
