@@ -49,8 +49,8 @@ const renderTurnstile = () => {
             if (widgetId.value) {
                 try {
                     window.turnstile.remove(widgetId.value)
-                } catch (error) {
-                    console.warn('Failed to remove existing Turnstile widget:', error)
+                } catch {
+                    // Widget removal failed silently
                 }
                 widgetId.value = undefined
             }
@@ -62,27 +62,22 @@ const renderTurnstile = () => {
             widgetId.value = window.turnstile.render(turnstileElement.value, {
                 sitekey: props.siteKey,
                 callback: (token: string) => {
-                    console.log('Turnstile callback triggered with token')
                     emit('update:modelValue', token)
                     emit('verified', token)
                 },
                 'expired-callback': () => {
-                    console.log('Turnstile expired')
                     emit('update:modelValue', '')
                     emit('expired')
                 },
                 'error-callback': (error: string) => {
-                    console.log('Turnstile error:', error)
                     emit('update:modelValue', '')
                     emit('error', error)
                 },
                 theme: isDark.value ? 'dark' : 'light',
                 language: 'auto'
             })
-
-            console.log('Turnstile rendered with widgetId:', widgetId.value)
-        } catch (error) {
-            console.error('Failed to render Turnstile:', error)
+        } catch {
+            // Turnstile render failed silently
         }
     }
 }
@@ -122,8 +117,8 @@ onBeforeUnmount(() => {
     if (import.meta.client && window.turnstile && widgetId.value) {
         try {
             window.turnstile.remove(widgetId.value)
-        } catch (error) {
-            console.warn('Failed to remove Turnstile widget on unmount:', error)
+        } catch {
+            // Cleanup failed silently
         }
     }
 })

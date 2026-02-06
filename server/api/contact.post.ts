@@ -14,16 +14,21 @@ function sanitizeInput(input: string): string {
   return input.trim().replace(/[<>]/g, '')
 }
 
-// Turnstile verification function
-async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
-  const secretKey = process.env.TURNSTILE_SECRET_KEY
+/** Encode user input for safe HTML embedding (prevents XSS) */
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 
+// Turnstile verification function
+async function verifyTurnstile(token: string, ip: string, secretKey: string): Promise<boolean> {
   if (!secretKey) {
-    console.error('❌ TURNSTILE_SECRET_KEY is not configured')
     return false
   }
-
-  console.log('🔐 Verifying Turnstile token from IP:', ip)
 
   try {
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -39,16 +44,13 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
     })
 
     const result = await response.json()
-    console.log('🔐 Turnstile verification result:', result.success ? '✅ Success' : '❌ Failed', result)
-
     return result.success === true
-  } catch (error) {
-    console.error('❌ Turnstile verification failed:', error)
+  } catch {
     return false
   }
 }
 
-function validateContactForm(data: any): ContactFormData | null {
+function validateContactForm(data: unknown): ContactFormData | null {
   if (!data || typeof data !== 'object') {
     return null
   }
@@ -99,22 +101,20 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  const config = useRuntimeConfig()
+
   try {
     // Parse and validate request body
     const body = await readBody(event)
-    console.log('📨 Contact form submission received')
 
     const validatedData = validateContactForm(body)
 
     if (!validatedData) {
-      console.error('❌ Form validation failed')
       throw createError({
         status: 400,
         statusText: 'Invalid form data'
       })
     }
-
-    console.log('✅ Form data validated')
 
     // Get client IP for Turnstile verification
     const clientIP = getHeader(event, 'cf-connecting-ip') ||
@@ -123,51 +123,53 @@ export default defineEventHandler(async (event) => {
       event.node.req.socket.remoteAddress ||
       'unknown'
 
-    console.log('🌐 Client IP:', clientIP)
-
     // Verify Turnstile token
-    const isTurnstileValid = await verifyTurnstile(validatedData.turnstileToken, clientIP)
+    const isTurnstileValid = await verifyTurnstile(
+      validatedData.turnstileToken,
+      clientIP,
+      config.turnstileSecretKey
+    )
 
     if (!isTurnstileValid) {
-      console.error('❌ Turnstile verification failed')
       throw createError({
         status: 400,
         statusText: 'CAPTCHA verification failed. Please try again.'
       })
     }
 
-    console.log('✅ Turnstile verification successful')
-
-    // Check environment variables
-    if (!process.env.EMAIL_FROM || !process.env.EMAIL_TO) {
-      console.error('❌ Email configuration incomplete')
+    // Check runtime config
+    if (!config.emailFrom || !config.emailTo) {
       throw createError({
         status: 500,
-        statusText: 'Email configuration incomplete'
+        statusText: 'Internal server error'
       })
     }
 
-    console.log('📧 Sending email via Resend...')
+    // HTML-encode user inputs for safe email embedding
+    const safeName = escapeHtml(validatedData.name)
+    const safeEmail = escapeHtml(validatedData.email)
+    const safeSubject = escapeHtml(validatedData.subject)
+    const safeMessage = escapeHtml(validatedData.message).replace(/\n/g, '<br>')
 
     // Send email using Resend REST API
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${config.resendApiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: `${process.env.EMAIL_FROM_NAME || 'Portfolio'} <${process.env.EMAIL_FROM}>`,
-        to: [process.env.EMAIL_TO],
+        from: `${config.emailFromName || 'Portfolio'} <${config.emailFrom}>`,
+        to: [config.emailTo],
         reply_to: validatedData.email,
         subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
         html: `
           <h2>New Contact Request</h2>
-          <p><strong>Name:</strong> ${validatedData.name}</p>
-          <p><strong>Email:</strong> ${validatedData.email}</p>
-          <p><strong>Subject:</strong> ${validatedData.subject}</p>
+          <p><strong>Name:</strong> ${safeName}</p>
+          <p><strong>Email:</strong> ${safeEmail}</p>
+          <p><strong>Subject:</strong> ${safeSubject}</p>
           <p><strong>Message:</strong></p>
-          <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+          <p>${safeMessage}</p>
         `,
       }),
     });
@@ -175,11 +177,8 @@ export default defineEventHandler(async (event) => {
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('❌ Resend API error:', data);
-      throw new Error(data.message || 'Failed to send email');
+      throw new Error('Email delivery failed');
     }
-
-    console.log('✅ Email sent successfully:', data.id)
 
     return {
       success: true,
@@ -188,17 +187,15 @@ export default defineEventHandler(async (event) => {
     };
 
   } catch (error) {
-    console.error('Contact form error:', error)
-
     // Re-throw createError instances
     if (error && typeof error === 'object' && 'status' in error) {
       throw error
     }
 
-    // Handle Resend API errors (throw error instead of returning)
+    // Generic error message — never expose internal details to the client
     throw createError({
       status: 500,
-      statusText: error instanceof Error ? error.message : 'Failed to send email. Please try again.'
+      statusText: 'Failed to send email. Please try again.'
     })
   }
 });
