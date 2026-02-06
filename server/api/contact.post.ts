@@ -1,4 +1,3 @@
-// Contact form data interface
 interface ContactFormData {
   name: string
   email: string
@@ -7,16 +6,10 @@ interface ContactFormData {
   turnstileToken: string
 }
 
-// Email validation regex
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function sanitizeInput(input: string): string {
-  return input.trim().replace(/[<>]/g, '')
-}
-
-/** Encode user input for safe HTML embedding (prevents XSS) */
-function escapeHtml(input: string): string {
-  return input
+function escapeHtml(str: string): string {
+  return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -24,178 +17,98 @@ function escapeHtml(input: string): string {
     .replace(/'/g, '&#39;')
 }
 
-// Turnstile verification function
-async function verifyTurnstile(token: string, ip: string, secretKey: string): Promise<boolean> {
-  if (!secretKey) {
-    return false
-  }
-
+async function verifyTurnstile(token: string, ip: string, secret: string): Promise<boolean> {
   try {
-    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        secret: secretKey,
-        response: token,
-        remoteip: ip
-      })
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret, response: token, remoteip: ip }),
     })
-
-    const result = await response.json()
-    return result.success === true
+    return ((await res.json()) as { success: boolean }).success === true
   } catch {
     return false
   }
 }
 
-function validateContactForm(data: unknown): ContactFormData | null {
-  if (!data || typeof data !== 'object') {
-    return null
-  }
+function validateContactForm(body: unknown): ContactFormData {
+  if (!body || typeof body !== 'object') throw createError({ status: 400, statusText: 'Invalid form data' })
 
-  const { name, email, subject, message, turnstileToken } = data
+  const { name, email, subject, message, turnstileToken } = body as Record<string, unknown>
 
-  // Required field validation
-  if (!name || !email || !subject || !message || !turnstileToken) {
-    return null
-  }
+  const fields: [unknown, number, number][] = [
+    [name, 2, 100],
+    [subject, 5, 200],
+    [message, 10, 2000],
+  ]
 
-  // Type and length validation
-  if (typeof name !== 'string' || name.length < 2 || name.length > 100) {
-    return null
-  }
+  if (fields.some(([v, min, max]) => typeof v !== 'string' || v.length < min || v.length > max))
+    throw createError({ status: 400, statusText: 'Invalid form data' })
 
-  if (typeof email !== 'string' || !EMAIL_REGEX.test(email) || email.length > 254) {
-    return null
-  }
+  if (typeof email !== 'string' || !EMAIL_REGEX.test(email) || email.length > 254)
+    throw createError({ status: 400, statusText: 'Invalid form data' })
 
-  if (typeof subject !== 'string' || subject.length < 5 || subject.length > 200) {
-    return null
-  }
-
-  if (typeof message !== 'string' || message.length < 10 || message.length > 2000) {
-    return null
-  }
-
-  if (typeof turnstileToken !== 'string' || turnstileToken.length === 0) {
-    return null
-  }
+  if (typeof turnstileToken !== 'string' || !turnstileToken)
+    throw createError({ status: 400, statusText: 'Invalid form data' })
 
   return {
-    name: sanitizeInput(name),
-    email: email.toLowerCase().trim(),
-    subject: sanitizeInput(subject),
-    message: sanitizeInput(message),
-    turnstileToken: turnstileToken.trim()
+    name: (name as string).trim(),
+    email: (email as string).toLowerCase().trim(),
+    subject: (subject as string).trim(),
+    message: (message as string).trim(),
+    turnstileToken: (turnstileToken as string).trim(),
   }
 }
 
 export default defineEventHandler(async (event) => {
-  // Only allow POST requests
-  if (event.node.req.method !== 'POST') {
-    throw createError({
-      status: 405,
-      statusText: 'Method Not Allowed'
-    })
-  }
-
   const config = useRuntimeConfig()
+  const body = await readBody(event)
+  const data = validateContactForm(body)
 
-  try {
-    // Parse and validate request body
-    const body = await readBody(event)
+  const clientIP = getHeader(event, 'cf-connecting-ip')
+    || getHeader(event, 'x-forwarded-for')
+    || getHeader(event, 'x-real-ip')
+    || event.node.req.socket.remoteAddress
+    || 'unknown'
 
-    const validatedData = validateContactForm(body)
+  if (!await verifyTurnstile(data.turnstileToken, clientIP, config.turnstileSecretKey))
+    throw createError({ status: 400, statusText: 'CAPTCHA verification failed. Please try again.' })
 
-    if (!validatedData) {
-      throw createError({
-        status: 400,
-        statusText: 'Invalid form data'
-      })
-    }
+  if (!config.emailFrom || !config.emailTo)
+    throw createError({ status: 500, statusText: 'Internal server error' })
 
-    // Get client IP for Turnstile verification
-    const clientIP = getHeader(event, 'cf-connecting-ip') ||
-      getHeader(event, 'x-forwarded-for') ||
-      getHeader(event, 'x-real-ip') ||
-      event.node.req.socket.remoteAddress ||
-      'unknown'
-
-    // Verify Turnstile token
-    const isTurnstileValid = await verifyTurnstile(
-      validatedData.turnstileToken,
-      clientIP,
-      config.turnstileSecretKey
-    )
-
-    if (!isTurnstileValid) {
-      throw createError({
-        status: 400,
-        statusText: 'CAPTCHA verification failed. Please try again.'
-      })
-    }
-
-    // Check runtime config
-    if (!config.emailFrom || !config.emailTo) {
-      throw createError({
-        status: 500,
-        statusText: 'Internal server error'
-      })
-    }
-
-    // HTML-encode user inputs for safe email embedding
-    const safeName = escapeHtml(validatedData.name)
-    const safeEmail = escapeHtml(validatedData.email)
-    const safeSubject = escapeHtml(validatedData.subject)
-    const safeMessage = escapeHtml(validatedData.message).replace(/\n/g, '<br>')
-
-    // Send email using Resend REST API
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${config.resendApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: `${config.emailFromName || 'Portfolio'} <${config.emailFrom}>`,
-        to: [config.emailTo],
-        reply_to: validatedData.email,
-        subject: `Portfolio Contact: ${validatedData.name} - ${validatedData.subject}`,
-        html: `
-          <h2>New Contact Request</h2>
-          <p><strong>Name:</strong> ${safeName}</p>
-          <p><strong>Email:</strong> ${safeEmail}</p>
-          <p><strong>Subject:</strong> ${safeSubject}</p>
-          <p><strong>Message:</strong></p>
-          <p>${safeMessage}</p>
-        `,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error('Email delivery failed');
-    }
-
-    return {
-      success: true,
-      message: 'Email sent successfully',
-      id: data.id
-    };
-
-  } catch (error) {
-    // Re-throw createError instances
-    if (error && typeof error === 'object' && 'status' in error) {
-      throw error
-    }
-
-    // Generic error message — never expose internal details to the client
-    throw createError({
-      status: 500,
-      statusText: 'Failed to send email. Please try again.'
-    })
+  const safe = {
+    name: escapeHtml(data.name),
+    email: escapeHtml(data.email),
+    subject: escapeHtml(data.subject),
+    message: escapeHtml(data.message).replace(/\n/g, '<br>'),
   }
-});
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${config.resendApiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: `${config.emailFromName || 'Portfolio'} <${config.emailFrom}>`,
+      to: [config.emailTo],
+      reply_to: data.email,
+      subject: `Portfolio Contact: ${data.name} - ${data.subject}`,
+      html: `
+        <h2>New Contact Request</h2>
+        <p><strong>Name:</strong> ${safe.name}</p>
+        <p><strong>Email:</strong> ${safe.email}</p>
+        <p><strong>Subject:</strong> ${safe.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${safe.message}</p>
+      `,
+    }),
+  })
+
+  const result = await res.json()
+
+  if (!res.ok)
+    throw createError({ status: 500, statusText: 'Failed to send email. Please try again.' })
+
+  return { success: true, message: 'Email sent successfully', id: result.id }
+})
