@@ -1,15 +1,13 @@
 <template>
-    <div class="w-full h-full flex flex-col">
-        <!-- Header (Fixed at top) -->
-        <LayoutHeader />
-
-        <!-- SubNavigation (Fixed below header) - always reserve height -->
-        <div class="sticky z-40" style="top: var(--header-height); min-height: var(--subnav-height);">
+    <div class="w-full min-h-screen flex flex-col">
+        <!-- Sticky group: Header + SubNav stick together as one unit -->
+        <div class="sticky top-0 z-50">
+            <LayoutHeader />
             <UiSubNavigation v-bind="subNavConfig" />
         </div>
 
-        <!-- Main Content with padding to account for fixed headers -->
-        <main id="main-content">
+        <!-- Main Content -->
+        <main id="main-content" class="flex-1">
             <slot />
         </main>
 
@@ -20,13 +18,3 @@
 <script setup lang="ts">
 const { subNavConfig } = useSubNav()
 </script>
-
-<style>
-/* Layout spacing variables */
-:root {
-    --header-height: 65px;
-    --subnav-height: 65px;
-    --content-spacing: 40px;
-    --total-header-offset: calc(var(--header-height) + var(--subnav-height) + var(--content-spacing));
-}
-</style>

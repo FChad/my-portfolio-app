@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full h-full flex flex-col">
+    <div class="w-full min-h-screen flex flex-col">
         <LayoutHeader />
 
-        <!-- Main Content for Hero Pages (no padding top) -->
-        <main id="main-content">
+        <!-- Main Content for Hero Pages -->
+        <main id="main-content" class="flex-1">
             <slot />
         </main>
 

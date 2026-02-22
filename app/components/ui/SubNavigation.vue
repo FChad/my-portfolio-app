@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-    <nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 w-full">
+    <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Breadcrumb -->
