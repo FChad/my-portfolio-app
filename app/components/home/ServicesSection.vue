@@ -46,7 +46,7 @@ const services = computed(() => [
                     <div class="flex flex-col gap-4 md:gap-5 lg:gap-6 h-full">
                         <div class="flex items-center gap-3 md:gap-4">
                             <div
-                                :class="`w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 ${service.iconBg} rounded-xl md:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 flex-shrink-0`">
+                                :class="`w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 ${service.iconBg} rounded-xl md:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shrink-0`">
                                 <Icon :name="service.icon" class="w-6 h-6 md:w-6.5 md:h-6.5 lg:w-7 lg:h-7 text-white" />
                             </div>
                             <h3 class="text-lg md:text-xl lg:text-2xl font-black text-gray-800 dark:text-white">
@@ -60,7 +60,7 @@ const services = computed(() => [
                             <li v-for="feature in service.features" :key="feature"
                                 class="flex items-center gap-2 md:gap-3 text-gray-600 dark:text-gray-400">
                                 <Icon name="mdi:check-circle"
-                                    :class="`w-4 h-4 md:w-5 md:h-5 ${service.checkColor} flex-shrink-0`" />
+                                    :class="`w-4 h-4 md:w-5 md:h-5 ${service.checkColor} shrink-0`" />
                                 <span class="font-medium text-sm md:text-base">{{
                                     $t(`home.services.${service.key}.features.${feature}`)
                                     }}</span>

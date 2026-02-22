@@ -41,8 +41,8 @@ const toggleExpanded = (itemId: string) => {
         <div :class="[
             'absolute inset-0',
             type === 'troubleshooting'
-                ? 'bg-gradient-to-b from-transparent via-orange-100/40 to-transparent dark:via-orange-900/10'
-                : 'bg-gradient-to-b from-transparent via-purple-100/40 to-transparent dark:via-purple-900/10'
+                ? 'bg-linear-to-b from-transparent via-orange-100/40 to-transparent dark:via-orange-900/10'
+                : 'bg-linear-to-b from-transparent via-purple-100/40 to-transparent dark:via-purple-900/10'
         ]"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,10 +65,10 @@ const toggleExpanded = (itemId: string) => {
                         class="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left hover:bg-gray-50/50 dark:hover:bg-gray-700/50 rounded-xl sm:rounded-2xl md:rounded-3xl transition-colors">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div :class="[
-                                'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 flex-shrink-0',
+                                'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 shrink-0',
                                 type === 'troubleshooting'
-                                    ? 'bg-gradient-to-br from-orange-500 to-red-600'
-                                    : 'bg-gradient-to-br from-purple-500 to-pink-600'
+                                    ? 'bg-linear-to-br from-orange-500 to-red-600'
+                                    : 'bg-linear-to-br from-purple-500 to-pink-600'
                             ]">
                                 <Icon :name="item.icon" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                             </div>
@@ -77,7 +77,7 @@ const toggleExpanded = (itemId: string) => {
                             </h3>
                         </div>
                         <Icon :name="isExpanded[item.id] ? 'mdi:chevron-up' : 'mdi:chevron-down'"
-                            class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 transition-transform flex-shrink-0 ml-2 sm:ml-4" />
+                            class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 transition-transform shrink-0 ml-2 sm:ml-4" />
                     </button>
 
                     <Transition name="expand">

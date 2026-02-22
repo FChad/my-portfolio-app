@@ -30,11 +30,11 @@ const props = withDefaults(defineProps<Props>(), {
                 <div
                     class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg md:rounded-xl px-3 py-1.5 md:px-4 md:py-2">
                     <Icon name="mdi:lock"
-                        class="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                        class="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-600 dark:text-gray-400 shrink-0" />
                     <span class="text-gray-700 dark:text-gray-300 text-xs md:text-sm font-medium flex-1 truncate">{{ url
                         }}</span>
                     <Icon :name="favicon"
-                        class="w-4 h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                        class="w-4 h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400 shrink-0" />
                 </div>
             </div>
 

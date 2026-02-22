@@ -17,7 +17,7 @@ const { getColorClasses } = useColorMapping()
     <section class="py-10 sm:py-16 md:py-24 relative overflow-hidden">
         <!-- Subtle gradient background -->
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent dark:via-gray-900/30">
+            class="absolute inset-0 bg-linear-to-b from-transparent via-gray-50/50 to-transparent dark:via-gray-900/30">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -32,7 +32,7 @@ const infoCards = computed(() => [
 <template>
     <section id="about-section" class="py-12 md:py-16 lg:py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
+            class="absolute inset-0 bg-linear-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ const infoCards = computed(() => [
                         class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 md:gap-4">
                             <div
-                                :class="`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-br ${card.gradient} rounded-lg md:rounded-xl flex items-center justify-center shadow-md flex-shrink-0`">
+                                :class="`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-linear-to-br ${card.gradient} rounded-lg md:rounded-xl flex items-center justify-center shadow-md shrink-0`">
                                 <Icon :name="card.icon" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                             </div>
                             <div class="space-y-0.5 md:space-y-1 min-w-0">

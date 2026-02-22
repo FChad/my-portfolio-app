@@ -23,7 +23,7 @@ const { t } = useI18n()
     <section class="py-12 sm:py-16 md:py-24 relative overflow-hidden">
         <!-- Gradient background -->
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-green-100/40 to-transparent dark:via-green-900/10">
+            class="absolute inset-0 bg-linear-to-b from-transparent via-green-100/40 to-transparent dark:via-green-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ const { t } = useI18n()
                 <NuxtLink v-for="resource in resources" :key="resource.id" external :to="resource.url" target="_blank"
                     class="group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-start gap-3 sm:gap-4">
                     <div :class="[
-                        'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300',
+                        'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300',
                         resource.gradient
                     ]">
                         <Icon :name="resource.icon" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
@@ -54,7 +54,7 @@ const { t } = useI18n()
                                 {{ resource.title }}
                             </h3>
                             <Icon name="mdi:external-link"
-                                class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 flex-shrink-0 transition-colors" />
+                                class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 shrink-0 transition-colors" />
                         </div>
                         <p class="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                             {{ resource.description }}

@@ -106,7 +106,7 @@ const copyToClipboard = async () => {
             class="flex items-center justify-between border-b duration-300 px-2.5 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 bg-gray-50/90 dark:bg-gray-700/70 border-gray-200/60 dark:border-gray-600/50">
             <div class="flex items-center gap-1.5 sm:gap-2 md:gap-3 min-w-0 flex-1">
                 <!-- Language Badge -->
-                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     <Icon :name="languageInfo.icon"
                         :class="['w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5', languageInfo.color]" />
                     <span
@@ -134,7 +134,7 @@ const copyToClipboard = async () => {
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex items-center gap-1 flex-shrink-0 ml-2">
+            <div class="flex items-center gap-1 shrink-0 ml-2">
                 <!-- Copy Button -->
                 <button @click="copyToClipboard" :class="[
                     'flex items-center justify-center rounded-md w-7 h-7 sm:w-8 sm:h-8 touch-manipulation active:scale-90 transition-all',
@@ -159,7 +159,7 @@ const copyToClipboard = async () => {
                 <div v-if="showLineNumbers && formattedLines.length > 1" class="flex">
                     <!-- Line Numbers -->
                     <div
-                        class="select-none border-r border-opacity-20 px-1.5 sm:px-2 md:px-3 py-2 sm:py-2.5 md:py-3 text-gray-600 dark:text-gray-400 text-[10px] sm:text-xs md:text-sm leading-5 sm:leading-6 font-mono bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
+                        class="select-none border-r border-black/20 px-1.5 sm:px-2 md:px-3 py-2 sm:py-2.5 md:py-3 text-gray-600 dark:text-gray-400 text-[10px] sm:text-xs md:text-sm leading-5 sm:leading-6 font-mono bg-black/5 dark:bg-white/5">
                         <div v-for="(line, index) in formattedLines" :key="index" class="text-right">
                             {{ (index + 1).toString().padStart(formattedLines.length.toString().length, ' ') }}
                         </div>
@@ -181,7 +181,7 @@ const copyToClipboard = async () => {
 
             <!-- Fade overlay for max height -->
             <div v-if="props.maxHeight"
-                class="absolute bottom-0 left-0 right-0 h-6 sm:h-8 bg-gradient-to-t from-current to-transparent opacity-20 pointer-events-none">
+                class="absolute bottom-0 left-0 right-0 h-6 sm:h-8 bg-linear-to-t from-current to-transparent opacity-20 pointer-events-none">
             </div>
         </div>
 
@@ -190,7 +190,7 @@ const copyToClipboard = async () => {
             class="border-t duration-300 px-2.5 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 bg-amber-50/80 dark:bg-amber-900/20 border-amber-200/60 dark:border-amber-800/40 text-amber-800 dark:text-amber-200">
             <div class="flex items-start gap-1.5 sm:gap-2 md:gap-3">
                 <Icon name="mdi:information"
-                    class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0 text-amber-600 dark:text-amber-400" />
+                    class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 mt-0.5 shrink-0 text-amber-600 dark:text-amber-400" />
                 <div class="leading-relaxed text-xs sm:text-sm md:text-base">
                     <span class="font-medium">Note:</span>
                     {{ note }}
@@ -200,7 +200,7 @@ const copyToClipboard = async () => {
     </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 /* Code formatting */
 pre,
 code {
@@ -234,7 +234,7 @@ code {
 
 /* Focus styles */
 button:focus-visible {
-    outline: 2px solid theme('colors.blue.500');
+    outline: 2px solid var(--color-blue-500);
     outline-offset: 2px;
 }
 

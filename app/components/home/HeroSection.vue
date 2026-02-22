@@ -29,7 +29,7 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
         <div class="absolute inset-0">
             <!-- Subtle Background -->
             <div
-                class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+                class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
             </div>
 
             <!-- Animated Stars Canvas (Lazy Loaded) -->
@@ -38,7 +38,7 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
 
             <!-- Adaptive overlay for text readability -->
             <div
-                class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-white/40 dark:from-transparent dark:via-transparent dark:to-gray-900/20">
+                class="absolute inset-0 z-10 bg-linear-to-b from-transparent via-transparent to-white/40 dark:from-transparent dark:via-transparent dark:to-gray-900/20">
             </div>
         </div>
 
@@ -51,7 +51,7 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
                     <p class="text-xl sm:text-2xl font-medium tracking-wide uppercase animate-slide-down opacity-0"
                         style="animation-delay: 0.2s; animation-fill-mode: forwards;">
                         <span
-                            class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                            class="bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                             {{ $t('home.greeting') }}
                         </span>
                     </p>
@@ -106,7 +106,7 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
         </div>
 
         <!-- Scroll Down Indicator with pulse animation -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 animate-fade-in opacity-0"
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 animate-fade-in opacity-0"
             style="animation-delay: 1.2s; animation-fill-mode: forwards;">
             <div class="flex flex-col items-center animate-bounce">
                 <div class="relative flex justify-center items-center w-[50px] h-[50px] 

@@ -90,7 +90,7 @@ const totalCount = computed(() => showcaseItems.value.length)
     <section class="relative min-h-screen overflow-hidden py-12 sm:py-16 md:py-20">
         <!-- Animated gradient background -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -144,11 +144,11 @@ const totalCount = computed(() => showcaseItems.value.length)
                     <!-- Search Bar -->
                     <div class="flex-1 max-w-md sm:ml-auto">
                         <div class="relative flex items-center gap-2">
-                            <Icon name="mdi:magnify" class="w-5 h-5 text-gray-400 flex-shrink-0" />
+                            <Icon name="mdi:magnify" class="w-5 h-5 text-gray-400 shrink-0" />
                             <input v-model="searchTerm" type="text" :placeholder="t('showcase.search.placeholder')"
                                 class="w-full px-4 py-2 text-sm md:text-base bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-400" />
                             <button v-if="searchTerm" @click="searchTerm = ''"
-                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
                                 <Icon name="mdi:close" class="w-4 h-4" />
                             </button>
                         </div>
@@ -168,7 +168,7 @@ const totalCount = computed(() => showcaseItems.value.length)
                                 </h3>
                                 <span
                                     :class="item.type === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'"
-                                    class="px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-medium flex items-center gap-1 flex-shrink-0">
+                                    class="px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-medium flex items-center gap-1 shrink-0">
                                     <Icon
                                         :name="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'"
                                         class="w-3.5 h-3.5 md:w-4 md:h-4" />

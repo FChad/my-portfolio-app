@@ -21,7 +21,7 @@
 const { subNavConfig } = useSubNav()
 </script>
 
-<style lang="postcss">
+<style>
 /* Layout spacing variables */
 :root {
     --header-height: 65px;

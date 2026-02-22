@@ -76,15 +76,15 @@ const baseUrl = runtimeConfig.public.baseUrl || 'https://www.chad.lu'
                     </p>
                     <ul class="space-y-2 text-gray-600 dark:text-gray-400">
                         <li class="flex items-start gap-2">
-                            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
                             {{ $t('privacy.sections.dataCollection.items.noTracking') }}
                         </li>
                         <li class="flex items-start gap-2">
-                            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
                             {{ $t('privacy.sections.dataCollection.items.noAnalytics') }}
                         </li>
                         <li class="flex items-start gap-2">
-                            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
                             {{ $t('privacy.sections.dataCollection.items.noThirdParty') }}
                         </li>
                     </ul>
@@ -154,15 +154,15 @@ const baseUrl = runtimeConfig.public.baseUrl || 'https://www.chad.lu'
                     </p>
                     <ul class="space-y-2 text-gray-600 dark:text-gray-400">
                         <li class="flex items-start gap-2">
-                            <Icon name="mdi:circle-small" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
+                            <Icon name="mdi:circle-small" class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
                             {{ $t('privacy.sections.contactForm.items.name') }}
                         </li>
                         <li class="flex items-start gap-2">
-                            <Icon name="mdi:circle-small" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
+                            <Icon name="mdi:circle-small" class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
                             {{ $t('privacy.sections.contactForm.items.email') }}
                         </li>
                         <li class="flex items-start gap-2">
-                            <Icon name="mdi:circle-small" class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
+                            <Icon name="mdi:circle-small" class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
                             {{ $t('privacy.sections.contactForm.items.message') }}
                         </li>
                     </ul>
@@ -221,7 +221,7 @@ const baseUrl = runtimeConfig.public.baseUrl || 'https://www.chad.lu'
                         class="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
                         <div class="flex items-start gap-3">
                             <Icon name="mdi:information"
-                                class="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
+                                class="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 shrink-0" />
                             <div>
                                 <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
                                     {{ $t('privacy.sections.rights.localStorage') }}
@@ -236,10 +236,10 @@ const baseUrl = runtimeConfig.public.baseUrl || 'https://www.chad.lu'
 
                 <!-- No Cookie Banner Notice -->
                 <section
-                    class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-6 sm:p-8 border border-green-200 dark:border-green-800">
+                    class="bg-linear-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-6 sm:p-8 border border-green-200 dark:border-green-800">
                     <div class="flex items-start gap-4">
                         <div
-                            class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
+                            class="shrink-0 w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
                             <Icon name="mdi:cookie-off" class="w-6 h-6 text-green-600 dark:text-green-400" />
                         </div>
                         <div>

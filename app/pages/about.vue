@@ -248,7 +248,7 @@ const experiences = [
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         <!-- Animated gradient background -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -279,7 +279,7 @@ const experiences = [
                         <div
                             class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:cake-variant" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
                             <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{ currentAge }}
@@ -292,20 +292,20 @@ const experiences = [
                         <div
                             class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:briefcase" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
                             <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                                }}</div>
+                            }}</div>
                         </div>
 
                         <div
                             class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-green-500 to-green-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:certificate" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
                             <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
@@ -319,7 +319,7 @@ const experiences = [
                         <div
                             class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-pink-500 to-pink-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:translate" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
                             <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
@@ -338,7 +338,7 @@ const experiences = [
                         class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:map-marker" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
@@ -355,7 +355,7 @@ const experiences = [
                         class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:flag" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
@@ -372,7 +372,7 @@ const experiences = [
                         class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:heart" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
@@ -389,7 +389,7 @@ const experiences = [
                         class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:car" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
@@ -408,7 +408,7 @@ const experiences = [
     <!-- Languages with interactive cards -->
     <section class="py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
+            class="absolute inset-0 bg-linear-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -443,10 +443,10 @@ const experiences = [
                                 <span class="text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('about.languages.proficiency') }}</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                }}</span>
+                                    }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
+                                <div class="h-full bg-linear-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
                                     :style="{ width: lang.level === 'C2' ? '100%' : lang.level === 'C1' ? '85%' : lang.level === 'B2' ? '70%' : '55%' }">
                                 </div>
                             </div>
@@ -462,7 +462,7 @@ const experiences = [
     <!-- Work & Education Timeline -->
     <section class="py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-blue-100/60 via-purple-100/60 to-pink-100/60 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
+            class="absolute inset-0 bg-linear-to-b from-blue-100/60 via-purple-100/60 to-pink-100/60 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -498,12 +498,12 @@ const experiences = [
                         <div class="flex items-start justify-between">
                             <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg"
                                 :class="{
-                                    'bg-gradient-to-br from-blue-500 to-blue-600': index === 0,
-                                    'bg-gradient-to-br from-green-500 to-green-600': index === 1,
-                                    'bg-gradient-to-br from-purple-500 to-purple-600': index === 2,
-                                    'bg-gradient-to-br from-orange-500 to-orange-600': index === 3,
-                                    'bg-gradient-to-br from-red-500 to-red-600': index === 4,
-                                    'bg-gradient-to-br from-pink-500 to-pink-600': index === 5
+                                    'bg-linear-to-br from-blue-500 to-blue-600': index === 0,
+                                    'bg-linear-to-br from-green-500 to-green-600': index === 1,
+                                    'bg-linear-to-br from-purple-500 to-purple-600': index === 2,
+                                    'bg-linear-to-br from-orange-500 to-orange-600': index === 3,
+                                    'bg-linear-to-br from-red-500 to-red-600': index === 4,
+                                    'bg-linear-to-br from-pink-500 to-pink-600': index === 5
                                 }">
                                 <Icon :name="cert.icon" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
@@ -529,7 +529,7 @@ const experiences = [
     <!-- Interests & Passions (Magazine style) -->
     <section class="py-16 sm:py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-900">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
+            class="absolute inset-0 bg-linear-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -549,14 +549,14 @@ const experiences = [
 
                     <div class="relative space-y-4 sm:space-y-6">
                         <div
-                            class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                            class="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                             <Icon name="mdi:heart" class="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
 
@@ -565,7 +565,7 @@ const experiences = [
                     class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300">
                     <div class="space-y-4 sm:space-y-6">
                         <div
-                            class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                            class="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                             <Icon name="mdi:puzzle" class="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">{{
@@ -573,7 +573,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                            }}</p>
+                        }}</p>
                     </div>
                 </div>
             </div>
@@ -591,10 +591,10 @@ const experiences = [
                             loading="lazy" />
                         <!-- Overlay for better text readability (lighter in light mode) -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10 dark:from-black/80 dark:via-black/50 dark:to-black/30 group-hover:from-black/50 group-hover:via-black/20 group-hover:to-transparent dark:group-hover:from-black/70 dark:group-hover:via-black/40 dark:group-hover:to-black/20 transition-all duration-300">
+                            class="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-black/10 dark:from-black/80 dark:via-black/50 dark:to-black/30 group-hover:from-black/50 group-hover:via-black/20 group-hover:to-transparent dark:group-hover:from-black/70 dark:group-hover:via-black/40 dark:group-hover:to-black/20 transition-all duration-300">
                         </div>
                         <!-- Colored gradient overlay on hover -->
-                        <div class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                        <div class="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                             :class="{
                                 'from-blue-500 to-blue-600': experience.color === 'blue',
                                 'from-green-500 to-green-600': experience.color === 'green',
@@ -607,7 +607,7 @@ const experiences = [
                     <div class="relative h-full min-h-[280px] sm:min-h-[320px] flex flex-col justify-end p-6 sm:p-8">
                         <!-- Icon floating badge -->
                         <div
-                            class="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            class="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                             <Icon :name="experience.icon" class="w-6 h-6 sm:w-7 sm:h-7" :class="{
                                 'text-blue-600': experience.color === 'blue',
                                 'text-green-600': experience.color === 'green',
@@ -635,7 +635,7 @@ const experiences = [
     <!-- CTA Section (Bold and modern) -->
     <section class="py-16 sm:py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <!-- Decorative elements -->

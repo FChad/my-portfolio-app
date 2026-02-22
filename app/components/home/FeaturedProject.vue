@@ -11,7 +11,7 @@ const techStack = computed(() => [
 <template>
     <section class="py-12 md:py-16 lg:py-24 relative overflow-hidden">
         <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
+            class="absolute inset-0 bg-linear-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

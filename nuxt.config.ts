@@ -1,16 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-02-17',
   devtools: { enabled: false },
+  css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
-    '@nuxtjs/seo',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/seo'
   ],
+  icon: {
+    cssLayer: 'base'
+  },
+  vite: {
+    plugins: [
+      tailwindcss()
+    ]
+  },
   site: {
     url: process.env.BASE_URL,
     name: 'Chad Feierstein - Portfolio'

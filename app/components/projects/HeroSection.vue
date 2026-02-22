@@ -19,7 +19,7 @@ const getSourceLink = (links: ProjectLink[]) => links.find(l => l.type === 'sour
     <section class="relative py-12 sm:py-16 md:py-24 overflow-hidden">
         <!-- Gradient Background -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <!-- Content -->

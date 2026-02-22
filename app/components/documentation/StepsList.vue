@@ -52,7 +52,7 @@ const toggleExpanded = (stepId: string) => {
                         class="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left hover:bg-gray-50/50 dark:hover:bg-gray-700/50 rounded-xl sm:rounded-2xl md:rounded-3xl transition-colors">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 flex-shrink-0">
+                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-linear-to-br from-blue-500 to-purple-600 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 shrink-0">
                                 <span class="text-white font-black text-base sm:text-lg md:text-xl">{{ index + 1
                                     }}</span>
                             </div>
@@ -68,7 +68,7 @@ const toggleExpanded = (stepId: string) => {
                             </div>
                         </div>
                         <Icon name="mdi:chevron-down"
-                            :class="`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ml-2 sm:ml-4 ${isExpanded[step.id] ? 'rotate-180' : ''}`" />
+                            :class="`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-400 transition-transform duration-300 shrink-0 ml-2 sm:ml-4 ${isExpanded[step.id] ? 'rotate-180' : ''}`" />
                     </button>
 
                     <!-- Step Content -->
@@ -90,7 +90,7 @@ const toggleExpanded = (stepId: string) => {
                                 class="mt-4 sm:mt-6 p-3 sm:p-4 md:p-5 bg-blue-50/80 dark:bg-blue-900/30 backdrop-blur-sm border border-blue-200 dark:border-blue-700/50 rounded-lg sm:rounded-xl md:rounded-2xl">
                                 <div class="flex items-start gap-2 sm:gap-3">
                                     <div
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
+                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-md sm:rounded-lg flex items-center justify-center shrink-0">
                                         <Icon name="mdi:information" class="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                                     </div>
                                     <p

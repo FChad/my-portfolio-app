@@ -7,7 +7,7 @@
     <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 space-y-4">
         <!-- First User Message -->
         <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
                 <Icon name="mdi:account" class="w-5 h-5 text-white" />
             </div>
             <div class="flex-1 bg-blue-100 dark:bg-blue-900/40 rounded-2xl rounded-tl-none p-3">
@@ -22,13 +22,13 @@
                     Aufbau von Benutzeroberflächen.</p>
             </div>
             <div
-                class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
+                class="w-8 h-8 rounded-full bg-linear-to-br from-purple-400 to-pink-500 flex items-center justify-center shrink-0">
                 <Icon name="mdi:robot" class="w-5 h-5 text-white" />
             </div>
         </div>
         <!-- Second User Message -->
         <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
                 <Icon name="mdi:account" class="w-5 h-5 text-white" />
             </div>
             <div class="flex-1 bg-blue-100 dark:bg-blue-900/40 rounded-2xl rounded-tl-none p-3">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div
-                class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0">
+                class="w-8 h-8 rounded-full bg-linear-to-br from-purple-400 to-pink-500 flex items-center justify-center shrink-0">
                 <Icon name="mdi:robot" class="w-5 h-5 text-white" />
             </div>
         </div>

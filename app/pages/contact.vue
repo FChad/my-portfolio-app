@@ -193,7 +193,7 @@ definePageMeta({
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20">
         <!-- Animated gradient background -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         </div>
 
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -278,7 +278,7 @@ definePageMeta({
                     <div v-if="isSubmitted"
                         class="mb-4 md:mb-6 p-3 md:p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
                         <div class="flex items-center gap-2 md:gap-3">
-                            <Icon name="mdi:check-circle" class="w-5 h-5 md:w-6 md:h-6 text-green-500 flex-shrink-0" />
+                            <Icon name="mdi:check-circle" class="w-5 h-5 md:w-6 md:h-6 text-green-500 shrink-0" />
                             <p class="text-sm md:text-base text-green-800 dark:text-green-200 font-medium">
                                 {{ $t('contact.form.success') }}
                             </p>
@@ -289,7 +289,7 @@ definePageMeta({
                     <div v-if="submitError"
                         class="mb-4 md:mb-6 p-3 md:p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
                         <div class="flex items-center gap-2 md:gap-3">
-                            <Icon name="mdi:alert-circle" class="w-5 h-5 md:w-6 md:h-6 text-red-500 flex-shrink-0" />
+                            <Icon name="mdi:alert-circle" class="w-5 h-5 md:w-6 md:h-6 text-red-500 shrink-0" />
                             <p class="text-sm md:text-base text-red-800 dark:text-red-200 font-medium">
                                 {{ submitError }}
                             </p>

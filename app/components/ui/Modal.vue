@@ -111,7 +111,7 @@ const maxWidthClasses = {
             ]">
                 <!-- Header with modern styling -->
                 <div
-                    class="relative flex items-start justify-between px-4 py-4 sm:px-6 sm:py-5 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800/50 dark:to-gray-800">
+                    class="relative flex items-start justify-between px-4 py-4 sm:px-6 sm:py-5 border-b border-gray-200 dark:border-gray-700 bg-linear-to-r from-gray-50 to-white dark:from-gray-800/50 dark:to-gray-800">
                     <div class="flex-1 mr-2 sm:mr-4">
                         <h3 v-if="title" :id="modalTitleId"
                             class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
@@ -122,7 +122,7 @@ const maxWidthClasses = {
 
                     <!-- Modern close button with hover effect -->
                     <button @click="close"
-                        class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-red-900/30 group transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105">
+                        class="shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-red-900/30 group transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105">
                         <Icon name="mdi:close"
                             class="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" />
                     </button>
@@ -130,7 +130,7 @@ const maxWidthClasses = {
 
                 <!-- Body with custom scrollbar styling and better padding -->
                 <div
-                    class="flex-1 overflow-y-auto px-4 py-5 sm:px-6 sm:py-6 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-800 dark:to-gray-800/50 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500">
+                    class="flex-1 overflow-y-auto px-4 py-5 sm:px-6 sm:py-6 bg-linear-to-b from-white to-gray-50/50 dark:from-gray-800 dark:to-gray-800/50 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500">
                     <slot></slot>
                 </div>
 
