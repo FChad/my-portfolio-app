@@ -1,4 +1,4 @@
-import type { ProjectConfig } from '~/composables/useProjects'
+﻿import type { ProjectConfig } from '~/composables/useProjects'
 
 export const myChatBotConfig: ProjectConfig = {
     slug: 'my-chat-bot',
@@ -31,42 +31,36 @@ export const myChatBotConfig: ProjectConfig = {
             title: 'projects.myChatBot.features.aiChat.title',
             description: 'projects.myChatBot.features.aiChat.description',
             icon: 'mdi:robot',
-            color: 'blue'
         },
         {
             id: 'conversationManagement',
             title: 'projects.myChatBot.features.conversationManagement.title',
             description: 'projects.myChatBot.features.conversationManagement.description',
             icon: 'mdi:chat-processing',
-            color: 'green'
         },
         {
             id: 'modelSelection',
             title: 'projects.myChatBot.features.modelSelection.title',
             description: 'projects.myChatBot.features.modelSelection.description',
             icon: 'mdi:brain',
-            color: 'purple'
         },
         {
             id: 'streaming',
             title: 'projects.myChatBot.features.streaming.title',
             description: 'projects.myChatBot.features.streaming.description',
             icon: 'mdi:lightning-bolt',
-            color: 'orange'
         },
         {
             id: 'localStorage',
             title: 'projects.myChatBot.features.localStorage.title',
             description: 'projects.myChatBot.features.localStorage.description',
             icon: 'mdi:content-save',
-            color: 'red'
         },
         {
             id: 'modernUI',
             title: 'projects.myChatBot.features.modernUI.title',
             description: 'projects.myChatBot.features.modernUI.description',
             icon: 'mdi:palette',
-            color: 'blue'
         }
     ],
     technologies: [
@@ -76,7 +70,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.nuxt3.tech',
             icon: 'mdi:nuxt',
             description: 'projects.myChatBot.technologies.nuxt3.description',
-            color: 'green'
         },
         {
             id: 'vue3',
@@ -84,7 +77,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.vue3.tech',
             icon: 'mdi:vuejs',
             description: 'projects.myChatBot.technologies.vue3.description',
-            color: 'green'
         },
         {
             id: 'typescript',
@@ -92,7 +84,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.typescript.tech',
             icon: 'mdi:language-typescript',
             description: 'projects.myChatBot.technologies.typescript.description',
-            color: 'blue'
         },
         {
             id: 'pinia',
@@ -100,7 +91,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.pinia.tech',
             icon: 'mdi:database',
             description: 'projects.myChatBot.technologies.pinia.description',
-            color: 'purple'
         },
         {
             id: 'tailwind',
@@ -108,7 +98,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.tailwind.tech',
             icon: 'mdi:tailwind',
             description: 'projects.myChatBot.technologies.tailwind.description',
-            color: 'blue'
         },
         {
             id: 'ollama',
@@ -116,7 +105,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.ollama.tech',
             icon: 'mdi:robot',
             description: 'projects.myChatBot.technologies.ollama.description',
-            color: 'orange'
         },
         {
             id: 'highlight',
@@ -124,7 +112,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.highlight.tech',
             icon: 'mdi:code-tags',
             description: 'projects.myChatBot.technologies.highlight.description',
-            color: 'red'
         },
         {
             id: 'marked',
@@ -132,7 +119,6 @@ export const myChatBotConfig: ProjectConfig = {
             tech: 'projects.myChatBot.technologies.marked.tech',
             icon: 'mdi:language-markdown',
             description: 'projects.myChatBot.technologies.marked.description',
-            color: 'green'
         }
     ],
     callToAction: {

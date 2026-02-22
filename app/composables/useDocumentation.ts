@@ -26,14 +26,12 @@ export interface DocNote {
     title: string // Translation key
     description: string // Translation key
     icon: string
-    color: 'blue' | 'green' | 'purple' | 'orange' | 'red' | 'amber' | 'emerald' | 'teal'
 }
 
 export interface DocTip {
     id: string
     title: string // Direct English text (not a translation key)
     icon: string
-    color?: string
     commands: DocCommand[]
 }
 
@@ -50,7 +48,6 @@ export interface DocResource {
     description: string
     url: string
     icon: string
-    gradient: string
 }
 
 export interface DocCompletion {

@@ -26,7 +26,7 @@ const languageMap: Record<string, { icon: string; name: string; color: string }>
     'zsh': { icon: 'mdi:console', name: 'Zsh', color: 'text-green-500' },
     'fish': { icon: 'mdi:console', name: 'Fish', color: 'text-green-500' },
     'powershell': { icon: 'mdi:powershell', name: 'PowerShell', color: 'text-blue-500' },
-    'cmd': { icon: 'mdi:console', name: 'Command Prompt', color: 'text-gray-600' },
+    'cmd': { icon: 'mdi:console', name: 'Command Prompt', color: 'text-neutral-600' },
     'yaml': { icon: 'mdi:file-code', name: 'YAML', color: 'text-red-500' },
     'yml': { icon: 'mdi:file-code', name: 'YAML', color: 'text-red-500' },
     'json': { icon: 'mdi:code-json', name: 'JSON', color: 'text-yellow-500' },
@@ -50,20 +50,20 @@ const languageMap: Record<string, { icon: string; name: string; color: string }>
     'sass': { icon: 'mdi:sass', name: 'Sass', color: 'text-pink-500' },
     'sql': { icon: 'mdi:database', name: 'SQL', color: 'text-blue-600' },
     'xml': { icon: 'mdi:file-xml', name: 'XML', color: 'text-orange-600' },
-    'markdown': { icon: 'mdi:language-markdown', name: 'Markdown', color: 'text-gray-600' },
-    'md': { icon: 'mdi:language-markdown', name: 'Markdown', color: 'text-gray-600' },
+    'markdown': { icon: 'mdi:language-markdown', name: 'Markdown', color: 'text-neutral-600' },
+    'md': { icon: 'mdi:language-markdown', name: 'Markdown', color: 'text-neutral-600' },
     'dockerfile': { icon: 'mdi:docker', name: 'Dockerfile', color: 'text-blue-500' },
     'docker': { icon: 'mdi:docker', name: 'Docker', color: 'text-blue-500' },
     'nginx': { icon: 'mdi:web', name: 'Nginx', color: 'text-green-600' },
     'apache': { icon: 'mdi:web', name: 'Apache', color: 'text-red-600' },
-    'text': { icon: 'mdi:file-document', name: 'Text', color: 'text-gray-500' },
-    'plain': { icon: 'mdi:file-document', name: 'Plain Text', color: 'text-gray-500' },
+    'text': { icon: 'mdi:file-document', name: 'Text', color: 'text-neutral-500' },
+    'plain': { icon: 'mdi:file-document', name: 'Plain Text', color: 'text-neutral-500' },
     'config': { icon: 'mdi:cog', name: 'Config', color: 'text-amber-500' },
     'systemd': { icon: 'mdi:cog', name: 'Systemd', color: 'text-indigo-500' }
 }
 
 const languageInfo = computed(() =>
-    languageMap[props.language.toLowerCase()] || { icon: 'mdi:file-code', name: props.language.toUpperCase(), color: 'text-gray-500' }
+    languageMap[props.language.toLowerCase()] || { icon: 'mdi:file-code', name: props.language.toUpperCase(), color: 'text-neutral-500' }
 )
 
 const contentText = computed(() =>
@@ -100,17 +100,17 @@ const copyToClipboard = async () => {
 
 <template>
     <div
-        class="backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-md hover:shadow-lg group border bg-white/90 dark:bg-gray-800/90 border-gray-200/60 dark:border-gray-700/60">
+        class="backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-md hover:shadow-lg group border bg-white/90 dark:bg-neutral-800/90 border-neutral-200/60 dark:border-neutral-700/60">
         <!-- Header -->
         <div
-            class="flex items-center justify-between border-b duration-300 px-2.5 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 bg-gray-50/90 dark:bg-gray-700/70 border-gray-200/60 dark:border-gray-600/50">
+            class="flex items-center justify-between border-b duration-300 px-2.5 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 bg-neutral-50/90 dark:bg-neutral-700/70 border-neutral-200/60 dark:border-neutral-600/50">
             <div class="flex items-center gap-1.5 sm:gap-2 md:gap-3 min-w-0 flex-1">
                 <!-- Language Badge -->
                 <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     <Icon :name="languageInfo.icon"
                         :class="['w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5', languageInfo.color]" />
                     <span
-                        class="font-medium text-gray-800 dark:text-gray-200 text-xs sm:text-sm md:text-base hidden sm:inline">
+                        class="font-medium text-neutral-800 dark:text-neutral-200 text-xs sm:text-sm md:text-base hidden sm:inline">
                         {{ languageInfo.name }}
                     </span>
                 </div>
@@ -118,14 +118,14 @@ const copyToClipboard = async () => {
                 <!-- File Name / Title -->
                 <div class="min-w-0 flex-1">
                     <div v-if="isFile && fileName"
-                        class="font-mono font-semibold truncate duration-300 text-gray-800 dark:text-gray-200 text-xs sm:text-sm md:text-base">
+                        class="font-mono font-semibold truncate duration-300 text-neutral-800 dark:text-neutral-200 text-xs sm:text-sm md:text-base">
                         <Icon name="mdi:file-document"
-                            class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 inline mr-1 sm:mr-2 text-gray-600 dark:text-gray-400" />
+                            class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 inline mr-1 sm:mr-2 text-neutral-600 dark:text-neutral-400" />
                         <span class="hidden sm:inline">{{ fileName }}</span>
                         <span class="sm:hidden">{{ fileName.split('/').pop() }}</span>
                     </div>
                     <div v-if="description" :class="[
-                        'truncate duration-300 text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base',
+                        'truncate duration-300 text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm md:text-base',
                         { 'text-[10px] sm:text-xs mt-0.5': isFile && fileName }
                     ]">
                         {{ description }}
@@ -140,7 +140,7 @@ const copyToClipboard = async () => {
                     'flex items-center justify-center rounded-md w-7 h-7 sm:w-8 sm:h-8 touch-manipulation active:scale-90 transition-all',
                     isCopied
                         ? 'bg-green-500 text-white shadow-lg'
-                        : 'bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-500 text-white hover:scale-105 hover:shadow-lg'
+                        : 'bg-neutral-400 hover:bg-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 text-white hover:scale-105 hover:shadow-lg'
                 ]" :title="isCopied ? 'Copied!' : 'Copy code'"
                     :aria-label="isCopied ? 'Code copied to clipboard' : 'Copy code to clipboard'">
                     <Transition name="icon-fade" mode="out-in">
@@ -154,12 +154,12 @@ const copyToClipboard = async () => {
         <!-- Code Content -->
         <div class="relative" :style="props.maxHeight ? `max-height: ${props.maxHeight}px; overflow: auto;` : ''">
             <div
-                class="overflow-x-auto overflow-y-hidden scrollbar-code bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+                class="overflow-x-auto overflow-y-hidden scrollbar-code bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
                 <!-- Line Numbers + Code -->
                 <div v-if="showLineNumbers && formattedLines.length > 1" class="flex">
                     <!-- Line Numbers -->
                     <div
-                        class="select-none border-r border-black/20 px-1.5 sm:px-2 md:px-3 py-2 sm:py-2.5 md:py-3 text-gray-600 dark:text-gray-400 text-[10px] sm:text-xs md:text-sm leading-5 sm:leading-6 font-mono bg-black/5 dark:bg-white/5">
+                        class="select-none border-r border-black/20 px-1.5 sm:px-2 md:px-3 py-2 sm:py-2.5 md:py-3 text-neutral-600 dark:text-neutral-400 text-[10px] sm:text-xs md:text-sm leading-5 sm:leading-6 font-mono bg-black/5 dark:bg-white/5">
                         <div v-for="(line, index) in formattedLines" :key="index" class="text-right">
                             {{ (index + 1).toString().padStart(formattedLines.length.toString().length, ' ') }}
                         </div>

@@ -1,9 +1,9 @@
 <template>
     <button @click="toggleColorMode"
-        class="flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+        class="flex items-center p-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
         :aria-label="buttonLabel" :disabled="!isReady">
         <!-- Skeleton Loading State -->
-        <div v-if="!isReady" class="w-5 h-5 bg-gray-300 dark:bg-gray-700 rounded animate-pulse" />
+        <div v-if="!isReady" class="w-5 h-5 bg-neutral-300 dark:bg-neutral-700 rounded animate-pulse" />
 
         <!-- Theme Icon -->
         <Icon v-else :name="currentIcon" class="w-5 h-5" />

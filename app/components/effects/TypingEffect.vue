@@ -141,18 +141,18 @@ const terminalPrompt = computed(() => `${props.terminalUser}@${props.terminalHos
         <div class="flex items-center text-2xl md:text-3xl lg:text-4xl font-bold relative">
             <!-- Gradient text with subtle glow -->
             <span
-                class="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent animate-gradient-shift"
+                class="bg-linear-to-r from-sky-500 via-blue-600 to-blue-700 dark:from-sky-300 dark:via-blue-400 dark:to-blue-400 bg-clip-text text-transparent animate-gradient-shift"
                 role="status" aria-live="polite" style="background-size: 200% 200%;">
                 {{ typingText }}
             </span>
 
             <!-- Animated cursor with glow effect -->
             <span class="w-1 h-8 md:h-10 lg:h-12 ml-1 inline-block rounded-sm relative"
-                :class="isActive ? 'bg-linear-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-400 animate-typing-cursor-pulse' : 'bg-transparent'"
+                :class="isActive ? 'bg-linear-to-b from-sky-400 to-blue-600 dark:from-sky-300 dark:to-blue-500 animate-typing-cursor-pulse' : 'bg-transparent'"
                 aria-hidden="true">
                 <!-- Glow effect behind cursor -->
                 <span v-if="isActive"
-                    class="absolute inset-0 bg-linear-to-b from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-400 blur-sm animate-cursor-glow"></span>
+                    class="absolute inset-0 bg-linear-to-b from-sky-400 to-blue-600 dark:from-sky-300 dark:to-blue-500 blur-sm animate-cursor-glow"></span>
             </span>
         </div>
     </div>

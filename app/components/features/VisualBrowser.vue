@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
     <div class="relative group">
         <!-- Main Visual Box -->
         <div
-            class="relative bg-white dark:bg-gray-800 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:scale-[1.02] hover:-translate-y-1 cursor-pointer">
+            class="relative bg-white dark:bg-neutral-800 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:scale-[1.02] hover:-translate-y-1 cursor-pointer">
             <!-- Browser Header with Address Bar -->
             <div class="flex flex-col gap-2 md:gap-3 mb-4 md:mb-5 lg:mb-6">
                 <!-- Window Controls -->
@@ -28,10 +28,10 @@ const props = withDefaults(defineProps<Props>(), {
                 </div>
                 <!-- Address Bar -->
                 <div
-                    class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg md:rounded-xl px-3 py-1.5 md:px-4 md:py-2">
+                    class="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-700 rounded-lg md:rounded-xl px-3 py-1.5 md:px-4 md:py-2">
                     <Icon name="mdi:lock"
-                        class="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-600 dark:text-gray-400 shrink-0" />
-                    <span class="text-gray-700 dark:text-gray-300 text-xs md:text-sm font-medium flex-1 truncate">{{ url
+                        class="w-3.5 h-3.5 md:w-4 md:h-4 text-neutral-600 dark:text-neutral-400 shrink-0" />
+                    <span class="text-neutral-700 dark:text-neutral-300 text-xs md:text-sm font-medium flex-1 truncate">{{ url
                         }}</span>
                     <Icon :name="favicon"
                         class="w-4 h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400 shrink-0" />

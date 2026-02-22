@@ -29,7 +29,7 @@ const errorCode = computed(() => {
 </script>
 
 <template>
-    <div class="w-full min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div class="w-full min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900">
         <!-- Header mit Navigation -->
         <LayoutHeader />
 
@@ -44,12 +44,12 @@ const errorCode = computed(() => {
                 </div>
 
                 <!-- Error Title -->
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
                     {{ errorTitle }}
                 </h2>
 
                 <!-- Error Message -->
-                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
                     {{ errorMessage }}
                 </p>
 
@@ -70,15 +70,15 @@ const errorCode = computed(() => {
                     </button>
 
                     <NuxtLinkLocale to="/contact"
-                        class="px-6 py-3 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg flex items-center justify-center gap-2">
+                        class="px-6 py-3 bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white font-medium rounded-lg flex items-center justify-center gap-2">
                         <Icon name="mdi:email" class="w-5 h-5" />
                         {{ t('error.contact') }}
                     </NuxtLinkLocale>
                 </div>
 
                 <!-- Helpful Links -->
-                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <div class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+                    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">
                         {{ t('error.helpfulLinks') }}
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center">

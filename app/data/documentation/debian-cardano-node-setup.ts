@@ -1,4 +1,4 @@
-import type { DocumentationConfig } from '~/composables/useDocumentation'
+﻿import type { DocumentationConfig } from '~/composables/useDocumentation'
 
 export const debianCardanoNodeSetupConfig: DocumentationConfig = {
     slug: 'debian-cardano-node-setup',
@@ -21,35 +21,30 @@ export const debianCardanoNodeSetupConfig: DocumentationConfig = {
             title: 'documentations.cardanoNodeSetup.notes.nodeRequirements.title',
             description: 'documentations.cardanoNodeSetup.notes.nodeRequirements.description',
             icon: 'mdi:server',
-            color: 'blue'
         },
         {
             id: 'nixDaemon',
             title: 'documentations.cardanoNodeSetup.notes.nixDaemon.title',
             description: 'documentations.cardanoNodeSetup.notes.nixDaemon.description',
             icon: 'mdi:cog',
-            color: 'green'
         },
         {
             id: 'diskSpace',
             title: 'documentations.cardanoNodeSetup.notes.diskSpace.title',
             description: 'documentations.cardanoNodeSetup.notes.diskSpace.description',
             icon: 'mdi:harddisk',
-            color: 'purple'
         },
         {
             id: 'syncTime',
             title: 'documentations.cardanoNodeSetup.notes.syncTime.title',
             description: 'documentations.cardanoNodeSetup.notes.syncTime.description',
             icon: 'mdi:timer-sand',
-            color: 'orange'
         },
         {
             id: 'networkStability',
             title: 'documentations.cardanoNodeSetup.notes.networkStability.title',
             description: 'documentations.cardanoNodeSetup.notes.networkStability.description',
             icon: 'mdi:wifi-strength-4',
-            color: 'red'
         }
     ],
     steps: [
@@ -336,7 +331,6 @@ WantedBy=multi-user.target`,
             id: 'sync',
             title: 'Synchronization Monitoring',
             icon: 'mdi:sync',
-            color: 'blue',
             commands: [
                 {
                     command: 'systemctl status cardano-node',
@@ -354,7 +348,6 @@ WantedBy=multi-user.target`,
             id: 'maintenance',
             title: 'Service Management',
             icon: 'mdi:wrench',
-            color: 'green',
             commands: [
                 {
                     command: 'systemctl restart cardano-node',
@@ -372,7 +365,6 @@ WantedBy=multi-user.target`,
             id: 'troubleshooting',
             title: 'Troubleshooting',
             icon: 'mdi:bug',
-            color: 'red',
             commands: [
                 {
                     command: 'journalctl -u cardano-node --no-pager -l',
@@ -394,7 +386,6 @@ WantedBy=multi-user.target`,
             description: 'Official NIX package manager website with installation guides',
             url: 'https://nixos.org/download/#nix-install-linux',
             icon: 'mdi:download',
-            gradient: 'bg-gradient-to-br from-blue-500 to-indigo-600'
         },
         {
             id: 'cardanoInstall',
@@ -402,7 +393,6 @@ WantedBy=multi-user.target`,
             description: 'Official Cardano Node installation documentation',
             url: 'https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/installing-cardano-node/',
             icon: 'mdi:book-open-variant',
-            gradient: 'bg-gradient-to-br from-emerald-500 to-teal-600'
         },
         {
             id: 'cardanoRunning',
@@ -410,7 +400,6 @@ WantedBy=multi-user.target`,
             description: 'Official guide for operating a Cardano Node',
             url: 'https://developers.cardano.org/docs/operate-a-stake-pool/node-operations/running-cardano',
             icon: 'mdi:play-circle',
-            gradient: 'bg-gradient-to-br from-purple-500 to-pink-600'
         }
     ],
     completion: {

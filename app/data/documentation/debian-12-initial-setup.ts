@@ -1,4 +1,4 @@
-import type { DocumentationConfig } from '~/composables/useDocumentation'
+﻿import type { DocumentationConfig } from '~/composables/useDocumentation'
 
 export const debianInitialSetupConfig: DocumentationConfig = {
     slug: 'debian-12-initial-setup',
@@ -21,42 +21,36 @@ export const debianInitialSetupConfig: DocumentationConfig = {
             title: 'documentations.debianInitialSetup.notes.rootAccess.title',
             description: 'documentations.debianInitialSetup.notes.rootAccess.description',
             icon: 'mdi:shield-account',
-            color: 'blue'
         },
         {
             id: 'networkConnection',
             title: 'documentations.debianInitialSetup.notes.networkConnection.title',
             description: 'documentations.debianInitialSetup.notes.networkConnection.description',
             icon: 'mdi:wifi',
-            color: 'green'
         },
         {
             id: 'backupImportant',
             title: 'documentations.debianInitialSetup.notes.backupImportant.title',
             description: 'documentations.debianInitialSetup.notes.backupImportant.description',
             icon: 'mdi:backup-restore',
-            color: 'purple'
         },
         {
             id: 'timeRequired',
             title: 'documentations.debianInitialSetup.notes.timeRequired.title',
             description: 'documentations.debianInitialSetup.notes.timeRequired.description',
             icon: 'mdi:clock-outline',
-            color: 'orange'
         },
         {
             id: 'securityConsiderations',
             title: 'documentations.debianInitialSetup.notes.securityConsiderations.title',
             description: 'documentations.debianInitialSetup.notes.securityConsiderations.description',
             icon: 'mdi:security',
-            color: 'red'
         },
         {
             id: 'documentChanges',
             title: 'documentations.debianInitialSetup.notes.documentChanges.title',
             description: 'documentations.debianInitialSetup.notes.documentChanges.description',
             icon: 'mdi:file-document-edit',
-            color: 'blue'
         }
     ],
     steps: [
@@ -258,7 +252,6 @@ export const debianInitialSetupConfig: DocumentationConfig = {
             id: 'security',
             title: 'Security Measures',
             icon: 'mdi:shield-check',
-            color: 'red',
             commands: [
                 {
                     command: 'apt install ufw -y',
@@ -281,7 +274,6 @@ export const debianInitialSetupConfig: DocumentationConfig = {
             id: 'essentials',
             title: 'Essential Tools',
             icon: 'mdi:tools',
-            color: 'orange',
             commands: [
                 {
                     command: 'apt install sudo curl wget git nano htop tree -y',
@@ -299,7 +291,6 @@ export const debianInitialSetupConfig: DocumentationConfig = {
             id: 'updates',
             title: 'Automatic Updates',
             icon: 'mdi:update',
-            color: 'emerald',
             commands: [
                 {
                     command: 'apt install unattended-upgrades -y',

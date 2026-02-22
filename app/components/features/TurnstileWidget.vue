@@ -4,8 +4,8 @@
         <div class="turnstile-container">
             <div v-if="isReady" ref="turnstileElement" />
             <div v-else
-                class="w-full h-full rounded-lg flex items-center justify-center bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 animate-pulse">
-                <Icon name="mdi:loading" class="animate-spin text-gray-400 dark:text-gray-500 text-2xl" />
+                class="w-full h-full rounded-lg flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 animate-pulse">
+                <Icon name="mdi:loading" class="animate-spin text-neutral-400 dark:text-neutral-500 text-2xl" />
             </div>
         </div>
     </div>

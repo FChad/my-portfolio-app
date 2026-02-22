@@ -23,7 +23,6 @@ const calculateAge = (birthDate: string): number => {
 }
 
 const currentAge = calculateAge('1999-08-03')
-const { getColorClasses } = useColorMapping()
 
 // Interactive states
 const hoveredExperience = ref<number | null>(null)
@@ -40,43 +39,37 @@ const certifications = [
         title: t('about.certificationsList.cert1.title'),
         year: '2023',
         description: t('about.certificationsList.cert1.description'),
-        icon: 'mdi:school',
-        color: 'blue'
+        icon: 'mdi:school'
     },
     {
         title: t('about.certificationsList.cert2.title'),
         year: '2021',
         description: t('about.certificationsList.cert2.description'),
-        icon: 'mdi:shield-check',
-        color: 'green'
+        icon: 'mdi:shield-check'
     },
     {
         title: t('about.certificationsList.cert3.title'),
         year: '2021',
         description: t('about.certificationsList.cert3.description'),
-        icon: 'mdi:lan',
-        color: 'purple'
+        icon: 'mdi:lan'
     },
     {
         title: t('about.certificationsList.cert4.title'),
         year: '2020',
         description: t('about.certificationsList.cert4.description'),
-        icon: 'mdi:lan',
-        color: 'orange'
+        icon: 'mdi:lan'
     },
     {
         title: t('about.certificationsList.cert5.title'),
         year: '2020',
         description: t('about.certificationsList.cert5.description'),
-        icon: 'mdi:lan',
-        color: 'red'
+        icon: 'mdi:lan'
     },
     {
         title: t('about.certificationsList.cert6.title'),
         year: '2020',
         description: t('about.certificationsList.cert6.description'),
-        icon: 'mdi:file-document',
-        color: 'blue'
+        icon: 'mdi:file-document'
     }
 ]
 
@@ -220,7 +213,6 @@ const experiences = [
         title: t('about.experiencesList.exp1.title'),
         description: t('about.experiencesList.exp1.description'),
         icon: 'mdi:helicopter',
-        color: 'blue',
         image: 'helicopter.webp',
         alt: 'Chad Feierstein helicopter flight over Dominican Republic city and Caribbean Sea'
     },
@@ -228,7 +220,6 @@ const experiences = [
         title: t('about.experiencesList.exp2.title'),
         description: t('about.experiencesList.exp2.description'),
         icon: 'mdi:parachute',
-        color: 'green',
         image: 'skydiving.webp',
         alt: 'Chad Feierstein skydiving over Luxembourg from 4000 meters altitude'
     },
@@ -236,7 +227,6 @@ const experiences = [
         title: t('about.experiencesList.exp3.title'),
         description: t('about.experiencesList.exp3.description'),
         icon: 'mdi:music-note',
-        color: 'purple',
         image: 'tomorrowland2025.webp',
         alt: 'Chad Feierstein at Tomorrowland Belgium 2025 electronic music festival'
     }
@@ -246,10 +236,6 @@ const experiences = [
 <template>
     <!-- Immersive Hero with Floating Elements -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
-        <!-- Animated gradient background -->
-        <div
-            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-        </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -257,19 +243,19 @@ const experiences = [
                 <div class="space-y-8">
                     <!-- Animated label -->
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg">
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-full shadow-lg">
                         <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                             {{ $t('about.profile.role') }}
                         </span>
                     </div>
 
                     <!-- Name -->
                     <div class="space-y-4">
-                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 dark:text-white">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-neutral-800 dark:text-white">
                             Chad Feierstein
                         </h1>
-                        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
                             {{ $t('about.story.intro') }}
                         </p>
                     </div>
@@ -277,54 +263,54 @@ const experiences = [
                     <!-- Quick stats in creative card layout -->
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
                         <div
-                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:cake-variant" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{ currentAge }}
+                            <div class="text-2xl sm:text-3xl font-black text-neutral-800 dark:text-white">{{ currentAge }}
                             </div>
-                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                            <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                 $t('about.profile.labels.years') }}
                             </div>
                         </div>
 
                         <div
-                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:briefcase" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                            <div class="text-2xl sm:text-3xl font-black text-neutral-800 dark:text-white">{{
                                 workTimeline.length }}
                             </div>
-                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
+                            <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{ $t('about.work.title')
                                 }}</div>
                         </div>
 
                         <div
-                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-green-500 to-green-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:certificate" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                            <div class="text-2xl sm:text-3xl font-black text-neutral-800 dark:text-white">{{
                                 certifications.length }}
                             </div>
-                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                            <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                 $t('about.certifications.title') }}
                             </div>
                         </div>
 
                         <div
-                            class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div
-                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-pink-500 to-pink-600 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
+                                class="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-xl rotate-12 group-hover:rotate-0 transition-transform shadow-lg flex items-center justify-center">
                                 <Icon name="mdi:translate" class="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <div class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                            <div class="text-2xl sm:text-3xl font-black text-neutral-800 dark:text-white">{{
                                 languages.length }}</div>
-                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                            <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                 $t('about.languages.title') }}
                             </div>
                         </div>
@@ -335,16 +321,16 @@ const experiences = [
                 <div class="flex flex-col gap-3 sm:gap-4">
                     <!-- Location -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-500 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:map-marker" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                     $t('about.profile.labels.location') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                <div class="text-base sm:text-xl font-bold text-neutral-800 dark:text-white">{{
                                     $t('about.profile.location') }}</div>
                             </div>
                         </div>
@@ -352,16 +338,16 @@ const experiences = [
 
                     <!-- Nationality -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-500 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:flag" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                     $t('about.profile.labels.nationality') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                <div class="text-base sm:text-xl font-bold text-neutral-800 dark:text-white">{{
                                     $t('about.profile.nationality') }}</div>
                             </div>
                         </div>
@@ -369,16 +355,16 @@ const experiences = [
 
                     <!-- Status -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-500 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:heart" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                     $t('about.profile.labels.status') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                <div class="text-base sm:text-xl font-bold text-neutral-800 dark:text-white">{{
                                     $t('about.profile.status') }}</div>
                             </div>
                         </div>
@@ -386,16 +372,16 @@ const experiences = [
 
                     <!-- Driving license -->
                     <div
-                        class="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
-                                class="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-md">
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-500 rounded-xl flex items-center justify-center shadow-md">
                                 <Icon name="mdi:car" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <div class="space-y-1">
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{
+                                <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">{{
                                     $t('about.profile.labels.license') }}</div>
-                                <div class="text-base sm:text-xl font-bold text-gray-800 dark:text-white">{{
+                                <div class="text-base sm:text-xl font-bold text-neutral-800 dark:text-white">{{
                                     $t('about.profile.driving') }}</div>
                             </div>
                         </div>
@@ -407,21 +393,18 @@ const experiences = [
 
     <!-- Languages with interactive cards -->
     <section class="py-24 relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-linear-to-b from-transparent via-blue-100/60 to-transparent dark:via-blue-900/10">
-        </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-neutral-800 dark:text-white">
                     {{ $t('about.languages.title') }}
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300">{{ $t('about.languages.subtitle') }}</p>
+                <p class="text-xl text-neutral-600 dark:text-neutral-300">{{ $t('about.languages.subtitle') }}</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div v-for="(lang, index) in languages" :key="lang.name"
-                    class="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    class="group relative bg-white dark:bg-neutral-800 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                     <!-- Decorative corner -->
 
                     <div class="relative space-y-4 sm:space-y-6">
@@ -429,28 +412,28 @@ const experiences = [
                         <div class="flex items-center justify-between">
                             <Icon :name="lang.flag" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-md" />
                             <span v-if="lang.native"
-                                class="px-2 py-1 sm:px-3 sm:py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full">
+                                class="px-2 py-1 sm:px-3 sm:py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold rounded-full">
                                 Native
                             </span>
                         </div>
 
                         <!-- Language name -->
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">{{ lang.name }}</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold text-neutral-800 dark:text-white">{{ lang.name }}</h3>
 
                         <!-- Level with progress bar -->
                         <div class="space-y-2">
                             <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-600 dark:text-gray-400">{{
+                                <span class="text-sm text-neutral-600 dark:text-neutral-400">{{
                                     $t('about.languages.proficiency') }}</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
                                 }}</span>
                             </div>
-                            <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-linear-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
+                            <div class="h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 rounded-full transition-all duration-1000"
                                     :style="{ width: lang.level === 'C2' ? '100%' : lang.level === 'C1' ? '85%' : lang.level === 'B2' ? '70%' : '55%' }">
                                 </div>
                             </div>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">{{
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400">{{
                                 $t(`about.languages.levels.${lang.level}`) }}</p>
                         </div>
                     </div>
@@ -461,16 +444,13 @@ const experiences = [
 
     <!-- Work & Education Timeline -->
     <section class="py-24 relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-linear-to-b from-blue-100/60 via-purple-100/60 to-pink-100/60 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10">
-        </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-neutral-800 dark:text-white">
                     {{ $t('about.work.journey') }}
                 </h2>
-                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300">{{ $t('about.work.subtitle') }}</p>
+                <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300">{{ $t('about.work.subtitle') }}</p>
             </div>
 
             <FeaturesTimelineSection :items="combinedTimeline" />
@@ -481,44 +461,36 @@ const experiences = [
     <section class="py-16 sm:py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-neutral-800 dark:text-white">
                     {{ $t('about.certifications.title') }}
                 </h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                <p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
                     {{ $t('about.certifications.subtitle') }}
                 </p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div v-for="(cert, index) in certifications" :key="cert.title"
-                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    class="group relative bg-white dark:bg-neutral-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 
                     <div class="space-y-3 sm:space-y-4">
                         <!-- Icon and year -->
                         <div class="flex items-start justify-between">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg"
-                                :class="{
-                                    'bg-linear-to-br from-blue-500 to-blue-600': index === 0,
-                                    'bg-linear-to-br from-green-500 to-green-600': index === 1,
-                                    'bg-linear-to-br from-purple-500 to-purple-600': index === 2,
-                                    'bg-linear-to-br from-orange-500 to-orange-600': index === 3,
-                                    'bg-linear-to-br from-red-500 to-red-600': index === 4,
-                                    'bg-linear-to-br from-pink-500 to-pink-600': index === 5
-                                }">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg bg-blue-500">
                                 <Icon :name="cert.icon" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                             </div>
                             <span
-                                class="px-2 py-1 sm:px-3 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm font-bold text-gray-700 dark:text-gray-300">
+                                class="px-2 py-1 sm:px-3 sm:py-1 bg-neutral-100 dark:bg-neutral-700 rounded-full text-xs sm:text-sm font-bold text-neutral-700 dark:text-neutral-300">
                                 {{ cert.year }}
                             </span>
                         </div>
 
                         <!-- Title -->
-                        <h3 class="text-base sm:text-lg font-bold text-gray-800 dark:text-white line-clamp-2">{{
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-800 dark:text-white line-clamp-2">{{
                             cert.title }}</h3>
 
                         <!-- Description -->
-                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                        <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{{
                             cert.description }}</p>
                     </div>
                 </div>
@@ -527,17 +499,14 @@ const experiences = [
     </section>
 
     <!-- Interests & Passions (Magazine style) -->
-    <section class="py-16 sm:py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-900">
-        <div
-            class="absolute inset-0 bg-linear-to-b from-transparent via-purple-100/60 to-transparent dark:via-purple-900/10">
-        </div>
+    <section class="py-16 sm:py-24 relative overflow-hidden bg-neutral-50 dark:bg-neutral-900">
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-800 dark:text-white">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-neutral-800 dark:text-white">
                     {{ $t('about.interests.title') }}
                 </h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">{{
+                <p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300">{{
                     $t('about.interests.subtitle') }}</p>
             </div>
 
@@ -545,16 +514,16 @@ const experiences = [
             <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
                 <!-- Large passion card -->
                 <div
-                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    class="group relative bg-white dark:bg-neutral-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
 
                     <div class="relative space-y-4 sm:space-y-6">
                         <div
-                            class="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                            class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                             <Icon name="mdi:heart" class="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-black text-gray-800 dark:text-white">{{
+                        <h3 class="text-2xl sm:text-3xl font-black text-neutral-800 dark:text-white">{{
                             $t('about.passion.title') }}</h3>
-                        <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                        <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">{{
                             $t('about.passion.description')
                             }}</p>
                     </div>
@@ -562,16 +531,16 @@ const experiences = [
 
                 <!-- Hobbies card -->
                 <div
-                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    class="group relative bg-white dark:bg-neutral-800 rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300">
                     <div class="space-y-4 sm:space-y-6">
                         <div
-                            class="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+                            class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                             <Icon name="mdi:puzzle" class="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">{{
+                        <h3 class="text-2xl sm:text-3xl font-bold text-neutral-800 dark:text-white">{{
                             $t('about.hobbies.title') }}
                         </h3>
-                        <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
+                        <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">{{
                             $t('about.hobbies.description')
                             }}</p>
                     </div>
@@ -582,7 +551,7 @@ const experiences = [
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 <div v-for="(experience, index) in experiences" :key="experience.title"
                     @mouseenter="hoveredExperience = index" @mouseleave="hoveredExperience = null"
-                    class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    class="group relative bg-white dark:bg-neutral-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 
                     <!-- Background Image with Overlay -->
                     <div class="absolute inset-0">
@@ -594,12 +563,7 @@ const experiences = [
                             class="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-black/10 dark:from-black/80 dark:via-black/50 dark:to-black/30 group-hover:from-black/50 group-hover:via-black/20 group-hover:to-transparent dark:group-hover:from-black/70 dark:group-hover:via-black/40 dark:group-hover:to-black/20 transition-all duration-300">
                         </div>
                         <!-- Colored gradient overlay on hover -->
-                        <div class="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-                            :class="{
-                                'from-blue-500 to-blue-600': experience.color === 'blue',
-                                'from-green-500 to-green-600': experience.color === 'green',
-                                'from-purple-500 to-purple-600': experience.color === 'purple'
-                            }">
+                        <div class="absolute inset-0 bg-linear-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
                         </div>
                     </div>
 
@@ -607,12 +571,8 @@ const experiences = [
                     <div class="relative h-full min-h-70 sm:min-h-80 flex flex-col justify-end p-6 sm:p-8">
                         <!-- Icon floating badge -->
                         <div
-                            class="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                            <Icon :name="experience.icon" class="w-6 h-6 sm:w-7 sm:h-7" :class="{
-                                'text-blue-600': experience.color === 'blue',
-                                'text-green-600': experience.color === 'green',
-                                'text-purple-600': experience.color === 'purple'
-                            }" />
+                            class="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <Icon :name="experience.icon" class="w-6 h-6 sm:w-7 sm:h-7 text-blue-600" />
                         </div>
 
                         <!-- Text content -->
@@ -634,23 +594,13 @@ const experiences = [
 
     <!-- CTA Section (Bold and modern) -->
     <section class="py-16 sm:py-24 relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-        </div>
-
-        <!-- Decorative elements -->
-        <div class="absolute inset-0 overflow-hidden opacity-10 dark:opacity-5">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-300 dark:bg-purple-700 rounded-full blur-3xl">
-            </div>
-        </div>
 
         <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
             <div class="space-y-3 sm:space-y-4">
-                <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 dark:text-white">
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-neutral-900 dark:text-white">
                     {{ $t('about.cta.title') }}
                 </h2>
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                <p class="text-lg sm:text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto">
                     {{ $t('about.cta.subtitle') }}
                 </p>
             </div>

@@ -1,4 +1,4 @@
-import type { DocumentationConfig } from '~/composables/useDocumentation'
+﻿import type { DocumentationConfig } from '~/composables/useDocumentation'
 
 export const debianCardanoDbSyncSetupConfig: DocumentationConfig = {
     slug: 'debian-cardano-db-sync-setup',
@@ -21,35 +21,30 @@ export const debianCardanoDbSyncSetupConfig: DocumentationConfig = {
             title: 'documentations.cardanoDbSyncSetup.notes.cardanoNodeTitle',
             description: 'documentations.cardanoDbSyncSetup.notes.cardanoNode',
             icon: 'mdi:server',
-            color: 'blue'
         },
         {
             id: 'diskSpace',
             title: 'documentations.cardanoDbSyncSetup.notes.diskSpaceTitle',
             description: 'documentations.cardanoDbSyncSetup.notes.diskSpace',
             icon: 'mdi:harddisk',
-            color: 'purple'
         },
         {
             id: 'ramRequirement',
             title: 'documentations.cardanoDbSyncSetup.notes.ramRequirementTitle',
             description: 'documentations.cardanoDbSyncSetup.notes.ramRequirement',
             icon: 'mdi:memory',
-            color: 'green'
         },
         {
             id: 'syncTime',
             title: 'documentations.cardanoDbSyncSetup.notes.syncTimeTitle',
             description: 'documentations.cardanoDbSyncSetup.notes.syncTime',
             icon: 'mdi:clock-outline',
-            color: 'orange'
         },
         {
             id: 'rootAccess',
             title: 'documentations.cardanoDbSyncSetup.notes.rootAccessTitle',
             description: 'documentations.cardanoDbSyncSetup.notes.rootAccess',
             icon: 'mdi:shield-account',
-            color: 'red'
         }
     ],
     steps: [
@@ -284,7 +279,6 @@ WantedBy=multi-user.target`,
             id: 'sync-status',
             title: 'Synchronization Status',
             icon: 'mdi:database-sync',
-            color: 'blue',
             commands: [
                 {
                     command: 'sudo -u postgres psql -d cexplorer -c "SELECT * FROM meta;"',
@@ -297,7 +291,6 @@ WantedBy=multi-user.target`,
             id: 'troubleshooting',
             title: 'Troubleshooting',
             icon: 'mdi:wrench',
-            color: 'green',
             commands: [
                 {
                     command: 'sudo systemctl restart cardano-db-sync',
@@ -310,7 +303,6 @@ WantedBy=multi-user.target`,
             id: 'disk-space',
             title: 'Disk Space',
             icon: 'mdi:harddisk',
-            color: 'red',
             commands: [
                 {
                     command: 'df -h /home/cardano/',
@@ -327,7 +319,6 @@ WantedBy=multi-user.target`,
             description: 'Official GitHub repository with source code and documentation',
             url: 'https://github.com/IntersectMBO/cardano-db-sync',
             icon: 'mdi:github',
-            gradient: 'bg-gradient-to-br from-purple-500 to-indigo-600'
         },
         {
             id: 'postgresql',
@@ -335,7 +326,6 @@ WantedBy=multi-user.target`,
             description: 'Official PostgreSQL documentation for database administration',
             url: 'https://www.postgresql.org/docs/',
             icon: 'mdi:database',
-            gradient: 'bg-gradient-to-br from-blue-500 to-indigo-600'
         },
         {
             id: 'cardanoDocs',
@@ -343,7 +333,6 @@ WantedBy=multi-user.target`,
             description: 'Official Cardano developer portal with DB Sync documentation',
             url: 'https://github.com/IntersectMBO/cardano-db-sync/blob/master/doc/running.md',
             icon: 'mdi:book-open-variant',
-            gradient: 'bg-gradient-to-br from-emerald-500 to-teal-600'
         }
     ],
     completion: {

@@ -1,4 +1,4 @@
-import type { DocumentationConfig } from '~/composables/useDocumentation'
+﻿import type { DocumentationConfig } from '~/composables/useDocumentation'
 
 export const debianOllamaSetupConfig: DocumentationConfig = {
     slug: 'debian-ollama-setup',
@@ -21,42 +21,36 @@ export const debianOllamaSetupConfig: DocumentationConfig = {
             title: 'documentations.ollamaSetup.notes.rootAccess.title',
             description: 'documentations.ollamaSetup.notes.rootAccess.description',
             icon: 'mdi:shield-account',
-            color: 'blue'
         },
         {
             id: 'domainRequired',
             title: 'documentations.ollamaSetup.notes.domainRequired.title',
             description: 'documentations.ollamaSetup.notes.domainRequired.description',
             icon: 'mdi:dns',
-            color: 'green'
         },
         {
             id: 'firewallConfig',
             title: 'documentations.ollamaSetup.notes.firewallConfig.title',
             description: 'documentations.ollamaSetup.notes.firewallConfig.description',
             icon: 'mdi:firewall',
-            color: 'purple'
         },
         {
             id: 'securePassword',
             title: 'documentations.ollamaSetup.notes.securePassword.title',
             description: 'documentations.ollamaSetup.notes.securePassword.description',
             icon: 'mdi:lock',
-            color: 'orange'
         },
         {
             id: 'backupConfig',
             title: 'documentations.ollamaSetup.notes.backupConfig.title',
             description: 'documentations.ollamaSetup.notes.backupConfig.description',
             icon: 'mdi:backup-restore',
-            color: 'red'
         },
         {
             id: 'resourceRequirements',
             title: 'documentations.ollamaSetup.notes.resourceRequirements.title',
             description: 'documentations.ollamaSetup.notes.resourceRequirements.description',
             icon: 'mdi:memory',
-            color: 'blue'
         }
     ],
     steps: [
@@ -277,7 +271,7 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
             icon: 'mdi:test-tube',
             commands: [
                 {
-                    command: 'curl -u apiuser https://server.chad.lu/ollama/api/generate -H "Content-Type: application/json" -d \'{"model": "gemma3:4b", "prompt": "Erzähl mir eine Geschichte.", "stream": true}\'',
+                    command: 'curl -u apiuser https://server.chad.lu/ollama/api/generate -H "Content-Type: application/json" -d \'{"model": "gemma3:4b", "prompt": "ErzÃ¤hl mir eine Geschichte.", "stream": true}\'',
                     description: 'Test API endpoint with curl',
                     note: 'You will be prompted for the \'apiuser\' password. On successful test, you will receive JSON responses with generated text fragments.',
                     language: 'bash'

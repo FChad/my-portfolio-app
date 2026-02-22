@@ -88,19 +88,15 @@ const totalCount = computed(() => showcaseItems.value.length)
 <template>
     <!-- Single Compact Section -->
     <section class="relative min-h-screen overflow-hidden py-12 sm:py-16 md:py-20">
-        <!-- Animated gradient background -->
-        <div
-            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-        </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="space-y-6 md:space-y-8">
                 <!-- Header -->
                 <div class="text-center space-y-3 md:space-y-4">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-800 dark:text-white">
                         {{ t('showcase.title') }}
                     </h1>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    <p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
                         {{ t('showcase.subtitle') }}
                     </p>
                 </div>
@@ -110,32 +106,32 @@ const totalCount = computed(() => showcaseItems.value.length)
                     <!-- Filter Buttons -->
                     <div class="flex flex-col sm:flex-row gap-2">
                         <button @click="activeFilter = 'all'"
-                            :class="activeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700'"
+                            :class="activeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-600 dark:text-neutral-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-neutral-700'"
                             class="px-3 py-2 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base flex items-center justify-center gap-2 shadow-sm transition-all">
                             <Icon name="mdi:view-grid" class="w-4 h-4" />
                             <span>{{ t('showcase.filters.all') }}</span>
                             <span class="px-2 py-0.5 text-xs rounded-full"
-                                :class="activeFilter === 'all' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                                :class="activeFilter === 'all' ? 'bg-white/20' : 'bg-neutral-200 dark:bg-neutral-700'">
                                 {{ totalCount }}
                             </span>
                         </button>
                         <button @click="activeFilter = 'project'"
-                            :class="activeFilter === 'project' ? 'bg-green-600 text-white' : 'bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-600 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-gray-700'"
+                            :class="activeFilter === 'project' ? 'bg-blue-600 text-white' : 'bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-600 dark:text-neutral-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-neutral-700'"
                             class="px-3 py-2 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base flex items-center justify-center gap-2 shadow-sm transition-all">
                             <Icon name="mdi:code-braces" class="w-4 h-4" />
                             <span>{{ t('showcase.filters.projects') }}</span>
                             <span class="px-2 py-0.5 text-xs rounded-full"
-                                :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                                :class="activeFilter === 'project' ? 'bg-white/20' : 'bg-neutral-200 dark:bg-neutral-700'">
                                 {{ projectCount }}
                             </span>
                         </button>
                         <button @click="activeFilter = 'documentation'"
-                            :class="activeFilter === 'documentation' ? 'bg-amber-600 text-white' : 'bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-600 dark:text-gray-300 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-gray-700'"
+                            :class="activeFilter === 'documentation' ? 'bg-blue-600 text-white' : 'bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-600 dark:text-neutral-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-neutral-700'"
                             class="px-3 py-2 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base flex items-center justify-center gap-2 shadow-sm transition-all">
                             <Icon name="mdi:file-document-outline" class="w-4 h-4" />
                             <span>{{ t('showcase.filters.documentation') }}</span>
                             <span class="px-2 py-0.5 text-xs rounded-full"
-                                :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-gray-200 dark:bg-gray-700'">
+                                :class="activeFilter === 'documentation' ? 'bg-white/20' : 'bg-neutral-200 dark:bg-neutral-700'">
                                 {{ documentationCount }}
                             </span>
                         </button>
@@ -144,11 +140,11 @@ const totalCount = computed(() => showcaseItems.value.length)
                     <!-- Search Bar -->
                     <div class="flex-1 max-w-md sm:ml-auto">
                         <div class="relative flex items-center gap-2">
-                            <Icon name="mdi:magnify" class="w-5 h-5 text-gray-400 shrink-0" />
+                            <Icon name="mdi:magnify" class="w-5 h-5 text-neutral-400 shrink-0" />
                             <input v-model="searchTerm" type="text" :placeholder="t('showcase.search.placeholder')"
-                                class="w-full px-4 py-2 text-sm md:text-base bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-900 dark:text-white placeholder-gray-400" />
+                                class="w-full px-4 py-2 text-sm md:text-base bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-neutral-900 dark:text-white placeholder-neutral-400" />
                             <button v-if="searchTerm" @click="searchTerm = ''"
-                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
                                 <Icon name="mdi:close" class="w-4 h-4" />
                             </button>
                         </div>
@@ -158,16 +154,16 @@ const totalCount = computed(() => showcaseItems.value.length)
                 <!-- Showcase Items Grid -->
                 <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
                     <div v-for="item in filteredItems" :key="item.id"
-                        class="group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
+                        class="group bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
                         <!-- Content -->
                         <div class="p-5 md:p-6 flex flex-col gap-3 md:gap-4 flex-1">
                             <div class="flex items-start justify-between gap-2">
                                 <h3
-                                    class="text-lg sm:text-xl md:text-2xl font-black text-gray-800 dark:text-white flex-1">
+                                    class="text-lg sm:text-xl md:text-2xl font-black text-neutral-800 dark:text-white flex-1">
                                     {{ t(item.title) }}
                                 </h3>
                                 <span
-                                    :class="item.type === 'project' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'"
+                                    :class="item.type === 'project' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' : 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'"
                                     class="px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-medium flex items-center gap-1 shrink-0">
                                     <Icon
                                         :name="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'"
@@ -177,7 +173,7 @@ const totalCount = computed(() => showcaseItems.value.length)
                                 </span>
                             </div>
 
-                            <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed flex-1">
+                            <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed flex-1">
                                 {{ t(item.description) }}
                             </p>
 
@@ -188,7 +184,7 @@ const totalCount = computed(() => showcaseItems.value.length)
                                     {{ tag }}
                                 </span>
                                 <span v-if="item.tags.length > 4"
-                                    class="px-2 py-0.5 md:px-3 md:py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full text-xs md:text-sm">
+                                    class="px-2 py-0.5 md:px-3 md:py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-full text-xs md:text-sm">
                                     +{{ item.tags.length - 4 }}
                                 </span>
                             </div>

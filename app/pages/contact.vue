@@ -52,7 +52,7 @@ const contactMethods = computed(() => [
         titleKey: 'contact.methods.github.title',
         icon: 'mdi:github',
         href: 'https://github.com/FChad',
-        color: 'bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600',
+        color: 'bg-neutral-800 hover:bg-neutral-900 dark:bg-neutral-700 dark:hover:bg-neutral-600',
         descriptionKey: 'contact.methods.github.description',
         isExternal: true
     },
@@ -60,7 +60,7 @@ const contactMethods = computed(() => [
         titleKey: 'contact.methods.email.title',
         icon: 'mdi:email',
         href: '#contact-form',
-        color: 'bg-red-500 hover:bg-red-600',
+        color: 'bg-blue-500 hover:bg-blue-600',
         descriptionKey: 'contact.methods.email.description',
         isExternal: false
     }
@@ -191,19 +191,15 @@ definePageMeta({
 <template>
     <!-- Single Compact Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20">
-        <!-- Animated gradient background -->
-        <div
-            class="absolute inset-0 bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-        </div>
 
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="space-y-8 md:space-y-12">
                 <!-- Header -->
                 <div class="text-center space-y-4">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-800 dark:text-white">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-800 dark:text-white">
                         {{ $t('contact.title') }}
                     </h1>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    <p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
                         {{ $t('contact.subtitle') }}
                     </p>
                 </div>
@@ -211,7 +207,7 @@ definePageMeta({
                 <!-- Contact Methods Grid -->
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     <div v-for="method in contactMethods" :key="method.titleKey"
-                        class="group bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        class="group bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
 
                         <!-- External links -->
                         <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
@@ -227,12 +223,12 @@ definePageMeta({
                                 <!-- Content -->
                                 <div class="flex flex-col gap-1 md:gap-2">
                                     <h3
-                                        class="font-black text-lg md:text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                                        class="font-black text-lg md:text-xl text-neutral-800 dark:text-white flex items-center justify-center gap-2">
                                         {{ $t(method.titleKey) }}
                                         <Icon name="mdi:external-link"
-                                            class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                            class="w-4 h-4 text-neutral-400 group-hover:text-blue-500" />
                                     </h3>
-                                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                                    <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
                                         {{ $t(method.descriptionKey) }}
                                     </p>
                                 </div>
@@ -253,12 +249,12 @@ definePageMeta({
                                 <!-- Content -->
                                 <div class="flex flex-col gap-1 md:gap-2">
                                     <h3
-                                        class="font-black text-lg md:text-xl text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                                        class="font-black text-lg md:text-xl text-neutral-800 dark:text-white flex items-center justify-center gap-2">
                                         {{ $t(method.titleKey) }}
                                         <Icon name="mdi:arrow-down"
-                                            class="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                            class="w-4 h-4 text-neutral-400 group-hover:text-blue-500" />
                                     </h3>
-                                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                                    <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
                                         {{ $t(method.descriptionKey) }}
                                     </p>
                                 </div>
@@ -269,9 +265,9 @@ definePageMeta({
 
                 <!-- Contact Form -->
                 <div id="contact-form"
-                    class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300">
                     <h2
-                        class="text-2xl sm:text-3xl md:text-4xl font-black text-gray-800 dark:text-white text-center mb-6 md:mb-8">
+                        class="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-800 dark:text-white text-center mb-6 md:mb-8">
                         {{ $t('contact.form.title') }}
                     </h2>
                     <!-- Success Message -->
@@ -297,7 +293,7 @@ definePageMeta({
                     </div>
 
                     <div class="text-center mb-4 md:mb-6">
-                        <p class="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300">{{
+                        <p class="text-sm md:text-base lg:text-lg text-neutral-600 dark:text-neutral-300">{{
                             $t('contact.form.description') }}</p>
                     </div>
 
@@ -307,15 +303,15 @@ definePageMeta({
                             <!-- Name Field -->
                             <div class="flex flex-col gap-1.5 md:gap-2">
                                 <label for="name"
-                                    class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                     {{ $t('contact.form.name') }} *
                                 </label>
                                 <input v-model="form.name" type="text" id="name" :class="[
                                     'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
                                     errors.name
                                         ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                        : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                                ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                        : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
+                                ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
                                     :placeholder="$t('contact.form.namePlaceholder')" />
                                 <p v-if="errors.name" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                     {{ errors.name }}
@@ -325,15 +321,15 @@ definePageMeta({
                             <!-- Email Field -->
                             <div class="flex flex-col gap-1.5 md:gap-2">
                                 <label for="email"
-                                    class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                     {{ $t('contact.form.email') }} *
                                 </label>
                                 <input v-model="form.email" type="email" id="email" :class="[
                                     'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
                                     errors.email
                                         ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                        : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                                ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                        : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
+                                ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
                                     placeholder="your@email.com" />
                                 <p v-if="errors.email" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                     {{ errors.email }}
@@ -344,15 +340,15 @@ definePageMeta({
                         <!-- Subject Field -->
                         <div class="flex flex-col gap-1.5 md:gap-2">
                             <label for="subject"
-                                class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                 {{ $t('contact.form.subject') }} *
                             </label>
                             <input v-model="form.subject" type="text" id="subject" :class="[
                                 'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
                                 errors.subject
                                     ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                    : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                            ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                    : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
+                            ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
                                 :placeholder="$t('contact.form.subjectPlaceholder')" />
                             <p v-if="errors.subject" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                 {{ errors.subject }}
@@ -362,15 +358,15 @@ definePageMeta({
                         <!-- Message Field -->
                         <div class="flex flex-col gap-1.5 md:gap-2">
                             <label for="message"
-                                class="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                 {{ $t('contact.form.message') }} *
                             </label>
                             <textarea v-model="form.message" id="message" rows="5" :class="[
                                 'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border resize-none text-sm md:text-base',
                                 errors.message
                                     ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                    : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'
-                            ]" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                                    : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
+                            ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
                                 :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
                             <p v-if="errors.message" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                 {{ errors.message }}
@@ -394,7 +390,7 @@ definePageMeta({
                             <button type="submit" :disabled="isSubmitting" :class="[
                                 'px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base flex items-center gap-2 md:gap-3 transition-all duration-300',
                                 isSubmitting
-                                    ? 'bg-gray-400 cursor-not-allowed'
+                                    ? 'bg-neutral-400 cursor-not-allowed'
                                     : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl hover:-translate-y-1'
                             ]" class="text-white">
                                 <Icon v-if="isSubmitting" name="mdi:refresh"

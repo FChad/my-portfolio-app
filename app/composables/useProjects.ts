@@ -6,7 +6,6 @@ export interface ProjectFeature {
     title: string // Translation key
     description: string // Translation key
     icon: string
-    color: 'blue' | 'green' | 'purple' | 'orange' | 'red' | 'amber' | 'emerald' | 'teal'
 }
 
 export interface ProjectTechnology {
@@ -15,7 +14,6 @@ export interface ProjectTechnology {
     tech: string // Translation key
     icon: string
     description: string // Translation key
-    color: 'blue' | 'green' | 'purple' | 'orange' | 'red' | 'amber' | 'emerald' | 'teal'
 }
 
 export interface ProjectLink {
