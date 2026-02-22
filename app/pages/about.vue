@@ -299,7 +299,7 @@ const experiences = [
                                 workTimeline.length }}
                             </div>
                             <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{{ $t('about.work.title')
-                            }}</div>
+                                }}</div>
                         </div>
 
                         <div
@@ -443,7 +443,7 @@ const experiences = [
                                 <span class="text-sm text-gray-600 dark:text-gray-400">{{
                                     $t('about.languages.proficiency') }}</span>
                                 <span class="text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                                 <div class="h-full bg-linear-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000"
@@ -556,7 +556,7 @@ const experiences = [
                             $t('about.passion.title') }}</h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.passion.description')
-                        }}</p>
+                            }}</p>
                     </div>
                 </div>
 
@@ -573,7 +573,7 @@ const experiences = [
                         </h3>
                         <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{
                             $t('about.hobbies.description')
-                        }}</p>
+                            }}</p>
                     </div>
                 </div>
             </div>
@@ -604,7 +604,7 @@ const experiences = [
                     </div>
 
                     <!-- Content -->
-                    <div class="relative h-full min-h-[280px] sm:min-h-[320px] flex flex-col justify-end p-6 sm:p-8">
+                    <div class="relative h-full min-h-70 sm:min-h-80 flex flex-col justify-end p-6 sm:p-8">
                         <!-- Icon floating badge -->
                         <div
                             class="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">

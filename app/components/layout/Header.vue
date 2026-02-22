@@ -36,7 +36,7 @@ const isActive = (path: string) => {
                 <nav class="hidden md:flex items-center space-x-8 text-lg">
                     <NuxtLinkLocale v-for="link in navLinks" :key="link.key" :to="link.to" :class="[
                         'nav-link font-medium relative group text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400',
-                        isActive(link.to) && '!text-blue-600 dark:!text-blue-400 active'
+                        isActive(link.to) && 'text-blue-600! dark:text-blue-400! active'
                     ]">
                         {{ $t(`nav.${link.key}`) }}
                         <span
@@ -47,8 +47,8 @@ const isActive = (path: string) => {
                 <!-- Right Side Controls -->
                 <div class="flex items-center gap-4">
                     <!-- Mobile Menu Button -->
-                    <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        :aria-expanded="mobileMenuOpen" aria-controls="mobile-menu"
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen"
+                        aria-controls="mobile-menu"
                         :aria-label="mobileMenuOpen ? $t('common.closeMenu') : $t('common.openMenu')"
                         class="md:hidden flex items-center p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300">
                         <Icon v-if="!mobileMenuOpen" name="mdi:menu" class="w-5 h-5" />
@@ -70,7 +70,7 @@ const isActive = (path: string) => {
                     <NuxtLinkLocale v-for="link in navLinks" :key="link.key" :to="link.to"
                         @click="mobileMenuOpen = false" :class="[
                             'text-center font-medium px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400',
-                            isActive(link.to) && '!text-blue-600 dark:!text-blue-400'
+                            isActive(link.to) && 'text-blue-600! dark:text-blue-400!'
                         ]">
                         {{ $t(`nav.${link.key}`) }}
                     </NuxtLinkLocale>
