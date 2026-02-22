@@ -3,7 +3,6 @@ const route = useRoute()
 const { t } = useI18n()
 const { getDocumentation, hasDocumentation } = useDocumentation()
 const { setSeoMeta } = useSeo()
-const { setSubNav } = useSubNav()
 
 // Get the slug from the route - use direct access for initial check
 const slugParam = route.params.slug as string
@@ -19,12 +18,12 @@ if (!slugParam || !hasDocumentation(slugParam)) {
 // Get the documentation config - synchronous for SSR
 const config = getDocumentation(slugParam)!
 
-// Set SubNav configuration
-setSubNav({
-    title: t(config.subNav.titleKey),
-    showBackButton: config.subNav.showBackButton,
-    backTo: config.subNav.backTo
-})
+// Provide SubNav configuration - fully SSR compatible
+provideSubNav(
+    t(config.subNav.titleKey),
+    config.subNav.showBackButton,
+    config.subNav.backTo
+)
 
 // Set page meta dynamically
 definePageMeta({
