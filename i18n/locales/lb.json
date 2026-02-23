@@ -100,7 +100,14 @@
       "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
       "cta": "Méi iwwer mech erfahren",
       "role": "Full-Stack Webentwickler",
-      "story": "Ech sinn de Chad Feierstein, e 26-jähregen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Mat enger Ausbildung als Techniker an der Informatik an engem BTS am Cloud Computing bréngen ech iwwer 5 Joer IT-Erfahrung mat. Vum Frontend a Backend iwwer Serververwaltung bis hin zu moderne Technologien meeschteren ech komplex Erausfuerderungen a léieren stänneg Neies dobäi.",
+      "story": "Ech sinn de Chad Feierstein, e 26-jähregen {role} an {admin} aus {location}. Mat enger Ausbildung als Techniker an der Informatik an engem BTS am {cloud} bréngen ech iwwer {experience} mat. Vum Frontend a Backend iwwer Serververwaltung bis hin zu moderne Technologien meeschteren ech komplex Erausfuerderungen a léieren stänneg Neies dobäi.",
+      "storyHighlights": {
+        "role": "Full-Stack Developer",
+        "admin": "IT-Administrator",
+        "location": "Lëtzebuerg",
+        "cloud": "Cloud Computing",
+        "experience": "5 Joer IT-Erfahrung"
+      },
       "location": "Rëmeleng, Lëtzebuerg",
       "experience": "Techniker an der Informatik",
       "education": "BTS Cloud Computing",
@@ -168,7 +175,14 @@
       }
     },
     "story": {
-      "intro": "Ech sinn de Chad Feierstein, Full-Stack Webentwickler an IT-Administrator mat Schwéierpunkt op Cloud Computing. Meng Passioun läit an der Entwécklung vu modernen Webanwendungen an der Serververwaltung. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen."
+      "intro": "Ech sinn de Chad Feierstein, {role} an {admin} mat Schwéierpunkt op {cloud}. Meng Passioun läit an der Entwécklung vu {webapps} an der {servers}. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen.",
+      "introHighlights": {
+        "role": "Full-Stack Webentwickler",
+        "admin": "IT-Administrator",
+        "cloud": "Cloud Computing",
+        "webapps": "modernen Webanwendungen",
+        "servers": "Serververwaltung"
+      }
     },
     "interests": {
       "title": "Interessen & Hobbyen",

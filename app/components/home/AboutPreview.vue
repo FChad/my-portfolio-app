@@ -43,9 +43,24 @@ const infoCards = computed(() => [
                 <!-- Left: Main intro -->
                 <div class="space-y-4 md:space-y-6">
                     <!-- Story -->
-                    <p class="text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                        {{ $t('home.about.story') }}
-                    </p>
+                    <i18n-t keypath="home.about.story" tag="p"
+                        class="text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                        <template #role>
+                            <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('home.about.storyHighlights.role') }}</strong>
+                        </template>
+                        <template #admin>
+                            <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('home.about.storyHighlights.admin') }}</strong>
+                        </template>
+                        <template #location>
+                            <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('home.about.storyHighlights.location') }}</strong>
+                        </template>
+                        <template #cloud>
+                            <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('home.about.storyHighlights.cloud') }}</strong>
+                        </template>
+                        <template #experience>
+                            <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('home.about.storyHighlights.experience') }}</strong>
+                        </template>
+                    </i18n-t>
 
                     <!-- CTA Button -->
                     <NuxtLinkLocale to="/about"

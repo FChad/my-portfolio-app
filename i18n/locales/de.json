@@ -105,7 +105,14 @@
       "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
       "cta": "Mehr über mich erfahren",
       "role": "Full-Stack Webentwickler",
-      "story": "Ich bin Chad Feierstein, ein 26-jähriger Full-Stack Entwickler und IT-Administrator aus Luxemburg. Mit einer Ausbildung als Techniker in der Informatik und einem BTS in Cloud Computing bringe ich über 5 Jahre IT-Erfahrung mit. Von Frontend und Backend über Serververwaltung bis hin zu modernen Technologien meistere ich komplexe Herausforderungen und lerne ständig Neues dazu.",
+      "story": "Ich bin Chad Feierstein, ein 26-jähriger {role} und {admin} aus {location}. Mit einer Ausbildung als Techniker in der Informatik und einem BTS in {cloud} bringe ich über {experience} mit. Von Frontend und Backend über Serververwaltung bis hin zu modernen Technologien meistere ich komplexe Herausforderungen und lerne ständig Neues dazu.",
+      "storyHighlights": {
+        "role": "Full-Stack Entwickler",
+        "admin": "IT-Administrator",
+        "location": "Luxemburg",
+        "cloud": "Cloud Computing",
+        "experience": "5 Jahre IT-Erfahrung"
+      },
       "location": "Rümelingen, Luxemburg",
       "experience": "Techniker in der Informatik",
       "education": "BTS Cloud Computing",
@@ -173,7 +180,14 @@
       }
     },
     "story": {
-      "intro": "Ich bin Chad Feierstein, Full-Stack Webentwickler und IT-Administrator mit Schwerpunkt auf Cloud Computing. Meine Leidenschaft liegt in der Entwicklung moderner Webanwendungen und der Serververwaltung. Mit meiner Ausbildung als IT-Techniker und einem Abschluss im Bereich Cloud Computing verbinde ich fundiertes Wissen mit praktischer Erfahrung, um effiziente und individuelle Lösungen umzusetzen."
+      "intro": "Ich bin Chad Feierstein, {role} und {admin} mit Schwerpunkt auf {cloud}. Meine Leidenschaft liegt in der Entwicklung {webapps} und der {servers}. Mit meiner Ausbildung als IT-Techniker und einem Abschluss im Bereich Cloud Computing verbinde ich fundiertes Wissen mit praktischer Erfahrung, um effiziente und individuelle Lösungen umzusetzen.",
+      "introHighlights": {
+        "role": "Full-Stack Webentwickler",
+        "admin": "IT-Administrator",
+        "cloud": "Cloud Computing",
+        "webapps": "moderner Webanwendungen",
+        "servers": "Serververwaltung"
+      }
     },
     "interests": {
       "title": "Interessen & Hobbys",

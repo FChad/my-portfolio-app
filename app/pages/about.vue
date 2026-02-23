@@ -255,9 +255,24 @@ const experiences = [
                         <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-neutral-800 dark:text-white">
                             Chad Feierstein
                         </h1>
-                        <p class="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                            {{ $t('about.story.intro') }}
-                        </p>
+                        <i18n-t keypath="about.story.intro" tag="p"
+                            class="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                            <template #role>
+                                <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('about.story.introHighlights.role') }}</strong>
+                            </template>
+                            <template #admin>
+                                <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('about.story.introHighlights.admin') }}</strong>
+                            </template>
+                            <template #cloud>
+                                <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('about.story.introHighlights.cloud') }}</strong>
+                            </template>
+                            <template #webapps>
+                                <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('about.story.introHighlights.webapps') }}</strong>
+                            </template>
+                            <template #servers>
+                                <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('about.story.introHighlights.servers') }}</strong>
+                            </template>
+                        </i18n-t>
                     </div>
 
                     <!-- Quick stats in creative card layout -->

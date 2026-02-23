@@ -100,7 +100,14 @@
       "subtitle": "Découvrez mon parcours, mon expérience et ce qui motive ma passion pour la technologie.",
       "cta": "En Savoir Plus Sur Moi",
       "role": "Développeur Web Full-Stack",
-      "story": "Je suis Chad Feierstein, un développeur Full-Stack et administrateur IT de 26 ans du Luxembourg. Avec une formation en tant que technicien en informatique et un BTS en Cloud Computing, j'apporte plus de 5 ans d'expérience IT. Du frontend et backend à la gestion de serveurs et aux technologies modernes, je relève des défis complexes tout en apprenant constamment de nouvelles choses.",
+      "story": "Je suis Chad Feierstein, un {role} et {admin} de 26 ans du {location}. Avec une formation en tant que technicien en informatique et un BTS en {cloud}, j'apporte plus de {experience}. Du frontend et backend à la gestion de serveurs et aux technologies modernes, je relève des défis complexes tout en apprenant constamment de nouvelles choses.",
+      "storyHighlights": {
+        "role": "développeur Full-Stack",
+        "admin": "administrateur IT",
+        "location": "Luxembourg",
+        "cloud": "Cloud Computing",
+        "experience": "5 ans d'expérience IT"
+      },
       "location": "Rumelange, Luxembourg",
       "experience": "Technicien en Informatique",
       "education": "BTS Cloud Computing",
@@ -168,7 +175,14 @@
       }
     },
     "story": {
-      "intro": "Je suis Chad Feierstein, développeur web Full-Stack et administrateur IT spécialisé dans le Cloud Computing. Ma passion réside dans le développement d'applications web modernes et la gestion de serveurs. Avec ma formation de technicien IT et un diplôme en Cloud Computing, je combine des connaissances solides avec une expérience pratique pour mettre en œuvre des solutions efficaces et personnalisées."
+      "intro": "Je suis Chad Feierstein, {role} et {admin} spécialisé dans le {cloud}. Ma passion réside dans le développement d'{webapps} et la {servers}. Avec ma formation de technicien IT et un diplôme en Cloud Computing, je combine des connaissances solides avec une expérience pratique pour mettre en œuvre des solutions efficaces et personnalisées.",
+      "introHighlights": {
+        "role": "développeur web Full-Stack",
+        "admin": "administrateur IT",
+        "cloud": "Cloud Computing",
+        "webapps": "applications web modernes",
+        "servers": "gestion de serveurs"
+      }
     },
     "interests": {
       "title": "Intérêts & Loisirs",

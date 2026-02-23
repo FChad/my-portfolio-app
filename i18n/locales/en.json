@@ -105,7 +105,14 @@
       "subtitle": "Learn more about my background, experience and what drives my passion for technology.",
       "cta": "Learn More About Me",
       "role": "Full-Stack Web Developer",
-      "story": "I am Chad Feierstein, a 26-year-old Full-Stack Developer and IT Administrator from Luxembourg. With an education as a Computer Science Technician and a BTS in Cloud Computing, I bring over 5 years of IT experience. From frontend and backend to server management and modern technologies, I master complex challenges while constantly learning new things.",
+      "story": "I am Chad Feierstein, a 26-year-old {role} and {admin} from {location}. With an education as a Computer Science Technician and a BTS in {cloud}, I bring over {experience}. From frontend and backend to server management and modern technologies, I master complex challenges while constantly learning new things.",
+      "storyHighlights": {
+        "role": "Full-Stack Developer",
+        "admin": "IT Administrator",
+        "location": "Luxembourg",
+        "cloud": "Cloud Computing",
+        "experience": "5 years of IT experience"
+      },
       "location": "Rumelange, Luxembourg",
       "experience": "Computer Science Technician",
       "education": "BTS Cloud Computing",
@@ -173,7 +180,14 @@
       }
     },
     "story": {
-      "intro": "I am Chad Feierstein, a Full-Stack Web Developer and IT Administrator specializing in Cloud Computing. My passion lies in developing modern web applications and server management. With my education as an IT technician and a degree in Cloud Computing, I combine solid knowledge with practical experience to implement efficient and customized solutions."
+      "intro": "I am Chad Feierstein, a {role} and {admin} specializing in {cloud}. My passion lies in developing {webapps} and {servers}. With my education as an IT technician and a degree in Cloud Computing, I combine solid knowledge with practical experience to implement efficient and customized solutions.",
+      "introHighlights": {
+        "role": "Full-Stack Web Developer",
+        "admin": "IT Administrator",
+        "cloud": "Cloud Computing",
+        "webapps": "modern web applications",
+        "servers": "server management"
+      }
     },
     "interests": {
       "title": "Interests & Hobbies",
