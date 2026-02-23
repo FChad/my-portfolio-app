@@ -175,13 +175,16 @@
       }
     },
     "story": {
-      "intro": "Je suis Chad Feierstein, {role} et {admin} spécialisé dans le {cloud}. Ma passion réside dans le développement d'{webapps} et la {servers}. Avec ma formation de technicien IT et un diplôme en Cloud Computing, je combine des connaissances solides avec une expérience pratique pour mettre en œuvre des solutions efficaces et personnalisées.",
+      "intro": "Je suis Chad Feierstein, {role} et {admin} de {age} ans, originaire du {location}. Mon domaine de prédilection est le {cloud}, du développement d'{webapps} à la {servers} professionnelle. Au cours de mes {positions}, j'ai acquis une expérience pratique dans divers domaines IT, notamment les systèmes ERP, la gestion de bases de données et la programmation web. Ma formation repose sur un diplôme de technicien IT (DAP) et un Brevet de Technicien Supérieur (BTS) en Cloud Computing. Grâce à mes {langCount}, je communique aisément au sein d'équipes internationales.",
       "introHighlights": {
         "role": "développeur web Full-Stack",
         "admin": "administrateur IT",
         "cloud": "Cloud Computing",
         "webapps": "applications web modernes",
-        "servers": "gestion de serveurs"
+        "servers": "gestion de serveurs",
+        "location": "Luxembourg",
+        "positions": "six postes professionnels",
+        "langCount": "quatre langues"
       }
     },
     "interests": {

@@ -175,13 +175,16 @@
       }
     },
     "story": {
-      "intro": "Ech sinn de Chad Feierstein, {role} an {admin} mat Schwéierpunkt op {cloud}. Meng Passioun läit an der Entwécklung vu {webapps} an der {servers}. Mat menger Ausbildung als IT-Techniker an engem Ofschloss am Beräich Cloud Computing verbinnen ech fundéiert Wëssen mat praktescher Erfahrung, fir effizient an individuell Léisungen ëmzesetzen.",
+      "intro": "Ech sinn de Chad Feierstein, e {age} Joer alen {role} an {admin} aus {location}. Mäi Schwéierpunkt läit op {cloud}, vun der Entwécklung vu {webapps} bis hin zur professioneller {servers}. Wärend mengen {positions} konnt ech praktesch Erfahrung a verschiddene IT-Beräicher sammelen, dorënner ERP-Systemer, Datebankverwaltung a Web Programming. Mäi Fundament bilden eng Ausbildung als IT-Techniker (DAP) an e méi héijen techneschen Ofschloss (BTS) am Beräich Cloud Computing. Dank mengen {langCount} kommunizéieren ech ouni Problemer an internationalen Teams.",
       "introHighlights": {
         "role": "Full-Stack Webentwickler",
         "admin": "IT-Administrator",
         "cloud": "Cloud Computing",
         "webapps": "modernen Webanwendungen",
-        "servers": "Serververwaltung"
+        "servers": "Serververwaltung",
+        "location": "Lëtzebuerg",
+        "positions": "sechs berufleche Statiounen",
+        "langCount": "véier Sproochen"
       }
     },
     "interests": {
