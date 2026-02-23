@@ -374,6 +374,15 @@
     },
     "labels": {
       "viewDetails": "Voir Détails"
+    },
+    "noResults": {
+      "title": "Aucun résultat trouvé",
+      "description": "Essayez d'ajuster votre recherche ou votre filtre pour trouver ce que vous cherchez."
+    },
+    "cta": {
+      "title": "Intéressé par une collaboration ?",
+      "subtitle": "Vous avez un projet en tête ou besoin d'expertise technique ? Discutons de comment je peux vous aider.",
+      "button": "Me contacter"
     }
   },
   "projects": {

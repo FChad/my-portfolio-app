@@ -374,6 +374,15 @@
     },
     "labels": {
       "viewDetails": "Detailer weisen"
+    },
+    "noResults": {
+      "title": "Keng Resultater fonnt",
+      "description": "Versicht Är Sich oder Äre Filter unzepassen, fir dat ze fannen wat Dir sicht."
+    },
+    "cta": {
+      "title": "Interesse un enger Zesummenaarbecht?",
+      "subtitle": "Hutt Dir e Projet am Kapp oder braucht technesch Expertise? Loosst eis beschwätzen wéi ech hëllefe kann.",
+      "button": "Kontakt ophuelen"
     }
   },
   "projects": {
