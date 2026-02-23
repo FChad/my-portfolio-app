@@ -85,7 +85,6 @@ interface TimelineItem {
     year: string
     title: string
     description: string
-    icon: string
     category: 'work' | 'education'
     company?: string
     type?: string
@@ -109,7 +108,6 @@ const combinedTimeline: TimelineItem[] = [
             t('about.timelineItems.item1.task3'),
             t('about.timelineItems.item1.task4')
         ],
-        icon: 'mdi:code-braces',
         category: 'work'
     },
     {
@@ -119,7 +117,6 @@ const combinedTimeline: TimelineItem[] = [
         school: t('about.education.bts.school'),
         grade: t('about.education.bts.grade'),
         link: 'https://www.lgk.lu/bts/clc/',
-        icon: 'mdi:school-outline',
         category: 'education'
     },
     {
@@ -136,7 +133,6 @@ const combinedTimeline: TimelineItem[] = [
             t('about.timelineItems.item2.task5'),
             t('about.timelineItems.item2.task6')
         ],
-        icon: 'mdi:cloud',
         category: 'work'
     },
     {
@@ -151,7 +147,6 @@ const combinedTimeline: TimelineItem[] = [
             t('about.timelineItems.item3.task3'),
             t('about.timelineItems.item3.task4')
         ],
-        icon: 'mdi:wrench',
         category: 'work'
     },
     {
@@ -161,7 +156,6 @@ const combinedTimeline: TimelineItem[] = [
         school: t('about.education.dap.school'),
         grade: t('about.education.dap.grade'),
         link: 'https://www.lgk.lu/training/formation-professionnelle/informaticien-technicien-dap',
-        icon: 'mdi:school-outline',
         category: 'education'
     },
     {
@@ -177,7 +171,6 @@ const combinedTimeline: TimelineItem[] = [
             t('about.timelineItems.item4.task4'),
             t('about.timelineItems.item4.task5')
         ],
-        icon: 'mdi:web',
         category: 'work'
     },
     {
@@ -193,7 +186,6 @@ const combinedTimeline: TimelineItem[] = [
             t('about.timelineItems.item5.task4'),
             t('about.timelineItems.item5.task5')
         ],
-        icon: 'mdi:database',
         category: 'work'
     },
     {
@@ -209,12 +201,10 @@ const combinedTimeline: TimelineItem[] = [
             t('about.timelineItems.item6.task4'),
             t('about.timelineItems.item6.task5')
         ],
-        icon: 'mdi:network',
         category: 'work'
     }
 ]
 
-const workTimeline = combinedTimeline.filter(item => item.category === 'work')
 
 const experiences = [
     {
