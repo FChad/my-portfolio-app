@@ -8,13 +8,7 @@ const texts = computed(() => [
 ])
 
 const scrollToAbout = () => {
-    const aboutSection = document.querySelector('#about-section') as HTMLElement
-    if (aboutSection) {
-        window.scrollTo({
-            top: aboutSection.offsetTop,
-            behavior: 'smooth'
-        })
-    }
+    document.querySelector('#about-section')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 // Lazy load AnimatedStars for better initial page load performance

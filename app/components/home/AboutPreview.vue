@@ -26,7 +26,7 @@ const infoCards = computed(() => [
 </script>
 
 <template>
-    <section id="about-section" class="py-12 md:py-16 lg:py-24 relative overflow-hidden">
+    <section id="about-section" class="scroll-mt-18 py-12 md:py-16 lg:py-24 relative overflow-hidden">
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header (Centered) -->
