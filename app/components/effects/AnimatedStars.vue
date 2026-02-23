@@ -1,5 +1,5 @@
 <template>
-    <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full transition-opacity " :class="canvasClass"
+    <canvas ref="starsCanvas" class="absolute inset-0 w-full h-full transition-opacity duration-500 ease-in" :class="canvasClass"
         :style="{ opacity: isCanvasVisible ? '' : '0' }" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" />
 </template>
 
