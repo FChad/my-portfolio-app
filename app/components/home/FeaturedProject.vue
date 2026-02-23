@@ -41,22 +41,22 @@
                         </div>
 
                         <!-- Action Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center pt-2 md:pt-4">
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-center pt-2 md:pt-4">
                             <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                class="group w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
-                                <span class="flex items-center gap-3">
+                                class="group w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
+                                <span class="flex items-center gap-2 sm:gap-3">
                                     <Icon name="mdi:eye"
-                                        class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                                        class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                                     {{ $t('home.featured.cta.view') }}
                                 </span>
                             </NuxtLinkLocale>
 
                             <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                class="group w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
-                                <span class="flex items-center gap-3">
+                                class="group w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-3.5 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
+                                <span class="flex items-center gap-2 sm:gap-3">
                                     {{ $t('home.featured.cta.demo') }}
                                     <Icon name="mdi:rocket-launch"
-                                        class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                                        class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                                 </span>
                             </a>
                         </div>

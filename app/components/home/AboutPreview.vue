@@ -64,9 +64,11 @@ const infoCards = computed(() => [
 
                     <!-- CTA Button -->
                     <NuxtLinkLocale to="/about"
-                        class="group inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl md:rounded-2xl font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-sm md:text-base">
-                        <Icon name="mdi:open-in-new" class="w-4 h-4 md:w-5 md:h-5" />
-                        {{ $t('home.about.cta') }}
+                        class="group inline-flex items-center justify-center px-5 sm:px-7 py-3 sm:py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <span class="flex items-center gap-2 sm:gap-3">
+                            <Icon name="mdi:open-in-new" class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                            {{ $t('home.about.cta') }}
+                        </span>
                     </NuxtLinkLocale>
                 </div>
 
