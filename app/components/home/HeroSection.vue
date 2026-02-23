@@ -38,65 +38,54 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
         </div>
 
         <!-- Main Content -->
-        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-16 lg:pb-10">
-            <div class="text-center space-y-8">
-                <!-- Main Headline with Enhanced Typography -->
-                <div class="space-y-6 mt-16">
-                    <!-- Greeting -->
-                    <p class="text-xl sm:text-2xl font-medium tracking-wide uppercase text-neutral-700 dark:text-neutral-300">
+        <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-6 sm:space-y-10">
+                <!-- Greeting + Name -->
+                <div>
+                    <p class="text-base sm:text-xl md:text-2xl font-medium tracking-widest uppercase text-neutral-500 dark:text-neutral-400 mb-1 sm:mb-2">
                         {{ $t('home.greeting') }}
                     </p>
-
-                    <!-- Name -->
-                    <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-tight text-neutral-800 dark:text-white uppercase">
-                        Chad<br />Feierstein
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black leading-none text-neutral-800 dark:text-white uppercase">
+                        Chad Feierstein
                     </h1>
-
-                    <!-- Creative Typing Effect -->
-                    <div>
-                        <EffectsTypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50"
-                            :pause-duration="2000" />
-                    </div>
                 </div>
 
-                <!-- Value Proposition with animation -->
-                <div class="max-w-3xl mx-auto">
-                    <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-neutral-600 dark:text-neutral-300">
-                        {{ $t('home.tagline') }}
-                    </p>
-                </div>
+                <!-- Typing Effect -->
+                <EffectsTypingEffect :texts="texts" :typing-speed="100" :deleting-speed="50"
+                    :pause-duration="2000" />
 
-                <!-- Enhanced CTA Section with hover effects -->
-                <div class="pt-8">
-                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12">
-                        <!-- Primary CTA -->
-                        <NuxtLinkLocale to="/showcase"
-                            class="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center hover:-translate-y-1">
-                            <span class="flex items-center gap-3">
-                                <Icon name="mdi:eye"
-                                    class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
-                                {{ $t('home.cta.primary') }}
-                            </span>
-                        </NuxtLinkLocale>
+                <!-- Tagline -->
+                <p class="max-w-3xl mx-auto text-base sm:text-xl md:text-2xl leading-relaxed text-neutral-600 dark:text-neutral-300">
+                    {{ $t('home.tagline') }}
+                </p>
 
-                        <!-- Secondary CTA -->
-                        <NuxtLinkLocale to="/contact"
-                            class="group px-8 py-4 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center hover:-translate-y-1">
-                            <span class="flex items-center gap-3">
-                                {{ $t('home.cta.secondary') }}
-                                <Icon name="mdi:chat"
-                                    class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
-                            </span>
-                        </NuxtLinkLocale>
-                    </div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center">
+                    <NuxtLinkLocale to="/showcase"
+                        class="group w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
+                        <span class="flex items-center gap-3">
+                            <Icon name="mdi:eye"
+                                class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                            {{ $t('home.cta.primary') }}
+                        </span>
+                    </NuxtLinkLocale>
+
+                    <NuxtLinkLocale to="/contact"
+                        class="group w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
+                        <span class="flex items-center gap-3">
+                            {{ $t('home.cta.secondary') }}
+                            <Icon name="mdi:chat"
+                                class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                        </span>
+                    </NuxtLinkLocale>
                 </div>
             </div>
         </div>
 
-        <!-- Scroll Down Indicator with pulse animation -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30">
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-30">
             <div class="flex flex-col items-center animate-bounce">
-                <div class="relative flex justify-center items-center w-12.5 h-12.5 
+                <div class="relative flex justify-center items-center w-10 h-10 sm:w-12.5 sm:h-12.5 
                             border-2 border-blue-500/30 dark:border-blue-400/40 
                             rounded-full bg-white/10 dark:bg-neutral-900/20 
                             backdrop-blur-[10px] cursor-pointer
@@ -104,7 +93,7 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
                             dark:hover:border-blue-400/70 dark:hover:bg-blue-400/10
                             transition-all duration-300 group" @click="scrollToAbout">
                     <Icon name="mdi:chevron-down"
-                        class="w-8 h-8 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors" />
+                        class="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors" />
                     <!-- Pulse ring effect -->
                     <span
                         class="absolute inset-0 rounded-full border-2 border-blue-500/50 dark:border-blue-400/50 animate-ping"></span>
