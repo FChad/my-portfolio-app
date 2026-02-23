@@ -6,6 +6,7 @@ interface Props {
     typingSpeed?: number
     deletingSpeed?: number
     pauseDuration?: number
+    startDelay?: number
     terminalUser?: string
     terminalHost?: string
     command?: string
@@ -15,6 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
     typingSpeed: 100,
     deletingSpeed: 50,
     pauseDuration: 2000,
+    startDelay: 800,
     terminalUser: 'chad',
     terminalHost: 'portfolio',
     command: 'echo'
@@ -26,6 +28,7 @@ const isActive = ref(false)
 
 // Animation state (using more performant approach)
 let animationId: number | null = null
+let startDelayTimer: ReturnType<typeof setTimeout> | null = null
 let lastTime = 0
 let currentTextIndex = 0
 let currentCharIndex = 0
@@ -99,16 +102,22 @@ const startTyping = (): void => {
     lastTime = 0
     isActive.value = true
 
-    // Start animation
-    nextTick(() => {
-        if (isActive.value) {
-            animationId = requestAnimationFrame(animate)
-        }
-    })
+    // Delay before starting the animation
+    startDelayTimer = setTimeout(() => {
+        nextTick(() => {
+            if (isActive.value) {
+                animationId = requestAnimationFrame(animate)
+            }
+        })
+    }, props.startDelay)
 }
 
 const stopTyping = (): void => {
     isActive.value = false
+    if (startDelayTimer !== null) {
+        clearTimeout(startDelayTimer)
+        startDelayTimer = null
+    }
     if (animationId !== null) {
         cancelAnimationFrame(animationId)
         animationId = null
