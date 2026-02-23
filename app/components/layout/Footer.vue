@@ -16,7 +16,7 @@ const scrollToTop = () => {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
                 <!-- Scroll to Top Button -->
                 <button @click="scrollToTop"
-                    class="absolute -top-2 right-0 w-10 h-10 flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                    class="cursor-pointer absolute -top-2 right-0 w-10 h-10 flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
                     aria-label="Scroll to top">
                     <Icon name="mdi:arrow-up" class="w-5 h-5" />
                 </button>

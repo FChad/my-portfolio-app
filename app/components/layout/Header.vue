@@ -49,7 +49,7 @@ const isActive = (path: string) => {
                     <button @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen"
                         aria-controls="mobile-menu"
                         :aria-label="mobileMenuOpen ? $t('common.closeMenu') : $t('common.openMenu')"
-                        class="md:hidden flex items-center p-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300">
+                        class="cursor-pointer md:hidden flex items-center p-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300">
                         <Icon v-if="!mobileMenuOpen" name="mdi:menu" class="w-5 h-5" />
                         <Icon v-else name="mdi:close" class="w-5 h-5" />
                     </button>

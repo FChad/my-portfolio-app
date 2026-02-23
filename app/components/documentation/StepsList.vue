@@ -47,7 +47,7 @@ const toggleExpanded = (stepId: string) => {
                     class="group bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300">
                     <!-- Step Header -->
                     <button @click="toggleExpanded(step.id)"
-                        class="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left hover:bg-neutral-50/50 dark:hover:bg-neutral-700/50 rounded-xl sm:rounded-2xl md:rounded-3xl transition-colors">
+                        class="cursor-pointer w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left hover:bg-neutral-50/50 dark:hover:bg-neutral-700/50 rounded-xl sm:rounded-2xl md:rounded-3xl transition-colors">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div
                                 class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-blue-500 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 shrink-0">

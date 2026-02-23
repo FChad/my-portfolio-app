@@ -700,6 +700,7 @@
       "messagePlaceholder": "Parlez-moi de votre projet ou de votre demande...",
       "submit": "Envoyer le Message",
       "sending": "Envoi en cours...",
+      "tryAgain": "Réessayer",
       "success": "Merci ! Votre message a été envoyé avec succès. Je vous recontacterai bientôt.",
       "errors": {
         "nameRequired": "Le nom est requis",

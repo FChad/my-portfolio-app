@@ -189,113 +189,127 @@ definePageMeta({
 </script>
 
 <template>
-    <!-- Single Compact Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20">
+    <!-- Header Section -->
+    <section class="py-12 md:py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-800 dark:text-white">
+                    {{ $t('contact.title') }}
+                </h1>
+                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+                    {{ $t('contact.subtitle') }}
+                </p>
+            </div>
 
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="space-y-8 md:space-y-12">
-                <!-- Header -->
-                <div class="text-center space-y-4">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-800 dark:text-white">
-                        {{ $t('contact.title') }}
-                    </h1>
-                    <p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
-                        {{ $t('contact.subtitle') }}
-                    </p>
-                </div>
+            <!-- Contact Methods Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+                <div v-for="method in contactMethods" :key="method.titleKey"
+                    class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 
-                <!-- Contact Methods Grid -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    <div v-for="method in contactMethods" :key="method.titleKey"
-                        class="group bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-
-                        <!-- External links -->
-                        <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
-                            <div class="flex flex-col items-center gap-3 md:gap-4 text-center">
-                                <!-- Icon Container -->
-                                <div :class="[
-                                    'w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg',
-                                    method.color
-                                ]">
-                                    <Icon :name="method.icon" class="w-7 h-7 md:w-8 md:h-8 text-white" />
-                                </div>
-
-                                <!-- Content -->
-                                <div class="flex flex-col gap-1 md:gap-2">
-                                    <h3
-                                        class="font-black text-lg md:text-xl text-neutral-800 dark:text-white flex items-center justify-center gap-2">
-                                        {{ $t(method.titleKey) }}
-                                        <Icon name="mdi:external-link"
-                                            class="w-4 h-4 text-neutral-400 group-hover:text-blue-500" />
-                                    </h3>
-                                    <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
-                                        {{ $t(method.descriptionKey) }}
-                                    </p>
-                                </div>
+                    <!-- External links -->
+                    <NuxtLink v-if="method.isExternal" :to="method.href" external target="_blank" class="block">
+                        <div class="flex flex-col items-center gap-4 md:gap-5 lg:gap-6 text-center">
+                            <!-- Icon Container -->
+                            <div :class="[
+                                'w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shrink-0',
+                                method.color
+                            ]">
+                                <Icon :name="method.icon" class="w-6 h-6 md:w-6.5 md:h-6.5 lg:w-7 lg:h-7 text-white" />
                             </div>
-                        </NuxtLink>
 
-                        <!-- Internal scroll action (Email) -->
-                        <button v-else @click="scrollToContactForm" class="block w-full">
-                            <div class="flex flex-col items-center gap-3 md:gap-4 text-center">
-                                <!-- Icon Container -->
-                                <div :class="[
-                                    'w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg',
-                                    method.color
-                                ]">
-                                    <Icon :name="method.icon" class="w-7 h-7 md:w-8 md:h-8 text-white" />
-                                </div>
-
-                                <!-- Content -->
-                                <div class="flex flex-col gap-1 md:gap-2">
-                                    <h3
-                                        class="font-black text-lg md:text-xl text-neutral-800 dark:text-white flex items-center justify-center gap-2">
-                                        {{ $t(method.titleKey) }}
-                                        <Icon name="mdi:arrow-down"
-                                            class="w-4 h-4 text-neutral-400 group-hover:text-blue-500" />
-                                    </h3>
-                                    <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
-                                        {{ $t(method.descriptionKey) }}
-                                    </p>
-                                </div>
+                            <!-- Content -->
+                            <div class="flex flex-col gap-1 md:gap-2">
+                                <h3
+                                    class="text-lg md:text-xl lg:text-2xl font-black text-neutral-800 dark:text-white flex items-center justify-center gap-2">
+                                    {{ $t(method.titleKey) }}
+                                    <Icon name="mdi:external-link"
+                                        class="w-4 h-4 text-neutral-400 group-hover:text-blue-500 transition-colors" />
+                                </h3>
+                                <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                                    {{ $t(method.descriptionKey) }}
+                                </p>
                             </div>
-                        </button>
-                    </div>
+                        </div>
+                    </NuxtLink>
+
+                    <!-- Internal scroll action (Email) -->
+                    <button v-else @click="scrollToContactForm" class="cursor-pointer block w-full">
+                        <div class="flex flex-col items-center gap-4 md:gap-5 lg:gap-6 text-center">
+                            <!-- Icon Container -->
+                            <div :class="[
+                                'w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shrink-0',
+                                method.color
+                            ]">
+                                <Icon :name="method.icon" class="w-6 h-6 md:w-6.5 md:h-6.5 lg:w-7 lg:h-7 text-white" />
+                            </div>
+
+                            <!-- Content -->
+                            <div class="flex flex-col gap-1 md:gap-2">
+                                <h3
+                                    class="text-lg md:text-xl lg:text-2xl font-black text-neutral-800 dark:text-white flex items-center justify-center gap-2">
+                                    {{ $t(method.titleKey) }}
+                                    <Icon name="mdi:arrow-down"
+                                        class="w-4 h-4 text-neutral-400 group-hover:text-blue-500 transition-colors" />
+                                </h3>
+                                <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                                    {{ $t(method.descriptionKey) }}
+                                </p>
+                            </div>
+                        </div>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Contact Form -->
-                <div id="contact-form"
-                    class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <h2
-                        class="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-800 dark:text-white text-center mb-6 md:mb-8">
-                        {{ $t('contact.form.title') }}
-                    </h2>
-                    <!-- Success Message -->
-                    <div v-if="isSubmitted"
-                        class="mb-4 md:mb-6 p-3 md:p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
-                        <div class="flex items-center gap-2 md:gap-3">
-                            <Icon name="mdi:check-circle" class="w-5 h-5 md:w-6 md:h-6 text-green-500 shrink-0" />
-                            <p class="text-sm md:text-base text-green-800 dark:text-green-200 font-medium">
-                                {{ $t('contact.form.success') }}
-                            </p>
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="scroll-mt-18 py-12 md:py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-800 dark:text-white">
+                    {{ $t('contact.form.title') }}
+                </h2>
+                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+                    {{ $t('contact.form.description') }}
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg">
+
+                    <!-- Overlay: Success Message -->
+                    <Transition name="overlay-fade">
+                        <div v-if="isSubmitted"
+                            class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
+                            <div class="flex flex-col items-center gap-4 text-center px-6">
+                                <div class="w-16 h-16 md:w-20 md:h-20 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center">
+                                    <Icon name="mdi:check-circle" class="w-8 h-8 md:w-10 md:h-10 text-green-500" />
+                                </div>
+                                <p class="text-lg md:text-xl font-bold text-green-800 dark:text-green-200">
+                                    {{ $t('contact.form.success') }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
 
-                    <!-- Error Message -->
-                    <div v-if="submitError"
-                        class="mb-4 md:mb-6 p-3 md:p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
-                        <div class="flex items-center gap-2 md:gap-3">
-                            <Icon name="mdi:alert-circle" class="w-5 h-5 md:w-6 md:h-6 text-red-500 shrink-0" />
-                            <p class="text-sm md:text-base text-red-800 dark:text-red-200 font-medium">
-                                {{ submitError }}
-                            </p>
+                    <!-- Overlay: Error Message -->
+                    <Transition name="overlay-fade">
+                        <div v-if="submitError"
+                            class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
+                            <div class="flex flex-col items-center gap-4 text-center px-6">
+                                <div class="w-16 h-16 md:w-20 md:h-20 bg-red-100 dark:bg-red-900/40 rounded-full flex items-center justify-center">
+                                    <Icon name="mdi:alert-circle" class="w-8 h-8 md:w-10 md:h-10 text-red-500" />
+                                </div>
+                                <p class="text-lg md:text-xl font-bold text-red-800 dark:text-red-200">
+                                    {{ submitError }}
+                                </p>
+                                <button @click="submitError = ''" type="button"
+                                    class="cursor-pointer mt-2 px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300">
+                                    {{ $t('contact.form.tryAgain') }}
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="text-center mb-4 md:mb-6">
-                        <p class="text-sm md:text-base lg:text-lg text-neutral-600 dark:text-neutral-300">{{
-                            $t('contact.form.description') }}</p>
-                    </div>
+                    </Transition>
 
                     <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-6">
                         <!-- Name and Email Fields -->
@@ -307,11 +321,11 @@ definePageMeta({
                                     {{ $t('contact.form.name') }} *
                                 </label>
                                 <input v-model="form.name" type="text" id="name" :class="[
-                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
+                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base outline-none shadow-md transition-all',
                                     errors.name
-                                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                        : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
-                                ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
+                                        ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
+                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                                ]" class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-900 dark:text-white placeholder-neutral-400"
                                     :placeholder="$t('contact.form.namePlaceholder')" />
                                 <p v-if="errors.name" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                     {{ errors.name }}
@@ -325,11 +339,11 @@ definePageMeta({
                                     {{ $t('contact.form.email') }} *
                                 </label>
                                 <input v-model="form.email" type="email" id="email" :class="[
-                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
+                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base outline-none shadow-md transition-all',
                                     errors.email
-                                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                        : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
-                                ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
+                                        ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
+                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                                ]" class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-900 dark:text-white placeholder-neutral-400"
                                     placeholder="your@email.com" />
                                 <p v-if="errors.email" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                     {{ errors.email }}
@@ -344,11 +358,11 @@ definePageMeta({
                                 {{ $t('contact.form.subject') }} *
                             </label>
                             <input v-model="form.subject" type="text" id="subject" :class="[
-                                'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border text-sm md:text-base',
+                                'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base outline-none shadow-md transition-all',
                                 errors.subject
-                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                    : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
-                            ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
+                                    ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
+                                    : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                            ]" class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-900 dark:text-white placeholder-neutral-400"
                                 :placeholder="$t('contact.form.subjectPlaceholder')" />
                             <p v-if="errors.subject" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                 {{ errors.subject }}
@@ -362,11 +376,11 @@ definePageMeta({
                                 {{ $t('contact.form.message') }} *
                             </label>
                             <textarea v-model="form.message" id="message" rows="5" :class="[
-                                'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border resize-none text-sm md:text-base',
+                                'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border resize-none text-sm md:text-base outline-none shadow-md transition-all',
                                 errors.message
-                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                    : 'border-neutral-300 dark:border-neutral-600 focus:border-blue-500 focus:ring-blue-500'
-                            ]" class="bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400"
+                                    ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
+                                    : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                            ]" class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm text-neutral-900 dark:text-white placeholder-neutral-400"
                                 :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
                             <p v-if="errors.message" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                 {{ errors.message }}
@@ -388,14 +402,14 @@ definePageMeta({
 
                             <!-- Submit Button -->
                             <button type="submit" :disabled="isSubmitting" :class="[
-                                'px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-base flex items-center gap-2 md:gap-3 transition-all duration-300',
+                                'group px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base flex items-center gap-2 sm:gap-3 transition-all duration-300',
                                 isSubmitting
                                     ? 'bg-neutral-400 cursor-not-allowed'
-                                    : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl hover:-translate-y-1'
+                                    : 'cursor-pointer bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-2xl hover:-translate-y-1'
                             ]" class="text-white">
                                 <Icon v-if="isSubmitting" name="mdi:refresh"
-                                    class="w-4 h-4 md:w-5 md:h-5 animate-spin" />
-                                <Icon v-else name="mdi:send" class="w-4 h-4 md:w-5 md:h-5" />
+                                    class="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                                <Icon v-else name="mdi:send" class="w-4 h-4 sm:w-5 sm:h-5" />
                                 {{ isSubmitting ? $t('contact.form.sending') : $t('contact.form.submit') }}
                             </button>
                         </div>
@@ -405,3 +419,14 @@ definePageMeta({
         </div>
     </section>
 </template>
+<style scoped>
+.overlay-fade-enter-active,
+.overlay-fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.overlay-fade-enter-from,
+.overlay-fade-leave-to {
+    opacity: 0;
+}
+</style>

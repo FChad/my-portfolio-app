@@ -705,6 +705,7 @@
       "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
       "submit": "Nachricht senden",
       "sending": "Wird gesendet...",
+      "tryAgain": "Erneut versuchen",
       "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
       "errors": {
         "nameRequired": "Name ist erforderlich",

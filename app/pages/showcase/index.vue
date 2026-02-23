@@ -144,7 +144,7 @@ const totalCount = computed(() => showcaseItems.value.length)
                         <input v-model="searchTerm" type="text" :placeholder="t('showcase.search.placeholder')"
                             class="w-full pl-11 pr-10 py-2.5 md:py-3 text-sm md:text-base bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 rounded-xl md:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-neutral-900 dark:text-white placeholder-neutral-400 shadow-md transition-all" />
                         <button v-if="searchTerm" @click="searchTerm = ''"
-                            class="absolute inset-y-0 right-0 pr-4 flex items-center text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">
+                            class="cursor-pointer absolute inset-y-0 right-0 pr-4 flex items-center text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">
                             <Icon name="mdi:close" class="w-4 h-4" />
                         </button>
                     </div>

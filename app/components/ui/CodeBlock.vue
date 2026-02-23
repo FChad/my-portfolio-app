@@ -137,7 +137,7 @@ const copyToClipboard = async () => {
             <div class="flex items-center gap-1 shrink-0 ml-2">
                 <!-- Copy Button -->
                 <button @click="copyToClipboard" :class="[
-                    'flex items-center justify-center rounded-md w-7 h-7 sm:w-8 sm:h-8 touch-manipulation active:scale-90 transition-all',
+                    'cursor-pointer flex items-center justify-center rounded-md w-7 h-7 sm:w-8 sm:h-8 touch-manipulation active:scale-90 transition-all',
                     isCopied
                         ? 'bg-green-500 text-white shadow-lg'
                         : 'bg-neutral-400 hover:bg-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 text-white hover:scale-105 hover:shadow-lg'

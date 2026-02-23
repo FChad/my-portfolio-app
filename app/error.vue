@@ -64,7 +64,7 @@ const errorCode = computed(() => {
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <button @click="handleError"
-                        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        class="cursor-pointer px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                         <Icon name="mdi:home" class="w-5 h-5" />
                         {{ t('error.backHome') }}
                     </button>
