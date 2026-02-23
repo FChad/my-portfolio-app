@@ -36,10 +36,10 @@ const profileInfo = computed(() => [
 const hoveredExperience = ref<number | null>(null)
 
 const languages = [
-    { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu' },
-    { name: t('about.languageNames.german'), level: 'C1', flag: 'circle-flags:de' },
-    { name: t('about.languageNames.english'), level: 'B2', flag: 'circle-flags:gb' },
-    { name: t('about.languageNames.french'), level: 'B1', flag: 'circle-flags:fr' }
+    { name: t('about.languageNames.luxemburgish'), level: 'C2', native: true, flag: 'circle-flags:lu', progress: 100 },
+    { name: t('about.languageNames.german'), level: 'C1', flag: 'circle-flags:de', progress: 85 },
+    { name: t('about.languageNames.english'), level: 'B2', flag: 'circle-flags:gb', progress: 70 },
+    { name: t('about.languageNames.french'), level: 'B1', flag: 'circle-flags:fr', progress: 55 }
 ]
 
 const certifications = [
@@ -314,35 +314,42 @@ const experiences = [
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">{{ $t('about.languages.subtitle') }}</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <div v-for="lang in languages" :key="lang.name"
                     class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="space-y-4 md:space-y-6">
-                        <!-- Flag with native badge -->
-                        <div class="flex items-center justify-between">
-                            <Icon :name="lang.flag" class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full shadow-md" />
-                            <span v-if="lang.native"
-                                class="px-2 py-1 md:px-3 md:py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold rounded-full">
-                                Native
-                            </span>
+
+                    <div class="flex flex-col items-center text-center gap-3 md:gap-4 lg:gap-5">
+                        <!-- Flag with subtle ring -->
+                        <div class="relative">
+                            <svg class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 -rotate-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="44" fill="none" stroke-width="4"
+                                    class="stroke-neutral-200 dark:stroke-neutral-700" />
+                                <circle cx="50" cy="50" r="44" fill="none" stroke-width="4"
+                                    stroke-linecap="round"
+                                    class="stroke-blue-500"
+                                    :stroke-dasharray="`${lang.progress * 2.764} 276.4`" />
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <Icon :name="lang.flag"
+                                    class="w-11 h-11 md:w-13 md:h-13 lg:w-15 lg:h-15 rounded-full group-hover:scale-110 transition-transform duration-300" />
+                            </div>
                         </div>
 
                         <!-- Language name -->
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white">{{ lang.name }}</h3>
+                        <h3 class="text-base md:text-lg lg:text-xl font-bold text-neutral-800 dark:text-white">
+                            {{ lang.name }}
+                        </h3>
 
-                        <!-- Level with progress bar -->
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs md:text-sm text-neutral-600 dark:text-neutral-400">{{ $t('about.languages.proficiency') }}</span>
-                                <span class="text-base md:text-lg font-black text-blue-600 dark:text-blue-400">{{ lang.level }}</span>
-                            </div>
-                            <div class="h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-blue-500 rounded-full transition-all duration-1000"
-                                    :style="{ width: lang.level === 'C2' ? '100%' : lang.level === 'C1' ? '85%' : lang.level === 'B2' ? '70%' : '55%' }">
-                                </div>
-                            </div>
-                            <p class="text-xs text-neutral-500 dark:text-neutral-400">{{ $t(`about.languages.levels.${lang.level}`) }}</p>
+                        <!-- Level -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg md:text-xl font-black text-blue-600 dark:text-blue-400">{{ lang.level }}</span>
+                            <span v-if="lang.native" class="text-[10px] md:text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">Native</span>
                         </div>
+
+                        <!-- Proficiency description -->
+                        <p class="text-xs md:text-sm text-neutral-500 dark:text-neutral-400">
+                            {{ $t(`about.languages.levels.${lang.level}`) }}
+                        </p>
                     </div>
                 </div>
             </div>
