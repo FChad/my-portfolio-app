@@ -159,6 +159,10 @@
     }
   },
   "about": {
+    "header": {
+      "title": "Iwwer mech",
+      "subtitle": "Léiert d'Persoun hannert dem Code kennen, mäi Wiessel, meng Fäegkeeten a Leidenschaften."
+    },
     "profile": {
       "nationality": "Lëtzebuergesch",
       "location": "Rëmeleng, Lëtzebuerg",

@@ -164,6 +164,10 @@
     }
   },
   "about": {
+    "header": {
+      "title": "About Me",
+      "subtitle": "Get to know the person behind the code, my background, skills and passions."
+    },
     "profile": {
       "nationality": "Luxembourgish",
       "location": "Rumelange, Luxembourg",

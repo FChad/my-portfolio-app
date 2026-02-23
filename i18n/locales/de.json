@@ -164,6 +164,10 @@
     }
   },
   "about": {
+    "header": {
+      "title": "Über mich",
+      "subtitle": "Lernen Sie die Person hinter dem Code kennen, mein Werdegang, meine Fähigkeiten und Leidenschaften."
+    },
     "profile": {
       "nationality": "Luxemburgisch",
       "location": "Rümelingen, Luxemburg",

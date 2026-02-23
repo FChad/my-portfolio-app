@@ -235,13 +235,23 @@ const experiences = [
     <!-- Profile Introduction -->
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-800 dark:text-white">
+                    {{ $t('about.header.title') }}
+                </h1>
+                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+                    {{ $t('about.header.subtitle') }}
+                </p>
+            </div>
+
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 <!-- Left: Name, role & intro -->
                 <div class="space-y-4 md:space-y-6">
                     <!-- Name -->
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-neutral-800 dark:text-white">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-neutral-800 dark:text-white">
                         Chad Feierstein
-                    </h1>
+                    </h2>
 
                     <!-- Intro text -->
                     <i18n-t keypath="about.story.intro" tag="p" scope="global"
