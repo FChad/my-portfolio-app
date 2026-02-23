@@ -122,9 +122,9 @@ const maxWidthClasses = {
 
                     <!-- Modern close button with hover effect -->
                     <button @click="close"
-                        class="shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-700 hover:bg-red-100 dark:hover:bg-red-900/30 group transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105">
+                        class="shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-neutral-200 dark:bg-neutral-700 hover:bg-red-100 dark:hover:bg-red-900/30 group cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105">
                         <Icon name="mdi:close"
-                            class="w-5 h-5 text-neutral-600 dark:text-neutral-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" />
+                            class="w-5 h-5 text-neutral-700 dark:text-neutral-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" />
                     </button>
                 </div>
 
