@@ -1,11 +1,4 @@
 <script setup lang="ts">
-const techStack = computed(() => [
-    'Vue.js 3',
-    'Nuxt.js',
-    'TypeScript',
-    'OpenRouter.ai',
-    '+2'
-])
 </script>
 
 <template>
@@ -47,35 +40,24 @@ const techStack = computed(() => [
                             </p>
                         </div>
 
-                        <!-- Tech Stack -->
-                        <div class="space-y-2 md:space-y-3">
-                            <h4
-                                class="text-xs md:text-sm font-bold text-neutral-600 dark:text-neutral-400 uppercase tracking-wider flex items-center gap-2">
-                                <Icon name="mdi:cog" class="w-3.5 h-3.5 md:w-4 md:h-4" />
-                                {{ $t('home.featured.techStack') }}
-                            </h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span v-for="(tech, index) in techStack" :key="index"
-                                    :class="index === techStack.length - 1
-                                        ? 'px-2.5 py-1 md:px-3 md:py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-full text-xs md:text-sm'
-                                        : 'px-2.5 py-1 md:px-3 md:py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm font-medium'">
-                                    {{ tech }}
-                                </span>
-                            </div>
-                        </div>
-
                         <!-- Action Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center pt-2 md:pt-4">
                             <NuxtLinkLocale to="/showcase/project/my-chat-bot"
-                                class="flex-1 inline-flex items-center justify-center gap-2 md:gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl md:rounded-2xl font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm md:text-base">
-                                <Icon name="mdi:eye" class="w-4 h-4 md:w-5 md:h-5" />
-                                {{ $t('home.featured.cta.view') }}
+                                class="group w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
+                                <span class="flex items-center gap-3">
+                                    <Icon name="mdi:eye"
+                                        class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                                    {{ $t('home.featured.cta.view') }}
+                                </span>
                             </NuxtLinkLocale>
 
                             <a href="https://ai.chad.lu" target="_blank" rel="noopener noreferrer"
-                                class="flex-1 inline-flex items-center justify-center gap-2 md:gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-white dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 text-neutral-700 dark:text-neutral-200 rounded-xl md:rounded-2xl font-bold border border-neutral-200 dark:border-neutral-600 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm md:text-base">
-                                <Icon name="mdi:rocket-launch" class="w-4 h-4 md:w-5 md:h-5" />
-                                {{ $t('home.featured.cta.demo') }}
+                                class="group w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center hover:-translate-y-1">
+                                <span class="flex items-center gap-3">
+                                    {{ $t('home.featured.cta.demo') }}
+                                    <Icon name="mdi:rocket-launch"
+                                        class="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                                </span>
                             </a>
                         </div>
                     </div>

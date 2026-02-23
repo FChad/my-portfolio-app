@@ -43,7 +43,7 @@ const infoCards = computed(() => [
                 <!-- Left: Main intro -->
                 <div class="space-y-4 md:space-y-6">
                     <!-- Story -->
-                    <i18n-t keypath="home.about.story" tag="p"
+                    <i18n-t keypath="home.about.story" tag="p" scope="global"
                         class="text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
                         <template #role>
                             <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('home.about.storyHighlights.role') }}</strong>

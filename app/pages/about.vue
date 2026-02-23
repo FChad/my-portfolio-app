@@ -255,7 +255,7 @@ const experiences = [
                         <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-neutral-800 dark:text-white">
                             Chad Feierstein
                         </h1>
-                        <i18n-t keypath="about.story.intro" tag="p"
+                        <i18n-t keypath="about.story.intro" tag="p" scope="global"
                             class="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
                             <template #role>
                                 <strong class="font-semibold text-neutral-800 dark:text-neutral-100">{{ $t('about.story.introHighlights.role') }}</strong>
