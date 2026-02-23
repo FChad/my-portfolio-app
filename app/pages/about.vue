@@ -372,26 +372,22 @@ const experiences = [
                 </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 <div v-for="cert in certifications" :key="cert.title"
                     class="group relative bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="flex flex-col gap-3 md:gap-4 h-full">
-                        <!-- Icon and year -->
-                        <div class="flex items-start justify-between">
-                            <div class="w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-blue-500 rounded-xl md:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shrink-0">
-                                <Icon :name="cert.icon" class="w-6 h-6 md:w-6.5 md:h-6.5 lg:w-7 lg:h-7 text-white" />
-                            </div>
-                            <span
-                                class="px-2 py-1 md:px-3 md:py-1 bg-neutral-100 dark:bg-neutral-700 rounded-full text-xs md:text-sm font-bold text-neutral-700 dark:text-neutral-300">
+                    <div class="flex flex-col gap-4 md:gap-5 lg:gap-6 h-full">
+                        <!-- Year badge -->
+                        <div>
+                            <span class="px-2.5 py-1 sm:px-3 sm:py-1 bg-neutral-100 dark:bg-neutral-700 rounded-full text-xs sm:text-sm font-bold text-neutral-700 dark:text-neutral-300">
                                 {{ cert.year }}
                             </span>
                         </div>
 
                         <!-- Title -->
-                        <h3 class="text-base md:text-lg lg:text-xl font-bold text-neutral-800 dark:text-white">{{ cert.title }}</h3>
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-black text-neutral-800 dark:text-white">{{ cert.title }}</h3>
 
                         <!-- Description -->
-                        <p class="text-xs md:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed flex-1">{{ cert.description }}</p>
+                        <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed flex-1">{{ cert.description }}</p>
                     </div>
                 </div>
             </div>
