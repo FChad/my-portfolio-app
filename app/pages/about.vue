@@ -476,7 +476,7 @@ const experiences = [
                                 {{ experience.title }}
                             </h3>
                             <p
-                                class="text-xs md:text-sm lg:text-base text-white/90 leading-relaxed drop-shadow-md group-hover:text-white transition-colors">
+                                class="text-xs md:text-sm lg:text-base text-white/90 leading-relaxed drop-shadow-md max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
                                 {{ experience.description }}
                             </p>
                         </div>
