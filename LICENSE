@@ -1,0 +1,61 @@
+MIT License with Content Restrictions
+
+Copyright (c) 2025 Chad Feierstein
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+**CONTENT RESTRICTIONS:**
+
+While you are free to use the code structure, components, and technical implementation
+of this portfolio website, you are **NOT permitted** to copy or reuse:
+
+1. **Personal Information**: My name (Chad Feierstein), personal data, contact details, 
+   biographical information, or any personally identifiable information.
+
+2. **Personal Content**: Project descriptions, portfolio items, showcase entries, 
+   blog posts, articles, documentation content, or any other textual content that 
+   represents my personal work and achievements.
+
+3. **Personal Media**: Images, graphics, logos, or visual assets that represent me 
+   or my personal brand.
+
+4. **Translation Content**: All text content in the i18n localization files 
+   (de.json, en.json, fr.json, lb.json) that describes my personal information, 
+   projects, or achievements.
+
+**YOU ARE PERMITTED TO:**
+
+- Use the code structure, architecture, and technical implementation as inspiration
+- Adapt components, layouts, and styling for your own projects
+- Study and learn from the codebase
+- Fork and modify the code for your own portfolio with your own content
+- Use the technical patterns and configurations demonstrated in this project
+
+**YOU MUST:**
+
+- Replace all personal content with your own information
+- Remove or replace my name, projects, and personal data
+- Create your own project descriptions and portfolio items
+- Provide your own translations and textual content
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+**Summary**: Feel free to use this codebase as inspiration and technical reference 
+for building your own portfolio, but please respect that my personal content, 
+projects, and identity are not to be copied. Create your own unique content!

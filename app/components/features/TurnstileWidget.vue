@@ -1,0 +1,136 @@
+<template>
+    <div class="flex justify-center">
+        <!-- Container mit exakter Turnstile-Größe (300x65px) um Layout-Shift zu vermeiden -->
+        <div class="turnstile-container">
+            <div v-if="isReady" ref="turnstileElement" />
+            <div v-else
+                class="w-full h-full rounded-lg flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 animate-pulse">
+                <Icon name="mdi:loading" class="animate-spin text-neutral-400 dark:text-neutral-500 text-2xl" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+declare global {
+    interface Window {
+        turnstile: {
+            render: (element: HTMLElement, options: any) => string
+            reset: (widgetId: string) => void
+            remove: (widgetId: string) => void
+        }
+    }
+}
+
+interface Props {
+    siteKey: string
+    modelValue?: string
+}
+
+const props = defineProps<Props>()
+const emit = defineEmits<{
+    'update:modelValue': [value: string]
+    'verified': [token: string]
+    'expired': []
+    'error': [error: string]
+}>()
+
+const { $colorMode } = useNuxtApp()
+const turnstileElement = ref<HTMLElement>()
+const widgetId = ref<string>()
+const isReady = ref(false)
+
+const isDark = computed(() => $colorMode?.value === 'dark')
+
+const renderTurnstile = () => {
+    if (import.meta.client && window.turnstile && turnstileElement.value) {
+        try {
+            // Remove existing widget if it exists
+            if (widgetId.value) {
+                try {
+                    window.turnstile.remove(widgetId.value)
+                } catch {
+                    // Widget removal failed silently
+                }
+                widgetId.value = undefined
+            }
+
+            // Clear the DOM element to ensure clean state
+            turnstileElement.value.innerHTML = ''
+
+            // Render with direct function references
+            widgetId.value = window.turnstile.render(turnstileElement.value, {
+                sitekey: props.siteKey,
+                callback: (token: string) => {
+                    emit('update:modelValue', token)
+                    emit('verified', token)
+                },
+                'expired-callback': () => {
+                    emit('update:modelValue', '')
+                    emit('expired')
+                },
+                'error-callback': (error: string) => {
+                    emit('update:modelValue', '')
+                    emit('error', error)
+                },
+                theme: isDark.value ? 'dark' : 'light',
+                language: 'auto'
+            })
+        } catch {
+            // Turnstile render failed silently
+        }
+    }
+}
+
+const resetTurnstile = () => {
+    if (import.meta.client && window.turnstile && widgetId.value) {
+        window.turnstile.reset(widgetId.value)
+        emit('update:modelValue', '')
+    }
+}
+
+// Watch for theme changes
+watch(isDark, () => {
+    if (widgetId.value && isReady.value) {
+        // Clear token when theme changes to ensure clean state
+        emit('update:modelValue', '')
+        // Re-render with new theme
+        nextTick(() => renderTurnstile())
+    }
+})
+
+onMounted(() => {
+    // Wait for Turnstile script to load
+    const checkTurnstile = () => {
+        if (import.meta.client && window.turnstile) {
+            isReady.value = true
+            nextTick(() => renderTurnstile())
+        } else {
+            setTimeout(checkTurnstile, 100)
+        }
+    }
+    checkTurnstile()
+})
+
+onBeforeUnmount(() => {
+    // Clean up Turnstile widget
+    if (import.meta.client && window.turnstile && widgetId.value) {
+        try {
+            window.turnstile.remove(widgetId.value)
+        } catch {
+            // Cleanup failed silently
+        }
+    }
+})
+
+defineExpose({
+    reset: resetTurnstile
+})
+</script>
+
+<style scoped>
+.turnstile-container {
+    width: 300px;
+    height: 65px;
+}
+</style>

@@ -1,0 +1,620 @@
+{
+  "common": {
+    "sections": {
+      "setupSteps": "Setup Steps",
+      "additionalTips": "Additional Tips",
+      "additionalTipsSubtitle": "Useful commands and tips for better management",
+      "troubleshooting": "Troubleshooting",
+      "troubleshootingSubtitle": "Common issues and their solutions",
+      "additionalResources": "Additional Resources",
+      "additionalResourcesSubtitle": "Official documentation and helpful links",
+      "keyFeatures": "Key Features",
+      "keyFeaturesSubtitle": "Explore the main features and functionalities"
+    },
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNav": "Mobile navigation"
+  },
+  "seo": {
+    "home": {
+      "title": "Home",
+      "description": "Professional Full-Stack Developer and IT Administrator from Luxembourg. Specialized in modern web technologies, cloud computing and innovative digital solutions.",
+      "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "Learn more about Chad Feierstein, Full-Stack Developer with BTS Cloud Computing education and professional IT experience in Luxembourg.",
+      "keywords": "Chad Feierstein, About, IT Experience, BTS Cloud Computing, IT Technician, Luxembourg"
+    },
+    "showcase": {
+      "title": "Showcase",
+      "description": "Discover my latest projects, documentation and technical solutions. From web development to cloud infrastructures.",
+      "keywords": "Portfolio, Projects, Web Development, AI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "description": "Get in touch for professional web development, IT administration and cloud computing solutions. Fast and reliable responses guaranteed.",
+      "keywords": "Contact, Chad Feierstein, Hire Web Developer, IT Services, Cloud Computing Consulting"
+    },
+    "projects": {
+      "chatbot": {
+        "title": "AI Chat Bot Project",
+        "description": "Modern AI Chat Bot with advanced natural language processing capabilities. Built with Vue.js and integrated AI APIs for natural conversations.",
+        "keywords": "AI Chat Bot, Artificial Intelligence, Vue.js, Chat Assistant, Natural Language Processing"
+      },
+      "portfolio": {
+        "title": "Portfolio Website Project",
+        "description": "Modern portfolio website built with Nuxt, Vue and TypeScript. Multilingual, SEO-optimized with dark mode and performant animations.",
+        "keywords": "Portfolio Website, Nuxt, Vue, TypeScript, Multilingual, SEO, Dark Mode"
+      }
+    },
+    "documentation": {
+      "debian12": {
+        "title": "Debian 12 Initial Setup Guide",
+        "description": "Complete guide for initial Debian 12 server setup. From basic configuration to security hardening.",
+        "keywords": "Debian 12, Server Setup, Linux Administration, System Configuration, Server Security"
+      },
+      "cardanoNode": {
+        "title": "Cardano Node Setup Guide",
+        "description": "Step-by-step guide for installing and configuring a Cardano Node on Debian 12. Including monitoring and optimization.",
+        "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
+      },
+      "cardanoDbSync": {
+        "title": "Cardano DB Sync Installation Guide",
+        "description": "Detailed guide for installing Cardano DB Sync on Debian. PostgreSQL configuration and database synchronization.",
+        "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
+      },
+      "ollama": {
+        "title": "Ollama Installation Guide",
+        "description": "Complete guide for installing and configuring Ollama on Debian 12. Local AI model management and GPU acceleration.",
+        "keywords": "Ollama, AI Models, Local AI, Debian, Machine Learning, GPU Acceleration, LLM"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy for www.chad.lu. Information about data processing, your rights, and technical storage on this website.",
+      "keywords": "Privacy, GDPR, Privacy Policy, Data Protection, Chad Feierstein"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "showcase": "Showcase",
+    "contact": "Contact",
+    "back": "Back"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "roles": {
+      "fullstack": "Full-Stack Developer",
+      "serveradmin": "Server Administrator",
+      "solver": "Problem Solver"
+    },
+    "tagline": "Discover my projects, skills and previous work and get to know me better.",
+    "cta": {
+      "primary": "Discover Projects",
+      "secondary": "Get in Touch"
+    },
+    "about": {
+      "title": "Get to Know Me",
+      "subtitle": "Learn more about my background, experience and what drives my passion for technology.",
+      "cta": "Learn More About Me",
+      "role": "Full-Stack Web Developer",
+      "story": "I am Chad Feierstein, a 26-year-old {role} and {admin} from {location}. With an education as a Computer Science Technician and a BTS in {cloud}, I bring over {experience}. From frontend and backend to server management and modern technologies, I master complex challenges while constantly learning new things.",
+      "storyHighlights": {
+        "role": "Full-Stack Developer",
+        "admin": "IT Administrator",
+        "location": "Luxembourg",
+        "cloud": "Cloud Computing",
+        "experience": "5 years of IT experience"
+      },
+      "experience": "Computer Science Technician",
+      "education": "BTS Cloud Computing",
+      "training": "Training",
+      "study": "Studies"
+    },
+    "services": {
+      "title": "What I Offer",
+      "subtitle": "From concept to implementation: I develop customized solutions for your digital requirements.",
+      "webdev": {
+        "title": "Web Development",
+        "description": "Modern, responsive websites with proven and new technologies, both frontend and backend. From PHP, JavaScript and CSS to Nuxt, Tailwind and the latest web standards.",
+        "features": {
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt & Tailwind",
+          "pwa": "Full-Stack Development"
+        }
+      },
+      "cloud": {
+        "title": "Virtualization",
+        "description": "Professional virtualization solutions for efficient and flexible IT infrastructures. Setup of development environments, server virtualization and performance optimization.",
+        "features": {
+          "aws": "Development Environments",
+          "azure": "Server Virtualization",
+          "gcp": "Performance Optimization"
+        }
+      },
+      "itadmin": {
+        "title": "IT Administration",
+        "description": "Comprehensive system administration and network management for reliable infrastructure. With solid knowledge in operating systems, server management and network technologies.",
+        "features": {
+          "linux": "Operating Systems",
+          "networks": "Server Management",
+          "security": "Network Technologies"
+        }
+      }
+    },
+    "featured": {
+      "title": "Featured Project",
+      "subtitle": "Discover my latest innovation, where cutting-edge AI meets intuitive design.",
+      "projectTitle": "AI Chat Bot",
+      "description": "An advanced AI Chat Bot that conducts intelligent conversations and handles complex queries. This project combines cutting-edge AI technology with an elegant, user-friendly interface, providing a seamless experience for natural conversations. The bot leverages powerful language models through OpenRouter.ai, supports multiple AI models, and intelligently adapts to various conversation contexts. With real-time responses, markdown support, and thoughtful dark/light mode integration, this chat bot is a perfect example of modern full-stack development.",
+      "cta": {
+        "view": "View Details",
+        "demo": "Try Live Demo"
+      }
+    }
+  },
+  "about": {
+    "header": {
+      "title": "About Me",
+      "subtitle": "Get to know the person behind the code, my background, skills and passions."
+    },
+    "profile": {
+      "nationality": "Luxembourgish",
+      "location": "Rumelange, Luxembourg",
+      "status": "Single",
+      "driving": "Category B",
+      "labels": {
+        "location": "Location",
+        "nationality": "Nationality",
+        "status": "Status",
+        "license": "License"
+      }
+    },
+    "story": {
+      "intro": "I am Chad Feierstein, a {age}-year-old {role} and {admin} from {location}. My focus is on {cloud}, from developing {webapps} to professional {servers}. Throughout my {positions}, I have gained hands-on experience across various IT domains, including ERP systems, database management, and web programming. My foundation consists of an IT Technician diploma (DT) and a Higher Technical Degree (BTS) in Cloud Computing. Thanks to my {langCount}, I communicate effortlessly in international teams.",
+      "introHighlights": {
+        "role": "Full-Stack Web Developer",
+        "admin": "IT Administrator",
+        "cloud": "Cloud Computing",
+        "webapps": "modern web applications",
+        "servers": "server management",
+        "location": "Luxembourg",
+        "positions": "six professional positions",
+        "langCount": "four languages"
+      }
+    },
+    "interests": {
+      "title": "Interests & Hobbies",
+      "subtitle": "What excites me in my free time",
+      "bubble": "Life beyond code!"
+    },
+    "interestsList": {
+      "tech": {
+        "title": "Technology",
+        "subtitle": "Coding, cloud & server tinkering"
+      },
+      "family": {
+        "title": "Family & Pets",
+        "subtitle": "Quality time with loved ones & 3 dachshunds"
+      },
+      "gaming": {
+        "title": "Gaming",
+        "subtitle": "Relaxing with video game sessions"
+      },
+      "friends": {
+        "title": "Friends",
+        "subtitle": "Regular meetups & activities together"
+      }
+    },
+    "languages": {
+      "title": "Languages",
+      "subtitle": "Multilingual communication",
+      "native": "Native",
+      "levels": {
+        "A1": "Basic",
+        "A2": "Elementary",
+        "B1": "Intermediate",
+        "B2": "Upper Intermediate",
+        "C1": "Advanced",
+        "C2": "Near Native"
+      }
+    },
+    "education": {
+      "title": "Education",
+      "links": {
+        "bts": "View BTS CLC",
+        "dt": "View DT IF"
+      },
+      "bts": {
+        "degree": "BTS Cloud Computing",
+        "field": "Two-year higher technical degree focused on cloud technologies, virtualization, network infrastructure and modern IT solutions. Hands-on training in AWS, Azure and Linux server administration.",
+        "school": "Lycée Guillaume Kroll",
+        "grade": "Diploma"
+      },
+      "dt": {
+        "degree": "IT Technician",
+        "field": "Four-year technical education focused on programming, networking, databases and system administration. Solid foundations in hardware, software and IT security.",
+        "school": "Lycée Guillaume Kroll",
+        "grade": "Diploma"
+      }
+    },
+    "work": {
+      "subtitle": "Work experience & education timeline",
+      "journey": "My Professional Journey",
+      "viewDetails": "View Details",
+      "modal": {
+        "tasks": "Main Tasks"
+      }
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Professional certifications and qualifications that demonstrate my expertise in various technology areas"
+    },
+    "cta": {
+      "title": "Let's Connect",
+      "subtitle": "Have questions or interested in connecting? I'd love to hear from you.",
+      "button": "Get in Touch"
+    },
+    "languageNames": {
+      "luxemburgish": "Luxembourgish",
+      "german": "German",
+      "english": "English",
+      "french": "French"
+    },
+    "certificationsList": {
+      "cert1": {
+        "title": "General Aptitude Test",
+        "description": "Public sector eligibility exam in Luxembourg"
+      },
+      "cert2": {
+        "title": "Cisco Certified CyberOps Associate",
+        "description": "Cybersecurity monitoring and incident response"
+      },
+      "cert3": {
+        "title": "Cisco Certified Network Associate 3",
+        "description": "Enterprise networking and network automation"
+      },
+      "cert4": {
+        "title": "Cisco Certified Network Associate 2",
+        "description": "Switching, routing and network security"
+      },
+      "cert5": {
+        "title": "Cisco Certified Network Associate 1",
+        "description": "Networking fundamentals and IP addressing"
+      },
+      "cert6": {
+        "title": "Microsoft Office Specialist 2016",
+        "description": "PowerPoint, Word, Excel and Outlook"
+      }
+    },
+    "timelineItems": {
+      "item1": {
+        "title": "Web Developer at Mullerpneus",
+        "description": "Development and maintenance of the internal ERP system and online shop. Responsible for new features, bug fixing, databases and server-side configurations.",
+        "company": "Mullerpneus",
+        "type": "Full-time",
+        "task1": "Feature Development: Planning and implementation of new ERP and shop features",
+        "task2": "Maintenance: Error analysis, debugging and performance optimization",
+        "task3": "Databases: Administration, maintenance and optimization of MySQL databases",
+        "task4": "Server: Configuration of FTP, SFTP, email, websockets and PHP versions",
+        "task5": "Monitoring: Log analysis and proactive troubleshooting"
+      },
+      "item2": {
+        "title": "IT Cloud Engineer Internship",
+        "description": "12-week internship at QPark Consulting focusing on cloud technologies and agile project methods. Work on two major cloud projects with AWS and GCP.",
+        "company": "QPark Consulting",
+        "type": "Internship",
+        "task1": "Project planning with agile methodologies",
+        "task2": "Virtual machine configuration on Google Cloud Platform",
+        "task3": "Website implementation in GCP VMs",
+        "task4": "Static website deployment on AWS S3",
+        "task5": "REST API integration and data processing",
+        "task6": "Cloud cost optimization and best practices"
+      },
+      "item3": {
+        "title": "IT Technician Summer Job",
+        "description": "8-week summer position at Lycée Guillaume Kroll in the IT department. Focus on network infrastructure and telephone system management.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Summer Job",
+        "task1": "Setup and management of MIXvoip phones",
+        "task2": "Installation of new telephone connections in server room",
+        "task3": "Patch panel documentation updates in Excel",
+        "task4": "Network cable management and organization"
+      },
+      "item4": {
+        "title": "IT Technician Project Completion",
+        "description": "4-week summer job to complete a website project started during the internship. Focus on backend development and SAML integration.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Summer Job",
+        "task1": "Customer meetings and project coordination",
+        "task2": "Backend programming and modifications",
+        "task3": "SAML authentication service integration",
+        "task4": "Frontend development and UI adjustments",
+        "task5": "Professional hardware disposal"
+      },
+      "item5": {
+        "title": "IT Technician Main Internship",
+        "description": "6-week internship at Lycée Guillaume Kroll focusing on web development and database design. Development of a complete website solution.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Internship",
+        "task1": "Customer meetings and requirements analysis",
+        "task2": "Backend and frontend development",
+        "task3": "Conceptual database modeling",
+        "task4": "Logical database modeling",
+        "task5": "Database implementation with proper relationships"
+      },
+      "item6": {
+        "title": "IT Network Technician Internship",
+        "description": "6-week internship at STEP Syndicat intercommunal in Peppange. Introduction to network technology and infrastructure management in a sewage treatment plant.",
+        "company": "STEP Syndicat intercommunal",
+        "type": "Internship",
+        "task1": "Introduction to organizational structure",
+        "task2": "Learning sewage treatment plant processes",
+        "task3": "Creation of new patch panel plans",
+        "task4": "Patch cable management and labeling",
+        "task5": "Practical network structure analysis"
+      }
+    },
+    "experiencesList": {
+      "exp1": {
+        "title": "Helicopter Flight over Dominican Republic",
+        "description": "Breathtaking aerial tour over the city and Caribbean Sea, an unforgettable bird's-eye view experience"
+      },
+      "exp2": {
+        "title": "Skydiving over Luxembourg",
+        "description": "20-minute scenic flight, then jump from 4,000m, reaching 200km/h in freefall, followed by 5-7 minutes gliding to a smooth landing"
+      },
+      "exp3": {
+        "title": "Tomorrowland Belgium 2025",
+        "description": "4 unforgettable days filled with electronic music, magical atmosphere, and amazing people from around the world"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Showcase",
+    "subtitle": "Discover my projects and documentation",
+    "filters": {
+      "all": "All",
+      "projects": "Projects",
+      "documentation": "Documentation"
+    },
+    "search": {
+      "placeholder": "Search..."
+    },
+    "labels": {
+      "viewDetails": "View Details"
+    },
+    "noResults": {
+      "title": "No results found",
+      "description": "Try adjusting your search or filter to find what you're looking for."
+    }
+  },
+  "projects": {
+    "myChatBot": {
+      "title": "My Chat Bot",
+      "description": "A modern, optimized chat application with OpenRouter.ai integration for direct chat with various AI models. Offers ChatGPT-like functionality with local storage and advanced features.",
+      "features": {
+        "aiChat": {
+          "title": "AI Chat",
+          "description": "Chat with various AI models"
+        },
+        "conversationManagement": {
+          "title": "Conversation Management",
+          "description": "Multiple chats with auto-save"
+        },
+        "modelSelection": {
+          "title": "Model Selection",
+          "description": "Various AI models to choose from"
+        },
+        "localStorage": {
+          "title": "Local Storage",
+          "description": "Secure storage in the browser"
+        },
+        "modernUI": {
+          "title": "Modern UI",
+          "description": "Responsive UI with Dark Mode"
+        },
+        "streaming": {
+          "title": "Real-time Streaming",
+          "description": "Smooth real-time responses"
+        }
+      },
+      "callToAction": {
+        "title": "Ready to Experience AI Chat?",
+        "subtitle": "Try My Chat Bot today and discover the power of local AI models with an intuitive chat interface.",
+        "button": "Start Demo"
+      }
+    },
+    "myPortfolio": {
+      "title": "My Portfolio Website",
+      "description": "A modern, responsive portfolio website showcasing my projects and skills. Built with the latest web technologies focusing on performance, accessibility, and user experience.",
+      "features": {
+        "multilingual": {
+          "title": "Multilingual",
+          "description": "4 languages: LB, DE, FR, EN"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "description": "Optimized for all screen sizes"
+        },
+        "darkMode": {
+          "title": "Dark Mode",
+          "description": "Automatic Dark/Light theme"
+        },
+        "performance": {
+          "title": "High Performance",
+          "description": "SSR for fast loading times"
+        },
+        "seo": {
+          "title": "SEO Optimized",
+          "description": "Sitemap, meta tags & more"
+        },
+        "contact": {
+          "title": "Contact Form",
+          "description": "Form with validation & email"
+        }
+      },
+      "callToAction": {
+        "title": "Interested in a Similar Website?",
+        "subtitle": "Explore my portfolio website and see how modern web technologies can create an impressive online presence.",
+        "button": "Visit Website"
+      }
+    }
+  },
+  "documentations": {
+    "ollamaSetup": {
+      "title": "Linux - Ollama Installation",
+      "description": "A comprehensive step-by-step guide for installing Ollama on Debian 12 with Apache2 reverse proxy, SSL encryption and HTTP Basic Authentication for secure public API usage."
+    },
+    "debianInitialSetup": {
+      "title": "Debian 12 - Initial Server Setup",
+      "description": "A comprehensive step-by-step guide for the initial setup of a fresh Debian 12 server with the most important configuration steps."
+    },
+    "cardanoNodeSetup": {
+      "title": "Linux - Cardano Node Installation",
+      "description": "Complete guide for installing a Cardano Node on Debian 12 with the NIX package manager, including service configuration and monitoring."
+    },
+    "cardanoDbSyncSetup": {
+      "title": "Linux - Cardano DB Sync Installation",
+      "description": "Complete guide for installing Cardano DB Sync on Debian 12 with PostgreSQL database and NIX package manager, including service configuration"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Do you have questions or feedback? I'm here to help.",
+    "methods": {
+      "linkedin": {
+        "title": "LinkedIn"
+      },
+      "github": {
+        "title": "GitHub"
+      }
+    },
+    "form": {
+      "title": "Send a Message",
+      "description": "Fill out the form below and I'll get back to you as soon as possible.",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or inquiry...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "tryAgain": "Try Again",
+      "success": "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+      "errors": {
+        "nameRequired": "Name is required",
+        "nameLength": "Name must be between 2 and 100 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "subjectRequired": "Subject is required",
+        "subjectLength": "Subject must be between 5 and 200 characters",
+        "messageRequired": "Message is required",
+        "messageMinLength": "Message must be at least 10 characters long",
+        "messageMaxLength": "Message must not exceed 2000 characters",
+        "rateLimited": "Too many requests. Please try again later.",
+        "invalidData": "Invalid form data. Please check your inputs.",
+        "serverError": "An error occurred. Please try again later.",
+        "captchaRequired": "Please complete the security verification.",
+        "captchaFailed": "Security verification failed. Please try again.",
+        "captchaExpired": "Security verification has expired. Please solve it again.",
+        "captchaError": "Security verification error. Please refresh the page."
+      }
+    }
+  },
+  "error": {
+    "404": {
+      "title": "Page Not Found",
+      "message": "The page you're looking for doesn't exist or has been moved."
+    },
+    "general": {
+      "title": "Oops! Something went wrong",
+      "message": "An unexpected error occurred. Please try again later."
+    },
+    "backHome": "Back to Home",
+    "contact": "Contact Us",
+    "helpfulLinks": "Helpful Links:"
+  },
+  "footer": {
+    "copyright": "Built with ❤",
+    "description": "Full-Stack Developer & IT Technician from Luxembourg",
+    "navigation": "Navigation",
+    "sourceCode": "Source Code",
+    "privacy": "Privacy Policy"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "updateDate": "January 2026",
+    "backToHome": "Back to Home",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Protecting your personal data is important to me. This privacy policy informs you about how I process your data on this website and what rights you have."
+      },
+      "responsible": {
+        "title": "Data Controller",
+        "location": "Rumelange, Luxembourg",
+        "contact": "Contact Form"
+      },
+      "dataCollection": {
+        "title": "Data Collection on This Website",
+        "content": "This website was developed with a focus on privacy:",
+        "items": {
+          "noTracking": "No user tracking or behavior analysis",
+          "noAnalytics": "No Google Analytics or similar services",
+          "noThirdParty": "No data sharing with advertisers"
+        }
+      },
+      "technicalStorage": {
+        "title": "Technically Necessary Storage",
+        "content": "For the functionality of the website, the following data is stored locally in your browser:",
+        "localStorage": {
+          "title": "Theme Preference",
+          "badge": "Technically necessary",
+          "description": "Your preferred color setting (light/dark mode) is stored locally in your browser. This data is not transmitted to servers and is used solely for the correct display of the website."
+        },
+        "turnstile": {
+          "title": "Cloudflare Turnstile (Bot Protection)",
+          "badge": "Technically necessary",
+          "description": "The contact form uses Cloudflare Turnstile for protection against automated requests. This is technically necessary for website security."
+        }
+      },
+      "contactForm": {
+        "title": "Contact Form",
+        "content": "When you use the contact form, the following data is processed:",
+        "items": {
+          "name": "Your name",
+          "email": "Your email address",
+          "message": "Your message"
+        },
+        "legalBasis": "Legal basis: Art. 6(1)(b) GDPR (contract initiation) and Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries). The data is used exclusively to process your request.",
+        "resend": {
+          "title": "Email Delivery via Resend",
+          "description": "For email delivery from the contact form, we use Resend (Resend, Inc., USA). Your entered data (name, email, message) is transmitted to Resend for delivery. Resend is certified under the EU-US Data Privacy Framework.",
+          "link": "Resend Privacy Policy"
+        }
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "This website is hosted on Cloudflare Pages. Cloudflare may process technical data such as IP addresses required for website delivery. Cloudflare is certified under the EU-US Data Privacy Framework.",
+        "link": "Cloudflare Privacy Policy"
+      },
+      "rights": {
+        "title": "Your Rights & Data Control",
+        "intro": "Since this website only processes minimal data, you have the following practical options:",
+        "localStorage": "Theme preference: This is only stored locally in your browser. You can delete it yourself at any time (Browser settings → Clear site data) or configure your browser to clear localStorage when closing.",
+        "contact": "Contact form: If you have sent me a message and wish it to be deleted, simply contact me. The email will then be deleted from my inbox."
+      },
+      "noCookieBanner": {
+        "title": "Why No Cookie Banner?",
+        "content": "This website does not use tracking cookies or marketing tools. The only local storage (theme preference) is technically necessary and does not require explicit consent under EU law."
+      }
+    }
+  }
+}

@@ -1,0 +1,620 @@
+{
+  "common": {
+    "sections": {
+      "setupSteps": "Setup Schrëtt",
+      "additionalTips": "Zousätzlech Tipps",
+      "additionalTipsSubtitle": "Nëtzlech Kommandoen an Tipps fir besser Gestioun",
+      "troubleshooting": "Problemléisung",
+      "troubleshootingSubtitle": "Heefeg Problemer an hir Léisungen",
+      "additionalResources": "Zousätzlech Ressourcen",
+      "additionalResourcesSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken",
+      "keyFeatures": "Haaptfunktiounen",
+      "keyFeaturesSubtitle": "Entdeckt déi wichtegst Funktiounen"
+    },
+    "skipToContent": "Zum Inhalt sprangen",
+    "openMenu": "Menü opmaachen",
+    "closeMenu": "Menü zoumaachen",
+    "mobileNav": "Mobil Navigatioun"
+  },
+  "seo": {
+    "home": {
+      "title": "Home",
+      "description": "Professionnellen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Spezialiséiert op modern Web-Technologien, Cloud Computing an innovativ digital Léisungen.",
+      "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Lëtzebuerg"
+    },
+    "about": {
+      "title": "Iwwer mech",
+      "description": "Léiert méi iwwer Chad Feierstein, Full-Stack Developer mat BTS Cloud Computing Ausbildung a professionneller IT-Erfahrung zu Lëtzebuerg.",
+      "keywords": "Chad Feierstein, Iwwer mech, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Lëtzebuerg"
+    },
+    "showcase": {
+      "title": "Showcase",
+      "description": "Entdeckt meng neist Projeten, Dokumentatiounen a technesch Léisungen. Vun der Web-Entwécklung bis hin zu Cloud-Infrastrukturen.",
+      "keywords": "Portfolio, Projeten, Web Development, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Huelt Kontakt op fir professionnell Web-Entwécklung, IT-Administratioun a Cloud Computing Léisungen. Séier a zouverlässeg Äntwerten garantéiert.",
+      "keywords": "Kontakt, Chad Feierstein, Web Developer engagéieren, IT Servicer, Cloud Computing Berodung"
+    },
+    "projects": {
+      "chatbot": {
+        "title": "KI Chat Bot Projet",
+        "description": "Modernen KI Chat Bot mat erweiderten Sprooch-Veraarbechtungs-Fäegketen. Entwéckelt mat Vue.js an integréierten KI-APIs fir natierlech Gespréicher.",
+        "keywords": "KI Chat Bot, Kënschtlech Intelligenz, Vue.js, Chat Assistant, Natural Language Processing"
+      },
+      "portfolio": {
+        "title": "Portfolio Websäit Projet",
+        "description": "Modern Portfolio Websäit gebaut mat Nuxt, Vue an TypeScript. Méisproocheg, SEO-optimiséiert mat Dark Mode a performant Animatiounen.",
+        "keywords": "Portfolio Websäit, Nuxt, Vue, TypeScript, Méisproocheg, SEO, Dark Mode"
+      }
+    },
+    "documentation": {
+      "debian12": {
+        "title": "Debian 12 Initial Setup Guide",
+        "description": "Vollstänneg Guide fir d'initial Ariichtung vum Debian 12 Server. Vun der Basis-Konfiguratioun bis zur Sécherheets-Häertung.",
+        "keywords": "Debian 12, Server Setup, Linux Administratioun, System Konfiguratioun, Server Sécherheet"
+      },
+      "cardanoNode": {
+        "title": "Cardano Node Setup Guide",
+        "description": "Schrëtt-fir-Schrëtt Guide fir d'Installatioun a Konfiguratioun vum Cardano Node op Debian 12. Mat Monitoring an Optimiséierung.",
+        "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
+      },
+      "cardanoDbSync": {
+        "title": "Cardano DB Sync Installatioun Guide",
+        "description": "Detailléiert Guide fir d'Installatioun vu Cardano DB Sync op Debian. PostgreSQL Konfiguratioun a Datebank-Synchronisatioun.",
+        "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
+      },
+      "ollama": {
+        "title": "Ollama Installatioun Guide",
+        "description": "Komplett Guide fir d'Installatioun a Konfiguratioun vum Ollama op Debian 12. Lokal KI Model Verwaltung a GPU Acceleratioun.",
+        "keywords": "Ollama, KI Modeller, Lokal KI, Debian, Machine Learning, GPU Acceleratioun, LLM"
+      }
+    },
+    "privacy": {
+      "title": "Dateschutz",
+      "description": "Dateschutzerkläerung fir www.chad.lu. Informatiounen iwwer d'Dateveraarbechtung, Är Rechter an technesch Späicherungen op dëser Websäit.",
+      "keywords": "Dateschutz, DSGVO, Dateschutzerkläerung, Date-Schutz, Chad Feierstein"
+    }
+  },
+  "nav": {
+    "home": "Startsäit",
+    "about": "Iwwer mech",
+    "showcase": "Showcase",
+    "contact": "Kontakt",
+    "back": "Zréck"
+  },
+  "home": {
+    "greeting": "Moien, ech sinn",
+    "roles": {
+      "fullstack": "Full-Stack Developer",
+      "serveradmin": "Server Administrator",
+      "solver": "Problem Solver"
+    },
+    "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten a léiert mech dobäi besser kennen.",
+    "cta": {
+      "primary": "Projeten entdecken",
+      "secondary": "Kontakt ophuelen"
+    },
+    "about": {
+      "title": "Léiert mech kennen",
+      "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
+      "cta": "Méi iwwer mech erfahren",
+      "role": "Full-Stack Webentwickler",
+      "story": "Ech sinn de Chad Feierstein, e 26-jähregen {role} an {admin} aus {location}. Mat enger Ausbildung als Techniker an der Informatik an engem BTS am {cloud} bréngen ech iwwer {experience} mat. Vum Frontend a Backend iwwer Serververwaltung bis hin zu moderne Technologien meeschteren ech komplex Erausfuerderungen a léieren stänneg Neies dobäi.",
+      "storyHighlights": {
+        "role": "Full-Stack Developer",
+        "admin": "IT-Administrator",
+        "location": "Lëtzebuerg",
+        "cloud": "Cloud Computing",
+        "experience": "5 Joer IT-Erfahrung"
+      },
+      "experience": "Techniker an der Informatik",
+      "education": "BTS Cloud Computing",
+      "training": "Ausbildung",
+      "study": "Studium"
+    },
+    "services": {
+      "title": "Wat ech ubidden",
+      "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung: ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
+      "webdev": {
+        "title": "Web Development",
+        "description": "Modern, responsive Websäiten mat bewährten an neien Technologien, Frontend wéi Backend. Vu PHP, JavaScript a CSS bis zu Nuxt, Tailwind an de neisten Web-Standarden.",
+        "features": {
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt & Tailwind",
+          "pwa": "Full-Stack Development"
+        }
+      },
+      "cloud": {
+        "title": "Virtualiséierung",
+        "description": "Professionnell Virtualiséierungs-Léisungen fir effizient a flexibel IT-Infrastrukturen. Ariichtung vun Entwécklungs-Ëmfeld, Server-Virtualiséierung an Performance-Optimiséierung.",
+        "features": {
+          "aws": "Entwécklungs-Ëmfeld",
+          "azure": "Server-Virtualiséierung",
+          "gcp": "Performance-Optimiséierung"
+        }
+      },
+      "itadmin": {
+        "title": "IT-Administratioun",
+        "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur. Mat fundéierten Kenntnisser an Betribssystemer, Server-Management an Netzwierkstechnologien.",
+        "features": {
+          "linux": "Betribssystemer",
+          "networks": "Server-Management",
+          "security": "Netzwierkstechnologien"
+        }
+      }
+    },
+    "featured": {
+      "title": "Featured Projet",
+      "subtitle": "Entdeckt meng lescht Innovatioun, wou spëtzt KI op intuitiv Design treffen.",
+      "projectTitle": "KI Chat Bot",
+      "description": "En erweiderten KI Chat Bot, deen intelligent Gespréicher féiert an komplex Ufrogen behandelt. Dëse Projet kombinéiert spëtzt KI-Technologie mat engem elegant, benotzerfrëndleche Interface a bitt eng nahtlos Erfahrung fir natierlech Konversatiounen. De Bot notzt mächteg Sproochmodeller iwwer OpenRouter.ai, ënnerstëtzt verschidde KI-Modeller an adaptéiert sech intelligent un verschidden Gespréichskontexten. Mat Echtzäit-Äntwerten, Markdown-Ënnerstëtzung an enger duerchduechter Donkel/Hell Modus Integratioun ass dëse Chat Bot e perfekt Beispill fir modern Full-Stack-Entwécklung.",
+      "cta": {
+        "view": "Detailer kucken",
+        "demo": "Live Demo testen"
+      }
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Iwwer mech",
+      "subtitle": "Léiert d'Persoun hannert dem Code kennen, mäi Wiessel, meng Fäegkeeten a Leidenschaften."
+    },
+    "profile": {
+      "nationality": "Lëtzebuergesch",
+      "location": "Rëmeleng, Lëtzebuerg",
+      "status": "Single",
+      "driving": "Kategorie B",
+      "labels": {
+        "location": "Standort",
+        "nationality": "Nationalitéit",
+        "status": "Status",
+        "license": "Führerschäin"
+      }
+    },
+    "story": {
+      "intro": "Ech sinn de Chad Feierstein, e {age} Joer alen {role} an {admin} aus {location}. Mäi Schwéierpunkt läit op {cloud}, vun der Entwécklung vu {webapps} bis hin zur professioneller {servers}. Wärend mengen {positions} konnt ech praktesch Erfahrung a verschiddene IT-Beräicher sammelen, dorënner ERP-Systemer, Datebankverwaltung a Web Programming. Mäi Fundament bilden eng Ausbildung als IT-Techniker (DT) an e méi héijen techneschen Ofschloss (BTS) am Beräich Cloud Computing. Dank mengen {langCount} kommunizéieren ech ouni Problemer an internationalen Teams.",
+      "introHighlights": {
+        "role": "Full-Stack Webentwickler",
+        "admin": "IT-Administrator",
+        "cloud": "Cloud Computing",
+        "webapps": "modernen Webanwendungen",
+        "servers": "Serververwaltung",
+        "location": "Lëtzebuerg",
+        "positions": "sechs berufleche Statiounen",
+        "langCount": "véier Sproochen"
+      }
+    },
+    "interests": {
+      "title": "Interessen & Hobbyen",
+      "subtitle": "Wat mech a menger Fräizäit begeeschtert",
+      "bubble": "D'Liewen nieft dem Code!"
+    },
+    "interestsList": {
+      "tech": {
+        "title": "Technologie",
+        "subtitle": "Programméieren, Cloud & Server-Baschtelei"
+      },
+      "family": {
+        "title": "Famill & Déieren",
+        "subtitle": "Wäertvollt Zäit mat de Léifsten & 3 Dackelen"
+      },
+      "gaming": {
+        "title": "Gaming",
+        "subtitle": "Entspanung mat Videospill-Sessiounen"
+      },
+      "friends": {
+        "title": "Frënn",
+        "subtitle": "Regelméisseg Treffen & gemeinsam Aktivitéiten"
+      }
+    },
+    "languages": {
+      "title": "Sproochen",
+      "subtitle": "Méisproocheg Kommunikatioun",
+      "native": "Mammesprooch",
+      "levels": {
+        "A1": "Grondkenntnisser",
+        "A2": "Grondleeënd Kenntnisser",
+        "B1": "Mëttelstuuf",
+        "B2": "Gutt Mëttelstuuf",
+        "C1": "Fortgeschratt",
+        "C2": "Bal muttersprochlech"
+      }
+    },
+    "education": {
+      "title": "Bildung",
+      "links": {
+        "bts": "BTS CLC kucken",
+        "dt": "DT IF kucken"
+      },
+      "bts": {
+        "degree": "BTS Cloud Computing",
+        "field": "Zweejähregen héijen techneschen Ofschloss mat Schwéierpunkt op Cloud-Technologien, Virtualiséierung, Netzwierkinfrastruktur a modernen IT-Léisungen. Praxisno Ausbildung an AWS, Azure a Linux-Serververwaltung.",
+        "school": "Lycée Guillaume Kroll",
+        "grade": "Diplom"
+      },
+      "dt": {
+        "degree": "Techniker an der Informatik",
+        "field": "Véierjähreg technesch Ausbildung mat Schwéierpunkt op Programméierung, Netzwierktechnik, Datebanken a Systemadministratioun. Fundéiert Grondlagen a Hardware, Software an IT-Sécherheet.",
+        "school": "Lycée Guillaume Kroll",
+        "grade": "Diplom"
+      }
+    },
+    "work": {
+      "subtitle": "Beruffserfahrung & Bildungsverlaf",
+      "journey": "Meng berufflech Laafbahn",
+      "viewDetails": "Detailer weisen",
+      "modal": {
+        "tasks": "Haaptaufgaben"
+      }
+    },
+    "certifications": {
+      "title": "Zertifizéierungen",
+      "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen"
+    },
+    "cta": {
+      "title": "Loosst eis a Kontakt trieden",
+      "subtitle": "Hutt Dir Froen oder Interessi un engem Austausch? Ech freeën mech drop, vun Iech ze héieren.",
+      "button": "Kontakt ophuelen"
+    },
+    "languageNames": {
+      "luxemburgish": "Lëtzebuergesch",
+      "german": "Däitsch",
+      "english": "Englesch",
+      "french": "Franséisch"
+    },
+    "certificationsList": {
+      "cert1": {
+        "title": "Déi allgemeng Eignungsprüfung",
+        "description": "Eignungsprüfung fir den ëffentleche Sektor zu Lëtzebuerg"
+      },
+      "cert2": {
+        "title": "Cisco Certified CyberOps Associate",
+        "description": "Cybersecurity-Iwwerwaachung an Incident Response"
+      },
+      "cert3": {
+        "title": "Cisco Certified Network Associate 3",
+        "description": "Enterprise-Netzwierker an Netzwierkautomatiséierung"
+      },
+      "cert4": {
+        "title": "Cisco Certified Network Associate 2",
+        "description": "Switching, Routing an Netzwierk-Sécherheet"
+      },
+      "cert5": {
+        "title": "Cisco Certified Network Associate 1",
+        "description": "Netzwierk-Grondlagen an IP-Adresséierung"
+      },
+      "cert6": {
+        "title": "Microsoft Office Specialist 2016",
+        "description": "PowerPoint, Word, Excel an Outlook"
+      }
+    },
+    "timelineItems": {
+      "item1": {
+        "title": "Webentwéckler bei Mullerpneus",
+        "description": "Entwécklung a Wartung vum internen ERP-System an Online-Shop. Verantwortlech fir nei Features, Bugfixing, Datebanken a serverseiteg Konfiguratiounen.",
+        "company": "Mullerpneus",
+        "type": "Vollzäit",
+        "task1": "Feature-Entwécklung: Planung an Ëmsetzung vun neie Funktiounen fir ERP a Shop",
+        "task2": "Wartung: Feeleranalyse, Debugging a Performance-Optimiséierung",
+        "task3": "Datebanken: Verwaltung, Fleeë an Optimiséierung vu MySQL-Datebanken",
+        "task4": "Server: Konfiguratioun vu FTP, SFTP, E-Mail, Websockets a PHP-Versiounen",
+        "task5": "Monitoring: Log-Analyse a proaktiv Feelerbéihiewung"
+      },
+      "item2": {
+        "title": "IT-Cloud-Ingenieur Praktikum",
+        "description": "12-wöchegt Praktikum bei QPark Consulting mat Fokus op Cloud-Technologien an agil Projet-Methoden. Schaffen op zwou grouss Cloud-Projeten mat AWS an GCP.",
+        "company": "QPark Consulting",
+        "type": "Praktikum",
+        "task1": "Projet-Planung mat agile Methodologien",
+        "task2": "Virtual Maschinn-Konfiguratioun op Google Cloud Platform",
+        "task3": "Websäit-Implementéierung a GCP-VMs",
+        "task4": "Statesch Websäit-Bereetstellung op AWS S3",
+        "task5": "REST API-Integratioun an Daten-Veraarbechtung",
+        "task6": "Cloud-Käschten-Optimiséierung a Best Practices"
+      },
+      "item3": {
+        "title": "IT-Techniker Summerjoob",
+        "description": "8-wöchege Summerposten um Lycée Guillaume Kroll an der IT-Abteilung. Fokus op Netzwierks-Infrastruktur an Telefonsystem-Management.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Summerjoob",
+        "task1": "Ariichtung a Gestioun vu MIXvoip-Telefonnen",
+        "task2": "Installatioun vun neien Telefonsverbindungen am Server-Raum",
+        "task3": "Patch Panel-Dokumentatioun Updates an Excel",
+        "task4": "Netzwierk-Kabel-Management an -Organisatioun"
+      },
+      "item4": {
+        "title": "IT-Techniker Projet-Ofschloss",
+        "description": "4-wöchege Summerjoob fir e Websäit-Projet ze vollenden, deen am Praktikum ugefaangen huet. Fokus op Backend-Entwécklung an SAML-Integratioun.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Summerjoob",
+        "task1": "Client-Reuniounen a Projet-Koordinatioun",
+        "task2": "Backend-Programméierung a Modifikatiounen",
+        "task3": "SAML-Authentifizéierungs-Service-Integratioun",
+        "task4": "Frontend-Entwécklung an UI-Upassungen",
+        "task5": "Professionnell Hardware-Entsorgung"
+      },
+      "item5": {
+        "title": "IT-Techniker Haaptpraktikum",
+        "description": "6-wöchegt Praktikum um Lycée Guillaume Kroll mat Fokus op Web-Entwécklung an Datebank-Design. Entwécklung vun enger kompletter Websäit-Léisung.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Praktikum",
+        "task1": "Client-Reuniounen an Ufuerderungs-Analyse",
+        "task2": "Backend- an Frontend-Entwécklung",
+        "task3": "Konzeptuel Datebank-Modelléierung",
+        "task4": "Logesch Datebank-Modelléierung",
+        "task5": "Datebank-Implementéierung mat richtegen Bezéiungen"
+      },
+      "item6": {
+        "title": "IT-Netzwierkstechniker Praktikum",
+        "description": "6-wöchegt Praktikum bei STEP Syndicat intercommunal zu Péiteng. Aféierung an Netzwierkstechnik an Infrastruktur-Management an enger Kläranlag.",
+        "company": "STEP Syndicat intercommunal",
+        "type": "Praktikum",
+        "task1": "Aféierung an d'Organisatiounsstruktur",
+        "task2": "Léieren vun de Kläranlag-Prozesser",
+        "task3": "Kreatioun vun neien Patch Panel-Pläng",
+        "task4": "Patch-Kabel-Management a -Beschrëftung",
+        "task5": "Praktesch Netzwierkstruktur-Analyse"
+      }
+    },
+    "experiencesList": {
+      "exp1": {
+        "title": "Helicopterfluch iwwer d'Dominikanesch Republik",
+        "description": "Atemberauenden Ronndfluch iwwer d'Stad an d'karibbescht Mier, en onvergiesslechen Erliefnis aus der Vulleperspektiv"
+      },
+      "exp2": {
+        "title": "Fallschiermsprong iwwer Lëtzebuerg",
+        "description": "20-minutten Panoramafluch, dunn Sprong aus 4000m Héicht mat 200 km/h fräiem Fall, gefollegt vun 5-7 Minutte Gleitfluch bis zur sanfter Landung"
+      },
+      "exp3": {
+        "title": "Tomorrowland Belsch 2025",
+        "description": "4 onvergiesslich Deeg voller elektronesch Musek, magëscher Atmosphär a groussaarteg Leit aus der ganzer Welt"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Showcase",
+    "subtitle": "Entdeckt meng Projeten an Dokumentatiounen",
+    "filters": {
+      "all": "All",
+      "projects": "Projeten",
+      "documentation": "Dokumentatiounen"
+    },
+    "search": {
+      "placeholder": "Sichen..."
+    },
+    "labels": {
+      "viewDetails": "Detailer weisen"
+    },
+    "noResults": {
+      "title": "Keng Resultater fonnt",
+      "description": "Versicht Är Sich oder Äre Filter unzepassen, fir dat ze fannen wat Dir sicht."
+    }
+  },
+  "projects": {
+    "myChatBot": {
+      "title": "Mäin Chat Bot",
+      "description": "Eng modern, optimiséiert Chat-Applikatioun mat OpenRouter.ai-Integratioun fir direkten Chat mat verschiddenen AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features.",
+      "features": {
+        "aiChat": {
+          "title": "AI Chat",
+          "description": "Chat mat verschiddenen AI-Modeller"
+        },
+        "conversationManagement": {
+          "title": "Konversatiounsgestioun",
+          "description": "Méi Chats mat Auto-Späicherung"
+        },
+        "modelSelection": {
+          "title": "Modellauswiel",
+          "description": "Verschidden AI-Modeller zur Auswiel"
+        },
+        "localStorage": {
+          "title": "Lokal Späicherung",
+          "description": "Sécher Späicherung am Browser"
+        },
+        "modernUI": {
+          "title": "Modern UI",
+          "description": "Responsive UI mat Dark Mode"
+        },
+        "streaming": {
+          "title": "Echtzäit-Streaming",
+          "description": "Glat Äntwerten an Echtzäit"
+        }
+      },
+      "callToAction": {
+        "title": "Prett fir AI Chat z'erliewen?",
+        "subtitle": "Probéiert Mäin Chat Bot haut aus an entdeckt d'Kraaft vun lokalen AI-Modeller mat enger intuitiver Chat-Oberfläch.",
+        "button": "Demo starten"
+      }
+    },
+    "myPortfolio": {
+      "title": "Meng Portfolio Websäit",
+      "description": "Eng modern, responsive Portfolio-Websäit déi meng Projeten a Fäegkeeten presentéiert. Gebaut mat den neisten Webtechnologien mat Fokus op Leeschtung, Accessibilitéit an Benotzer-Experienz.",
+      "features": {
+        "multilingual": {
+          "title": "Méisproocheg",
+          "description": "4 Sproochen: LB, DE, FR, EN"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "description": "Optimiséiert fir all Bildschirmgréissten"
+        },
+        "darkMode": {
+          "title": "Däischteren Modus",
+          "description": "Automatescht Dark/Light Theme"
+        },
+        "performance": {
+          "title": "Héich Leeschtung",
+          "description": "SSR fir séier Luedzäiten"
+        },
+        "seo": {
+          "title": "SEO Optimiséiert",
+          "description": "Sitemap, Meta-Tags & méi"
+        },
+        "contact": {
+          "title": "Kontakt-Formulaire",
+          "description": "Formulaire mat Validatioun & E-Mail"
+        }
+      },
+      "callToAction": {
+        "title": "Interesséiert un enger ähnlecher Websäit?",
+        "subtitle": "Entdeckt meng Portfolio-Websäit a kuckt, wéi modern Webtechnologien eng impressionnant Online-Presenz schafen kënnen.",
+        "button": "Websäit besichen"
+      }
+    }
+  },
+  "documentations": {
+    "ollamaSetup": {
+      "title": "Linux - Ollama Installation",
+      "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fir Ollama op Debian 12 ze installéieren mat Apache2 Reverse Proxy, SSL-Verschlësselung an HTTP Basic Authentication fir sécher ëffentlech API-Notzung."
+    },
+    "debianInitialSetup": {
+      "title": "Debian 12 - Server Éischt-Arichtung",
+      "description": "En ëmfassenden Schrëtt-fir-Schrëtt Guide fër d'éischt Arichtung vun engem frësche Debian 12 Server mat de wichtegsten Konfiguratiounsschrëtt."
+    },
+    "cardanoNodeSetup": {
+      "title": "Linux - Cardano Node Installation",
+      "description": "Komplett Guide fir eng Cardano-Node op Debian 12 ze installéieren mam NIX-Paketmanager, inklusiv Service-Konfiguratioun a Iwwerwaachung."
+    },
+    "cardanoDbSyncSetup": {
+      "title": "Linux - Cardano DB Sync Installation",
+      "description": "Komplett Uleedung fir Cardano DB Sync op Debian 12 ze installéieren mat PostgreSQL-Datebank a NIX-Paketmanager, inklusiv Service-Konfiguratioun"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Hutt Dir Froen oder Feedback? Ech sinn hei fir ze hëllefen.",
+    "methods": {
+      "linkedin": {
+        "title": "LinkedIn"
+      },
+      "github": {
+        "title": "GitHub"
+      }
+    },
+    "form": {
+      "title": "Message schécken",
+      "description": "Fëllt de Formulaire hei ënnendrënner aus an ech mellen mech sou séier wéi méiglech bei Iech.",
+      "name": "Numm",
+      "namePlaceholder": "Äre kompletten Numm",
+      "email": "E-Mail",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Wou geet et drëm?",
+      "message": "Message",
+      "messagePlaceholder": "Erzielt mer vun Ärem Projet oder Ärer Ufro...",
+      "submit": "Message schécken",
+      "sending": "Gëtt geschéckt...",
+      "tryAgain": "Nach eng Kéier probéieren",
+      "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech.",
+      "errors": {
+        "nameRequired": "Numm ass obligatoresch",
+        "nameLength": "Numm muss tëschent 2 an 100 Zeechen sinn",
+        "emailRequired": "E-Mail ass obligatoresch",
+        "emailInvalid": "Gitt w.e.g. eng gülteg E-Mail-Adress an",
+        "subjectRequired": "Sujet ass obligatoresch",
+        "subjectLength": "Sujet muss tëschent 5 an 200 Zeechen sinn",
+        "messageRequired": "Message ass obligatoresch",
+        "messageMinLength": "Message muss op d'mannst 10 Zeechen hunn",
+        "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
+        "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
+        "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
+        "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier.",
+        "captchaRequired": "Maacht w.e.g. d'Sécherheetsverifikatioun fäerdeg.",
+        "captchaFailed": "Sécherheetsverifikatioun feelgeschloen. Probéiert w.e.g. nach eng Kéier.",
+        "captchaExpired": "Sécherheetsverifikatioun ass ofgelaf. Léist se w.e.g. nach eng Kéier.",
+        "captchaError": "Sécherheetsverifikatiounsfeeler. Luet d'Säit w.e.g. nei."
+      }
+    }
+  },
+  "error": {
+    "404": {
+      "title": "Säit net fonnt",
+      "message": "Déi gesichte Säit existéiert leider net oder gouf verréckelt."
+    },
+    "general": {
+      "title": "Ups! Eppes ass schif gaang",
+      "message": "En onerwaarte Feeler ass opgetrueden. Probéiert w.e.g. méi spéit nach eng Kéier."
+    },
+    "backHome": "Zréck op d'Startsäit",
+    "contact": "Kontakt ophuelen",
+    "helpfulLinks": "Hëllefräich Linken:"
+  },
+  "footer": {
+    "copyright": "Erstallt mat ❤",
+    "description": "Full-Stack Entwéckler & IT-Techniker aus Lëtzebuerg",
+    "navigation": "Navigatioun",
+    "sourceCode": "Quellcode",
+    "privacy": "Dateschutz"
+  },
+  "privacy": {
+    "title": "Dateschutzerkläerung",
+    "lastUpdated": "Lescht aktualiséiert",
+    "updateDate": "Januar 2026",
+    "backToHome": "Zréck op d'Haaptsäit",
+    "sections": {
+      "intro": {
+        "title": "Aféierung",
+        "content": "De Schutz vun Äre perséinlechen Daten ass mir wichteg. Dës Dateschutzerkläerung informéiert Iech iwwert wéi ech Är Daten op dëser Websäit veraarbecht a wéi eng Rechter Dir hutt."
+      },
+      "responsible": {
+        "title": "Verantwortlechen",
+        "location": "Rëmeling, Lëtzebuerg",
+        "contact": "Kontaktformulaire"
+      },
+      "dataCollection": {
+        "title": "Datenerfaassung op dëser Websäit",
+        "content": "Dës Websäit gouf mat Fokus op Dateschutz entwéckelt:",
+        "items": {
+          "noTracking": "Keng Benotzer-Tracking oder Verhaalensanalyse",
+          "noAnalytics": "Keng Google Analytics oder ähnlech Servicer",
+          "noThirdParty": "Keng Weidergab vun Daten un Reklamméierer"
+        }
+      },
+      "technicalStorage": {
+        "title": "Technesch néideg Späicherungen",
+        "content": "Fir d'Funktionalitéit vun der Websäit ginn folgend Daten lokal an Ärem Browser gespäichert:",
+        "localStorage": {
+          "title": "Thema-Preferenz",
+          "badge": "Technesch néideg",
+          "description": "Är bevorzugt Faarf-Astéllung (Hell/Donkel-Modus) gëtt lokal an Ärem Browser gespäichert. Dës Daten ginn net un Server iwwerdroe a déngen nëmmen der korrekter Uweissung vun der Websäit."
+        },
+        "turnstile": {
+          "title": "Cloudflare Turnstile (Bot-Schutz)",
+          "badge": "Technesch néideg",
+          "description": "D'Kontaktformulaire benotzt Cloudflare Turnstile fir Schutz géint automatiséiert Ufroen. Dëst ass technesch néideg fir d'Sécherheet vun der Websäit."
+        }
+      },
+      "contactForm": {
+        "title": "Kontaktformulaire",
+        "content": "Wann Dir d'Kontaktformulaire benotzt, ginn folgend Daten veraarbecht:",
+        "items": {
+          "name": "Ären Numm",
+          "email": "Är E-Mail Adress",
+          "message": "Är Noriicht"
+        },
+        "legalBasis": "Rechtsgrondlag: Art. 6 Abs. 1 lit. b DSGVO (Vertrags-Ubahnung) an Art. 6 Abs. 1 lit. f DSGVO (berechtegt Interessi un der Äntwert op Ufroen). D'Daten ginn exklusiv fir d'Veraarbechtung vun Ärer Ufro benotzt.",
+        "resend": {
+          "title": "E-Mail-Versand iwwer Resend",
+          "description": "Fir den E-Mail-Versand vum Kontaktformulaire benotze mir de Service Resend (Resend, Inc., USA). Är aginn Daten (Numm, E-Mail, Noriicht) ginn un Resend iwwerdroe fir d'Liwwerung. Resend ass nom EU-US Data Privacy Framework zertifiéiert.",
+          "link": "Resend Dateschutzerkläerung"
+        }
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "Dës Websäit gëtt op Cloudflare Pages gehost. Cloudflare kann technesch Daten wéi IP-Adressen veraarbechten, déi fir d'Bereetstellung vun der Websäit néideg sinn. Cloudflare ass nom EU-US Data Privacy Framework zertifizéiert.",
+        "link": "Cloudflare Dateschutzerkläerung"
+      },
+      "rights": {
+        "title": "Är Rechter & Datekontroll",
+        "intro": "Well dës Websäit nëmmen minimal Daten veraarbecht, hutt Dir folgend praktesch Méiglechkeeten:",
+        "localStorage": "Thema-Preferenz: Dës gëtt nëmmen lokal an Ärem Browser gespäichert. Dir kënnt se selwer zu all Moment läschen (Browser-Astellungen → Websäitdaten läschen) oder Äre Browser esou astellen, dass localStorage beim Zoumaachen geläscht gëtt.",
+        "contact": "Kontaktformulaire: Wann Dir mir eng Noriicht geschéckt hutt a wëllt dass se geläscht gëtt, kontaktéiert mech einfach. D'E-Mail gëtt dann aus mengem Postfach geläscht."
+      },
+      "noCookieBanner": {
+        "title": "Firwat keng Cookie-Banner?",
+        "content": "Dës Websäit benotzt keng Tracking-Cookien oder Marketing-Tools. Déi eenzeg lokal Späicherung (Thema-Preferenz) ass technesch néideg a brauch no EU-Recht keng ausdréckleg Zoustëmmung."
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<script lang="ts" setup>
+const route = useRoute()
+const { t } = useI18n()
+const { getProject, hasProject } = useProjects()
+const { setSeoMeta } = useSeo()
+
+// Get the slug from the route - use direct access for initial check
+const slugParam = route.params.slug as string
+
+// Handle 404 if project not found
+if (!slugParam || !hasProject(slugParam)) {
+    throw createError({
+        status: 404,
+        statusText: 'Project not found'
+    })
+}
+
+// Get the project config - synchronous for SSR
+const config = getProject(slugParam)!
+
+// Provide SubNav configuration - fully SSR compatible
+provideSubNav(
+    t(config.subNav.titleKey),
+    config.subNav.showBackButton,
+    config.subNav.backTo
+)
+
+// Set page meta dynamically
+definePageMeta({
+    layout: 'with-subnav'
+})
+
+// Set SEO meta synchronously for SSR
+setSeoMeta({
+    title: t(config.seo.titleKey),
+    description: t(config.seo.descriptionKey),
+    keywords: t(config.seo.keywordsKey)
+})
+</script>
+
+<template>
+    <div>
+        <!-- Hero Section with Illustration -->
+        <ProjectsHeroSection :title="t(config.titleKey)" :description="t(config.descriptionKey)" :tags="config.tags"
+            :links="config.links" :illustration-variant="config.illustrationVariant || 'coding'"
+            :bubble-text="t(config.titleKey)" />
+
+        <!-- Features Grid Section -->
+        <ProjectsFeaturesGrid v-if="config.features && config.features.length > 0"
+            :title="t('common.sections.keyFeatures')"
+            :subtitle="t('common.sections.keyFeaturesSubtitle')"
+            :features="config.features" />
+
+        <!-- CTA Section -->
+        <ProjectsCallToAction :title="t(config.callToAction.titleKey)" :subtitle="t(config.callToAction.subtitleKey)"
+            :button-text="t(config.callToAction.buttonKey)" :button-url="config.callToAction.buttonUrl" />
+    </div>
+</template>

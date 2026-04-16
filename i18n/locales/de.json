@@ -1,0 +1,624 @@
+{
+  "common": {
+    "sections": {
+      "setupSteps": "Setup Schritte",
+      "additionalTips": "Zusätzliche Tipps",
+      "additionalTipsSubtitle": "Nützliche Befehle und Tipps für bessere Verwaltung",
+      "troubleshooting": "Fehlerbehebung",
+      "troubleshootingSubtitle": "Häufige Probleme und ihre Lösungen",
+      "additionalResources": "Zusätzliche Ressourcen",
+      "additionalResourcesSubtitle": "Offizielle Dokumentation und hilfreiche Links",
+      "keyFeatures": "Hauptfunktionen",
+      "keyFeaturesSubtitle": "Entdecken Sie die wichtigsten Funktionen"
+    },
+    "skipToContent": "Zum Inhalt springen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "mobileNav": "Mobile Navigation"
+  },
+  "seo": {
+    "home": {
+      "title": "Home",
+      "description": "Professioneller Full-Stack Entwickler und IT-Administrator aus Luxemburg. Spezialisiert auf moderne Webtechnologien, Cloud Computing und innovative digitale Lösungen.",
+      "keywords": "Chad Feierstein, Full-Stack Entwickler, Web Entwickler, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxemburg"
+    },
+    "about": {
+      "title": "Über mich",
+      "description": "Erfahren Sie mehr über Chad Feierstein, Full-Stack Entwickler mit BTS Cloud Computing Ausbildung und professioneller IT-Erfahrung in Luxemburg.",
+      "keywords": "Chad Feierstein, Über mich, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Luxemburg"
+    },
+    "showcase": {
+      "title": "Showcase",
+      "description": "Entdecken Sie meine neuesten Projekte, Dokumentationen und technischen Lösungen. Von Web-Entwicklung bis hin zu Cloud-Infrastrukturen.",
+      "keywords": "Portfolio, Projekte, Web Entwicklung, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Nehmen Sie Kontakt auf für professionelle Web-Entwicklung, IT-Administration und Cloud Computing Lösungen. Schnelle und zuverlässige Antworten garantiert.",
+      "keywords": "Kontakt, Chad Feierstein, Web Entwicklung beauftragen, IT Services, Cloud Computing Beratung"
+    },
+    "projects": {
+      "chatbot": {
+        "title": "KI Chat Bot Projekt",
+        "description": "Moderner KI Chat Bot mit erweiterten Sprachverarbeitungsfähigkeiten. Entwickelt mit Vue.js und integrierten AI-APIs für natürliche Gespräche.",
+        "keywords": "KI Chat Bot, Artificial Intelligence, Vue.js, Chat Assistant, Natural Language Processing"
+      },
+      "portfolio": {
+        "title": "Portfolio Website Projekt",
+        "description": "Moderne Portfolio Website gebaut mit Nuxt, Vue und TypeScript. Mehrsprachig, SEO-optimiert mit Dark Mode und performanten Animationen.",
+        "keywords": "Portfolio Website, Nuxt, Vue, TypeScript, Multilingual, SEO, Dark Mode"
+      }
+    },
+    "documentation": {
+      "debian12": {
+        "title": "Debian 12 Initial Setup Anleitung",
+        "description": "Vollständige Anleitung für die initiale Einrichtung eines Debian 12 Servers. Von der Grundkonfiguration bis zur Sicherheitshärtung.",
+        "keywords": "Debian 12, Server Setup, Linux Administration, System Konfiguration, Server Sicherheit"
+      },
+      "cardanoNode": {
+        "title": "Cardano Node Setup Anleitung",
+        "description": "Schritt-für-Schritt Anleitung zur Installation und Konfiguration eines Cardano Nodes auf Debian 12. Inklusive Monitoring und Optimierung.",
+        "keywords": "Cardano Node, Blockchain, Debian, Cryptocurrency, Node Setup, Cardano Installation"
+      },
+      "cardanoDbSync": {
+        "title": "Cardano DB Sync Installation Anleitung",
+        "description": "Detaillierte Anleitung für die Installation von Cardano DB Sync auf Debian. PostgreSQL Konfiguration und Datenbank-Synchronisation.",
+        "keywords": "Cardano DB Sync, Blockchain Database, PostgreSQL, Cardano, Database Sync, Debian"
+      },
+      "ollama": {
+        "title": "Ollama Installation Anleitung",
+        "description": "Komplette Anleitung zur Installation und Konfiguration von Ollama auf Debian 12. Lokale AI Model Verwaltung und GPU Acceleration.",
+        "keywords": "Ollama, AI Models, Local AI, Debian, Machine Learning, GPU Acceleration, LLM"
+      }
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "description": "Datenschutzerklärung für www.chad.lu. Informationen zur Datenverarbeitung, Ihren Rechten und den technischen Speicherungen auf dieser Website.",
+      "keywords": "Datenschutz, DSGVO, Privacy Policy, Datenschutzerklärung, Chad Feierstein"
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "showcase": "Showcase",
+    "contact": "Kontakt",
+    "back": "Zurück"
+  },
+  "home": {
+    "greeting": "Hallo, ich bin",
+    "roles": {
+      "fullstack": "Full-Stack Entwickler",
+      "serveradmin": "Server Administrator",
+      "solver": "Problemlöser"
+    },
+    "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit und lernen Sie mich besser kennen.",
+    "cta": {
+      "primary": "Projekte entdecken",
+      "secondary": "Kontakt aufnehmen"
+    },
+    "about": {
+      "title": "Lernen Sie Mich Kennen",
+      "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
+      "cta": "Mehr über mich erfahren",
+      "role": "Full-Stack Webentwickler",
+      "story": "Ich bin Chad Feierstein, ein 26-jähriger {role} und {admin} aus {location}. Mit einer Ausbildung als Techniker in der Informatik und einem BTS in {cloud} bringe ich über {experience} mit. Von Frontend und Backend über Serververwaltung bis hin zu modernen Technologien meistere ich komplexe Herausforderungen und lerne ständig Neues dazu.",
+      "storyHighlights": {
+        "role": "Full-Stack Entwickler",
+        "admin": "IT-Administrator",
+        "location": "Luxemburg",
+        "cloud": "Cloud Computing",
+        "experience": "5 Jahre IT-Erfahrung"
+      },
+      "experience": "Techniker in der Informatik",
+      "education": "BTS Cloud Computing",
+      "training": "Ausbildung",
+      "study": "Studium"
+    },
+    "services": {
+      "title": "Was Ich Biete",
+      "subtitle": "Von der Konzeption bis zur Umsetzung: ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
+      "webdev": {
+        "title": "Web-Entwicklung",
+        "description": "Moderne, responsive Websites mit bewährten und neuen Technologien, Frontend wie Backend. Von PHP, JavaScript und CSS bis hin zu Nuxt, Tailwind und den neuesten Web-Standards.",
+        "features": {
+          "spa": "PHP, JavaScript & CSS",
+          "ssr": "Vue.js, Nuxt & Tailwind",
+          "pwa": "Full-Stack Development"
+        }
+      },
+      "cloud": {
+        "title": "Virtualisierung",
+        "description": "Professionelle Virtualisierungslösungen für effiziente und flexible IT-Infrastrukturen. Einrichtung von Development-Umgebungen, Server-Virtualisierung und Performance-Optimierung.",
+        "features": {
+          "aws": "Development-Umgebungen",
+          "azure": "Server-Virtualisierung",
+          "gcp": "Performance-Optimierung"
+        }
+      },
+      "itadmin": {
+        "title": "IT-Administration",
+        "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur. Mit fundierten Kenntnissen in Betriebssystemen, Server-Management und Netzwerktechnologien.",
+        "features": {
+          "linux": "Betriebssysteme",
+          "networks": "Server-Management",
+          "security": "Netzwerktechnologien"
+        }
+      }
+    },
+    "featured": {
+      "title": "Ausgewähltes Projekt",
+      "subtitle": "Entdecken Sie meine neueste Innovation, wo modernste KI auf intuitives Design trifft.",
+      "projectTitle": "KI Chat Bot",
+      "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Dieses Projekt vereint modernste AI-Technologie mit einem eleganten, benutzerfreundlichen Interface und bietet eine nahtlose Erfahrung für natürliche Konversationen. Der Bot nutzt leistungsstarke Sprachmodelle über OpenRouter.ai, unterstützt mehrere AI-Modelle und passt sich intelligent an verschiedene Gesprächskontexte an. Mit Echtzeit-Antworten, Markdown-Unterstützung und einer durchdachten Dark/Light Mode Integration ist dieser Chat Bot ein perfektes Beispiel für moderne Full-Stack-Entwicklung.",
+      "cta": {
+        "view": "Details ansehen",
+        "demo": "Live Demo testen"
+      }
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Über mich",
+      "subtitle": "Lernen Sie die Person hinter dem Code kennen, mein Werdegang, meine Fähigkeiten und Leidenschaften."
+    },
+    "profile": {
+      "nationality": "Luxemburgisch",
+      "location": "Rümelingen, Luxemburg",
+      "status": "Single",
+      "driving": "Kategorie B",
+      "labels": {
+        "location": "Standort",
+        "nationality": "Nationalität",
+        "status": "Status",
+        "license": "Führerschein"
+      }
+    },
+    "story": {
+      "intro": "Ich bin Chad Feierstein, ein {age}-jähriger {role} und {admin} aus {location}. Mein Schwerpunkt liegt auf {cloud}, von der Entwicklung {webapps} bis hin zur professionellen {servers}. Während meiner bisherigen {positions} konnte ich praktische Erfahrung in verschiedensten IT-Bereichen sammeln, darunter ERP-Systeme, Datenbankverwaltung und Web Programming. Mein Fundament bilden eine Ausbildung als IT-Techniker (DT) sowie ein höherer technischer Abschluss (BTS) im Bereich Cloud Computing. Dank meiner {langCount} kommuniziere ich mühelos in internationalen Teams.",
+      "introHighlights": {
+        "role": "Full-Stack Webentwickler",
+        "admin": "IT-Administrator",
+        "cloud": "Cloud Computing",
+        "webapps": "moderner Webanwendungen",
+        "servers": "Serververwaltung",
+        "location": "Luxemburg",
+        "positions": "sechs beruflichen Stationen",
+        "langCount": "vier Sprachen"
+      }
+    },
+    "interests": {
+      "title": "Interessen & Hobbys",
+      "subtitle": "Was mich in meiner Freizeit begeistert",
+      "bubble": "Leben jenseits vom Code!"
+    },
+    "interestsList": {
+      "tech": {
+        "title": "Technologie",
+        "subtitle": "Programmieren, Cloud & Server-Basteln"
+      },
+      "family": {
+        "title": "Familie & Haustiere",
+        "subtitle": "Wertvolle Zeit mit Liebsten & 3 Dackeln"
+      },
+      "gaming": {
+        "title": "Gaming",
+        "subtitle": "Entspannen mit Videospiel-Sessions"
+      },
+      "friends": {
+        "title": "Freunde",
+        "subtitle": "Regelmäßige Treffen & gemeinsame Aktivitäten"
+      }
+    },
+    "languages": {
+      "title": "Sprachen",
+      "subtitle": "Mehrsprachige Kommunikation",
+      "native": "Muttersprache",
+      "levels": {
+        "A1": "Grundkenntnisse",
+        "A2": "Grundlegende Kenntnisse",
+        "B1": "Mittelstufe",
+        "B2": "Gute Mittelstufe",
+        "C1": "Fortgeschritten",
+        "C2": "Annähernd muttersprachlich"
+      }
+    },
+    "education": {
+      "title": "Bildung",
+      "links": {
+        "bts": "BTS CLC ansehen",
+        "dt": "DT IF ansehen"
+      },
+      "bts": {
+        "degree": "BTS Cloud Computing",
+        "field": "Zweijähriger höherer technischer Abschluss mit Schwerpunkt auf Cloud-Technologien, Virtualisierung, Netzwerkinfrastruktur und modernen IT-Lösungen. Praxisnahe Ausbildung in AWS, Azure und Linux-Serveradministration.",
+        "school": "Lycée Guillaume Kroll",
+        "grade": "Diplom"
+      },
+      "dt": {
+        "degree": "Techniker in der Informatik",
+        "field": "Vierjährige technische Ausbildung mit Schwerpunkt auf Programmierung, Netzwerktechnik, Datenbanken und Systemadministration. Fundierte Grundlagen in Hardware, Software und IT-Sicherheit.",
+        "school": "Lycée Guillaume Kroll",
+        "grade": "Diplom"
+      }
+    },
+    "work": {
+      "subtitle": "Berufserfahrung & Bildungsverlauf",
+      "journey": "Meine berufliche Laufbahn",
+      "viewDetails": "Details anzeigen",
+      "modal": {
+        "tasks": "Hauptaufgaben"
+      }
+    },
+    "certifications": {
+      "title": "Zertifizierungen",
+      "subtitle": "Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen Technologiebereichen belegen"
+    },
+    "cta": {
+      "title": "Lassen Sie uns ins Gespräch kommen",
+      "subtitle": "Haben Sie Fragen oder Interesse an einem Austausch? Ich freue mich darauf, von Ihnen zu hören.",
+      "button": "Kontakt aufnehmen"
+    },
+    "languageNames": {
+      "luxemburgish": "Luxemburgisch",
+      "german": "Deutsch",
+      "english": "Englisch",
+      "french": "Französisch"
+    },
+    "certificationsList": {
+      "cert1": {
+        "title": "Die allgemeine Eignungsprüfung",
+        "description": "Eignungsprüfung für den öffentlichen Dienst in Luxemburg"
+      },
+      "cert2": {
+        "title": "Cisco Certified CyberOps Associate",
+        "description": "Cybersecurity-Überwachung und Incident Response"
+      },
+      "cert3": {
+        "title": "Cisco Certified Network Associate 3",
+        "description": "Enterprise-Netzwerke und Netzwerkautomatisierung"
+      },
+      "cert4": {
+        "title": "Cisco Certified Network Associate 2",
+        "description": "Switching, Routing und Netzwerksicherheit"
+      },
+      "cert5": {
+        "title": "Cisco Certified Network Associate 1",
+        "description": "Netzwerk-Grundlagen und IP-Adressierung"
+      },
+      "cert6": {
+        "title": "Microsoft Office Specialist 2016",
+        "description": "PowerPoint, Word, Excel und Outlook"
+      }
+    },
+    "timelineItems": {
+      "item1": {
+        "title": "Webentwickler bei Mullerpneus",
+        "description": "Entwicklung und Wartung des internen ERP-Systems und Online-Shops. Verantwortlich für neue Features, Bugfixing, Datenbanken und serverseitige Konfigurationen.",
+        "company": "Mullerpneus",
+        "type": "Vollzeit",
+        "task1": "Feature-Entwicklung: Planung und Umsetzung neuer Funktionen für ERP und Shop",
+        "task2": "Wartung: Fehleranalyse, Debugging und Performance-Optimierung",
+        "task3": "Datenbanken: Verwaltung, Pflege und Optimierung von MySQL-Datenbanken",
+        "task4": "Server: Konfiguration von FTP, SFTP, E-Mail, Websockets und PHP-Versionen",
+        "task5": "Monitoring: Log-Analyse und proaktive Fehlerbehebung"
+      },
+      "item2": {
+        "title": "IT-Cloud-Ingenieur Praktikum",
+        "description": "12-wöchiges Praktikum bei QPark Consulting mit Fokus auf Cloud-Technologien und agile Projektmethoden. Arbeit an zwei großen Cloud-Projekten mit AWS und GCP.",
+        "company": "QPark Consulting",
+        "type": "Praktikum",
+        "task1": "Erstellung eines Projektplans mit agilen Methoden",
+        "task2": "Konfiguration virtueller Maschinen auf Google Cloud Platform",
+        "task3": "Website-Implementierung in GCP-VMs",
+        "task4": "Statische Website-Bereitstellung auf AWS S3",
+        "task5": "REST API-Integration und Datenverarbeitung",
+        "task6": "Cloud-Kostenoptimierung und Best Practices"
+      },
+      "item3": {
+        "title": "IT-Techniker Ferienjob",
+        "description": "8-wöchige Sommertätigkeit am Lycée Guillaume Kroll in der IT-Abteilung. Schwerpunkt auf Netzwerkinfrastruktur und Telefonsystem-Management.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Ferienjob",
+        "task1": "Einrichtung und Verwaltung von MIXvoip-Telefonen",
+        "task2": "Installation neuer Telefonanschlüsse im Serverraum",
+        "task3": "Aktualisierung der Patchpanel-Dokumentation in Excel",
+        "task4": "Netzwerk-Kabelmanagement und -organisation"
+      },
+      "item4": {
+        "title": "IT-Techniker Projektabschluss",
+        "description": "4-wöchiger Ferienjob zur Fertigstellung eines Website-Projekts, das während des Praktikums begonnen wurde. Fokus auf Backend-Entwicklung und SAML-Integration.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Ferienjob",
+        "task1": "Kundenbesprechungen und Projektkoordination",
+        "task2": "Backend-Programmierung und -Modifikation",
+        "task3": "SAML-Authentifizierungsdienst-Integration",
+        "task4": "Frontend-Entwicklung und UI-Anpassungen",
+        "task5": "Fachgerechte Hardware-Entsorgung"
+      },
+      "item5": {
+        "title": "IT-Techniker Hauptpraktikum",
+        "description": "6-wöchiges Praktikum am Lycée Guillaume Kroll mit Schwerpunkt auf Web-Entwicklung und Datenbankdesign. Entwicklung einer vollständigen Website-Lösung.",
+        "company": "Lycée Guillaume Kroll",
+        "type": "Praktikum",
+        "task1": "Kundenbesprechungen und Anforderungsanalyse",
+        "task2": "Backend- und Frontend-Entwicklung",
+        "task3": "Konzeptionelle Datenbankmodellierung",
+        "task4": "Logische Datenbankmodellierung",
+        "task5": "Datenbank-Implementierung mit korrekten Beziehungen"
+      },
+      "item6": {
+        "title": "IT-Netzwerktechniker Praktikum",
+        "description": "6-wöchiges Praktikum bei STEP Syndicat intercommunal in Peppange. Einführung in Netzwerktechnik und Infrastruktur-Management in einer Kläranlage.",
+        "company": "STEP Syndicat intercommunal",
+        "type": "Praktikum",
+        "task1": "Einführung in die Organisationsstruktur",
+        "task2": "Erlernen der Kläranlageprozesstechnik",
+        "task3": "Erstellung neuer Patchpanel-Pläne",
+        "task4": "Patchkabel-Management und -Beschriftung",
+        "task5": "Praktische Netzwerkstruktur-Analyse"
+      }
+    },
+    "experiencesList": {
+      "exp1": {
+        "title": "Helikopterflug über die Dominikanische Republik",
+        "description": "Atemberaubender Rundflug über die Stadt und das karibische Meer, ein unvergessliches Erlebnis aus der Vogelperspektive"
+      },
+      "exp2": {
+        "title": "Fallschirmsprung über Luxemburg",
+        "description": "20-minütiger Panoramaflug, dann Sprung aus 4000m Höhe mit 200 km/h freiem Fall, gefolgt von 5-7 Minuten Gleitflug bis zur sanften Landung"
+      },
+      "exp3": {
+        "title": "Tomorrowland Belgien 2025",
+        "description": "4 unvergessliche Tage voller elektronischer Musik, magischer Atmosphäre und großartiger Menschen aus aller Welt"
+      }
+    }
+  },
+  "showcase": {
+    "title": "Showcase",
+    "subtitle": "Entdecken Sie meine Projekte und Dokumentationen",
+    "filters": {
+      "all": "Alle",
+      "projects": "Projekte",
+      "documentation": "Dokumentation"
+    },
+    "search": {
+      "placeholder": "Suchen..."
+    },
+    "labels": {
+      "viewDetails": "Details anzeigen"
+    },
+    "noResults": {
+      "title": "Keine Ergebnisse gefunden",
+      "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen, um das Gewünschte zu finden."
+    }
+  },
+  "projects": {
+    "myChatBot": {
+      "title": "Mein Chat Bot",
+      "description": "Eine moderne, optimierte Chat-Anwendung mit OpenRouter.ai-Integration für direkten Chat mit verschiedenen KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features.",
+      "features": {
+        "aiChat": {
+          "title": "KI-Chat",
+          "description": "Chat mit verschiedenen KI-Modellen"
+        },
+        "conversationManagement": {
+          "title": "Unterhaltungs-Management",
+          "description": "Mehrere Chats mit Auto-Speicherung"
+        },
+        "modelSelection": {
+          "title": "Modell-Auswahl",
+          "description": "Verschiedene KI-Modelle zur Auswahl"
+        },
+        "localStorage": {
+          "title": "Lokale Speicherung",
+          "description": "Sichere Speicherung im Browser"
+        },
+        "modernUI": {
+          "title": "Modernes UI",
+          "description": "Responsive UI mit Dark Mode"
+        },
+        "streaming": {
+          "title": "Echtzeit-Streaming",
+          "description": "Flüssige Antworten in Echtzeit"
+        }
+      },
+      "callToAction": {
+        "title": "Bereit, KI-Chat zu erleben?",
+        "subtitle": "Probiere Mein Chat Bot heute aus und entdecke die Kraft lokaler KI-Modelle mit einer intuitiven Chat-Oberfläche.",
+        "button": "Demo starten"
+      }
+    },
+    "myPortfolio": {
+      "title": "Meine Portfolio Webseite",
+      "description": "Eine moderne, responsive Portfolio-Webseite, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit den neuesten Webtechnologien mit Fokus auf Leistung, Barrierefreiheit und Benutzererfahrung.",
+      "features": {
+        "multilingual": {
+          "title": "Mehrsprachig",
+          "description": "4 Sprachen: LB, DE, FR, EN"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "description": "Optimiert für alle Bildschirmgrößen"
+        },
+        "darkMode": {
+          "title": "Dark Mode",
+          "description": "Automatisches Dark/Light Theme"
+        },
+        "performance": {
+          "title": "Hochleistung",
+          "description": "SSR für schnelle Ladezeiten"
+        },
+        "seo": {
+          "title": "SEO Optimiert",
+          "description": "Sitemap, Meta-Tags & mehr"
+        },
+        "contact": {
+          "title": "Kontaktformular",
+          "description": "Formular mit Validierung & E-Mail"
+        }
+      },
+      "callToAction": {
+        "title": "Interessiert an einer ähnlichen Webseite?",
+        "subtitle": "Entdecke meine Portfolio-Webseite und sehe, wie moderne Webtechnologien eine beeindruckende Online-Präsenz schaffen können.",
+        "button": "Webseite besuchen"
+      }
+    }
+  },
+  "documentations": {
+    "ollamaSetup": {
+      "title": "Linux - Ollama Installation",
+      "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
+      "completion": {
+        "title": "Installation abgeschlossen!",
+        "description": "Ihre Ollama-Installation ist jetzt bereit. Sie können über die gesicherte API auf Ihre KI-Modelle zugreifen."
+      }
+    },
+    "debianInitialSetup": {
+      "title": "Debian 12 - Server Ersteinrichtung",
+      "description": "Eine umfassende Schritt-für-Schritt-Anleitung für die Ersteinrichtung eines frischen Debian 12 Servers mit den wichtigsten Konfigurationsschritten."
+    },
+    "cardanoNodeSetup": {
+      "title": "Linux - Cardano Node Installation",
+      "description": "Vollständige Anleitung zur Installation einer Cardano-Node auf Debian 12 mit dem NIX-Paketmanager, einschließlich Servicekonfiguration und Überwachung."
+    },
+    "cardanoDbSyncSetup": {
+      "title": "Linux - Cardano DB Sync Installation",
+      "description": "Vollständige Anleitung zur Installation von Cardano DB Sync auf Debian 12 mit PostgreSQL-Datenbank und NIX-Paketmanager, einschließlich Servicekonfiguration"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie Fragen oder Feedback? Ich bin hier, um zu helfen.",
+    "methods": {
+      "linkedin": {
+        "title": "LinkedIn"
+      },
+      "github": {
+        "title": "GitHub"
+      }
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "description": "Füllen Sie das untenstehende Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.",
+      "name": "Name",
+      "namePlaceholder": "Ihr vollständiger Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Worum geht es?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "tryAgain": "Erneut versuchen",
+      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
+      "errors": {
+        "nameRequired": "Name ist erforderlich",
+        "nameLength": "Name muss zwischen 2 und 100 Zeichen lang sein",
+        "emailRequired": "E-Mail ist erforderlich",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "subjectRequired": "Betreff ist erforderlich",
+        "subjectLength": "Betreff muss zwischen 5 und 200 Zeichen lang sein",
+        "messageRequired": "Nachricht ist erforderlich",
+        "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein",
+        "messageMaxLength": "Nachricht darf höchstens 2000 Zeichen lang sein",
+        "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
+        "invalidData": "Ungültige Formulardaten. Bitte überprüfen Sie Ihre Eingaben.",
+        "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+        "captchaRequired": "Bitte lösen Sie die Sicherheitsüberprüfung.",
+        "captchaFailed": "Sicherheitsüberprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+        "captchaExpired": "Sicherheitsüberprüfung ist abgelaufen. Bitte lösen Sie sie erneut.",
+        "captchaError": "Fehler bei der Sicherheitsüberprüfung. Bitte laden Sie die Seite neu."
+      }
+    }
+  },
+  "error": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "message": "Die gesuchte Seite existiert leider nicht oder wurde verschoben."
+    },
+    "general": {
+      "title": "Ups! Etwas ist schiefgelaufen",
+      "message": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+    },
+    "backHome": "Zurück zur Startseite",
+    "contact": "Kontakt aufnehmen",
+    "helpfulLinks": "Hilfreiche Links:"
+  },
+  "footer": {
+    "copyright": "Erstellt mit ❤",
+    "description": "Full-Stack Entwickler & IT-Techniker aus Luxemburg",
+    "navigation": "Navigation",
+    "sourceCode": "Quellcode",
+    "privacy": "Datenschutz"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "updateDate": "Januar 2026",
+    "backToHome": "Zurück zur Startseite",
+    "sections": {
+      "intro": {
+        "title": "Einleitung",
+        "content": "Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Datenschutzerklärung informiert Sie darüber, wie ich Ihre Daten auf dieser Website verarbeite und welche Rechte Sie haben."
+      },
+      "responsible": {
+        "title": "Verantwortlicher",
+        "location": "Rümelingen, Luxemburg",
+        "contact": "Kontaktformular"
+      },
+      "dataCollection": {
+        "title": "Datenerfassung auf dieser Website",
+        "content": "Diese Website wurde mit Fokus auf Datenschutz entwickelt:",
+        "items": {
+          "noTracking": "Kein Benutzer-Tracking oder Verhaltensanalyse",
+          "noAnalytics": "Keine Google Analytics oder ähnliche Dienste",
+          "noThirdParty": "Keine Weitergabe von Daten an Werbetreibende"
+        }
+      },
+      "technicalStorage": {
+        "title": "Technisch notwendige Speicherungen",
+        "content": "Für die Funktionalität der Website werden folgende Daten lokal in Ihrem Browser gespeichert:",
+        "localStorage": {
+          "title": "Theme-Präferenz",
+          "badge": "Technisch notwendig",
+          "description": "Ihre bevorzugte Farbeinstellung (Hell/Dunkel-Modus) wird lokal in Ihrem Browser gespeichert. Diese Daten werden nicht an Server übertragen und dienen ausschließlich der korrekten Darstellung der Website."
+        },
+        "turnstile": {
+          "title": "Cloudflare Turnstile (Bot-Schutz)",
+          "badge": "Technisch notwendig",
+          "description": "Das Kontaktformular verwendet Cloudflare Turnstile zum Schutz vor automatisierten Anfragen. Dies ist technisch notwendig für die Sicherheit der Website."
+        }
+      },
+      "contactForm": {
+        "title": "Kontaktformular",
+        "content": "Wenn Sie das Kontaktformular nutzen, werden folgende Daten verarbeitet:",
+        "items": {
+          "name": "Ihr Name",
+          "email": "Ihre E-Mail-Adresse",
+          "message": "Ihre Nachricht"
+        },
+        "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.",
+        "resend": {
+          "title": "E-Mail-Versand über Resend",
+          "description": "Für den E-Mail-Versand des Kontaktformulars nutzen wir den Dienst Resend (Resend, Inc., USA). Ihre eingegebenen Daten (Name, E-Mail, Nachricht) werden zur Zustellung an Resend übermittelt. Resend ist nach dem EU-US Data Privacy Framework zertifiziert.",
+          "link": "Resend Datenschutzerklärung"
+        }
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "Diese Website wird auf Cloudflare Pages gehostet. Cloudflare kann technische Daten wie IP-Adressen verarbeiten, die für die Bereitstellung der Website erforderlich sind. Cloudflare ist nach EU-US Data Privacy Framework zertifiziert.",
+        "link": "Cloudflare Datenschutzerklärung"
+      },
+      "rights": {
+        "title": "Ihre Rechte & Datenkontrolle",
+        "intro": "Da diese Website nur minimale Daten verarbeitet, haben Sie folgende praktische Möglichkeiten:",
+        "localStorage": "Theme-Präferenz: Diese wird nur lokal in Ihrem Browser gespeichert. Sie können sie jederzeit selbst löschen (Browser-Einstellungen → Websitedaten löschen) oder Ihren Browser so einstellen, dass localStorage bei jedem Schließen gelöscht wird.",
+        "contact": "Kontaktformular: Falls Sie mir eine Nachricht gesendet haben und die Löschung wünschen, kontaktieren Sie mich einfach. Die E-Mail wird dann aus meinem Postfach gelöscht."
+      },
+      "noCookieBanner": {
+        "title": "Warum kein Cookie-Banner?",
+        "content": "Diese Website verwendet keine Tracking-Cookies oder Marketing-Tools. Die einzige lokale Speicherung (Theme-Präferenz) ist technisch notwendig und erfordert nach EU-Recht keine ausdrückliche Einwilligung."
+      }
+    }
+  }
+}
