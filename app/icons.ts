@@ -62,4 +62,12 @@ export const dynamicIcons = [
     'mdi:download',
     'mdi:email-outline',
     'mdi:docker',
+
+    // Error page (dynamic icon + helpful link icons bound via variables)
+    'mdi:alert-circle-outline',
+    'mdi:compass-off-outline',
+    'mdi:home',
+    'mdi:account',
+    'mdi:eye',
+    'mdi:email',
 ] as const
