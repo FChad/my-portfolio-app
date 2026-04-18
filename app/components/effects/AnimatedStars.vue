@@ -10,7 +10,7 @@ interface StarParticle {
     y: number
     z: number
     opacity: number
-    flicker: number
+    phase: number
     neighbors: number[]
 }
 
@@ -22,13 +22,10 @@ interface StarFlare {
 }
 
 interface StarLink {
-    length: number
     verts: number[]
-    stage: number
-    linked: number[]
     distances: number[]
-    traveled: number
-    fade: number
+    totalDist: number
+    progress: number
     finished: boolean
 }
 
@@ -51,7 +48,6 @@ const props = withDefaults(defineProps<Props>(), {
 const starsCanvas = ref<HTMLCanvasElement>()
 const isCanvasVisible = ref(false)
 
-// All instance-specific state (previously module-level - caused bugs with multiple instances)
 const state = {
     context: null as CanvasRenderingContext2D | null,
     animationFrame: 0,
@@ -59,23 +55,21 @@ const state = {
     resizeObserver: null as ResizeObserver | null,
     intersectionObserver: null as IntersectionObserver | null,
 
-    // Canvas and performance state
     isVisible: true,
     isMouseOver: false,
     performanceMode: false,
     lastFrameTime: 0,
     isCanvasReady: false,
+    time: 0,
 
-    // Animation state
     mouse: { x: 0, y: 0 },
     targetMouse: { x: 0, y: 0 },
     particles: [] as StarParticle[],
     flares: [] as StarFlare[],
     links: [] as StarLink[],
-    n: 0,
-    nPos: { x: 0, y: 0 },
+    noiseAngle: 0,
 
-    // Pre-computed values (updated on resize/theme change)
+    // Cached values (updated on resize/theme change)
     cachedSizeRatio: 800,
     cachedCanvasWidth: 0,
     cachedCanvasHeight: 0,
@@ -91,30 +85,27 @@ const state = {
     // Reusable position object to avoid allocations
     tempPos: { x: 0, y: 0 },
 
-    // Pre-computed noise table for better performance
-    noiseTable: [] as { x: number; y: number }[],
-
-    // Cached rect for mouse position calculation
-    cachedRect: null as DOMRect | null,
-    cachedScaleX: 1,
-    cachedScaleY: 1,
-
-    // Reusable arrays for link points to avoid allocations
-    linkPointsBuffer: [] as [number, number][],
-
     // Link object pool for reuse
     linkPool: [] as StarLink[]
 }
 
-const frameInterval = 1000 / 60 // 60 FPS
-const mouseLerp = 0.08 // Smoothing factor (0.01 = very smooth, 0.1 = responsive)
-const NOISE_TABLE_SIZE = 1000
+const FRAME_60 = 1000 / 60
+const FRAME_30 = 1000 / 30
+const MOUSE_LERP = 0.08
+const TWO_PI = Math.PI * 2
+const SIZE_DIVISOR = 0.001
+const NOISE_RADIUS = 100
+const NOISE_SPEED = 0.005
+const NOISE_SPEED_LOW = 0.015
+const FLICKER_SPEED = 2.5
+const ALPHA_BUCKETS = 10
+const MAX_DPR = 2
+const LINK_FADE_FRAMES = 90
 
 // Color mode integration
 const colorMode = useColorMode()
 const currentTheme = computed(() => colorMode.value)
 
-// Settings configuration
 const settings = {
     themes: {
         light: {
@@ -137,25 +128,9 @@ const settings = {
     link: {
         lineWidth: 1,
         lengthMin: 5
-    },
-    noise: {
-        radius: 100
     }
 }
 
-// Initialize noise table once
-function initNoiseTable(): void {
-    const angleStep = Math.PI * 2 / NOISE_TABLE_SIZE
-    for (let i = 0; i < NOISE_TABLE_SIZE; i++) {
-        const a = angleStep * i
-        state.noiseTable[i] = {
-            x: settings.noise.radius * Math.cos(a),
-            y: settings.noise.radius * Math.sin(a)
-        }
-    }
-}
-
-// Update cached theme colors
 function updateCachedColors(): void {
     const theme = currentTheme.value === 'dark' ? 'dark' : 'light'
     state.cachedStarColor = settings.themes[theme].starColor
@@ -164,9 +139,8 @@ function updateCachedColors(): void {
     state.cachedLinkOpacity = settings.themes[theme].linkOpacity
 }
 
-// Simplified neighbor assignment for particle connections
 function createNeighbors(): void {
-    const maxDistanceSq = 0.09 // 0.3 squared - avoid sqrt
+    const maxDistanceSq = 0.09
 
     for (let i = 0; i < state.particles.length; i++) {
         const particle = state.particles[i]
@@ -182,9 +156,8 @@ function createNeighbors(): void {
 
             const dx = particle.x - other.x
             const dy = particle.y - other.y
-            const distanceSq = dx * dx + dy * dy
 
-            if (distanceSq < maxDistanceSq) {
+            if (dx * dx + dy * dy < maxDistanceSq) {
                 particle.neighbors.push(j)
             }
         }
@@ -200,11 +173,11 @@ function getFlareOpacityRange(): { min: number, max: number } {
 }
 
 function updateFlareOpacities(): void {
-    const opacityRange = getFlareOpacityRange()
+    const range = getFlareOpacityRange()
     for (let i = 0; i < state.flares.length; i++) {
         const flare = state.flares[i]
         if (flare) {
-            flare.opacity = Math.random() * (opacityRange.max - opacityRange.min) + opacityRange.min
+            flare.opacity = Math.random() * (range.max - range.min) + range.min
         }
     }
 }
@@ -217,27 +190,19 @@ function resize(): void {
     if (!parent) return
 
     const parentRect = parent.getBoundingClientRect()
-    const dpr = window.devicePixelRatio || 1
+    const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR)
 
     const newWidth = parentRect.width | 0
     const newHeight = parentRect.height | 0
 
-    // Set canvas internal resolution (for drawing)
-    const pixelWidth = (newWidth * dpr) | 0
-    const pixelHeight = (newHeight * dpr) | 0
-
-    canvas.width = pixelWidth
-    canvas.height = pixelHeight
-
-    // Set canvas display size (CSS pixels)
+    canvas.width = (newWidth * dpr) | 0
+    canvas.height = (newHeight * dpr) | 0
     canvas.style.width = newWidth + 'px'
     canvas.style.height = newHeight + 'px'
 
-    // Reset and scale context for high DPI
     state.context.setTransform(1, 0, 0, 1, 0, 0)
     state.context.scale(dpr, dpr)
 
-    // Update cached dimensions
     state.cachedCanvasWidth = newWidth
     state.cachedCanvasHeight = newHeight
     state.cachedHalfWidth = newWidth * 0.5
@@ -245,287 +210,175 @@ function resize(): void {
     state.cachedSizeRatio = Math.max(newWidth, newHeight) || 800
     state.cachedLinkSpeed = 0.00001 * newWidth
 
-    // Reset mouse position to center
     state.mouse.x = newWidth * 0.5
     state.mouse.y = newHeight * 0.5
     state.targetMouse.x = state.mouse.x
     state.targetMouse.y = state.mouse.y
 
-    state.context.clearRect(0, 0, pixelWidth, pixelHeight)
+    state.context.clearRect(0, 0, canvas.width, canvas.height)
 
-    // Mark canvas as ready after first proper resize
     if (newWidth > 0 && newHeight > 0) {
         state.isCanvasReady = true
-        // Start fade-in animation with a small delay to ensure smooth transition
-        setTimeout(() => {
-            isCanvasVisible.value = true
-        }, 100)
+        setTimeout(() => { isCanvasVisible.value = true }, 100)
     }
 }
 
-// Optimized position calculation using cached values - modifies tempPos in place
+// Position calculation — writes to state.tempPos in place
 function positionInline(x: number, y: number, z: number): void {
-    const noiseX = state.nPos.x - 0.5
-    const noiseY = state.nPos.y - 0.5
+    const noiseX = NOISE_RADIUS * Math.cos(state.noiseAngle) - 0.5
+    const noiseY = NOISE_RADIUS * Math.sin(state.noiseAngle) - 0.5
 
     state.tempPos.x = (x * state.cachedCanvasWidth) + (((state.cachedHalfWidth - state.mouse.x + noiseX) * z) * state.cachedMotion)
     state.tempPos.y = (y * state.cachedCanvasHeight) + (((state.cachedHalfHeight - state.mouse.y + noiseY) * z) * state.cachedMotion)
 }
 
-// Pre-computed constants
-const TWO_PI = Math.PI * 2
-const SIZE_DIVISOR = 0.001
-
-// Render a single particle - optimized to avoid class method overhead
-function renderParticle(p: StarParticle): void {
-    if (!state.context) return
-
-    positionInline(p.x, p.y, p.z)
-    const r = ((p.z * 0.5) + 1) * state.cachedSizeRatio * SIZE_DIVISOR
-
-    // Flicker effect - simplified
-    const flickerRate = state.performanceMode ? 30 : 15
-    const newVal = Math.random() - 0.5
-    p.flicker += (newVal - p.flicker) / flickerRate
-
-    // Clamp flicker and calculate final opacity
-    if (p.flicker < -0.5) p.flicker = -0.5
-    else if (p.flicker > 0.5) p.flicker = 0.5
-
-    let o = p.opacity + p.flicker
-    if (o < 0) o = 0
-    else if (o > 1) o = 1
-
-    state.context.globalAlpha = o
-    state.context.beginPath()
-    state.context.arc(state.tempPos.x, state.tempPos.y, r, 0, TWO_PI)
-    state.context.fill()
-}
-
-// Render a single flare - optimized
-function renderFlare(f: StarFlare): void {
-    if (!state.context) return
-
-    positionInline(f.x, f.y, f.z)
-    const r = ((f.z * 100) + 100) * state.cachedSizeRatio * SIZE_DIVISOR
-
-    state.context.globalAlpha = f.opacity
-    state.context.beginPath()
-    state.context.arc(state.tempPos.x, state.tempPos.y, r, 0, TWO_PI)
-    state.context.fill()
-}
-
-// Create a particle object (plain object instead of class for better performance)
 function createParticle(): StarParticle {
     return {
         x: Math.random() * 1.2 - 0.1,
         y: Math.random() * 1.2 - 0.1,
         z: Math.random() * 3.5 + 0.5,
         opacity: Math.random() * 0.9 + 0.1,
-        flicker: 0,
+        phase: Math.random() * TWO_PI,
         neighbors: []
     }
 }
 
-// Create a flare object
 function createFlare(): StarFlare {
-    const opacityRange = getFlareOpacityRange()
+    const range = getFlareOpacityRange()
     return {
         x: Math.random() * 1.5 - 0.25,
         y: Math.random() * 1.5 - 0.25,
         z: Math.random() * 1.7 + 0.3,
-        opacity: Math.random() * (opacityRange.max - opacityRange.min) + opacityRange.min
+        opacity: Math.random() * (range.max - range.min) + range.min
     }
 }
 
-function createLink(startVertex: number, numPoints: number): StarLink {
+// Build link with all vertices resolved upfront
+function createLink(startVertex: number, numPoints: number): StarLink | null {
+    const maxLen = Math.min(numPoints, 4)
+    const verts = [startVertex]
+
+    // Walk neighbors to collect vertices
+    for (let step = 0; step < maxLen - 1; step++) {
+        const lastIdx = verts[verts.length - 1]
+        if (lastIdx === undefined) break
+        const last = state.particles[lastIdx]
+        if (!last || !last.neighbors.length) break
+
+        const neighbor = last.neighbors[(Math.random() * last.neighbors.length) | 0]
+        if (neighbor !== undefined && verts.indexOf(neighbor) === -1) {
+            verts.push(neighbor)
+        }
+    }
+
+    if (verts.length < 2) return null
+
+    // Pre-compute segment distances
+    const distances: number[] = []
+    let totalDist = 0
+    for (let i = 0; i < verts.length - 1; i++) {
+        const p1 = state.particles[verts[i]!]
+        const p2 = state.particles[verts[i + 1]!]
+        if (p1 && p2) {
+            const dx = p1.x - p2.x
+            const dy = p1.y - p2.y
+            const d = Math.sqrt(dx * dx + dy * dy)
+            distances.push(d)
+            totalDist += d
+        }
+    }
+
+    if (distances.length === 0) return null
+
     // Try to reuse from pool
     let link = state.linkPool.pop()
     if (link) {
-        link.length = Math.min(numPoints, 4)
-        link.verts.length = 0
-        link.verts.push(startVertex)
-        link.stage = 0
-        link.linked.length = 0
-        link.linked.push(startVertex)
-        link.distances.length = 0
-        link.traveled = 0
-        link.fade = 0
+        link.verts = verts
+        link.distances = distances
+        link.totalDist = totalDist
+        link.progress = 0
         link.finished = false
     } else {
-        link = {
-            length: Math.min(numPoints, 4),
-            verts: [startVertex],
-            stage: 0,
-            linked: [startVertex],
-            distances: [],
-            traveled: 0,
-            fade: 0,
-            finished: false
-        }
+        link = { verts, distances, totalDist, progress: 0, finished: false }
     }
     return link
-}
-
-function returnLinkToPool(link: StarLink): void {
-    if (state.linkPool.length < 20) { // Cap pool size
-        state.linkPool.push(link)
-    }
 }
 
 function renderLink(link: StarLink): void {
     if (!state.context || state.cachedCanvasWidth === 0) return
 
-    switch (link.stage) {
-        case 0: // Vertex collection
-            const lastIndex = link.verts[link.verts.length - 1]
-            if (lastIndex !== undefined) {
-                const last = state.particles[lastIndex]
-                if (last && last.neighbors && last.neighbors.length > 0) {
-                    const neighbor = last.neighbors[(Math.random() * last.neighbors.length) | 0]
-                    if (neighbor !== undefined && link.verts.indexOf(neighbor) === -1) {
-                        link.verts.push(neighbor)
-                    }
-                } else {
-                    link.stage = 3
-                    link.finished = true
-                }
-            } else {
-                link.stage = 3
-                link.finished = true
-            }
+    link.progress += state.cachedLinkSpeed
+    const drawDist = link.totalDist
+    const fadeDist = drawDist + (LINK_FADE_FRAMES * state.cachedLinkSpeed)
 
-            if (link.verts.length >= link.length) {
-                // Calculate distances - use squared distance where possible
-                for (let i = 0; i < link.verts.length - 1; i++) {
-                    const p1Index = link.verts[i]
-                    const p2Index = link.verts[i + 1]
-                    if (p1Index !== undefined && p2Index !== undefined) {
-                        const p1 = state.particles[p1Index]
-                        const p2 = state.particles[p2Index]
-                        if (p1 && p2) {
-                            const dx = p1.x - p2.x
-                            const dy = p1.y - p2.y
-                            link.distances.push(Math.sqrt(dx * dx + dy * dy))
-                        }
-                    }
-                }
-                link.stage = 1
-            }
-            break
-
-        case 1: // Render line animation
-            if (link.distances.length > 0) {
-                state.linkPointsBuffer.length = 0
-
-                // Gather linked points
-                for (let i = 0; i < link.linked.length; i++) {
-                    const pIndex = link.linked[i]
-                    if (pIndex !== undefined) {
-                        const p = state.particles[pIndex]
-                        if (p) {
-                            positionInline(p.x, p.y, p.z)
-                            state.linkPointsBuffer.push([state.tempPos.x, state.tempPos.y])
-                        }
-                    }
-                }
-
-                link.traveled += state.cachedLinkSpeed
-                const d = link.distances[link.linked.length - 1]
-
-                if (d !== undefined && link.traveled >= d) {
-                    link.traveled = 0
-                    const nextVertIndex = link.verts[link.linked.length]
-                    if (nextVertIndex !== undefined) {
-                        link.linked.push(nextVertIndex)
-                        const pIndex = link.linked[link.linked.length - 1]
-                        if (pIndex !== undefined) {
-                            const p = state.particles[pIndex]
-                            if (p) {
-                                positionInline(p.x, p.y, p.z)
-                                state.linkPointsBuffer.push([state.tempPos.x, state.tempPos.y])
-                            }
-                        }
-                    }
-
-                    if (link.linked.length >= link.verts.length) {
-                        link.stage = 2
-                    }
-                } else if (d !== undefined) {
-                    // Interpolate position
-                    const aIndex = link.linked[link.linked.length - 1]
-                    const bIndex = link.verts[link.linked.length]
-                    if (aIndex !== undefined && bIndex !== undefined) {
-                        const a = state.particles[aIndex]
-                        const b = state.particles[bIndex]
-                        if (a && b) {
-                            const t = d - link.traveled
-                            const invD = 1 / d
-                            const x = (link.traveled * b.x + t * a.x) * invD
-                            const y = (link.traveled * b.y + t * a.y) * invD
-                            const z = (link.traveled * b.z + t * a.z) * invD
-
-                            positionInline(x, y, z)
-                            state.linkPointsBuffer.push([state.tempPos.x, state.tempPos.y])
-                        }
-                    }
-                }
-
-                drawLinkLine(state.linkPointsBuffer, state.cachedLinkOpacity)
-            } else {
-                link.stage = 3
-                link.finished = true
-            }
-            break
-
-        case 2: // Fade out
-            if (link.verts.length > 1) {
-                if (link.fade < 90) {
-                    link.fade++
-                    state.linkPointsBuffer.length = 0
-                    const alpha = (1 - (link.fade / 90)) * state.cachedLinkOpacity
-
-                    for (let i = 0; i < link.verts.length; i++) {
-                        const pIndex = link.verts[i]
-                        if (pIndex !== undefined) {
-                            const p = state.particles[pIndex]
-                            if (p) {
-                                positionInline(p.x, p.y, p.z)
-                                state.linkPointsBuffer.push([state.tempPos.x, state.tempPos.y])
-                            }
-                        }
-                    }
-                    drawLinkLine(state.linkPointsBuffer, alpha)
-                } else {
-                    link.stage = 3
-                    link.finished = true
-                }
-            } else {
-                link.stage = 3
-                link.finished = true
-            }
-            break
-
-        default:
-            link.finished = true
-            break
+    if (link.progress >= fadeDist) {
+        link.finished = true
+        return
     }
-}
 
-function drawLinkLine(points: [number, number][], alpha: number): void {
-    if (!state.context || points.length <= 1 || alpha <= 0) return
+    // Determine alpha: full during draw phase, fading after
+    let alpha: number
+    if (link.progress <= drawDist) {
+        alpha = state.cachedLinkOpacity
+    } else {
+        alpha = (1 - (link.progress - drawDist) / (fadeDist - drawDist)) * state.cachedLinkOpacity
+    }
+
+    if (alpha <= 0) { link.finished = true; return }
 
     state.context.globalAlpha = alpha
     state.context.beginPath()
 
-    // Use a single path for all line segments
-    const first = points[0]
-    if (first) {
-        state.context.moveTo(first[0], first[1])
-        for (let i = 1; i < points.length; i++) {
-            const point = points[i]
-            if (point) {
-                state.context.lineTo(point[0], point[1])
+    // How far along the path we've drawn
+    const drawLen = Math.min(link.progress, drawDist)
+    let remaining = drawLen
+    let started = false
+
+    for (let i = 0; i < link.verts.length - 1; i++) {
+        const pIdx = link.verts[i]!
+        const p = state.particles[pIdx]
+        if (!p) break
+
+        if (!started) {
+            positionInline(p.x, p.y, p.z)
+            state.context.moveTo(state.tempPos.x, state.tempPos.y)
+            started = true
+        }
+
+        const segDist = link.distances[i]
+        if (segDist === undefined) break
+
+        if (remaining >= segDist) {
+            // Full segment
+            const nextP = state.particles[link.verts[i + 1]!]
+            if (!nextP) break
+            positionInline(nextP.x, nextP.y, nextP.z)
+            state.context.lineTo(state.tempPos.x, state.tempPos.y)
+            remaining -= segDist
+        } else {
+            // Partial segment — interpolate endpoint
+            const a = state.particles[pIdx]
+            const bIdx = link.verts[i + 1]!
+            const b = state.particles[bIdx]
+            if (!a || !b) break
+            const t = remaining / segDist
+            positionInline(
+                a.x + (b.x - a.x) * t,
+                a.y + (b.y - a.y) * t,
+                a.z + (b.z - a.z) * t
+            )
+            state.context.lineTo(state.tempPos.x, state.tempPos.y)
+            break
+        }
+    }
+
+    // If in fade phase, also draw any remaining full segments
+    if (link.progress > drawDist) {
+        for (let i = link.distances.length; i < link.verts.length; i++) {
+            const p = state.particles[link.verts[i]!]
+            if (p) {
+                positionInline(p.x, p.y, p.z)
+                state.context.lineTo(state.tempPos.x, state.tempPos.y)
             }
         }
     }
@@ -533,50 +386,79 @@ function drawLinkLine(points: [number, number][], alpha: number): void {
     state.context.stroke()
 }
 
-function updateMousePosition(): void {
-    // Smooth interpolation between current and target mouse position
-    state.mouse.x += (state.targetMouse.x - state.mouse.x) * mouseLerp
-    state.mouse.y += (state.targetMouse.y - state.mouse.y) * mouseLerp
-}
-
 function render(): void {
     if (!state.context || !state.isVisible || !state.isCanvasReady) return
 
+    const ctx = state.context
     const isLowPower = state.performanceMode && !state.isMouseOver
 
-    // Update smooth mouse position
-    updateMousePosition()
+    // Smooth mouse interpolation
+    state.mouse.x += (state.targetMouse.x - state.mouse.x) * MOUSE_LERP
+    state.mouse.y += (state.targetMouse.y - state.mouse.y) * MOUSE_LERP
 
-    // Update noise position using pre-computed table
-    state.n += isLowPower ? 3 : 1
-    if (state.n >= NOISE_TABLE_SIZE) state.n = 0
-    state.nPos = state.noiseTable[state.n] || { x: 0, y: 0 }
+    // Advance noise angle (replaces 1000-entry lookup table)
+    state.noiseAngle += isLowPower ? NOISE_SPEED_LOW : NOISE_SPEED
+    state.time += isLowPower ? 0.06 : 0.02
 
-    state.context.clearRect(0, 0, state.cachedCanvasWidth, state.cachedCanvasHeight)
+    ctx.clearRect(0, 0, state.cachedCanvasWidth, state.cachedCanvasHeight)
 
-    // Set fill style once for all particles
-    state.context.fillStyle = state.cachedStarColor
-
-    // Render particles
+    // --- Batched particle rendering (quantized alpha → fewer draw calls) ---
+    ctx.fillStyle = state.cachedStarColor
     const particleCount = isLowPower ? Math.max(10, props.particleCount >> 1) : props.particleCount
     const pLen = Math.min(particleCount, state.particles.length)
+    const sizeRatio = state.cachedSizeRatio
+
+    // Collect particles into alpha buckets
+    const buckets: { x: number; y: number; r: number }[][] = new Array(ALPHA_BUCKETS)
     for (let i = 0; i < pLen; i++) {
-        const particle = state.particles[i]
-        if (particle) renderParticle(particle)
+        const p = state.particles[i]
+        if (!p) continue
+
+        positionInline(p.x, p.y, p.z)
+        const r = ((p.z * 0.5) + 1) * sizeRatio * SIZE_DIVISOR
+
+        // Deterministic flicker via sine wave (replaces per-frame Math.random)
+        const flicker = Math.sin(state.time * FLICKER_SPEED + p.phase) * 0.5
+        let o = p.opacity + flicker
+        if (o < 0) o = 0
+        else if (o > 1) o = 1
+
+        const bucket = Math.min((o * ALPHA_BUCKETS) | 0, ALPHA_BUCKETS - 1)
+        if (!buckets[bucket]) buckets[bucket] = []
+        buckets[bucket].push({ x: state.tempPos.x, y: state.tempPos.y, r })
     }
 
-    // Set stroke style once for all links
-    state.context.strokeStyle = state.cachedLinkColor
-    state.context.lineWidth = settings.link.lineWidth
+    // Draw each alpha bucket as a single path
+    for (let b = 0; b < ALPHA_BUCKETS; b++) {
+        const items = buckets[b]
+        if (!items || items.length === 0) continue
 
-    // Create new links
+        ctx.globalAlpha = (b + 0.5) / ALPHA_BUCKETS
+        ctx.beginPath()
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i]!
+            if (item.r < 1.5) {
+                // fillRect for tiny particles (faster than arc)
+                ctx.rect(item.x - item.r, item.y - item.r, item.r * 2, item.r * 2)
+            } else {
+                ctx.moveTo(item.x + item.r, item.y)
+                ctx.arc(item.x, item.y, item.r, 0, TWO_PI)
+            }
+        }
+        ctx.fill()
+    }
+
+    // --- Links ---
+    ctx.strokeStyle = state.cachedLinkColor
+    ctx.lineWidth = settings.link.lineWidth
+
     const linkChance = isLowPower ? props.linkChance << 1 : props.linkChance
     if (((Math.random() * (linkChance + 1)) | 0) === linkChance && state.links.length < 5) {
         const length = ((Math.random() * 3) | 0) + settings.link.lengthMin
-        state.links.push(createLink((Math.random() * state.particles.length) | 0, length))
+        const link = createLink((Math.random() * state.particles.length) | 0, length)
+        if (link) state.links.push(link)
     }
 
-    // Render and clean up links - avoid filter() allocation
     let writeIdx = 0
     for (let i = 0; i < state.links.length; i++) {
         const link = state.links[i]
@@ -584,34 +466,37 @@ function render(): void {
             if (!link.finished) {
                 renderLink(link)
                 state.links[writeIdx++] = link
-            } else {
-                returnLinkToPool(link)
+            } else if (state.linkPool.length < 20) {
+                state.linkPool.push(link)
             }
         }
     }
     state.links.length = writeIdx
 
-    // Set fill style for flares
-    state.context.fillStyle = state.cachedFlareColor
-
-    // Render flares
+    // --- Flares (few enough to render individually) ---
+    ctx.fillStyle = state.cachedFlareColor
     const flareCount = isLowPower ? Math.max(2, props.flareCount >> 2) : props.flareCount
     const fLen = Math.min(flareCount, state.flares.length)
     for (let j = 0; j < fLen; j++) {
-        const flare = state.flares[j]
-        if (flare) renderFlare(flare)
+        const f = state.flares[j]
+        if (!f) continue
+        positionInline(f.x, f.y, f.z)
+        const r = ((f.z * 100) + 100) * sizeRatio * SIZE_DIVISOR
+        ctx.globalAlpha = f.opacity
+        ctx.beginPath()
+        ctx.arc(state.tempPos.x, state.tempPos.y, r, 0, TWO_PI)
+        ctx.fill()
     }
 
-    // Reset globalAlpha at end
-    state.context.globalAlpha = 1
+    ctx.globalAlpha = 1
 }
 
 function animate(currentTime = 0): void {
     if (!state.isVisible) return
 
-    // Throttle animation based on performance and visibility
     const elapsed = currentTime - state.lastFrameTime
-    const targetInterval = (state.performanceMode && !state.isMouseOver) ? frameInterval << 1 : frameInterval
+    // 30fps idle baseline, 60fps when mouse is over
+    const targetInterval = (state.performanceMode && !state.isMouseOver) ? FRAME_30 : FRAME_60
 
     if (elapsed >= targetInterval) {
         render()
@@ -621,18 +506,13 @@ function animate(currentTime = 0): void {
     state.animationFrame = requestAnimationFrame(animate)
 }
 
-function updateCachedRect(): void {
-    if (!starsCanvas.value) return
-    state.cachedRect = starsCanvas.value.getBoundingClientRect()
-    state.cachedScaleX = starsCanvas.value.clientWidth / state.cachedRect.width
-    state.cachedScaleY = starsCanvas.value.clientHeight / state.cachedRect.height
-}
-
 function handleMouseMove(e: MouseEvent): void {
-    if (!state.cachedRect) return
-    // Set target position instead of directly updating mouse position
-    state.targetMouse.x = (e.clientX - state.cachedRect.left) * state.cachedScaleX
-    state.targetMouse.y = (e.clientY - state.cachedRect.top) * state.cachedScaleY
+    if (!starsCanvas.value) return
+    const rect = starsCanvas.value.getBoundingClientRect()
+    const scaleX = starsCanvas.value.clientWidth / rect.width
+    const scaleY = starsCanvas.value.clientHeight / rect.height
+    state.targetMouse.x = (e.clientX - rect.left) * scaleX
+    state.targetMouse.y = (e.clientY - rect.top) * scaleY
 }
 
 function onMouseEnter(): void {
@@ -650,13 +530,10 @@ function onMouseLeave(): void {
 }
 
 function handleResize(): void {
-    if (state.resizeTimeout) {
-        clearTimeout(state.resizeTimeout)
-    }
+    if (state.resizeTimeout) clearTimeout(state.resizeTimeout)
 
     state.resizeTimeout = window.setTimeout(() => {
         resize()
-        updateCachedRect()
         render()
         state.resizeTimeout = null
     }, 50)
@@ -666,14 +543,10 @@ function handleVisibilityChange(): void {
     state.isVisible = !document.hidden
 
     if (state.isVisible) {
-        // Resume animation when tab becomes visible
         state.lastFrameTime = performance.now()
         animate()
-    } else {
-        // Pause animation when tab is hidden
-        if (state.animationFrame) {
-            cancelAnimationFrame(state.animationFrame)
-        }
+    } else if (state.animationFrame) {
+        cancelAnimationFrame(state.animationFrame)
     }
 }
 
@@ -683,19 +556,14 @@ function init(): void {
     state.context = starsCanvas.value.getContext('2d', { alpha: true })
     if (!state.context) return
 
-    // Initialize noise table and cached colors
-    initNoiseTable()
     updateCachedColors()
     state.cachedMotion = props.motion
 
-    // Initial resize with a small delay to ensure DOM is ready
     setTimeout(() => {
         resize()
-        updateCachedRect()
         if (state.isCanvasReady) animate()
     }, 50)
 
-    // Fallback: ensure animation starts after a longer delay
     setTimeout(() => {
         if (!state.animationFrame && starsCanvas.value && starsCanvas.value.clientWidth > 0) {
             state.isCanvasReady = true
@@ -708,21 +576,18 @@ function init(): void {
     state.targetMouse.x = state.mouse.x
     state.targetMouse.y = state.mouse.y
 
-    // Create particles
     state.particles = []
     for (let i = 0; i < props.particleCount; i++) {
         state.particles.push(createParticle())
     }
     createNeighbors()
 
-    // Create flares
     state.flares = []
     for (let i = 0; i < props.flareCount; i++) {
         state.flares.push(createFlare())
     }
 }
 
-// Watch for theme changes
 watch(currentTheme, () => {
     updateCachedColors()
     updateFlareOpacities()
@@ -734,24 +599,17 @@ onMounted(() => {
 
     init()
 
-    // Event listeners
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('resize', handleResize, { passive: true })
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true })
 
-    // Enhanced resize observer that handles zoom better
     if (window.ResizeObserver && starsCanvas.value.parentElement) {
-        state.resizeObserver = new ResizeObserver(() => {
-            handleResize() // Use the debounced resize function
-        })
-
+        state.resizeObserver = new ResizeObserver(() => { handleResize() })
         state.resizeObserver.observe(starsCanvas.value.parentElement)
     }
 
-    // Auto-detect performance mode based on device capabilities
     state.performanceMode = (navigator.hardwareConcurrency || 4) < 4
 
-    // Visibility observer
     if (window.IntersectionObserver) {
         state.intersectionObserver = new IntersectionObserver((entries) => {
             const entry = entries[0]
@@ -774,26 +632,20 @@ onUnmounted(() => {
     state.isVisible = false
     isCanvasVisible.value = false
 
-    // Cleanup animation and timers
     if (state.animationFrame) cancelAnimationFrame(state.animationFrame)
     if (state.resizeTimeout) clearTimeout(state.resizeTimeout)
 
-    // Cleanup observers
     state.resizeObserver?.disconnect()
     state.intersectionObserver?.disconnect()
 
-    // Remove event listeners
     window.removeEventListener('mousemove', handleMouseMove)
     window.removeEventListener('resize', handleResize)
     document.removeEventListener('visibilitychange', handleVisibilityChange)
 
-    // Clear memory
     state.particles.length = 0
     state.flares.length = 0
     state.links.length = 0
     state.linkPool.length = 0
-    state.noiseTable.length = 0
     state.context = null
-    state.cachedRect = null
 })
 </script>
