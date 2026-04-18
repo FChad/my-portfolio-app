@@ -1,17 +1,16 @@
 // Project Types and Utilities
-// Similar structure to useDocumentation.ts for consistent project management
 
 export interface ProjectFeature {
     id: string
-    title: string // Translation key
-    description: string // Translation key
+    title: string
+    description: string
     icon: string
 }
 
 export interface ProjectLink {
     type: 'demo' | 'source' | 'docs'
     url: string
-    labelKey?: string // Optional translation key for custom label
+    labelKey?: string
 }
 
 export interface ProjectSubNav {
@@ -42,37 +41,4 @@ export interface ProjectConfig {
     }
 }
 
-import { projectConfigs, getProjectBySlug, getAllProjectConfigs } from '~/data/projects'
-
-/**
- * Composable for working with project data
- * Provides access to project configurations and utility functions
- */
-export function useProjects() {
-    /**
-     * Get a project configuration by its slug
-     */
-    const getProject = (slug: string): ProjectConfig | undefined => {
-        return getProjectBySlug(slug)
-    }
-
-    /**
-     * Get all project configurations
-     */
-    const getAllConfigs = (): ProjectConfig[] => {
-        return getAllProjectConfigs()
-    }
-
-    /**
-     * Check if a project exists by slug
-     */
-    const hasProject = (slug: string): boolean => {
-        return slug in projectConfigs
-    }
-
-    return {
-        getProject,
-        getAllConfigs,
-        hasProject
-    }
-}
+export { projectConfigs, getProjectBySlug, getAllProjectConfigs } from '~/data/projects'

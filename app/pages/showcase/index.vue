@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const { setSeoMeta } = useSeo()
-const { getAllConfigs: getAllDocConfigs } = useDocumentation()
-const { getAllConfigs: getAllProjectConfigs } = useProjects()
 
 setSeoMeta({
     title: t('seo.showcase.title'),
@@ -19,31 +17,27 @@ interface ShowcaseItem {
     type: 'project' | 'documentation';
 }
 
-// Generate project items from centralized registry
-const projectItems = computed<ShowcaseItem[]>(() => {
-    const configs = getAllProjectConfigs()
-    return configs.map((config, index) => ({
-        id: index + 1,
+const toShowcaseItems = (
+    configs: { titleKey: string; descriptionKey: string; tags: string[]; slug: string }[],
+    type: 'project' | 'documentation',
+    startId: number
+): ShowcaseItem[] =>
+    configs.map((config, index) => ({
+        id: startId + index,
         title: config.titleKey,
         description: config.descriptionKey,
         tags: config.tags,
-        link: `/showcase/project/${config.slug}`,
-        type: 'project' as const
+        link: `/showcase/${type}/${config.slug}`,
+        type
     }))
-})
 
-// Generate documentation items from centralized registry
-const documentationItems = computed<ShowcaseItem[]>(() => {
-    const configs = getAllDocConfigs()
-    return configs.map((config, index) => ({
-        id: projectItems.value.length + index + 1,
-        title: config.titleKey,
-        description: config.descriptionKey,
-        tags: config.tags,
-        link: `/showcase/documentation/${config.slug}`,
-        type: 'documentation' as const
-    }))
-})
+const projectItems = computed(() =>
+    toShowcaseItems(getAllProjectConfigs(), 'project', 1)
+)
+
+const documentationItems = computed(() =>
+    toShowcaseItems(getAllDocumentationConfigs(), 'documentation', projectItems.value.length + 1)
+)
 
 // Combine all items
 const showcaseItems = computed<ShowcaseItem[]>(() => [

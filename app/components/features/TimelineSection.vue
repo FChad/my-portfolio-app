@@ -51,8 +51,8 @@ const handleOpenDetails = (item: TimelineItem) => {
 
                     <!-- Horizontal connector line (desktop: alternating) -->
                     <div class="pointer-events-none hidden md:block absolute top-1/2 -translate-y-1/2" :class="index % 2 === 0
-                        ? 'right-[calc(50%+0.375rem)] w-[2.625rem]'
-                        : 'left-[calc(50%+0.375rem)] w-[2.625rem]'">
+                        ? 'right-[calc(50%+0.375rem)] w-10.5'
+                        : 'left-[calc(50%+0.375rem)] w-10.5'">
                         <div class="h-0.5 w-full bg-neutral-200 dark:bg-neutral-700"></div>
                     </div>
 

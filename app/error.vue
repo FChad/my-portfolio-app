@@ -20,12 +20,7 @@ const errorMessage = computed(() =>
     isNotFound.value ? t('error.404.message') : t('error.general.message')
 )
 
-const helpfulLinks = [
-    { to: '/', key: 'home', icon: 'mdi:home' },
-    { to: '/about', key: 'about', icon: 'mdi:account' },
-    { to: '/showcase', key: 'showcase', icon: 'mdi:eye' },
-    { to: '/contact', key: 'contact', icon: 'mdi:email' }
-]
+const helpfulLinks = NAV_LINKS
 </script>
 
 <template>

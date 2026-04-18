@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 const route = useRoute()
 const { t } = useI18n()
-const { getDocumentation, hasDocumentation } = useDocumentation()
 const { setSeoMeta } = useSeo()
 
 // Get the slug from the route - use direct access for initial check
 const slugParam = route.params.slug as string
 
 // Handle 404 if documentation not found
-if (!slugParam || !hasDocumentation(slugParam)) {
+if (!slugParam || !getDocumentationBySlug(slugParam)) {
     throw createError({
         status: 404,
         statusText: 'Documentation not found'
@@ -16,7 +15,7 @@ if (!slugParam || !hasDocumentation(slugParam)) {
 }
 
 // Get the documentation config - synchronous for SSR
-const config = getDocumentation(slugParam)!
+const config = getDocumentationBySlug(slugParam)!
 
 // Provide SubNav configuration - fully SSR compatible
 provideSubNav(

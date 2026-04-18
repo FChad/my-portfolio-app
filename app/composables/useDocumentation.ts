@@ -4,8 +4,8 @@
 
 export interface DocCommand {
     command: string
-    description: string // Direct English text (not a translation key)
-    note?: string // Direct English text (not a translation key)
+    description: string
+    note?: string
     isFile?: boolean
     fileName?: string
     fileContent?: string
@@ -14,22 +14,22 @@ export interface DocCommand {
 
 export interface DocStep {
     id: string
-    title: string // Direct English text (not a translation key)
-    description: string // Direct English text (not a translation key)
+    title: string
+    description: string
     commands: DocCommand[]
-    note?: string // Direct English text (not a translation key)
+    note?: string
 }
 
 export interface DocTip {
     id: string
-    title: string // Direct English text (not a translation key)
+    title: string
     icon: string
     commands: DocCommand[]
 }
 
 export interface DocTroubleshooting {
     id: string
-    title: string // Direct English text (not a translation key)
+    title: string
     icon: string
     commands: DocCommand[]
 }
@@ -65,37 +65,4 @@ export interface DocumentationConfig {
     resources?: DocResource[]
 }
 
-import { documentationConfigs, getDocumentationBySlug, getAllDocumentationConfigs } from '~/data/documentation'
-
-/**
- * Composable for working with documentation data
- * Provides access to documentation configurations and utility functions
- */
-export function useDocumentation() {
-    /**
-     * Get a documentation configuration by its slug
-     */
-    const getDocumentation = (slug: string): DocumentationConfig | undefined => {
-        return getDocumentationBySlug(slug)
-    }
-
-    /**
-     * Get all documentation configurations
-     */
-    const getAllConfigs = (): DocumentationConfig[] => {
-        return getAllDocumentationConfigs()
-    }
-
-    /**
-     * Check if a documentation exists by slug
-     */
-    const hasDocumentation = (slug: string): boolean => {
-        return slug in documentationConfigs
-    }
-
-    return {
-        getDocumentation,
-        getAllConfigs,
-        hasDocumentation
-    }
-}
+export { documentationConfigs, getDocumentationBySlug, getAllDocumentationConfigs } from '~/data/documentation'

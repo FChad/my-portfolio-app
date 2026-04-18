@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import {
+    BIRTH_DATE, calculateAge,
+    profileInfoItems, certificationItems, timelineItems, experienceItems
+} from '~/data/about'
+
 const { t } = useI18n()
 const { setSeoMeta } = useSeo()
 
@@ -8,197 +13,50 @@ setSeoMeta({
     keywords: t('seo.about.keywords')
 })
 
-// Calculate age dynamically
-const calculateAge = (birthDate: string): number => {
-    const birth = new Date(birthDate)
-    const today = new Date()
-    let age = today.getFullYear() - birth.getFullYear()
-    const monthDiff = today.getMonth() - birth.getMonth()
+const currentAge = calculateAge(BIRTH_DATE)
 
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-        age--
-    }
+const profileInfo = computed(() =>
+    profileInfoItems.map(item => ({
+        icon: item.icon,
+        label: t(item.labelKey),
+        value: t(item.valueKey)
+    }))
+)
 
-    return age
-}
+const certifications = computed(() =>
+    certificationItems.map(item => ({
+        title: t(item.titleKey),
+        year: item.year,
+        description: t(item.descriptionKey),
+        icon: item.icon
+    }))
+)
 
-const currentAge = calculateAge('1999-08-03')
+const combinedTimeline = computed(() =>
+    timelineItems.map(item => ({
+        year: item.year,
+        category: item.category,
+        title: t(item.titleKey),
+        description: t(item.descriptionKey),
+        company: item.companyKey ? t(item.companyKey) : undefined,
+        type: item.typeKey ? t(item.typeKey) : undefined,
+        tasks: item.taskKeys?.map(key => t(key)),
+        school: item.schoolKey ? t(item.schoolKey) : undefined,
+        grade: item.gradeKey ? t(item.gradeKey) : undefined,
+        link: item.link,
+        linkLabel: item.linkLabelKey ? t(item.linkLabelKey) : undefined
+    }))
+)
 
-// Profile info cards (matching home page AboutPreview pattern)
-const profileInfo = computed(() => [
-    { icon: 'mdi:map-marker', label: t('about.profile.labels.location'), value: t('about.profile.location') },
-    { icon: 'mdi:flag', label: t('about.profile.labels.nationality'), value: t('about.profile.nationality') },
-    { icon: 'mdi:heart', label: t('about.profile.labels.status'), value: t('about.profile.status') },
-    { icon: 'mdi:car', label: t('about.profile.labels.license'), value: t('about.profile.driving') }
-])
-
-const certifications = [
-    {
-        title: t('about.certificationsList.cert1.title'),
-        year: '2023',
-        description: t('about.certificationsList.cert1.description'),
-        icon: 'mdi:school'
-    },
-    {
-        title: t('about.certificationsList.cert2.title'),
-        year: '2021',
-        description: t('about.certificationsList.cert2.description'),
-        icon: 'mdi:shield-check'
-    },
-    {
-        title: t('about.certificationsList.cert3.title'),
-        year: '2021',
-        description: t('about.certificationsList.cert3.description'),
-        icon: 'mdi:lan'
-    },
-    {
-        title: t('about.certificationsList.cert4.title'),
-        year: '2020',
-        description: t('about.certificationsList.cert4.description'),
-        icon: 'mdi:lan'
-    },
-    {
-        title: t('about.certificationsList.cert5.title'),
-        year: '2020',
-        description: t('about.certificationsList.cert5.description'),
-        icon: 'mdi:lan'
-    },
-    {
-        title: t('about.certificationsList.cert6.title'),
-        year: '2020',
-        description: t('about.certificationsList.cert6.description'),
-        icon: 'mdi:file-document'
-    }
-]
-
-interface TimelineItem {
-    year: string
-    title: string
-    description: string
-    category: 'work' | 'education'
-    company?: string
-    type?: string
-    tasks?: string[]
-    school?: string
-    grade?: string
-    link?: string
-    linkLabel?: string
-}
-
-// Combined timeline with work and education
-const combinedTimeline: TimelineItem[] = [
-    {
-        year: '2024',
-        title: t('about.timelineItems.item1.title'),
-        description: t('about.timelineItems.item1.description'),
-        company: t('about.timelineItems.item1.company'),
-        type: t('about.timelineItems.item1.type'),
-        tasks: [
-            t('about.timelineItems.item1.task1'),
-            t('about.timelineItems.item1.task2'),
-            t('about.timelineItems.item1.task3'),
-            t('about.timelineItems.item1.task4'),
-            t('about.timelineItems.item1.task5')
-        ],
-        category: 'work'
-    },
-    {
-        year: '2021',
-        title: t('about.education.bts.degree'),
-        description: t('about.education.bts.field'),
-        school: t('about.education.bts.school'),
-        grade: t('about.education.bts.grade'),
-        link: 'https://www.lgk.lu/bts/clc/',
-        linkLabel: t('about.education.links.bts'),
-        category: 'education'
-    },
-    {
-        year: '2021',
-        title: t('about.timelineItems.item2.title'),
-        description: t('about.timelineItems.item2.description'),
-        company: t('about.timelineItems.item2.company'),
-        type: t('about.timelineItems.item2.type'),
-        tasks: [
-            t('about.timelineItems.item2.task1'),
-            t('about.timelineItems.item2.task2'),
-            t('about.timelineItems.item2.task3'),
-            t('about.timelineItems.item2.task4'),
-            t('about.timelineItems.item2.task5'),
-            t('about.timelineItems.item2.task6')
-        ],
-        category: 'work'
-    },
-    {
-        year: '2020',
-        title: t('about.timelineItems.item3.title'),
-        description: t('about.timelineItems.item3.description'),
-        company: t('about.timelineItems.item3.company'),
-        type: t('about.timelineItems.item3.type'),
-        tasks: [
-            t('about.timelineItems.item3.task1'),
-            t('about.timelineItems.item3.task2'),
-            t('about.timelineItems.item3.task3'),
-            t('about.timelineItems.item3.task4')
-        ],
-        category: 'work'
-    },
-    {
-        year: '2019',
-        title: t('about.education.dt.degree'),
-        description: t('about.education.dt.field'),
-        school: t('about.education.dt.school'),
-        grade: t('about.education.dt.grade'),
-        link: 'https://www.lgk.lu/fopro/if/',
-        linkLabel: t('about.education.links.dt'),
-        category: 'education'
-    },
-    {
-        year: '2019',
-        title: t('about.timelineItems.item4.title'),
-        description: t('about.timelineItems.item4.description'),
-        company: t('about.timelineItems.item4.company'),
-        type: t('about.timelineItems.item4.type'),
-        tasks: [
-            t('about.timelineItems.item4.task1'),
-            t('about.timelineItems.item4.task2'),
-            t('about.timelineItems.item4.task3'),
-            t('about.timelineItems.item4.task4'),
-            t('about.timelineItems.item4.task5')
-        ],
-        category: 'work'
-    },
-    {
-        year: '2019',
-        title: t('about.timelineItems.item5.title'),
-        description: t('about.timelineItems.item5.description'),
-        company: t('about.timelineItems.item5.company'),
-        type: t('about.timelineItems.item5.type'),
-        tasks: [
-            t('about.timelineItems.item5.task1'),
-            t('about.timelineItems.item5.task2'),
-            t('about.timelineItems.item5.task3'),
-            t('about.timelineItems.item5.task4'),
-            t('about.timelineItems.item5.task5')
-        ],
-        category: 'work'
-    },
-    {
-        year: '2016',
-        title: t('about.timelineItems.item6.title'),
-        description: t('about.timelineItems.item6.description'),
-        company: t('about.timelineItems.item6.company'),
-        type: t('about.timelineItems.item6.type'),
-        tasks: [
-            t('about.timelineItems.item6.task1'),
-            t('about.timelineItems.item6.task2'),
-            t('about.timelineItems.item6.task3'),
-            t('about.timelineItems.item6.task4'),
-            t('about.timelineItems.item6.task5')
-        ],
-        category: 'work'
-    }
-]
-
+const experiences = computed(() =>
+    experienceItems.map(item => ({
+        title: t(item.titleKey),
+        description: t(item.descriptionKey),
+        icon: item.icon,
+        image: item.image,
+        alt: item.alt
+    }))
+)
 
 // Track which experience card is expanded (mobile tap)
 const expandedExperience = ref<number | null>(null)
@@ -206,30 +64,6 @@ const expandedExperience = ref<number | null>(null)
 const toggleExperience = (index: number) => {
     expandedExperience.value = expandedExperience.value === index ? null : index
 }
-
-const experiences = [
-    {
-        title: t('about.experiencesList.exp1.title'),
-        description: t('about.experiencesList.exp1.description'),
-        icon: 'mdi:helicopter',
-        image: 'helicopter.webp',
-        alt: 'Chad Feierstein helicopter flight over Dominican Republic city and Caribbean Sea'
-    },
-    {
-        title: t('about.experiencesList.exp2.title'),
-        description: t('about.experiencesList.exp2.description'),
-        icon: 'mdi:parachute',
-        image: 'skydiving.webp',
-        alt: 'Chad Feierstein skydiving over Luxembourg from 4000 meters altitude'
-    },
-    {
-        title: t('about.experiencesList.exp3.title'),
-        description: t('about.experiencesList.exp3.description'),
-        icon: 'mdi:music-note',
-        image: 'tomorrowland2025.webp',
-        alt: 'Chad Feierstein at Tomorrowland Belgium 2025 electronic music festival'
-    }
-]
 </script>
 
 <template>

@@ -1,33 +1,5 @@
 <script setup lang="ts">
-const visible = ref(false)
-const fading = ref(false)
-
-// Total cycle: fade-in stagger ~2.6s + hold ~3.4s + fade-out 0.6s + pause 0.8s ≈ 7.4s
-const HOLD_DURATION = 3400
-const FADEOUT_DURATION = 600
-const PAUSE_DURATION = 800
-
-let loopTimer: ReturnType<typeof setTimeout> | null = null
-
-const runCycle = () => {
-    fading.value = false
-    visible.value = true
-
-    loopTimer = setTimeout(() => {
-        fading.value = true
-        visible.value = false
-
-        loopTimer = setTimeout(() => {
-            loopTimer = setTimeout(runCycle, PAUSE_DURATION)
-        }, FADEOUT_DURATION)
-    }, 2600 + HOLD_DURATION)
-}
-
-onMounted(runCycle)
-
-onUnmounted(() => {
-    if (loopTimer) clearTimeout(loopTimer)
-})
+const { visible, fading } = useAnimationCycle()
 </script>
 
 <template>

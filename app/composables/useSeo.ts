@@ -1,3 +1,5 @@
+import { SITE_AUTHOR, SITE_NAME } from '~/utils/constants'
+
 interface SeoOptions {
   title?: string
   description?: string
@@ -12,23 +14,23 @@ export const useSeo = () => {
 
   const setSeoMeta = (options: SeoOptions = {}) => {
     const title = options.title || t('nav.home')
-    const fullTitle = `Chad Feierstein - ${title}`
+    const fullTitle = `${SITE_AUTHOR} - ${title}`
     const description = options.description || t('home.tagline')
     const image = options.image || `${baseUrl}/img/og/default-og-image.svg`
 
-    // Nur den Seitentitel setzen - titleTemplate in nuxt.config.ts macht den Rest
+    // Only set the page title — titleTemplate in nuxt.config.ts handles the rest
     useHead({ title })
 
-    // SEO Meta-Tags - canonical, og:locale, hreflang werden automatisch von @nuxtjs/i18n gesetzt
+    // SEO meta tags — canonical, og:locale, hreflang are set automatically by @nuxtjs/i18n
     useSeoMeta({
-      author: 'Chad Feierstein',
+      author: SITE_AUTHOR,
       description,
       ogTitle: fullTitle,
       ogDescription: description,
       ogImage: image,
       ogImageAlt: fullTitle,
       ogType: 'website',
-      ogSiteName: 'Chad Feierstein - Portfolio',
+      ogSiteName: SITE_NAME,
       twitterCard: 'summary_large_image',
       twitterTitle: fullTitle,
       twitterDescription: description,

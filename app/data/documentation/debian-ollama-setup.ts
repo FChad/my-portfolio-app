@@ -229,6 +229,29 @@ Environment="OLLAMA_MAX_LOADED_MODELS=3"`,
             ]
         }
     ],
+    resources: [
+        {
+            id: 'ollama-docs',
+            title: 'Ollama Documentation',
+            description: 'Official Ollama documentation and API reference.',
+            url: 'https://github.com/ollama/ollama/blob/main/docs/api.md',
+            icon: 'mdi:book-open-variant'
+        },
+        {
+            id: 'ollama-models',
+            title: 'Ollama Model Library',
+            description: 'Browse and discover available models for Ollama.',
+            url: 'https://ollama.com/library',
+            icon: 'mdi:robot'
+        },
+        {
+            id: 'apache-proxy',
+            title: 'Apache Reverse Proxy Guide',
+            description: 'Apache HTTP Server reverse proxy documentation.',
+            url: 'https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html',
+            icon: 'mdi:server'
+        }
+    ],
     troubleshooting: [
         {
             id: 'ollama-issues',

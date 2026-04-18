@@ -9,26 +9,7 @@ interface Props {
 
 defineProps<Props>()
 
-// Copy functionality for inline commands
-const copiedCommand = ref<string | null>(null)
-
-const copyCommand = async (command: string) => {
-    try {
-        await navigator.clipboard.writeText(command)
-        copiedCommand.value = command
-        setTimeout(() => copiedCommand.value = null, 2000)
-    } catch {
-        const textArea = document.createElement('textarea')
-        textArea.value = command
-        textArea.style.cssText = 'position:fixed;left:-9999px;top:-9999px'
-        document.body.appendChild(textArea)
-        textArea.select()
-        document.execCommand('copy')
-        document.body.removeChild(textArea)
-        copiedCommand.value = command
-        setTimeout(() => copiedCommand.value = null, 2000)
-    }
-}
+const { copiedValue: copiedCommand, copy: copyCommand } = useCopyToClipboard()
 </script>
 
 <template>

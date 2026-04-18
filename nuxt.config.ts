@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
 import { dynamicIcons } from './app/icons'
+import { SITE_AUTHOR, SITE_NAME } from './app/utils/constants'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-03-25',
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: process.env.BASE_URL,
-    name: 'Chad Feierstein - Portfolio'
+    name: SITE_NAME
   },
   ogImage: {
     enabled: false
@@ -69,7 +70,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      titleTemplate: 'Chad Feierstein - %s',
+      titleTemplate: `${SITE_AUTHOR} - %s`,
       link: [
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },

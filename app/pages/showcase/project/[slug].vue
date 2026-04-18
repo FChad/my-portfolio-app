@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 const route = useRoute()
 const { t } = useI18n()
-const { getProject, hasProject } = useProjects()
 const { setSeoMeta } = useSeo()
 
 // Get the slug from the route - use direct access for initial check
 const slugParam = route.params.slug as string
 
 // Handle 404 if project not found
-if (!slugParam || !hasProject(slugParam)) {
+if (!slugParam || !getProjectBySlug(slugParam)) {
     throw createError({
         status: 404,
         statusText: 'Project not found'
@@ -16,7 +15,7 @@ if (!slugParam || !hasProject(slugParam)) {
 }
 
 // Get the project config - synchronous for SSR
-const config = getProject(slugParam)!
+const config = getProjectBySlug(slugParam)!
 
 // Provide SubNav configuration - fully SSR compatible
 provideSubNav(
