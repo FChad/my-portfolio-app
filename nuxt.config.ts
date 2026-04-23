@@ -6,6 +6,9 @@ import { SITE_AUTHOR, SITE_NAME } from './app/utils/constants'
 export default defineNuxtConfig({
   compatibilityDate: '2026-03-25',
   devtools: { enabled: false },
+  nitro: {
+    preset: 'cloudflare-pages'
+  },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
   fonts: {
@@ -72,9 +75,8 @@ export default defineNuxtConfig({
     head: {
       titleTemplate: `${SITE_AUTHOR} - %s`,
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
         { rel: 'manifest', href: '/site.webmanifest' }
       ]
     }
