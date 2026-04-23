@@ -145,23 +145,27 @@ const stars = [
                     opacity="0.4" />
             </g>
 
-            <!-- ============ CELESTIAL BODY ============ -->
+            <!-- ============ CELESTIAL BODY ============
+                 Sun and moon share identical coordinates (cx=960, cy=240).
+                 Placing them at the horizontal center of the 1920-unit viewBox
+                 guarantees they stay within the visible slice on narrow mobile
+                 portrait screens, where `xMidYMid slice` crops the edges. -->
             <!-- Sun -->
             <g class="sun celestial">
-                <circle cx="1480" cy="240" r="180" fill="url(#sun-glow)" class="celestial-glow" />
-                <circle cx="1480" cy="240" r="62" fill="#fde68a" />
-                <circle cx="1480" cy="240" r="56" fill="#fcd34d" />
+                <circle cx="960" cy="200" r="180" fill="url(#sun-glow)" class="celestial-glow" />
+                <circle cx="960" cy="200" r="62" fill="#fde68a" />
+                <circle cx="960" cy="200" r="56" fill="#fcd34d" />
             </g>
 
             <!-- Moon -->
             <g class="moon celestial">
-                <circle cx="1480" cy="240" r="190" fill="url(#moon-glow)" class="celestial-glow" />
-                <circle cx="1480" cy="240" r="58" fill="#f1f5f9" />
-                <!-- Craters for character -->
-                <circle cx="1465" cy="228" r="7" fill="#cbd5e1" opacity="0.55" />
-                <circle cx="1495" cy="250" r="5" fill="#cbd5e1" opacity="0.55" />
-                <circle cx="1474" cy="258" r="4" fill="#cbd5e1" opacity="0.45" />
-                <circle cx="1500" cy="230" r="3" fill="#cbd5e1" opacity="0.5" />
+                <circle cx="960" cy="200" r="190" fill="url(#moon-glow)" class="celestial-glow" />
+                <circle cx="960" cy="200" r="58" fill="#f1f5f9" />
+                <!-- Craters for character (offsets relative to moon center) -->
+                <circle cx="945" cy="188" r="7" fill="#cbd5e1" opacity="0.55" />
+                <circle cx="975" cy="210" r="5" fill="#cbd5e1" opacity="0.55" />
+                <circle cx="954" cy="218" r="4" fill="#cbd5e1" opacity="0.45" />
+                <circle cx="980" cy="190" r="3" fill="#cbd5e1" opacity="0.5" />
             </g>
 
             <!-- ============ CLOUDS (day only) ============ -->
@@ -201,21 +205,27 @@ const stars = [
 
             <!-- ============ TREE SILHOUETTES ============ -->
             <g class="trees trees-day" fill="#1e293b">
-                <!-- Pine tree helper: triangular layered conifers -->
+                <!-- Pine tree path: point at top (0,-80), widest layer at base (y=0).
+                     Three stepped layers that widen toward the bottom create the
+                     classic conifer silhouette. Trunk sits at y=0..14. -->
                 <g transform="translate(140, 900)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <g transform="translate(260, 910) scale(0.85)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <g transform="translate(1640, 905) scale(1.1)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <g transform="translate(1760, 912) scale(0.9)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <!-- Smaller shrubs scattered -->
@@ -226,19 +236,23 @@ const stars = [
 
             <g class="trees trees-night" fill="#020617">
                 <g transform="translate(140, 900)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <g transform="translate(260, 910) scale(0.85)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <g transform="translate(1640, 905) scale(1.1)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <g transform="translate(1760, 912) scale(0.9)">
-                    <path d="M0,0 L-28,-30 L-14,-30 L-20,-55 L-8,-55 L0,-80 L8,-55 L20,-55 L14,-30 L28,-30 Z" />
+                    <path
+                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
                     <rect x="-4" y="0" width="8" height="14" />
                 </g>
                 <ellipse cx="520" cy="912" rx="26" ry="14" />
@@ -420,12 +434,14 @@ const stars = [
     0%,
     90%,
     100% {
-        transform: translate(200px, 60px) rotate(0deg);
+        /* Start position chosen so the trail stays within the mobile
+           crop window (~x=700-1200 on narrow portrait screens). */
+        transform: translate(750px, 80px) rotate(0deg);
         opacity: 0;
     }
 
     91% {
-        transform: translate(200px, 60px) rotate(0deg);
+        transform: translate(750px, 80px) rotate(0deg);
         opacity: 0;
     }
 
@@ -434,7 +450,7 @@ const stars = [
     }
 
     99% {
-        transform: translate(900px, 360px) rotate(0deg);
+        transform: translate(1150px, 280px) rotate(0deg);
         opacity: 0;
     }
 }
