@@ -8,6 +8,11 @@
  *
  * Scales via `preserveAspectRatio="xMidYMid slice"` so it always fills
  * its container (mobile portrait → desktop widescreen) without distortion.
+ *
+ * Mobile framing: on narrow portrait screens only the centre ~500 units of
+ * the 1920-wide viewBox is visible. Feature elements (celestial body, lake,
+ * key trees, reeds) are concentrated between x≈670..1250 so mobile users
+ * still see a complete scene rather than empty hills.
  */
 
 interface Props {
@@ -19,10 +24,6 @@ withDefaults(defineProps<Props>(), {
     wrapperClass: 'z-0'
 })
 
-// Deterministic star positions — computed once, no reactivity needed.
-// Keeping this small (20 stars) avoids cluttering the DOM while still
-// giving a rich night-sky feel. Positions are hand-tuned to cluster
-// in the upper portion of the viewBox.
 const stars = [
     { cx: 120, cy: 90, r: 1.4, delay: 0 },
     { cx: 240, cy: 160, r: 1.0, delay: 1.2 },
@@ -45,6 +46,68 @@ const stars = [
     { cx: 300, cy: 260, r: 1.3, delay: 2.0 },
     { cx: 1700, cy: 290, r: 1.2, delay: 3.8 }
 ] as const
+
+type TreeType = 'pine' | 'broadleaf'
+interface Tree { x: number; y: number; scale: number; type: TreeType }
+
+// Tree distribution is deliberately centre-heavy so the mobile crop still
+// frames a forest rather than open hillside.
+const trees: readonly Tree[] = [
+    { x: 140, y: 900, scale: 1.00, type: 'pine' },
+    { x: 260, y: 910, scale: 0.85, type: 'pine' },
+    { x: 430, y: 918, scale: 0.75, type: 'broadleaf' },
+    { x: 730, y: 908, scale: 0.90, type: 'pine' },
+    { x: 805, y: 924, scale: 0.65, type: 'broadleaf' },
+    { x: 1150, y: 924, scale: 0.70, type: 'broadleaf' },
+    { x: 1225, y: 906, scale: 0.95, type: 'pine' },
+    { x: 1490, y: 918, scale: 0.80, type: 'broadleaf' },
+    { x: 1640, y: 905, scale: 1.10, type: 'pine' },
+    { x: 1760, y: 912, scale: 0.90, type: 'broadleaf' }
+] as const
+
+const shrubs = [
+    { cx: 520, cy: 912, rx: 26, ry: 14 },
+    { cx: 1060, cy: 920, rx: 22, ry: 11 },
+    { cx: 1380, cy: 916, rx: 28, ry: 13 }
+] as const
+
+// Reeds cluster at the two visible lake edges. Rotation adds organic variety.
+const reeds = [
+    { x: 678, h: 16, rot: -6 },
+    { x: 690, h: 22, rot: 3 },
+    { x: 702, h: 14, rot: -2 },
+    { x: 714, h: 19, rot: 5 },
+    { x: 1212, h: 15, rot: -5 },
+    { x: 1224, h: 21, rot: 2 },
+    { x: 1236, h: 17, rot: -3 },
+    { x: 1248, h: 13, rot: 6 }
+] as const
+
+// Fireflies drift over the lake at night; delays stagger the glow pulse.
+const fireflies = [
+    { cx: 770, cy: 948, delay: 0 },
+    { cx: 840, cy: 935, delay: 1.4 },
+    { cx: 905, cy: 950, delay: 0.6 },
+    { cx: 975, cy: 930, delay: 2.2 },
+    { cx: 1035, cy: 944, delay: 1.0 },
+    { cx: 1095, cy: 936, delay: 2.8 },
+    { cx: 1155, cy: 948, delay: 0.3 }
+] as const
+
+// Reflection streak bands on the lake surface — stacked thin ellipses with
+// varying width/opacity create the classic shimmering light path a sun or
+// moon casts on water, much more realistic than a single radial blob.
+interface ReflectionBand { dy: number; rx: number; opacity: number }
+const reflectionBands: readonly ReflectionBand[] = [
+    { dy: -7, rx: 40, opacity: 0.35 },
+    { dy: -5, rx: 70, opacity: 0.55 },
+    { dy: -3, rx: 85, opacity: 0.75 },
+    { dy: -1, rx: 95, opacity: 0.9 },
+    { dy: 1, rx: 90, opacity: 0.8 },
+    { dy: 3, rx: 75, opacity: 0.6 },
+    { dy: 5, rx: 55, opacity: 0.45 },
+    { dy: 7, rx: 35, opacity: 0.3 }
+] as const
 </script>
 
 <template>
@@ -53,8 +116,6 @@ const stars = [
             xmlns="http://www.w3.org/2000/svg">
 
             <defs>
-                <!-- Sky gradients (day + night). Both always rendered;
-                     CSS opacity toggles which one is visible per theme. -->
                 <linearGradient id="sky-day" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stop-color="#c7e1f5" />
                     <stop offset="55%" stop-color="#e5efde" />
@@ -67,7 +128,6 @@ const stars = [
                     <stop offset="100%" stop-color="#1d2a5b" />
                 </linearGradient>
 
-                <!-- Radial glow around the celestial body -->
                 <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stop-color="#fde68a" stop-opacity="0.85" />
                     <stop offset="45%" stop-color="#fbbf24" stop-opacity="0.25" />
@@ -80,7 +140,6 @@ const stars = [
                     <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
                 </radialGradient>
 
-                <!-- Mountain gradients — gives depth vs flat silhouettes -->
                 <linearGradient id="mountain-far-day" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stop-color="#93a8bf" />
                     <stop offset="100%" stop-color="#b7c3d2" />
@@ -108,7 +167,6 @@ const stars = [
                     <stop offset="100%" stop-color="#131c3f" />
                 </linearGradient>
 
-                <!-- Soft mist above the far mountains for atmospheric depth -->
                 <linearGradient id="mist-day" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
                     <stop offset="100%" stop-color="#ffffff" stop-opacity="0.35" />
@@ -118,7 +176,33 @@ const stars = [
                     <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.25" />
                 </linearGradient>
 
-                <!-- Cloud shape reused twice with different transforms -->
+                <!-- Lake water — top reflects sky, deepens toward the viewer. -->
+                <linearGradient id="lake-day" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#a8cfe6" />
+                    <stop offset="55%" stop-color="#5a97c9" />
+                    <stop offset="100%" stop-color="#2c5f9e" />
+                </linearGradient>
+                <linearGradient id="lake-night" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1e2a5e" />
+                    <stop offset="55%" stop-color="#0c1638" />
+                    <stop offset="100%" stop-color="#040818" />
+                </linearGradient>
+
+                <!-- Vertical beam of celestial light reflected onto the water. -->
+                <radialGradient id="sunpath" cx="50%" cy="0%" r="80%" fx="50%" fy="0%">
+                    <stop offset="0%" stop-color="#fde68a" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="moonpath" cx="50%" cy="0%" r="80%" fx="50%" fy="0%">
+                    <stop offset="0%" stop-color="#f1f5f9" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="#f1f5f9" stop-opacity="0" />
+                </radialGradient>
+
+                <!-- Soft bloom around fireflies. Kept tight so it doesn't hog fill rate. -->
+                <filter id="firefly-glow" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="2.5" />
+                </filter>
+
                 <symbol id="cloud" viewBox="0 0 200 60" overflow="visible">
                     <ellipse cx="50" cy="40" rx="50" ry="18" />
                     <ellipse cx="95" cy="28" rx="40" ry="22" />
@@ -137,7 +221,6 @@ const stars = [
                     :style="{ animationDelay: `${s.delay}s` }" />
             </g>
 
-            <!-- Shooting star — subtle, periodic. Single path, GPU-transformed. -->
             <g class="shooting-star">
                 <line x1="0" y1="0" x2="120" y2="40" stroke="#f8fafc" stroke-width="1.5" stroke-linecap="round"
                     opacity="0.8" />
@@ -146,22 +229,17 @@ const stars = [
             </g>
 
             <!-- ============ CELESTIAL BODY ============
-                 Sun and moon share identical coordinates (cx=960, cy=240).
-                 Placing them at the horizontal center of the 1920-unit viewBox
-                 guarantees they stay within the visible slice on narrow mobile
-                 portrait screens, where `xMidYMid slice` crops the edges. -->
-            <!-- Sun -->
+                 Sun and moon share identical coordinates (cx=960, cy=200).
+                 Centered in viewBox so they stay in the mobile crop. -->
             <g class="sun celestial">
                 <circle cx="960" cy="200" r="180" fill="url(#sun-glow)" class="celestial-glow" />
                 <circle cx="960" cy="200" r="62" fill="#fde68a" />
                 <circle cx="960" cy="200" r="56" fill="#fcd34d" />
             </g>
 
-            <!-- Moon -->
             <g class="moon celestial">
                 <circle cx="960" cy="200" r="190" fill="url(#moon-glow)" class="celestial-glow" />
                 <circle cx="960" cy="200" r="58" fill="#f1f5f9" />
-                <!-- Craters for character (offsets relative to moon center) -->
                 <circle cx="945" cy="188" r="7" fill="#cbd5e1" opacity="0.55" />
                 <circle cx="975" cy="210" r="5" fill="#cbd5e1" opacity="0.55" />
                 <circle cx="954" cy="218" r="4" fill="#cbd5e1" opacity="0.45" />
@@ -173,6 +251,15 @@ const stars = [
                 <use href="#cloud" class="cloud cloud-1" x="-200" y="180" width="260" height="70" />
                 <use href="#cloud" class="cloud cloud-2" x="-200" y="340" width="200" height="55" />
                 <use href="#cloud" class="cloud cloud-3" x="-200" y="110" width="170" height="48" />
+            </g>
+
+            <!-- ============ BIRDS (day only, animated flock) ============ -->
+            <g class="birds" stroke="#475569" stroke-width="2.5" stroke-linecap="round" fill="none">
+                <g class="bird-flock">
+                    <path d="M0,0 Q6,-6 12,0 Q18,-6 24,0" />
+                    <path transform="translate(42,10)" d="M0,0 Q5,-5 10,0 Q15,-5 20,0" />
+                    <path transform="translate(78,-4)" d="M0,0 Q4,-4 8,0 Q12,-4 16,0" />
+                </g>
             </g>
 
             <!-- ============ ATMOSPHERIC MIST ============ -->
@@ -203,61 +290,89 @@ const stars = [
                 d="M0,920 C240,860 480,900 720,880 C960,860 1200,910 1440,880 C1640,860 1820,900 1920,890 L1920,1080 L0,1080 Z"
                 fill="url(#hills-night)" />
 
-            <!-- ============ TREE SILHOUETTES ============ -->
+            <!-- ============ TREES & SHRUBS ============
+                 Rendered before the lake so the water surface clips the trunks
+                 of far-shore trees, making them sit naturally on the shoreline.
+                 Two parallel groups (day/night) with different fills; shapes are
+                 identical so the theme toggle is a simple opacity crossfade. -->
             <g class="trees trees-day" fill="#1e293b">
-                <!-- Pine tree path: point at top (0,-80), widest layer at base (y=0).
-                     Three stepped layers that widen toward the bottom create the
-                     classic conifer silhouette. Trunk sits at y=0..14. -->
-                <g transform="translate(140, 900)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
+                <g v-for="(t, i) in trees" :key="`td-${i}`"
+                    :transform="`translate(${t.x}, ${t.y}) scale(${t.scale})`">
+                    <template v-if="t.type === 'pine'">
+                        <path
+                            d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
+                        <rect x="-4" y="0" width="8" height="14" />
+                    </template>
+                    <template v-else>
+                        <circle cx="0" cy="-28" r="28" />
+                        <circle cx="-22" cy="-22" r="20" />
+                        <circle cx="20" cy="-24" r="22" />
+                        <circle cx="-4" cy="-48" r="20" />
+                        <rect x="-3" y="0" width="6" height="14" />
+                    </template>
                 </g>
-                <g transform="translate(260, 910) scale(0.85)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
-                </g>
-                <g transform="translate(1640, 905) scale(1.1)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
-                </g>
-                <g transform="translate(1760, 912) scale(0.9)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
-                </g>
-                <!-- Smaller shrubs scattered -->
-                <ellipse cx="520" cy="912" rx="26" ry="14" />
-                <ellipse cx="880" cy="918" rx="20" ry="10" />
-                <ellipse cx="1200" cy="910" rx="32" ry="16" />
+                <ellipse v-for="(s, i) in shrubs" :key="`sd-${i}`" :cx="s.cx" :cy="s.cy" :rx="s.rx" :ry="s.ry" />
             </g>
 
             <g class="trees trees-night" fill="#020617">
-                <g transform="translate(140, 900)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
+                <g v-for="(t, i) in trees" :key="`tn-${i}`"
+                    :transform="`translate(${t.x}, ${t.y}) scale(${t.scale})`">
+                    <template v-if="t.type === 'pine'">
+                        <path
+                            d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
+                        <rect x="-4" y="0" width="8" height="14" />
+                    </template>
+                    <template v-else>
+                        <circle cx="0" cy="-28" r="28" />
+                        <circle cx="-22" cy="-22" r="20" />
+                        <circle cx="20" cy="-24" r="22" />
+                        <circle cx="-4" cy="-48" r="20" />
+                        <rect x="-3" y="0" width="6" height="14" />
+                    </template>
                 </g>
-                <g transform="translate(260, 910) scale(0.85)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
+                <ellipse v-for="(s, i) in shrubs" :key="`sn-${i}`" :cx="s.cx" :cy="s.cy" :rx="s.rx" :ry="s.ry" />
+            </g>
+
+            <!-- ============ LAKE ============
+                 Centred pond inside the hills. Reflection beam aligns with
+                 sun/moon at cx=960. Shimmer lines hint at water surface. -->
+            <g class="lake lake-day">
+                <ellipse cx="960" cy="945" rx="300" ry="20" fill="url(#lake-day)" />
+                <g class="lake-reflection">
+                    <ellipse v-for="(b, i) in reflectionBands" :key="`rfd-${i}`" :cx="960" :cy="945 + b.dy"
+                        :rx="b.rx" ry="0.9" fill="#fde68a" :opacity="b.opacity" />
                 </g>
-                <g transform="translate(1640, 905) scale(1.1)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
+                <ellipse class="lake-shine lake-shine-1" cx="960" cy="937" rx="250" ry="1.2" fill="#ffffff"
+                    opacity="0.45" />
+                <ellipse class="lake-shine lake-shine-2" cx="960" cy="953" rx="180" ry="0.9" fill="#ffffff"
+                    opacity="0.25" />
+            </g>
+            <g class="lake lake-night">
+                <ellipse cx="960" cy="945" rx="300" ry="20" fill="url(#lake-night)" />
+                <g class="lake-reflection">
+                    <ellipse v-for="(b, i) in reflectionBands" :key="`rfn-${i}`" :cx="960" :cy="945 + b.dy"
+                        :rx="b.rx * 0.75" ry="0.8" fill="#f1f5f9" :opacity="b.opacity * 0.75" />
                 </g>
-                <g transform="translate(1760, 912) scale(0.9)">
-                    <path
-                        d="M0,-80 L-14,-55 L-8,-55 L-22,-30 L-12,-30 L-28,0 L28,0 L12,-30 L22,-30 L8,-55 L14,-55 Z" />
-                    <rect x="-4" y="0" width="8" height="14" />
-                </g>
-                <ellipse cx="520" cy="912" rx="26" ry="14" />
-                <ellipse cx="880" cy="918" rx="20" ry="10" />
-                <ellipse cx="1200" cy="910" rx="32" ry="16" />
+                <ellipse class="lake-shine lake-shine-1" cx="960" cy="937" rx="250" ry="1" fill="#f1f5f9"
+                    opacity="0.28" />
+                <ellipse class="lake-shine lake-shine-2" cx="960" cy="953" rx="180" ry="0.7" fill="#93c5fd"
+                    opacity="0.2" />
+            </g>
+
+            <!-- ============ REEDS AT LAKE EDGE ============ -->
+            <g class="reeds reeds-day" stroke="#1e293b" stroke-width="2" stroke-linecap="round">
+                <line v-for="(r, i) in reeds" :key="`rd-${i}`" :x1="r.x" :y1="938" :x2="r.x" :y2="938 - r.h"
+                    :transform="`rotate(${r.rot} ${r.x} 938)`" />
+            </g>
+            <g class="reeds reeds-night" stroke="#020617" stroke-width="2" stroke-linecap="round">
+                <line v-for="(r, i) in reeds" :key="`rn-${i}`" :x1="r.x" :y1="938" :x2="r.x" :y2="938 - r.h"
+                    :transform="`rotate(${r.rot} ${r.x} 938)`" />
+            </g>
+
+            <!-- ============ FIREFLIES (night only) ============ -->
+            <g class="fireflies" filter="url(#firefly-glow)">
+                <circle v-for="(f, i) in fireflies" :key="i" class="firefly" :cx="f.cx" :cy="f.cy" r="2.6"
+                    fill="#fde68a" :style="{ animationDelay: `${f.delay}s` }" />
             </g>
         </svg>
     </div>
@@ -265,7 +380,6 @@ const stars = [
 
 <style scoped>
 .landscape-wrapper {
-    /* Promote the SVG to its own compositor layer for smoother animations */
     isolation: isolate;
     transform: translateZ(0);
 }
@@ -279,8 +393,7 @@ const stars = [
 /* ---------------------------------------------------------
    Theme switching — all day/night elements coexist in the
    DOM; we simply fade one set out and the other in when
-   the `.dark` class flips. This lets Nuxt color-mode drive
-   the whole scene with zero re-render cost.
+   the `.dark` class flips.
    --------------------------------------------------------- */
 .sky,
 .mist,
@@ -288,22 +401,28 @@ const stars = [
 .mountain-mid,
 .hills,
 .trees,
+.lake,
+.reeds,
 .celestial,
 .stars,
 .shooting-star,
-.clouds {
+.clouds,
+.birds,
+.fireflies {
     transition: opacity 600ms ease-in-out;
 }
 
-/* Day is the default (light mode). Night elements hidden. */
 .sky-day,
 .mist-day,
 .mountain-far-day,
 .mountain-mid-day,
 .hills-day,
 .trees-day,
+.lake-day,
+.reeds-day,
 .sun,
-.clouds {
+.clouds,
+.birds {
     opacity: 1;
 }
 
@@ -313,22 +432,26 @@ const stars = [
 .mountain-mid-night,
 .hills-night,
 .trees-night,
+.lake-night,
+.reeds-night,
 .moon,
 .stars,
-.shooting-star {
+.shooting-star,
+.fireflies {
     opacity: 0;
 }
 
-/* Flip the scene in dark mode. The `:where()` keeps specificity
-   low so the transitions above still apply. */
 :where(.dark) .sky-day,
 :where(.dark) .mist-day,
 :where(.dark) .mountain-far-day,
 :where(.dark) .mountain-mid-day,
 :where(.dark) .hills-day,
 :where(.dark) .trees-day,
+:where(.dark) .lake-day,
+:where(.dark) .reeds-day,
 :where(.dark) .sun,
-:where(.dark) .clouds {
+:where(.dark) .clouds,
+:where(.dark) .birds {
     opacity: 0;
 }
 
@@ -338,20 +461,17 @@ const stars = [
 :where(.dark) .mountain-mid-night,
 :where(.dark) .hills-night,
 :where(.dark) .trees-night,
-:where(.dark) .moon {
-    opacity: 1;
-}
-
-:where(.dark) .stars {
+:where(.dark) .lake-night,
+:where(.dark) .reeds-night,
+:where(.dark) .moon,
+:where(.dark) .stars,
+:where(.dark) .fireflies {
     opacity: 1;
 }
 
 /* ---------------------------------------------------------
-   Animations — kept minimal. Only opacity / transform
-   (both compositor-only properties). No layout thrash.
+   Animations — opacity / transform only (compositor-friendly).
    --------------------------------------------------------- */
-
-/* Subtle sun/moon glow pulse */
 .celestial-glow {
     transform-box: fill-box;
     transform-origin: center;
@@ -373,7 +493,6 @@ const stars = [
     }
 }
 
-/* Star twinkle — staggered via inline animation-delay */
 .stars circle {
     animation: star-twinkle 4s ease-in-out infinite;
     transform-box: fill-box;
@@ -392,7 +511,6 @@ const stars = [
     }
 }
 
-/* Clouds drift left → right. Translate only, no repaint. */
 .cloud {
     will-change: transform;
 }
@@ -417,12 +535,10 @@ const stars = [
     }
 
     to {
-        /* 2120 = viewBox width (1920) + cloud width buffer so it exits cleanly */
         transform: translateX(2120px);
     }
 }
 
-/* Shooting star — dramatic but rare. Long delay between runs. */
 .shooting-star {
     transform-origin: 0 0;
     animation: shoot 14s ease-out infinite;
@@ -434,8 +550,6 @@ const stars = [
     0%,
     90%,
     100% {
-        /* Start position chosen so the trail stays within the mobile
-           crop window (~x=700-1200 on narrow portrait screens). */
         transform: translate(750px, 80px) rotate(0deg);
         opacity: 0;
     }
@@ -455,9 +569,86 @@ const stars = [
     }
 }
 
-/* Shooting star only visible at night */
 :where(.dark) .shooting-star {
     opacity: 1;
+}
+
+/* Bird flock drifts across the sky at a leisurely pace. */
+.bird-flock {
+    will-change: transform;
+    animation: bird-fly 55s linear infinite;
+}
+
+@keyframes bird-fly {
+    from {
+        transform: translate(-120px, 220px);
+    }
+
+    to {
+        transform: translate(2100px, 140px);
+    }
+}
+
+/* Lake surface — subtle horizontal shimmer. */
+.lake-shine {
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform, opacity;
+}
+
+.lake-shine-1 {
+    animation: lake-shimmer 5s ease-in-out infinite;
+}
+
+.lake-shine-2 {
+    animation: lake-shimmer 7s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+@keyframes lake-shimmer {
+
+    0%,
+    100% {
+        transform: scaleX(1);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: scaleX(1.06);
+        opacity: 0.7;
+    }
+}
+
+/* Fireflies — small drifting glow that pulses. */
+.firefly {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: firefly 5s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes firefly {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.25;
+    }
+
+    25% {
+        transform: translate(-4px, -5px);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(3px, -8px);
+        opacity: 0.55;
+    }
+
+    75% {
+        transform: translate(-2px, -3px);
+        opacity: 0.9;
+    }
 }
 
 /* ---------------------------------------------------------
@@ -468,11 +659,13 @@ const stars = [
     .celestial-glow,
     .stars circle,
     .cloud,
-    .shooting-star {
+    .shooting-star,
+    .bird-flock,
+    .lake-shine,
+    .firefly {
         animation: none;
     }
 
-    /* Keep shooting star hidden if motion is disabled */
     .shooting-star {
         display: none;
     }
