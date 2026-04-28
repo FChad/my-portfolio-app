@@ -11,23 +11,23 @@ const scrollToAbout = () => {
     document.querySelector('#about-section')?.scrollIntoView({ behavior: 'smooth' })
 }
 
-// Lazy load the landscape: it's decorative and below-the-fold priority.
-const LazyAnimatedLandscape = defineAsyncComponent(() =>
-    import('~/components/effects/AnimatedLandscape.vue')
+// Lazy load AnimatedStars for better initial page load performance
+const LazyAnimatedStars = defineAsyncComponent(() =>
+    import('~/components/effects/AnimatedStars.vue')
 )
 </script>
 
 <template>
     <section class="relative min-h-[calc(100dvh-65px)] flex items-center justify-center overflow-hidden">
-        <!-- Animated Landscape Background -->
+        <!-- Animated Stars Background -->
         <div class="absolute inset-0">
-            <LazyAnimatedLandscape
-                wrapper-class="z-0 opacity-90 dark:opacity-95 transition-opacity" />
+            <!-- Animated Stars Canvas (Lazy Loaded) -->
+            <LazyAnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
+                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
 
-            <!-- Readability overlay: slightly stronger at the bottom where
-                 the CTA buttons sit, so the hills/trees never fight the text. -->
+            <!-- Adaptive overlay for text readability -->
             <div
-                class="absolute inset-0 z-10 bg-linear-to-b from-white/20 via-white/10 to-white/70 dark:from-neutral-900/30 dark:via-neutral-900/20 dark:to-neutral-900/70">
+                class="absolute inset-0 z-10 bg-linear-to-b from-transparent via-transparent to-white/40 dark:from-transparent dark:via-transparent dark:to-neutral-900/20">
             </div>
         </div>
 
