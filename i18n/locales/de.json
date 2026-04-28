@@ -212,7 +212,6 @@
     "languages": {
       "title": "Sprachen",
       "subtitle": "Mehrsprachige Kommunikation",
-      "native": "Muttersprache",
       "levels": {
         "A1": "Grundkenntnisse",
         "A2": "Grundlegende Kenntnisse",
@@ -467,11 +466,7 @@
   "documentations": {
     "ollamaSetup": {
       "title": "Linux - Ollama Installation",
-      "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung.",
-      "completion": {
-        "title": "Installation abgeschlossen!",
-        "description": "Ihre Ollama-Installation ist jetzt bereit. Sie können über die gesicherte API auf Ihre KI-Modelle zugreifen."
-      }
+      "description": "Eine umfassende Schritt-für-Schritt Anleitung zur Installation von Ollama auf Debian 12 mit Apache2 Reverse Proxy, SSL-Verschlüsselung und HTTP Basic Authentication für sichere öffentliche API-Nutzung."
     },
     "debianInitialSetup": {
       "title": "Debian 12 - Server Ersteinrichtung",
@@ -557,10 +552,6 @@
     "updateDate": "Januar 2026",
     "backToHome": "Zurück zur Startseite",
     "sections": {
-      "intro": {
-        "title": "Einleitung",
-        "content": "Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Datenschutzerklärung informiert Sie darüber, wie ich Ihre Daten auf dieser Website verarbeite und welche Rechte Sie haben."
-      },
       "responsible": {
         "title": "Verantwortlicher",
         "location": "Rümelingen, Luxemburg",
@@ -568,7 +559,6 @@
       },
       "dataCollection": {
         "title": "Datenerfassung auf dieser Website",
-        "content": "Diese Website wurde mit Fokus auf Datenschutz entwickelt:",
         "items": {
           "noTracking": "Kein Benutzer-Tracking oder Verhaltensanalyse",
           "noAnalytics": "Keine Google Analytics oder ähnliche Dienste",
@@ -576,8 +566,6 @@
         }
       },
       "technicalStorage": {
-        "title": "Technisch notwendige Speicherungen",
-        "content": "Für die Funktionalität der Website werden folgende Daten lokal in Ihrem Browser gespeichert:",
         "localStorage": {
           "title": "Theme-Präferenz",
           "badge": "Technisch notwendig",
@@ -611,13 +599,11 @@
       },
       "rights": {
         "title": "Ihre Rechte & Datenkontrolle",
-        "intro": "Da diese Website nur minimale Daten verarbeitet, haben Sie folgende praktische Möglichkeiten:",
         "localStorage": "Theme-Präferenz: Diese wird nur lokal in Ihrem Browser gespeichert. Sie können sie jederzeit selbst löschen (Browser-Einstellungen → Websitedaten löschen) oder Ihren Browser so einstellen, dass localStorage bei jedem Schließen gelöscht wird.",
         "contact": "Kontaktformular: Falls Sie mir eine Nachricht gesendet haben und die Löschung wünschen, kontaktieren Sie mich einfach. Die E-Mail wird dann aus meinem Postfach gelöscht."
       },
       "noCookieBanner": {
-        "title": "Warum kein Cookie-Banner?",
-        "content": "Diese Website verwendet keine Tracking-Cookies oder Marketing-Tools. Die einzige lokale Speicherung (Theme-Präferenz) ist technisch notwendig und erfordert nach EU-Recht keine ausdrückliche Einwilligung."
+        "title": "Warum kein Cookie-Banner?"
       }
     }
   }

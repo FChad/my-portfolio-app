@@ -212,7 +212,6 @@
     "languages": {
       "title": "Langues",
       "subtitle": "Communication multilingue",
-      "native": "Langue maternelle",
       "levels": {
         "A1": "Débutant",
         "A2": "Élémentaire",
@@ -553,10 +552,6 @@
     "updateDate": "Janvier 2026",
     "backToHome": "Retour à l'accueil",
     "sections": {
-      "intro": {
-        "title": "Introduction",
-        "content": "La protection de vos données personnelles est importante pour moi. Cette politique de confidentialité vous informe sur la façon dont je traite vos données sur ce site et sur vos droits."
-      },
       "responsible": {
         "title": "Responsable du traitement",
         "location": "Rumelange, Luxembourg",
@@ -564,7 +559,6 @@
       },
       "dataCollection": {
         "title": "Collecte de données sur ce site",
-        "content": "Ce site a été développé avec un accent sur la protection de la vie privée :",
         "items": {
           "noTracking": "Pas de suivi des utilisateurs ni d'analyse comportementale",
           "noAnalytics": "Pas de Google Analytics ou services similaires",
@@ -572,8 +566,6 @@
         }
       },
       "technicalStorage": {
-        "title": "Stockages techniquement nécessaires",
-        "content": "Pour le fonctionnement du site, les données suivantes sont stockées localement dans votre navigateur :",
         "localStorage": {
           "title": "Préférence de thème",
           "badge": "Techniquement nécessaire",
@@ -607,13 +599,11 @@
       },
       "rights": {
         "title": "Vos droits & contrôle des données",
-        "intro": "Étant donné que ce site ne traite que des données minimales, vous avez les options pratiques suivantes :",
         "localStorage": "Préférence de thème : Elle n'est stockée que localement dans votre navigateur. Vous pouvez la supprimer vous-même à tout moment (Paramètres du navigateur → Effacer les données du site) ou configurer votre navigateur pour effacer le localStorage à la fermeture.",
         "contact": "Formulaire de contact : Si vous m'avez envoyé un message et souhaitez sa suppression, contactez-moi simplement. L'e-mail sera alors supprimé de ma boîte de réception."
       },
       "noCookieBanner": {
-        "title": "Pourquoi pas de bannière de cookies ?",
-        "content": "Ce site n'utilise pas de cookies de suivi ni d'outils marketing. Le seul stockage local (préférence de thème) est techniquement nécessaire et ne nécessite pas de consentement explicite selon le droit européen."
+        "title": "Pourquoi pas de bannière de cookies ?"
       }
     }
   }

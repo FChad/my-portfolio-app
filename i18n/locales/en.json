@@ -212,7 +212,6 @@
     "languages": {
       "title": "Languages",
       "subtitle": "Multilingual communication",
-      "native": "Native",
       "levels": {
         "A1": "Basic",
         "A2": "Elementary",
@@ -553,10 +552,6 @@
     "updateDate": "January 2026",
     "backToHome": "Back to Home",
     "sections": {
-      "intro": {
-        "title": "Introduction",
-        "content": "Protecting your personal data is important to me. This privacy policy informs you about how I process your data on this website and what rights you have."
-      },
       "responsible": {
         "title": "Data Controller",
         "location": "Rumelange, Luxembourg",
@@ -564,7 +559,6 @@
       },
       "dataCollection": {
         "title": "Data Collection on This Website",
-        "content": "This website was developed with a focus on privacy:",
         "items": {
           "noTracking": "No user tracking or behavior analysis",
           "noAnalytics": "No Google Analytics or similar services",
@@ -572,8 +566,6 @@
         }
       },
       "technicalStorage": {
-        "title": "Technically Necessary Storage",
-        "content": "For the functionality of the website, the following data is stored locally in your browser:",
         "localStorage": {
           "title": "Theme Preference",
           "badge": "Technically necessary",
@@ -607,13 +599,11 @@
       },
       "rights": {
         "title": "Your Rights & Data Control",
-        "intro": "Since this website only processes minimal data, you have the following practical options:",
         "localStorage": "Theme preference: This is only stored locally in your browser. You can delete it yourself at any time (Browser settings → Clear site data) or configure your browser to clear localStorage when closing.",
         "contact": "Contact form: If you have sent me a message and wish it to be deleted, simply contact me. The email will then be deleted from my inbox."
       },
       "noCookieBanner": {
-        "title": "Why No Cookie Banner?",
-        "content": "This website does not use tracking cookies or marketing tools. The only local storage (theme preference) is technically necessary and does not require explicit consent under EU law."
+        "title": "Why No Cookie Banner?"
       }
     }
   }

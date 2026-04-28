@@ -17,7 +17,6 @@ export const dynamicIcons = [
     'mdi:certificate',
     'mdi:code-braces',
     'mdi:controller',
-    'mdi:emoticon-outline',
     'mdi:flag',
     'mdi:heart',
     'mdi:helicopter',
@@ -26,21 +25,18 @@ export const dynamicIcons = [
     'mdi:music-note',
     'mdi:parachute',
     'mdi:school',
-    'mdi:translate',
 
     // Project features (from data files)
     'mdi:book-open-variant',
     'mdi:brain',
     'mdi:bug',
     'mdi:chat-processing',
-    'mdi:code-tags',
     'mdi:content-save',
     'mdi:database',
     'mdi:database-sync',
     'mdi:github',
     'mdi:lan',
     'mdi:lightning-bolt',
-    'mdi:lock',
     'mdi:magnify',
     'mdi:palette',
     'mdi:play-circle',
@@ -61,11 +57,8 @@ export const dynamicIcons = [
     // Documentation resources
     'mdi:download',
     'mdi:email-outline',
-    'mdi:docker',
 
-    // Error page (dynamic icon + helpful link icons bound via variables)
-    'mdi:alert-circle-outline',
-    'mdi:compass-off-outline',
+    // Error page helpful link icons (bound via NAV_LINKS)
     'mdi:home',
     'mdi:account',
     'mdi:eye',

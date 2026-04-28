@@ -212,7 +212,6 @@
     "languages": {
       "title": "Sproochen",
       "subtitle": "Méisproocheg Kommunikatioun",
-      "native": "Mammesprooch",
       "levels": {
         "A1": "Grondkenntnisser",
         "A2": "Grondleeënd Kenntnisser",
@@ -553,10 +552,6 @@
     "updateDate": "Januar 2026",
     "backToHome": "Zréck op d'Haaptsäit",
     "sections": {
-      "intro": {
-        "title": "Aféierung",
-        "content": "De Schutz vun Äre perséinlechen Daten ass mir wichteg. Dës Dateschutzerkläerung informéiert Iech iwwert wéi ech Är Daten op dëser Websäit veraarbecht a wéi eng Rechter Dir hutt."
-      },
       "responsible": {
         "title": "Verantwortlechen",
         "location": "Rëmeling, Lëtzebuerg",
@@ -564,7 +559,6 @@
       },
       "dataCollection": {
         "title": "Datenerfaassung op dëser Websäit",
-        "content": "Dës Websäit gouf mat Fokus op Dateschutz entwéckelt:",
         "items": {
           "noTracking": "Keng Benotzer-Tracking oder Verhaalensanalyse",
           "noAnalytics": "Keng Google Analytics oder ähnlech Servicer",
@@ -572,8 +566,6 @@
         }
       },
       "technicalStorage": {
-        "title": "Technesch néideg Späicherungen",
-        "content": "Fir d'Funktionalitéit vun der Websäit ginn folgend Daten lokal an Ärem Browser gespäichert:",
         "localStorage": {
           "title": "Thema-Preferenz",
           "badge": "Technesch néideg",
@@ -607,13 +599,11 @@
       },
       "rights": {
         "title": "Är Rechter & Datekontroll",
-        "intro": "Well dës Websäit nëmmen minimal Daten veraarbecht, hutt Dir folgend praktesch Méiglechkeeten:",
         "localStorage": "Thema-Preferenz: Dës gëtt nëmmen lokal an Ärem Browser gespäichert. Dir kënnt se selwer zu all Moment läschen (Browser-Astellungen → Websäitdaten läschen) oder Äre Browser esou astellen, dass localStorage beim Zoumaachen geläscht gëtt.",
         "contact": "Kontaktformulaire: Wann Dir mir eng Noriicht geschéckt hutt a wëllt dass se geläscht gëtt, kontaktéiert mech einfach. D'E-Mail gëtt dann aus mengem Postfach geläscht."
       },
       "noCookieBanner": {
-        "title": "Firwat keng Cookie-Banner?",
-        "content": "Dës Websäit benotzt keng Tracking-Cookien oder Marketing-Tools. Déi eenzeg lokal Späicherung (Thema-Preferenz) ass technesch néideg a brauch no EU-Recht keng ausdréckleg Zoustëmmung."
+        "title": "Firwat keng Cookie-Banner?"
       }
     }
   }
