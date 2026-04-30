@@ -4,7 +4,7 @@ import { dynamicIcons } from './app/icons'
 import { SITE_AUTHOR, SITE_NAME } from './app/utils/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2026-03-25',
+  compatibilityDate: '2026-04-30',
   devtools: { enabled: false },
   nitro: {
     preset: 'cloudflare-pages'
