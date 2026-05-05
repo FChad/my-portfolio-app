@@ -131,8 +131,9 @@ const submitForm = async () => {
         setTimeout(() => {
             isSubmitted.value = false
         }, 10000)
-    } catch (error: any) {
-        const isCaptchaError = /captcha|verification/i.test(error?.statusText || '')
+    } catch (error) {
+        const err = error as { status?: number; statusText?: string }
+        const isCaptchaError = /captcha|verification/i.test(err?.statusText || '')
 
         if (isCaptchaError) {
             turnstileRef.value?.reset()
@@ -145,7 +146,7 @@ const submitForm = async () => {
             500: t('contact.form.errors.serverError'),
         }
 
-        submitError.value = errorMap[error?.status] || t('contact.form.errors.serverError')
+        submitError.value = (err?.status !== undefined && errorMap[err.status]) || t('contact.form.errors.serverError')
     } finally {
         isSubmitting.value = false
     }

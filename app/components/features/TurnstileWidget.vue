@@ -12,10 +12,19 @@
 </template>
 
 <script setup lang="ts">
+interface TurnstileRenderOptions {
+    sitekey: string
+    callback?: (token: string) => void
+    'expired-callback'?: () => void
+    'error-callback'?: (error: string) => void
+    theme?: 'light' | 'dark' | 'auto'
+    language?: string
+}
+
 declare global {
     interface Window {
         turnstile: {
-            render: (element: HTMLElement, options: any) => string
+            render: (element: HTMLElement, options: TurnstileRenderOptions) => string
             reset: (widgetId: string) => void
             remove: (widgetId: string) => void
         }
@@ -49,8 +58,8 @@ const renderTurnstile = () => {
             if (widgetId.value) {
                 try {
                     window.turnstile.remove(widgetId.value)
-                } catch {
-                    // Widget removal failed silently
+                } catch (e) {
+                    if (import.meta.dev) console.warn('[Turnstile] widget removal failed:', e)
                 }
                 widgetId.value = undefined
             }
@@ -76,8 +85,9 @@ const renderTurnstile = () => {
                 theme: isDark.value ? 'dark' : 'light',
                 language: 'auto'
             })
-        } catch {
-            // Turnstile render failed silently
+        } catch (e) {
+            if (import.meta.dev) console.warn('[Turnstile] render failed:', e)
+            emit('error', e instanceof Error ? e.message : 'render failed')
         }
     }
 }
@@ -117,8 +127,8 @@ onBeforeUnmount(() => {
     if (import.meta.client && window.turnstile && widgetId.value) {
         try {
             window.turnstile.remove(widgetId.value)
-        } catch {
-            // Cleanup failed silently
+        } catch (e) {
+            if (import.meta.dev) console.warn('[Turnstile] cleanup failed:', e)
         }
     }
 })

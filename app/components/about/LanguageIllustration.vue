@@ -45,10 +45,10 @@ onUnmounted(() => {
                 class="relative bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 rounded-2xl px-5 py-3 shadow-md mb-4 min-w-50">
                 <div class="flex items-center justify-center gap-2 transition-opacity duration-300"
                     :class="isVisible ? 'opacity-100' : 'opacity-0'">
-                    <Icon :name="greetings[currentGreeting].flag" class="w-5 h-5 rounded-full shrink-0" />
+                    <Icon :name="greetings[currentGreeting]?.flag ?? ''" class="w-5 h-5 rounded-full shrink-0" />
                     <p
                         class="text-sm md:text-base lg:text-lg font-bold text-neutral-800 dark:text-neutral-100 text-center whitespace-nowrap">
-                        {{ greetings[currentGreeting].text }}
+                        {{ greetings[currentGreeting]?.text }}
                     </p>
                 </div>
                 <!-- Tail pointing down -->

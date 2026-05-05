@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AnimatedStars from '~/components/effects/AnimatedStars.vue'
+
 const { t } = useI18n()
 
 const texts = computed(() => [
@@ -10,19 +12,14 @@ const texts = computed(() => [
 const scrollToAbout = () => {
     document.querySelector('#about-section')?.scrollIntoView({ behavior: 'smooth' })
 }
-
-// Lazy load AnimatedStars for better initial page load performance
-const LazyAnimatedStars = defineAsyncComponent(() =>
-    import('~/components/effects/AnimatedStars.vue')
-)
 </script>
 
 <template>
     <section class="relative min-h-[calc(100dvh-65px)] flex items-center justify-center overflow-hidden">
         <!-- Animated Stars Background -->
         <div class="absolute inset-0">
-            <!-- Animated Stars Canvas (Lazy Loaded) -->
-            <LazyAnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
+            <!-- Animated Stars Canvas -->
+            <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
                 canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
 
             <!-- Adaptive overlay for text readability -->
@@ -87,28 +84,3 @@ const LazyAnimatedStars = defineAsyncComponent(() =>
     </section>
 </template>
 
-<style scoped>
-/* Enhanced bounce animation for scroll indicator */
-@keyframes scroll-bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-8px);
-    }
-
-    60% {
-        transform: translateY(-4px);
-    }
-}
-
-.animate-bounce {
-    animation: scroll-bounce 2s infinite;
-}
-</style>
