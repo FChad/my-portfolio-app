@@ -1,44 +1,108 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Gradient -->
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Inter', system-ui, sans-serif">
   <defs>
-    <radialGradient id="bg-gradient" cx="50%" cy="50%" r="80%">
-      <stop offset="0%" stop-color="#1e3a8a"/>
-      <stop offset="100%" stop-color="#0f172a"/>
+    <!-- Base background: dark neutral with subtle blue tint (matches dark-mode neutral-900) -->
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#1a2238"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
     </radialGradient>
+
+    <!-- Soft blue spotlight behind the name -->
+    <radialGradient id="spotlight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Bottom fade overlay (matches hero overlay pattern) -->
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e17" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0e17" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Subtle glow for the name -->
+    <filter id="textGlow" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  
-  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
-  
-  <!-- Stars Background -->
-  <circle cx="150" cy="80" r="2" fill="rgba(255,255,255,0.6)"/>
-  <circle cx="300" cy="120" r="1.5" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="480" cy="90" r="1" fill="rgba(255,255,255,0.5)"/>
-  <circle cx="620" cy="110" r="2" fill="rgba(255,255,255,0.3)"/>
-  <circle cx="800" cy="85" r="1.5" fill="rgba(255,255,255,0.6)"/>
-  <circle cx="950" cy="105" r="1" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="1050" cy="75" r="2" fill="rgba(255,255,255,0.5)"/>
-  
-  <circle cx="200" cy="450" r="1.5" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="400" cy="480" r="1" fill="rgba(255,255,255,0.6)"/>
-  <circle cx="600" cy="500" r="2" fill="rgba(255,255,255,0.3)"/>
-  <circle cx="850" cy="470" r="1.5" fill="rgba(255,255,255,0.5)"/>
-  <circle cx="1100" cy="490" r="1" fill="rgba(255,255,255,0.4)"/>
-  
-  <!-- Main Content -->
-  <text x="600" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">
-    Chad Feierstein
+
+  <!-- Background layers -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="600" cy="315" rx="500" ry="220" fill="url(#spotlight)"/>
+
+  <!-- Star field with link lines (matches AnimatedStars hero effect) -->
+  <g stroke="#3b82f6" stroke-opacity="0.25" stroke-width="1" fill="none">
+    <line x1="120" y1="90" x2="240" y2="140"/>
+    <line x1="240" y1="140" x2="380" y2="80"/>
+    <line x1="900" y1="110" x2="1020" y2="70"/>
+    <line x1="1020" y1="70" x2="1110" y2="160"/>
+    <line x1="180" y1="500" x2="320" y2="540"/>
+    <line x1="850" y1="490" x2="970" y2="540"/>
+    <line x1="970" y1="540" x2="1080" y2="480"/>
+  </g>
+
+  <g fill="#60a5fa">
+    <!-- Top constellation -->
+    <circle cx="120" cy="90" r="2.5" opacity="0.85"/>
+    <circle cx="240" cy="140" r="2" opacity="0.7"/>
+    <circle cx="380" cy="80" r="1.8" opacity="0.6"/>
+    <circle cx="500" cy="130" r="1.2" opacity="0.5"/>
+    <circle cx="640" cy="95" r="2.2" opacity="0.8"/>
+    <circle cx="780" cy="120" r="1.5" opacity="0.55"/>
+    <circle cx="900" cy="110" r="2.4" opacity="0.85"/>
+    <circle cx="1020" cy="70" r="2" opacity="0.75"/>
+    <circle cx="1110" cy="160" r="1.6" opacity="0.6"/>
+
+    <!-- Mid scattered -->
+    <circle cx="80" cy="280" r="1.2" opacity="0.4"/>
+    <circle cx="1130" cy="320" r="1.4" opacity="0.45"/>
+    <circle cx="60" cy="380" r="1.5" opacity="0.5"/>
+    <circle cx="1140" cy="420" r="1.3" opacity="0.4"/>
+
+    <!-- Bottom constellation -->
+    <circle cx="180" cy="500" r="2" opacity="0.7"/>
+    <circle cx="320" cy="540" r="1.8" opacity="0.65"/>
+    <circle cx="460" cy="510" r="1.3" opacity="0.45"/>
+    <circle cx="610" cy="555" r="1.6" opacity="0.55"/>
+    <circle cx="750" cy="520" r="1.2" opacity="0.4"/>
+    <circle cx="850" cy="490" r="2.2" opacity="0.8"/>
+    <circle cx="970" cy="540" r="1.7" opacity="0.6"/>
+    <circle cx="1080" cy="480" r="2" opacity="0.7"/>
+  </g>
+
+  <!-- Bottom fade overlay -->
+  <rect y="450" width="1200" height="180" fill="url(#bottomFade)"/>
+
+  <!-- Greeting (matches site: "Hello, I'm") -->
+  <text x="600" y="195" font-size="22" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="6">
+    HELLO, I'M
   </text>
-  
-  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#60a5fa" text-anchor="middle">
-    Full-Stack Developer
+
+  <!-- Name with soft glow -->
+  <text x="600" y="290" font-size="92" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-1" filter="url(#textGlow)">
+    CHAD FEIERSTEIN
   </text>
-  
-  <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.8)" text-anchor="middle">
-    Web Development • IT Administration • Virtualization
-  </text>
-  
-  <!-- Website URL -->
-  <text x="600" y="530" font-family="Arial, sans-serif" font-size="28" fill="#3b82f6" text-anchor="middle">
+
+  <!-- Roles row (matches typing effect roles, separated by accent dots) -->
+  <g font-size="28" font-weight="500" text-anchor="middle">
+    <text x="600" y="365" fill="#e2e8f0">
+      <tspan>Full-Stack Developer</tspan>
+      <tspan fill="#60a5fa" dx="14" dy="0">•</tspan>
+      <tspan fill="#e2e8f0" dx="14">Server Administrator</tspan>
+      <tspan fill="#60a5fa" dx="14">•</tspan>
+      <tspan fill="#e2e8f0" dx="14">Problem Solver</tspan>
+    </text>
+  </g>
+
+  <!-- Accent divider -->
+  <line x1="540" y1="460" x2="660" y2="460" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- URL -->
+  <text x="600" y="540" font-size="26" font-weight="600" fill="#60a5fa" text-anchor="middle" letter-spacing="2">
     www.chad.lu
   </text>
 </svg>

@@ -16,7 +16,7 @@ export const useSeo = () => {
     const title = options.title || t('nav.home')
     const fullTitle = `${SITE_AUTHOR} - ${title}`
     const description = options.description || t('home.tagline')
-    const image = options.image || `${baseUrl}/img/og/default-og-image.svg`
+    const image = options.image || `${baseUrl}/img/og/default-og-image.png`
 
     // Only set the page title — titleTemplate in nuxt.config.ts handles the rest
     useHead({ title })
