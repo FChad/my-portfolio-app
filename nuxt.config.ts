@@ -7,7 +7,18 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-04-30',
   devtools: { enabled: false },
   nitro: {
-    preset: 'cloudflare-pages'
+    preset: 'cloudflare-pages',
+    routeRules: {
+      '/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+          'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+          'Content-Security-Policy-Report-Only': "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+        }
+      }
+    }
   },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
