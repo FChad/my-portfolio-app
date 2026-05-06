@@ -597,6 +597,9 @@ watch(currentTheme, () => {
 onMounted(() => {
     if (!starsCanvas.value) return
 
+    // Respect prefers-reduced-motion — leave canvas hidden, skip animation entirely
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
+
     init()
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true })

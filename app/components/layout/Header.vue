@@ -1,14 +1,8 @@
 <script setup lang="ts">
+import { NAV_LINKS } from '~/utils/constants'
+
 const mobileMenuOpen = ref(false)
 const route = useRoute()
-
-// Navigation links configuration
-const navLinks = [
-    { to: '/', key: 'home' },
-    { to: '/about', key: 'about' },
-    { to: '/showcase', key: 'showcase' },
-    { to: '/contact', key: 'contact' }
-]
 
 const isActive = (path: string) => {
     if (path === '/') {
@@ -34,7 +28,7 @@ const isActive = (path: string) => {
 
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex items-center gap-8 text-lg">
-                    <NuxtLinkLocale v-for="link in navLinks" :key="link.key" :to="link.to" :class="[
+                    <NuxtLinkLocale v-for="link in NAV_LINKS" :key="link.key" :to="link.to" :class="[
                         'nav-link font-medium relative group text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400',
                         isActive(link.to) && 'text-blue-600! dark:text-blue-400! active'
                     ]">
@@ -62,7 +56,7 @@ const isActive = (path: string) => {
                         <!-- Mobile Dropdown Menu -->
                         <nav v-show="mobileMenuOpen" id="mobile-menu" :aria-label="$t('common.mobileNav')"
                             class="absolute top-full right-0 mt-1 flex flex-col gap-1 bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-600 rounded-lg shadow-sm z-60 p-2 min-w-44">
-                            <NuxtLinkLocale v-for="link in navLinks" :key="link.key" :to="link.to"
+                            <NuxtLinkLocale v-for="link in NAV_LINKS" :key="link.key" :to="link.to"
                                 @click="mobileMenuOpen = false" :class="[
                                     'flex items-center gap-3 w-full px-4 py-2 text-left font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md no-underline',
                                     isActive(link.to) && 'text-blue-600! dark:text-blue-400!'
