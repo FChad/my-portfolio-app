@@ -67,7 +67,6 @@ export default defineEventHandler(async (event) => {
   const clientIP = getHeader(event, 'cf-connecting-ip')
     || getHeader(event, 'x-forwarded-for')
     || getHeader(event, 'x-real-ip')
-    || event.node.req.socket.remoteAddress
     || 'unknown'
 
   if (!await verifyTurnstile(data.turnstileToken, clientIP, config.turnstileSecretKey))

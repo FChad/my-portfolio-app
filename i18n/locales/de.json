@@ -498,6 +498,7 @@
       "name": "Name",
       "namePlaceholder": "Ihr vollständiger Name",
       "email": "E-Mail",
+      "emailPlaceholder": "ihre{'@'}email.de",
       "subject": "Betreff",
       "subjectPlaceholder": "Worum geht es?",
       "message": "Nachricht",

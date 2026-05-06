@@ -498,6 +498,7 @@
       "name": "Nom",
       "namePlaceholder": "Votre nom complet",
       "email": "Email",
+      "emailPlaceholder": "votre{'@'}email.fr",
       "subject": "Sujet",
       "subjectPlaceholder": "De quoi s'agit-il ?",
       "message": "Message",

@@ -52,6 +52,7 @@ const state = {
     context: null as CanvasRenderingContext2D | null,
     animationFrame: 0,
     resizeTimeout: null as number | null,
+    mouseLeaveTimeout: null as number | null,
     resizeObserver: null as ResizeObserver | null,
     intersectionObserver: null as IntersectionObserver | null,
 
@@ -522,10 +523,12 @@ function onMouseEnter(): void {
 
 function onMouseLeave(): void {
     state.isMouseOver = false
-    setTimeout(() => {
+    if (state.mouseLeaveTimeout) clearTimeout(state.mouseLeaveTimeout)
+    state.mouseLeaveTimeout = window.setTimeout(() => {
         if (!state.isMouseOver) {
             state.performanceMode = true
         }
+        state.mouseLeaveTimeout = null
     }, 2000)
 }
 
@@ -637,6 +640,7 @@ onUnmounted(() => {
 
     if (state.animationFrame) cancelAnimationFrame(state.animationFrame)
     if (state.resizeTimeout) clearTimeout(state.resizeTimeout)
+    if (state.mouseLeaveTimeout) clearTimeout(state.mouseLeaveTimeout)
 
     state.resizeObserver?.disconnect()
     state.intersectionObserver?.disconnect()

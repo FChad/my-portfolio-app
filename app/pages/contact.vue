@@ -40,6 +40,7 @@ const isSubmitted = ref(false)
 const submitError = ref<string>('')
 const errors = ref<Record<string, string>>({})
 const showTurnstileError = ref(false)
+let successTimeout: ReturnType<typeof setTimeout> | null = null
 
 // Contact methods with i18n keys
 const contactMethods = computed(() => [
@@ -128,8 +129,10 @@ const submitForm = async () => {
         turnstileRef.value?.reset()
 
         // Auto-hide success message after 10 seconds
-        setTimeout(() => {
+        if (successTimeout) clearTimeout(successTimeout)
+        successTimeout = setTimeout(() => {
             isSubmitted.value = false
+            successTimeout = null
         }, 10000)
     } catch (error) {
         const err = error as { status?: number; statusText?: string }
@@ -167,6 +170,10 @@ const resetTurnstile = (errorKey: string) => {
 
 const onTurnstileExpired = () => resetTurnstile('contact.form.errors.captchaExpired')
 const onTurnstileError = () => resetTurnstile('contact.form.errors.captchaError')
+
+onBeforeUnmount(() => {
+    if (successTimeout) clearTimeout(successTimeout)
+})
 
 definePageMeta({
     layout: 'default'
@@ -257,7 +264,7 @@ definePageMeta({
                                         class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                         {{ $t('contact.form.name') }} *
                                     </label>
-                                    <input v-model="form.name" type="text" id="name" :class="[
+                                    <input v-model="form.name" type="text" id="name" autocomplete="name" :class="[
                                         'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                         errors.name
                                             ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
@@ -274,12 +281,12 @@ definePageMeta({
                                         class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                         {{ $t('contact.form.email') }} *
                                     </label>
-                                    <input v-model="form.email" type="email" id="email" :class="[
+                                    <input v-model="form.email" type="email" id="email" autocomplete="email" :class="[
                                         'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                         errors.email
                                             ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
                                             : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
-                                    ]" placeholder="your@email.com" />
+                                    ]" :placeholder="$t('contact.form.emailPlaceholder')" />
                                     <p v-if="errors.email" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                         {{ errors.email }}
                                     </p>
@@ -292,7 +299,7 @@ definePageMeta({
                                     class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                     {{ $t('contact.form.subject') }} *
                                 </label>
-                                <input v-model="form.subject" type="text" id="subject" :class="[
+                                <input v-model="form.subject" type="text" id="subject" autocomplete="off" :class="[
                                     'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                     errors.subject
                                         ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
@@ -309,7 +316,7 @@ definePageMeta({
                                     class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                     {{ $t('contact.form.message') }} *
                                 </label>
-                                <textarea v-model="form.message" id="message" rows="5" :class="[
+                                <textarea v-model="form.message" id="message" rows="5" autocomplete="off" :class="[
                                     'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border resize-none text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                     errors.message
                                         ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'

@@ -498,6 +498,7 @@
       "name": "Numm",
       "namePlaceholder": "Äre kompletten Numm",
       "email": "E-Mail",
+      "emailPlaceholder": "är{'@'}email.lu",
       "subject": "Sujet",
       "subjectPlaceholder": "Wou geet et drëm?",
       "message": "Message",
