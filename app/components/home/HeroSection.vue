@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AnimatedStars from '~/components/effects/AnimatedStars.vue'
+import AuroraBackground from '~/components/effects/AuroraBackground.vue'
 
 const { t } = useI18n()
 
@@ -16,17 +16,8 @@ const scrollToAbout = () => {
 
 <template>
     <section class="relative min-h-[calc(100dvh-65px)] flex items-center justify-center overflow-hidden">
-        <!-- Animated Stars Background -->
-        <div class="absolute inset-0">
-            <!-- Animated Stars Canvas -->
-            <AnimatedStars :particle-count="50" :flare-count="10" :motion="0.03" :link-chance="25"
-                canvas-class="z-0 opacity-85 dark:opacity-80 transition-opacity" />
-
-            <!-- Adaptive overlay for text readability -->
-            <div
-                class="absolute inset-0 z-10 bg-linear-to-b from-transparent via-transparent to-white/40 dark:from-transparent dark:via-transparent dark:to-neutral-900/20">
-            </div>
-        </div>
+        <!-- Animated Aurora Background -->
+        <AuroraBackground />
 
         <!-- Main Content -->
         <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6">
