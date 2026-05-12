@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-04-30',
   devtools: { enabled: false },
   nitro: {
-    preset: 'cloudflare-pages',
     routeRules: {
       '/**': {
         headers: {
