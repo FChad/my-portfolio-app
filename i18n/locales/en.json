@@ -587,10 +587,9 @@
           "message": "Your message"
         },
         "legalBasis": "Legal basis: Art. 6(1)(b) GDPR (contract initiation) and Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries). The data is used exclusively to process your request.",
-        "resend": {
-          "title": "Email Delivery via Resend",
-          "description": "For email delivery from the contact form, we use Resend (Resend, Inc., USA). Your entered data (name, email, message) is transmitted to Resend for delivery. Resend is certified under the EU-US Data Privacy Framework.",
-          "link": "Resend Privacy Policy"
+        "smtp": {
+          "title": "Email Delivery",
+          "description": "Contact form emails are sent directly via our own mail server. Your data (name, email, message) is not transmitted to any third-party service."
         }
       },
       "hosting": {

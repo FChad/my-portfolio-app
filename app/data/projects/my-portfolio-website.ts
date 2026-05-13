@@ -4,7 +4,7 @@ export const myPortfolioWebsiteConfig: ProjectConfig = {
     slug: 'my-portfolio-website',
     titleKey: 'projects.myPortfolio.title',
     descriptionKey: 'projects.myPortfolio.description',
-    tags: ['Nuxt', 'TypeScript', 'Tailwind', 'i18n', 'Resend', 'Iconify'],
+    tags: ['Nuxt', 'TypeScript', 'Tailwind', 'i18n', 'Nodemailer', 'Iconify'],
     illustrationVariant: 'portfolio',
     links: [
         {

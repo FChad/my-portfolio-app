@@ -587,10 +587,9 @@
           "message": "Är Noriicht"
         },
         "legalBasis": "Rechtsgrondlag: Art. 6 Abs. 1 lit. b DSGVO (Vertrags-Ubahnung) an Art. 6 Abs. 1 lit. f DSGVO (berechtegt Interessi un der Äntwert op Ufroen). D'Daten ginn exklusiv fir d'Veraarbechtung vun Ärer Ufro benotzt.",
-        "resend": {
-          "title": "E-Mail-Versand iwwer Resend",
-          "description": "Fir den E-Mail-Versand vum Kontaktformulaire benotze mir de Service Resend (Resend, Inc., USA). Är aginn Daten (Numm, E-Mail, Noriicht) ginn un Resend iwwerdroe fir d'Liwwerung. Resend ass nom EU-US Data Privacy Framework zertifiéiert.",
-          "link": "Resend Dateschutzerkläerung"
+        "smtp": {
+          "title": "E-Mail-Versand",
+          "description": "E-Maile vum Kontaktformulaire gi direkt iwwer eise eigene Mailserver geschéckt. Är Daten (Numm, E-Mail, Noriicht) ginn net un Drëtt-Ubidder weiderginn."
         }
       },
       "hosting": {

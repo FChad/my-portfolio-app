@@ -587,10 +587,9 @@
           "message": "Votre message"
         },
         "legalBasis": "Base juridique : Art. 6(1)(b) RGPD (initiation de contrat) et Art. 6(1)(f) RGPD (intérêt légitime à répondre aux demandes). Les données sont utilisées exclusivement pour traiter votre demande.",
-        "resend": {
-          "title": "Envoi d'e-mails via Resend",
-          "description": "Pour l'envoi d'e-mails du formulaire de contact, nous utilisons Resend (Resend, Inc., USA). Vos données saisies (nom, e-mail, message) sont transmises à Resend pour la livraison. Resend est certifié dans le cadre du EU-US Data Privacy Framework.",
-          "link": "Politique de confidentialité de Resend"
+        "smtp": {
+          "title": "Envoi d'e-mails",
+          "description": "Les e-mails du formulaire de contact sont envoyés directement via notre propre serveur de messagerie. Vos données (nom, e-mail, message) ne sont transmises à aucun service tiers."
         }
       },
       "hosting": {

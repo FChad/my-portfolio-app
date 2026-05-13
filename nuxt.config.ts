@@ -95,15 +95,20 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     // Private keys (only available on the server-side)
-    resendApiKey: process.env.RESEND_API_KEY,
-    emailFrom: process.env.EMAIL_FROM,
-    emailFromName: process.env.EMAIL_FROM_NAME,
-    emailTo: process.env.EMAIL_TO,
-    turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
+    // Automatically mapped from NUXT_* environment variables
+    smtpHost: '',
+    smtpPort: '',
+    smtpUser: '',
+    smtpPass: '',
+    emailFrom: '',
+    emailFromName: '',
+    emailTo: '',
+    turnstileSecretKey: '',
 
     // Public keys (exposed to the client-side code)
+    // Automatically mapped from NUXT_PUBLIC_* environment variables
     public: {
-      turnstileSiteKey: process.env.TURNSTILE_SITE_KEY,
+      turnstileSiteKey: '',
       baseUrl: process.env.BASE_URL
     }
   }

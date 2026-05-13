@@ -1,3 +1,4 @@
+import nodemailer from 'nodemailer'
 import { EMAIL_REGEX, CONTACT_FORM_LIMITS } from '~~/app/utils/validation'
 
 interface ContactFormData {
@@ -72,7 +73,7 @@ export default defineEventHandler(async (event) => {
   if (!await verifyTurnstile(data.turnstileToken, clientIP, config.turnstileSecretKey))
     throw createError({ status: 400, statusText: 'CAPTCHA verification failed. Please try again.' })
 
-  if (!config.emailFrom || !config.emailTo)
+  if (!config.emailFrom || !config.emailTo || !config.smtpHost || !config.smtpUser || !config.smtpPass)
     throw createError({ status: 500, statusText: 'Internal server error' })
 
   const safe = {
@@ -82,32 +83,32 @@ export default defineEventHandler(async (event) => {
     message: escapeHtml(data.message).replace(/\n/g, '<br>'),
   }
 
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${config.resendApiKey}`,
-      'Content-Type': 'application/json',
+  const transporter = nodemailer.createTransport({
+    host: config.smtpHost,
+    port: Number(config.smtpPort) || 587,
+    secure: Number(config.smtpPort) === 465,
+    auth: {
+      user: config.smtpUser,
+      pass: config.smtpPass,
     },
-    body: JSON.stringify({
-      from: `${config.emailFromName || 'Portfolio'} <${config.emailFrom}>`,
-      to: [config.emailTo],
-      reply_to: data.email,
-      subject: `Portfolio Contact: ${data.name} - ${data.subject}`,
-      html: `
-        <h2>New Contact Request</h2>
-        <p><strong>Name:</strong> ${safe.name}</p>
-        <p><strong>Email:</strong> ${safe.email}</p>
-        <p><strong>Subject:</strong> ${safe.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${safe.message}</p>
-      `,
-    }),
   })
 
-  const result = await res.json()
-
-  if (!res.ok)
+  await transporter.sendMail({
+    from: `${config.emailFromName || 'Portfolio'} <${config.emailFrom}>`,
+    to: config.emailTo,
+    replyTo: data.email,
+    subject: `Portfolio Contact: ${data.name} - ${data.subject}`,
+    html: `
+      <h2>New Contact Request</h2>
+      <p><strong>Name:</strong> ${safe.name}</p>
+      <p><strong>Email:</strong> ${safe.email}</p>
+      <p><strong>Subject:</strong> ${safe.subject}</p>
+      <p><strong>Message:</strong></p>
+      <p>${safe.message}</p>
+    `,
+  }).catch(() => {
     throw createError({ status: 500, statusText: 'Failed to send email. Please try again.' })
+  })
 
-  return { success: true, message: 'Email sent successfully', id: result.id }
+  return { success: true, message: 'Email sent successfully' }
 })

@@ -195,23 +195,18 @@ useSeoMeta({
                         </a>
                     </UiCard>
 
-                    <!-- Resend Email -->
+                    <!-- Email Delivery -->
                     <UiCard>
                         <div class="flex items-center gap-3 mb-3 md:mb-4">
                             <Icon name="mdi:email-fast"
                                 class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
                             <h2 class="text-lg md:text-xl font-bold text-neutral-800 dark:text-white">
-                                {{ $t('privacy.sections.contactForm.resend.title') }}
+                                {{ $t('privacy.sections.contactForm.smtp.title') }}
                             </h2>
                         </div>
-                        <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 mb-3">
-                            {{ $t('privacy.sections.contactForm.resend.description') }}
+                        <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
+                            {{ $t('privacy.sections.contactForm.smtp.description') }}
                         </p>
-                        <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer"
-                            class="text-sm text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-                            {{ $t('privacy.sections.contactForm.resend.link') }}
-                            <Icon name="mdi:open-in-new" class="w-3 h-3" />
-                        </a>
                     </UiCard>
                 </div>
             </div>
