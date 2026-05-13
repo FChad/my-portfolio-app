@@ -90,10 +90,6 @@ const scrollToTop = () => {
                             <Icon name="mdi:github" class="w-5 h-5" />
                             <span>{{ $t('footer.sourceCode') }}</span>
                         </a>
-                        <span class="text-base text-neutral-600 dark:text-neutral-400 flex items-center gap-1">
-                            <Icon name="mdi:cloud" class="w-5 h-5" />
-                            <span>Cloudflare</span>
-                        </span>
                     </div>
                 </div>
             </div>

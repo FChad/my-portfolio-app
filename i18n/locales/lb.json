@@ -585,8 +585,7 @@
       },
       "hosting": {
         "title": "Hosting",
-        "content": "Dës Websäit gëtt op Cloudflare Pages gehost. Cloudflare kann technesch Daten wéi IP-Adressen veraarbechten, déi fir d'Bereetstellung vun der Websäit néideg sinn. Cloudflare ass nom EU-US Data Privacy Framework zertifizéiert.",
-        "link": "Cloudflare Dateschutzerkläerung"
+        "content": "Dës Websäit gëtt selwer mat Coolify op engem private Server gehost. Keng Daten ginn un Drëtt-Ubidder-Hosting-Servicer weiderginn."
       },
       "rights": {
         "title": "Är Rechter & Datekontroll",

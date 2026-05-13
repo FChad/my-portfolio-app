@@ -162,7 +162,7 @@ useSeoMeta({
 
                 <!-- Row 3: Services side by side -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <!-- Cloudflare Hosting -->
+                    <!-- Coolify Hosting -->
                     <UiCard>
                         <div class="flex items-center gap-3 mb-3 md:mb-4">
                             <Icon name="mdi:cloud" class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
@@ -170,14 +170,9 @@ useSeoMeta({
                                 {{ $t('privacy.sections.hosting.title') }}
                             </h2>
                         </div>
-                        <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 mb-3">
+                        <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
                             {{ $t('privacy.sections.hosting.content') }}
                         </p>
-                        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer"
-                            class="text-sm text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-                            {{ $t('privacy.sections.hosting.link') }}
-                            <Icon name="mdi:open-in-new" class="w-3 h-3" />
-                        </a>
                     </UiCard>
 
                     <!-- Email Delivery -->

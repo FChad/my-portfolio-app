@@ -585,8 +585,7 @@
       },
       "hosting": {
         "title": "Hébergement",
-        "content": "Ce site est hébergé sur Cloudflare Pages. Cloudflare peut traiter des données techniques telles que les adresses IP nécessaires à la livraison du site. Cloudflare est certifié dans le cadre du EU-US Data Privacy Framework.",
-        "link": "Politique de confidentialité de Cloudflare"
+        "content": "Ce site est auto-hébergé avec Coolify sur un serveur privé. Aucune donnée n'est transmise à des prestataires d'hébergement tiers."
       },
       "rights": {
         "title": "Vos droits & contrôle des données",
