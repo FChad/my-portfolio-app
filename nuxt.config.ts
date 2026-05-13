@@ -42,9 +42,7 @@ export default defineNuxtConfig({
     url: process.env.BASE_URL,
     name: SITE_NAME
   },
-  ogImage: {
-    enabled: false
-  },
+
   colorMode: {
     classSuffix: ''
   },
