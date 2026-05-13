@@ -43,6 +43,10 @@ export default defineNuxtConfig({
     name: SITE_NAME
   },
 
+  ogImage: {
+    enabled: false,
+  },
+
   colorMode: {
     classSuffix: ''
   },
