@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
   fonts: {
     families: [
-      { name: 'Inter', provider: 'bunny', weights: ['100 900'] }
+      { name: 'Inter', provider: 'bunny', weights: ['100 900'], display: 'swap', preload: true }
     ]
   },
   icon: {

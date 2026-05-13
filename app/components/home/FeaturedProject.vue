@@ -17,7 +17,7 @@
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 <!-- Left: Visual/Interactive Side -->
                 <div class="relative order-2 lg:order-1">
-                    <ProjectsIllustrationsChatBotPreview />
+                    <LazyProjectsIllustrationsChatBotPreview />
                 </div>
 
                 <!-- Right: Content Side -->
