@@ -519,11 +519,7 @@
         "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
         "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
         "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
-        "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier.",
-        "captchaRequired": "Maacht w.e.g. d'Sécherheetsverifikatioun fäerdeg.",
-        "captchaFailed": "Sécherheetsverifikatioun feelgeschloen. Probéiert w.e.g. nach eng Kéier.",
-        "captchaExpired": "Sécherheetsverifikatioun ass ofgelaf. Léist se w.e.g. nach eng Kéier.",
-        "captchaError": "Sécherheetsverifikatiounsfeeler. Luet d'Säit w.e.g. nei."
+        "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier."
       }
     }
   },
@@ -571,11 +567,6 @@
           "title": "Thema-Preferenz",
           "badge": "Technesch néideg",
           "description": "Är bevorzugt Faarf-Astéllung (Hell/Donkel-Modus) gëtt lokal an Ärem Browser gespäichert. Dës Daten ginn net un Server iwwerdroe a déngen nëmmen der korrekter Uweissung vun der Websäit."
-        },
-        "turnstile": {
-          "title": "Cloudflare Turnstile (Bot-Schutz)",
-          "badge": "Technesch néideg",
-          "description": "D'Kontaktformulaire benotzt Cloudflare Turnstile fir Schutz géint automatiséiert Ufroen. Dëst ass technesch néideg fir d'Sécherheet vun der Websäit."
         }
       },
       "contactForm": {

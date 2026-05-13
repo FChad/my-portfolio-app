@@ -3,23 +3,12 @@ import { EMAIL_REGEX, CONTACT_FORM_LIMITS } from '~/utils/validation'
 import { SOCIAL_LINKS } from '~/utils/constants'
 
 const { t } = useI18n()
-const runtimeConfig = useRuntimeConfig()
 const { setSeoMeta } = useSeo()
 
 setSeoMeta({
     title: t('seo.contact.title'),
     description: t('seo.contact.description'),
     keywords: t('seo.contact.keywords')
-})
-
-// Load Turnstile script only on this page
-useHead({
-    script: [
-        {
-            src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
-            defer: true
-        }
-    ]
 })
 
 // Form state
@@ -30,16 +19,11 @@ const form = ref({
     message: ''
 })
 
-// Turnstile state
-const turnstileToken = ref('')
-const turnstileRef = ref()
-
 // Form validation and submission states
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
 const submitError = ref<string>('')
 const errors = ref<Record<string, string>>({})
-const showTurnstileError = ref(false)
 let successTimeout: ReturnType<typeof setTimeout> | null = null
 
 // Contact methods with i18n keys
@@ -82,10 +66,6 @@ const validateForm = () => {
             if (form.value.message.length > CONTACT_FORM_LIMITS.message.max) return t('contact.form.errors.messageMaxLength')
             return null
         }],
-        ['turnstile', () => {
-            if (!turnstileToken.value?.trim()) return t('contact.form.errors.captchaRequired')
-            return null
-        }],
     ]
 
     for (const [field, validate] of rules) {
@@ -93,7 +73,6 @@ const validateForm = () => {
         if (error) errors.value[field] = error
     }
 
-    showTurnstileError.value = !!errors.value.turnstile
     return Object.keys(errors.value).length === 0
 }
 
@@ -107,12 +86,9 @@ const submitForm = async () => {
     submitError.value = ''
 
     try {
-        await $fetch<{ success: boolean; message: string; id?: string }>('/api/contact', {
+        await $fetch<{ success: boolean; message: string }>('/api/contact', {
             method: 'POST',
-            body: {
-                ...form.value,
-                turnstileToken: turnstileToken.value
-            }
+            body: { ...form.value }
         })
 
         // Success
@@ -125,8 +101,6 @@ const submitForm = async () => {
             subject: '',
             message: ''
         }
-        turnstileToken.value = ''
-        turnstileRef.value?.reset()
 
         // Auto-hide success message after 10 seconds
         if (successTimeout) clearTimeout(successTimeout)
@@ -136,16 +110,10 @@ const submitForm = async () => {
         }, 10000)
     } catch (error) {
         const err = error as { status?: number; statusText?: string }
-        const isCaptchaError = /captcha|verification/i.test(err?.statusText || '')
-
-        if (isCaptchaError) {
-            turnstileRef.value?.reset()
-            turnstileToken.value = ''
-        }
 
         const errorMap: Record<number, string> = {
             429: t('contact.form.errors.rateLimited'),
-            400: isCaptchaError ? t('contact.form.errors.captchaFailed') : t('contact.form.errors.invalidData'),
+            400: t('contact.form.errors.invalidData'),
             500: t('contact.form.errors.serverError'),
         }
 
@@ -154,22 +122,6 @@ const submitForm = async () => {
         isSubmitting.value = false
     }
 }
-
-const onTurnstileVerified = (token: string) => {
-    turnstileToken.value = token
-    showTurnstileError.value = false
-    submitError.value = ''
-    delete errors.value.turnstile
-}
-
-const resetTurnstile = (errorKey: string) => {
-    turnstileToken.value = ''
-    showTurnstileError.value = true
-    submitError.value = t(errorKey)
-}
-
-const onTurnstileExpired = () => resetTurnstile('contact.form.errors.captchaExpired')
-const onTurnstileError = () => resetTurnstile('contact.form.errors.captchaError')
 
 onBeforeUnmount(() => {
     if (successTimeout) clearTimeout(successTimeout)
@@ -327,21 +279,8 @@ definePageMeta({
                                 </p>
                             </div>
 
-                            <!-- Turnstile Widget and Submit Button -->
-                            <div class="flex flex-col sm:flex-row items-center justify-end gap-4">
-                                <!-- Turnstile Widget -->
-                                <div v-if="runtimeConfig.public.turnstileSiteKey" class="flex flex-col items-center">
-                                    <FeaturesTurnstileWidget v-model="turnstileToken"
-                                        :site-key="runtimeConfig.public.turnstileSiteKey"
-                                        @verified="onTurnstileVerified" @expired="onTurnstileExpired"
-                                        @error="onTurnstileError" ref="turnstileRef" />
-                                    <p v-if="showTurnstileError || errors.turnstile"
-                                        class="text-xs md:text-sm text-red-600 dark:text-red-400 text-center mt-2">
-                                        {{ errors.turnstile }}
-                                    </p>
-                                </div>
-
-                                <!-- Submit Button -->
+                            <!-- Submit Button -->
+                            <div class="flex justify-end">
                                 <UiButton variant="primary" type="submit" :disabled="isSubmitting"
                                     class="gap-2 sm:gap-3">
                                     <Icon v-if="isSubmitting" name="mdi:refresh"

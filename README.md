@@ -16,13 +16,13 @@ A modern multilingual portfolio website built with Nuxt and Vue, featuring proje
 - Responsive design
 - Project showcase
 - Technical documentation
-- Contact form with Turnstile captcha
+- Contact form with SMTP email delivery
 
 ## Tech Stack
 
 **Core**: Nuxt, Vue, TypeScript, TailwindCSS  
 **Features**: i18n, Dark Mode, SEO (robots, sitemap)  
-**Services**: Resend (email), Cloudflare Turnstile (captcha)
+**Services**: Nodemailer/SMTP (email)
 
 ## Getting Started
 
@@ -48,12 +48,13 @@ npm run preview   # Preview production build
 Create a `.env` file with the following:
 
 ```env
-RESEND_API_KEY=your_resend_api_key
-EMAIL_FROM=noreply@yourdomain.com
-EMAIL_FROM_NAME=Contact Form
-EMAIL_TO=your@email.com
-TURNSTILE_SITE_KEY=your_turnstile_site_key
-TURNSTILE_SECRET_KEY=your_turnstile_secret_key
+NUXT_SMTP_HOST=mail.example.com
+NUXT_SMTP_PORT=587
+NUXT_SMTP_USER=your@email.com
+NUXT_SMTP_PASS=your_smtp_password
+NUXT_EMAIL_FROM=noreply@yourdomain.com
+NUXT_EMAIL_FROM_NAME=Contact Form
+NUXT_EMAIL_TO=your@email.com
 ```
 
 ## License

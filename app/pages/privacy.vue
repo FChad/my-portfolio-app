@@ -154,21 +154,6 @@ useSeoMeta({
                             </ul>
                         </UiCard>
 
-                        <!-- Turnstile -->
-                        <UiCard variant="muted" size="sm">
-                            <div class="flex items-center gap-3 mb-2">
-                                <Icon name="mdi:shield-check" class="w-5 h-5 text-blue-500" />
-                                <h3 class="text-sm md:text-base font-bold text-neutral-800 dark:text-white">
-                                    {{ $t('privacy.sections.technicalStorage.turnstile.title') }}
-                                </h3>
-                            </div>
-                            <UiBadge variant="blue" size="sm" class="mb-2">
-                                {{ $t('privacy.sections.technicalStorage.turnstile.badge') }}
-                            </UiBadge>
-                            <p class="text-xs md:text-sm text-neutral-600 dark:text-neutral-300">
-                                {{ $t('privacy.sections.technicalStorage.turnstile.description') }}
-                            </p>
-                        </UiCard>
                     </div>
                     <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-3 md:mt-4">
                         {{ $t('privacy.sections.contactForm.legalBasis') }}

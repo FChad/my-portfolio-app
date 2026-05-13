@@ -519,11 +519,7 @@
         "messageMaxLength": "Message must not exceed 2000 characters",
         "rateLimited": "Too many requests. Please try again later.",
         "invalidData": "Invalid form data. Please check your inputs.",
-        "serverError": "An error occurred. Please try again later.",
-        "captchaRequired": "Please complete the security verification.",
-        "captchaFailed": "Security verification failed. Please try again.",
-        "captchaExpired": "Security verification has expired. Please solve it again.",
-        "captchaError": "Security verification error. Please refresh the page."
+        "serverError": "An error occurred. Please try again later."
       }
     }
   },
@@ -571,11 +567,6 @@
           "title": "Theme Preference",
           "badge": "Technically necessary",
           "description": "Your preferred color setting (light/dark mode) is stored locally in your browser. This data is not transmitted to servers and is used solely for the correct display of the website."
-        },
-        "turnstile": {
-          "title": "Cloudflare Turnstile (Bot Protection)",
-          "badge": "Technically necessary",
-          "description": "The contact form uses Cloudflare Turnstile for protection against automated requests. This is technically necessary for website security."
         }
       },
       "contactForm": {
