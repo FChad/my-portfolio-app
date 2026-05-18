@@ -214,9 +214,10 @@ const toggleExperience = (index: number) => {
 
                     <!-- Background Image -->
                     <div class="absolute inset-0">
-                        <img :src="`/img/about/${experience.image}`" :alt="experience.alt"
+                        <NuxtImg :src="`/img/about/${experience.image}`" :alt="experience.alt"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            :class="{ 'scale-110': expandedExperience === index }" loading="lazy" />
+                            :class="{ 'scale-110': expandedExperience === index }" loading="lazy"
+                            sizes="sm:50vw md:33vw" />
                         <div class="absolute inset-0 bg-linear-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                             :class="{ 'opacity-20': expandedExperience === index }">
                         </div>

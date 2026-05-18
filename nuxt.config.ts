@@ -1,12 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
-import { dynamicIcons } from './app/icons'
 import { SITE_AUTHOR, SITE_NAME } from './app/utils/constants'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-30',
   devtools: { enabled: false },
   nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+      failOnError: false,
+    },
     routeRules: {
       '/**': {
         headers: {
@@ -19,8 +23,11 @@ export default defineNuxtConfig({
       }
     }
   },
+  ogImage: {
+    zeroRuntime: true,
+  },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
+  modules: ['@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
   fonts: {
     families: [
       { name: 'Inter', provider: 'bunny', weights: ['100 900'], display: 'swap', preload: true }
@@ -28,10 +35,13 @@ export default defineNuxtConfig({
   },
   icon: {
     cssLayer: 'base',
-    clientBundle: {
-      scan: true,
-      icons: [...dynamicIcons],
+    serverBundle: {
+      collections: ['mdi', 'circle-flags'],
     },
+  },
+  image: {
+    format: ['avif', 'webp'],
+    quality: 80,
   },
   vite: {
     plugins: [
@@ -41,10 +51,6 @@ export default defineNuxtConfig({
   site: {
     url: process.env.BASE_URL,
     name: SITE_NAME
-  },
-
-  ogImage: {
-    enabled: false,
   },
 
   colorMode: {
