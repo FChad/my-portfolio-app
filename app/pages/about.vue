@@ -72,7 +72,7 @@ const toggleExperience = (index: number) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('about.header.title') }}
                 </h1>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
@@ -84,7 +84,7 @@ const toggleExperience = (index: number) => {
                 <!-- Left: Name, role & intro -->
                 <div class="flex flex-col gap-4 md:gap-6">
                     <!-- Name -->
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-800 dark:text-white">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-neutral-800 dark:text-white">
                         Chad Feierstein
                     </h2>
 
@@ -136,7 +136,7 @@ const toggleExperience = (index: number) => {
                                 <div class="text-xs md:text-sm text-neutral-600 dark:text-neutral-400">{{ info.label }}
                                 </div>
                                 <div
-                                    class="text-sm md:text-base lg:text-xl font-bold text-neutral-800 dark:text-white truncate">
+                                    class="text-sm md:text-base lg:text-xl font-display font-bold text-neutral-800 dark:text-white truncate">
                                     {{
                                         info.value }}</div>
                             </div>
@@ -148,10 +148,10 @@ const toggleExperience = (index: number) => {
     </section>
 
     <!-- Languages -->
-    <section class="py-12 md:py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+    <section class="py-12 md:py-16 lg:py-24 bg-page">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('about.languages.title') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">{{
@@ -166,7 +166,7 @@ const toggleExperience = (index: number) => {
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('about.work.journey') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">{{
@@ -178,10 +178,10 @@ const toggleExperience = (index: number) => {
     </section>
 
     <!-- Certifications -->
-    <section class="py-12 md:py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+    <section class="py-12 md:py-16 lg:py-24 bg-page">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('about.certifications.title') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
@@ -197,7 +197,7 @@ const toggleExperience = (index: number) => {
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('about.interests.title') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">{{
@@ -244,10 +244,10 @@ const toggleExperience = (index: number) => {
     </section>
 
     <!-- CTA -->
-    <section class="py-12 md:py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+    <section class="py-12 md:py-16 lg:py-24 bg-page">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('about.cta.title') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">

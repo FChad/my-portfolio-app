@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const variantClasses = {
     primary: {
-        enabled: 'bg-blue-600 hover:bg-blue-700 text-white border border-blue-700 dark:bg-blue-600 dark:border-blue-500 dark:hover:bg-blue-500',
+        enabled: 'bg-brand text-white dark:text-blue-950 border-0 hover:opacity-95',
         disabled: 'bg-neutral-100 text-neutral-400 border border-neutral-200 dark:bg-neutral-800/60 dark:text-neutral-600 dark:border-neutral-700',
     },
     secondary: {
@@ -55,6 +55,7 @@ const sizeClass = computed(() => props.square ? '' : (sizeClasses[props.size] ??
 
 const baseClass = computed(() => {
     const c: string[] = ['group/btn', 'transition-all', 'duration-300', 'inline-flex', 'items-center', 'justify-center']
+    if (!props.disabled) c.push('hover:-translate-y-px')
     c.push(props.disabled ? 'cursor-not-allowed' : 'cursor-pointer')
 
     if (props.square) {

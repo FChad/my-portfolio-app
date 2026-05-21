@@ -79,7 +79,7 @@ const filteredItems = computed(() => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ t('showcase.title') }}
                 </h1>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
@@ -115,7 +115,7 @@ const filteredItems = computed(() => {
                             <Icon name="mdi:magnify" class="w-5 h-5 text-neutral-400" />
                         </div>
                         <input v-model="searchTerm" type="text" :placeholder="t('showcase.search.placeholder')"
-                            class="w-full pl-11 pr-10 py-2.5 md:py-3 text-sm md:text-base bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl md:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-neutral-900 dark:text-white placeholder-neutral-400 transition-all" />
+                            class="w-full pl-11 pr-10 py-2.5 md:py-3 text-sm md:text-base bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl md:rounded-2xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none text-neutral-900 dark:text-white placeholder-neutral-400 transition-all" />
                         <button v-if="searchTerm" @click="searchTerm = ''"
                             class="cursor-pointer absolute inset-y-0 right-0 pr-4 flex items-center text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">
                             <Icon name="mdi:close" class="w-4 h-4" />
@@ -135,11 +135,11 @@ const filteredItems = computed(() => {
                                     :icon="item.type === 'project' ? 'mdi:code-braces' : 'mdi:file-document-outline'" />
                                 <div class="flex flex-col gap-0.5 md:gap-1">
                                     <h3
-                                        class="text-lg md:text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white">
+                                        class="text-lg md:text-xl lg:text-2xl font-display font-bold text-neutral-800 dark:text-white">
                                         {{ t(item.title) }}
                                     </h3>
                                     <span
-                                        class="text-xs md:text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide">
+                                        class="text-xs md:text-sm font-semibold text-accent uppercase tracking-wide">
                                         {{ t(`showcase.filters.${item.type === 'project' ? 'projects' :
                                             'documentation'}`) }}
                                     </span>
@@ -171,7 +171,7 @@ const filteredItems = computed(() => {
                     <Icon name="mdi:magnify-close"
                         class="w-8 h-8 md:w-10 md:h-10 text-neutral-400 dark:text-neutral-500" />
                 </div>
-                <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white mb-2">
+                <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-neutral-800 dark:text-white mb-2">
                     {{ t('showcase.noResults.title') }}
                 </h3>
                 <p class="text-sm md:text-base text-neutral-600 dark:text-neutral-300">
@@ -182,10 +182,10 @@ const filteredItems = computed(() => {
     </section>
 
     <!-- CTA Section -->
-    <section class="py-12 md:py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+    <section class="py-12 md:py-16 lg:py-24 bg-page">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ t('about.cta.title') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">

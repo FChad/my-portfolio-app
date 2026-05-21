@@ -19,10 +19,13 @@ const services = computed(() => [
 </script>
 
 <template>
-    <section class="py-12 md:py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+    <section class="py-12 md:py-16 lg:py-24 bg-page">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
+                    02 &mdash; Services
+                </p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('home.services.title') }}
                 </h2>
                 <p
@@ -37,7 +40,7 @@ const services = computed(() => [
                     <div class="flex flex-col gap-4 md:gap-5 lg:gap-6 h-full">
                         <div class="flex items-center gap-3 md:gap-4">
                             <UiIconBox :icon="service.icon" />
-                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-display font-bold text-neutral-800 dark:text-white">
                                 {{ $t(`home.services.${service.key}.title`) }}
                             </h3>
                         </div>
@@ -47,7 +50,7 @@ const services = computed(() => [
                         <ul class="flex flex-col gap-2 md:gap-3">
                             <li v-for="feature in service.features" :key="feature"
                                 class="flex items-center gap-2 md:gap-3 text-neutral-600 dark:text-neutral-400">
-                                <Icon name="mdi:check-circle" class="w-4 h-4 md:w-5 md:h-5 text-blue-500 shrink-0" />
+                                <Icon name="mdi:check-circle" class="w-4 h-4 md:w-5 md:h-5 text-accent shrink-0" />
                                 <span class="font-medium text-sm md:text-base">{{
                                     $t(`home.services.${service.key}.features.${feature}`)
                                     }}</span>

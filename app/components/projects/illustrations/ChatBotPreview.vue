@@ -10,7 +10,7 @@ const { visible, fading } = useAnimationCycle()
                 class="flex items-center justify-between px-5 py-3 md:px-6 md:py-3.5 border-b border-neutral-200 dark:border-neutral-700/60">
                 <span class="text-sm md:text-base font-bold text-neutral-800 dark:text-white">AskChadAI</span>
                 <div class="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg px-3 py-1.5">
-                    <Icon name="mdi:creation" class="w-4.5 h-4.5 text-blue-500" />
+                    <Icon name="mdi:creation" class="w-4.5 h-4.5 text-accent" />
                     <span class="text-sm font-semibold text-neutral-800 dark:text-white">Llama 3.3 70B</span>
                     <Icon name="mdi:chevron-down" class="w-4 h-4 text-neutral-400 dark:text-neutral-500" />
                 </div>
@@ -26,7 +26,7 @@ const { visible, fading } = useAnimationCycle()
                         <Icon name="mdi:account" class="w-4.5 h-4.5 text-neutral-500 dark:text-neutral-400" />
                     </div>
                     <div
-                        class="bg-blue-500/10 dark:bg-blue-500/15 border border-blue-200/60 dark:border-blue-500/20 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[75%]">
+                        class="bg-accent/10 dark:bg-accent/15 border border-blue-200/60 dark:border-accent/20 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[75%]">
                         <p class="text-neutral-800 dark:text-neutral-100 text-sm md:text-base leading-relaxed">What is
                             Vue.js?</p>
                     </div>
@@ -38,7 +38,7 @@ const { visible, fading } = useAnimationCycle()
                     <div
                         class="bg-white dark:bg-neutral-800 border border-neutral-200/80 dark:border-neutral-600/40 rounded-2xl rounded-br-md px-4 py-2.5 shadow-sm max-w-[80%]">
                         <p class="text-neutral-700 dark:text-neutral-200 text-sm md:text-base leading-relaxed">
-                            Vue.js is a <span class="font-semibold text-blue-600 dark:text-blue-400">progressive
+                            Vue.js is a <span class="font-semibold text-accent">progressive
                                 framework</span> for building user interfaces. 🚀
                         </p>
                     </div>
@@ -56,7 +56,7 @@ const { visible, fading } = useAnimationCycle()
                         <Icon name="mdi:account" class="w-4.5 h-4.5 text-neutral-500 dark:text-neutral-400" />
                     </div>
                     <div
-                        class="bg-blue-500/10 dark:bg-blue-500/15 border border-blue-200/60 dark:border-blue-500/20 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[75%]">
+                        class="bg-accent/10 dark:bg-accent/15 border border-blue-200/60 dark:border-accent/20 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[75%]">
                         <p class="text-neutral-800 dark:text-neutral-100 text-sm md:text-base leading-relaxed">What is
                             Nuxt?</p>
                     </div>
@@ -68,14 +68,14 @@ const { visible, fading } = useAnimationCycle()
                     <div
                         class="bg-white dark:bg-neutral-800 border border-neutral-200/80 dark:border-neutral-600/40 rounded-2xl rounded-br-md px-4 py-2.5 shadow-sm max-w-[80%]">
                         <p class="text-neutral-700 dark:text-neutral-200 text-sm md:text-base leading-relaxed">
-                            Nuxt is a <span class="font-semibold text-blue-600 dark:text-blue-400">full-stack
+                            Nuxt is a <span class="font-semibold text-accent">full-stack
                                 framework</span> built on top of Vue.js
                         </p>
                         <div class="mt-2 flex gap-1.5 items-center">
-                            <span class="typing-dot w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-blue-500" />
-                            <span class="typing-dot w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-blue-500"
+                            <span class="typing-dot w-1.5 h-1.5 rounded-full bg-accent" />
+                            <span class="typing-dot w-1.5 h-1.5 rounded-full bg-accent"
                                 style="animation-delay: 0.15s" />
-                            <span class="typing-dot w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-blue-500"
+                            <span class="typing-dot w-1.5 h-1.5 rounded-full bg-accent"
                                 style="animation-delay: 0.3s" />
                         </div>
                     </div>

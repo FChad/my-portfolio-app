@@ -18,7 +18,7 @@ const interests = [
             <div
                 class="relative bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 rounded-2xl px-5 py-3 shadow-md mb-4 min-w-50">
                 <div class="flex items-center justify-center gap-2">
-                    <Icon name="mdi:headphones" class="w-5 h-5 text-blue-500" />
+                    <Icon name="mdi:headphones" class="w-5 h-5 text-accent" />
                     <p class="text-base md:text-lg font-bold text-neutral-800 dark:text-neutral-100 text-center">
                         {{ t('about.interests.bubble') }}
                     </p>

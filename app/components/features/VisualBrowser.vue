@@ -24,7 +24,7 @@ withDefaults(defineProps<Props>(), {
                 <div class="flex items-center gap-2 flex-1 bg-white dark:bg-neutral-700 rounded-lg px-3 py-1.5">
                     <Icon name="mdi:lock" class="w-4 h-4 text-green-600 dark:text-green-400 shrink-0" />
                     <span class="text-neutral-500 dark:text-neutral-400 text-sm font-medium flex-1 truncate">{{ url }}</span>
-                    <Icon :name="favicon" class="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0" />
+                    <Icon :name="favicon" class="w-4 h-4 text-accent shrink-0" />
                 </div>
             </div>
             <!-- Content -->

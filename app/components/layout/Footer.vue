@@ -23,7 +23,7 @@ const scrollToTop = () => {
 
                 <!-- Brand Section -->
                 <div>
-                    <h3 class="title text-xl font-bold uppercase text-blue-600 dark:text-blue-400 mb-4">
+                    <h3 class="title text-xl font-bold uppercase text-accent mb-4">
                         Chad Feierstein
                     </h3>
                     <p class="text-base text-neutral-600 dark:text-neutral-400 mb-4">
@@ -47,25 +47,25 @@ const scrollToTop = () => {
                     <ul class="grid grid-cols-2 gap-x-8 gap-y-3">
                         <li>
                             <NuxtLinkLocale to="/"
-                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors">
                                 {{ $t('nav.home') }}
                             </NuxtLinkLocale>
                         </li>
                         <li>
                             <NuxtLinkLocale to="/about"
-                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors">
                                 {{ $t('nav.about') }}
                             </NuxtLinkLocale>
                         </li>
                         <li>
                             <NuxtLinkLocale to="/showcase"
-                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors">
                                 {{ $t('nav.showcase') }}
                             </NuxtLinkLocale>
                         </li>
                         <li>
                             <NuxtLinkLocale to="/contact"
-                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors">
                                 {{ $t('nav.contact') }}
                             </NuxtLinkLocale>
                         </li>
@@ -81,12 +81,12 @@ const scrollToTop = () => {
                     </p>
                     <div class="flex flex-wrap justify-center md:justify-end items-center gap-4 sm:gap-6">
                         <NuxtLinkLocale to="/privacy"
-                            class="text-base text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
+                            class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors flex items-center gap-1">
                             <Icon name="mdi:shield-lock" class="w-5 h-5" />
                             <span>{{ $t('footer.privacy') }}</span>
                         </NuxtLinkLocale>
                         <a :href="SOCIAL_LINKS.repository" target="_blank" rel="noopener noreferrer"
-                            class="text-base text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
+                            class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors flex items-center gap-1">
                             <Icon name="mdi:github" class="w-5 h-5" />
                             <span>{{ $t('footer.sourceCode') }}</span>
                         </a>

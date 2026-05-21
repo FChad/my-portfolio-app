@@ -16,9 +16,9 @@ const sizeClasses = {
 }
 
 const variantClasses = {
-    default: 'bg-white/50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700',
-    blue: 'bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800',
-    muted: 'bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-600',
+    default: 'bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200/60 dark:border-neutral-700/60 hover:border-accent/50 hover:-translate-y-1 transition-[transform,border-color] duration-300',
+    blue: 'bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800',
+    muted: 'bg-neutral-50/60 dark:bg-neutral-900/40 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50',
 }
 
 const baseClass = computed(() => [

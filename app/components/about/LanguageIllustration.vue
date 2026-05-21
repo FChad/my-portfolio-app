@@ -152,7 +152,7 @@ onUnmounted(() => {
                     <!-- Flag + Level code -->
                     <div class="flex items-center justify-between">
                         <Icon :name="lang.flag" class="w-9 h-9 md:w-10 md:h-10" />
-                        <span class="text-sm font-bold text-blue-600 dark:text-blue-400">{{ lang.level }}</span>
+                        <span class="text-sm font-bold text-accent">{{ lang.level }}</span>
                     </div>
                     <!-- Name + Badge + Level label -->
                     <div class="flex flex-col gap-1">
@@ -167,7 +167,7 @@ onUnmounted(() => {
                     </div>
                     <!-- Progress bar -->
                     <div class="h-1 w-full bg-neutral-100 dark:bg-neutral-700 rounded-full overflow-hidden">
-                        <div class="h-full bg-blue-500 rounded-full transition-all duration-700"
+                        <div class="h-full bg-accent rounded-full transition-all duration-700"
                             :style="{ width: `${lang.progress}%` }" />
                     </div>
                 </div>

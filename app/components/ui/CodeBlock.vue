@@ -29,7 +29,7 @@ const copy = async () => {
             class="flex items-center justify-between border-b px-2.5 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 bg-neutral-50/90 dark:bg-neutral-700/70 border-neutral-200/60 dark:border-neutral-600/50">
             <div class="flex items-center gap-1.5 sm:gap-2 md:gap-3 min-w-0 flex-1">
                 <Icon name="mdi:code-tags"
-                    class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-500 dark:text-blue-400 shrink-0" />
+                    class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-accent shrink-0" />
 
                 <!-- File Name -->
                 <div v-if="isFile && fileName" class="min-w-0 flex-1">
@@ -110,7 +110,7 @@ code {
 }
 
 button:focus-visible {
-    outline: 2px solid var(--color-blue-500);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 

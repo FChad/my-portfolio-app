@@ -138,16 +138,16 @@ onUnmounted(() => {
     <div class="h-12 md:h-16 lg:h-20 flex items-center justify-center" role="region" aria-label="Dynamic text display">
         <!-- Creative text with gradient and animated cursor -->
         <div class="flex items-center text-2xl md:text-3xl lg:text-4xl font-bold relative">
-            <!-- Solid text matching brand palette -->
+            <!-- Gradient brand text -->
             <span
-                class="text-blue-600 dark:text-blue-400"
+                class="text-brand"
                 role="status" aria-live="polite">
                 {{ typingText }}
             </span>
 
             <!-- Simple blinking cursor -->
             <span class="w-0.5 h-8 md:h-10 lg:h-12 ml-1 inline-block rounded-full"
-                :class="isActive ? 'bg-blue-600 dark:bg-blue-400 animate-typing-cursor-blink' : 'bg-transparent'"
+                :class="isActive ? 'bg-accent animate-typing-cursor-blink' : 'bg-transparent'"
                 aria-hidden="true">
             </span>
         </div>

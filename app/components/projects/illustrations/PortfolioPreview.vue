@@ -44,9 +44,9 @@ const { visible, fading } = useAnimationCycle()
                 <!-- Typing effect mockup -->
                 <div :class="['flex items-center gap-1 section section-3', { 'section-visible': visible }]"
                     style="--section-delay: 0.8s">
-                    <span class="text-xs md:text-sm font-semibold text-blue-600 dark:text-blue-400">Full-Stack
+                    <span class="text-xs md:text-sm font-semibold text-accent">Full-Stack
                         Developer</span>
-                    <span class="typing-cursor w-0.5 h-3.5 bg-blue-500 dark:bg-blue-400 rounded-full" />
+                    <span class="typing-cursor w-0.5 h-3.5 bg-accent rounded-full" />
                 </div>
 
                 <!-- Tagline -->
@@ -58,7 +58,7 @@ const { visible, fading } = useAnimationCycle()
                 <!-- CTA Buttons -->
                 <div :class="['flex gap-2 pt-1 section section-5', { 'section-visible': visible }]"
                     style="--section-delay: 1.5s">
-                    <div class="px-3 py-1.5 bg-blue-600 rounded-lg flex items-center gap-1.5">
+                    <div class="px-3 py-1.5 bg-accent rounded-lg flex items-center gap-1.5">
                         <Icon name="mdi:eye" class="w-3 h-3 text-white" />
                         <span class="text-[10px] md:text-xs font-bold text-white">Showcase</span>
                     </div>
@@ -73,14 +73,14 @@ const { visible, fading } = useAnimationCycle()
                 <!-- Decorative dots (representing stars) -->
                 <div :class="['flex gap-1.5 pt-2 section section-6', { 'section-visible': visible }]"
                     style="--section-delay: 1.9s">
-                    <span class="w-1 h-1 rounded-full bg-blue-400 opacity-40 animate-pulse" />
-                    <span class="w-1 h-1 rounded-full bg-blue-300 opacity-30 animate-pulse"
+                    <span class="w-1 h-1 rounded-full bg-accent opacity-40 animate-pulse" />
+                    <span class="w-1 h-1 rounded-full bg-accent opacity-30 animate-pulse"
                         style="animation-delay: 0.3s" />
-                    <span class="w-1 h-1 rounded-full bg-blue-500 opacity-50 animate-pulse"
+                    <span class="w-1 h-1 rounded-full bg-accent opacity-50 animate-pulse"
                         style="animation-delay: 0.6s" />
-                    <span class="w-1 h-1 rounded-full bg-blue-400 opacity-35 animate-pulse"
+                    <span class="w-1 h-1 rounded-full bg-accent opacity-35 animate-pulse"
                         style="animation-delay: 0.9s" />
-                    <span class="w-1 h-1 rounded-full bg-blue-300 opacity-25 animate-pulse"
+                    <span class="w-1 h-1 rounded-full bg-accent opacity-25 animate-pulse"
                         style="animation-delay: 1.2s" />
                 </div>
             </div>

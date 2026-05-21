@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import AuroraBackground from '~/components/effects/AuroraBackground.vue'
-
 const { t } = useI18n()
 
 const texts = computed(() => [
@@ -16,9 +14,6 @@ const scrollToAbout = () => {
 
 <template>
     <section class="relative min-h-[calc(100dvh-65px)] flex items-center justify-center overflow-hidden">
-        <!-- Animated Aurora Background -->
-        <AuroraBackground />
-
         <!-- Main Content -->
         <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center flex flex-col gap-4 sm:gap-6 md:gap-8">
@@ -29,7 +24,7 @@ const scrollToAbout = () => {
                         {{ $t('home.greeting') }}
                     </p>
                     <h1
-                        class="text-4xl sm:text-6xl md:text-7xl font-bold leading-none text-neutral-800 dark:text-white uppercase">
+                        class="text-4xl sm:text-6xl md:text-7xl font-display font-bold leading-none uppercase text-brand">
                         Chad Feierstein
                     </h1>
                 </div>
@@ -67,7 +62,7 @@ const scrollToAbout = () => {
         <!-- Scroll Down Indicator -->
         <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-30">
             <button @click="scrollToAbout"
-                class="cursor-pointer text-neutral-400 dark:text-neutral-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                class="cursor-pointer text-neutral-400 dark:text-neutral-500 hover:text-accent transition-colors"
                 aria-label="Scroll down">
                 <Icon name="mdi:chevron-down" class="w-7 h-7 sm:w-8 sm:h-8" />
             </button>

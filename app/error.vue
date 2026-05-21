@@ -24,7 +24,7 @@ const helpfulLinks = NAV_LINKS
 </script>
 
 <template>
-    <div class="w-full min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900">
+    <div class="w-full min-h-screen flex flex-col bg-page">
         <LayoutHeader />
 
         <!-- Error Content -->
@@ -35,14 +35,14 @@ const helpfulLinks = NAV_LINKS
                 <!-- Error Code with Icon -->
                 <div class="flex flex-col items-center gap-3 md:gap-4">
                     <h1
-                        class="text-7xl sm:text-8xl md:text-9xl font-bold leading-none text-blue-600 dark:text-blue-400 tracking-tight">
+                        class="text-7xl sm:text-8xl md:text-9xl font-display font-bold leading-none text-brand tracking-tight">
                         {{ errorCode }}
                     </h1>
                 </div>
 
                 <!-- Error Title -->
                 <h2
-                    class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-neutral-800 dark:text-white uppercase">
+                    class="text-3xl sm:text-4xl md:text-5xl font-display font-bold leading-tight text-neutral-800 dark:text-white uppercase">
                     {{ errorTitle }}
                 </h2>
 

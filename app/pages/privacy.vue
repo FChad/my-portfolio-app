@@ -19,7 +19,7 @@ useSeoMeta({
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('privacy.title') }}
                 </h1>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">
@@ -32,23 +32,23 @@ useSeoMeta({
                 <div class="flex items-start gap-3 md:gap-4">
                     <div
                         class="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-                        <Icon name="mdi:cookie-off" class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
+                        <Icon name="mdi:cookie-off" class="w-5 h-5 md:w-6 md:h-6 text-accent" />
                     </div>
                     <div>
-                        <h2 class="text-base md:text-lg font-bold text-neutral-800 dark:text-white mb-2 md:mb-3">
+                        <h2 class="text-base md:text-lg font-display font-bold text-neutral-800 dark:text-white mb-2 md:mb-3">
                             {{ $t('privacy.sections.noCookieBanner.title') }}
                         </h2>
                         <ul class="flex flex-col gap-2 text-sm md:text-base text-neutral-600 dark:text-neutral-300">
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check-circle" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                                <Icon name="mdi:check-circle" class="w-5 h-5 text-accent mt-0.5 shrink-0" />
                                 {{ $t('privacy.sections.dataCollection.items.noTracking') }}
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check-circle" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                                <Icon name="mdi:check-circle" class="w-5 h-5 text-accent mt-0.5 shrink-0" />
                                 {{ $t('privacy.sections.dataCollection.items.noAnalytics') }}
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check-circle" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                                <Icon name="mdi:check-circle" class="w-5 h-5 text-accent mt-0.5 shrink-0" />
                                 {{ $t('privacy.sections.dataCollection.items.noThirdParty') }}
                             </li>
                         </ul>
@@ -63,9 +63,9 @@ useSeoMeta({
                     <!-- Data Controller -->
                     <UiCard>
                         <h2
-                            class="text-lg md:text-xl font-bold text-neutral-800 dark:text-white mb-3 md:mb-4 flex items-center gap-3">
+                            class="text-lg md:text-xl font-display font-bold text-neutral-800 dark:text-white mb-3 md:mb-4 flex items-center gap-3">
                             <Icon name="mdi:account-tie"
-                                class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
+                                class="w-5 h-5 md:w-6 md:h-6 text-accent" />
                             {{ $t('privacy.sections.responsible.title') }}
                         </h2>
                         <div
@@ -74,7 +74,7 @@ useSeoMeta({
                             <p>{{ $t('privacy.sections.responsible.location') }}</p>
                             <p>
                                 <NuxtLinkLocale to="/contact"
-                                    class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                                    class="text-accent hover:underline inline-flex items-center gap-1">
                                     <Icon name="mdi:email-outline" class="w-4 h-4" />
                                     {{ $t('privacy.sections.responsible.contact') }}
                                 </NuxtLinkLocale>
@@ -85,18 +85,18 @@ useSeoMeta({
                     <!-- Your Rights -->
                     <UiCard>
                         <h2
-                            class="text-lg md:text-xl font-bold text-neutral-800 dark:text-white mb-3 md:mb-4 flex items-center gap-3">
+                            class="text-lg md:text-xl font-display font-bold text-neutral-800 dark:text-white mb-3 md:mb-4 flex items-center gap-3">
                             <Icon name="mdi:scale-balance"
-                                class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
+                                class="w-5 h-5 md:w-6 md:h-6 text-accent" />
                             {{ $t('privacy.sections.rights.title') }}
                         </h2>
                         <ul class="flex flex-col gap-3 text-sm md:text-base text-neutral-600 dark:text-neutral-300">
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:theme-light-dark" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                                <Icon name="mdi:theme-light-dark" class="w-5 h-5 text-accent mt-0.5 shrink-0" />
                                 {{ $t('privacy.sections.rights.localStorage') }}
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:email-outline" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                                <Icon name="mdi:email-outline" class="w-5 h-5 text-accent mt-0.5 shrink-0" />
                                 {{ $t('privacy.sections.rights.contact') }}
                             </li>
                         </ul>
@@ -106,16 +106,16 @@ useSeoMeta({
                 <!-- What We Process (full width) -->
                 <UiCard>
                     <h2
-                        class="text-lg md:text-xl font-bold text-neutral-800 dark:text-white mb-3 md:mb-4 flex items-center gap-3">
-                        <Icon name="mdi:database" class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
+                        class="text-lg md:text-xl font-display font-bold text-neutral-800 dark:text-white mb-3 md:mb-4 flex items-center gap-3">
+                        <Icon name="mdi:database" class="w-5 h-5 md:w-6 md:h-6 text-accent" />
                         {{ $t('privacy.sections.dataCollection.title') }}
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                         <!-- Theme Preference -->
                         <UiCard variant="muted" size="sm">
                             <div class="flex items-center gap-3 mb-2">
-                                <Icon name="mdi:theme-light-dark" class="w-5 h-5 text-blue-500" />
-                                <h3 class="text-sm md:text-base font-bold text-neutral-800 dark:text-white">
+                                <Icon name="mdi:theme-light-dark" class="w-5 h-5 text-accent" />
+                                <h3 class="text-sm md:text-base font-display font-bold text-neutral-800 dark:text-white">
                                     {{ $t('privacy.sections.technicalStorage.localStorage.title') }}
                                 </h3>
                             </div>
@@ -130,8 +130,8 @@ useSeoMeta({
                         <!-- Contact Form -->
                         <UiCard variant="muted" size="sm">
                             <div class="flex items-center gap-3 mb-2">
-                                <Icon name="mdi:email-outline" class="w-5 h-5 text-blue-500" />
-                                <h3 class="text-sm md:text-base font-bold text-neutral-800 dark:text-white">
+                                <Icon name="mdi:email-outline" class="w-5 h-5 text-accent" />
+                                <h3 class="text-sm md:text-base font-display font-bold text-neutral-800 dark:text-white">
                                     {{ $t('privacy.sections.contactForm.title') }}
                                 </h3>
                             </div>
@@ -165,8 +165,8 @@ useSeoMeta({
                     <!-- Coolify Hosting -->
                     <UiCard>
                         <div class="flex items-center gap-3 mb-3 md:mb-4">
-                            <Icon name="mdi:cloud" class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
-                            <h2 class="text-lg md:text-xl font-bold text-neutral-800 dark:text-white">
+                            <Icon name="mdi:cloud" class="w-5 h-5 md:w-6 md:h-6 text-accent" />
+                            <h2 class="text-lg md:text-xl font-display font-bold text-neutral-800 dark:text-white">
                                 {{ $t('privacy.sections.hosting.title') }}
                             </h2>
                         </div>
@@ -179,8 +179,8 @@ useSeoMeta({
                     <UiCard>
                         <div class="flex items-center gap-3 mb-3 md:mb-4">
                             <Icon name="mdi:email-fast"
-                                class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" />
-                            <h2 class="text-lg md:text-xl font-bold text-neutral-800 dark:text-white">
+                                class="w-5 h-5 md:w-6 md:h-6 text-accent" />
+                            <h2 class="text-lg md:text-xl font-display font-bold text-neutral-800 dark:text-white">
                                 {{ $t('privacy.sections.contactForm.smtp.title') }}
                             </h2>
                         </div>

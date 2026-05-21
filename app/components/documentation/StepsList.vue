@@ -27,7 +27,7 @@ const { copiedValue: copiedCommand, copy: copyCommand } = useCopyToClipboard()
                     <!-- Step Header -->
                     <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <UiIconBox>
-                            <span class="text-blue-500 font-bold text-base md:text-lg lg:text-xl">{{ index + 1 }}</span>
+                            <span class="text-accent font-bold text-base md:text-lg lg:text-xl">{{ index + 1 }}</span>
                         </UiIconBox>
                         <div class="min-w-0">
                             <h3

@@ -4,7 +4,10 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
+                    03 &mdash; Featured
+                </p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('home.featured.title') }}
                 </h2>
                 <p
@@ -25,7 +28,7 @@
                     <div class="order-1 lg:order-0 flex flex-col gap-4 md:gap-5 lg:gap-6">
                         <!-- Project Title -->
                         <h3
-                            class="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-800 dark:text-white leading-tight">
+                            class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-neutral-800 dark:text-white leading-tight">
                             {{ $t('home.featured.projectTitle') }}
                         </h3>
 

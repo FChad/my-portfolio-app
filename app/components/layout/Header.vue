@@ -15,13 +15,13 @@ const isActive = (path: string) => {
 <template>
     <!-- Header -->
     <header
-        class="sticky top-0 z-50 border-b border-neutral-200 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md">
+        class="sticky top-0 z-50 border-b border-neutral-200 dark:border-neutral-700 bg-page/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Name -->
                 <div class="flex items-center">
                     <NuxtLinkLocale to="/"
-                        class="title text-xl font-bold uppercase text-blue-600 dark:text-blue-400 hover:opacity-80 transition-opacity">
+                        class="title text-xl font-display font-bold uppercase text-brand hover:opacity-80 transition-opacity">
                         Chad Feierstein
                     </NuxtLinkLocale>
                 </div>
@@ -29,12 +29,12 @@ const isActive = (path: string) => {
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex items-center gap-8 text-lg">
                     <NuxtLinkLocale v-for="link in NAV_LINKS" :key="link.key" :to="link.to" :class="[
-                        'nav-link font-medium relative group text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400',
-                        isActive(link.to) && 'text-blue-600! dark:text-blue-400! active'
+                        'nav-link font-medium relative group text-neutral-700 dark:text-neutral-300 hover:text-accent',
+                        isActive(link.to) && 'text-accent! active'
                     ]">
                         {{ $t(`nav.${link.key}`) }}
                         <span
-                            class="nav-underline absolute -bottom-1 left-0 h-0.5 w-0 bg-blue-600 dark:bg-blue-400 group-hover:w-full transition-all"></span>
+                            class="nav-underline absolute -bottom-1 left-0 h-0.5 w-0 bg-accent group-hover:w-full transition-all"></span>
                     </NuxtLinkLocale>
                 </nav>
 
@@ -59,7 +59,7 @@ const isActive = (path: string) => {
                             <NuxtLinkLocale v-for="link in NAV_LINKS" :key="link.key" :to="link.to"
                                 @click="mobileMenuOpen = false" :class="[
                                     'flex items-center gap-3 w-full px-4 py-2 text-left font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md no-underline',
-                                    isActive(link.to) && 'text-blue-600! dark:text-blue-400!'
+                                    isActive(link.to) && 'text-accent!'
                                 ]">
                                 {{ $t(`nav.${link.key}`) }}
                             </NuxtLinkLocale>

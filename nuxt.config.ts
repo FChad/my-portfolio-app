@@ -30,7 +30,8 @@ export default defineNuxtConfig({
   modules: ['@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
   fonts: {
     families: [
-      { name: 'Inter', provider: 'bunny', weights: ['100 900'], display: 'swap', preload: true }
+      { name: 'Inter', provider: 'bunny', weights: ['100 900'], display: 'swap', preload: true },
+      { name: 'Space Grotesk', provider: 'bunny', weights: ['500 700'], display: 'swap', preload: true }
     ]
   },
   icon: {

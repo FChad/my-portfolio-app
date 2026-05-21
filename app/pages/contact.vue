@@ -137,7 +137,7 @@ definePageMeta({
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('contact.title') }}
                 </h1>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
@@ -164,7 +164,7 @@ definePageMeta({
                         class="relative bg-white/50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10">
 
                         <h2
-                            class="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-800 dark:text-white mb-2 md:mb-3">
+                            class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-neutral-800 dark:text-white mb-2 md:mb-3">
                             {{ $t('contact.form.title') }}
                         </h2>
                         <p
@@ -220,7 +220,7 @@ definePageMeta({
                                         'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                         errors.name
                                             ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                            : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                                            : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
                                     ]" :placeholder="$t('contact.form.namePlaceholder')" />
                                     <p v-if="errors.name" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                         {{ errors.name }}
@@ -237,7 +237,7 @@ definePageMeta({
                                         'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                         errors.email
                                             ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                            : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                                            : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
                                     ]" :placeholder="$t('contact.form.emailPlaceholder')" />
                                     <p v-if="errors.email" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                         {{ errors.email }}
@@ -255,7 +255,7 @@ definePageMeta({
                                     'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                     errors.subject
                                         ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
                                 ]" :placeholder="$t('contact.form.subjectPlaceholder')" />
                                 <p v-if="errors.subject" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                     {{ errors.subject }}
@@ -272,7 +272,7 @@ definePageMeta({
                                     'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border resize-none text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
                                     errors.message
                                         ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
                                 ]" :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
                                 <p v-if="errors.message" class="text-xs md:text-sm text-red-600 dark:text-red-400">
                                     {{ errors.message }}

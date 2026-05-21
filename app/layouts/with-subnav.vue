@@ -4,6 +4,7 @@ const { title, showBackButton, backTo } = useSubNav()
 
 <template>
     <div class="w-full min-h-screen flex flex-col">
+        <BackgroundLayers />
         <div class="sticky top-0 z-50">
             <LayoutHeader />
             <UiSubNavigation :title="title" :show-back-button="showBackButton" :back-to="backTo" />

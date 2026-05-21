@@ -78,7 +78,7 @@ const handleOpenDetails = (item: TimelineItem) => {
 
                                 <!-- 3. Subtitle: Company or School -->
                                 <div v-if="item.company || item.school" class="flex items-center gap-2 -mt-2">
-                                    <span class="text-sm md:text-base font-medium text-blue-600 dark:text-blue-400">
+                                    <span class="text-sm md:text-base font-medium text-accent">
                                         {{ item.company || item.school }}
                                     </span>
                                 </div>
@@ -122,8 +122,8 @@ const handleOpenDetails = (item: TimelineItem) => {
                     <div class="flex flex-wrap items-center gap-2">
                         <div v-if="selectedWorkItem.company" class="flex items-center gap-2">
                             <Icon name="mdi:office-building"
-                                class="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400" />
-                            <span class="text-sm md:text-base font-medium text-blue-600 dark:text-blue-400">{{
+                                class="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+                            <span class="text-sm md:text-base font-medium text-accent">{{
                                 selectedWorkItem.company }}</span>
                         </div>
                         <span v-if="selectedWorkItem.company && (selectedWorkItem.type || selectedWorkItem.year)"
@@ -150,7 +150,7 @@ const handleOpenDetails = (item: TimelineItem) => {
                     <ul class="flex flex-col gap-2">
                         <li v-for="(task, taskIndex) in selectedWorkItem.tasks" :key="taskIndex"
                             class="flex items-start gap-2 sm:gap-3">
-                            <Icon name="mdi:check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 shrink-0 mt-0.5" />
+                            <Icon name="mdi:check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-accent shrink-0 mt-0.5" />
                             <span class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
                                 {{ task }}
                             </span>

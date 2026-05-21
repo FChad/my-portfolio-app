@@ -31,7 +31,10 @@ const infoCards = computed(() => [
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header (Centered) -->
             <div class="text-center mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white mb-3 md:mb-4">
+                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent mb-3">
+                    01 &mdash; About
+                </p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white mb-3 md:mb-4">
                     {{ $t('home.about.title') }}
                 </h2>
                 <p

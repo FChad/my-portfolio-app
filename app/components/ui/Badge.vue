@@ -9,7 +9,7 @@ const variantClass = computed(() => {
         case 'neutral':
             return 'bg-neutral-100 text-neutral-600 dark:bg-neutral-700/50 dark:text-neutral-400'
         case 'blue':
-            return 'bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400'
+            return 'bg-blue-100 text-accent dark:bg-blue-900/40'
         default:
             return ''
     }
