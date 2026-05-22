@@ -88,8 +88,7 @@
     "greeting": "Hallo, ich bin",
     "roles": {
       "fullstack": "Full-Stack Entwickler",
-      "serveradmin": "Server Administrator",
-      "solver": "Problemlöser"
+      "itadmin": "IT Administrator"
     },
     "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit und lernen Sie mich besser kennen.",
     "cta": {

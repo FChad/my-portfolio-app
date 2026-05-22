@@ -88,8 +88,7 @@
     "greeting": "Hello, I'm",
     "roles": {
       "fullstack": "Full-Stack Developer",
-      "serveradmin": "Server Administrator",
-      "solver": "Problem Solver"
+      "itadmin": "IT Administrator"
     },
     "tagline": "Discover my projects, skills and previous work and get to know me better.",
     "cta": {

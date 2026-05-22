@@ -88,8 +88,7 @@
     "greeting": "Moien, ech sinn",
     "roles": {
       "fullstack": "Full-Stack Developer",
-      "serveradmin": "Server Administrator",
-      "solver": "Problem Solver"
+      "itadmin": "IT Administrator"
     },
     "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten a léiert mech dobäi besser kennen.",
     "cta": {

@@ -3,8 +3,7 @@ const { t } = useI18n()
 
 const texts = computed(() => [
     t('home.roles.fullstack'),
-    t('home.roles.serveradmin'),
-    t('home.roles.solver')
+    t('home.roles.itadmin')
 ])
 
 const scrollToAbout = () => {
