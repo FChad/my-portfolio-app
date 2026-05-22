@@ -1,6 +1,5 @@
 <template>
     <div class="w-full min-h-screen flex flex-col">
-        <BackgroundLayers />
         <LayoutHeader />
 
         <!-- Main Content -->
