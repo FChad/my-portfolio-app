@@ -14,7 +14,6 @@ export const SOCIAL_LINKS = {
 
 export const NAV_LINKS = [
   { to: '/', key: 'home', icon: 'mdi:home' },
-  { to: '/about', key: 'about', icon: 'mdi:account' },
   { to: '/showcase', key: 'showcase', icon: 'mdi:eye' },
   { to: '/contact', key: 'contact', icon: 'mdi:email' }
 ] as const

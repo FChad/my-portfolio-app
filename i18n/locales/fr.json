@@ -22,11 +22,6 @@
       "description": "Développeur Full-Stack professionnel et Administrateur IT du Luxembourg. Spécialisé dans les technologies web modernes, le cloud computing et les solutions digitales innovantes.",
       "keywords": "Chad Feierstein, Développeur Full-Stack, Développeur Web, Administrateur IT, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
     },
-    "about": {
-      "title": "À propos de moi",
-      "description": "Découvrez Chad Feierstein, Développeur Full-Stack avec formation BTS Cloud Computing et expérience professionnelle IT au Luxembourg.",
-      "keywords": "Chad Feierstein, À propos, Expérience IT, BTS Cloud Computing, Technicien Informatique, Luxembourg"
-    },
     "showcase": {
       "title": "Showcase",
       "description": "Découvrez mes derniers projets, documentations et solutions techniques. Du développement web aux infrastructures cloud.",
@@ -79,7 +74,6 @@
   },
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
     "showcase": "Showcase",
     "contact": "Contact",
     "back": "Retour"
@@ -90,28 +84,10 @@
       "fullstack": "Développeur Full-Stack",
       "itadmin": "Administrateur IT"
     },
-    "tagline": "Découvrez mes projets, compétences et travaux précédents et apprenez à me connaître davantage.",
+    "tagline": "Je développe des applications web modernes, gère des infrastructures serveur et résous des défis IT complexes avec passion et précision, basé au Luxembourg.",
     "cta": {
       "primary": "Découvrir les Projets",
       "secondary": "Me Contacter"
-    },
-    "about": {
-      "title": "Apprenez à Me Connaître",
-      "subtitle": "Découvrez mon parcours, mon expérience et ce qui motive ma passion pour la technologie.",
-      "cta": "En Savoir Plus Sur Moi",
-      "role": "Développeur Web Full-Stack",
-      "story": "Je suis Chad Feierstein, un {role} et {admin} de 26 ans du {location}. Avec une formation en tant que technicien en informatique et un BTS en {cloud}, j'apporte plus de {experience}. Du frontend et backend à la gestion de serveurs et aux technologies modernes, je relève des défis complexes tout en apprenant constamment de nouvelles choses.",
-      "storyHighlights": {
-        "role": "développeur Full-Stack",
-        "admin": "administrateur IT",
-        "location": "Luxembourg",
-        "cloud": "Cloud Computing",
-        "experience": "5 ans d'expérience IT"
-      },
-      "experience": "Technicien en Informatique",
-      "education": "BTS Cloud Computing",
-      "training": "Formation",
-      "study": "Études"
     },
     "services": {
       "title": "Ce Que J'Offre",
@@ -144,15 +120,11 @@
         }
       }
     },
-    "featured": {
-      "title": "Projet en Vedette",
-      "subtitle": "Découvrez ma dernière innovation, où l'IA de pointe rencontre un design intuitif.",
-      "projectTitle": "Chat Bot IA",
-      "description": "Un Chat Bot IA avancé qui mène des conversations intelligentes et traite des requêtes complexes. Ce projet combine une technologie IA de pointe avec une interface élégante et conviviale, offrant une expérience fluide pour des conversations naturelles. Le bot exploite des modèles linguistiques puissants via OpenRouter.ai, prend en charge plusieurs modèles d'IA et s'adapte intelligemment à différents contextes de conversation. Avec des réponses en temps réel, la prise en charge du markdown et une intégration réfléchie du mode sombre/clair, ce chat bot est un exemple parfait de développement full-stack moderne.",
-      "cta": {
-        "view": "Voir les Détails",
-        "demo": "Tester la Démo Live"
-      }
+    "finalCta": {
+      "title": "Prêt à créer quelque chose ensemble ?",
+      "subtitle": "Découvrez mes projets ou contactez-moi directement.",
+      "viewProjects": "Voir les projets",
+      "contact": "Me contacter"
     }
   },
   "about": {
@@ -173,6 +145,7 @@
       }
     },
     "story": {
+      "title": "Mon Histoire",
       "intro": "Je suis Chad Feierstein, {role} et {admin} de {age} ans, originaire du {location}. Mon domaine de prédilection est le {cloud}, du développement d'{webapps} à la {servers} professionnelle. Au cours de mes {positions}, j'ai acquis une expérience pratique dans divers domaines IT, notamment les systèmes ERP, la gestion de bases de données et la programmation web. Ma formation repose sur un diplôme de technicien IT (DT) et un Brevet de Technicien Supérieur (BTS) en Cloud Computing. Grâce à mes {langCount}, je communique aisément au sein d'équipes internationales.",
       "introHighlights": {
         "role": "développeur web Full-Stack",
@@ -187,8 +160,11 @@
     },
     "interests": {
       "title": "Intérêts & Loisirs",
-      "subtitle": "Ce qui me passionne pendant mon temps libre",
-      "bubble": "La vie au-delà du code !"
+      "subtitle": "Ce qui me passionne pendant mon temps libre"
+    },
+    "experiences": {
+      "title": "Expériences",
+      "subtitle": "Moments inoubliables qui m'ont marqué"
     },
     "interestsList": {
       "tech": {
@@ -208,24 +184,8 @@
         "subtitle": "Rencontres régulières & activités ensemble"
       }
     },
-    "languages": {
-      "title": "Langues",
-      "subtitle": "Communication multilingue",
-      "levels": {
-        "A1": "Débutant",
-        "A2": "Élémentaire",
-        "B1": "Intermédiaire",
-        "B2": "Intermédiaire supérieur",
-        "C1": "Avancé",
-        "C2": "Quasi natif"
-      }
-    },
     "education": {
       "title": "Formation",
-      "links": {
-        "bts": "Voir BTS CLC",
-        "dt": "Voir DT IF"
-      },
       "bts": {
         "degree": "BTS Cloud Computing",
         "field": "Diplôme technique supérieur de deux ans axé sur les technologies cloud, la virtualisation, l'infrastructure réseau et les solutions IT modernes. Formation pratique en AWS, Azure et administration de serveurs Linux.",
@@ -240,27 +200,13 @@
       }
     },
     "work": {
-      "subtitle": "Expérience professionnelle & parcours éducatif",
+      "subtitle": "Expérience professionnelle",
       "journey": "Mon Parcours Professionnel",
-      "viewDetails": "Voir les détails",
-      "modal": {
-        "tasks": "Tâches Principales"
-      }
+      "active": "Actif"
     },
     "certifications": {
       "title": "Certifications",
       "subtitle": "Certifications professionnelles et qualifications qui démontrent mon expertise dans divers domaines technologiques"
-    },
-    "cta": {
-      "title": "Entrons en Contact",
-      "subtitle": "Vous avez des questions ou souhaitez échanger ? Je serais ravi d'avoir de vos nouvelles.",
-      "button": "Me Contacter"
-    },
-    "languageNames": {
-      "luxemburgish": "Luxembourgeois",
-      "german": "Allemand",
-      "english": "Anglais",
-      "french": "Français"
     },
     "certificationsList": {
       "cert1": {
@@ -293,67 +239,37 @@
         "title": "Développeur Web chez Mullerpneus",
         "description": "Développement et maintenance du système ERP interne et de la boutique en ligne. Responsable des nouvelles fonctionnalités, correction de bugs, bases de données et configurations serveur.",
         "company": "Mullerpneus",
-        "type": "Temps plein",
-        "task1": "Développement: Planification et implémentation de nouvelles fonctionnalités ERP et boutique",
-        "task2": "Maintenance: Analyse d'erreurs, débogage et optimisation des performances",
-        "task3": "Bases de données: Administration, maintenance et optimisation MySQL",
-        "task4": "Serveur: Configuration FTP, SFTP, e-mail, websockets et versions PHP",
-        "task5": "Monitoring: Analyse des logs et dépannage proactif"
+        "type": "Temps plein"
       },
       "item2": {
         "title": "Stage Ingénieur IT Cloud",
         "description": "Stage de 12 semaines chez QPark Consulting axé sur les technologies cloud et les méthodes de projet agiles. Travail sur deux grands projets cloud avec AWS et GCP.",
         "company": "QPark Consulting",
-        "type": "Stage",
-        "task1": "Planification de projet avec méthodologies agiles",
-        "task2": "Configuration de machines virtuelles sur Google Cloud Platform",
-        "task3": "Implémentation de site web dans les VMs GCP",
-        "task4": "Déploiement de site web statique sur AWS S3",
-        "task5": "Intégration d'API REST et traitement de données",
-        "task6": "Optimisation des coûts cloud et meilleures pratiques"
+        "type": "Stage"
       },
       "item3": {
         "title": "Job d'été Technicien IT",
         "description": "Poste d'été de 8 semaines au Lycée Guillaume Kroll dans le département IT. Focus sur l'infrastructure réseau et la gestion du système téléphonique.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Job d'été",
-        "task1": "Installation et gestion des téléphones MIXvoip",
-        "task2": "Installation de nouvelles connexions téléphoniques en salle serveur",
-        "task3": "Mise à jour de la documentation des panneaux de brassage dans Excel",
-        "task4": "Gestion et organisation des câbles réseau"
+        "type": "Job d'été"
       },
       "item4": {
         "title": "Finalisation de Projet Technicien IT",
         "description": "Job d'été de 4 semaines pour finaliser un projet de site web commencé pendant le stage. Focus sur le développement backend et l'intégration SAML.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Job d'été",
-        "task1": "Réunions clients et coordination de projet",
-        "task2": "Programmation et modifications backend",
-        "task3": "Intégration de service d'authentification SAML",
-        "task4": "Développement frontend et ajustements UI",
-        "task5": "Élimination professionnelle du matériel"
+        "type": "Job d'été"
       },
       "item5": {
         "title": "Stage Principal Technicien IT",
         "description": "Stage de 6 semaines au Lycée Guillaume Kroll axé sur le développement web et la conception de base de données. Développement d'une solution web complète.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Stage",
-        "task1": "Réunions clients et analyse des exigences",
-        "task2": "Développement backend et frontend",
-        "task3": "Modélisation conceptuelle de base de données",
-        "task4": "Modélisation logique de base de données",
-        "task5": "Implémentation de base de données avec relations appropriées"
+        "type": "Stage"
       },
       "item6": {
         "title": "Stage Technicien Réseau IT",
         "description": "Stage de 6 semaines chez STEP Syndicat intercommunal à Peppange. Introduction à la technologie réseau et à la gestion d'infrastructure dans une station d'épuration.",
         "company": "STEP Syndicat intercommunal",
-        "type": "Stage",
-        "task1": "Introduction à la structure organisationnelle",
-        "task2": "Apprentissage des processus de station d'épuration",
-        "task3": "Création de nouveaux plans de panneaux de brassage",
-        "task4": "Gestion et étiquetage des câbles de brassage",
-        "task5": "Analyse pratique de structure réseau"
+        "type": "Stage"
       }
     },
     "experiencesList": {
@@ -388,6 +304,12 @@
     "noResults": {
       "title": "Aucun résultat trouvé",
       "description": "Essayez d'ajuster votre recherche ou votre filtre pour trouver ce que vous cherchez."
+    },
+    "cta": {
+      "title": "Entrons en Contact",
+      "subtitle": "Vous avez des questions ou souhaitez échanger ? Je serais ravi d'avoir de vos nouvelles.",
+      "button": "Me Contacter",
+      "aboutMe": "En Savoir Plus Sur Moi"
     }
   },
   "projects": {

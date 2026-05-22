@@ -22,11 +22,6 @@
       "description": "Professionnellen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Spezialiséiert op modern Web-Technologien, Cloud Computing an innovativ digital Léisungen.",
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Lëtzebuerg"
     },
-    "about": {
-      "title": "Iwwer mech",
-      "description": "Léiert méi iwwer Chad Feierstein, Full-Stack Developer mat BTS Cloud Computing Ausbildung a professionneller IT-Erfahrung zu Lëtzebuerg.",
-      "keywords": "Chad Feierstein, Iwwer mech, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Lëtzebuerg"
-    },
     "showcase": {
       "title": "Showcase",
       "description": "Entdeckt meng neist Projeten, Dokumentatiounen a technesch Léisungen. Vun der Web-Entwécklung bis hin zu Cloud-Infrastrukturen.",
@@ -79,7 +74,6 @@
   },
   "nav": {
     "home": "Startsäit",
-    "about": "Iwwer mech",
     "showcase": "Showcase",
     "contact": "Kontakt",
     "back": "Zréck"
@@ -90,28 +84,10 @@
       "fullstack": "Full-Stack Developer",
       "itadmin": "IT Administrator"
     },
-    "tagline": "Entdeckt meng Projeten, Fäegketen an fréier Aarbechten a léiert mech dobäi besser kennen.",
+    "tagline": "Ech entwéckelen modern Webapplikatiounen, verwalten Serverinfrastrukturen a léisen komplex IT-Erausfuerderunge mat Leidenschaft a Präzisioun, baséiert zu Lëtzebuerg.",
     "cta": {
       "primary": "Projeten entdecken",
       "secondary": "Kontakt ophuelen"
-    },
-    "about": {
-      "title": "Léiert mech kennen",
-      "subtitle": "Erfuert méi iwwer mäin Hannergrond, meng Erfahrung an wat meng Leidenschaft fir d'Technologie undreift.",
-      "cta": "Méi iwwer mech erfahren",
-      "role": "Full-Stack Webentwickler",
-      "story": "Ech sinn de Chad Feierstein, e 26-jähregen {role} an {admin} aus {location}. Mat enger Ausbildung als Techniker an der Informatik an engem BTS am {cloud} bréngen ech iwwer {experience} mat. Vum Frontend a Backend iwwer Serververwaltung bis hin zu moderne Technologien meeschteren ech komplex Erausfuerderungen a léieren stänneg Neies dobäi.",
-      "storyHighlights": {
-        "role": "Full-Stack Developer",
-        "admin": "IT-Administrator",
-        "location": "Lëtzebuerg",
-        "cloud": "Cloud Computing",
-        "experience": "5 Joer IT-Erfahrung"
-      },
-      "experience": "Techniker an der Informatik",
-      "education": "BTS Cloud Computing",
-      "training": "Ausbildung",
-      "study": "Studium"
     },
     "services": {
       "title": "Wat ech ubidden",
@@ -144,15 +120,11 @@
         }
       }
     },
-    "featured": {
-      "title": "Featured Projet",
-      "subtitle": "Entdeckt meng lescht Innovatioun, wou spëtzt KI op intuitiv Design treffen.",
-      "projectTitle": "KI Chat Bot",
-      "description": "En erweiderten KI Chat Bot, deen intelligent Gespréicher féiert an komplex Ufrogen behandelt. Dëse Projet kombinéiert spëtzt KI-Technologie mat engem elegant, benotzerfrëndleche Interface a bitt eng nahtlos Erfahrung fir natierlech Konversatiounen. De Bot notzt mächteg Sproochmodeller iwwer OpenRouter.ai, ënnerstëtzt verschidde KI-Modeller an adaptéiert sech intelligent un verschidden Gespréichskontexten. Mat Echtzäit-Äntwerten, Markdown-Ënnerstëtzung an enger duerchduechter Donkel/Hell Modus Integratioun ass dëse Chat Bot e perfekt Beispill fir modern Full-Stack-Entwécklung.",
-      "cta": {
-        "view": "Detailer kucken",
-        "demo": "Live Demo testen"
-      }
+    "finalCta": {
+      "title": "Prett fir zesummen eppes ze schafen?",
+      "subtitle": "Kuckt Iech meng Projeten un oder huelt direkt Kontakt mat mir op.",
+      "viewProjects": "Projeten kucken",
+      "contact": "Kontakt ophuelen"
     }
   },
   "about": {
@@ -173,6 +145,7 @@
       }
     },
     "story": {
+      "title": "Meng Geschicht",
       "intro": "Ech sinn de Chad Feierstein, e {age} Joer alen {role} an {admin} aus {location}. Mäi Schwéierpunkt läit op {cloud}, vun der Entwécklung vu {webapps} bis hin zur professioneller {servers}. Wärend mengen {positions} konnt ech praktesch Erfahrung a verschiddene IT-Beräicher sammelen, dorënner ERP-Systemer, Datebankverwaltung a Web Programming. Mäi Fundament bilden eng Ausbildung als IT-Techniker (DT) an e méi héijen techneschen Ofschloss (BTS) am Beräich Cloud Computing. Dank mengen {langCount} kommunizéieren ech ouni Problemer an internationalen Teams.",
       "introHighlights": {
         "role": "Full-Stack Webentwickler",
@@ -187,8 +160,11 @@
     },
     "interests": {
       "title": "Interessen & Hobbyen",
-      "subtitle": "Wat mech a menger Fräizäit begeeschtert",
-      "bubble": "D'Liewen nieft dem Code!"
+      "subtitle": "Wat mech a menger Fräizäit begeeschtert"
+    },
+    "experiences": {
+      "title": "Erliefnisser",
+      "subtitle": "OnverGesslich Momenter déi mech gepräägt hunn"
     },
     "interestsList": {
       "tech": {
@@ -208,24 +184,8 @@
         "subtitle": "Regelméisseg Treffen & gemeinsam Aktivitéiten"
       }
     },
-    "languages": {
-      "title": "Sproochen",
-      "subtitle": "Méisproocheg Kommunikatioun",
-      "levels": {
-        "A1": "Grondkenntnisser",
-        "A2": "Grondleeënd Kenntnisser",
-        "B1": "Mëttelstuuf",
-        "B2": "Gutt Mëttelstuuf",
-        "C1": "Fortgeschratt",
-        "C2": "Bal muttersprochlech"
-      }
-    },
     "education": {
       "title": "Bildung",
-      "links": {
-        "bts": "BTS CLC kucken",
-        "dt": "DT IF kucken"
-      },
       "bts": {
         "degree": "BTS Cloud Computing",
         "field": "Zweejähregen héijen techneschen Ofschloss mat Schwéierpunkt op Cloud-Technologien, Virtualiséierung, Netzwierkinfrastruktur a modernen IT-Léisungen. Praxisno Ausbildung an AWS, Azure a Linux-Serververwaltung.",
@@ -240,27 +200,13 @@
       }
     },
     "work": {
-      "subtitle": "Beruffserfahrung & Bildungsverlaf",
+      "subtitle": "Beruffserfahrung",
       "journey": "Meng berufflech Laafbahn",
-      "viewDetails": "Detailer weisen",
-      "modal": {
-        "tasks": "Haaptaufgaben"
-      }
+      "active": "Aktiv"
     },
     "certifications": {
       "title": "Zertifizéierungen",
       "subtitle": "Professionnell Zertifizéierungen a Qualifikatioune, déi meng Expertise a verschiddenen Technologie-Beräicher beweisen"
-    },
-    "cta": {
-      "title": "Loosst eis a Kontakt trieden",
-      "subtitle": "Hutt Dir Froen oder Interessi un engem Austausch? Ech freeën mech drop, vun Iech ze héieren.",
-      "button": "Kontakt ophuelen"
-    },
-    "languageNames": {
-      "luxemburgish": "Lëtzebuergesch",
-      "german": "Däitsch",
-      "english": "Englesch",
-      "french": "Franséisch"
     },
     "certificationsList": {
       "cert1": {
@@ -293,67 +239,37 @@
         "title": "Webentwéckler bei Mullerpneus",
         "description": "Entwécklung a Wartung vum internen ERP-System an Online-Shop. Verantwortlech fir nei Features, Bugfixing, Datebanken a serverseiteg Konfiguratiounen.",
         "company": "Mullerpneus",
-        "type": "Vollzäit",
-        "task1": "Feature-Entwécklung: Planung an Ëmsetzung vun neie Funktiounen fir ERP a Shop",
-        "task2": "Wartung: Feeleranalyse, Debugging a Performance-Optimiséierung",
-        "task3": "Datebanken: Verwaltung, Fleeë an Optimiséierung vu MySQL-Datebanken",
-        "task4": "Server: Konfiguratioun vu FTP, SFTP, E-Mail, Websockets a PHP-Versiounen",
-        "task5": "Monitoring: Log-Analyse a proaktiv Feelerbéihiewung"
+        "type": "Vollzäit"
       },
       "item2": {
         "title": "IT-Cloud-Ingenieur Praktikum",
         "description": "12-wöchegt Praktikum bei QPark Consulting mat Fokus op Cloud-Technologien an agil Projet-Methoden. Schaffen op zwou grouss Cloud-Projeten mat AWS an GCP.",
         "company": "QPark Consulting",
-        "type": "Praktikum",
-        "task1": "Projet-Planung mat agile Methodologien",
-        "task2": "Virtual Maschinn-Konfiguratioun op Google Cloud Platform",
-        "task3": "Websäit-Implementéierung a GCP-VMs",
-        "task4": "Statesch Websäit-Bereetstellung op AWS S3",
-        "task5": "REST API-Integratioun an Daten-Veraarbechtung",
-        "task6": "Cloud-Käschten-Optimiséierung a Best Practices"
+        "type": "Praktikum"
       },
       "item3": {
         "title": "IT-Techniker Summerjoob",
         "description": "8-wöchege Summerposten um Lycée Guillaume Kroll an der IT-Abteilung. Fokus op Netzwierks-Infrastruktur an Telefonsystem-Management.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Summerjoob",
-        "task1": "Ariichtung a Gestioun vu MIXvoip-Telefonnen",
-        "task2": "Installatioun vun neien Telefonsverbindungen am Server-Raum",
-        "task3": "Patch Panel-Dokumentatioun Updates an Excel",
-        "task4": "Netzwierk-Kabel-Management an -Organisatioun"
+        "type": "Summerjoob"
       },
       "item4": {
         "title": "IT-Techniker Projet-Ofschloss",
         "description": "4-wöchege Summerjoob fir e Websäit-Projet ze vollenden, deen am Praktikum ugefaangen huet. Fokus op Backend-Entwécklung an SAML-Integratioun.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Summerjoob",
-        "task1": "Client-Reuniounen a Projet-Koordinatioun",
-        "task2": "Backend-Programméierung a Modifikatiounen",
-        "task3": "SAML-Authentifizéierungs-Service-Integratioun",
-        "task4": "Frontend-Entwécklung an UI-Upassungen",
-        "task5": "Professionnell Hardware-Entsorgung"
+        "type": "Summerjoob"
       },
       "item5": {
         "title": "IT-Techniker Haaptpraktikum",
         "description": "6-wöchegt Praktikum um Lycée Guillaume Kroll mat Fokus op Web-Entwécklung an Datebank-Design. Entwécklung vun enger kompletter Websäit-Léisung.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Praktikum",
-        "task1": "Client-Reuniounen an Ufuerderungs-Analyse",
-        "task2": "Backend- an Frontend-Entwécklung",
-        "task3": "Konzeptuel Datebank-Modelléierung",
-        "task4": "Logesch Datebank-Modelléierung",
-        "task5": "Datebank-Implementéierung mat richtegen Bezéiungen"
+        "type": "Praktikum"
       },
       "item6": {
         "title": "IT-Netzwierkstechniker Praktikum",
         "description": "6-wöchegt Praktikum bei STEP Syndicat intercommunal zu Péiteng. Aféierung an Netzwierkstechnik an Infrastruktur-Management an enger Kläranlag.",
         "company": "STEP Syndicat intercommunal",
-        "type": "Praktikum",
-        "task1": "Aféierung an d'Organisatiounsstruktur",
-        "task2": "Léieren vun de Kläranlag-Prozesser",
-        "task3": "Kreatioun vun neien Patch Panel-Pläng",
-        "task4": "Patch-Kabel-Management a -Beschrëftung",
-        "task5": "Praktesch Netzwierkstruktur-Analyse"
+        "type": "Praktikum"
       }
     },
     "experiencesList": {
@@ -388,6 +304,12 @@
     "noResults": {
       "title": "Keng Resultater fonnt",
       "description": "Versicht Är Sich oder Äre Filter unzepassen, fir dat ze fannen wat Dir sicht."
+    },
+    "cta": {
+      "title": "Loosst eis a Kontakt trieden",
+      "subtitle": "Hutt Dir Froen oder Interessi un engem Austausch? Ech freeën mech drop, vun Iech ze héieren.",
+      "button": "Kontakt ophuelen",
+      "aboutMe": "Méi iwwer mech erfahren"
     }
   },
   "projects": {

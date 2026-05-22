@@ -186,27 +186,27 @@ const filteredItems = computed(() => {
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ t('about.cta.title') }}
+                    {{ t('showcase.cta.title') }}
                 </h2>
                 <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-                    {{ t('about.cta.subtitle') }}
+                    {{ t('showcase.cta.subtitle') }}
                 </p>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center">
                 <UiButton variant="primary" to="/contact">
                     <span class="flex items-center gap-2 sm:gap-3">
-                        {{ t('about.cta.button') }}
+                        {{ t('showcase.cta.button') }}
                         <Icon name="mdi:arrow-right"
                             class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </span>
                 </UiButton>
 
-                <UiButton variant="secondary" to="/about">
+                <UiButton variant="secondary" to="/#about-section">
                     <span class="flex items-center gap-2 sm:gap-3">
                         <Icon name="mdi:account"
                             class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:scale-110 transition-transform" />
-                        {{ t('home.about.cta') }}
+                        {{ t('showcase.cta.aboutMe') }}
                     </span>
                 </UiButton>
             </div>

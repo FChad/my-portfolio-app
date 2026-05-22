@@ -22,11 +22,6 @@
       "description": "Professional Full-Stack Developer and IT Administrator from Luxembourg. Specialized in modern web technologies, cloud computing and innovative digital solutions.",
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
     },
-    "about": {
-      "title": "About Me",
-      "description": "Learn more about Chad Feierstein, Full-Stack Developer with BTS Cloud Computing education and professional IT experience in Luxembourg.",
-      "keywords": "Chad Feierstein, About, IT Experience, BTS Cloud Computing, IT Technician, Luxembourg"
-    },
     "showcase": {
       "title": "Showcase",
       "description": "Discover my latest projects, documentation and technical solutions. From web development to cloud infrastructures.",
@@ -79,7 +74,6 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
     "showcase": "Showcase",
     "contact": "Contact",
     "back": "Back"
@@ -90,28 +84,10 @@
       "fullstack": "Full-Stack Developer",
       "itadmin": "IT Administrator"
     },
-    "tagline": "Discover my projects, skills and previous work and get to know me better.",
+    "tagline": "I build modern web applications, manage server infrastructures and solve complex IT challenges with passion and precision, based in Luxembourg.",
     "cta": {
       "primary": "Discover Projects",
       "secondary": "Get in Touch"
-    },
-    "about": {
-      "title": "Get to Know Me",
-      "subtitle": "Learn more about my background, experience and what drives my passion for technology.",
-      "cta": "Learn More About Me",
-      "role": "Full-Stack Web Developer",
-      "story": "I am Chad Feierstein, a 26-year-old {role} and {admin} from {location}. With an education as a Computer Science Technician and a BTS in {cloud}, I bring over {experience}. From frontend and backend to server management and modern technologies, I master complex challenges while constantly learning new things.",
-      "storyHighlights": {
-        "role": "Full-Stack Developer",
-        "admin": "IT Administrator",
-        "location": "Luxembourg",
-        "cloud": "Cloud Computing",
-        "experience": "5 years of IT experience"
-      },
-      "experience": "Computer Science Technician",
-      "education": "BTS Cloud Computing",
-      "training": "Training",
-      "study": "Studies"
     },
     "services": {
       "title": "What I Offer",
@@ -144,15 +120,11 @@
         }
       }
     },
-    "featured": {
-      "title": "Featured Project",
-      "subtitle": "Discover my latest innovation, where cutting-edge AI meets intuitive design.",
-      "projectTitle": "AI Chat Bot",
-      "description": "An advanced AI Chat Bot that conducts intelligent conversations and handles complex queries. This project combines cutting-edge AI technology with an elegant, user-friendly interface, providing a seamless experience for natural conversations. The bot leverages powerful language models through OpenRouter.ai, supports multiple AI models, and intelligently adapts to various conversation contexts. With real-time responses, markdown support, and thoughtful dark/light mode integration, this chat bot is a perfect example of modern full-stack development.",
-      "cta": {
-        "view": "View Details",
-        "demo": "Try Live Demo"
-      }
+    "finalCta": {
+      "title": "Ready to build something together?",
+      "subtitle": "Take a look at my projects or get in touch with me directly.",
+      "viewProjects": "View Projects",
+      "contact": "Get in Touch"
     }
   },
   "about": {
@@ -173,6 +145,7 @@
       }
     },
     "story": {
+      "title": "My Story",
       "intro": "I am Chad Feierstein, a {age}-year-old {role} and {admin} from {location}. My focus is on {cloud}, from developing {webapps} to professional {servers}. Throughout my {positions}, I have gained hands-on experience across various IT domains, including ERP systems, database management, and web programming. My foundation consists of an IT Technician diploma (DT) and a Higher Technical Degree (BTS) in Cloud Computing. Thanks to my {langCount}, I communicate effortlessly in international teams.",
       "introHighlights": {
         "role": "Full-Stack Web Developer",
@@ -187,8 +160,11 @@
     },
     "interests": {
       "title": "Interests & Hobbies",
-      "subtitle": "What excites me in my free time",
-      "bubble": "Life beyond code!"
+      "subtitle": "What excites me in my free time"
+    },
+    "experiences": {
+      "title": "Experiences",
+      "subtitle": "Unforgettable moments that shaped me"
     },
     "interestsList": {
       "tech": {
@@ -208,24 +184,8 @@
         "subtitle": "Regular meetups & activities together"
       }
     },
-    "languages": {
-      "title": "Languages",
-      "subtitle": "Multilingual communication",
-      "levels": {
-        "A1": "Basic",
-        "A2": "Elementary",
-        "B1": "Intermediate",
-        "B2": "Upper Intermediate",
-        "C1": "Advanced",
-        "C2": "Near Native"
-      }
-    },
     "education": {
       "title": "Education",
-      "links": {
-        "bts": "View BTS CLC",
-        "dt": "View DT IF"
-      },
       "bts": {
         "degree": "BTS Cloud Computing",
         "field": "Two-year higher technical degree focused on cloud technologies, virtualization, network infrastructure and modern IT solutions. Hands-on training in AWS, Azure and Linux server administration.",
@@ -240,27 +200,13 @@
       }
     },
     "work": {
-      "subtitle": "Work experience & education timeline",
+      "subtitle": "Work experience",
       "journey": "My Professional Journey",
-      "viewDetails": "View Details",
-      "modal": {
-        "tasks": "Main Tasks"
-      }
+      "active": "Active"
     },
     "certifications": {
       "title": "Certifications",
       "subtitle": "Professional certifications and qualifications that demonstrate my expertise in various technology areas"
-    },
-    "cta": {
-      "title": "Let's Connect",
-      "subtitle": "Have questions or interested in connecting? I'd love to hear from you.",
-      "button": "Get in Touch"
-    },
-    "languageNames": {
-      "luxemburgish": "Luxembourgish",
-      "german": "German",
-      "english": "English",
-      "french": "French"
     },
     "certificationsList": {
       "cert1": {
@@ -293,67 +239,37 @@
         "title": "Web Developer at Mullerpneus",
         "description": "Development and maintenance of the internal ERP system and online shop. Responsible for new features, bug fixing, databases and server-side configurations.",
         "company": "Mullerpneus",
-        "type": "Full-time",
-        "task1": "Feature Development: Planning and implementation of new ERP and shop features",
-        "task2": "Maintenance: Error analysis, debugging and performance optimization",
-        "task3": "Databases: Administration, maintenance and optimization of MySQL databases",
-        "task4": "Server: Configuration of FTP, SFTP, email, websockets and PHP versions",
-        "task5": "Monitoring: Log analysis and proactive troubleshooting"
+        "type": "Full-time"
       },
       "item2": {
         "title": "IT Cloud Engineer Internship",
         "description": "12-week internship at QPark Consulting focusing on cloud technologies and agile project methods. Work on two major cloud projects with AWS and GCP.",
         "company": "QPark Consulting",
-        "type": "Internship",
-        "task1": "Project planning with agile methodologies",
-        "task2": "Virtual machine configuration on Google Cloud Platform",
-        "task3": "Website implementation in GCP VMs",
-        "task4": "Static website deployment on AWS S3",
-        "task5": "REST API integration and data processing",
-        "task6": "Cloud cost optimization and best practices"
+        "type": "Internship"
       },
       "item3": {
         "title": "IT Technician Summer Job",
         "description": "8-week summer position at Lycée Guillaume Kroll in the IT department. Focus on network infrastructure and telephone system management.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Summer Job",
-        "task1": "Setup and management of MIXvoip phones",
-        "task2": "Installation of new telephone connections in server room",
-        "task3": "Patch panel documentation updates in Excel",
-        "task4": "Network cable management and organization"
+        "type": "Summer Job"
       },
       "item4": {
         "title": "IT Technician Project Completion",
         "description": "4-week summer job to complete a website project started during the internship. Focus on backend development and SAML integration.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Summer Job",
-        "task1": "Customer meetings and project coordination",
-        "task2": "Backend programming and modifications",
-        "task3": "SAML authentication service integration",
-        "task4": "Frontend development and UI adjustments",
-        "task5": "Professional hardware disposal"
+        "type": "Summer Job"
       },
       "item5": {
         "title": "IT Technician Main Internship",
         "description": "6-week internship at Lycée Guillaume Kroll focusing on web development and database design. Development of a complete website solution.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Internship",
-        "task1": "Customer meetings and requirements analysis",
-        "task2": "Backend and frontend development",
-        "task3": "Conceptual database modeling",
-        "task4": "Logical database modeling",
-        "task5": "Database implementation with proper relationships"
+        "type": "Internship"
       },
       "item6": {
         "title": "IT Network Technician Internship",
         "description": "6-week internship at STEP Syndicat intercommunal in Peppange. Introduction to network technology and infrastructure management in a sewage treatment plant.",
         "company": "STEP Syndicat intercommunal",
-        "type": "Internship",
-        "task1": "Introduction to organizational structure",
-        "task2": "Learning sewage treatment plant processes",
-        "task3": "Creation of new patch panel plans",
-        "task4": "Patch cable management and labeling",
-        "task5": "Practical network structure analysis"
+        "type": "Internship"
       }
     },
     "experiencesList": {
@@ -388,6 +304,12 @@
     "noResults": {
       "title": "No results found",
       "description": "Try adjusting your search or filter to find what you're looking for."
+    },
+    "cta": {
+      "title": "Let's Connect",
+      "subtitle": "Have questions or interested in connecting? I'd love to hear from you.",
+      "button": "Get in Touch",
+      "aboutMe": "Learn More About Me"
     }
   },
   "projects": {

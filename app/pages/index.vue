@@ -11,7 +11,7 @@ setSeoMeta({
 
 <template>
     <HomeHeroSection />
-    <HomeAboutPreview />
+    <HomeAboutSection />
     <HomeServicesSection />
-    <HomeFeaturedProject />
+    <HomeFinalCta />
 </template>

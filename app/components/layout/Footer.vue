@@ -52,12 +52,6 @@ const scrollToTop = () => {
                             </NuxtLinkLocale>
                         </li>
                         <li>
-                            <NuxtLinkLocale to="/about"
-                                class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors">
-                                {{ $t('nav.about') }}
-                            </NuxtLinkLocale>
-                        </li>
-                        <li>
                             <NuxtLinkLocale to="/showcase"
                                 class="text-base text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors">
                                 {{ $t('nav.showcase') }}

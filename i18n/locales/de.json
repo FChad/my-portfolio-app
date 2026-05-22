@@ -22,11 +22,6 @@
       "description": "Professioneller Full-Stack Entwickler und IT-Administrator aus Luxemburg. Spezialisiert auf moderne Webtechnologien, Cloud Computing und innovative digitale Lösungen.",
       "keywords": "Chad Feierstein, Full-Stack Entwickler, Web Entwickler, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxemburg"
     },
-    "about": {
-      "title": "Über mich",
-      "description": "Erfahren Sie mehr über Chad Feierstein, Full-Stack Entwickler mit BTS Cloud Computing Ausbildung und professioneller IT-Erfahrung in Luxemburg.",
-      "keywords": "Chad Feierstein, Über mich, IT Erfahrung, BTS Cloud Computing, Techniker Informatik, Luxemburg"
-    },
     "showcase": {
       "title": "Showcase",
       "description": "Entdecken Sie meine neuesten Projekte, Dokumentationen und technischen Lösungen. Von Web-Entwicklung bis hin zu Cloud-Infrastrukturen.",
@@ -79,7 +74,6 @@
   },
   "nav": {
     "home": "Startseite",
-    "about": "Über mich",
     "showcase": "Showcase",
     "contact": "Kontakt",
     "back": "Zurück"
@@ -90,28 +84,10 @@
       "fullstack": "Full-Stack Entwickler",
       "itadmin": "IT Administrator"
     },
-    "tagline": "Entdecken Sie meine Projekte, Fähigkeiten und bisherige Arbeit und lernen Sie mich besser kennen.",
+    "tagline": "Ich entwickle moderne Webanwendungen, verwalte Serverinfrastrukturen und löse komplexe IT-Herausforderungen mit Leidenschaft und Präzision, ansässig in Luxemburg.",
     "cta": {
       "primary": "Projekte entdecken",
       "secondary": "Kontakt aufnehmen"
-    },
-    "about": {
-      "title": "Lernen Sie Mich Kennen",
-      "subtitle": "Erfahren Sie mehr über meinen Hintergrund, meine Erfahrung und was meine Leidenschaft für Technologie antreibt.",
-      "cta": "Mehr über mich erfahren",
-      "role": "Full-Stack Webentwickler",
-      "story": "Ich bin Chad Feierstein, ein 26-jähriger {role} und {admin} aus {location}. Mit einer Ausbildung als Techniker in der Informatik und einem BTS in {cloud} bringe ich über {experience} mit. Von Frontend und Backend über Serververwaltung bis hin zu modernen Technologien meistere ich komplexe Herausforderungen und lerne ständig Neues dazu.",
-      "storyHighlights": {
-        "role": "Full-Stack Entwickler",
-        "admin": "IT-Administrator",
-        "location": "Luxemburg",
-        "cloud": "Cloud Computing",
-        "experience": "5 Jahre IT-Erfahrung"
-      },
-      "experience": "Techniker in der Informatik",
-      "education": "BTS Cloud Computing",
-      "training": "Ausbildung",
-      "study": "Studium"
     },
     "services": {
       "title": "Was Ich Biete",
@@ -144,15 +120,11 @@
         }
       }
     },
-    "featured": {
-      "title": "Ausgewähltes Projekt",
-      "subtitle": "Entdecken Sie meine neueste Innovation, wo modernste KI auf intuitives Design trifft.",
-      "projectTitle": "KI Chat Bot",
-      "description": "Ein fortschrittlicher KI Chat Bot, der intelligente Gespräche führt und komplexe Anfragen bearbeitet. Dieses Projekt vereint modernste AI-Technologie mit einem eleganten, benutzerfreundlichen Interface und bietet eine nahtlose Erfahrung für natürliche Konversationen. Der Bot nutzt leistungsstarke Sprachmodelle über OpenRouter.ai, unterstützt mehrere AI-Modelle und passt sich intelligent an verschiedene Gesprächskontexte an. Mit Echtzeit-Antworten, Markdown-Unterstützung und einer durchdachten Dark/Light Mode Integration ist dieser Chat Bot ein perfektes Beispiel für moderne Full-Stack-Entwicklung.",
-      "cta": {
-        "view": "Details ansehen",
-        "demo": "Live Demo testen"
-      }
+    "finalCta": {
+      "title": "Bereit, gemeinsam etwas zu schaffen?",
+      "subtitle": "Werfen Sie einen Blick auf meine Projekte oder nehmen Sie direkt Kontakt mit mir auf.",
+      "viewProjects": "Projekte ansehen",
+      "contact": "Kontakt aufnehmen"
     }
   },
   "about": {
@@ -173,6 +145,7 @@
       }
     },
     "story": {
+      "title": "Meine Geschichte",
       "intro": "Ich bin Chad Feierstein, ein {age}-jähriger {role} und {admin} aus {location}. Mein Schwerpunkt liegt auf {cloud}, von der Entwicklung {webapps} bis hin zur professionellen {servers}. Während meiner bisherigen {positions} konnte ich praktische Erfahrung in verschiedensten IT-Bereichen sammeln, darunter ERP-Systeme, Datenbankverwaltung und Web Programming. Mein Fundament bilden eine Ausbildung als IT-Techniker (DT) sowie ein höherer technischer Abschluss (BTS) im Bereich Cloud Computing. Dank meiner {langCount} kommuniziere ich mühelos in internationalen Teams.",
       "introHighlights": {
         "role": "Full-Stack Webentwickler",
@@ -187,8 +160,11 @@
     },
     "interests": {
       "title": "Interessen & Hobbys",
-      "subtitle": "Was mich in meiner Freizeit begeistert",
-      "bubble": "Leben jenseits vom Code!"
+      "subtitle": "Was mich in meiner Freizeit begeistert"
+    },
+    "experiences": {
+      "title": "Erlebnisse",
+      "subtitle": "Unvergessliche Momente, die mich geprägt haben"
     },
     "interestsList": {
       "tech": {
@@ -208,24 +184,8 @@
         "subtitle": "Regelmäßige Treffen & gemeinsame Aktivitäten"
       }
     },
-    "languages": {
-      "title": "Sprachen",
-      "subtitle": "Mehrsprachige Kommunikation",
-      "levels": {
-        "A1": "Grundkenntnisse",
-        "A2": "Grundlegende Kenntnisse",
-        "B1": "Mittelstufe",
-        "B2": "Gute Mittelstufe",
-        "C1": "Fortgeschritten",
-        "C2": "Annähernd muttersprachlich"
-      }
-    },
     "education": {
       "title": "Bildung",
-      "links": {
-        "bts": "BTS CLC ansehen",
-        "dt": "DT IF ansehen"
-      },
       "bts": {
         "degree": "BTS Cloud Computing",
         "field": "Zweijähriger höherer technischer Abschluss mit Schwerpunkt auf Cloud-Technologien, Virtualisierung, Netzwerkinfrastruktur und modernen IT-Lösungen. Praxisnahe Ausbildung in AWS, Azure und Linux-Serveradministration.",
@@ -240,27 +200,13 @@
       }
     },
     "work": {
-      "subtitle": "Berufserfahrung & Bildungsverlauf",
+      "subtitle": "Berufserfahrung",
       "journey": "Meine berufliche Laufbahn",
-      "viewDetails": "Details anzeigen",
-      "modal": {
-        "tasks": "Hauptaufgaben"
-      }
+      "active": "Aktiv"
     },
     "certifications": {
       "title": "Zertifizierungen",
       "subtitle": "Professionelle Zertifizierungen und Qualifikationen, die meine Expertise in verschiedenen Technologiebereichen belegen"
-    },
-    "cta": {
-      "title": "Lassen Sie uns ins Gespräch kommen",
-      "subtitle": "Haben Sie Fragen oder Interesse an einem Austausch? Ich freue mich darauf, von Ihnen zu hören.",
-      "button": "Kontakt aufnehmen"
-    },
-    "languageNames": {
-      "luxemburgish": "Luxemburgisch",
-      "german": "Deutsch",
-      "english": "Englisch",
-      "french": "Französisch"
     },
     "certificationsList": {
       "cert1": {
@@ -293,67 +239,37 @@
         "title": "Webentwickler bei Mullerpneus",
         "description": "Entwicklung und Wartung des internen ERP-Systems und Online-Shops. Verantwortlich für neue Features, Bugfixing, Datenbanken und serverseitige Konfigurationen.",
         "company": "Mullerpneus",
-        "type": "Vollzeit",
-        "task1": "Feature-Entwicklung: Planung und Umsetzung neuer Funktionen für ERP und Shop",
-        "task2": "Wartung: Fehleranalyse, Debugging und Performance-Optimierung",
-        "task3": "Datenbanken: Verwaltung, Pflege und Optimierung von MySQL-Datenbanken",
-        "task4": "Server: Konfiguration von FTP, SFTP, E-Mail, Websockets und PHP-Versionen",
-        "task5": "Monitoring: Log-Analyse und proaktive Fehlerbehebung"
+        "type": "Vollzeit"
       },
       "item2": {
         "title": "IT-Cloud-Ingenieur Praktikum",
         "description": "12-wöchiges Praktikum bei QPark Consulting mit Fokus auf Cloud-Technologien und agile Projektmethoden. Arbeit an zwei großen Cloud-Projekten mit AWS und GCP.",
         "company": "QPark Consulting",
-        "type": "Praktikum",
-        "task1": "Erstellung eines Projektplans mit agilen Methoden",
-        "task2": "Konfiguration virtueller Maschinen auf Google Cloud Platform",
-        "task3": "Website-Implementierung in GCP-VMs",
-        "task4": "Statische Website-Bereitstellung auf AWS S3",
-        "task5": "REST API-Integration und Datenverarbeitung",
-        "task6": "Cloud-Kostenoptimierung und Best Practices"
+        "type": "Praktikum"
       },
       "item3": {
         "title": "IT-Techniker Ferienjob",
         "description": "8-wöchige Sommertätigkeit am Lycée Guillaume Kroll in der IT-Abteilung. Schwerpunkt auf Netzwerkinfrastruktur und Telefonsystem-Management.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Ferienjob",
-        "task1": "Einrichtung und Verwaltung von MIXvoip-Telefonen",
-        "task2": "Installation neuer Telefonanschlüsse im Serverraum",
-        "task3": "Aktualisierung der Patchpanel-Dokumentation in Excel",
-        "task4": "Netzwerk-Kabelmanagement und -organisation"
+        "type": "Ferienjob"
       },
       "item4": {
         "title": "IT-Techniker Projektabschluss",
         "description": "4-wöchiger Ferienjob zur Fertigstellung eines Website-Projekts, das während des Praktikums begonnen wurde. Fokus auf Backend-Entwicklung und SAML-Integration.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Ferienjob",
-        "task1": "Kundenbesprechungen und Projektkoordination",
-        "task2": "Backend-Programmierung und -Modifikation",
-        "task3": "SAML-Authentifizierungsdienst-Integration",
-        "task4": "Frontend-Entwicklung und UI-Anpassungen",
-        "task5": "Fachgerechte Hardware-Entsorgung"
+        "type": "Ferienjob"
       },
       "item5": {
         "title": "IT-Techniker Hauptpraktikum",
         "description": "6-wöchiges Praktikum am Lycée Guillaume Kroll mit Schwerpunkt auf Web-Entwicklung und Datenbankdesign. Entwicklung einer vollständigen Website-Lösung.",
         "company": "Lycée Guillaume Kroll",
-        "type": "Praktikum",
-        "task1": "Kundenbesprechungen und Anforderungsanalyse",
-        "task2": "Backend- und Frontend-Entwicklung",
-        "task3": "Konzeptionelle Datenbankmodellierung",
-        "task4": "Logische Datenbankmodellierung",
-        "task5": "Datenbank-Implementierung mit korrekten Beziehungen"
+        "type": "Praktikum"
       },
       "item6": {
         "title": "IT-Netzwerktechniker Praktikum",
         "description": "6-wöchiges Praktikum bei STEP Syndicat intercommunal in Peppange. Einführung in Netzwerktechnik und Infrastruktur-Management in einer Kläranlage.",
         "company": "STEP Syndicat intercommunal",
-        "type": "Praktikum",
-        "task1": "Einführung in die Organisationsstruktur",
-        "task2": "Erlernen der Kläranlageprozesstechnik",
-        "task3": "Erstellung neuer Patchpanel-Pläne",
-        "task4": "Patchkabel-Management und -Beschriftung",
-        "task5": "Praktische Netzwerkstruktur-Analyse"
+        "type": "Praktikum"
       }
     },
     "experiencesList": {
@@ -388,6 +304,12 @@
     "noResults": {
       "title": "Keine Ergebnisse gefunden",
       "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen, um das Gewünschte zu finden."
+    },
+    "cta": {
+      "title": "Lassen Sie uns ins Gespräch kommen",
+      "subtitle": "Haben Sie Fragen oder Interesse an einem Austausch? Ich freue mich darauf, von Ihnen zu hören.",
+      "button": "Kontakt aufnehmen",
+      "aboutMe": "Mehr über mich erfahren"
     }
   },
   "projects": {

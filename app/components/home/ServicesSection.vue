@@ -19,11 +19,11 @@ const services = computed(() => [
 </script>
 
 <template>
-    <section class="py-12 md:py-16 lg:py-24 bg-page">
+    <section class="py-12 md:py-16 lg:py-24 bg-neutral-100 dark:bg-neutral-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
                 <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
-                    02 &mdash; Services
+                    07 &mdash; Services
                 </p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('home.services.title') }}
