@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { icon, size = 'md', color = 'bg-neutral-100 dark:bg-neutral-700' } = defineProps<{
+const { icon, size = 'md', color = 'bg-neutral-200 dark:bg-neutral-700' } = defineProps<{
     icon?: string
     size?: 'md' | 'lg'
     color?: string

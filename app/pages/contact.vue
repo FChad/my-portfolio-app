@@ -155,7 +155,7 @@ definePageMeta({
                 <!-- Right: Contact Form -->
                 <div class="w-full lg:w-3/4">
                     <div
-                        class="relative bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200/60 dark:border-neutral-700/60 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10">
+                        class="relative bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-300 dark:border-neutral-700/60 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10">
 
                         <h2
                             class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-neutral-800 dark:text-white mb-2 md:mb-3">
