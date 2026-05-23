@@ -12,16 +12,9 @@ const { t } = useI18n()
 </script>
 
 <template>
-    <section class="py-12 md:py-16 lg:py-24 bg-page">
+    <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
-                    {{ title }}
-                </h2>
-                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-                    {{ subtitle }}
-                </p>
-            </div>
+            <UiSectionHeader number="03" :label="t('common.sections.labels.next')" :title="title" :subtitle="subtitle" />
 
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center">
                 <UiButton variant="primary" :href="buttonUrl" external>

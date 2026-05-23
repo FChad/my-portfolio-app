@@ -18,14 +18,8 @@ useSeoMeta({
     <div class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ $t('privacy.title') }}
-                </h1>
-                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">
-                    {{ $t('privacy.lastUpdated') }}: {{ $t('privacy.updateDate') }}
-                </p>
-            </div>
+            <UiSectionHeader as="h1" :label="$t('common.sections.labels.privacy')" :title="$t('privacy.title')"
+                :subtitle="`${$t('privacy.lastUpdated')}: ${$t('privacy.updateDate')}`" />
 
             <!-- Privacy Highlights -->
             <UiCard variant="blue" size="md" class="mb-4 md:mb-6">

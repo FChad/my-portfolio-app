@@ -35,6 +35,24 @@ setSeoMeta({
     description: t(config.seo.descriptionKey),
     keywords: t(config.seo.keywordsKey)
 })
+
+// Compute sequential section numbers (Hero is 01, then conditional sections get 02, 03, ...).
+// Even numbers get the alternating neutral background.
+const sectionMeta = computed(() => {
+    let n = 2
+    const next = () => {
+        const number = String(n).padStart(2, '0')
+        const altBg = n % 2 === 0
+        n++
+        return { number, altBg }
+    }
+    return {
+        steps: config.steps?.length ? next() : null,
+        tips: config.tips?.length ? next() : null,
+        troubleshooting: config.troubleshooting?.length ? next() : null,
+        resources: config.resources?.length ? next() : null,
+    }
+})
 </script>
 
 <template>
@@ -44,23 +62,28 @@ setSeoMeta({
             :tags="config.tags" />
 
         <!-- Setup Steps Section -->
-        <DocumentationStepsList v-if="config.steps && config.steps.length > 0" :title="t('common.sections.setupSteps')"
-            :steps="config.steps" />
+        <DocumentationStepsList v-if="sectionMeta.steps" :title="t('common.sections.setupSteps')"
+            :steps="config.steps!" :number="sectionMeta.steps.number"
+            :label="t('common.sections.labels.setupSteps')" :alt-bg="sectionMeta.steps.altBg" />
 
         <!-- Tips Section (if available) -->
-        <DocumentationTipsSection v-if="config.tips && config.tips.length > 0"
-            :title="t('common.sections.additionalTips')" :subtitle="t('common.sections.additionalTipsSubtitle')"
-            :items="config.tips" />
+        <DocumentationTipsSection v-if="sectionMeta.tips" :title="t('common.sections.additionalTips')"
+            :subtitle="t('common.sections.additionalTipsSubtitle')" :items="config.tips!"
+            :number="sectionMeta.tips.number" :label="t('common.sections.labels.tips')"
+            :alt-bg="sectionMeta.tips.altBg" />
 
         <!-- Troubleshooting Section (if available) -->
-        <DocumentationTipsSection v-if="config.troubleshooting && config.troubleshooting.length > 0"
-            :title="t('common.sections.troubleshooting')" :subtitle="t('common.sections.troubleshootingSubtitle')"
-            :items="config.troubleshooting" />
+        <DocumentationTipsSection v-if="sectionMeta.troubleshooting" :title="t('common.sections.troubleshooting')"
+            :subtitle="t('common.sections.troubleshootingSubtitle')" :items="config.troubleshooting!"
+            :number="sectionMeta.troubleshooting.number" :label="t('common.sections.labels.troubleshooting')"
+            :alt-bg="sectionMeta.troubleshooting.altBg" />
 
         <!-- Resources Section (if available) -->
-        <DocumentationResourcesSection v-if="config.resources && config.resources.length > 0"
+        <DocumentationResourcesSection v-if="sectionMeta.resources"
             :title="t('common.sections.additionalResources')"
-            :subtitle="t('common.sections.additionalResourcesSubtitle')" :resources="config.resources" />
+            :subtitle="t('common.sections.additionalResourcesSubtitle')" :resources="config.resources!"
+            :number="sectionMeta.resources.number" :label="t('common.sections.labels.resources')"
+            :alt-bg="sectionMeta.resources.altBg" />
 
     </div>
 </template>

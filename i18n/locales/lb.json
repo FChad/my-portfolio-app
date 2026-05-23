@@ -9,7 +9,20 @@
       "additionalResources": "Zousätzlech Ressourcen",
       "additionalResourcesSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken",
       "keyFeatures": "Haaptfunktiounen",
-      "keyFeaturesSubtitle": "Entdeckt déi wichtegst Funktiounen"
+      "keyFeaturesSubtitle": "Entdeckt déi wichtegst Funktiounen",
+      "labels": {
+        "showcase": "Showcase",
+        "next": "Weider",
+        "project": "Projet",
+        "features": "Funktiounen",
+        "documentation": "Doku",
+        "setupSteps": "Setup",
+        "tips": "Tipps",
+        "troubleshooting": "Problemer",
+        "resources": "Ressourcen",
+        "contact": "Kontakt",
+        "privacy": "Dateschutz"
+      }
     },
     "skipToContent": "Zum Inhalt sprangen",
     "openMenu": "Menü opmaachen",

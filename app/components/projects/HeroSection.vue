@@ -26,8 +26,13 @@ const getSourceLink = (links: ProjectLink[]) => links.find(l => l.type === 'sour
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 <!-- Left: Title, description & actions -->
                 <div class="flex flex-col gap-4 md:gap-6">
+                    <!-- Section Label -->
+                    <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
+                        01 &mdash; {{ $t('common.sections.labels.project') }}
+                    </p>
+
                     <!-- Title -->
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand">
                         {{ title }}
                     </h1>
 

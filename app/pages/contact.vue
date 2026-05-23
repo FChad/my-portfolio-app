@@ -136,14 +136,8 @@ definePageMeta({
     <!-- Contact Section -->
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ $t('contact.title') }}
-                </h1>
-                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
-                    {{ $t('contact.subtitle') }}
-                </p>
-            </div>
+            <UiSectionHeader number="01" :label="$t('common.sections.labels.contact')" :title="$t('contact.title')"
+                :subtitle="$t('contact.subtitle')" />
 
             <div id="contact-form" class="scroll-mt-18 flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
 
@@ -161,7 +155,7 @@ definePageMeta({
                 <!-- Right: Contact Form -->
                 <div class="w-full lg:w-3/4">
                     <div
-                        class="relative bg-white/50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10">
+                        class="relative bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200/60 dark:border-neutral-700/60 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10">
 
                         <h2
                             class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-neutral-800 dark:text-white mb-2 md:mb-3">
@@ -175,7 +169,7 @@ definePageMeta({
                         <!-- Overlay: Success Message -->
                         <Transition name="overlay-fade">
                             <div v-if="isSubmitted"
-                                class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
+                                class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
                                 <div class="flex flex-col items-center gap-4 text-center px-6">
                                     <div
                                         class="w-16 h-16 md:w-20 md:h-20 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center">
@@ -191,7 +185,7 @@ definePageMeta({
                         <!-- Overlay: Error Message -->
                         <Transition name="overlay-fade">
                             <div v-if="submitError"
-                                class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
+                                class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
                                 <div class="flex flex-col items-center gap-4 text-center px-6">
                                     <div
                                         class="w-16 h-16 md:w-20 md:h-20 bg-red-100 dark:bg-red-900/40 rounded-full flex items-center justify-center">

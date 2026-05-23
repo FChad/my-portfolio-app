@@ -9,7 +9,20 @@
       "additionalResources": "Additional Resources",
       "additionalResourcesSubtitle": "Official documentation and helpful links",
       "keyFeatures": "Key Features",
-      "keyFeaturesSubtitle": "Explore the main features and functionalities"
+      "keyFeaturesSubtitle": "Explore the main features and functionalities",
+      "labels": {
+        "showcase": "Showcase",
+        "next": "Next",
+        "project": "Project",
+        "features": "Features",
+        "documentation": "Documentation",
+        "setupSteps": "Setup",
+        "tips": "Tips",
+        "troubleshooting": "Troubleshooting",
+        "resources": "Resources",
+        "contact": "Contact",
+        "privacy": "Privacy"
+      }
     },
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",

@@ -4,6 +4,9 @@ import type { DocStep } from '~/composables/useDocumentation'
 interface Props {
     title: string
     steps: DocStep[]
+    number?: string
+    label?: string
+    altBg?: boolean
 }
 
 defineProps<Props>()
@@ -12,14 +15,10 @@ const { copiedValue: copiedCommand, copy: copyCommand } = useCopyToClipboard()
 </script>
 
 <template>
-    <section class="py-12 md:py-16 lg:py-24">
+    <section class="py-12 md:py-16 lg:py-24" :class="altBg ? 'bg-neutral-100 dark:bg-neutral-900' : ''">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
-                    {{ title }}
-                </h2>
-            </div>
+            <UiSectionHeader :number="number" :label="label" :title="title" />
 
             <!-- Steps -->
             <div class="flex flex-col gap-3 md:gap-4">
@@ -31,7 +30,7 @@ const { copiedValue: copiedCommand, copy: copyCommand } = useCopyToClipboard()
                         </UiIconBox>
                         <div class="min-w-0">
                             <h3
-                                class="text-base md:text-lg lg:text-xl font-bold text-neutral-900 dark:text-white mb-0.5">
+                                class="text-base md:text-lg lg:text-xl font-display font-bold text-neutral-900 dark:text-white mb-0.5">
                                 {{ step.title }}
                             </h3>
                             <p class="text-xs md:text-sm text-neutral-600 dark:text-neutral-300 line-clamp-2">

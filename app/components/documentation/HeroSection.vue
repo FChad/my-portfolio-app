@@ -12,8 +12,13 @@ defineProps<Props>()
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center flex flex-col gap-3 md:gap-4">
+                <!-- Section Label -->
+                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
+                    01 &mdash; {{ $t('common.sections.labels.documentation') }}
+                </p>
+
                 <!-- Title -->
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand">
                     {{ title }}
                 </h1>
 

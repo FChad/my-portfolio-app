@@ -9,7 +9,20 @@
       "additionalResources": "Ressources Supplémentaires",
       "additionalResourcesSubtitle": "Documentation officielle et liens utiles",
       "keyFeatures": "Fonctionnalités Clés",
-      "keyFeaturesSubtitle": "Découvrez les principales fonctionnalités"
+      "keyFeaturesSubtitle": "Découvrez les principales fonctionnalités",
+      "labels": {
+        "showcase": "Showcase",
+        "next": "Suite",
+        "project": "Projet",
+        "features": "Fonctionnalités",
+        "documentation": "Documentation",
+        "setupSteps": "Installation",
+        "tips": "Conseils",
+        "troubleshooting": "Dépannage",
+        "resources": "Ressources",
+        "contact": "Contact",
+        "privacy": "Confidentialité"
+      }
     },
     "skipToContent": "Aller au contenu",
     "openMenu": "Ouvrir le menu",
