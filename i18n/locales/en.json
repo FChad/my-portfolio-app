@@ -102,37 +102,6 @@
       "primary": "Discover Projects",
       "secondary": "Get in Touch"
     },
-    "services": {
-      "title": "What I Offer",
-      "subtitle": "From concept to implementation: I develop customized solutions for your digital requirements.",
-      "webdev": {
-        "title": "Web Development",
-        "description": "Modern, responsive websites with proven and new technologies, both frontend and backend. From PHP, JavaScript and CSS to Nuxt, Tailwind and the latest web standards.",
-        "features": {
-          "spa": "PHP, JavaScript & CSS",
-          "ssr": "Vue.js, Nuxt & Tailwind",
-          "pwa": "Full-Stack Development"
-        }
-      },
-      "cloud": {
-        "title": "Virtualization",
-        "description": "Professional virtualization solutions for efficient and flexible IT infrastructures. Setup of development environments, server virtualization and performance optimization.",
-        "features": {
-          "aws": "Development Environments",
-          "azure": "Server Virtualization",
-          "gcp": "Performance Optimization"
-        }
-      },
-      "itadmin": {
-        "title": "IT Administration",
-        "description": "Comprehensive system administration and network management for reliable infrastructure. With solid knowledge in operating systems, server management and network technologies.",
-        "features": {
-          "linux": "Operating Systems",
-          "networks": "Server Management",
-          "security": "Network Technologies"
-        }
-      }
-    },
     "finalCta": {
       "title": "Ready to build something together?",
       "subtitle": "Take a look at my projects or get in touch with me directly.",

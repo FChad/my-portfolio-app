@@ -102,37 +102,6 @@
       "primary": "Projekte entdecken",
       "secondary": "Kontakt aufnehmen"
     },
-    "services": {
-      "title": "Was Ich Biete",
-      "subtitle": "Von der Konzeption bis zur Umsetzung: ich entwickle maßgeschneiderte Lösungen für Ihre digitalen Anforderungen.",
-      "webdev": {
-        "title": "Web-Entwicklung",
-        "description": "Moderne, responsive Websites mit bewährten und neuen Technologien, Frontend wie Backend. Von PHP, JavaScript und CSS bis hin zu Nuxt, Tailwind und den neuesten Web-Standards.",
-        "features": {
-          "spa": "PHP, JavaScript & CSS",
-          "ssr": "Vue.js, Nuxt & Tailwind",
-          "pwa": "Full-Stack Development"
-        }
-      },
-      "cloud": {
-        "title": "Virtualisierung",
-        "description": "Professionelle Virtualisierungslösungen für effiziente und flexible IT-Infrastrukturen. Einrichtung von Development-Umgebungen, Server-Virtualisierung und Performance-Optimierung.",
-        "features": {
-          "aws": "Development-Umgebungen",
-          "azure": "Server-Virtualisierung",
-          "gcp": "Performance-Optimierung"
-        }
-      },
-      "itadmin": {
-        "title": "IT-Administration",
-        "description": "Umfassende Systemadministration und Netzwerkverwaltung für zuverlässige Infrastruktur. Mit fundierten Kenntnissen in Betriebssystemen, Server-Management und Netzwerktechnologien.",
-        "features": {
-          "linux": "Betriebssysteme",
-          "networks": "Server-Management",
-          "security": "Netzwerktechnologien"
-        }
-      }
-    },
     "finalCta": {
       "title": "Bereit, gemeinsam etwas zu schaffen?",
       "subtitle": "Werfen Sie einen Blick auf meine Projekte oder nehmen Sie direkt Kontakt mit mir auf.",

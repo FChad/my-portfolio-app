@@ -102,37 +102,6 @@
       "primary": "Projeten entdecken",
       "secondary": "Kontakt ophuelen"
     },
-    "services": {
-      "title": "Wat ech ubidden",
-      "subtitle": "Vun der Konzeptioun bis zur Ëmsetzung: ech entwéckelen maßgeschneiderte Léisungen fir Är digital Ufuerderungen.",
-      "webdev": {
-        "title": "Web Development",
-        "description": "Modern, responsive Websäiten mat bewährten an neien Technologien, Frontend wéi Backend. Vu PHP, JavaScript a CSS bis zu Nuxt, Tailwind an de neisten Web-Standarden.",
-        "features": {
-          "spa": "PHP, JavaScript & CSS",
-          "ssr": "Vue.js, Nuxt & Tailwind",
-          "pwa": "Full-Stack Development"
-        }
-      },
-      "cloud": {
-        "title": "Virtualiséierung",
-        "description": "Professionnell Virtualiséierungs-Léisungen fir effizient a flexibel IT-Infrastrukturen. Ariichtung vun Entwécklungs-Ëmfeld, Server-Virtualiséierung an Performance-Optimiséierung.",
-        "features": {
-          "aws": "Entwécklungs-Ëmfeld",
-          "azure": "Server-Virtualiséierung",
-          "gcp": "Performance-Optimiséierung"
-        }
-      },
-      "itadmin": {
-        "title": "IT-Administratioun",
-        "description": "Ëmfaassend System-Administratioun an Netzwierks-Gestioun fir zouverlässeg Infrastruktur. Mat fundéierten Kenntnisser an Betribssystemer, Server-Management an Netzwierkstechnologien.",
-        "features": {
-          "linux": "Betribssystemer",
-          "networks": "Server-Management",
-          "security": "Netzwierkstechnologien"
-        }
-      }
-    },
     "finalCta": {
       "title": "Prett fir zesummen eppes ze schafen?",
       "subtitle": "Kuckt Iech meng Projeten un oder huelt direkt Kontakt mat mir op.",
