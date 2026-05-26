@@ -99,14 +99,14 @@
     },
     "tagline": "Construire des applications web et administrer des serveurs. À l'aise entre l'éditeur de code et le terminal. Du Luxembourg.",
     "cta": {
-      "primary": "Aux projets",
-      "secondary": "Contact"
+      "primary": "Aperçu des projets",
+      "secondary": "Page de contact"
     },
     "finalCta": {
       "title": "En savoir plus",
       "subtitle": "Projets et articles de documentation sur la page Showcase. Contact direct via le formulaire.",
-      "viewProjects": "Aux projets",
-      "contact": "Contact"
+      "viewProjects": "Aperçu des projets",
+      "contact": "Page de contact"
     }
   },
   "about": {
@@ -290,11 +290,15 @@
     "cta": {
       "title": "Prochaines étapes",
       "subtitle": "Feedback et questions bienvenus via le formulaire de contact. Pour en savoir plus sur la personne derrière les projets, voir la section À propos.",
-      "button": "Contact",
+      "button": "Page de contact",
       "aboutMe": "À propos"
     }
   },
   "projects": {
+    "actions": {
+      "liveDemo": "Démo en direct",
+      "sourceCode": "Code source"
+    },
     "myChatBot": {
       "title": "Mon Chat Bot",
       "description": "Une application de chat moderne et optimisée avec intégration OpenRouter.ai pour discuter directement avec différents modèles IA. Offre des fonctionnalités similaires à ChatGPT avec stockage local et fonctionnalités avancées.",
@@ -436,7 +440,7 @@
       "message": "Une erreur inattendue s'est produite. Réessayer plus tard."
     },
     "backHome": "Retour à l'accueil",
-    "contact": "Nous contacter",
+    "contact": "Page de contact",
     "helpfulLinks": "Liens utiles :"
   },
   "footer": {

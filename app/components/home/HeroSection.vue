@@ -43,19 +43,11 @@ const scrollToAbout = () => {
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center">
                     <UiButton variant="primary" size="lg" to="/showcase">
-                        <span class="flex items-center gap-3">
-                            <Icon name="mdi:eye"
-                                class="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:scale-110 transition-transform" />
-                            {{ $t('home.cta.primary') }}
-                        </span>
+                        {{ $t('home.cta.primary') }}
                     </UiButton>
 
                     <UiButton variant="secondary" size="lg" to="/contact">
-                        <span class="flex items-center gap-3">
-                            {{ $t('home.cta.secondary') }}
-                            <Icon name="mdi:chat"
-                                class="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:scale-110 transition-transform" />
-                        </span>
+                        {{ $t('home.cta.secondary') }}
                     </UiButton>
                 </div>
             </div>

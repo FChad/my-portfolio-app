@@ -99,14 +99,14 @@
     },
     "tagline": "Webanwendungen bauen und Server administrieren. Zwischen Code-Editor und Terminal zuhause. Aus Luxemburg.",
     "cta": {
-      "primary": "Zu den Projekten",
-      "secondary": "Kontakt"
+      "primary": "Projektübersicht",
+      "secondary": "Kontaktseite"
     },
     "finalCta": {
       "title": "Mehr von mir",
       "subtitle": "Projekte und Doku-Artikel auf der Showcase-Seite. Direkter Draht über das Kontaktformular.",
-      "viewProjects": "Zu den Projekten",
-      "contact": "Kontakt"
+      "viewProjects": "Projektübersicht",
+      "contact": "Kontaktseite"
     }
   },
   "about": {
@@ -290,11 +290,15 @@
     "cta": {
       "title": "Nächste Schritte",
       "subtitle": "Feedback und Fragen gerne per Kontaktformular. Wer mehr über die Person hinter den Projekten erfahren will, findet das im About-Bereich.",
-      "button": "Kontakt",
+      "button": "Kontaktseite",
       "aboutMe": "Über mich"
     }
   },
   "projects": {
+    "actions": {
+      "liveDemo": "Live-Demo",
+      "sourceCode": "Quellcode"
+    },
     "myChatBot": {
       "title": "Mein Chat Bot",
       "description": "Eine moderne, optimierte Chat-Anwendung mit OpenRouter.ai-Integration für direkten Chat mit verschiedenen KI-Modellen. Bietet ChatGPT-ähnliche Funktionalität mit lokaler Speicherung und erweiterten Features.",
@@ -436,7 +440,7 @@
       "message": "Ein unerwarteter Fehler ist aufgetreten. Später erneut versuchen."
     },
     "backHome": "Zurück zur Startseite",
-    "contact": "Kontakt aufnehmen",
+    "contact": "Kontaktseite",
     "helpfulLinks": "Hilfreiche Links:"
   },
   "footer": {

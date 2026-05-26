@@ -188,8 +188,6 @@ useSeoMeta({
             <!-- Back to Home -->
             <div class="mt-8 md:mt-12 text-center">
                 <UiButton variant="primary" to="/">
-                    <Icon name="mdi:arrow-left"
-                        class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:-translate-x-1 transition-transform" />
                     {{ $t('privacy.backToHome') }}
                 </UiButton>
             </div>

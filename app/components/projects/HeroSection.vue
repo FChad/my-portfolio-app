@@ -49,20 +49,12 @@ const getSourceLink = (links: ProjectLink[]) => links.find(l => l.type === 'sour
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 pt-2">
                         <UiButton v-if="getDemoLink(links)" variant="primary" :href="getDemoLink(links)!.url" external>
-                            <span class="flex items-center gap-2 sm:gap-3">
-                                <Icon name="mdi:rocket-launch"
-                                    class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:scale-110 transition-transform" />
-                                Live Demo
-                            </span>
+                            {{ $t('projects.actions.liveDemo') }}
                         </UiButton>
 
                         <UiButton v-if="getSourceLink(links)" variant="secondary" :href="getSourceLink(links)!.url"
                             external>
-                            <span class="flex items-center gap-2 sm:gap-3">
-                                <Icon name="mdi:github"
-                                    class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:scale-110 transition-transform" />
-                                Source Code
-                            </span>
+                            {{ $t('projects.actions.sourceCode') }}
                         </UiButton>
                     </div>
                 </div>

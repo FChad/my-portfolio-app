@@ -99,14 +99,14 @@
     },
     "tagline": "Webapplikatiounen bauen a Server administréieren. Doheem tëschent Code-Editor a Terminal. Aus Lëtzebuerg.",
     "cta": {
-      "primary": "Op d'Projeten",
-      "secondary": "Kontakt"
+      "primary": "Projets-Iwwerbléck",
+      "secondary": "Kontaktsäit"
     },
     "finalCta": {
       "title": "Méi vu mir",
       "subtitle": "Projeten an Doku-Artikelen op der Showcase-Säit. Direkten Draht iwwer d'Kontaktformulaire.",
-      "viewProjects": "Op d'Projeten",
-      "contact": "Kontakt"
+      "viewProjects": "Projets-Iwwerbléck",
+      "contact": "Kontaktsäit"
     }
   },
   "about": {
@@ -290,11 +290,15 @@
     "cta": {
       "title": "Nächst Schrëtt",
       "subtitle": "Feedback a Froen wëllkomm iwwer d'Kontaktformulaire. Méi iwwer d'Persoun hannert de Projeten am About-Beräich.",
-      "button": "Kontakt",
+      "button": "Kontaktsäit",
       "aboutMe": "Iwwer mech"
     }
   },
   "projects": {
+    "actions": {
+      "liveDemo": "Live-Demo",
+      "sourceCode": "Quellcode"
+    },
     "myChatBot": {
       "title": "Mäin Chat Bot",
       "description": "Eng modern, optimiséiert Chat-Applikatioun mat OpenRouter.ai-Integratioun fir direkten Chat mat verschiddenen AI-Modeller. Bitt ChatGPT-ähnlech Funktionalitéit mat lokaler Späicherung an erweiderten Features.",
@@ -436,7 +440,7 @@
       "message": "En onerwaarte Feeler ass opgetrueden. Méi spéit nach eng Kéier probéieren."
     },
     "backHome": "Zréck op d'Startsäit",
-    "contact": "Kontakt ophuelen",
+    "contact": "Kontaktsäit",
     "helpfulLinks": "Hëllefräich Linken:"
   },
   "footer": {

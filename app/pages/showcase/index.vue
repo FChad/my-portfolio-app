@@ -183,19 +183,11 @@ const filteredItems = computed(() => {
 
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center">
                 <UiButton variant="primary" to="/contact">
-                    <span class="flex items-center gap-2 sm:gap-3">
-                        {{ t('showcase.cta.button') }}
-                        <Icon name="mdi:arrow-right"
-                            class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
-                    </span>
+                    {{ t('showcase.cta.button') }}
                 </UiButton>
 
                 <UiButton variant="secondary" to="/#about-section">
-                    <span class="flex items-center gap-2 sm:gap-3">
-                        <Icon name="mdi:account"
-                            class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:scale-110 transition-transform" />
-                        {{ t('showcase.cta.aboutMe') }}
-                    </span>
+                    {{ t('showcase.cta.aboutMe') }}
                 </UiButton>
             </div>
         </div>

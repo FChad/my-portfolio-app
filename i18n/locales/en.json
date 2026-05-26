@@ -99,14 +99,14 @@
     },
     "tagline": "Building web applications and running servers. At home between code editor and terminal. From Luxembourg.",
     "cta": {
-      "primary": "To projects",
-      "secondary": "Contact"
+      "primary": "Project overview",
+      "secondary": "Contact page"
     },
     "finalCta": {
       "title": "More from me",
       "subtitle": "Projects and documentation on the showcase page. Direct line via the contact form.",
-      "viewProjects": "To projects",
-      "contact": "Contact"
+      "viewProjects": "Project overview",
+      "contact": "Contact page"
     }
   },
   "about": {
@@ -290,11 +290,15 @@
     "cta": {
       "title": "Next steps",
       "subtitle": "Feedback and questions welcome via the contact form. More about the person behind the projects lives in the about section.",
-      "button": "Contact",
+      "button": "Contact page",
       "aboutMe": "About me"
     }
   },
   "projects": {
+    "actions": {
+      "liveDemo": "Live Demo",
+      "sourceCode": "Source Code"
+    },
     "myChatBot": {
       "title": "My Chat Bot",
       "description": "A modern, optimized chat application with OpenRouter.ai integration for direct chat with various AI models. Offers ChatGPT-like functionality with local storage and advanced features.",
@@ -436,7 +440,7 @@
       "message": "An unexpected error occurred. Try again later."
     },
     "backHome": "Back to Home",
-    "contact": "Contact Us",
+    "contact": "Contact page",
     "helpfulLinks": "Helpful Links:"
   },
   "footer": {

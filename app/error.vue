@@ -64,19 +64,11 @@ const helpfulLinks = NAV_LINKS
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center">
                     <UiButton variant="primary" size="lg" @click="handleError">
-                        <span class="flex items-center gap-3">
-                            <Icon name="mdi:home"
-                                class="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:scale-110 transition-transform" />
-                            {{ t('error.backHome') }}
-                        </span>
+                        {{ t('error.backHome') }}
                     </UiButton>
 
                     <UiButton variant="secondary" size="lg" to="/contact">
-                        <span class="flex items-center gap-3">
-                            {{ t('error.contact') }}
-                            <Icon name="mdi:email"
-                                class="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:scale-110 transition-transform" />
-                        </span>
+                        {{ t('error.contact') }}
                     </UiButton>
                 </div>
 

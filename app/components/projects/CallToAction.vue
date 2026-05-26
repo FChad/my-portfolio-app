@@ -18,19 +18,11 @@ const { t } = useI18n()
 
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center">
                 <UiButton variant="primary" :href="buttonUrl" external>
-                    <span class="flex items-center gap-2 sm:gap-3">
-                        {{ buttonText }}
-                        <Icon name="mdi:arrow-right"
-                            class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
-                    </span>
+                    {{ buttonText }}
                 </UiButton>
 
                 <UiButton variant="secondary" to="/showcase">
-                    <span class="flex items-center gap-2 sm:gap-3">
-                        <Icon name="mdi:eye"
-                            class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:scale-110 transition-transform" />
-                        {{ t('home.cta.primary') }}
-                    </span>
+                    {{ t('home.cta.primary') }}
                 </UiButton>
             </div>
         </div>
