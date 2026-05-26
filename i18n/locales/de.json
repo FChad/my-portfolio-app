@@ -9,7 +9,7 @@
       "additionalResources": "Zusätzliche Ressourcen",
       "additionalResourcesSubtitle": "Offizielle Dokumentation und hilfreiche Links",
       "keyFeatures": "Hauptfunktionen",
-      "keyFeaturesSubtitle": "Entdecken Sie die wichtigsten Funktionen",
+      "keyFeaturesSubtitle": "Die wichtigsten Funktionen im Überblick",
       "labels": {
         "showcase": "Showcase",
         "next": "Weiter",
@@ -32,18 +32,18 @@
   "seo": {
     "home": {
       "title": "Home",
-      "description": "Professioneller Full-Stack Entwickler und IT-Administrator aus Luxemburg. Spezialisiert auf moderne Webtechnologien, Cloud Computing und innovative digitale Lösungen.",
+      "description": "Portfolio von Chad Feierstein. Full-Stack Entwickler und IT-Administrator aus Luxemburg. Projekte, Doku-Artikel und Werdegang.",
       "keywords": "Chad Feierstein, Full-Stack Entwickler, Web Entwickler, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxemburg"
     },
     "showcase": {
       "title": "Showcase",
-      "description": "Entdecken Sie meine neuesten Projekte, Dokumentationen und technischen Lösungen. Von Web-Entwicklung bis hin zu Cloud-Infrastrukturen.",
+      "description": "Aktuelle Projekte und technische Dokumentations-Artikel. Von Web-Entwicklung bis Cloud-Infrastruktur.",
       "keywords": "Portfolio, Projekte, Web Entwicklung, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Nehmen Sie Kontakt auf für professionelle Web-Entwicklung, IT-Administration und Cloud Computing Lösungen. Schnelle und zuverlässige Antworten garantiert.",
-      "keywords": "Kontakt, Chad Feierstein, Web Entwicklung beauftragen, IT Services, Cloud Computing Beratung"
+      "description": "Kontaktseite von Chad Feierstein. Erreichbar per Formular, LinkedIn oder GitHub.",
+      "keywords": "Kontakt, Chad Feierstein, LinkedIn, GitHub, Luxemburg"
     },
     "projects": {
       "chatbot": {
@@ -81,7 +81,7 @@
     },
     "privacy": {
       "title": "Datenschutz",
-      "description": "Datenschutzerklärung für www.chad.lu. Informationen zur Datenverarbeitung, Ihren Rechten und den technischen Speicherungen auf dieser Website.",
+      "description": "Datenschutzerklärung für www.chad.lu. Informationen zur Datenverarbeitung, Nutzerrechten und technischen Speicherungen auf dieser Website.",
       "keywords": "Datenschutz, DSGVO, Privacy Policy, Datenschutzerklärung, Chad Feierstein"
     }
   },
@@ -97,22 +97,22 @@
       "fullstack": "Full-Stack Entwickler",
       "itadmin": "IT Administrator"
     },
-    "tagline": "Ich entwickle moderne Webanwendungen, verwalte Serverinfrastrukturen und löse komplexe IT-Herausforderungen mit Leidenschaft und Präzision, ansässig in Luxemburg.",
+    "tagline": "Webanwendungen bauen und Server administrieren. Zwischen Code-Editor und Terminal zuhause. Aus Luxemburg.",
     "cta": {
-      "primary": "Projekte entdecken",
-      "secondary": "Kontakt aufnehmen"
+      "primary": "Zu den Projekten",
+      "secondary": "Kontakt"
     },
     "finalCta": {
-      "title": "Bereit, gemeinsam etwas zu schaffen?",
-      "subtitle": "Werfen Sie einen Blick auf meine Projekte oder nehmen Sie direkt Kontakt mit mir auf.",
-      "viewProjects": "Projekte ansehen",
-      "contact": "Kontakt aufnehmen"
+      "title": "Mehr von mir",
+      "subtitle": "Projekte und Doku-Artikel auf der Showcase-Seite. Direkter Draht über das Kontaktformular.",
+      "viewProjects": "Zu den Projekten",
+      "contact": "Kontakt"
     }
   },
   "about": {
     "header": {
       "title": "Über mich",
-      "subtitle": "Lernen Sie die Person hinter dem Code kennen, mein Werdegang, meine Fähigkeiten und Leidenschaften."
+      "subtitle": "Die Person hinter dem Code: Werdegang, Fähigkeiten und Leidenschaften."
     },
     "profile": {
       "nationality": "Luxemburgisch",
@@ -271,7 +271,7 @@
   },
   "showcase": {
     "title": "Showcase",
-    "subtitle": "Entdecken Sie meine Projekte und Dokumentationen",
+    "subtitle": "Aktuelle Projekte und Dokumentations-Artikel",
     "filters": {
       "all": "Alle",
       "projects": "Projekte",
@@ -285,13 +285,13 @@
     },
     "noResults": {
       "title": "Keine Ergebnisse gefunden",
-      "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen, um das Gewünschte zu finden."
+      "description": "Suche oder Filter anpassen, um passende Ergebnisse zu finden."
     },
     "cta": {
-      "title": "Lassen Sie uns ins Gespräch kommen",
-      "subtitle": "Haben Sie Fragen oder Interesse an einem Austausch? Ich freue mich darauf, von Ihnen zu hören.",
-      "button": "Kontakt aufnehmen",
-      "aboutMe": "Mehr über mich erfahren"
+      "title": "Nächste Schritte",
+      "subtitle": "Feedback und Fragen gerne per Kontaktformular. Wer mehr über die Person hinter den Projekten erfahren will, findet das im About-Bereich.",
+      "button": "Kontakt",
+      "aboutMe": "Über mich"
     }
   },
   "projects": {
@@ -325,9 +325,9 @@
         }
       },
       "callToAction": {
-        "title": "Bereit, KI-Chat zu erleben?",
-        "subtitle": "Probiere Mein Chat Bot heute aus und entdecke die Kraft lokaler KI-Modelle mit einer intuitiven Chat-Oberfläche.",
-        "button": "Demo starten"
+        "title": "Live-Demo",
+        "subtitle": "Mein Chat Bot mit lokalen KI-Modellen und intuitiver Chat-Oberfläche.",
+        "button": "Zur Demo"
       }
     },
     "myPortfolio": {
@@ -360,9 +360,9 @@
         }
       },
       "callToAction": {
-        "title": "Interessiert an einer ähnlichen Webseite?",
-        "subtitle": "Entdecke meine Portfolio-Webseite und sehe, wie moderne Webtechnologien eine beeindruckende Online-Präsenz schaffen können.",
-        "button": "Webseite besuchen"
+        "title": "Quellcode",
+        "subtitle": "Diese Portfolio-Webseite. Quellcode liegt auf GitHub.",
+        "button": "Auf GitHub"
       }
     }
   },
@@ -386,7 +386,7 @@
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Haben Sie Fragen oder Feedback? Ich bin hier, um zu helfen.",
+    "subtitle": "Direkter Draht per Formular, LinkedIn oder GitHub.",
     "methods": {
       "linkedin": {
         "title": "LinkedIn"
@@ -397,32 +397,32 @@
     },
     "form": {
       "title": "Nachricht senden",
-      "description": "Füllen Sie das untenstehende Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.",
+      "description": "Antwort folgt so schnell wie möglich.",
       "name": "Name",
-      "namePlaceholder": "Ihr vollständiger Name",
+      "namePlaceholder": "Vollständiger Name",
       "email": "E-Mail",
-      "emailPlaceholder": "ihre{'@'}email.de",
+      "emailPlaceholder": "name{'@'}example.de",
       "subject": "Betreff",
       "subjectPlaceholder": "Worum geht es?",
       "message": "Nachricht",
-      "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Anfrage...",
+      "messagePlaceholder": "Worum geht's? Frage, Feedback oder Hinweis.",
       "submit": "Nachricht senden",
       "sending": "Wird gesendet...",
       "tryAgain": "Erneut versuchen",
-      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
+      "success": "Nachricht erfolgreich gesendet. Antwort folgt in Kürze.",
       "errors": {
         "nameRequired": "Name ist erforderlich",
         "nameLength": "Name muss zwischen 2 und 100 Zeichen lang sein",
         "emailRequired": "E-Mail ist erforderlich",
-        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "emailInvalid": "Ungültige E-Mail-Adresse",
         "subjectRequired": "Betreff ist erforderlich",
         "subjectLength": "Betreff muss zwischen 5 und 200 Zeichen lang sein",
         "messageRequired": "Nachricht ist erforderlich",
         "messageMinLength": "Nachricht muss mindestens 10 Zeichen lang sein",
         "messageMaxLength": "Nachricht darf höchstens 2000 Zeichen lang sein",
-        "rateLimited": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
-        "invalidData": "Ungültige Formulardaten. Bitte überprüfen Sie Ihre Eingaben.",
-        "serverError": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+        "rateLimited": "Zu viele Anfragen. Später erneut versuchen.",
+        "invalidData": "Ungültige Formulardaten. Eingaben überprüfen.",
+        "serverError": "Ein Fehler ist aufgetreten. Später erneut versuchen."
       }
     }
   },
@@ -433,7 +433,7 @@
     },
     "general": {
       "title": "Ups! Etwas ist schiefgelaufen",
-      "message": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+      "message": "Ein unerwarteter Fehler ist aufgetreten. Später erneut versuchen."
     },
     "backHome": "Zurück zur Startseite",
     "contact": "Kontakt aufnehmen",
@@ -469,21 +469,21 @@
         "localStorage": {
           "title": "Theme-Präferenz",
           "badge": "Technisch notwendig",
-          "description": "Ihre bevorzugte Farbeinstellung (Hell/Dunkel-Modus) wird lokal in Ihrem Browser gespeichert. Diese Daten werden nicht an Server übertragen und dienen ausschließlich der korrekten Darstellung der Website."
+          "description": "Die bevorzugte Farbeinstellung (Hell/Dunkel-Modus) wird lokal im Browser gespeichert. Diese Daten werden nicht an Server übertragen und dienen ausschließlich der korrekten Darstellung der Website."
         }
       },
       "contactForm": {
         "title": "Kontaktformular",
-        "content": "Wenn Sie das Kontaktformular nutzen, werden folgende Daten verarbeitet:",
+        "content": "Bei Nutzung des Kontaktformulars werden folgende Daten verarbeitet:",
         "items": {
-          "name": "Ihr Name",
-          "email": "Ihre E-Mail-Adresse",
-          "message": "Ihre Nachricht"
+          "name": "Name",
+          "email": "E-Mail-Adresse",
+          "message": "Nachricht"
         },
-        "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.",
+        "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Daten werden ausschließlich zur Bearbeitung der Anfrage verwendet.",
         "smtp": {
           "title": "E-Mail-Versand",
-          "description": "E-Mails aus dem Kontaktformular werden direkt über unseren eigenen Mailserver versendet. Ihre Daten (Name, E-Mail, Nachricht) werden nicht an Drittanbieter übermittelt."
+          "description": "E-Mails aus dem Kontaktformular werden direkt über einen eigenen Mailserver versendet. Die Daten (Name, E-Mail, Nachricht) werden nicht an Drittanbieter übermittelt."
         }
       },
       "hosting": {
@@ -491,9 +491,9 @@
         "content": "Diese Website wird selbst gehostet mit Coolify auf einem privaten Server. Es werden keine Daten an Drittanbieter-Hosting-Dienste weitergegeben."
       },
       "rights": {
-        "title": "Ihre Rechte & Datenkontrolle",
-        "localStorage": "Theme-Präferenz: Diese wird nur lokal in Ihrem Browser gespeichert. Sie können sie jederzeit selbst löschen (Browser-Einstellungen → Websitedaten löschen) oder Ihren Browser so einstellen, dass localStorage bei jedem Schließen gelöscht wird.",
-        "contact": "Kontaktformular: Falls Sie mir eine Nachricht gesendet haben und die Löschung wünschen, kontaktieren Sie mich einfach. Die E-Mail wird dann aus meinem Postfach gelöscht."
+        "title": "Rechte & Datenkontrolle",
+        "localStorage": "Theme-Präferenz: Diese wird nur lokal im Browser gespeichert. Lässt sich jederzeit manuell löschen (Browser-Einstellungen → Websitedaten löschen) oder per Browser-Einstellung beim Schließen automatisch entfernen.",
+        "contact": "Kontaktformular: Bei Löschwunsch einer gesendeten Nachricht reicht eine kurze Notiz per Kontaktformular. Die E-Mail wird dann aus dem Postfach gelöscht."
       },
       "noCookieBanner": {
         "title": "Warum kein Cookie-Banner?"

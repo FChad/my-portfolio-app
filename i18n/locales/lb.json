@@ -9,7 +9,7 @@
       "additionalResources": "Zousätzlech Ressourcen",
       "additionalResourcesSubtitle": "Offiziell Dokumentatioun an hëllefräich Linken",
       "keyFeatures": "Haaptfunktiounen",
-      "keyFeaturesSubtitle": "Entdeckt déi wichtegst Funktiounen",
+      "keyFeaturesSubtitle": "Déi wichtegst Funktiounen am Iwwerbléck",
       "labels": {
         "showcase": "Showcase",
         "next": "Weider",
@@ -32,18 +32,18 @@
   "seo": {
     "home": {
       "title": "Home",
-      "description": "Professionnellen Full-Stack Developer an IT-Administrator aus Lëtzebuerg. Spezialiséiert op modern Web-Technologien, Cloud Computing an innovativ digital Léisungen.",
+      "description": "Portfolio vum Chad Feierstein. Full-Stack Entwéckler an IT-Administrator aus Lëtzebuerg. Projeten, Dokumentatioun a Parcours.",
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Lëtzebuerg"
     },
     "showcase": {
       "title": "Showcase",
-      "description": "Entdeckt meng neist Projeten, Dokumentatiounen a technesch Léisungen. Vun der Web-Entwécklung bis hin zu Cloud-Infrastrukturen.",
+      "description": "Aktuell Projeten an technesch Dokumentatiouns-Artikelen. Vun der Web-Entwécklung bis zu Cloud-Infrastrukturen.",
       "keywords": "Portfolio, Projeten, Web Development, KI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Huelt Kontakt op fir professionnell Web-Entwécklung, IT-Administratioun a Cloud Computing Léisungen. Séier a zouverlässeg Äntwerten garantéiert.",
-      "keywords": "Kontakt, Chad Feierstein, Web Developer engagéieren, IT Servicer, Cloud Computing Berodung"
+      "description": "Kontaktsäit vum Chad Feierstein. Erreechbar iwwer Formulaire, LinkedIn oder GitHub.",
+      "keywords": "Kontakt, Chad Feierstein, LinkedIn, GitHub, Lëtzebuerg"
     },
     "projects": {
       "chatbot": {
@@ -81,7 +81,7 @@
     },
     "privacy": {
       "title": "Dateschutz",
-      "description": "Dateschutzerkläerung fir www.chad.lu. Informatiounen iwwer d'Dateveraarbechtung, Är Rechter an technesch Späicherungen op dëser Websäit.",
+      "description": "Dateschutzerkläerung fir www.chad.lu. Informatiounen iwwer d'Dateveraarbechtung, d'Rechter vun de Benotzer an technesch Späicherungen op dëser Websäit.",
       "keywords": "Dateschutz, DSGVO, Dateschutzerkläerung, Date-Schutz, Chad Feierstein"
     }
   },
@@ -97,22 +97,22 @@
       "fullstack": "Full-Stack Developer",
       "itadmin": "IT Administrator"
     },
-    "tagline": "Ech entwéckelen modern Webapplikatiounen, verwalten Serverinfrastrukturen a léisen komplex IT-Erausfuerderunge mat Leidenschaft a Präzisioun, baséiert zu Lëtzebuerg.",
+    "tagline": "Webapplikatiounen bauen a Server administréieren. Doheem tëschent Code-Editor a Terminal. Aus Lëtzebuerg.",
     "cta": {
-      "primary": "Projeten entdecken",
-      "secondary": "Kontakt ophuelen"
+      "primary": "Op d'Projeten",
+      "secondary": "Kontakt"
     },
     "finalCta": {
-      "title": "Prett fir zesummen eppes ze schafen?",
-      "subtitle": "Kuckt Iech meng Projeten un oder huelt direkt Kontakt mat mir op.",
-      "viewProjects": "Projeten kucken",
-      "contact": "Kontakt ophuelen"
+      "title": "Méi vu mir",
+      "subtitle": "Projeten an Doku-Artikelen op der Showcase-Säit. Direkten Draht iwwer d'Kontaktformulaire.",
+      "viewProjects": "Op d'Projeten",
+      "contact": "Kontakt"
     }
   },
   "about": {
     "header": {
       "title": "Iwwer mech",
-      "subtitle": "Léiert d'Persoun hannert dem Code kennen, mäi Wiessel, meng Fäegkeeten a Leidenschaften."
+      "subtitle": "D'Persoun hannert dem Code: Parcours, Fäegkeeten a Leidenschaften."
     },
     "profile": {
       "nationality": "Lëtzebuergesch",
@@ -271,7 +271,7 @@
   },
   "showcase": {
     "title": "Showcase",
-    "subtitle": "Entdeckt meng Projeten an Dokumentatiounen",
+    "subtitle": "Aktuell Projeten an Dokumentatiouns-Artikelen",
     "filters": {
       "all": "All",
       "projects": "Projeten",
@@ -285,13 +285,13 @@
     },
     "noResults": {
       "title": "Keng Resultater fonnt",
-      "description": "Versicht Är Sich oder Äre Filter unzepassen, fir dat ze fannen wat Dir sicht."
+      "description": "Sich oder Filter unpassen, fir passend Resultater ze fannen."
     },
     "cta": {
-      "title": "Loosst eis a Kontakt trieden",
-      "subtitle": "Hutt Dir Froen oder Interessi un engem Austausch? Ech freeën mech drop, vun Iech ze héieren.",
-      "button": "Kontakt ophuelen",
-      "aboutMe": "Méi iwwer mech erfahren"
+      "title": "Nächst Schrëtt",
+      "subtitle": "Feedback a Froen wëllkomm iwwer d'Kontaktformulaire. Méi iwwer d'Persoun hannert de Projeten am About-Beräich.",
+      "button": "Kontakt",
+      "aboutMe": "Iwwer mech"
     }
   },
   "projects": {
@@ -325,9 +325,9 @@
         }
       },
       "callToAction": {
-        "title": "Prett fir AI Chat z'erliewen?",
-        "subtitle": "Probéiert Mäin Chat Bot haut aus an entdeckt d'Kraaft vun lokalen AI-Modeller mat enger intuitiver Chat-Oberfläch.",
-        "button": "Demo starten"
+        "title": "Live-Demo",
+        "subtitle": "Mäin Chat Bot mat lokalen AI-Modeller an enger intuitiver Chat-Oberfläch.",
+        "button": "Op d'Demo"
       }
     },
     "myPortfolio": {
@@ -360,9 +360,9 @@
         }
       },
       "callToAction": {
-        "title": "Interesséiert un enger ähnlecher Websäit?",
-        "subtitle": "Entdeckt meng Portfolio-Websäit a kuckt, wéi modern Webtechnologien eng impressionnant Online-Presenz schafen kënnen.",
-        "button": "Websäit besichen"
+        "title": "Quellcode",
+        "subtitle": "Dës Portfolio-Websäit. De Quellcode läit op GitHub.",
+        "button": "Op GitHub"
       }
     }
   },
@@ -386,7 +386,7 @@
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Hutt Dir Froen oder Feedback? Ech sinn hei fir ze hëllefen.",
+    "subtitle": "Direkten Draht iwwer Formulaire, LinkedIn oder GitHub.",
     "methods": {
       "linkedin": {
         "title": "LinkedIn"
@@ -397,32 +397,32 @@
     },
     "form": {
       "title": "Message schécken",
-      "description": "Fëllt de Formulaire hei ënnendrënner aus an ech mellen mech sou séier wéi méiglech bei Iech.",
+      "description": "Eng Äntwert kënnt sou séier wéi méiglech.",
       "name": "Numm",
-      "namePlaceholder": "Äre kompletten Numm",
+      "namePlaceholder": "Kompletten Numm",
       "email": "E-Mail",
-      "emailPlaceholder": "är{'@'}email.lu",
+      "emailPlaceholder": "numm{'@'}example.lu",
       "subject": "Sujet",
       "subjectPlaceholder": "Wou geet et drëm?",
       "message": "Message",
-      "messagePlaceholder": "Erzielt mer vun Ärem Projet oder Ärer Ufro...",
+      "messagePlaceholder": "Wat geet et drëms? Fro, Feedback oder Hiweis.",
       "submit": "Message schécken",
       "sending": "Gëtt geschéckt...",
       "tryAgain": "Nach eng Kéier probéieren",
-      "success": "Merci! Är Message gouf erfollegräich geschéckt. Ech mellen mech geschwënn bei Iech.",
+      "success": "Message erfollegräich geschéckt. Eng Äntwert kënnt geschwënn.",
       "errors": {
         "nameRequired": "Numm ass obligatoresch",
         "nameLength": "Numm muss tëschent 2 an 100 Zeechen sinn",
         "emailRequired": "E-Mail ass obligatoresch",
-        "emailInvalid": "Gitt w.e.g. eng gülteg E-Mail-Adress an",
+        "emailInvalid": "Ongülteg E-Mail-Adress",
         "subjectRequired": "Sujet ass obligatoresch",
         "subjectLength": "Sujet muss tëschent 5 an 200 Zeechen sinn",
         "messageRequired": "Message ass obligatoresch",
         "messageMinLength": "Message muss op d'mannst 10 Zeechen hunn",
         "messageMaxLength": "Message däerf net méi wéi 2000 Zeechen hunn",
-        "rateLimited": "Ze vill Ufroen. Probéiert w.e.g. méi spéit nach eng Kéier.",
-        "invalidData": "Ongülteg Formulaire-Donnéeën. Kontrolléiert w.e.g. Är Agaben.",
-        "serverError": "Et ass e Feeler entstanen. Probéiert w.e.g. méi spéit nach eng Kéier."
+        "rateLimited": "Ze vill Ufroen. Méi spéit nach eng Kéier probéieren.",
+        "invalidData": "Ongülteg Formulaire-Donnéeën. Agaben kontrolléieren.",
+        "serverError": "E Feeler ass opgetrueden. Méi spéit nach eng Kéier probéieren."
       }
     }
   },
@@ -433,7 +433,7 @@
     },
     "general": {
       "title": "Ups! Eppes ass schif gaang",
-      "message": "En onerwaarte Feeler ass opgetrueden. Probéiert w.e.g. méi spéit nach eng Kéier."
+      "message": "En onerwaarte Feeler ass opgetrueden. Méi spéit nach eng Kéier probéieren."
     },
     "backHome": "Zréck op d'Startsäit",
     "contact": "Kontakt ophuelen",
@@ -469,21 +469,21 @@
         "localStorage": {
           "title": "Thema-Preferenz",
           "badge": "Technesch néideg",
-          "description": "Är bevorzugt Faarf-Astéllung (Hell/Donkel-Modus) gëtt lokal an Ärem Browser gespäichert. Dës Daten ginn net un Server iwwerdroe a déngen nëmmen der korrekter Uweissung vun der Websäit."
+          "description": "Déi bevorzugt Faarf-Astéllung (Hell/Donkel-Modus) gëtt lokal am Browser gespäichert. Dës Daten ginn net un Server iwwerdroe a déngen nëmmen der korrekter Uweissung vun der Websäit."
         }
       },
       "contactForm": {
         "title": "Kontaktformulaire",
-        "content": "Wann Dir d'Kontaktformulaire benotzt, ginn folgend Daten veraarbecht:",
+        "content": "Bei der Notzung vun der Kontaktformulaire ginn folgend Daten veraarbecht:",
         "items": {
-          "name": "Ären Numm",
-          "email": "Är E-Mail Adress",
-          "message": "Är Noriicht"
+          "name": "Numm",
+          "email": "E-Mail Adress",
+          "message": "Noriicht"
         },
-        "legalBasis": "Rechtsgrondlag: Art. 6 Abs. 1 lit. b DSGVO (Vertrags-Ubahnung) an Art. 6 Abs. 1 lit. f DSGVO (berechtegt Interessi un der Äntwert op Ufroen). D'Daten ginn exklusiv fir d'Veraarbechtung vun Ärer Ufro benotzt.",
+        "legalBasis": "Rechtsgrondlag: Art. 6 Abs. 1 lit. b DSGVO (Vertrags-Ubahnung) an Art. 6 Abs. 1 lit. f DSGVO (berechtegt Interessi un der Äntwert op Ufroen). D'Daten ginn exklusiv fir d'Veraarbechtung vun der Ufro benotzt.",
         "smtp": {
           "title": "E-Mail-Versand",
-          "description": "E-Maile vum Kontaktformulaire gi direkt iwwer eise eigene Mailserver geschéckt. Är Daten (Numm, E-Mail, Noriicht) ginn net un Drëtt-Ubidder weiderginn."
+          "description": "E-Maile vum Kontaktformulaire gi direkt iwwer en eegene Mailserver geschéckt. D'Daten (Numm, E-Mail, Noriicht) ginn net un Drëtt-Ubidder weiderginn."
         }
       },
       "hosting": {
@@ -491,9 +491,9 @@
         "content": "Dës Websäit gëtt selwer mat Coolify op engem private Server gehost. Keng Daten ginn un Drëtt-Ubidder-Hosting-Servicer weiderginn."
       },
       "rights": {
-        "title": "Är Rechter & Datekontroll",
-        "localStorage": "Thema-Preferenz: Dës gëtt nëmmen lokal an Ärem Browser gespäichert. Dir kënnt se selwer zu all Moment läschen (Browser-Astellungen → Websäitdaten läschen) oder Äre Browser esou astellen, dass localStorage beim Zoumaachen geläscht gëtt.",
-        "contact": "Kontaktformulaire: Wann Dir mir eng Noriicht geschéckt hutt a wëllt dass se geläscht gëtt, kontaktéiert mech einfach. D'E-Mail gëtt dann aus mengem Postfach geläscht."
+        "title": "Rechter & Datekontroll",
+        "localStorage": "Thema-Preferenz: Dës gëtt nëmmen lokal am Browser gespäichert. Léisst sech zu all Moment manuell läschen (Browser-Astellungen → Websäitdaten läschen) oder automatesch ewechmaachen, wann de Browser esou agestallt ass, dass de localStorage beim Zoumaachen geläscht gëtt.",
+        "contact": "Kontaktformulaire: Fir d'Läschung vun enger geschéckter Noriicht geet eng kuerz Notiz iwwer d'Kontaktformulaire duer. D'E-Mail gëtt dann aus dem Postfach geläscht."
       },
       "noCookieBanner": {
         "title": "Firwat keng Cookie-Banner?"

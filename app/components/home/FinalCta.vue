@@ -3,7 +3,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8">
                 <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
-                    08 &mdash; Next
+                    07 &mdash; Next
                 </p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
                     {{ $t('home.finalCta.title') }}

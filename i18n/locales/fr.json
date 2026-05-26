@@ -9,7 +9,7 @@
       "additionalResources": "Ressources Supplémentaires",
       "additionalResourcesSubtitle": "Documentation officielle et liens utiles",
       "keyFeatures": "Fonctionnalités Clés",
-      "keyFeaturesSubtitle": "Découvrez les principales fonctionnalités",
+      "keyFeaturesSubtitle": "Aperçu des principales fonctionnalités",
       "labels": {
         "showcase": "Showcase",
         "next": "Suite",
@@ -32,18 +32,18 @@
   "seo": {
     "home": {
       "title": "Home",
-      "description": "Développeur Full-Stack professionnel et Administrateur IT du Luxembourg. Spécialisé dans les technologies web modernes, le cloud computing et les solutions digitales innovantes.",
+      "description": "Portfolio de Chad Feierstein. Développeur Full-Stack et Administrateur IT du Luxembourg. Projets, documentation et parcours.",
       "keywords": "Chad Feierstein, Développeur Full-Stack, Développeur Web, Administrateur IT, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
     },
     "showcase": {
       "title": "Showcase",
-      "description": "Découvrez mes derniers projets, documentations et solutions techniques. Du développement web aux infrastructures cloud.",
+      "description": "Projets récents et articles de documentation technique. Du développement web aux infrastructures cloud.",
       "keywords": "Portfolio, Projets, Développement Web, Chat Bot IA, Cloud Computing, Setup Debian, Nœud Cardano"
     },
     "contact": {
-      "title": "Me Contacter",
-      "description": "Contactez-moi pour du développement web professionnel, administration IT et solutions cloud computing. Réponses rapides et fiables garanties.",
-      "keywords": "Contact, Chad Feierstein, Engager Développeur Web, Services IT, Conseil Cloud Computing"
+      "title": "Contact",
+      "description": "Page de contact de Chad Feierstein. Joignable via formulaire, LinkedIn ou GitHub.",
+      "keywords": "Contact, Chad Feierstein, LinkedIn, GitHub, Luxembourg"
     },
     "projects": {
       "chatbot": {
@@ -81,7 +81,7 @@
     },
     "privacy": {
       "title": "Politique de Confidentialité",
-      "description": "Politique de confidentialité pour www.chad.lu. Informations sur le traitement des données, vos droits et les stockages techniques sur ce site.",
+      "description": "Politique de confidentialité pour www.chad.lu. Informations sur le traitement des données, les droits des utilisateurs et les stockages techniques sur ce site.",
       "keywords": "Confidentialité, RGPD, Politique de Confidentialité, Protection des données, Chad Feierstein"
     }
   },
@@ -97,22 +97,22 @@
       "fullstack": "Développeur Full-Stack",
       "itadmin": "Administrateur IT"
     },
-    "tagline": "Je développe des applications web modernes, gère des infrastructures serveur et résous des défis IT complexes avec passion et précision, basé au Luxembourg.",
+    "tagline": "Construire des applications web et administrer des serveurs. À l'aise entre l'éditeur de code et le terminal. Du Luxembourg.",
     "cta": {
-      "primary": "Découvrir les Projets",
-      "secondary": "Me Contacter"
+      "primary": "Aux projets",
+      "secondary": "Contact"
     },
     "finalCta": {
-      "title": "Prêt à créer quelque chose ensemble ?",
-      "subtitle": "Découvrez mes projets ou contactez-moi directement.",
-      "viewProjects": "Voir les projets",
-      "contact": "Me contacter"
+      "title": "En savoir plus",
+      "subtitle": "Projets et articles de documentation sur la page Showcase. Contact direct via le formulaire.",
+      "viewProjects": "Aux projets",
+      "contact": "Contact"
     }
   },
   "about": {
     "header": {
       "title": "À propos de moi",
-      "subtitle": "Découvrez la personne derrière le code, mon parcours, mes compétences et mes passions."
+      "subtitle": "La personne derrière le code : parcours, compétences et passions."
     },
     "profile": {
       "nationality": "Luxembourgeoise",
@@ -271,7 +271,7 @@
   },
   "showcase": {
     "title": "Showcase",
-    "subtitle": "Découvrez mes projets et documentation",
+    "subtitle": "Projets actuels et articles de documentation",
     "filters": {
       "all": "Tous",
       "projects": "Projets",
@@ -285,13 +285,13 @@
     },
     "noResults": {
       "title": "Aucun résultat trouvé",
-      "description": "Essayez d'ajuster votre recherche ou votre filtre pour trouver ce que vous cherchez."
+      "description": "Ajuster la recherche ou le filtre pour trouver des résultats correspondants."
     },
     "cta": {
-      "title": "Entrons en Contact",
-      "subtitle": "Vous avez des questions ou souhaitez échanger ? Je serais ravi d'avoir de vos nouvelles.",
-      "button": "Me Contacter",
-      "aboutMe": "En Savoir Plus Sur Moi"
+      "title": "Prochaines étapes",
+      "subtitle": "Feedback et questions bienvenus via le formulaire de contact. Pour en savoir plus sur la personne derrière les projets, voir la section À propos.",
+      "button": "Contact",
+      "aboutMe": "À propos"
     }
   },
   "projects": {
@@ -325,9 +325,9 @@
         }
       },
       "callToAction": {
-        "title": "Prêt à Découvrir le Chat IA ?",
-        "subtitle": "Essayez Mon Chat Bot aujourd'hui et découvrez la puissance des modèles IA locaux avec une interface de chat intuitive.",
-        "button": "Commencer la Démo"
+        "title": "Démo en direct",
+        "subtitle": "Mon Chat Bot avec des modèles IA locaux et une interface de chat intuitive.",
+        "button": "Vers la démo"
       }
     },
     "myPortfolio": {
@@ -360,9 +360,9 @@
         }
       },
       "callToAction": {
-        "title": "Intéressé par un Site Web Similaire ?",
-        "subtitle": "Explorez mon site web portfolio et découvrez comment les technologies web modernes peuvent créer une présence en ligne impressionnante.",
-        "button": "Visiter le Site Web"
+        "title": "Code source",
+        "subtitle": "Ce site portfolio. Le code source est sur GitHub.",
+        "button": "Sur GitHub"
       }
     }
   },
@@ -386,7 +386,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Avez-vous des questions ou des commentaires ? Je suis là pour vous aider.",
+    "subtitle": "Contact direct via formulaire, LinkedIn ou GitHub.",
     "methods": {
       "linkedin": {
         "title": "LinkedIn"
@@ -397,43 +397,43 @@
     },
     "form": {
       "title": "Envoyer un Message",
-      "description": "Remplissez le formulaire ci-dessous et je vous répondrai dès que possible.",
+      "description": "Une réponse suivra dès que possible.",
       "name": "Nom",
-      "namePlaceholder": "Votre nom complet",
+      "namePlaceholder": "Nom complet",
       "email": "Email",
-      "emailPlaceholder": "votre{'@'}email.fr",
+      "emailPlaceholder": "nom{'@'}example.fr",
       "subject": "Sujet",
       "subjectPlaceholder": "De quoi s'agit-il ?",
       "message": "Message",
-      "messagePlaceholder": "Parlez-moi de votre projet ou de votre demande...",
+      "messagePlaceholder": "De quoi s'agit-il ? Question, feedback ou remarque.",
       "submit": "Envoyer le Message",
       "sending": "Envoi en cours...",
       "tryAgain": "Réessayer",
-      "success": "Merci ! Votre message a été envoyé avec succès. Je vous recontacterai bientôt.",
+      "success": "Message envoyé avec succès. Une réponse suivra sous peu.",
       "errors": {
         "nameRequired": "Le nom est requis",
         "nameLength": "Le nom doit contenir entre 2 et 100 caractères",
         "emailRequired": "L'email est requis",
-        "emailInvalid": "Veuillez entrer une adresse email valide",
+        "emailInvalid": "Adresse e-mail invalide",
         "subjectRequired": "Le sujet est requis",
         "subjectLength": "Le sujet doit contenir entre 5 et 200 caractères",
         "messageRequired": "Le message est requis",
         "messageMinLength": "Le message doit contenir au moins 10 caractères",
         "messageMaxLength": "Le message ne doit pas dépasser 2000 caractères",
-        "rateLimited": "Trop de requêtes. Veuillez réessayer plus tard.",
-        "invalidData": "Données de formulaire invalides. Veuillez vérifier vos entrées.",
-        "serverError": "Une erreur s'est produite. Veuillez réessayer plus tard."
+        "rateLimited": "Trop de requêtes. Réessayer plus tard.",
+        "invalidData": "Données de formulaire invalides. Vérifier les entrées.",
+        "serverError": "Une erreur s'est produite. Réessayer plus tard."
       }
     }
   },
   "error": {
     "404": {
       "title": "Page non trouvée",
-      "message": "La page que vous recherchez n'existe pas ou a été déplacée."
+      "message": "La page demandée n'existe pas ou a été déplacée."
     },
     "general": {
       "title": "Oups ! Quelque chose s'est mal passé",
-      "message": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+      "message": "Une erreur inattendue s'est produite. Réessayer plus tard."
     },
     "backHome": "Retour à l'accueil",
     "contact": "Nous contacter",
@@ -469,21 +469,21 @@
         "localStorage": {
           "title": "Préférence de thème",
           "badge": "Techniquement nécessaire",
-          "description": "Votre préférence de couleur (mode clair/sombre) est stockée localement dans votre navigateur. Ces données ne sont pas transmises aux serveurs et servent uniquement à l'affichage correct du site."
+          "description": "La préférence de couleur (mode clair/sombre) est stockée localement dans le navigateur. Ces données ne sont pas transmises aux serveurs et servent uniquement à l'affichage correct du site."
         }
       },
       "contactForm": {
         "title": "Formulaire de contact",
-        "content": "Lorsque vous utilisez le formulaire de contact, les données suivantes sont traitées :",
+        "content": "Lors de l'utilisation du formulaire de contact, les données suivantes sont traitées :",
         "items": {
-          "name": "Votre nom",
-          "email": "Votre adresse e-mail",
-          "message": "Votre message"
+          "name": "Nom",
+          "email": "Adresse e-mail",
+          "message": "Message"
         },
-        "legalBasis": "Base juridique : Art. 6(1)(b) RGPD (initiation de contrat) et Art. 6(1)(f) RGPD (intérêt légitime à répondre aux demandes). Les données sont utilisées exclusivement pour traiter votre demande.",
+        "legalBasis": "Base juridique : Art. 6(1)(b) RGPD (initiation de contrat) et Art. 6(1)(f) RGPD (intérêt légitime à répondre aux demandes). Les données sont utilisées exclusivement pour traiter la demande.",
         "smtp": {
           "title": "Envoi d'e-mails",
-          "description": "Les e-mails du formulaire de contact sont envoyés directement via notre propre serveur de messagerie. Vos données (nom, e-mail, message) ne sont transmises à aucun service tiers."
+          "description": "Les e-mails du formulaire de contact sont envoyés directement via un serveur de messagerie propre. Les données (nom, e-mail, message) ne sont transmises à aucun service tiers."
         }
       },
       "hosting": {
@@ -491,9 +491,9 @@
         "content": "Ce site est auto-hébergé avec Coolify sur un serveur privé. Aucune donnée n'est transmise à des prestataires d'hébergement tiers."
       },
       "rights": {
-        "title": "Vos droits & contrôle des données",
-        "localStorage": "Préférence de thème : Elle n'est stockée que localement dans votre navigateur. Vous pouvez la supprimer vous-même à tout moment (Paramètres du navigateur → Effacer les données du site) ou configurer votre navigateur pour effacer le localStorage à la fermeture.",
-        "contact": "Formulaire de contact : Si vous m'avez envoyé un message et souhaitez sa suppression, contactez-moi simplement. L'e-mail sera alors supprimé de ma boîte de réception."
+        "title": "Droits & contrôle des données",
+        "localStorage": "Préférence de thème : Elle n'est stockée que localement dans le navigateur. Peut être supprimée manuellement à tout moment (Paramètres du navigateur → Effacer les données du site) ou effacée automatiquement en configurant le navigateur pour vider le localStorage à la fermeture.",
+        "contact": "Formulaire de contact : Pour la suppression d'un message envoyé, une simple note via le formulaire de contact suffit. L'e-mail sera alors supprimé de la boîte de réception."
       },
       "noCookieBanner": {
         "title": "Pourquoi pas de bannière de cookies ?"

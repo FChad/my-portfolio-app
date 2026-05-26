@@ -9,7 +9,7 @@
       "additionalResources": "Additional Resources",
       "additionalResourcesSubtitle": "Official documentation and helpful links",
       "keyFeatures": "Key Features",
-      "keyFeaturesSubtitle": "Explore the main features and functionalities",
+      "keyFeaturesSubtitle": "Key features at a glance",
       "labels": {
         "showcase": "Showcase",
         "next": "Next",
@@ -32,18 +32,18 @@
   "seo": {
     "home": {
       "title": "Home",
-      "description": "Professional Full-Stack Developer and IT Administrator from Luxembourg. Specialized in modern web technologies, cloud computing and innovative digital solutions.",
+      "description": "Portfolio of Chad Feierstein. Full-Stack Developer and IT Administrator from Luxembourg. Projects, documentation and background.",
       "keywords": "Chad Feierstein, Full-Stack Developer, Web Developer, IT Administrator, Vue.js, Nuxt.js, Cloud Computing, Luxembourg"
     },
     "showcase": {
       "title": "Showcase",
-      "description": "Discover my latest projects, documentation and technical solutions. From web development to cloud infrastructures.",
+      "description": "Latest projects and technical documentation articles. From web development to cloud infrastructure.",
       "keywords": "Portfolio, Projects, Web Development, AI Chat Bot, Cloud Computing, Debian Setup, Cardano Node"
     },
     "contact": {
-      "title": "Contact Me",
-      "description": "Get in touch for professional web development, IT administration and cloud computing solutions. Fast and reliable responses guaranteed.",
-      "keywords": "Contact, Chad Feierstein, Hire Web Developer, IT Services, Cloud Computing Consulting"
+      "title": "Contact",
+      "description": "Chad Feierstein's contact page. Reachable via form, LinkedIn or GitHub.",
+      "keywords": "Contact, Chad Feierstein, LinkedIn, GitHub, Luxembourg"
     },
     "projects": {
       "chatbot": {
@@ -81,7 +81,7 @@
     },
     "privacy": {
       "title": "Privacy Policy",
-      "description": "Privacy policy for www.chad.lu. Information about data processing, your rights, and technical storage on this website.",
+      "description": "Privacy policy for www.chad.lu. Information about data processing, user rights, and technical storage on this website.",
       "keywords": "Privacy, GDPR, Privacy Policy, Data Protection, Chad Feierstein"
     }
   },
@@ -97,22 +97,22 @@
       "fullstack": "Full-Stack Developer",
       "itadmin": "IT Administrator"
     },
-    "tagline": "I build modern web applications, manage server infrastructures and solve complex IT challenges with passion and precision, based in Luxembourg.",
+    "tagline": "Building web applications and running servers. At home between code editor and terminal. From Luxembourg.",
     "cta": {
-      "primary": "Discover Projects",
-      "secondary": "Get in Touch"
+      "primary": "To projects",
+      "secondary": "Contact"
     },
     "finalCta": {
-      "title": "Ready to build something together?",
-      "subtitle": "Take a look at my projects or get in touch with me directly.",
-      "viewProjects": "View Projects",
-      "contact": "Get in Touch"
+      "title": "More from me",
+      "subtitle": "Projects and documentation on the showcase page. Direct line via the contact form.",
+      "viewProjects": "To projects",
+      "contact": "Contact"
     }
   },
   "about": {
     "header": {
       "title": "About Me",
-      "subtitle": "Get to know the person behind the code, my background, skills and passions."
+      "subtitle": "The person behind the code: background, skills and passions."
     },
     "profile": {
       "nationality": "Luxembourgish",
@@ -271,7 +271,7 @@
   },
   "showcase": {
     "title": "Showcase",
-    "subtitle": "Discover my projects and documentation",
+    "subtitle": "Current projects and documentation articles",
     "filters": {
       "all": "All",
       "projects": "Projects",
@@ -285,13 +285,13 @@
     },
     "noResults": {
       "title": "No results found",
-      "description": "Try adjusting your search or filter to find what you're looking for."
+      "description": "Adjust the search or filter to find matching results."
     },
     "cta": {
-      "title": "Let's Connect",
-      "subtitle": "Have questions or interested in connecting? I'd love to hear from you.",
-      "button": "Get in Touch",
-      "aboutMe": "Learn More About Me"
+      "title": "Next steps",
+      "subtitle": "Feedback and questions welcome via the contact form. More about the person behind the projects lives in the about section.",
+      "button": "Contact",
+      "aboutMe": "About me"
     }
   },
   "projects": {
@@ -325,9 +325,9 @@
         }
       },
       "callToAction": {
-        "title": "Ready to Experience AI Chat?",
-        "subtitle": "Try My Chat Bot today and discover the power of local AI models with an intuitive chat interface.",
-        "button": "Start Demo"
+        "title": "Live demo",
+        "subtitle": "My Chat Bot with local AI models and an intuitive chat interface.",
+        "button": "To demo"
       }
     },
     "myPortfolio": {
@@ -360,9 +360,9 @@
         }
       },
       "callToAction": {
-        "title": "Interested in a Similar Website?",
-        "subtitle": "Explore my portfolio website and see how modern web technologies can create an impressive online presence.",
-        "button": "Visit Website"
+        "title": "Source code",
+        "subtitle": "This portfolio website. Source code is on GitHub.",
+        "button": "On GitHub"
       }
     }
   },
@@ -386,7 +386,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Do you have questions or feedback? I'm here to help.",
+    "subtitle": "Direct line via form, LinkedIn or GitHub.",
     "methods": {
       "linkedin": {
         "title": "LinkedIn"
@@ -397,43 +397,43 @@
     },
     "form": {
       "title": "Send a Message",
-      "description": "Fill out the form below and I'll get back to you as soon as possible.",
+      "description": "A reply will follow as soon as possible.",
       "name": "Name",
-      "namePlaceholder": "Your full name",
+      "namePlaceholder": "Full name",
       "email": "Email",
-      "emailPlaceholder": "your{'@'}email.com",
+      "emailPlaceholder": "name{'@'}example.com",
       "subject": "Subject",
       "subjectPlaceholder": "What is this about?",
       "message": "Message",
-      "messagePlaceholder": "Tell me about your project or inquiry...",
+      "messagePlaceholder": "What's it about? Question, feedback or note.",
       "submit": "Send Message",
       "sending": "Sending...",
       "tryAgain": "Try Again",
-      "success": "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+      "success": "Message sent successfully. A reply will follow shortly.",
       "errors": {
         "nameRequired": "Name is required",
         "nameLength": "Name must be between 2 and 100 characters",
         "emailRequired": "Email is required",
-        "emailInvalid": "Please enter a valid email address",
+        "emailInvalid": "Invalid email address",
         "subjectRequired": "Subject is required",
         "subjectLength": "Subject must be between 5 and 200 characters",
         "messageRequired": "Message is required",
         "messageMinLength": "Message must be at least 10 characters long",
         "messageMaxLength": "Message must not exceed 2000 characters",
-        "rateLimited": "Too many requests. Please try again later.",
-        "invalidData": "Invalid form data. Please check your inputs.",
-        "serverError": "An error occurred. Please try again later."
+        "rateLimited": "Too many requests. Try again later.",
+        "invalidData": "Invalid form data. Check inputs.",
+        "serverError": "An error occurred. Try again later."
       }
     }
   },
   "error": {
     "404": {
       "title": "Page Not Found",
-      "message": "The page you're looking for doesn't exist or has been moved."
+      "message": "The requested page does not exist or has been moved."
     },
     "general": {
       "title": "Oops! Something went wrong",
-      "message": "An unexpected error occurred. Please try again later."
+      "message": "An unexpected error occurred. Try again later."
     },
     "backHome": "Back to Home",
     "contact": "Contact Us",
@@ -469,21 +469,21 @@
         "localStorage": {
           "title": "Theme Preference",
           "badge": "Technically necessary",
-          "description": "Your preferred color setting (light/dark mode) is stored locally in your browser. This data is not transmitted to servers and is used solely for the correct display of the website."
+          "description": "The preferred color setting (light/dark mode) is stored locally in the browser. This data is not transmitted to servers and is used solely for the correct display of the website."
         }
       },
       "contactForm": {
         "title": "Contact Form",
-        "content": "When you use the contact form, the following data is processed:",
+        "content": "When the contact form is used, the following data is processed:",
         "items": {
-          "name": "Your name",
-          "email": "Your email address",
-          "message": "Your message"
+          "name": "Name",
+          "email": "Email address",
+          "message": "Message"
         },
-        "legalBasis": "Legal basis: Art. 6(1)(b) GDPR (contract initiation) and Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries). The data is used exclusively to process your request.",
+        "legalBasis": "Legal basis: Art. 6(1)(b) GDPR (contract initiation) and Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries). The data is used exclusively to process the request.",
         "smtp": {
           "title": "Email Delivery",
-          "description": "Contact form emails are sent directly via our own mail server. Your data (name, email, message) is not transmitted to any third-party service."
+          "description": "Contact form emails are sent directly via an own mail server. The data (name, email, message) is not transmitted to any third-party service."
         }
       },
       "hosting": {
@@ -491,9 +491,9 @@
         "content": "This website is self-hosted using Coolify on a private server. No data is transmitted to third-party hosting providers."
       },
       "rights": {
-        "title": "Your Rights & Data Control",
-        "localStorage": "Theme preference: This is only stored locally in your browser. You can delete it yourself at any time (Browser settings → Clear site data) or configure your browser to clear localStorage when closing.",
-        "contact": "Contact form: If you have sent me a message and wish it to be deleted, simply contact me. The email will then be deleted from my inbox."
+        "title": "Rights & Data Control",
+        "localStorage": "Theme preference: This is only stored locally in the browser. Can be deleted manually at any time (Browser settings → Clear site data) or auto-cleared by configuring the browser to wipe localStorage on close.",
+        "contact": "Contact form: For deletion of a sent message, a short note via the contact form is sufficient. The email will then be deleted from the inbox."
       },
       "noCookieBanner": {
         "title": "Why No Cookie Banner?"
