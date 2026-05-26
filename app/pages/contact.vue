@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EMAIL_REGEX, CONTACT_FORM_LIMITS } from '~/utils/validation'
+import { validateContactForm, type ContactFormErrors } from '~/utils/validation'
 import { SOCIAL_LINKS } from '~/utils/constants'
 
 const { t } = useI18n()
@@ -11,8 +11,7 @@ setSeoMeta({
     keywords: t('seo.contact.keywords')
 })
 
-// Form state
-const form = ref({
+const initialForm = () => ({
     name: '',
     email: '',
     subject: '',
@@ -20,105 +19,56 @@ const form = ref({
     website: ''
 })
 
-// Form validation and submission states
+const form = ref(initialForm())
+
 const isSubmitting = ref(false)
 const isSubmitted = ref(false)
 const submitError = ref<string>('')
-const errors = ref<Record<string, string>>({})
+const errors = ref<ContactFormErrors>({})
 let successTimeout: ReturnType<typeof setTimeout> | null = null
 
-// Contact methods with i18n keys
 const contactMethods = computed(() => [
-    {
-        titleKey: 'contact.methods.linkedin.title',
-        icon: 'mdi:linkedin',
-        href: SOCIAL_LINKS.linkedin
-    },
-    {
-        titleKey: 'contact.methods.github.title',
-        icon: 'mdi:github',
-        href: SOCIAL_LINKS.github
-    }
+    { titleKey: 'contact.methods.linkedin.title', icon: 'mdi:linkedin', href: SOCIAL_LINKS.linkedin },
+    { titleKey: 'contact.methods.github.title', icon: 'mdi:github', href: SOCIAL_LINKS.github },
 ])
 
-const validateForm = () => {
-    errors.value = {}
-    submitError.value = ''
-
-    const rules: [string, () => string | null][] = [
-        ['name', () => {
-            if (!form.value.name.trim()) return t('contact.form.errors.nameRequired')
-            if (form.value.name.length < CONTACT_FORM_LIMITS.name.min || form.value.name.length > CONTACT_FORM_LIMITS.name.max) return t('contact.form.errors.nameLength')
-            return null
-        }],
-        ['email', () => {
-            if (!form.value.email.trim()) return t('contact.form.errors.emailRequired')
-            if (!EMAIL_REGEX.test(form.value.email) || form.value.email.length > CONTACT_FORM_LIMITS.email.max) return t('contact.form.errors.emailInvalid')
-            return null
-        }],
-        ['subject', () => {
-            if (!form.value.subject.trim()) return t('contact.form.errors.subjectRequired')
-            if (form.value.subject.length < CONTACT_FORM_LIMITS.subject.min || form.value.subject.length > CONTACT_FORM_LIMITS.subject.max) return t('contact.form.errors.subjectLength')
-            return null
-        }],
-        ['message', () => {
-            if (!form.value.message.trim()) return t('contact.form.errors.messageRequired')
-            if (form.value.message.length < CONTACT_FORM_LIMITS.message.min) return t('contact.form.errors.messageMinLength')
-            if (form.value.message.length > CONTACT_FORM_LIMITS.message.max) return t('contact.form.errors.messageMaxLength')
-            return null
-        }],
-    ]
-
-    for (const [field, validate] of rules) {
-        const error = validate()
-        if (error) errors.value[field] = error
-    }
-
-    return Object.keys(errors.value).length === 0
+const errorText = (field: keyof ContactFormErrors) => {
+    const key = errors.value[field]
+    return key ? t(`contact.form.errors.${key}`) : ''
 }
 
-// Submit form
 const submitForm = async () => {
-    if (!validateForm()) {
+    submitError.value = ''
+    const result = validateContactForm(form.value)
+    if (!result.ok) {
+        errors.value = result.errors
         return
     }
+    errors.value = {}
 
     isSubmitting.value = true
-    submitError.value = ''
 
     try {
         await $fetch<{ success: boolean; message: string }>('/api/contact', {
             method: 'POST',
-            body: { ...form.value }
+            body: { ...result.data, website: form.value.website }
         })
 
-        // Success
         isSubmitted.value = true
+        form.value = initialForm()
 
-        // Form zurücksetzen
-        form.value = {
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-            website: ''
-        }
-
-        // Auto-hide success message after 10 seconds
         if (successTimeout) clearTimeout(successTimeout)
         successTimeout = setTimeout(() => {
             isSubmitted.value = false
             successTimeout = null
         }, 10000)
     } catch (error) {
-        const err = error as { status?: number; statusText?: string }
-
+        const err = error as { status?: number }
         const errorMap: Record<number, string> = {
             429: t('contact.form.errors.rateLimited'),
             400: t('contact.form.errors.invalidData'),
             500: t('contact.form.errors.serverError'),
         }
-
         submitError.value = (err?.status !== undefined && errorMap[err.status]) || t('contact.form.errors.serverError')
     } finally {
         isSubmitting.value = false
@@ -135,7 +85,6 @@ definePageMeta({
 </script>
 
 <template>
-    <!-- Contact Section -->
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <UiSectionHeader number="01" :label="$t('common.sections.labels.contact')" :title="$t('contact.title')"
@@ -168,7 +117,6 @@ definePageMeta({
                             {{ $t('contact.form.description') }}
                         </p>
 
-                        <!-- Overlay: Success Message -->
                         <Transition name="overlay-fade">
                             <div v-if="isSubmitted"
                                 class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
@@ -184,7 +132,6 @@ definePageMeta({
                             </div>
                         </Transition>
 
-                        <!-- Overlay: Error Message -->
                         <Transition name="overlay-fade">
                             <div v-if="submitError"
                                 class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm rounded-2xl md:rounded-3xl">
@@ -211,78 +158,25 @@ definePageMeta({
                                     autocomplete="off" />
                             </div>
 
-                            <!-- Name and Email Fields -->
                             <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
-                                <!-- Name Field -->
-                                <div class="flex flex-col gap-1.5 md:gap-2">
-                                    <label for="name"
-                                        class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                                        {{ $t('contact.form.name') }} *
-                                    </label>
-                                    <input v-model="form.name" type="text" id="name" autocomplete="name" :class="[
-                                        'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
-                                        errors.name
-                                            ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                            : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
-                                    ]" :placeholder="$t('contact.form.namePlaceholder')" />
-                                    <p v-if="errors.name" class="text-xs md:text-sm text-red-600 dark:text-red-400">
-                                        {{ errors.name }}
-                                    </p>
-                                </div>
-
-                                <!-- Email Field -->
-                                <div class="flex flex-col gap-1.5 md:gap-2">
-                                    <label for="email"
-                                        class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                                        {{ $t('contact.form.email') }} *
-                                    </label>
-                                    <input v-model="form.email" type="email" id="email" autocomplete="email" :class="[
-                                        'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
-                                        errors.email
-                                            ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                            : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
-                                    ]" :placeholder="$t('contact.form.emailPlaceholder')" />
-                                    <p v-if="errors.email" class="text-xs md:text-sm text-red-600 dark:text-red-400">
-                                        {{ errors.email }}
-                                    </p>
-                                </div>
+                                <UiFormField id="name" v-model="form.name" :label="$t('contact.form.name')"
+                                    :placeholder="$t('contact.form.namePlaceholder')" autocomplete="name" required
+                                    :error="errorText('name')" />
+                                <UiFormField id="email" v-model="form.email" type="email"
+                                    :label="$t('contact.form.email')"
+                                    :placeholder="$t('contact.form.emailPlaceholder')" autocomplete="email" required
+                                    :error="errorText('email')" />
                             </div>
 
-                            <!-- Subject Field -->
-                            <div class="flex flex-col gap-1.5 md:gap-2">
-                                <label for="subject"
-                                    class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                                    {{ $t('contact.form.subject') }} *
-                                </label>
-                                <input v-model="form.subject" type="text" id="subject" autocomplete="off" :class="[
-                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
-                                    errors.subject
-                                        ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
-                                ]" :placeholder="$t('contact.form.subjectPlaceholder')" />
-                                <p v-if="errors.subject" class="text-xs md:text-sm text-red-600 dark:text-red-400">
-                                    {{ errors.subject }}
-                                </p>
-                            </div>
+                            <UiFormField id="subject" v-model="form.subject" :label="$t('contact.form.subject')"
+                                :placeholder="$t('contact.form.subjectPlaceholder')" required
+                                :error="errorText('subject')" />
 
-                            <!-- Message Field -->
-                            <div class="flex flex-col gap-1.5 md:gap-2">
-                                <label for="message"
-                                    class="block text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                                    {{ $t('contact.form.message') }} *
-                                </label>
-                                <textarea v-model="form.message" id="message" rows="5" autocomplete="off" :class="[
-                                    'w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl border resize-none text-sm md:text-base bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 outline-none transition-all',
-                                    errors.message
-                                        ? 'border-red-300 focus:ring-2 focus:ring-red-500 focus:border-transparent'
-                                        : 'border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-accent focus:border-transparent'
-                                ]" :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
-                                <p v-if="errors.message" class="text-xs md:text-sm text-red-600 dark:text-red-400">
-                                    {{ errors.message }}
-                                </p>
-                            </div>
+                            <UiFormField id="message" v-model="form.message" type="textarea"
+                                :label="$t('contact.form.message')"
+                                :placeholder="$t('contact.form.messagePlaceholder')" required
+                                :error="errorText('message')" />
 
-                            <!-- Submit Button -->
                             <div class="flex justify-end">
                                 <UiButton variant="primary" type="submit" :disabled="isSubmitting"
                                     class="gap-2 sm:gap-3">
@@ -300,6 +194,7 @@ definePageMeta({
         </div>
     </section>
 </template>
+
 <style scoped>
 .overlay-fade-enter-active,
 .overlay-fade-leave-active {

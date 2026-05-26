@@ -1,12 +1,5 @@
 import nodemailer from 'nodemailer'
-import { EMAIL_REGEX, CONTACT_FORM_LIMITS } from '~~/app/utils/validation'
-
-interface ContactFormData {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
+import { validateContactForm } from '~~/app/utils/validation'
 
 const RATE_LIMIT_MAX = 3
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
@@ -20,28 +13,11 @@ function escapeHtml(str: string): string {
     .replace(/'/g, '&#39;')
 }
 
-function validateContactForm(body: unknown): ContactFormData {
-  if (!body || typeof body !== 'object') throw createError({ status: 400, statusText: 'Invalid form data' })
-
-  const { name, email, subject, message } = body as Record<string, unknown>
-
-  const fields: [unknown, number, number][] = [
-    [name, CONTACT_FORM_LIMITS.name.min, CONTACT_FORM_LIMITS.name.max],
-    [subject, CONTACT_FORM_LIMITS.subject.min, CONTACT_FORM_LIMITS.subject.max],
-    [message, CONTACT_FORM_LIMITS.message.min, CONTACT_FORM_LIMITS.message.max],
-  ]
-
-  if (fields.some(([v, min, max]) => typeof v !== 'string' || v.length < min || v.length > max))
-    throw createError({ status: 400, statusText: 'Invalid form data' })
-
-  if (typeof email !== 'string' || !EMAIL_REGEX.test(email) || email.length > CONTACT_FORM_LIMITS.email.max)
-    throw createError({ status: 400, statusText: 'Invalid form data' })
-
-  return {
-    name: (name as string).trim(),
-    email: (email as string).toLowerCase().trim(),
-    subject: (subject as string).trim(),
-    message: (message as string).trim(),
+function sameOrigin(origin: string, baseUrl: string): boolean {
+  try {
+    return new URL(origin).origin === new URL(baseUrl).origin
+  } catch {
+    return false
   }
 }
 
@@ -66,7 +42,7 @@ export default defineEventHandler(async (event) => {
 
   const origin = getRequestHeader(event, 'origin')
   const baseUrl = config.public.baseUrl
-  if (origin && baseUrl && !origin.startsWith(baseUrl))
+  if (origin && baseUrl && !sameOrigin(origin, baseUrl))
     throw createError({ status: 403, statusText: 'Forbidden' })
 
   const ip = getRequestIP(event, { xForwardedFor: true })
@@ -78,7 +54,9 @@ export default defineEventHandler(async (event) => {
   if (body && typeof body === 'object' && (body as Record<string, unknown>).website)
     return { success: true, message: 'Email sent successfully' }
 
-  const data = validateContactForm(body)
+  const result = validateContactForm(body)
+  if (!result.ok) throw createError({ status: 400, statusText: 'Invalid form data' })
+  const data = result.data
 
   if (!config.emailFrom || !config.emailTo || !config.smtpHost || !config.smtpUser || !config.smtpPass)
     throw createError({ status: 500, statusText: 'Internal server error' })
