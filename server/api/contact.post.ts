@@ -8,6 +8,9 @@ interface ContactFormData {
   message: string
 }
 
+const RATE_LIMIT_MAX = 3
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
+
 function escapeHtml(str: string): string {
   return str
     .replace(/&/g, '&amp;')
@@ -42,9 +45,39 @@ function validateContactForm(body: unknown): ContactFormData {
   }
 }
 
+async function checkRateLimit(ip: string): Promise<void> {
+  const storage = useStorage('cache')
+  const key = `contact:rl:${ip}`
+  const now = Date.now()
+  const cutoff = now - RATE_LIMIT_WINDOW_MS
+
+  const previous = (await storage.getItem<number[]>(key)) ?? []
+  const recent = previous.filter((ts) => ts > cutoff)
+
+  if (recent.length >= RATE_LIMIT_MAX)
+    throw createError({ status: 429, statusText: 'Too many requests' })
+
+  recent.push(now)
+  await storage.setItem(key, recent, { ttl: Math.ceil(RATE_LIMIT_WINDOW_MS / 1000) })
+}
+
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
+
+  const origin = getRequestHeader(event, 'origin')
+  const baseUrl = config.public.baseUrl
+  if (origin && baseUrl && !origin.startsWith(baseUrl))
+    throw createError({ status: 403, statusText: 'Forbidden' })
+
+  const ip = getRequestIP(event, { xForwardedFor: true })
+  if (ip) await checkRateLimit(ip)
+
   const body = await readBody(event)
+
+  // Honeypot: bots fill hidden fields. Pretend success so they don't retry.
+  if (body && typeof body === 'object' && (body as Record<string, unknown>).website)
+    return { success: true, message: 'Email sent successfully' }
+
   const data = validateContactForm(body)
 
   if (!config.emailFrom || !config.emailTo || !config.smtpHost || !config.smtpUser || !config.smtpPass)

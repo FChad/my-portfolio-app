@@ -16,7 +16,8 @@ const form = ref({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    website: ''
 })
 
 // Form validation and submission states
@@ -99,7 +100,8 @@ const submitForm = async () => {
             name: '',
             email: '',
             subject: '',
-            message: ''
+            message: '',
+            website: ''
         }
 
         // Auto-hide success message after 10 seconds
@@ -202,6 +204,13 @@ definePageMeta({
                         </Transition>
 
                         <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-6">
+                            <!-- Honeypot: must stay empty. Hidden from users, baited for bots. -->
+                            <div aria-hidden="true" class="absolute -left-[9999px] w-0 h-0 overflow-hidden">
+                                <label for="website">Website</label>
+                                <input v-model="form.website" type="text" id="website" name="website" tabindex="-1"
+                                    autocomplete="off" />
+                            </div>
+
                             <!-- Name and Email Fields -->
                             <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
                                 <!-- Name Field -->
