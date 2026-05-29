@@ -29,7 +29,8 @@
     "closeMenu": "Close menu",
     "mobileNav": "Mobile navigation",
     "scrollDown": "Scroll down",
-    "scrollToTop": "Scroll to top"
+    "scrollToTop": "Scroll to top",
+    "changeLanguage": "Change language"
   },
   "seo": {
     "home": {

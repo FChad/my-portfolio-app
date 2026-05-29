@@ -46,7 +46,7 @@ onUnmounted(() => {
     <div class="relative">
         <!-- Dropdown Button -->
         <UiButton variant="secondary" square @click.stop="toggleDropdown" :aria-expanded="isOpen" aria-haspopup="true"
-            class="gap-2">
+            :aria-label="$t('common.changeLanguage')" class="gap-2">
             <Icon :name="getFlag(locale)" class="w-5 h-5" />
 
             <Icon name="mdi:chevron-down"
