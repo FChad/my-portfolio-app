@@ -38,16 +38,14 @@ defineProps<{
 
                         <dl class="grid gap-3 md:gap-4">
                             <div v-for="info in profileInfo" :key="info.icon"
-                                class="flex items-center gap-3 md:gap-4">
-                                <UiIconBox :icon="info.icon" />
-                                <div class="flex flex-col gap-0.5 min-w-0 flex-1">
-                                    <dt class="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-                                        {{ info.label }}
-                                    </dt>
-                                    <dd class="text-sm md:text-base font-semibold text-neutral-800 dark:text-white truncate m-0">
-                                        {{ info.value }}
-                                    </dd>
-                                </div>
+                                class="relative flex flex-col justify-center gap-0.5 min-w-0 min-h-10 md:min-h-12 lg:min-h-14 pl-13 md:pl-16 lg:pl-18">
+                                <dt class="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                                    <UiIconBox :icon="info.icon" class="absolute left-0 top-1/2 -translate-y-1/2" />
+                                    {{ info.label }}
+                                </dt>
+                                <dd class="text-sm md:text-base font-semibold text-neutral-800 dark:text-white truncate m-0">
+                                    {{ info.value }}
+                                </dd>
                             </div>
                         </dl>
                     </UiCard>
