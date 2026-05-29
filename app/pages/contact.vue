@@ -152,7 +152,7 @@ definePageMeta({
 
                         <form @submit.prevent="submitForm" class="flex flex-col gap-4 md:gap-6">
                             <!-- Honeypot: must stay empty. Hidden from users, baited for bots. -->
-                            <div aria-hidden="true" class="absolute -left-[9999px] w-0 h-0 overflow-hidden">
+                            <div aria-hidden="true" class="absolute -left-2499.75 w-0 h-0 overflow-hidden">
                                 <label for="website">Website</label>
                                 <input v-model="form.website" type="text" id="website" name="website" tabindex="-1"
                                     autocomplete="off" />

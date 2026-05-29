@@ -8,7 +8,7 @@ defineProps({
 
 <template>
   <div
-    class="w-full h-full flex flex-col justify-between relative p-[64px] bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50"
+    class="w-full h-full flex flex-col justify-between relative p-16 bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50"
   >
     <!-- Aurora gradient orbs (matching site hero) -->
     <div
