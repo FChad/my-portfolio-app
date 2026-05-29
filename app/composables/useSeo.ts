@@ -32,7 +32,19 @@ export const useSeo = () => {
     })
 
     if (!options.image) {
-      defineOgImage('Portfolio', { title: fullTitle, description })
+      // The OG card is identity-forward: the headline is the page subject
+      // (the name on the homepage, the clean page title elsewhere — never the
+      // "Name - Page" SEO prefix), with the roles as a persistent eyebrow.
+      const isHome = !options.title || options.title === t('seo.home.title')
+      // Takumi has no line-clamp, so cap the description to keep it to ~2 lines.
+      const ogDescription = description.length > 130
+        ? `${description.slice(0, 127).trimEnd()}…`
+        : description
+      defineOgImage('Portfolio', {
+        title: isHome ? SITE_AUTHOR : options.title,
+        eyebrow: `${t('home.roles.fullstack')} · ${t('home.roles.itadmin')}`,
+        description: ogDescription
+      })
     }
   }
 
