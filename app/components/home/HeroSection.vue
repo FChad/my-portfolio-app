@@ -12,7 +12,7 @@ const scrollToAbout = () => {
 </script>
 
 <template>
-    <section class="relative min-h-[calc(100dvh-65px)] flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-[calc(100svh-65px)] flex items-center justify-center overflow-hidden">
         <!-- Network constellation background (hero only) -->
         <HomeHeroBackground />
 
