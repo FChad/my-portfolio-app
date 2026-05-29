@@ -16,7 +16,7 @@ const scrollToTop = () => {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
                 <!-- Scroll to Top Button -->
                 <div class="absolute -top-2 right-0">
-                    <UiButton variant="primary" square @click="scrollToTop" aria-label="Scroll to top">
+                    <UiButton variant="primary" square @click="scrollToTop" :aria-label="$t('common.scrollToTop')">
                         <Icon name="mdi:arrow-up" class="w-5 h-5" />
                     </UiButton>
                 </div>

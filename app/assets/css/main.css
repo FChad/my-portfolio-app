@@ -22,9 +22,9 @@
     --accent: var(--color-blue-300);
 }
 
-/* Brand gradient — single source of truth for the holly-blue → cyan accent. */
+/* Brand gradient — single source of truth for the blue → indigo accent. */
 @utility bg-brand {
-    @apply bg-linear-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-300;
+    @apply bg-linear-to-r from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-indigo-300;
 }
 
 @utility text-brand {

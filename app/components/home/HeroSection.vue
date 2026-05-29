@@ -57,7 +57,7 @@ const scrollToAbout = () => {
         <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-30">
             <button @click="scrollToAbout"
                 class="cursor-pointer text-neutral-400 dark:text-neutral-500 hover:text-accent transition-colors"
-                aria-label="Scroll down">
+                :aria-label="$t('common.scrollDown')">
                 <Icon name="mdi:chevron-down" class="w-7 h-7 sm:w-8 sm:h-8" />
             </button>
         </div>

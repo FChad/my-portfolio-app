@@ -4,7 +4,7 @@ interface Props {
     label?: string
     title: string
     subtitle?: string
-    as?: 'h1' | 'h2'
+    as?: 'h1' | 'h2' | 'h3'
 }
 
 const props = withDefaults(defineProps<Props>(), {

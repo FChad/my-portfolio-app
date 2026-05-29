@@ -27,7 +27,9 @@
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "mobileNav": "Mobile navigation"
+    "mobileNav": "Mobile navigation",
+    "scrollDown": "Scroll down",
+    "scrollToTop": "Scroll to top"
   },
   "seo": {
     "home": {

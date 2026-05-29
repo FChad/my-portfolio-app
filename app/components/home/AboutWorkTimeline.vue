@@ -16,17 +16,8 @@ defineProps<{
 <template>
     <section class="py-12 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
-                    04 &mdash; Career
-                </p>
-                <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ $t('about.work.journey') }}
-                </h3>
-                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">
-                    {{ $t('about.work.subtitle') }}
-                </p>
-            </div>
+            <UiSectionHeader number="04" label="Career" :title="$t('about.work.journey')"
+                :subtitle="$t('about.work.subtitle')" as="h3" />
 
             <div class="max-w-3xl mx-auto">
                 <div v-for="(item, index) in items" :key="`${item.year}-${index}`"

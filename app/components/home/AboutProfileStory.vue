@@ -14,18 +14,8 @@ defineProps<{
 <template>
     <section id="about-section" class="scroll-mt-18 py-12 md:py-16 lg:py-24 relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
-                    01 &mdash; About
-                </p>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ $t('about.header.title') }}
-                </h2>
-                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto px-2">
-                    {{ $t('about.header.subtitle') }}
-                </p>
-            </div>
+            <UiSectionHeader number="01" label="About" :title="$t('about.header.title')"
+                :subtitle="$t('about.header.subtitle')" as="h2" />
 
             <!-- Profile sidebar + Story -->
             <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 md:gap-8 lg:gap-10 items-start">

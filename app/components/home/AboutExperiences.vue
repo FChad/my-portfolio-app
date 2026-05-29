@@ -20,21 +20,13 @@ const toggleExperience = (index: number) => {
 <template>
     <section class="py-12 md:py-16 lg:py-24 bg-neutral-100 dark:bg-neutral-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
-                    05 &mdash; Highlights
-                </p>
-                <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ $t('about.experiences.title') }}
-                </h3>
-                <p class="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300">
-                    {{ $t('about.experiences.subtitle') }}
-                </p>
-            </div>
+            <UiSectionHeader number="05" label="Highlights" :title="$t('about.experiences.title')"
+                :subtitle="$t('about.experiences.subtitle')" as="h3" />
 
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                <div v-for="(experience, index) in experiences" :key="experience.title"
-                    class="group relative rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer md:cursor-default"
+                <button type="button" v-for="(experience, index) in experiences" :key="experience.title"
+                    class="group relative rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-300 cursor-pointer md:cursor-default w-full text-left appearance-none border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-page"
+                    :aria-expanded="expandedExperience === index"
                     @click="toggleExperience(index)">
 
                     <div class="absolute inset-0">
@@ -53,13 +45,13 @@ const toggleExperience = (index: number) => {
                             <h4 class="text-lg md:text-xl lg:text-2xl font-bold text-white drop-shadow-lg transition-all">
                                 {{ experience.title }}
                             </h4>
-                            <p class="text-sm md:text-base text-white/90 leading-relaxed drop-shadow-md max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-300 overflow-hidden"
+                            <p class="text-sm md:text-base text-white/90 leading-relaxed drop-shadow-md max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 group-focus-visible:max-h-40 group-focus-visible:opacity-100 transition-all duration-300 overflow-hidden"
                                 :class="{ 'max-h-40 opacity-100': expandedExperience === index }">
                                 {{ experience.description }}
                             </p>
                         </div>
                     </div>
-                </div>
+                </button>
             </div>
         </div>
     </section>

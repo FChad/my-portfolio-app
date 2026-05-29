@@ -27,7 +27,9 @@
     "skipToContent": "Zum Inhalt sprangen",
     "openMenu": "Menü opmaachen",
     "closeMenu": "Menü zoumaachen",
-    "mobileNav": "Mobil Navigatioun"
+    "mobileNav": "Mobil Navigatioun",
+    "scrollDown": "No ënnen scrollen",
+    "scrollToTop": "No uewen scrollen"
   },
   "seo": {
     "home": {

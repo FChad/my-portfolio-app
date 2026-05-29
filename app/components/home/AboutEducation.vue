@@ -15,14 +15,7 @@ defineProps<{
 <template>
     <section class="py-12 md:py-16 lg:py-24 bg-neutral-100 dark:bg-neutral-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center flex flex-col gap-3 md:gap-4 mb-8 md:mb-12 lg:mb-16">
-                <p class="text-xs font-mono tracking-[0.2em] uppercase text-accent">
-                    03 &mdash; Education
-                </p>
-                <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-800 dark:text-white">
-                    {{ $t('about.education.title') }}
-                </h3>
-            </div>
+            <UiSectionHeader number="03" label="Education" :title="$t('about.education.title')" as="h3" />
 
             <div class="grid lg:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
                 <UiCard v-for="item in items" :key="item.title">
