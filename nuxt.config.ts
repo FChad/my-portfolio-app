@@ -29,9 +29,15 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts'],
   fonts: {
+    defaults: {
+      subsets: ['latin', 'latin-ext'], // latin deckt äöüß/àâçéè ab, latin-ext für œ (frz.)
+      styles: ['normal'], // kein Italic
+    },
     families: [
-      { name: 'Inter', provider: 'bunny', weights: ['100 900'], display: 'swap', preload: true },
-      { name: 'Space Grotesk', provider: 'bunny', weights: ['500 700'], display: 'swap', preload: true }
+      // Fließtext – kein Preload nötig, swap rendert sofort mit Fallback
+      { name: 'Inter', provider: 'bunny', weights: ['400 700'], display: 'swap' },
+      // LCP-Überschrift (Hero-H1) – nur diese vorladen; 700 zuerst, damit das LCP-Gewicht vorgeladen wird
+      { name: 'Space Grotesk', provider: 'bunny', weights: ['700', '600'], display: 'swap', preload: true }
     ]
   },
   icon: {
