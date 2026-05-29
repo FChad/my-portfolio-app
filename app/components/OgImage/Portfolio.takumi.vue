@@ -28,9 +28,9 @@ defineProps({
     <div class="flex items-center gap-5 relative">
       <svg viewBox="0 0 32 32" width="72" height="72">
         <defs>
-          <linearGradient id="ogBrand" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="ogBrand" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#60A5FA" />
-            <stop offset="100%" stop-color="#2563EB" />
+            <stop offset="100%" stop-color="#4F46E5" />
           </linearGradient>
         </defs>
         <rect width="32" height="32" rx="7" fill="url(#ogBrand)" />
@@ -64,7 +64,7 @@ defineProps({
     <!-- Bottom row: accent bar + label -->
     <div class="flex items-center gap-4 relative">
       <div
-        style="width: 60px; height: 6px; border-radius: 9999px; background-image: linear-gradient(to right, #60A5FA, #2563EB);"
+        style="width: 60px; height: 6px; border-radius: 9999px; background-image: linear-gradient(to right, #2563EB, #6366F1);"
       />
       <span
         class="font-medium text-neutral-500 dark:text-neutral-400"
