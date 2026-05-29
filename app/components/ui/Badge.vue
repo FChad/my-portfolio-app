@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { variant = 'neutral', size = 'md' } = defineProps<{
-    variant?: 'neutral' | 'blue'
+    variant?: 'neutral' | 'blue' | 'green'
     size?: 'sm' | 'md'
 }>()
 
@@ -10,6 +10,8 @@ const variantClass = computed(() => {
             return 'bg-neutral-200 text-neutral-700 dark:bg-neutral-700/50 dark:text-neutral-400'
         case 'blue':
             return 'bg-blue-200 text-accent dark:bg-blue-900/40'
+        case 'green':
+            return 'bg-green-200 text-green-700 dark:bg-green-900/40 dark:text-green-300'
         default:
             return ''
     }

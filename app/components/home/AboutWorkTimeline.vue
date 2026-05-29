@@ -30,16 +30,12 @@ defineProps<{
                         </span>
                     </div>
                     <div class="flex flex-col gap-2">
-                        <div class="flex items-center justify-between gap-3 flex-wrap">
-                            <div class="font-display font-semibold text-base md:text-lg tracking-tight text-neutral-800 dark:text-white">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="font-display font-semibold text-base md:text-lg tracking-tight text-neutral-800 dark:text-white min-w-0">
                                 {{ item.title }}
                             </div>
-                            <div class="flex items-center gap-1.5 flex-wrap">
-                                <span v-if="item.active"
-                                    class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md tracking-wide uppercase whitespace-nowrap bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                                    {{ $t('about.work.active') }}
-                                </span>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <UiBadge v-if="item.active" variant="green">{{ $t('about.work.active') }}</UiBadge>
                                 <UiBadge v-if="item.type" variant="blue">{{ item.type }}</UiBadge>
                             </div>
                         </div>
