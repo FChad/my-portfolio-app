@@ -27,6 +27,6 @@
     "@iconify-json/circle-flags": "^1.2.10",
     "@iconify-json/mdi": "^1.2.3",
     "@takumi-rs/core": "^1.7.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.2"
   }
 }
