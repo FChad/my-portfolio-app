@@ -45,7 +45,10 @@ export default defineEventHandler(async (event) => {
   if (origin && baseUrl && !sameOrigin(origin, baseUrl))
     throw createError({ status: 403, statusText: 'Forbidden' })
 
-  const ip = getRequestIP(event, { xForwardedFor: true })
+  // Letzten X-Forwarded-For-Eintrag nehmen: der stammt vom eigenen Proxy (Traefik),
+  // alles davor ist client-kontrolliert und spoofbar
+  const xff = getRequestHeader(event, 'x-forwarded-for')
+  const ip = xff?.split(',').pop()?.trim() || getRequestIP(event)
   if (ip) await checkRateLimit(ip)
 
   const body = await readBody(event)

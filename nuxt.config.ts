@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-04-30',
   devtools: { enabled: false },
   nitro: {
+    compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
       routes: ['/'],
@@ -14,6 +15,8 @@ export default defineNuxtConfig({
     routeRules: {
       '/**': {
         headers: {
+          // max-age bewusst kurz (1 Tag), solange die Domain-/Subdomain-Strategie offen ist
+          'Strict-Transport-Security': 'max-age=86400',
           'X-Content-Type-Options': 'nosniff',
           'X-Frame-Options': 'DENY',
           'Referrer-Policy': 'strict-origin-when-cross-origin',
